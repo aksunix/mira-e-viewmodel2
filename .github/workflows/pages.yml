@@ -33,6 +33,10 @@ jobs:
           cp "$(go env GOROOT)/lib/wasm/wasm_exec.js" docs/wasm_exec.js
           ls -lh docs
 
+      - name: Incluir dados do ProSettings
+        run: |
+          if [ -f data/pro-settings.json ]; then cp data/pro-settings.json docs/pro-settings.json; else echo '{"players":{}}' > docs/pro-settings.json; fi
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
