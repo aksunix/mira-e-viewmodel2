@@ -151,7 +151,16 @@
   .support .txt { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 18px; letter-spacing: 0; overflow-wrap: anywhere; user-select: all; }
   .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
   .actions { display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding: 12px; min-height: auto; }
-  .actions .btn-text { width: 100%; text-transform: uppercase; letter-spacing: 1px; }
+  .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
+  .split-action .btn { margin: 0; height: 38px; }
+  .split-main { border-radius: 6px 4px 4px 6px; width: 100%; text-transform: uppercase; letter-spacing: 1px; }
+  .split-toggle { background: var(--md-primary); color: #fff; border-radius: 4px 6px 6px 4px; padding: 0; }
+  .split-toggle svg { margin: 0; transition: transform .18s ease; }
+  .split-action.open .split-toggle svg { transform: rotate(180deg); }
+  .code-panel { display: none; grid-column: 1 / -1; margin-top: 6px; padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px; background: var(--md-surface-container-high); }
+  .split-action.open .code-panel { display: block; }
+  .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
+  .code-panel .code-copy { margin-top: 8px; height: 30px; padding: 0 12px; font-size: 11px; }
 
   @media (max-width: 600px) {
     .dropzone { padding: 32px 16px; }
@@ -363,8 +372,8 @@ function paintCrosshair(canvas, xh, size) {
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, size, size);
   const sh = crosshairShapes(xh);
-  // Prévia sem zoom: mantém a escala base das unidades da mira.
-  const k = 1;
+  // Pequeno zoom para deixar a mira mais visível no card.
+  const k = 1.2;
   ctx.translate(size / 2, size / 2);
   ctx.scale(k, k);
   const fill = rgba(xh.color), line = rgba(xh.outlineColor);
@@ -387,12 +396,38 @@ function supportBlock(label, value, emptyText) {
   return box;
 }
 
-function actionButton(label, value) {
-  const btn = el('button', 'btn btn-text', label);
-  btn.type = 'button';
-  btn.dataset.label = label;
-  btn.onclick = () => copyValue(value, btn);
-  return btn;
+function splitActionButton(label, value) {
+  const group = el('div', 'split-action');
+  const main = el('button', 'btn btn-text split-main', label);
+  main.type = 'button';
+  main.dataset.label = label;
+  main.setAttribute('aria-label', label);
+  main.onclick = () => copyValue(value, main);
+
+  const toggle = el('button', 'btn split-toggle');
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Mostrar código: ' + label.toLowerCase());
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>';
+
+  const panel = el('div', 'code-panel');
+  const codeTitle = label.toLowerCase().includes('viewmodel') ? 'Código do viewmodel' : 'Código da mira';
+  panel.appendChild(el('div', 'lbl', codeTitle));
+  const pre = el('pre', '', value);
+  panel.appendChild(pre);
+  const copyLabel = label.toLowerCase().includes('viewmodel') ? 'Copiar código do viewmodel' : 'Copiar código da mira';
+  const copyCode = el('button', 'btn btn-tonal code-copy', copyLabel);
+  copyCode.type = 'button';
+  copyCode.dataset.label = copyLabel;
+  copyCode.onclick = () => copyValue(value, copyCode);
+  panel.appendChild(copyCode);
+
+  toggle.onclick = () => {
+    const open = group.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  };
+  group.append(main, toggle, panel);
+  return group;
 }
 
 function renderPlayer(p) {
@@ -406,7 +441,6 @@ function renderPlayer(p) {
     canvas.setAttribute('aria-label', 'Prévia da mira de ' + (p.name || 'jogador'));
     paintCrosshair(canvas, xh, 140);
     media.appendChild(canvas);
-    media.appendChild(el('div', 'cap', 'Prévia aproximada'));
   } else {
     media.appendChild(el('div', 'ph', (p.name || '?').trim().charAt(0) || '?'));
   }
@@ -415,13 +449,11 @@ function renderPlayer(p) {
   const body = el('div', 'card-body');
   body.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
   body.appendChild(el('div', 'card-sub', 'SteamID ' + p.steamid));
-  body.appendChild(supportBlock('Crosshair code', p.crosshair_code, 'Não encontrado neste demo'));
-  body.appendChild(supportBlock('Viewmodel', p.viewmodel_cmd, 'Não encontrado neste demo'));
   card.appendChild(body);
 
   const actions = el('div', 'actions');
-  if (p.crosshair_code) actions.appendChild(actionButton('Copiar mira', p.crosshair_code));
-  if (p.viewmodel_cmd) actions.appendChild(actionButton('Copiar viewmodel', p.viewmodel_cmd));
+  if (p.crosshair_code) actions.appendChild(splitActionButton('Copiar mira', p.crosshair_code));
+  if (p.viewmodel_cmd) actions.appendChild(splitActionButton('Copiar viewmodel', p.viewmodel_cmd));
   card.appendChild(actions);
   return card;
 }
