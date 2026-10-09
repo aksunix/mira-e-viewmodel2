@@ -18,7 +18,15 @@ S = requests.Session()
 S.headers["User-Agent"] = UA
 
 
+def norm(name):
+    return re.sub(r"\s+", "", name).lower()
+
+
 class Blocked(Exception):
+    pass
+
+
+class SteamBlocked(Exception):
     pass
 
 
@@ -73,7 +81,10 @@ def steam_id64(link, delay):
     m = re.search(r"/id/([^/?#]+)", link)
     if not m:
         return None
-    xml = get(f"https://steamcommunity.com/id/{m.group(1)}/?xml=1", delay)
+    try:
+        xml = get(f"https://steamcommunity.com/id/{m.group(1)}/?xml=1", delay)
+    except Blocked as e:
+        raise SteamBlocked(str(e))
     m = re.search(r"<steamID64>(\d{17})</steamID64>", xml)
     return m.group(1) if m else None
 
@@ -82,11 +93,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="data/pro-settings.json")
     ap.add_argument("--max", type=int, default=400)
+    ap.add_argument("--priority", default="data/priority-players.txt")
     ap.add_argument("--delay", type=float, default=2.0)
     ap.add_argument("--refresh-days", type=int, default=60)
     a = ap.parse_args()
 
-    data = {"players": {}, "seen": {}}
+    data = {"players": {}, "names": {}, "seen": {}, "pending": {}}
     if os.path.exists(a.out):
         with open(a.out, encoding="utf-8") as f:
             data.update(json.load(f))
@@ -96,18 +108,66 @@ def main():
         d = data["seen"].get(url)
         return d is None or (today - dt.date.fromisoformat(d)).days >= a.refresh_days
 
-    urls = player_urls(a.delay)
-    todo = sorted((u for u in urls if stale(u)), key=lambda u: data["seen"].get(u, ""))[: a.max]
-    print(f"{len(urls)} jogadores no sitemap; {len(todo)} para buscar agora")
+    # jogadores prioritarios (data/priority-players.txt, um slug por linha) sao buscados primeiro
+    prio = []
+    if os.path.exists(a.priority):
+        with open(a.priority, encoding="utf-8") as f:
+            prio = [f"{BASE}/players/{l.strip().lower()}/" for l in f if l.strip() and not l.startswith("#")]
+    have = {v.get("url") for v in list(data["players"].values()) + list(data["names"].values())}
+    prio_todo = [u for u in prio if u not in have or stale(u)]
+
+    urls = []
+    try:
+        urls = player_urls(a.delay)
+    except (Blocked, requests.RequestException) as e:
+        print("aviso: nao consegui ler o sitemap:", e)
+    rest = sorted((u for u in urls if stale(u) and u not in prio_todo), key=lambda u: data["seen"].get(u, ""))
+    todo = (prio_todo + rest)[: a.max]
+    print(f"{len(urls)} jogadores no sitemap; {len(prio_todo)} prioritarios; {len(todo)} para buscar agora")
+    no_mouse_logged = 0
+    steam_ok = True
+
+    # tenta resolver SteamIDs que ficaram pendentes por limite do Steam em execucoes anteriores
+    for url, info in list(data["pending"].items())[:150]:
+        try:
+            sid = steam_id64(info["steam"], 3.0)
+        except SteamBlocked as e:
+            print("Steam limitou as consultas; pendentes ficam para a proxima execucao:", e)
+            steam_ok = False
+            break
+        except requests.RequestException:
+            continue
+        entry = data["names"].get(info["name"])
+        if sid and entry:
+            data["players"][sid] = entry
+        data["pending"].pop(url)
 
     try:
         for i, url in enumerate(todo, 1):
             try:
-                name, steam, mouse = parse_player(get(url, a.delay))
-                if steam and mouse:
-                    sid = steam_id64(steam, a.delay)
+                html = get(url, a.delay)
+                name, steam, mouse = parse_player(html)
+                if url in prio_todo:
+                    print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)}")
+                if mouse:
+                    entry = {"name": name, "url": url, **mouse}
+                    if name:
+                        data["names"][norm(name)] = entry
+                    sid = None
+                    if steam and steam_ok:
+                        try:
+                            sid = steam_id64(steam, 3.0)
+                        except SteamBlocked as e:
+                            print("Steam limitou as consultas; seguindo so com o nome:", e)
+                            steam_ok = False
                     if sid:
-                        data["players"][sid] = {"name": name, "url": url, **mouse}
+                        data["players"][sid] = entry
+                    elif steam and name:
+                        data["pending"][url] = {"steam": steam, "name": norm(name)}
+                elif no_mouse_logged < 5:
+                    no_mouse_logged += 1
+                    heads = [h.get_text(" ", strip=True) for h in BeautifulSoup(html, "html.parser").find_all(re.compile(r"^h[1-6]$"))][:15]
+                    print(f"sem tabela Mouse em {url}; titulos encontrados: {heads}")
                 data["seen"][url] = today.isoformat()
             except requests.RequestException as e:
                 print("erro (pulando):", url, e)
@@ -119,7 +179,7 @@ def main():
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)
-    print("jogadores com dados:", len(data["players"]))
+    print("com SteamID:", len(data["players"]), "| por nome:", len(data["names"]), "| SteamID pendente:", len(data["pending"]))
 
 
 if __name__ == "__main__":
