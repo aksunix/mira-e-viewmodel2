@@ -152,15 +152,23 @@
   .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
   .actions { display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding: 12px; min-height: auto; }
   .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
+  .cfg-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 34px; padding: 0 12px; border: 1px solid var(--md-outline-variant);
+    border-radius: 6px; color: var(--md-on-surface); background: var(--md-surface-container-high);
+    text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .6px;
+  }
+  .cfg-link:hover { border-color: var(--md-primary); background: var(--md-primary-container); }
+
   .split-action .btn { margin: 0; height: 38px; }
   .split-main { border-radius: 6px 4px 4px 6px; width: 100%; text-transform: uppercase; letter-spacing: 1px; }
   .split-toggle { background: var(--md-primary); color: #fff; border-radius: 4px 6px 6px 4px; padding: 0; }
   .split-toggle svg { margin: 0; transition: transform .18s ease; }
   .split-action.open .split-toggle svg { transform: rotate(180deg); }
   .code-panel {
-    display: none; position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; right: 0;
+    display: none; grid-column: 1 / -1; position: static; margin-top: 6px;
     padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px;
-    background: var(--md-surface-container-high); box-shadow: 0 8px 24px rgba(0,0,0,.38);
+    background: var(--md-surface-container-high); box-shadow: 0 4px 12px rgba(0,0,0,.2);
   }
   .split-action.open .code-panel { display: block; }
   .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
@@ -456,6 +464,15 @@ function renderPlayer(p) {
   const actions = el('div', 'actions');
   if (p.crosshair_code) actions.appendChild(splitActionButton('Copiar mira', p.crosshair_code));
   if (p.viewmodel_cmd) actions.appendChild(splitActionButton('Copiar viewmodel', p.viewmodel_cmd));
+  if (p.steamid) {
+    const playerName = (p.name || 'jogador').trim();
+    const cfgLink = el('a', 'cfg-link', 'BAIXAR CFG');
+    cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
+    cfgLink.setAttribute('download', '');
+    cfgLink.setAttribute('aria-label', 'Baixar CFG de ' + playerName + ' do CyberShoke');
+    cfgLink.title = 'Baixa a CFG do jogador usando o endpoint oficial do CyberShoke';
+    actions.appendChild(cfgLink);
+  }
   card.appendChild(actions);
   return card;
 }
