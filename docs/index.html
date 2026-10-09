@@ -1,273 +1,493 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogadores Encontrados</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>CS2 Demo Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --md-primary: #6500F5; --md-on-primary: #FFFFFF;
+    --md-primary-container: #32105D; --md-on-primary-container: #E9D7FF;
+    --md-secondary-container: #252333; --md-on-secondary-container: #E8E4F3;
+    --md-surface: #0D0E14; --md-surface-container-low: #151620;
+    --md-surface-container: #191A25; --md-surface-container-high: #20212D;
+    --md-surface-container-highest: #292A37; --md-on-surface: #F7F5FC;
+    --md-on-surface-variant: #A8A5BA; --md-outline: #77738B;
+    --md-outline-variant: #303140; --md-inverse-surface: #F7F5FC;
+    --md-inverse-on-surface: #191A25; --md-error: #FFB4AB;
+    --md-error-container: #5B171B; --md-on-error-container: #FFDAD6;
+    --md-shadow: 0 6px 18px rgba(0,0,0,.25);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --md-primary: #6500F5; --md-on-primary: #FFFFFF;
+      --md-primary-container: #E9D7FF; --md-on-primary-container: #32105D;
+      --md-secondary-container: #F0ECF8; --md-on-secondary-container: #282238;
+      --md-surface: #F8F7FB; --md-surface-container-low: #FFFFFF;
+      --md-surface-container: #F3F1F8; --md-surface-container-high: #EDEAF4;
+      --md-surface-container-highest: #E5E1EF; --md-on-surface: #191620;
+      --md-on-surface-variant: #625D70; --md-outline: #81798D;
+      --md-outline-variant: #DDD7E8; --md-inverse-surface: #302B39;
+      --md-inverse-on-surface: #F8F7FB; --md-error: #BA1A1A;
+      --md-error-container: #FFDAD6; --md-on-error-container: #410002;
+    }
+  }
 
-        body {
-            background-color: #0f0e17;
-            color: #ffffff;
-            padding: 24px;
-        }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Roboto", system-ui, sans-serif;
+    font-size: 14px; line-height: 20px; letter-spacing: .25px;
+    background: var(--md-surface); color: var(--md-on-surface);
+    min-height: 100vh;
+  }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
+  /* Top app bar */
+  .appbar {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; align-items: center; gap: 16px;
+    height: 64px; padding: 0 16px 0 24px;
+    background: var(--md-surface-container); color: var(--md-on-surface);
+  }
+  .appbar svg { fill: var(--md-primary); flex: none; }
+  .appbar h1 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
 
-        .header h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
+  main { max-width: 1160px; margin: 0 auto; padding: 24px 16px 96px; }
 
-        .header p {
-            color: #a7a9be;
-            font-size: 0.9rem;
-        }
+  /* Dropzone */
+  .dropzone {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    width: 100%; padding: 48px 24px; text-align: center; font: inherit; color: inherit;
+    background: var(--md-surface-container-low);
+    border: 2px dashed var(--md-outline-variant); border-radius: 28px;
+    cursor: pointer; transition: background .2s, border-color .2s;
+  }
+  .dropzone:hover { background: var(--md-surface-container); }
+  .dropzone.hover { border-color: var(--md-primary); background: var(--md-surface-container-high); }
+  .dropzone .icon {
+    display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 8px;
+    border-radius: 50%; background: var(--md-primary-container);
+  }
+  .dropzone .icon svg { fill: var(--md-on-primary-container); }
+  .dropzone .title { font-size: 22px; line-height: 28px; letter-spacing: 0; }
+  .dropzone .support { color: var(--md-on-surface-variant); }
 
-        .btn-analisar {
-            background-color: #7f5af0;
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
+  /* Buttons */
+  .btn {
+    position: relative; overflow: hidden;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 38px; padding: 0 18px; border: 0; border-radius: 6px;
+    font: 700 13px/20px "Roboto", system-ui, sans-serif; letter-spacing: .8px;
+    cursor: pointer; transition: box-shadow .2s;
+  }
+  .btn svg { fill: currentColor; margin-left: -8px; }
+  .btn::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
+  .btn:hover::after { opacity: .08; }
+  .btn:active::after { opacity: .12; }
+  .btn-filled { background: var(--md-primary); color: var(--md-on-primary); margin-top: 16px; }
+  .btn-filled:hover { box-shadow: var(--md-shadow); }
+  .btn-tonal { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+  .btn-tonal.done { background: var(--md-primary-container); color: var(--md-on-primary-container); }
+  .actions .btn-text:hover { box-shadow: var(--md-shadow); filter: brightness(1.08); }
+  .actions .btn-text:active { filter: brightness(.92); }
+  .btn-text { background: var(--md-primary); color: #fff; padding: 0 14px; border-radius: 6px; }
+  :focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
 
-        .btn-analisar:hover {
-            background-color: #6c46e0;
-        }
+  /* Progress */
+  .progress { display: none; margin-top: 24px; }
+  .progress.on { display: block; }
+  .progress .label { margin-bottom: 12px; color: var(--md-on-surface-variant); }
+  .progress .label strong { display: block; color: var(--md-on-surface); font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: .15px; }
+  .linear { position: relative; height: 4px; border-radius: 2px; overflow: hidden; background: var(--md-secondary-container); }
+  .linear .bar { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--md-primary); border-radius: 2px; transition: width .2s linear; }
+  .linear.indeterminate .bar { width: 40%; transition: none; animation: slide 1.6s cubic-bezier(.4,0,.2,1) infinite; }
+  @keyframes slide { 0% { left: -40%; } 100% { left: 100%; } }
+  .dropzone:disabled { cursor: progress; opacity: .6; }
+  .dropzone:disabled:hover { background: var(--md-surface-container-low); }
 
-        /* 
-           AJUSTE PRINCIPAL:
-           align-items: flex-start garante que a expansão de um card 
-           não altera a altura nem empurra os cards vizinhos.
-        */
-        .cards-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: flex-start;
-        }
+  /* Banner de erro */
+  .error {
+    display: none; gap: 12px; align-items: flex-start; margin-top: 24px; padding: 16px;
+    border-radius: 12px; background: var(--md-error-container); color: var(--md-on-error-container);
+  }
+  .error.on { display: flex; }
+  .error svg { fill: currentColor; flex: none; }
+  .error strong { display: block; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: .15px; }
 
-        .card {
-            background-color: #16161a;
-            border: 1px solid #242629;
-            border-radius: 12px;
-            width: 260px;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: height 0.2s ease;
-        }
+  /* Resultados */
+  .results { display: none; margin-top: 32px; }
+  .results.on { display: block; }
+  .results-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+  .results-head h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
+  .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
-        .crosshair-preview {
-            height: 120px;
-            background-color: #010101;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
+  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+  .card {
+    display: flex; flex-direction: column; overflow: hidden;
+    background: var(--md-surface-container-low); border: 1px solid var(--md-outline-variant); border-radius: 12px;
+  }
+  .card-media {
+    position: relative; display: grid; place-items: center; height: 112px;
+    background: var(--md-surface-container-highest);
+  }
+  .card-media canvas { width: 96px; height: 96px; }
+  .card-media .ph {
+    display: grid; place-items: center; width: 80px; height: 80px; border-radius: 50%;
+    background: var(--md-primary-container); color: var(--md-on-primary-container);
+    font-size: 36px; line-height: 40px; font-weight: 500; text-transform: uppercase;
+  }
+  .card-media .cap { position: absolute; left: 12px; bottom: 8px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
+  .card-body { padding: 10px 12px 0; }
+  .card-title { margin: 0; font-size: 17px; line-height: 23px; font-weight: 500; letter-spacing: 0; overflow-wrap: anywhere; }
+  .card-sub { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: .4px; }
+  .support { margin-top: 10px; }
+  .support + .support { margin-top: 8px; }
+  .support .lbl { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
+  .support .txt { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 18px; letter-spacing: 0; overflow-wrap: anywhere; user-select: all; }
+  .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
+  .actions { display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding: 12px; min-height: auto; }
+  .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
+  .cfg-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 34px; padding: 0 12px; border: 1px solid var(--md-outline-variant);
+    border-radius: 6px; color: var(--md-on-surface); background: var(--md-surface-container-high);
+    text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .6px;
+  }
+  .cfg-link:hover { border-color: var(--md-primary); background: var(--md-primary-container); }
 
-        .crosshair-dot {
-            width: 4px;
-            height: 4px;
-            background-color: #2cb67d;
-            box-shadow: 0 0 4px #2cb67d;
-        }
+  .split-action .btn { margin: 0; height: 38px; }
+  .split-main { border-radius: 6px 4px 4px 6px; width: 100%; text-transform: uppercase; letter-spacing: 1px; }
+  .split-toggle { background: var(--md-primary); color: #fff; border-radius: 4px 6px 6px 4px; padding: 0; }
+  .split-toggle svg { margin: 0; transition: transform .18s ease; }
+  .split-action.open .split-toggle svg { transform: rotate(180deg); }
+  .code-panel {
+    display: none; grid-column: 1 / -1; position: static; margin-top: 6px;
+    padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px;
+    background: var(--md-surface-container-high); box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  }
+  .split-action.open .code-panel { display: block; }
+  .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
+  .code-panel .code-copy { margin-top: 8px; height: 30px; padding: 0 12px; font-size: 11px; }
 
-        .player-info h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
+  @media (max-width: 600px) {
+    .dropzone { padding: 32px 16px; }
+  }
 
-        .player-info span {
-            color: #94a1b2;
-            font-size: 0.8rem;
-        }
+  /* Snackbar */
+  .snackbar {
+    position: fixed; left: 50%; bottom: 24px; z-index: 10;
+    transform: translate(-50%, 24px); opacity: 0; pointer-events: none;
+    min-width: 280px; max-width: calc(100vw - 32px); padding: 14px 16px; border-radius: 4px;
+    background: var(--md-inverse-surface); color: var(--md-inverse-on-surface);
+    box-shadow: var(--md-shadow); transition: opacity .2s, transform .2s;
+  }
+  .snackbar.on { opacity: 1; transform: translate(-50%, 0); }
 
-        .btn-group {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-action {
-            flex: 1;
-            background-color: #7f5af0;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .btn-toggle {
-            background-color: #7f5af0;
-            color: white;
-            border: none;
-            padding: 10px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .input-code {
-            width: 100%;
-            background-color: #010101;
-            border: 1px solid #7f5af0;
-            color: #fffffe;
-            padding: 8px;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            word-break: break-all;
-            display: none;
-        }
-
-        .btn-download {
-            background-color: #242629;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            width: 100%;
-        }
-
-        .btn-download:hover {
-            background-color: #2cb67d;
-        }
-    </style>
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    .linear.indeterminate .bar { animation: none; left: 0; width: 100%; opacity: .5; }
+  }
+</style>
 </head>
 <body>
 
-    <div class="header">
-        <div>
-            <h1>Jogadores encontrados</h1>
-            <p>10 jogadores</p>
-        </div>
-        <button class="btn-analisar">Analisar outro demo</button>
+<header class="appbar">
+  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+  <h1>CS2 Demo Analyzer</h1>
+</header>
+
+<main>
+  <button type="button" class="dropzone" id="dropzone">
+    <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
+    <span class="title">Arraste o arquivo .dem aqui</span>
+    <span class="support">O arquivo é lido no seu computador e não é enviado para nenhum servidor</span>
+    <span class="btn btn-filled" id="pick">Escolher arquivo</span>
+  </button>
+  <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
+
+  <section class="progress" id="progress" aria-live="polite">
+    <div class="label"><strong id="progressTitle"></strong><span id="progressSub"></span></div>
+    <div class="linear indeterminate" id="linear" role="progressbar" aria-label="Progresso da análise" aria-valuemin="0" aria-valuemax="100"><div class="bar" id="bar"></div></div>
+  </section>
+
+  <section class="error" id="error" role="alert">
+    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    <div><strong>Não foi possível analisar o demo</strong><span id="errorText"></span></div>
+  </section>
+
+  <section class="results" id="results">
+    <div class="results-head">
+      <div>
+        <h2>Jogadores encontrados</h2>
+        <p id="resultCount"></p>
+      </div>
+      <button type="button" class="btn btn-text" id="again">Analisar outro demo</button>
     </div>
+    <div id="cards"></div>
+  </section>
+</main>
 
-    <div class="cards-container">
-        
-        <!-- CARD 1 -->
-        <div class="card">
-            <div class="crosshair-preview">
-                <div class="crosshair-dot"></div>
-            </div>
-            <div class="player-info">
-                <h2>Aleksib</h2>
-                <span>SteamID 76561198013243326</span>
-            </div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Mira</button>
-                <button class="btn-toggle" onclick="toggleAccordion(this)">∨</button>
-            </div>
-            <div class="input-code">CShqJ-rHNf9-GrKPw-cXPpa-OvaEA-LT3kV-xMQXj-ChWhi-5Gvre</div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Viewmodel</button>
-                <button class="btn-toggle">∨</button>
-            </div>
-            <button class="btn-download">Baixar CFG</button>
-        </div>
+<div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
 
-        <!-- CARD 2 -->
-        <div class="card">
-            <div class="crosshair-preview">
-                <div class="crosshair-dot"></div>
-            </div>
-            <div class="player-info">
-                <h2>NiKo</h2>
-                <span>SteamID 76561198041683378</span>
-            </div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Mira</button>
-                <button class="btn-toggle" onclick="toggleAccordion(this)">∧</button>
-            </div>
-            <div class="input-code" style="display: block;">CShqJ-rHNf9-GrKPw-cXPpa-OvaEA-LT3kV-xMQXj-ChWhi-5Gvre</div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Viewmodel</button>
-                <button class="btn-toggle">∨</button>
-            </div>
-            <button class="btn-download">Baixar CFG</button>
-        </div>
+<script src="crosshair.js"></script>
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const pick = document.getElementById('pick');
+const progress = document.getElementById('progress');
+const progressTitle = document.getElementById('progressTitle');
+const progressSub = document.getElementById('progressSub');
+const linear = document.getElementById('linear');
+const bar = document.getElementById('bar');
+const errorBox = document.getElementById('error');
+const errorText = document.getElementById('errorText');
+const results = document.getElementById('results');
+const resultCount = document.getElementById('resultCount');
+const cards = document.getElementById('cards');
+const snackbar = document.getElementById('snackbar');
+let snackTimer;
+let busy = false;
+let worker = null;
 
-        <!-- CARD 3 -->
-        <div class="card">
-            <div class="crosshair-preview">
-                <div class="crosshair-dot"></div>
-            </div>
-            <div class="player-info">
-                <h2>TeSeS</h2>
-                <span>SteamID 76561197996678278</span>
-            </div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Mira</button>
-                <button class="btn-toggle" onclick="toggleAccordion(this)">∨</button>
-            </div>
-            <div class="input-code">CShqJ-rHNf9-GrKPw-cXPpa-OvaEA-LT3kV-xMQXj-ChWhi-5Gvre</div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Viewmodel</button>
-                <button class="btn-toggle">∨</button>
-            </div>
-            <button class="btn-download">Baixar CFG</button>
-        </div>
+function setIndeterminate(title, sub) {
+  progressTitle.textContent = title;
+  progressSub.textContent = sub || '';
+  linear.classList.add('indeterminate');
+  linear.removeAttribute('aria-valuenow');
+  bar.style.width = '';
+}
 
-        <!-- CARD 4 -->
-        <div class="card">
-            <div class="crosshair-preview">
-                <div class="crosshair-dot"></div>
-            </div>
-            <div class="player-info">
-                <h2>b1t</h2>
-                <span>SteamID 76561198246607476</span>
-            </div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Mira</button>
-                <button class="btn-toggle" onclick="toggleAccordion(this)">∨</button>
-            </div>
-            <div class="input-code">CShqJ-rHNf9-GrKPw-cXPpa-OvaEA-LT3kV-xMQXj-ChWhi-5Gvre</div>
-            <div class="btn-group">
-                <button class="btn-action">Copiar Viewmodel</button>
-                <button class="btn-toggle">∨</button>
-            </div>
-            <button class="btn-download">Baixar CFG</button>
-        </div>
+function setProgress(pct) {
+  linear.classList.remove('indeterminate');
+  linear.setAttribute('aria-valuenow', pct);
+  bar.style.width = pct + '%';
+  progressSub.textContent = pct + '% do demo lido';
+}
 
-    </div>
+function setLoading(on) {
+  dropzone.disabled = on;
+  if (on) {
+    pick.textContent = 'Preparando o analisador…';
+    setIndeterminate('Preparando o analisador', 'Só na primeira vez; o arquivo tem alguns MB.');
+    progress.classList.add('on');
+  } else {
+    pick.textContent = 'Escolher arquivo';
+    progress.classList.remove('on');
+  }
+}
 
-    <script>
-        function toggleAccordion(btn) {
-            const card = btn.closest('.card');
-            const input = card.querySelector('.input-code');
-            
-            if (input.style.display === 'block') {
-                input.style.display = 'none';
-                btn.innerText = '∨';
-            } else {
-                input.style.display = 'block';
-                btn.innerText = '∧';
-            }
-        }
-    </script>
+function startWorker() {
+  setLoading(true);
+  try {
+    worker = new Worker('worker.js');
+  } catch (e) {
+    setLoading(false);
+    showError('Seu navegador não conseguiu iniciar o analisador. Tente o Chrome, Edge ou Firefox atualizados.');
+    return;
+  }
+  worker.onmessage = e => {
+    const m = e.data;
+    if (m.type === 'ready') {
+      setLoading(false);
+    } else if (m.type === 'progress') {
+      setProgress(m.value);
+    } else if (m.type === 'result') {
+      busy = false;
+      progress.classList.remove('on');
+      showResults(JSON.parse(m.json));
+    } else if (m.type === 'error') {
+      busy = false;
+      setLoading(false);
+      showError(m.message);
+    }
+  };
+  worker.onerror = () => {
+    busy = false;
+    setLoading(false);
+    showError('O analisador parou de responder. Isso pode acontecer com demos muito grandes em aparelhos com pouca memória. Recarregue a página e tente de novo.');
+  };
+}
+
+dropzone.onclick = () => { if (!dropzone.disabled) fileInput.click(); };
+dropzone.ondragover = e => { e.preventDefault(); if (!dropzone.disabled) dropzone.classList.add('hover'); };
+dropzone.ondragleave = () => dropzone.classList.remove('hover');
+dropzone.ondrop = e => {
+  e.preventDefault();
+  dropzone.classList.remove('hover');
+  if (!dropzone.disabled && e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+};
+fileInput.onchange = () => {
+  if (fileInput.files.length) processFile(fileInput.files[0]);
+  fileInput.value = '';
+};
+document.getElementById('again').onclick = () => {
+  results.classList.remove('on');
+  dropzone.style.display = '';
+  window.scrollTo({ top: 0 });
+};
+
+function processFile(file) {
+  if (busy) return;
+  if (!/\.dem$/i.test(file.name)) {
+    showError('O arquivo precisa ter a extensão .dem. Se estiver compactado (.zip, .bz2), extraia antes.');
+    return;
+  }
+  busy = true;
+  errorBox.classList.remove('on');
+  results.classList.remove('on');
+  cards.innerHTML = '';
+  dropzone.style.display = 'none';
+  progressTitle.textContent = 'Analisando ' + file.name;
+  setProgress(0);
+  progress.classList.add('on');
+  worker.postMessage({ file: file });
+}
+
+function showSnack(msg) {
+  snackbar.textContent = msg;
+  snackbar.classList.add('on');
+  clearTimeout(snackTimer);
+  snackTimer = setTimeout(() => snackbar.classList.remove('on'), 3000);
+}
+
+function copyValue(text, btn) {
+  const label = btn.dataset.label;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copiado';
+    showSnack('Copiado para a área de transferência');
+    setTimeout(() => { btn.textContent = label; }, 2000);
+  }).catch(() => showSnack('Não foi possível copiar. Selecione o texto e copie manualmente.'));
+}
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+
+function rgba(c, mult) {
+  return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + ((c[3] / 255) * (mult || 1)).toFixed(3) + ')';
+}
+
+function paintCrosshair(canvas, xh, size) {
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = size * dpr;
+  canvas.height = size * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, size, size);
+  const sh = crosshairShapes(xh);
+  // Pequeno zoom para deixar a mira mais visível no card.
+  const k = 1.2;
+  ctx.translate(size / 2, size / 2);
+  ctx.scale(k, k);
+  const fill = rgba(xh.color), line = rgba(xh.outlineColor);
+  if (sh.ring) {
+    if (sh.outline) { ctx.strokeStyle = line; ctx.lineWidth = sh.ring.w + 2; ctx.beginPath(); ctx.arc(0, 0, sh.ring.r, 0, 6.2832); ctx.stroke(); }
+    ctx.strokeStyle = fill; ctx.lineWidth = sh.ring.w; ctx.beginPath(); ctx.arc(0, 0, sh.ring.r, 0, 6.2832); ctx.stroke();
+  }
+  if (sh.outline) {
+    ctx.fillStyle = line;
+    sh.rects.forEach(r => ctx.fillRect(r.x - 1, r.y - 1, r.w + 2, r.h + 2));
+  }
+  ctx.fillStyle = fill;
+  sh.rects.forEach(r => ctx.fillRect(r.x, r.y, r.w, r.h));
+}
+
+function supportBlock(label, value, emptyText) {
+  const box = el('div', 'support');
+  box.appendChild(el('div', 'lbl', label));
+  box.appendChild(el('div', value ? 'txt' : 'txt empty', value || emptyText));
+  return box;
+}
+
+function splitActionButton(label, value) {
+  const group = el('div', 'split-action');
+  const main = el('button', 'btn btn-text split-main', label);
+  main.type = 'button';
+  main.dataset.label = label;
+  main.setAttribute('aria-label', label);
+  main.onclick = () => copyValue(value, main);
+
+  const toggle = el('button', 'btn split-toggle');
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Mostrar código: ' + label.toLowerCase());
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>';
+
+  const panel = el('div', 'code-panel');
+  const pre = el('pre', '', value);
+  panel.appendChild(pre);
+  toggle.onclick = () => {
+    const open = group.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  };
+  group.append(main, toggle, panel);
+  return group;
+}
+
+function renderPlayer(p) {
+  const card = el('article', 'card');
+  const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
+
+  const media = el('div', 'card-media');
+  if (xh) {
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'Prévia da mira de ' + (p.name || 'jogador'));
+    paintCrosshair(canvas, xh, 140);
+    media.appendChild(canvas);
+  } else {
+    media.appendChild(el('div', 'ph', (p.name || '?').trim().charAt(0) || '?'));
+  }
+  card.appendChild(media);
+
+  const body = el('div', 'card-body');
+  body.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
+  body.appendChild(el('div', 'card-sub', 'SteamID ' + p.steamid));
+  card.appendChild(body);
+
+  const actions = el('div', 'actions');
+  if (p.crosshair_code) actions.appendChild(splitActionButton('Copiar mira', p.crosshair_code));
+  if (p.viewmodel_cmd) actions.appendChild(splitActionButton('Copiar viewmodel', p.viewmodel_cmd));
+  if (p.steamid) {
+    const playerName = (p.name || 'jogador').trim();
+    const cfgLink = el('a', 'cfg-link', 'BAIXAR CFG');
+    cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
+    cfgLink.setAttribute('download', '');
+    cfgLink.setAttribute('aria-label', 'Baixar CFG de ' + playerName + ' do CyberShoke');
+    cfgLink.title = 'Baixa a CFG do jogador usando o endpoint oficial do CyberShoke';
+    actions.appendChild(cfgLink);
+  }
+  card.appendChild(actions);
+  return card;
+}
+
+function showResults(data) {
+  if (!data.length) {
+    showError('Nenhum jogador foi encontrado. Confirme que é um demo de CS2 (não de CS:GO).');
+    return;
+  }
+  resultCount.textContent = data.length + (data.length === 1 ? ' jogador' : ' jogadores');
+  data.forEach(p => cards.appendChild(renderPlayer(p)));
+  results.classList.add('on');
+}
+
+function showError(msg) {
+  progress.classList.remove('on');
+  dropzone.style.display = '';
+  errorText.textContent = msg;
+  errorBox.classList.add('on');
+}
+
+startWorker();
+</script>
 </body>
 </html>
