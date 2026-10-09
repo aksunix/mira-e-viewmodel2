@@ -175,6 +175,17 @@
   }
   .split-action.open .code-panel { display: block; }
   .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
+  .mouse-block { display: flex; flex-direction: column; }
+  .mouse-btn { width: 100%; justify-content: space-between; text-transform: uppercase; letter-spacing: 1px; }
+  .mouse-btn svg { margin: 0; transition: transform .18s ease; }
+  .mouse-block.open .mouse-btn svg { transform: rotate(180deg); }
+  .mouse-panel { display: none; margin-top: 6px; padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px; background: var(--md-surface-container-high); }
+  .mouse-block.open .mouse-panel { display: block; }
+  .mouse-panel dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; }
+  .mouse-panel dt { color: var(--md-on-surface-variant); }
+  .mouse-panel dd { margin: 0; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
+  .mouse-panel .src { display: block; margin-top: 8px; font-size: 11px; color: var(--md-on-surface-variant); }
+  .mouse-panel .src a { color: var(--md-primary); }
   .code-panel .code-copy { margin-top: 8px; height: 30px; padding: 0 12px; font-size: 11px; }
 
   @media (max-width: 600px) {
@@ -438,6 +449,51 @@ function splitActionButton(label, value) {
   return group;
 }
 
+let proSettings = {};
+const proSettingsReady = fetch('pro-settings.json')
+  .then(r => (r.ok ? r.json() : { players: {} }))
+  .then(j => { proSettings = (j && j.players) || {}; })
+  .catch(() => {});
+
+const MOUSE_FIELDS = [
+  ['sensitivity', 'Sensitivity'],
+  ['dpi', 'DPI'],
+  ['zoom_sensitivity', 'Zoom Sensitivity'],
+  ['hz', 'Hz'],
+];
+
+function mouseBlock(info) {
+  const group = el('div', 'mouse-block');
+  const btn = el('button', 'btn btn-text mouse-btn');
+  btn.type = 'button';
+  btn.setAttribute('aria-expanded', 'false');
+  btn.append(document.createTextNode('Mouse'));
+  btn.insertAdjacentHTML('beforeend', '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>');
+
+  const panel = el('div', 'mouse-panel');
+  const dl = el('dl');
+  MOUSE_FIELDS.forEach(([key, label]) => {
+    if (!info[key]) return;
+    dl.appendChild(el('dt', '', label));
+    dl.appendChild(el('dd', '', info[key]));
+  });
+  panel.appendChild(dl);
+  const src = el('span', 'src', 'Fonte: ');
+  const link = el('a', '', 'ProSettings');
+  link.href = info.url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  src.appendChild(link);
+  panel.appendChild(src);
+
+  btn.onclick = () => {
+    const open = group.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  };
+  group.append(btn, panel);
+  return group;
+}
+
 function renderPlayer(p) {
   const card = el('article', 'card');
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
@@ -456,12 +512,13 @@ function renderPlayer(p) {
 
   const body = el('div', 'card-body');
   body.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
-  body.appendChild(el('div', 'card-sub', 'SteamID ' + p.steamid));
   card.appendChild(body);
 
   const actions = el('div', 'actions');
   if (p.crosshair_code) actions.appendChild(splitActionButton('Copiar mira', p.crosshair_code));
   if (p.viewmodel_cmd) actions.appendChild(splitActionButton('Copiar viewmodel', p.viewmodel_cmd));
+  const mouse = proSettings[String(p.steamid)];
+  if (mouse) actions.appendChild(mouseBlock(mouse));
   if (p.steamid) {
     const playerName = (p.name || 'jogador').trim();
     const cfgLink = el('a', 'cfg-link', 'BAIXAR CFG');
@@ -476,10 +533,8 @@ function renderPlayer(p) {
   return card;
 }
 
-const HIDDEN_STEAMIDS = new Set(['76561199032006224']);
-
-function showResults(data) {
-  data = data.filter(p => !HIDDEN_STEAMIDS.has(String(p.steamid)));
+async function showResults(data) {
+  await proSettingsReady;
   if (!data.length) {
     showError('Nenhum jogador foi encontrado. Confirme que é um demo de CS2 (não de CS:GO).');
     return;
