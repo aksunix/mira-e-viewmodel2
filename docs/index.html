@@ -157,7 +157,11 @@
   .split-toggle { background: var(--md-primary); color: #fff; border-radius: 4px 6px 6px 4px; padding: 0; }
   .split-toggle svg { margin: 0; transition: transform .18s ease; }
   .split-action.open .split-toggle svg { transform: rotate(180deg); }
-  .code-panel { display: none; grid-column: 1 / -1; margin-top: 6px; padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px; background: var(--md-surface-container-high); }
+  .code-panel {
+    display: none; position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; right: 0;
+    padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px;
+    background: var(--md-surface-container-high); box-shadow: 0 8px 24px rgba(0,0,0,.38);
+  }
   .split-action.open .code-panel { display: block; }
   .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
   .code-panel .code-copy { margin-top: 8px; height: 30px; padding: 0 12px; font-size: 11px; }
@@ -411,8 +415,6 @@ function splitActionButton(label, value) {
   toggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>';
 
   const panel = el('div', 'code-panel');
-  const codeTitle = label.toLowerCase().includes('viewmodel') ? 'Código do viewmodel' : 'Código da mira';
-  panel.appendChild(el('div', 'lbl', codeTitle));
   const pre = el('pre', '', value);
   panel.appendChild(pre);
   const copyLabel = label.toLowerCase().includes('viewmodel') ? 'Copiar código do viewmodel' : 'Copiar código da mira';
