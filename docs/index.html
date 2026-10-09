@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>CS2 Demo Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --md-primary: #9C4328;
+    --md-on-primary: #FFFFFF;
+    --md-primary-container: #FFDBD0;
+    --md-on-primary-container: #3A0B00;
+    --md-secondary-container: #F7DDD5;
+    --md-on-secondary-container: #2C1510;
+    --md-surface: #FFF8F6;
+    --md-surface-container-low: #FFF1ED;
+    --md-surface-container: #FCEAE5;
+    --md-surface-container-high: #F6E4DF;
+    --md-surface-container-highest: #F1DFDA;
+    --md-on-surface: #231917;
+    --md-on-surface-variant: #53433F;
+    --md-outline: #85736E;
+    --md-outline-variant: #D8C2BC;
+    --md-inverse-surface: #392E2B;
+    --md-inverse-on-surface: #FFEDE8;
+    --md-error: #BA1A1A;
+    --md-error-container: #FFDAD6;
+    --md-on-error-container: #410002;
+    --md-shadow: 0 1px 3px 1px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.3);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --md-primary: #FFB5A0;
+      --md-on-primary: #5F1600;
+      --md-primary-container: #862200;
+      --md-on-primary-container: #FFDBD0;
+      --md-secondary-container: #5D4037;
+      --md-on-secondary-container: #FFDBD0;
+      --md-surface: #1A110F;
+      --md-surface-container-low: #231917;
+      --md-surface-container: #271D1B;
+      --md-surface-container-high: #322825;
+      --md-surface-container-highest: #3D3230;
+      --md-on-surface: #F1DFDA;
+      --md-on-surface-variant: #D8C2BC;
+      --md-outline: #A08C87;
+      --md-outline-variant: #53433F;
+      --md-inverse-surface: #F1DFDA;
+      --md-inverse-on-surface: #392E2B;
+      --md-error: #FFB4AB;
+      --md-error-container: #93000A;
+      --md-on-error-container: #FFDAD6;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Roboto", system-ui, sans-serif;
+    font-size: 14px; line-height: 20px; letter-spacing: .25px;
+    background: var(--md-surface); color: var(--md-on-surface);
+    min-height: 100vh;
+  }
+
+  /* Top app bar */
+  .appbar {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; align-items: center; gap: 16px;
+    height: 64px; padding: 0 16px 0 24px;
+    background: var(--md-surface-container); color: var(--md-on-surface);
+  }
+  .appbar svg { fill: var(--md-primary); flex: none; }
+  .appbar h1 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
+
+  main { max-width: 840px; margin: 0 auto; padding: 24px 16px 96px; }
+
+  /* Dropzone */
+  .dropzone {
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    width: 100%; padding: 48px 24px; text-align: center; font: inherit; color: inherit;
+    background: var(--md-surface-container-low);
+    border: 2px dashed var(--md-outline-variant); border-radius: 28px;
+    cursor: pointer; transition: background .2s, border-color .2s;
+  }
+  .dropzone:hover { background: var(--md-surface-container); }
+  .dropzone.hover { border-color: var(--md-primary); background: var(--md-surface-container-high); }
+  .dropzone .icon {
+    display: grid; place-items: center; width: 64px; height: 64px; margin-bottom: 8px;
+    border-radius: 50%; background: var(--md-primary-container);
+  }
+  .dropzone .icon svg { fill: var(--md-on-primary-container); }
+  .dropzone .title { font-size: 22px; line-height: 28px; letter-spacing: 0; }
+  .dropzone .support { color: var(--md-on-surface-variant); }
+
+  /* Buttons */
+  .btn {
+    position: relative; overflow: hidden;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    height: 40px; padding: 0 24px; border: 0; border-radius: 20px;
+    font: 500 14px/20px "Roboto", system-ui, sans-serif; letter-spacing: .1px;
+    cursor: pointer; transition: box-shadow .2s;
+  }
+  .btn svg { fill: currentColor; margin-left: -8px; }
+  .btn::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
+  .btn:hover::after { opacity: .08; }
+  .btn:active::after { opacity: .12; }
+  .btn-filled { background: var(--md-primary); color: var(--md-on-primary); margin-top: 16px; }
+  .btn-filled:hover { box-shadow: var(--md-shadow); }
+  .btn-tonal { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+  .btn-tonal.done { background: var(--md-primary-container); color: var(--md-on-primary-container); }
+  .btn-text { background: transparent; color: var(--md-primary); padding: 0 12px; }
+  :focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
+
+  /* Progress */
+  .progress { display: none; margin-top: 24px; }
+  .progress.on { display: block; }
+  .progress .label { margin-bottom: 12px; color: var(--md-on-surface-variant); }
+  .progress .label strong { display: block; color: var(--md-on-surface); font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: .15px; }
+  .linear { position: relative; height: 4px; border-radius: 2px; overflow: hidden; background: var(--md-secondary-container); }
+  .linear .bar { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--md-primary); border-radius: 2px; transition: width .2s linear; }
+  .linear.indeterminate .bar { width: 40%; transition: none; animation: slide 1.6s cubic-bezier(.4,0,.2,1) infinite; }
+  @keyframes slide { 0% { left: -40%; } 100% { left: 100%; } }
+  .dropzone:disabled { cursor: progress; opacity: .6; }
+  .dropzone:disabled:hover { background: var(--md-surface-container-low); }
+
+  /* Banner de erro */
+  .error {
+    display: none; gap: 12px; align-items: flex-start; margin-top: 24px; padding: 16px;
+    border-radius: 12px; background: var(--md-error-container); color: var(--md-on-error-container);
+  }
+  .error.on { display: flex; }
+  .error svg { fill: currentColor; flex: none; }
+  .error strong { display: block; font-weight: 500; font-size: 16px; line-height: 24px; letter-spacing: .15px; }
+
+  /* Resultados */
+  .results { display: none; margin-top: 32px; }
+  .results.on { display: block; }
+  .results-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+  .results-head h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
+  .results-head p { margin: 0; color: var(--md-on-surface-variant); }
+
+  .card {
+    background: var(--md-surface-container-low); border-radius: 12px;
+    padding: 16px; margin-bottom: 12px;
+    border: 1px solid var(--md-outline-variant);
+  }
+  .card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .avatar {
+    flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--md-primary-container); color: var(--md-on-primary-container);
+    font-size: 16px; font-weight: 500; text-transform: uppercase;
+  }
+  .card-head .name { font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px; overflow-wrap: anywhere; }
+  .card-head .sub { color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: .4px; }
+
+  .field { margin-top: 12px; }
+  .field-label { margin-bottom: 4px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
+  .field-row { display: flex; align-items: center; gap: 12px; }
+  .value {
+    flex: 1; min-width: 0; padding: 12px 16px; border-radius: 4px 4px 0 0;
+    background: var(--md-surface-container-highest); border-bottom: 1px solid var(--md-on-surface-variant);
+    font-family: "Roboto Mono", ui-monospace, monospace; font-size: 13px; line-height: 20px;
+    overflow-wrap: anywhere; user-select: all;
+  }
+  .value.empty { color: var(--md-on-surface-variant); font-family: "Roboto", system-ui, sans-serif; user-select: none; }
+
+  @media (max-width: 600px) {
+    .field-row { flex-direction: column; align-items: stretch; }
+    .field-row .btn { align-self: flex-end; }
+    .dropzone { padding: 32px 16px; }
+  }
+
+  /* Snackbar */
+  .snackbar {
+    position: fixed; left: 50%; bottom: 24px; z-index: 10;
+    transform: translate(-50%, 24px); opacity: 0; pointer-events: none;
+    min-width: 280px; max-width: calc(100vw - 32px); padding: 14px 16px; border-radius: 4px;
+    background: var(--md-inverse-surface); color: var(--md-inverse-on-surface);
+    box-shadow: var(--md-shadow); transition: opacity .2s, transform .2s;
+  }
+  .snackbar.on { opacity: 1; transform: translate(-50%, 0); }
+
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    .linear.indeterminate .bar { animation: none; left: 0; width: 100%; opacity: .5; }
+  }
+</style>
+</head>
+<body>
+
+<header class="appbar">
+  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+  <h1>CS2 Demo Analyzer</h1>
+</header>
+
+<main>
+  <button type="button" class="dropzone" id="dropzone">
+    <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
+    <span class="title">Arraste o arquivo .dem aqui</span>
+    <span class="support">O arquivo é lido no seu computador e não é enviado para nenhum servidor</span>
+    <span class="btn btn-filled" id="pick">Escolher arquivo</span>
+  </button>
+  <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
+
+  <section class="progress" id="progress" aria-live="polite">
+    <div class="label"><strong id="progressTitle"></strong><span id="progressSub"></span></div>
+    <div class="linear indeterminate" id="linear" role="progressbar" aria-label="Progresso da análise" aria-valuemin="0" aria-valuemax="100"><div class="bar" id="bar"></div></div>
+  </section>
+
+  <section class="error" id="error" role="alert">
+    <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    <div><strong>Não foi possível analisar o demo</strong><span id="errorText"></span></div>
+  </section>
+
+  <section class="results" id="results">
+    <div class="results-head">
+      <div>
+        <h2>Jogadores encontrados</h2>
+        <p id="resultCount"></p>
+      </div>
+      <button type="button" class="btn btn-text" id="again">Analisar outro demo</button>
+    </div>
+    <div id="cards"></div>
+  </section>
+</main>
+
+<div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
+
+<script>
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const pick = document.getElementById('pick');
+const progress = document.getElementById('progress');
+const progressTitle = document.getElementById('progressTitle');
+const progressSub = document.getElementById('progressSub');
+const linear = document.getElementById('linear');
+const bar = document.getElementById('bar');
+const errorBox = document.getElementById('error');
+const errorText = document.getElementById('errorText');
+const results = document.getElementById('results');
+const resultCount = document.getElementById('resultCount');
+const cards = document.getElementById('cards');
+const snackbar = document.getElementById('snackbar');
+let snackTimer;
+let busy = false;
+let worker = null;
+
+function setIndeterminate(title, sub) {
+  progressTitle.textContent = title;
+  progressSub.textContent = sub || '';
+  linear.classList.add('indeterminate');
+  linear.removeAttribute('aria-valuenow');
+  bar.style.width = '';
+}
+
+function setProgress(pct) {
+  linear.classList.remove('indeterminate');
+  linear.setAttribute('aria-valuenow', pct);
+  bar.style.width = pct + '%';
+  progressSub.textContent = pct + '% do demo lido';
+}
+
+function setLoading(on) {
+  dropzone.disabled = on;
+  if (on) {
+    pick.textContent = 'Preparando o analisador…';
+    setIndeterminate('Preparando o analisador', 'Só na primeira vez; o arquivo tem alguns MB.');
+    progress.classList.add('on');
+  } else {
+    pick.textContent = 'Escolher arquivo';
+    progress.classList.remove('on');
+  }
+}
+
+function startWorker() {
+  setLoading(true);
+  try {
+    worker = new Worker('worker.js');
+  } catch (e) {
+    setLoading(false);
+    showError('Seu navegador não conseguiu iniciar o analisador. Tente o Chrome, Edge ou Firefox atualizados.');
+    return;
+  }
+  worker.onmessage = e => {
+    const m = e.data;
+    if (m.type === 'ready') {
+      setLoading(false);
+    } else if (m.type === 'progress') {
+      setProgress(m.value);
+    } else if (m.type === 'result') {
+      busy = false;
+      progress.classList.remove('on');
+      showResults(JSON.parse(m.json));
+    } else if (m.type === 'error') {
+      busy = false;
+      setLoading(false);
+      showError(m.message);
+    }
+  };
+  worker.onerror = () => {
+    busy = false;
+    setLoading(false);
+    showError('O analisador parou de responder. Isso pode acontecer com demos muito grandes em aparelhos com pouca memória. Recarregue a página e tente de novo.');
+  };
+}
+
+dropzone.onclick = () => { if (!dropzone.disabled) fileInput.click(); };
+dropzone.ondragover = e => { e.preventDefault(); if (!dropzone.disabled) dropzone.classList.add('hover'); };
+dropzone.ondragleave = () => dropzone.classList.remove('hover');
+dropzone.ondrop = e => {
+  e.preventDefault();
+  dropzone.classList.remove('hover');
+  if (!dropzone.disabled && e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+};
+fileInput.onchange = () => {
+  if (fileInput.files.length) processFile(fileInput.files[0]);
+  fileInput.value = '';
+};
+document.getElementById('again').onclick = () => {
+  results.classList.remove('on');
+  dropzone.style.display = '';
+  window.scrollTo({ top: 0 });
+};
+
+function processFile(file) {
+  if (busy) return;
+  if (!/\.dem$/i.test(file.name)) {
+    showError('O arquivo precisa ter a extensão .dem. Se estiver compactado (.zip, .bz2), extraia antes.');
+    return;
+  }
+  busy = true;
+  errorBox.classList.remove('on');
+  results.classList.remove('on');
+  cards.innerHTML = '';
+  dropzone.style.display = 'none';
+  progressTitle.textContent = 'Analisando ' + file.name;
+  setProgress(0);
+  progress.classList.add('on');
+  worker.postMessage({ file: file });
+}
+
+function showSnack(msg) {
+  snackbar.textContent = msg;
+  snackbar.classList.add('on');
+  clearTimeout(snackTimer);
+  snackTimer = setTimeout(() => snackbar.classList.remove('on'), 3000);
+}
+
+function copyValue(text, btn) {
+  const reset = () => { btn.classList.remove('done'); btn.lastChild.textContent = 'Copiar'; };
+  navigator.clipboard.writeText(text).then(() => {
+    btn.classList.add('done');
+    btn.lastChild.textContent = 'Copiado';
+    showSnack('Copiado para a área de transferência');
+    setTimeout(reset, 2000);
+  }).catch(() => showSnack('Não foi possível copiar. Selecione o texto e copie manualmente.'));
+}
+
+function el(tag, cls, text) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
+}
+
+function buildField(label, value) {
+  const field = el('div', 'field');
+  field.appendChild(el('div', 'field-label', label));
+  const row = el('div', 'field-row');
+  const box = el('div', value ? 'value' : 'value empty', value || 'Não encontrado neste demo');
+  row.appendChild(box);
+  if (value) {
+    const btn = el('button', 'btn btn-tonal');
+    btn.type = 'button';
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+    btn.appendChild(document.createTextNode('Copiar'));
+    btn.onclick = () => copyValue(value, btn);
+    row.appendChild(btn);
+  }
+  field.appendChild(row);
+  return field;
+}
+
+function renderPlayer(p) {
+  const card = el('article', 'card');
+  const head = el('div', 'card-head');
+  head.appendChild(el('div', 'avatar', (p.name || '?').trim().charAt(0) || '?'));
+  const who = el('div');
+  who.appendChild(el('div', 'name', p.name || 'Sem nome'));
+  who.appendChild(el('div', 'sub', 'SteamID ' + p.steamid));
+  head.appendChild(who);
+  card.appendChild(head);
+  card.appendChild(buildField('Crosshair code', p.crosshair_code));
+  card.appendChild(buildField('Viewmodel (comandos de console)', p.viewmodel_cmd));
+  return card;
+}
+
+function showResults(data) {
+  if (!data.length) {
+    showError('Nenhum jogador foi encontrado. Confirme que é um demo de CS2 (não de CS:GO).');
+    return;
+  }
+  resultCount.textContent = data.length + (data.length === 1 ? ' jogador' : ' jogadores');
+  data.forEach(p => cards.appendChild(renderPlayer(p)));
+  results.classList.add('on');
+}
+
+function showError(msg) {
+  progress.classList.remove('on');
+  dropzone.style.display = '';
+  errorText.textContent = msg;
+  errorBox.classList.add('on');
+}
+
+startWorker();
+</script>
+</body>
+</html>
