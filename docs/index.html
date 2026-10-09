@@ -425,13 +425,6 @@ function splitActionButton(label, value) {
   const panel = el('div', 'code-panel');
   const pre = el('pre', '', value);
   panel.appendChild(pre);
-  const copyLabel = label.toLowerCase().includes('viewmodel') ? 'Copiar código do viewmodel' : 'Copiar código da mira';
-  const copyCode = el('button', 'btn btn-tonal code-copy', copyLabel);
-  copyCode.type = 'button';
-  copyCode.dataset.label = copyLabel;
-  copyCode.onclick = () => copyValue(value, copyCode);
-  panel.appendChild(copyCode);
-
   toggle.onclick = () => {
     const open = group.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
