@@ -2,3 +2,4 @@
 *.csv
 docs/parser.wasm
 docs/wasm_exec.js
+docs/pro-settings.json
