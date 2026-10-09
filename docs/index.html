@@ -76,7 +76,7 @@
   .appbar svg { fill: var(--md-primary); flex: none; }
   .appbar h1 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
 
-  main { max-width: 840px; margin: 0 auto; padding: 24px 16px 96px; }
+  main { max-width: 1160px; margin: 0 auto; padding: 24px 16px 96px; }
 
   /* Dropzone */
   .dropzone {
@@ -143,41 +143,37 @@
   .results-head h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
+  /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
+  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
   .card {
-    background: var(--md-surface-container-low); border-radius: 12px;
-    padding: 16px; margin-bottom: 12px;
-    border: 1px solid var(--md-outline-variant);
+    display: flex; flex-direction: column; overflow: hidden;
+    background: var(--md-surface-container-low); border: 1px solid var(--md-outline-variant); border-radius: 12px;
   }
-  .card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-  .avatar {
-    flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  .card-media {
+    position: relative; display: grid; place-items: center; height: 168px;
+    background: var(--md-surface-container-highest);
+  }
+  .card-media canvas { width: 140px; height: 140px; }
+  .card-media .ph {
+    display: grid; place-items: center; width: 80px; height: 80px; border-radius: 50%;
     background: var(--md-primary-container); color: var(--md-on-primary-container);
-    font-size: 16px; font-weight: 500; text-transform: uppercase;
+    font-size: 36px; line-height: 40px; font-weight: 500; text-transform: uppercase;
   }
-  .card-head .name { font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px; overflow-wrap: anywhere; }
-  .card-head .sub { color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: .4px; }
-
-  .field { margin-top: 12px; }
-  .field-label { margin-bottom: 4px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
-  .field-row { display: flex; align-items: center; gap: 12px; }
-  .value {
-    flex: 1; min-width: 0; padding: 12px 16px; border-radius: 4px 4px 0 0;
-    background: var(--md-surface-container-highest); border-bottom: 1px solid var(--md-on-surface-variant);
-    font-family: "Roboto Mono", ui-monospace, monospace; font-size: 13px; line-height: 20px;
-    overflow-wrap: anywhere; user-select: all;
-  }
-  .value.empty { color: var(--md-on-surface-variant); font-family: "Roboto", system-ui, sans-serif; user-select: none; }
+  .card-media .cap { position: absolute; left: 12px; bottom: 8px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
+  .card-body { padding: 16px 16px 0; }
+  .card-title { margin: 0; font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 0; overflow-wrap: anywhere; }
+  .card-sub { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: .4px; }
+  .support { margin-top: 16px; }
+  .support + .support { margin-top: 12px; }
+  .support .lbl { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
+  .support .txt { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 18px; letter-spacing: 0; overflow-wrap: anywhere; user-select: all; }
+  .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
+  .actions { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; padding: 12px 8px 8px; min-height: 60px; }
+  .actions .btn-text { text-transform: uppercase; letter-spacing: .8px; }
 
   @media (max-width: 600px) {
-    .field-row { flex-direction: column; align-items: stretch; }
-    .field-row .btn { align-self: flex-end; }
     .dropzone { padding: 32px 16px; }
   }
-
-
-  /* Previa da mira no lugar do avatar */
-  .xh-avatar { flex: none; width: 72px; height: 72px; border-radius: 12px; background: var(--md-surface-container-highest); border: 1px solid var(--md-outline-variant); }
-  .card-head .note { margin-top: 2px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
 
   /* Snackbar */
   .snackbar {
@@ -358,12 +354,11 @@ function showSnack(msg) {
 }
 
 function copyValue(text, btn) {
-  const reset = () => { btn.classList.remove('done'); btn.lastChild.textContent = 'Copiar'; };
+  const label = btn.dataset.label;
   navigator.clipboard.writeText(text).then(() => {
-    btn.classList.add('done');
-    btn.lastChild.textContent = 'Copiado';
+    btn.textContent = 'Copiado';
     showSnack('Copiado para a área de transferência');
-    setTimeout(reset, 2000);
+    setTimeout(() => { btn.textContent = label; }, 2000);
   }).catch(() => showSnack('Não foi possível copiar. Selecione o texto e copie manualmente.'));
 }
 
@@ -373,25 +368,6 @@ function el(tag, cls, text) {
   if (text !== undefined) n.textContent = text;
   return n;
 }
-
-function buildField(label, value) {
-  const field = el('div', 'field');
-  field.appendChild(el('div', 'field-label', label));
-  const row = el('div', 'field-row');
-  const box = el('div', value ? 'value' : 'value empty', value || 'Não encontrado neste demo');
-  row.appendChild(box);
-  if (value) {
-    const btn = el('button', 'btn btn-tonal');
-    btn.type = 'button';
-    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
-    btn.appendChild(document.createTextNode('Copiar'));
-    btn.onclick = () => copyValue(value, btn);
-    row.appendChild(btn);
-  }
-  field.appendChild(row);
-  return field;
-}
-
 
 function rgba(c, mult) {
   return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + ((c[3] / 255) * (mult || 1)).toFixed(3) + ')';
@@ -405,7 +381,7 @@ function paintCrosshair(canvas, xh, size) {
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, size, size);
   const sh = crosshairShapes(xh);
-  const k = Math.min(8, (size / 2 - 4) / sh.extent); // unidades do jogo -> pixels (ampliado)
+  const k = Math.min(12, (size / 2 - 4) / sh.extent); // unidades do jogo -> pixels (ampliado)
   ctx.translate(size / 2, size / 2);
   ctx.scale(k, k);
   const fill = rgba(xh.color), line = rgba(xh.outlineColor);
@@ -421,28 +397,49 @@ function paintCrosshair(canvas, xh, size) {
   sh.rects.forEach(r => ctx.fillRect(r.x, r.y, r.w, r.h));
 }
 
-function crosshairAvatar(xh) {
-  const canvas = document.createElement('canvas');
-  canvas.className = 'xh-avatar';
-  canvas.setAttribute('role', 'img');
-  canvas.setAttribute('aria-label', 'Prévia da mira');
-  paintCrosshair(canvas, xh, 72);
-  return canvas;
+function supportBlock(label, value, emptyText) {
+  const box = el('div', 'support');
+  box.appendChild(el('div', 'lbl', label));
+  box.appendChild(el('div', value ? 'txt' : 'txt empty', value || emptyText));
+  return box;
+}
+
+function actionButton(label, value) {
+  const btn = el('button', 'btn btn-text', label);
+  btn.type = 'button';
+  btn.dataset.label = label;
+  btn.onclick = () => copyValue(value, btn);
+  return btn;
 }
 
 function renderPlayer(p) {
   const card = el('article', 'card');
-  const head = el('div', 'card-head');
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
-  head.appendChild(xh ? crosshairAvatar(xh) : el('div', 'avatar', (p.name || '?').trim().charAt(0) || '?'));
-  const who = el('div');
-  who.appendChild(el('div', 'name', p.name || 'Sem nome'));
-  who.appendChild(el('div', 'sub', 'SteamID ' + p.steamid));
-  if (xh) who.appendChild(el('div', 'note', 'Prévia aproximada e ampliada, sem o espalhamento ao atirar.'));
-  head.appendChild(who);
-  card.appendChild(head);
-  card.appendChild(buildField('Crosshair code', p.crosshair_code));
-  card.appendChild(buildField('Viewmodel (comandos de console)', p.viewmodel_cmd));
+
+  const media = el('div', 'card-media');
+  if (xh) {
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'Prévia da mira de ' + (p.name || 'jogador'));
+    paintCrosshair(canvas, xh, 140);
+    media.appendChild(canvas);
+    media.appendChild(el('div', 'cap', 'Prévia aproximada'));
+  } else {
+    media.appendChild(el('div', 'ph', (p.name || '?').trim().charAt(0) || '?'));
+  }
+  card.appendChild(media);
+
+  const body = el('div', 'card-body');
+  body.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
+  body.appendChild(el('div', 'card-sub', 'SteamID ' + p.steamid));
+  body.appendChild(supportBlock('Crosshair code', p.crosshair_code, 'Não encontrado neste demo'));
+  body.appendChild(supportBlock('Viewmodel', p.viewmodel_cmd, 'Não encontrado neste demo'));
+  card.appendChild(body);
+
+  const actions = el('div', 'actions');
+  if (p.crosshair_code) actions.appendChild(actionButton('Copiar mira', p.crosshair_code));
+  if (p.viewmodel_cmd) actions.appendChild(actionButton('Copiar viewmodel', p.viewmodel_cmd));
+  card.appendChild(actions);
   return card;
 }
 
