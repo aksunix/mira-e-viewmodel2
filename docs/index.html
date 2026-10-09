@@ -56,7 +56,7 @@
   .appbar svg { fill: var(--md-primary); flex: none; }
   .appbar h1 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
 
-  main { max-width: 1160px; margin: 0 auto; padding: 24px 16px 96px; }
+  main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 96px; }
 
   /* Dropzone */
   .dropzone {
@@ -74,7 +74,7 @@
   }
   .dropzone .icon svg { fill: var(--md-on-primary-container); }
   .dropzone .title { font-size: 22px; line-height: 28px; letter-spacing: 0; }
-  .dropzone .support { color: var(--md-on-surface-variant); }
+  .dropzone .support { margin-top: 0; color: var(--md-on-surface-variant); }
 
   /* Buttons */
   .btn {
@@ -126,7 +126,10 @@
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
   /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
-  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 12px; }
+  #cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  @media (max-width: 1000px) { #cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 700px) { #cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 420px) { #cards { grid-template-columns: minmax(0, 1fr); } }
   .card {
     display: flex; flex-direction: column; overflow: hidden;
     background: var(--md-surface-container-low); border: 1px solid var(--md-outline-variant); border-radius: 12px;
@@ -161,7 +164,7 @@
   .cfg-link:hover { border-color: var(--md-primary); background: var(--md-primary-container); }
 
   .split-action .btn { margin: 0; height: 38px; }
-  .split-main { border-radius: 6px 4px 4px 6px; width: 100%; text-transform: uppercase; letter-spacing: 1px; }
+  .split-main { border-radius: 6px 4px 4px 6px; width: 100%; padding: 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .6px; white-space: nowrap; }
   .split-toggle { background: var(--md-primary); color: #fff; border-radius: 4px 6px 6px 4px; padding: 0; }
   .split-toggle svg { margin: 0; transition: transform .18s ease; }
   .split-action.open .split-toggle svg { transform: rotate(180deg); }
@@ -270,6 +273,14 @@ function setProgress(pct) {
   progressSub.textContent = pct + '% do demo lido';
 }
 
+function failLoading(msg) {
+  busy = false;
+  progress.classList.remove('on');
+  dropzone.disabled = true;
+  pick.textContent = 'Indisponível';
+  showError(msg);
+}
+
 function setLoading(on) {
   dropzone.disabled = on;
   if (on) {
@@ -287,8 +298,7 @@ function startWorker() {
   try {
     worker = new Worker('worker.js');
   } catch (e) {
-    setLoading(false);
-    showError('Seu navegador não conseguiu iniciar o analisador. Tente o Chrome, Edge ou Firefox atualizados.');
+    failLoading('Seu navegador não conseguiu iniciar o analisador. Tente o Chrome, Edge ou Firefox atualizados.');
     return;
   }
   worker.onmessage = e => {
@@ -302,17 +312,19 @@ function startWorker() {
       progress.classList.remove('on');
       showResults(JSON.parse(m.json));
     } else if (m.type === 'error') {
+      if (m.fatal) { failLoading(m.message); return; }
       busy = false;
       setLoading(false);
       showError(m.message);
     }
   };
   worker.onerror = () => {
-    busy = false;
-    setLoading(false);
-    showError('O analisador parou de responder. Isso pode acontecer com demos muito grandes em aparelhos com pouca memória. Recarregue a página e tente de novo.');
+    failLoading('O analisador parou de responder. Isso pode acontecer com demos muito grandes em aparelhos com pouca memória. Recarregue a página e tente de novo.');
   };
 }
+
+// Evita que o navegador abra o .dem se for solto fora da caixa (ou durante o carregamento)
+['dragover', 'drop'].forEach(ev => document.addEventListener(ev, e => e.preventDefault()));
 
 dropzone.onclick = () => { if (!dropzone.disabled) fileInput.click(); };
 dropzone.ondragover = e => { e.preventDefault(); if (!dropzone.disabled) dropzone.classList.add('hover'); };
@@ -401,13 +413,6 @@ function paintCrosshair(canvas, xh, size) {
   sh.rects.forEach(r => ctx.fillRect(r.x, r.y, r.w, r.h));
 }
 
-function supportBlock(label, value, emptyText) {
-  const box = el('div', 'support');
-  box.appendChild(el('div', 'lbl', label));
-  box.appendChild(el('div', value ? 'txt' : 'txt empty', value || emptyText));
-  return box;
-}
-
 function splitActionButton(label, value) {
   const group = el('div', 'split-action');
   const main = el('button', 'btn btn-text split-main', label);
@@ -461,9 +466,10 @@ function renderPlayer(p) {
     const playerName = (p.name || 'jogador').trim();
     const cfgLink = el('a', 'cfg-link', 'BAIXAR CFG');
     cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
-    cfgLink.setAttribute('download', '');
+    cfgLink.target = '_blank';
+    cfgLink.rel = 'noopener noreferrer';
     cfgLink.setAttribute('aria-label', 'Baixar CFG de ' + playerName + ' do CyberShoke');
-    cfgLink.title = 'Baixa a CFG do jogador usando o endpoint oficial do CyberShoke';
+    cfgLink.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
     actions.appendChild(cfgLink);
   }
   card.appendChild(actions);
