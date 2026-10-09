@@ -175,11 +175,9 @@
   }
 
 
-  /* Previa da mira */
-  .xh { display: flex; align-items: center; gap: 16px; margin-top: 4px; }
-  .xh canvas { flex: none; width: 96px; height: 96px; border-radius: 12px; background: var(--md-surface-container-highest); border: 1px solid var(--md-outline-variant); }
-  .xh-info { min-width: 0; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
-  .xh-info strong { display: block; margin-bottom: 4px; color: var(--md-on-surface); font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: .1px; }
+  /* Previa da mira no lugar do avatar */
+  .xh-avatar { flex: none; width: 72px; height: 72px; border-radius: 12px; background: var(--md-surface-container-highest); border: 1px solid var(--md-outline-variant); }
+  .card-head .note { margin-top: 2px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
 
   /* Snackbar */
   .snackbar {
@@ -395,14 +393,12 @@ function buildField(label, value) {
 }
 
 
-const STYLE_NAMES = ['Dinâmica', 'Círculo dinâmico', 'Dinâmica (clássica)', 'Círculo estático', 'Estática', 'Estática (com retorno de tiro)', 'Somente ponto', 'Dinâmica (quadrante)', 'Quadrado estático', 'Quadrante estático'];
-
 function rgba(c, mult) {
   return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + ((c[3] / 255) * (mult || 1)).toFixed(3) + ')';
 }
 
-function paintCrosshair(canvas, xh) {
-  const size = 96, dpr = window.devicePixelRatio || 1;
+function paintCrosshair(canvas, xh, size) {
+  const dpr = window.devicePixelRatio || 1;
   canvas.width = size * dpr;
   canvas.height = size * dpr;
   const ctx = canvas.getContext('2d');
@@ -425,41 +421,27 @@ function paintCrosshair(canvas, xh) {
   sh.rects.forEach(r => ctx.fillRect(r.x, r.y, r.w, r.h));
 }
 
-function buildPreview(code) {
-  const xh = decodeCrosshair(code);
-  if (!xh) return null;
-  const wrap = el('div', 'xh');
+function crosshairAvatar(xh) {
   const canvas = document.createElement('canvas');
+  canvas.className = 'xh-avatar';
   canvas.setAttribute('role', 'img');
   canvas.setAttribute('aria-label', 'Prévia da mira');
-  wrap.appendChild(canvas);
-  paintCrosshair(canvas, xh);
-  const info = el('div', 'xh-info');
-  info.appendChild(el('strong', '', STYLE_NAMES[xh.style] || 'Estilo ' + xh.style));
-  const hex = '#' + xh.color.slice(0, 3).map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
-  const bits = ['Tamanho ' + xh.length, 'Espessura ' + xh.thickness, 'Gap ' + xh.gap, 'Cor ' + hex];
-  if (xh.dot) bits.push('com ponto');
-  if (xh.drawOutline) bits.push('com contorno');
-  if (xh.t) bits.push('estilo T');
-  info.appendChild(el('div', '', bits.join(' · ')));
-  info.appendChild(el('div', '', 'Prévia aproximada e ampliada, sem o espalhamento ao atirar.'));
-  wrap.appendChild(info);
-  return wrap;
+  paintCrosshair(canvas, xh, 72);
+  return canvas;
 }
 
 function renderPlayer(p) {
   const card = el('article', 'card');
   const head = el('div', 'card-head');
-  head.appendChild(el('div', 'avatar', (p.name || '?').trim().charAt(0) || '?'));
+  const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
+  head.appendChild(xh ? crosshairAvatar(xh) : el('div', 'avatar', (p.name || '?').trim().charAt(0) || '?'));
   const who = el('div');
   who.appendChild(el('div', 'name', p.name || 'Sem nome'));
   who.appendChild(el('div', 'sub', 'SteamID ' + p.steamid));
+  if (xh) who.appendChild(el('div', 'note', 'Prévia aproximada e ampliada, sem o espalhamento ao atirar.'));
   head.appendChild(who);
   card.appendChild(head);
-  const preview = p.crosshair_code ? buildPreview(p.crosshair_code) : null;
-  const ccField = buildField('Crosshair code', p.crosshair_code);
-  if (preview) ccField.insertBefore(preview, ccField.children[1]);
-  card.appendChild(ccField);
+  card.appendChild(buildField('Crosshair code', p.crosshair_code));
   card.appendChild(buildField('Viewmodel (comandos de console)', p.viewmodel_cmd));
   return card;
 }
