@@ -1,0 +1,4 @@
+*.dem
+*.csv
+docs/parser.wasm
+docs/wasm_exec.js
