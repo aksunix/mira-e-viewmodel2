@@ -736,13 +736,15 @@ function safeUrl(u, host) {
 async function fetchProData(p) {
   const arg = String(p.steamid || p.name);
   if (proDataCache.has(arg)) return proDataCache.get(arg);
-  let out = null;
+  let out;
   try {
     const r = await fetch(PRO_DATA_URL, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ steamid64: arg }), referrerPolicy: 'no-referrer', credentials: 'omit',
     });
-    if (r.ok) {
+    if (!r.ok) {
+      out = { err: 'o CyberShoke respondeu HTTP ' + r.status + (r.status === 401 || r.status === 403 ? ' (pode exigir login)' : '') };
+    } else {
       const j = await r.json();
       const f = findKey(j, 'faceit'), h = findKey(j, 'hltv');
       const fu = f && !f.hide && safeUrl(f.url, 'faceit.com');
@@ -751,8 +753,13 @@ async function fetchProData(p) {
         faceit: fu ? { url: fu.replace('/ru/', '/en/'), level: f.skill_level, elo: f.elo } : null,
         hltv: hu ? { url: hu } : null,
       };
+      if (!out.faceit && !out.hltv) {
+        out.err = 'a resposta veio sem link de FACEIT/HLTV (campos: ' + Object.keys(j || {}).slice(0, 8).join(', ') + ')';
+      }
     }
-  } catch (e) { /* bloqueado ou sem resposta: ficam os links de busca */ }
+  } catch (e) {
+    out = { err: e instanceof SyntaxError ? 'a resposta do CyberShoke não é JSON' : 'o navegador bloqueou a consulta ao CyberShoke (CORS) ou não houve conexão' };
+  }
   proDataCache.set(arg, out);
   return out;
 }
@@ -798,6 +805,10 @@ function renderSearchCard(p) {
   });
   fetchProData(p).then(d => {
     if (!d || !card.isConnected) return;
+    if (d.err) {
+      const n = el('div', 'cfg-status', 'FACEIT/HLTV: ' + d.err + '. Mostrando só os links de busca.');
+      actions.before(n);
+    }
     if (d.faceit) {
       const extra = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · ');
       linkEls[0].textContent = 'FACEIT · perfil' + (extra ? ' (' + extra + ')' : '');
