@@ -693,6 +693,10 @@ async function fetchProData(p) {
 
 function renderSearchCard(p) {
   const card = el('article', 'card');
+  const media = el('div', 'card-media');
+  media.appendChild(el('div', 'ph', (p.name || '?').trim().charAt(0) || '?'));
+  card.appendChild(media);
+
   const body = el('div', 'card-body');
   body.appendChild(el('h3', 'card-title', p.name));
   card.appendChild(body);
