@@ -249,7 +249,7 @@
       <input type="search" id="proSearch" placeholder="Buscar jogador profissional (ex.: m0nesy)" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="suggest" aria-label="Buscar jogador profissional">
     </div>
     <ul class="suggest" id="suggest" role="listbox"></ul>
-    <p class="search-note">Mouse: ProSettings. CFG, FACEIT e perfil HLTV: CyberShoke (ao escolher um jogador, o SteamID dele é enviado ao CyberShoke).</p>
+    <p class="search-note">Mouse: ProSettings. CFG: CyberShoke (ao escolher um jogador, o SteamID dele é enviado ao CyberShoke). FACEIT/HLTV: coletados pelo CyberShoke no GitHub, sem consulta ao abrir o card.</p>
   </div>
   <div id="searchResult" aria-live="polite"></div>
 
@@ -613,6 +613,9 @@ function buildIndex() {
     const e = proSettings[sid], k = normName(e.name);
     if (k && !map.has(k)) map.set(k, { key: k, name: e.name, info: e, steamid: sid });
   });
+  Object.keys(csLinks).forEach(k => {
+    if (!map.has(k)) map.set(k, { key: k, name: csLinks[k].name || k, info: null, steamid: null });
+  });
   proIndex = Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
   return proIndex;
 }
@@ -649,7 +652,7 @@ function paintSuggest() {
 }
 
 proSearch.addEventListener('input', async () => {
-  await proSettingsReady;
+  await Promise.all([proSettingsReady, csLinksReady]);
   suggestItems = searchPlayers(proSearch.value);
   suggestSel = suggestItems.length ? 0 : -1;
   paintSuggest();
@@ -721,47 +724,26 @@ function proLinks(p) {
   return links;
 }
 
-// Dados de FACEIT/HLTV do CyberShoke (POST com {steamid64: SteamID ou nick}).
-const PRO_DATA_URL = 'https://cybershoke.net/api/user/data';
-const proDataCache = new Map();
-function findKey(o, key, depth) {
-  if (!o || typeof o !== 'object' || (depth || 0) > 4) return null;
-  if (o[key] && typeof o[key] === 'object') return o[key];
-  for (const v of Object.values(o)) { const r = findKey(v, key, (depth || 0) + 1); if (r) return r; }
-  return null;
-}
+// FACEIT/HLTV: coletados no GitHub Actions pelo CyberShoke (scripts/build_cybershoke_links.py).
+// O navegador nao consegue consultar o CyberShoke direto (CORS), entao o site le o JSON pronto.
+let csLinks = {};
+const csLinksReady = fetch('cybershoke-links.json')
+  .then(r => (r.ok ? r.json() : {}))
+  .then(j => { csLinks = (j && j.links) || {}; })
+  .catch(() => {});
 function safeUrl(u, host) {
   try { const x = new URL(u); return x.protocol === 'https:' && x.hostname.endsWith(host) ? x.href : null; } catch (e) { return null; }
 }
 async function fetchProData(p) {
-  const arg = String(p.steamid || p.name);
-  if (proDataCache.has(arg)) return proDataCache.get(arg);
-  let out;
-  try {
-    const r = await fetch(PRO_DATA_URL, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ steamid64: arg }), referrerPolicy: 'no-referrer', credentials: 'omit',
-    });
-    if (!r.ok) {
-      out = { err: 'o CyberShoke respondeu HTTP ' + r.status + (r.status === 401 || r.status === 403 ? ' (pode exigir login)' : '') };
-    } else {
-      const j = await r.json();
-      const f = findKey(j, 'faceit'), h = findKey(j, 'hltv');
-      const fu = f && !f.hide && safeUrl(f.url, 'faceit.com');
-      const hu = h && !h.hide && safeUrl(h.url, 'hltv.org');
-      out = {
-        faceit: fu ? { url: fu.replace('/ru/', '/en/'), level: f.skill_level, elo: f.elo } : null,
-        hltv: hu ? { url: hu } : null,
-      };
-      if (!out.faceit && !out.hltv) {
-        out.err = 'a resposta veio sem link de FACEIT/HLTV (campos: ' + Object.keys(j || {}).slice(0, 8).join(', ') + ')';
-      }
-    }
-  } catch (e) {
-    out = { err: e instanceof SyntaxError ? 'a resposta do CyberShoke não é JSON' : 'o navegador bloqueou a consulta ao CyberShoke (CORS) ou não houve conexão' };
-  }
-  proDataCache.set(arg, out);
-  return out;
+  await csLinksReady;
+  const e = csLinks[normName(p.name)];
+  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)' };
+  const fu = e.faceit && safeUrl(e.faceit.url, 'faceit.com');
+  const hu = e.hltv && safeUrl(e.hltv.url, 'hltv.org');
+  return {
+    faceit: fu ? { url: fu.replace('/ru/', '/en/'), level: e.faceit.skill_level, elo: e.faceit.elo } : null,
+    hltv: hu ? { url: hu } : null,
+  };
 }
 
 function renderSearchCard(p) {
