@@ -4,60 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>CS2 extract crosshair and viewmodel</title>
+<title>CS2 Extract – Crosshair &amp; Viewmodel</title>
+<script>try{var t=localStorage.getItem("cs2x:theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --md-primary: #6500F5; --md-on-primary: #FFFFFF;
-    --md-primary-container: #32105D; --md-on-primary-container: #E9D7FF;
-    --md-secondary-container: #252333; --md-on-secondary-container: #E8E4F3;
-    --md-surface: #0D0E14; --md-surface-container-low: #151620;
-    --md-surface-container: #191A25; --md-surface-container-high: #20212D;
-    --md-surface-container-highest: #292A37; --md-on-surface: #F7F5FC;
-    --md-on-surface-variant: #A8A5BA; --md-outline: #77738B;
-    --md-outline-variant: #303140; --md-inverse-surface: #F7F5FC;
+    --md-primary: #7C3AED; --md-on-primary: #FFFFFF;
+    --md-primary-container: #2E1A5E; --md-on-primary-container: #E4D4FF;
+    --md-secondary-container: #25233A; --md-on-secondary-container: #E8E4F3;
+    --md-surface: #0B0A14; --md-surface-container-low: #12111F;
+    --md-surface-container: #171628; --md-surface-container-high: #1E1D33;
+    --md-surface-container-highest: #262540; --md-on-surface: #F4F2FC;
+    --md-on-surface-variant: #A9A6C0; --md-outline: #77738B;
+    --md-outline-variant: #2D2B47; --md-inverse-surface: #F7F5FC;
     --md-inverse-on-surface: #191A25; --md-error: #FFB4AB;
     --md-error-container: #5B171B; --md-on-error-container: #FFDAD6;
-    --md-shadow: 0 6px 18px rgba(0,0,0,.25);
+    --md-accent: #A78BFA; --md-shadow: 0 6px 18px rgba(0,0,0,.25);
   }
-  @media (prefers-color-scheme: light) {
-    :root {
-      --md-primary: #6500F5; --md-on-primary: #FFFFFF;
-      --md-primary-container: #E9D7FF; --md-on-primary-container: #32105D;
-      --md-secondary-container: #F0ECF8; --md-on-secondary-container: #282238;
-      --md-surface: #F8F7FB; --md-surface-container-low: #FFFFFF;
-      --md-surface-container: #F3F1F8; --md-surface-container-high: #EDEAF4;
-      --md-surface-container-highest: #E5E1EF; --md-on-surface: #191620;
-      --md-on-surface-variant: #625D70; --md-outline: #81798D;
-      --md-outline-variant: #DDD7E8; --md-inverse-surface: #302B39;
-      --md-inverse-on-surface: #F8F7FB; --md-error: #BA1A1A;
-      --md-error-container: #FFDAD6; --md-on-error-container: #410002;
-    }
+  :root[data-theme="light"] {
+    --md-primary: #6D28D9; --md-primary-container: #EBDDFF; --md-on-primary-container: #2E1A5E;
+    --md-secondary-container: #F0ECF8; --md-on-secondary-container: #282238;
+    --md-surface: #F8F7FB; --md-surface-container-low: #FFFFFF;
+    --md-surface-container: #F3F1F8; --md-surface-container-high: #EDEAF4;
+    --md-surface-container-highest: #E5E1EF; --md-on-surface: #191620;
+    --md-on-surface-variant: #625D70; --md-outline-variant: #DDD7E8;
+    --md-inverse-surface: #302B39; --md-inverse-on-surface: #F8F7FB;
+    --md-error: #BA1A1A; --md-error-container: #FFDAD6; --md-on-error-container: #410002;
+    --md-accent: #6D28D9; --md-shadow: 0 6px 18px rgba(40,20,80,.15);
   }
 
-  * { box-sizing: border-box; }
+  * { box-sizing* { box-sizing: border-box; }
   html, body { margin: 0; }
+  [hidden] { display: none !important; }
   body {
-    font-family: "Roboto", system-ui, sans-serif;
+    font-family: "Inter", "Roboto", system-ui, sans-serif;
     font-size: 14px; line-height: 20px; letter-spacing: .25px;
     background: var(--md-surface); color: var(--md-on-surface);
     min-height: 100vh;
   }
 
-  /* Top app bar */
-  .appbar {
-    position: sticky; top: 0; z-index: 5;
-    display: flex; align-items: center; gap: 16px;
-    height: 64px; padding: 0 16px 0 24px;
-    background: var(--md-surface-container); color: var(--md-on-surface);
+  /* Cabeçalho, menu lateral e páginas */
+  .appbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; height: 68px; padding: 0 20px; background: var(--md-surface-container); border-bottom: 1px solid var(--md-outline-variant); }
+  .brand { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+  .brand svg { width: 34px; height: 34px; fill: var(--md-accent); flex: none; }
+  .brand b { display: block; font-size: 20px; line-height: 24px; font-weight: 700; letter-spacing: 0; }
+  .brand b em { font-style: normal; color: var(--md-accent); }
+  .brand small { display: block; font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant); }
+  .spacer { flex: 1; }
+  .i { width: 20px; height: 20px; fill: currentColor; flex: none; }
+  .icon-btn { display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 10px; background: none; color: var(--md-on-surface-variant); cursor: pointer; }
+  .icon-btn:hover { background: var(--md-surface-container-high); }
+  .menu { display: none; }
+  .theme { display: flex; padding: 3px; border-radius: 12px; background: var(--md-surface-container-high); }
+  .theme .icon-btn { width: 34px; height: 34px; border-radius: 9px; }
+  .theme .icon-btn[aria-pressed="true"] { background: var(--md-secondary-container); color: var(--md-on-surface); }
+  .login { margin: 0; }
+  .shell { display: flex; min-height: calc(100vh - 68px); }
+  .side { width: 232px; flex: none; display: flex; flex-direction: column; gap: 4px; padding: 16px 12px; background: var(--md-surface-container-low); border-right: 1px solid var(--md-outline-variant); }
+  .side a { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 14px; border-radius: 10px; color: var(--md-on-surface-variant); text-decoration: none; font-weight: 500; }
+  .side a:hover { background: var(--md-surface-container-high); }
+  .side a[aria-current="page"] { background: var(--md-primary-container); color: var(--md-on-primary-container); }
+  .upd { margin: auto 0 0; padding: 12px 14px; font-size: 12px; color: var(--md-on-surface-variant); }
+  main { flex: 1; min-width: 0; max-width: 1180px; margin: 0 auto; padding: 32px 24px 96px; }
+  .scrim { display: none; }
+  @media (max-width: 860px) {
+    .menu { display: grid; }
+    .side { position: fixed; z-index: 30; top: 68px; bottom: 0; left: 0; transform: translateX(-100%); transition: transform .2s; }
+    .side.open { transform: none; }
+    .scrim.on { display: block; position: fixed; inset: 68px 0 0; z-index: 25; background: rgba(0,0,0,.5); }
+    main { padding: 24px 16px 96px; }
   }
-  .appbar svg { fill: var(--md-primary); flex: none; }
-  .brand { display: flex; align-items: center; gap: 16px; color: inherit; text-decoration: none; cursor: pointer; }
-  .appbar h1 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
+  @media (max-width: 480px) { .brand small { display: none; } }
+  h2.page { margin: 0 0 16px; font-size: 24px; line-height: 32px; }
 
-  main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 96px; }
+  /* Início */
+  .hero { max-width: 720px; margin: 0 auto 28px; text-align: center; }
+  .hero h2 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 42px); line-height: 1.15; font-weight: 800; letter-spacing: -.5px; }
+  .hero h2 span { background: linear-gradient(90deg, #7C3AED, #C084FC); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { margin: 0; color: var(--md-on-surface-variant); }
+  .dropzone { border-color: var(--md-primary); border-radius: 20px; background: var(--md-surface-container-low); }
+  .dz-meta { margin-top: 8px; font-size: 12px; color: var(--md-on-surface-variant); }
+  .trust { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; border: 1px solid var(--md-outline-variant); border-radius: 16px; background: var(--md-surface-container-low); }
+  .trust div { display: flex; gap: 12px; align-items: center; padding: 16px; }
+  .trust svg { width: 26px; height: 26px; fill: var(--md-accent); }
+  .trust b { display: block; font-size: 13px; }
+  .trust span { font-size: 12px; color: var(--md-on-surface-variant); }
+  @media (max-width: 700px) { .trust { grid-template-columns: 1fr; } }
+  .sec { margin-top: 40px; }
+  .sec h2 { margin: 0 0 4px; font-size: 20px; line-height: 28px; font-weight: 700; }
+  .sec > p { margin: 0 0 16px; color: var(--md-on-surface-variant); }
+  .sec .search { margin: 0 0 16px; }
+  #searchResult { justify-content: start; }
+  .checker { background: repeating-conic-gradient(var(--md-surface-container-highest) 0 25%, var(--md-surface-container-high) 0 50%) 0 0 / 16px 16px; }
+  .ex { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+  .ex-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; border: 1px solid var(--md-outline-variant); border-radius: 12px; background: var(--md-surface-container-low); color: inherit; font: inherit; font-size: 12px; cursor: pointer; }
+  .ex-tile canvas { border-radius: 8px; width: 64px; height: 64px; }
+  .ex-tile:hover { border-color: var(--md-primary); }
+
+  /* Cartões com abas */
+  #cards { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+  .tabs { display: flex; padding: 0 8px; border-bottom: 1px solid var(--md-outline-variant); }
+  .tabs button { flex: 1; height: 38px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--md-on-surface-variant); font: 500 13px "Inter", "Roboto", sans-serif; cursor: pointer; }
+  .tabs button[aria-selected="true"] { color: var(--md-on-surface); border-color: var(--md-primary); }
+  .pane { padding: 12px; }
+  .pane .card-media { height: 120px; border-radius: 10px; }
+  .pane pre { margin: 10px 0 0; font: 12px/18px "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--md-on-surface-variant); user-select: all; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .pair .btn { height: 34px; padding: 0 8px; font-size: 12px; margin: 0; }
+  .pane .empty { margin: 0; padding: 28px 0; text-align: center; color: var(--md-on-surface-variant); }
+
+  /* Configurações e histórico */
+  .panel { max-width: 560px; padding: 4px 20px; border: 1px solid var(--md-outline-variant); border-radius: 16px; background: var(--md-surface-container-low); }
+  .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--md-outline-variant); }
+  .row:last-child { border: 0; }
+  .row small { display: block; color: var(--md-on-surface-variant); font-size: 12px; }
+  select { height: 38px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--md-outline-variant); background: var(--md-surface-container-high); color: inherit; font: inherit; }
+  .sw { appearance: none; position: relative; flex: none; width: 44px; height: 26px; margin: 0; border-radius: 13px; border: 1px solid var(--md-outline-variant); background: var(--md-surface-container-highest); cursor: pointer; transition: background .15s; }
+  .sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform .15s; }
+  .sw:checked { background: var(--md-primary); border-color: var(--md-primary); }
+  .sw:checked::after { transform: translateX(18px); }
+  .hist { display: grid; gap: 8px; max-width: 640px; margin: 0 0 16px; padding: 0; list-style: none; }
+  .hist li { display: flex; align-items: center; gap: 4px; padding-right: 4px; border: 1px solid var(--md-outline-variant); border-radius: 12px; background: var(--md-surface-container-low); }
+  .hist .open { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+  .hist .open b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+  .hist small { color: var(--md-on-surface-variant); }
+  .about p { max-width: 640px; margin: 0 0 12px; color: var(--md-on-surface-variant); }
 
   /* Dropzone */
   .dropzone {
@@ -231,29 +304,51 @@
 <body>
 
 <header class="appbar">
-  <a class="brand" href="./" aria-label="CS2 extract crosshair and viewmodel – voltar ao início" onclick="event.preventDefault(); location.reload();">
-    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-    <h1>CS2 extract crosshair and viewmodel</h1>
+  <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
+  <a class="brand" href="#/inicio" aria-label="CS2 Extract – ir para o início">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+    <span><b>CS2 <em>Extract</em></b><small>Crosshair &amp; Viewmodel</small></span>
   </a>
+  <div class="spacer"></div>
+  <div class="theme" role="group" aria-label="Tema">
+    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Tema claro"><svg class="i" data-i="sun"></svg></button>
+    <button type="button" class="icon-btn" data-theme-set="dark" aria-label="Tema escuro"><svg class="i" data-i="moon"></svg></button>
+  </div>
+  <button type="button" class="btn btn-filled login" id="loginBtn">Entrar</button>
 </header>
 
-<main>
-  <div class="search">
-    <div class="search-field">
-      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-      <input type="search" id="proSearch" placeholder="Buscar jogador profissional (ex.: m0nesy)" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="suggest" aria-label="Buscar jogador profissional">
-    </div>
-    <ul class="suggest" id="suggest" role="listbox"></ul>
-  </div>
-  <div id="searchResult" aria-live="polite"></div>
+<div class="shell">
+<nav class="side" id="side" aria-label="Principal">
+  <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
+  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Buscar jogadores</a>
+  <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
+  <a href="#/configuracoes" data-page="configuracoes"><svg class="i" data-i="tune"></svg>Configurações</a>
+  <a href="#/sobre" data-page="sobre"><svg class="i" data-i="info"></svg>Sobre</a>
+  <p class="upd">Atualizado em <span id="upd"></span></p>
+</nav>
+<div class="scrim" id="scrim"></div>
 
-  <button type="button" class="dropzone" id="dropzone">
-    <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
-    <span class="title">Arraste o arquivo .dem aqui</span>
-    <span class="support">O arquivo é lido no seu computador e não é enviado para nenhum servidor</span>
-    <span class="btn btn-filled" id="pick">Escolher arquivo</span>
-  </button>
-  <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
+<main>
+<section data-view="inicio">
+  <div id="intro">
+    <div class="hero">
+      <h2>Extraia seu <span>crosshair</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
+      <p>Faça o upload do arquivo .dem. Ele é lido no seu computador e não é enviado para nenhum servidor.</p>
+    </div>
+    <button type="button" class="dropzone" id="dropzone">
+      <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
+      <span class="title">Arraste o arquivo .dem aqui</span>
+      <span class="support">ou clique para selecionar</span>
+      <span class="btn btn-filled" id="pick">Selecionar arquivo</span>
+      <span class="dz-meta">Suporte: .dem · o arquivo é lido em partes, direto do seu disco</span>
+    </button>
+    <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
+    <div class="trust">
+      <div><svg data-i="shield" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Processamento local</b><span>Seu demo é lido no próprio navegador</span></p></div>
+      <div><svg data-i="lock" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Sem envio para servidores</b><span>O arquivo .dem não sai do seu dispositivo</span></p></div>
+      <div><svg data-i="bolt" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Rápido e simples</b><span>Sem cadastro e sem instalar nada</span></p></div>
+    </div>
+  </div>
 
   <section class="progress" id="progress" aria-live="polite">
     <div class="label"><strong id="progressTitle"></strong><span id="progressSub"></span></div>
@@ -275,7 +370,46 @@
     </div>
     <div id="cards"></div>
   </section>
+
+</section>
+
+<section data-view="buscar" hidden>
+  <h2 class="page">Buscar jogadores</h2>
+  <p class="about" style="max-width:640px;margin:0 0 16px;color:var(--md-on-surface-variant)">Digite o nick de um jogador profissional para abrir o perfil dele na FACEIT e na HLTV.</p>
+  <div class="search" style="margin:0 0 16px">
+    <div class="search-field">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="search" id="proSearch" placeholder="Buscar perfil dos jogadores" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="suggest" aria-label="Buscar perfil dos jogadores">
+    </div>
+    <ul class="suggest" id="suggest" role="listbox"></ul>
+  </div>
+  <div id="searchResult" aria-live="polite"></div>
+</section>
+
+<section data-view="historico" hidden>
+  <h2 class="page">Histórico</h2>
+  <ul class="hist" id="histList"></ul>
+  <button type="button" class="btn btn-outline" id="histClear">Limpar histórico</button>
+</section>
+
+<section data-view="configuracoes" hidden>
+  <h2 class="page">Configurações</h2>
+  <div class="panel">
+    <div class="row"><label for="setMode">Modo de extração<small>Define quais jogadores aparecem nos resultados.</small></label>
+      <select id="setMode"><option value="all">Padrão (recomendado)</option><option value="crosshair">Só quem tem crosshair</option><option value="viewmodel">Só quem tem viewmodel</option></select></div>
+    <div class="row"><label for="setAuto">Copiar automaticamente<small>Copia a mira quando o demo tem um único jogador.</small></label><input type="checkbox" class="sw" id="setAuto"></div>
+    <div class="row"><label for="setNotify">Notificações<small>Avisos rápidos ao copiar ou baixar.</small></label><input type="checkbox" class="sw" id="setNotify"></div>
+  </div>
+</section>
+
+<section data-view="sobre" class="about" hidden>
+  <h2 class="page">Sobre</h2>
+  <p>O CS2 Extract lê um demo (.dem) do CS2 e mostra o crosshair code e os comandos de viewmodel de cada jogador, com prévia da mira, cópia e download.</p>
+  <p>A análise roda no seu navegador (Go compilado para WebAssembly). O arquivo .dem não é enviado para nenhum servidor.</p>
+  <p>O histórico e as configurações ficam salvos só neste navegador. O botão Baixar CFG abre o CyberShoke e envia o SteamID do jogador para lá; os links de FACEIT, HLTV e ProSettings abrem sites externos.</p>
+</section>
 </main>
+</div>
 
 <div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
 
@@ -298,6 +432,107 @@ const snackbar = document.getElementById('snackbar');
 let snackTimer;
 let busy = false;
 let worker = null;
+
+const ICONS = {
+  search: 'M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
+  menu: 'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z',
+  sun: 'M12 7a5 5 0 100 10 5 5 0 000-10zM2 13h2v-2H2v2zm18 0h2v-2h-2v2zM11 2v2h2V2h-2zm0 18v2h2v-2h-2zM5.99 4.58L4.58 5.99l1.41 1.41 1.42-1.41-1.42-1.42zm12.02 12.02l-1.41 1.41 1.41 1.42 1.42-1.42-1.42-1.41zM4.58 18.01l1.41 1.41 1.42-1.41-1.42-1.42-1.41 1.42zM18.01 5.99l1.42-1.41-1.42-1.42-1.41 1.42 1.41 1.41z',
+  moon: 'M12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z',
+  home: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',
+  history: 'M13 3a9 9 0 00-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21a9 9 0 000-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z',
+  tune: 'M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z',
+  info: 'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
+  shield: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z',
+  lock: 'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
+  bolt: 'M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51C12.96 17.55 11 21 11 21z',
+  file: 'M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z',
+  del: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
+};
+function icon(name) {
+  const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('class', 'i'); s.setAttribute('aria-hidden', 'true');
+  s.innerHTML = '<path d="' + ICONS[name] + '"/>';
+  return s;
+}
+document.querySelectorAll('[data-i]').forEach(s => { s.setAttribute('viewBox', '0 0 24 24'); s.innerHTML = '<path d="' + ICONS[s.dataset.i] + '"/>'; });
+
+const LS = {
+  get(k, d) { try { const v = localStorage.getItem('cs2x:' + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem('cs2x:' + k, JSON.stringify(v)); return true; } catch (e) { return false; } },
+};
+let currentFile = '';
+const settings = Object.assign({ mode: 'all', autocopy: false, notify: true }, LS.get('settings', {}));
+
+// Tema claro/escuro
+function applyTheme(t) {
+  document.documentElement.dataset.theme = t;
+  document.querySelectorAll('[data-theme-set]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.themeSet === t)));
+}
+document.querySelectorAll('[data-theme-set]').forEach(b => b.onclick = () => {
+  try { localStorage.setItem('cs2x:theme', b.dataset.themeSet); } catch (e) {}
+  applyTheme(b.dataset.themeSet);
+});
+applyTheme(document.documentElement.dataset.theme);
+
+// Configurações
+const setMode = document.getElementById('setMode'), setAuto = document.getElementById('setAuto'), setNotify = document.getElementById('setNotify');
+setMode.value = settings.mode; setAuto.checked = settings.autocopy; setNotify.checked = settings.notify;
+[setMode, setAuto, setNotify].forEach(c => c.onchange = () => {
+  settings.mode = setMode.value; settings.autocopy = setAuto.checked; settings.notify = setNotify.checked;
+  LS.set('settings', settings);
+});
+
+// Páginas (menu lateral) e menu no celular
+const side = document.getElementById('side'), scrim = document.getElementById('scrim'), menuBtn = document.getElementById('menuBtn');
+function toggleMenu(open) { side.classList.toggle('open', open); scrim.classList.toggle('on', open); menuBtn.setAttribute('aria-expanded', String(open)); }
+menuBtn.onclick = () => toggleMenu(!side.classList.contains('open'));
+scrim.onclick = () => toggleMenu(false);
+function route() {
+  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'historico', 'configuracoes', 'sobre'].includes(p) ? p : 'inicio';
+  document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
+  document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  toggleMenu(false);
+  if (v === 'historico') renderHistory();
+  window.scrollTo({ top: 0 });
+}
+addEventListener('hashchange', route);
+function setUpload(show) { document.getElementById('intro').hidden = !show; }
+
+document.getElementById('loginBtn').onclick = () => showSnack('O login ainda não está disponível.', true);
+const bd = '__BUILD_DATE__';
+document.getElementById('upd').textContent = /^\d/.test(bd) ? bd : new Date(document.lastModified).toLocaleDateString('pt-BR');
+
+// Histórico (salvo só neste navegador)
+function histAdd(name, players) {
+  let h = LS.get('history', []);
+  h.unshift({ id: Date.now(), name: name, date: new Date().toISOString(), players: players });
+  h = h.slice(0, 20);
+  while (h.length && !LS.set('history', h)) h.pop();
+}
+function renderHistory() {
+  const list = document.getElementById('histList'), h = LS.get('history', []);
+  list.innerHTML = '';
+  document.getElementById('histClear').hidden = !h.length;
+  if (!h.length) { list.appendChild(el('li', '', 'Nenhuma análise ainda. Envie um demo na página Início e ele aparece aqui.')).style.padding = '16px'; return; }
+  h.forEach(it => {
+    const li = el('li');
+    const open = el('button', 'open'); open.type = 'button';
+    const txt = el('span'); txt.append(el('b', '', it.name), el('small', '', new Date(it.date).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) + ' · ' + it.players.length + ' jogadores'));
+    open.append(icon('file'), txt);
+    open.onclick = () => { location.hash = '#/inicio'; showResults(it.players, { title: it.name }); };
+    const del = el('button', 'icon-btn'); del.type = 'button'; del.setAttribute('aria-label', 'Excluir ' + it.name); del.appendChild(icon('del'));
+    del.onclick = () => { LS.set('history', LS.get('history', []).filter(x => x.id !== it.id)); renderHistory(); };
+    li.append(open, del); list.appendChild(li);
+  });
+}
+document.getElementById('histClear').onclick = () => { LS.set('history', []); renderHistory(); };
+
+function saveText(name, text) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' }));
+  a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
 
 function setIndeterminate(title, sub) {
   progressTitle.textContent = title;
@@ -329,7 +564,7 @@ function setLoading(on) {
     setIndeterminate('Preparando o analisador', 'Só na primeira vez; o arquivo tem alguns MB.');
     progress.classList.add('on');
   } else {
-    pick.textContent = 'Escolher arquivo';
+    pick.textContent = 'Selecionar arquivo';
     progress.classList.remove('on');
   }
 }
@@ -351,7 +586,7 @@ function startWorker() {
     } else if (m.type === 'result') {
       busy = false;
       progress.classList.remove('on');
-      showResults(JSON.parse(m.json));
+      showResults(JSON.parse(m.json), { title: currentFile, save: true });
     } else if (m.type === 'error') {
       if (m.fatal) { failLoading(m.message); return; }
       busy = false;
@@ -381,7 +616,7 @@ fileInput.onchange = () => {
 };
 document.getElementById('again').onclick = () => {
   results.classList.remove('on');
-  dropzone.style.display = '';
+  setUpload(true);
   window.scrollTo({ top: 0 });
 };
 
@@ -392,17 +627,19 @@ function processFile(file) {
     return;
   }
   busy = true;
+  currentFile = file.name;
   errorBox.classList.remove('on');
   results.classList.remove('on');
   cards.innerHTML = '';
-  dropzone.style.display = 'none';
+  setUpload(false);
   progressTitle.textContent = 'Analisando ' + file.name;
   setProgress(0);
   progress.classList.add('on');
   worker.postMessage({ file: file });
 }
 
-function showSnack(msg) {
+function showSnack(msg, force) {
+  if (!force && !settings.notify) return;
   snackbar.textContent = msg;
   snackbar.classList.add('on');
   clearTimeout(snackTimer);
@@ -452,31 +689,6 @@ function paintCrosshair(canvas, xh, size) {
   }
   ctx.fillStyle = fill;
   sh.rects.forEach(r => ctx.fillRect(r.x, r.y, r.w, r.h));
-}
-
-function splitActionButton(label, value) {
-  const group = el('div', 'split-action');
-  const main = el('button', 'btn btn-text split-main', label);
-  main.type = 'button';
-  main.dataset.label = label;
-  main.setAttribute('aria-label', label);
-  main.onclick = () => copyValue(value, main);
-
-  const toggle = el('button', 'btn split-toggle');
-  toggle.type = 'button';
-  toggle.setAttribute('aria-label', 'Mostrar código: ' + label.toLowerCase());
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>';
-
-  const panel = el('div', 'code-panel');
-  const pre = el('pre', '', value);
-  panel.appendChild(pre);
-  toggle.onclick = () => {
-    const open = group.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-  };
-  group.append(main, toggle, panel);
-  return group;
 }
 
 let proSettings = {};
@@ -529,26 +741,50 @@ function mouseBlock(info) {
 function renderPlayer(p) {
   const card = el('article', 'card');
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
+  const base = (p.name || 'jogador').replace(/[^\w.-]+/g, '_');
+  card.appendChild(el('h3', 'card-title', p.name || 'Sem nome')).style.padding = '12px 12px 8px';
 
-  const media = el('div', 'card-media');
-  if (xh) {
-    const canvas = document.createElement('canvas');
-    canvas.setAttribute('role', 'img');
-    canvas.setAttribute('aria-label', 'Prévia da mira de ' + (p.name || 'jogador'));
-    paintCrosshair(canvas, xh, 140);
-    media.appendChild(canvas);
-  } else {
-    media.appendChild(el('div', 'ph', (p.name || '?').trim().charAt(0) || '?'));
-  }
-  card.appendChild(media);
-
-  const body = el('div', 'card-body');
-  body.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
-  card.appendChild(body);
+  const defs = [['Crosshair', p.crosshair_code, base + '-crosshair.txt'], ['Viewmodel', p.viewmodel_cmd, base + '-viewmodel.cfg']];
+  const tabs = el('div', 'tabs');
+  tabs.setAttribute('role', 'tablist');
+  const panes = defs.map(([label, val, file], i) => {
+    const pn = el('div', 'pane');
+    pn.setAttribute('role', 'tabpanel');
+    if (i === 0 && xh) {
+      const m = el('div', 'card-media checker');
+      const c = document.createElement('canvas');
+      c.setAttribute('role', 'img');
+      c.setAttribute('aria-label', 'Prévia da mira de ' + (p.name || 'jogador'));
+      paintCrosshair(c, xh, 140);
+      m.appendChild(c); pn.appendChild(m);
+    }
+    if (val) {
+      pn.appendChild(el('pre', '', val));
+      const pair = el('div', 'pair');
+      const cb = el('button', 'btn btn-outline', 'Copiar');
+      cb.type = 'button'; cb.dataset.label = 'Copiar';
+      cb.onclick = () => copyValue(val, cb);
+      const db = el('button', 'btn btn-text', 'Baixar');
+      db.type = 'button';
+      db.onclick = () => { saveText(file, val); showSnack(file + ' baixado'); };
+      pair.append(cb, db); pn.appendChild(pair);
+    } else {
+      pn.appendChild(el('p', 'empty', 'Este jogador não tem ' + label.toLowerCase() + ' neste demo.'));
+    }
+    return pn;
+  });
+  const btns = defs.map(([label], i) => {
+    const b = el('button', '', label);
+    b.type = 'button'; b.setAttribute('role', 'tab');
+    b.onclick = () => select(i);
+    tabs.appendChild(b);
+    return b;
+  });
+  function select(k) { btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === k)); panes[i].hidden = i !== k; }); }
+  select(p.crosshair_code ? 0 : 1);
+  card.append(tabs, ...panes);
 
   const actions = el('div', 'actions');
-  if (p.crosshair_code) actions.appendChild(splitActionButton('Copiar mira', p.crosshair_code));
-  if (p.viewmodel_cmd) actions.appendChild(splitActionButton('Copiar viewmodel', p.viewmodel_cmd));
   const mouse = proSettings[String(p.steamid)];
   if (mouse) actions.appendChild(mouseBlock(mouse));
   if (p.steamid) {
@@ -561,24 +797,37 @@ function renderPlayer(p) {
     cfgLink.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
     actions.appendChild(cfgLink);
   }
-  card.appendChild(actions);
+  if (actions.children.length) card.appendChild(actions);
   return card;
 }
 
-async function showResults(data) {
+async function showResults(data, o) {
+  o = o || {};
   await proSettingsReady;
   if (!data.length) {
     showError('Nenhum jogador foi encontrado. Confirme que é um demo de CS2 (não de CS:GO).');
     return;
   }
-  resultCount.textContent = data.length + (data.length === 1 ? ' jogador' : ' jogadores');
-  data.forEach(p => cards.appendChild(renderPlayer(p)));
+  if (o.save) histAdd(o.title || 'demo.dem', data);
+  const list = data.filter(p => settings.mode === 'crosshair' ? p.crosshair_code : settings.mode === 'viewmodel' ? p.viewmodel_cmd : true);
+  if (!list.length) {
+    showError('Nenhum jogador tem esse tipo de dado neste demo. Troque o modo de extração em Configurações.');
+    return;
+  }
+  errorBox.classList.remove('on');
+  setUpload(false);
+  cards.innerHTML = '';
+  resultCount.textContent = (o.title ? o.title + ' · ' : '') + list.length + (list.length === 1 ? ' jogador' : ' jogadores') + (o.example ? ' · exemplo ilustrativo, não é a mira de um jogador real' : '');
+  list.forEach(p => cards.appendChild(renderPlayer(p)));
   results.classList.add('on');
+  if (settings.autocopy && !o.example && list.length === 1 && list[0].crosshair_code) {
+    navigator.clipboard.writeText(list[0].crosshair_code).then(() => showSnack('Mira copiada automaticamente')).catch(() => {});
+  }
 }
 
 function showError(msg) {
   progress.classList.remove('on');
-  dropzone.style.display = '';
+  setUpload(true);
   errorText.textContent = msg;
   errorBox.classList.add('on');
 }
@@ -729,6 +978,7 @@ function choosePlayer(p) {
   searchResult.appendChild(renderSearchCard(p));
 }
 
+route();
 startWorker();
 </script>
 </body>
