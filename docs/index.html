@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>CS2 Demo Analyzer</title>
+<title>CS2 extract crosshair and viewmodel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -54,6 +54,7 @@
     background: var(--md-surface-container); color: var(--md-on-surface);
   }
   .appbar svg { fill: var(--md-primary); flex: none; }
+  .brand { display: flex; align-items: center; gap: 16px; color: inherit; text-decoration: none; cursor: pointer; }
   .appbar h1 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
 
   main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 96px; }
@@ -199,7 +200,7 @@
   .search-field input::placeholder { color: var(--md-on-surface-variant); }
   .suggest { display: none; position: absolute; left: 0; right: 0; top: 60px; z-index: 6; margin: 0; padding: 8px 0; list-style: none; max-height: 320px; overflow-y: auto; border-radius: 16px; background: var(--md-surface-container-high); border: 1px solid var(--md-outline-variant); box-shadow: var(--md-shadow); }
   .suggest.on { display: block; }
-  .suggest li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; cursor: pointer; }
+  .suggest li { padding: 10px 16px; cursor: pointer; }
   .suggest li[aria-selected="true"], .suggest li:hover { background: var(--md-secondary-container); }
   .suggest .tag { color: var(--md-on-surface-variant); font-size: 12px; }
   #searchResult { display: grid; grid-template-columns: minmax(0, 320px); justify-content: center; margin: 0 auto 24px; }
@@ -230,8 +231,10 @@
 <body>
 
 <header class="appbar">
-  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-  <h1>CS2 Demo Analyzer</h1>
+  <a class="brand" href="./" aria-label="CS2 extract crosshair and viewmodel – voltar ao início" onclick="event.preventDefault(); location.reload();">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+    <h1>CS2 extract crosshair and viewmodel</h1>
+  </a>
 </header>
 
 <main>
@@ -633,7 +636,7 @@ function paintSuggest() {
     const li = el('li');
     li.setAttribute('role', 'option');
     li.setAttribute('aria-selected', String(i === suggestSel));
-    li.append(el('span', '', p.name), el('span', 'tag', p.custom ? 'buscar FACEIT/HLTV' : p.steamid ? 'CFG + mouse' : 'só mouse'));
+    li.append(el('span', '', p.name));
     li.onmousedown = e => { e.preventDefault(); choosePlayer(p); };
     suggest.appendChild(li);
   });
