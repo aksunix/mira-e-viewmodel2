@@ -37,6 +37,10 @@ jobs:
         run: |
           if [ -f data/pro-settings.json ]; then cp data/pro-settings.json docs/pro-settings.json; else echo '{"players":{}}' > docs/pro-settings.json; fi
 
+      - name: Incluir links de FACEIT/HLTV
+        run: |
+          if [ -f data/cybershoke-links.json ]; then cp data/cybershoke-links.json docs/cybershoke-links.json; else echo '{"links":{}}' > docs/cybershoke-links.json; fi
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

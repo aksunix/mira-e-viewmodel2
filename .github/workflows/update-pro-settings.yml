@@ -28,13 +28,17 @@ jobs:
       - name: Coletar dados
         run: python scripts/build_pro_settings.py --out data/pro-settings.json --max "${{ github.event.inputs.max || '400' }}"
 
+      - name: Coletar FACEIT/HLTV pelo CyberShoke
+        continue-on-error: true
+        run: python scripts/build_cybershoke_links.py --out data/cybershoke-links.json
+
       - name: Salvar e republicar o site
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pro-settings.json
+          git add data/pro-settings.json data/cybershoke-links.json data/cybershoke-extra.txt
           if git diff --cached --quiet; then echo "Sem mudancas"; exit 0; fi
           git commit -m "Atualiza dados do ProSettings"
           git push
