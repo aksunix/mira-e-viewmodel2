@@ -202,16 +202,8 @@
   .suggest li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; cursor: pointer; }
   .suggest li[aria-selected="true"], .suggest li:hover { background: var(--md-secondary-container); }
   .suggest .tag { color: var(--md-on-surface-variant); font-size: 12px; }
-  .search-note { margin: 8px 16px 0; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; }
   #searchResult { display: grid; grid-template-columns: minmax(0, 320px); justify-content: center; margin: 0 auto 24px; }
   #searchResult:empty { display: none; }
-  .pro-mouse { margin-top: 10px; }
-  .pro-mouse dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px; background: var(--md-surface-container-high); }
-  .pro-mouse dt { color: var(--md-on-surface-variant); }
-  .pro-mouse dd { margin: 0; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
-  .pro-mouse .src { display: block; margin-top: 6px; font-size: 11px; color: var(--md-on-surface-variant); }
-  .pro-mouse .src a { color: var(--md-primary); }
-  .cfg-status { margin-top: 10px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; }
   .btn-outline { background: var(--md-surface-container-high); color: var(--md-on-surface); border: 1px solid var(--md-outline-variant); }
 
   @media (max-width: 600px) {
@@ -249,7 +241,6 @@
       <input type="search" id="proSearch" placeholder="Buscar jogador profissional (ex.: m0nesy)" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="suggest" aria-label="Buscar jogador profissional">
     </div>
     <ul class="suggest" id="suggest" role="listbox"></ul>
-    <p class="search-note">Mouse: ProSettings. CFG: CyberShoke (ao escolher um jogador, o SteamID dele é enviado ao CyberShoke). FACEIT/HLTV: coletados pelo CyberShoke no GitHub, sem consulta ao abrir o card.</p>
   </div>
   <div id="searchResult" aria-live="polite"></div>
 
@@ -594,7 +585,6 @@ const CFG_URL = id => 'https://cybershoke.net/api/api/v1/user/download/cfg/' + e
 const proSearch = document.getElementById('proSearch');
 const suggest = document.getElementById('suggest');
 const searchResult = document.getElementById('searchResult');
-const cfgCache = new Map();
 let proIndex = null, suggestItems = [], suggestSel = -1;
 
 function normName(n) { return String(n || '').replace(/\s+/g, '').toLowerCase(); }
@@ -665,52 +655,7 @@ proSearch.addEventListener('keydown', e => {
 });
 proSearch.addEventListener('blur', closeSuggest);
 
-// Le a CFG do CyberShoke. Se o navegador bloquear (CORS) ou a resposta nao for uma CFG, devolve null.
-async function fetchCfg(steamid) {
-  if (cfgCache.has(steamid)) return cfgCache.get(steamid);
-  let text = null;
-  try {
-    const r = await fetch(CFG_URL(steamid), { referrerPolicy: 'no-referrer', credentials: 'omit' });
-    if (r.ok) {
-      const t = await r.text();
-      if (t.trim() && t.length < 500000 && !/^\s*</.test(t)) text = t;
-    }
-  } catch (e) { /* bloqueado: usamos o link */ }
-  cfgCache.set(steamid, text);
-  return text;
-}
-
-function parseCfg(text) {
-  const out = { code: '', viewmodel: '' };
-  const m = text.match(/CS[ABCDEFGHJKLMNOPQRSTUVWXYZabcdefhijkmnopqrstuvwxyz23456789]{44}/);
-  if (m && decodeCrosshair(m[0])) out.code = m[0];
-  const vm = [];
-  text.split(/\r?\n/).forEach(l => {
-    const t = l.replace(/\/\/.*$/, '').trim();
-    const mm = t.match(/^(viewmodel_(?:fov|offset_x|offset_y|offset_z))\s+"?(-?[\d.]+)"?/i);
-    if (mm) vm.push(mm[1].toLowerCase() + ' ' + mm[2] + ';');
-  });
-  out.viewmodel = vm.join(' ');
-  return out;
-}
-
-function downloadText(text, filename) {
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([text], { type: 'text/plain' }));
-  a.download = filename;
-  document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-}
-
-function simpleButton(label, onclick, cls) {
-  const b = el('button', 'btn ' + (cls || 'btn-text'), label);
-  b.type = 'button'; b.dataset.label = label;
-  b.onclick = () => onclick(b);
-  return b;
-}
-
-
-// FACEIT_NICKS (opcional): nick exato da FACEIT (minusculo -> nick), usado se o CyberShoke nao responder.
+// FACEIT_NICKS (opcional): nick exato da FACEIT (minusculo -> nick), usado se o JSON de links nao tiver o jogador.
 const FACEIT_NICKS = {};
 
 function proLinks(p) {
@@ -718,9 +663,9 @@ function proLinks(p) {
   const links = [];
   const fn = FACEIT_NICKS[k];
   links.push(fn
-    ? ['FACEIT · perfil', 'https://www.faceit.com/en/players/' + encodeURIComponent(fn)]
-    : ['FACEIT · buscar perfil', 'https://duckduckgo.com/?q=' + encodeURIComponent('site:faceit.com/en/players ' + p.name)]);
-  links.push(['HLTV · buscar ' + p.name, 'https://www.hltv.org/search?query=' + q]);
+    ? ['FACEIT', 'https://www.faceit.com/en/players/' + encodeURIComponent(fn)]
+    : ['FACEIT', 'https://duckduckgo.com/?q=' + encodeURIComponent('site:faceit.com/en/players ' + p.name)]);
+  links.push(['HLTV', 'https://www.hltv.org/search?query=' + q]);
   return links;
 }
 
@@ -748,85 +693,25 @@ async function fetchProData(p) {
 
 function renderSearchCard(p) {
   const card = el('article', 'card');
-  const media = el('div', 'card-media');
-  media.appendChild(el('div', 'ph', (p.name || '?').trim().charAt(0) || '?'));
-  card.appendChild(media);
-
   const body = el('div', 'card-body');
   body.appendChild(el('h3', 'card-title', p.name));
-  body.appendChild(el('div', 'card-sub', p.steamid ? 'SteamID ' + p.steamid : 'SteamID não encontrado'));
-
-  if (p.info) {
-    const mouse = el('div', 'pro-mouse');
-    const dl = el('dl');
-    MOUSE_FIELDS.forEach(([key, label]) => {
-      if (!p.info[key]) return;
-      dl.append(el('dt', '', label), el('dd', '', p.info[key]));
-    });
-    if (!dl.children.length) dl.append(el('dt', '', 'Mouse'), el('dd', '', 'sem dados'));
-    mouse.appendChild(dl);
-    const src = el('span', 'src', 'Mouse – fonte: ');
-    const link = el('a', '', 'ProSettings');
-    link.href = p.info.url; link.target = '_blank'; link.rel = 'noopener noreferrer';
-    src.appendChild(link);
-    mouse.appendChild(src);
-    body.appendChild(mouse);
-  }
-
-  const status = el('div', 'cfg-status', p.steamid ? 'Buscando CFG no CyberShoke…' : p.custom ? 'Jogador fora da base do ProSettings: sem dados de mouse nem CFG.' : 'Sem SteamID no ProSettings, então não dá para buscar a CFG no CyberShoke.');
-  body.appendChild(status);
   card.appendChild(body);
 
   const actions = el('div', 'actions');
   card.appendChild(actions);
+
   const linkEls = proLinks(p).map(([label, href]) => {
     const a = el('a', 'cfg-link', label);
     a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
     actions.appendChild(a);
     return a;
   });
+
   fetchProData(p).then(d => {
     if (!d || !card.isConnected) return;
-    if (d.err) {
-      const n = el('div', 'cfg-status', 'FACEIT/HLTV: ' + d.err + '. Mostrando só os links de busca.');
-      actions.before(n);
-    }
-    if (d.faceit) {
-      const extra = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · ');
-      linkEls[0].textContent = 'FACEIT · perfil' + (extra ? ' (' + extra + ')' : '');
-      linkEls[0].href = d.faceit.url;
-    }
-    if (d.hltv) {
-      linkEls[1].textContent = 'HLTV · perfil do jogador';
-      linkEls[1].href = d.hltv.url;
-    }
+    if (d.faceit) { linkEls[0].href = d.faceit.url; linkEls[0].title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
+    if (d.hltv) linkEls[1].href = d.hltv.url;
   });
-
-  if (p.steamid) {
-    fetchCfg(p.steamid).then(text => {
-      if (!card.isConnected) return;
-      if (text) {
-        const c = parseCfg(text);
-        status.textContent = 'CFG carregada do CyberShoke.';
-        if (c.code) {
-          const canvas = document.createElement('canvas');
-          canvas.setAttribute('role', 'img');
-          canvas.setAttribute('aria-label', 'Prévia da mira de ' + p.name);
-          paintCrosshair(canvas, decodeCrosshair(c.code), 140);
-          media.innerHTML = ''; media.appendChild(canvas);
-          actions.appendChild(splitActionButton('Copiar mira', c.code));
-        }
-        if (c.viewmodel) actions.appendChild(splitActionButton('Copiar viewmodel', c.viewmodel));
-        actions.appendChild(simpleButton('Copiar CFG', b => copyValue(text, b)));
-        actions.appendChild(simpleButton('Baixar CFG', () => downloadText(text, p.name.replace(/[^\w.-]+/g, '_') + '.cfg'), 'btn-outline'));
-      } else {
-        status.textContent = 'O navegador não deixou ler a CFG direto do CyberShoke; use o botão para abri-la lá.';
-        const a = el('a', 'cfg-link', 'BAIXAR CFG');
-        a.href = CFG_URL(p.steamid); a.target = '_blank'; a.rel = 'noopener noreferrer';
-        actions.appendChild(a);
-      }
-    });
-  }
   return card;
 }
 
