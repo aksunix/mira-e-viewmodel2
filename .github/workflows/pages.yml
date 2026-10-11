@@ -41,6 +41,9 @@ jobs:
         run: |
           if [ -f data/cybershoke-links.json ]; then cp data/cybershoke-links.json docs/cybershoke-links.json; else echo '{"links":{}}' > docs/cybershoke-links.json; fi
 
+      - name: Gravar data da atualização
+        run: sed -i "s#__BUILD_DATE__#$(TZ=America/Sao_Paulo date +%d/%m/%Y)#" docs/index.html
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
