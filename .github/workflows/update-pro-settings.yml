@@ -41,5 +41,10 @@ jobs:
           git add data/pro-settings.json data/cybershoke-links.json data/cybershoke-extra.txt
           if git diff --cached --quiet; then echo "Sem mudancas"; exit 0; fi
           git commit -m "Atualiza dados do ProSettings"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "Push falhou (tentativa $i), tentando de novo..."
+            sleep 5
+          done
+          git push --dry-run >/dev/null 2>&1 || { echo "Nao foi possivel enviar o commit"; exit 1; }
           gh workflow run pages.yml
