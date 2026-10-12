@@ -1116,6 +1116,17 @@ function renderSearchCard(p) {
     card.appendChild(box);
   }
 
+  if (p.info && p.info.resolution) {
+    const vbox = el('div', 'pro-mouse');
+    vbox.appendChild(el('h4', '', 'Vídeo'));
+    const vdl = el('dl');
+    const vit = el('div');
+    vit.append(el('dt', '', 'Resolution'), el('dd', '', p.info.resolution));
+    vdl.appendChild(vit);
+    vbox.appendChild(vdl);
+    card.appendChild(vbox);
+  }
+
   fetchProData(p).then(d => {
     if (!d || !card.isConnected) return;
     if (d.faceit) { linkEls[0].href = d.faceit.url; linkEls[0].title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
