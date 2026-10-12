@@ -76,7 +76,7 @@ def main():
     print(f"{len(people)} jogadores; {len(todo)} para consultar agora")
     s = requests.Session()
     s.headers.update({"User-Agent": UA, "Content-Type": "application/json"})
-    found = errors = 0
+    found = errors = not_found = 0
     for i, k in enumerate(todo, 1):
         name, args = people[k]
         entry = {}
@@ -94,6 +94,9 @@ def main():
                 print(f"Bloqueado ({r.status_code}), parando por hoje")
                 stop = True
                 break
+            if r.status_code == 404:  # jogador nao existe no CyberShoke: normal para quem so aparece no ProSettings
+                not_found += 1
+                continue
             if not r.ok:
                 print("HTTP", r.status_code, "para", name, arg)
                 errors += 1
@@ -124,7 +127,7 @@ def main():
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, indent=1, sort_keys=True)
-    print("novos nesta execucao:", found, "| total com links:", len(out["links"]))
+    print("novos nesta execucao:", found, "| nao encontrados no CyberShoke (404):", not_found, "| total com links:", len(out["links"]))
 
 
 if __name__ == "__main__":

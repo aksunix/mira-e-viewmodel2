@@ -51,7 +51,7 @@ def player_urls(delay):
 
 
 def parse_player(html):
-    """Devolve (nome, steam_link, mouse_dict). mouse_dict vazio se nao houver tabela Mouse."""
+    """Devolve (nome, steam_link, mouse_dict, video_dict). Dicts vazios se nao houver a tabela."""
     soup = BeautifulSoup(html, "html.parser")
     h1 = soup.find("h1")
     name = h1.get_text(" ", strip=True) if h1 else ""
@@ -71,7 +71,13 @@ def parse_player(html):
                         mouse[FIELDS[cells[0].lower()]] = cells[1]
             if mouse:
                 break
-    return name, steam, mouse
+    video = {}
+    for tr in soup.find_all("tr"):
+        cells = [c.get_text(" ", strip=True) for c in tr.find_all(["th", "td"])]
+        if len(cells) >= 2 and cells[0].lower() == "resolution" and cells[1]:
+            video["resolution"] = cells[1]
+            break
+    return name, steam, mouse, video
 
 
 def steam_id64(link, delay):
@@ -98,7 +104,7 @@ def main():
     ap.add_argument("--refresh-days", type=int, default=60)
     a = ap.parse_args()
 
-    data = {"players": {}, "names": {}, "seen": {}, "pending": {}}
+    data = {"players": {}, "names": {}, "seen": {}, "pending": {}, "video_done": {}}
     if os.path.exists(a.out):
         with open(a.out, encoding="utf-8") as f:
             data.update(json.load(f))
@@ -106,6 +112,8 @@ def main():
 
     def stale(url):
         d = data["seen"].get(url)
+        if url not in data["video_done"]:  # paginas ainda nao lidas com a Resolution
+            return True
         return d is None or (today - dt.date.fromisoformat(d)).days >= a.refresh_days
 
     # jogadores prioritarios (data/priority-players.txt, um slug por linha) sao buscados primeiro
@@ -146,11 +154,11 @@ def main():
         for i, url in enumerate(todo, 1):
             try:
                 html = get(url, a.delay)
-                name, steam, mouse = parse_player(html)
+                name, steam, mouse, video = parse_player(html)
                 if url in prio_todo:
-                    print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)}")
-                if mouse:
-                    entry = {"name": name, "url": url, **mouse}
+                    print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)} video={sorted(video)}")
+                if mouse or video:
+                    entry = {"name": name, "url": url, **mouse, **video}
                     if name:
                         data["names"][norm(name)] = entry
                     sid = None
@@ -169,6 +177,7 @@ def main():
                     heads = [h.get_text(" ", strip=True) for h in BeautifulSoup(html, "html.parser").find_all(re.compile(r"^h[1-6]$"))][:15]
                     print(f"sem tabela Mouse em {url}; titulos encontrados: {heads}")
                 data["seen"][url] = today.isoformat()
+                data["video_done"][url] = today.isoformat()
             except requests.RequestException as e:
                 print("erro (pulando):", url, e)
             if i % 50 == 0:
