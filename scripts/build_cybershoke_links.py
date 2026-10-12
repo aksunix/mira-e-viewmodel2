@@ -40,7 +40,7 @@ def main():
     ap.add_argument("--extra", default="data/cybershoke-extra.txt")
     ap.add_argument("--out", default="data/cybershoke-links.json")
     ap.add_argument("--url", default=URL)
-    ap.add_argument("--max", type=int, default=300)
+    ap.add_argument("--max", type=int, default=1500)
     ap.add_argument("--delay", type=float, default=2.0)
     ap.add_argument("--refresh-days", type=int, default=30)
     a = ap.parse_args()
