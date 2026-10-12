@@ -393,21 +393,27 @@
   .face.back { transform: rotateY(180deg); }
   .face .card-head { padding-right: 8px; }
   .face .card-title { flex: 1; }
-  /* Botão de ícone tonal M3 que indica o flip */
+  /* Botão de ícone tonal M3 (voltar, no verso) */
   .flip-btn { position: relative; overflow: hidden; flex: none; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: var(--md-secondary-container); color: var(--md-on-secondary-container); cursor: pointer; }
   .flip-btn svg { width: 22px; height: 22px; fill: currentColor; }
   .flip-btn::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
   .flip-btn:hover::after { opacity: .08; }
   .flip-btn:active::after { opacity: .12; }
-  .flip-btn:focus-visible, .flip-hint:focus-visible { outline: 2px solid var(--md-primary); outline-offset: 2px; }
-  /* Assist chip M3 no rodapé da frente */
-  .flip-hint { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 8px; height: 36px; margin: auto 16px 16px; padding: 0 12px; border: 1px solid var(--md-outline); border-radius: 8px; background: transparent; color: var(--md-on-surface); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; white-space: nowrap; cursor: pointer; }
-  .flip-hint span { overflow: hidden; text-overflow: ellipsis; }
-  .flip-hint svg { width: 18px; height: 18px; fill: var(--md-primary); flex: none; }
-  .flip-hint::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
-  .flip-hint:hover::after { opacity: .08; }
-  .flip-hint:active::after { opacity: .12; }
-  @media (hover: hover) { .flip:not(.flipped):hover .flip-inner { transform: rotateY(-7deg); } }
+  .flip-btn:focus-visible, .card-act:focus-visible { outline: 2px solid var(--md-primary); outline-offset: 2px; }
+  /* Campo de código com borda (M3 outlined) e rótulo sobre a borda */
+  .face .codebox { position: relative; margin-top: 16px; padding: 16px 16px 12px; border: 1px solid var(--md-outline); border-radius: 12px; background: transparent; }
+  .face .codelabel { position: absolute; top: -9px; left: 12px; padding: 0 4px; background: var(--md-surface-container-low); font: 500 12px/16px "Inter", "Roboto", sans-serif; letter-spacing: .4px; color: var(--md-on-surface-variant); }
+  .face .pane .card-media { height: 112px; border-radius: 16px; }
+  .face .pair { display: block; margin-top: 16px; }
+  .face .pair .btn { width: 100%; height: 48px; border-radius: 24px; background: var(--md-primary); color: var(--md-on-primary); font-size: 15px; }
+  .face .pair .btn.done { background: var(--md-primary-container); color: var(--md-on-primary-container); }
+  /* Rodapé de ações: Mouse · Vídeo · CFG */
+  .card-actions { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin: auto 0 0; padding: 8px 12px; border-top: 1px solid var(--md-outline-variant); }
+  .card-act { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 10px; border: 0; border-radius: 20px; background: transparent; color: var(--md-on-surface); font: 600 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-decoration: none; white-space: nowrap; cursor: pointer; }
+  .card-act svg { width: 18px; height: 18px; fill: var(--md-on-surface-variant); flex: none; }
+  .card-act::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
+  .card-act:hover::after { opacity: .08; }
+  .card-act:active::after { opacity: .12; }
   .back-body { display: flex; flex-direction: column; gap: 16px; flex: 1; padding: 12px 16px 16px; }
   .back-sec h3 { margin: 0 0 8px; font-size: 14px; line-height: 20px; font-weight: 500; }
   .back-body .btn { margin: auto 0 0; width: 100%; text-decoration: none; }
@@ -415,7 +421,7 @@
   .back-body .empty { margin: 0; padding: 12px 0; text-align: center; color: var(--md-on-surface-variant); }
   @media (prefers-reduced-motion: reduce) {
     .flip-inner { transition: none; }
-    .flip.flipped .flip-inner, .flip:not(.flipped):hover .flip-inner { transform: none; }
+    .flip.flipped .flip-inner { transform: none; }
     .face.back { transform: none; visibility: hidden; }
     .flip.flipped .face.back { visibility: visible; }
     .flip.flipped .face.front { visibility: hidden; }
@@ -971,13 +977,12 @@ function sectionTitle(iconName, text) {
 
 function renderPlayer(p) {
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
-  const base = (p.name || 'jogador').replace(/[^\w.-]+/g, '_');
   const playerName = (p.name || 'jogador').trim();
   const mouse = proSettings[String(p.steamid)];
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
   const hasVideo = !!(mouse && mouse.resolution);
   const hasCfg = !!p.steamid;
-  const canFlip = hasMouse || hasVideo || hasCfg;
+  const canFlip = hasMouse || hasVideo;
 
   const flip = el('article', 'flip');
   const inner = el('div', 'flip-inner');
@@ -989,17 +994,10 @@ function renderPlayer(p) {
     if (btn) head.appendChild(btn);
     return head;
   };
-  const mkFlipBtn = (ic, label) => {
-    const b = el('button', 'flip-btn');
-    b.type = 'button'; b.title = label; b.setAttribute('aria-label', label);
-    b.appendChild(icon(ic));
-    return b;
-  };
 
   // ---------- Frente: mira e viewmodel ----------
   const front = el('div', 'card face front');
-  const toBackBtn = canFlip ? mkFlipBtn('flipback', 'Virar o card: mouse, vídeo e CFG') : null;
-  front.appendChild(mkHead(toBackBtn));
+  front.appendChild(mkHead());
 
   const defs = [['Mira', p.crosshair_code], ['Viewmodel', p.viewmodel_cmd]];
   const tabs = el('div', 'tabs');
@@ -1020,7 +1018,7 @@ function renderPlayer(p) {
       box.append(el('span', 'codelabel', i === 0 ? 'Código da mira' : 'Comandos do viewmodel'), el('pre', '', val));
       pn.appendChild(box);
       const pair = el('div', 'pair');
-      const cb = el('button', 'btn btn-tonal');
+      const cb = el('button', 'btn');
       cb.append(icon('copy'), el('span', 't', 'Copiar'));
       cb.type = 'button'; cb.dataset.label = 'Copiar';
       cb.onclick = () => copyValue(val, cb);
@@ -1041,42 +1039,46 @@ function renderPlayer(p) {
   select(p.crosshair_code ? 0 : 1);
   front.append(tabs, ...panes);
 
-  let hint = null;
-  if (canFlip) {
-    hint = el('button', 'flip-hint');
-    hint.type = 'button';
-    hint.setAttribute('aria-label', 'Virar o card para ver ' + [hasMouse && 'mouse', hasVideo && 'vídeo', hasCfg && 'CFG'].filter(Boolean).join(', '));
-    hint.append(icon('flipback'), el('span', '', [hasMouse && 'Mouse', hasVideo && 'Vídeo', hasCfg && 'CFG'].filter(Boolean).join(' · ')));
-    front.appendChild(hint);
-  }
-  inner.appendChild(front);
-  if (!canFlip) return flip;
-
-  // ---------- Verso: mouse, vídeo e CFG ----------
-  const back = el('div', 'card face back');
-  const toFrontBtn = mkFlipBtn('flipfront', 'Voltar para a mira');
-  back.appendChild(mkHead(toFrontBtn));
-  const body = el('div', 'back-body');
-  if (hasMouse) {
-    const sec = el('section', 'back-sec');
-    sec.append(sectionTitle('mouse', 'Mouse'), statTiles(mouse, MOUSE_FIELDS, 'compact'));
-    body.appendChild(sec);
-  }
-  if (hasVideo) {
-    const sec = el('section', 'back-sec');
-    sec.append(sectionTitle('monitor', 'Vídeo'), statTiles(mouse, VIDEO_FIELDS, 'compact'));
-    body.appendChild(sec);
-  }
-  if (!hasMouse && !hasVideo) body.appendChild(el('p', 'empty', 'Sem dados de mouse e vídeo para este jogador.'));
+  // Rodapé: Mouse e Vídeo viram o card; CFG abre direto
+  const actions = el('div', 'card-actions');
+  const mkAct = (tag, ic, label) => {
+    const a = el(tag, 'card-act');
+    a.append(icon(ic), el('span', '', label));
+    if (tag === 'button') a.type = 'button';
+    actions.appendChild(a);
+    return a;
+  };
+  const mouseAct = hasMouse ? mkAct('button', 'mouse', 'Mouse') : null;
+  const videoAct = hasVideo ? mkAct('button', 'monitor', 'Vídeo') : null;
   if (hasCfg) {
-    const cfgLink = el('a', 'btn btn-tonal');
-    cfgLink.append(icon('download'), el('span', '', 'CFG'));
+    const cfgLink = mkAct('a', 'download', 'CFG');
     cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
     cfgLink.target = '_blank';
     cfgLink.rel = 'noopener noreferrer';
     cfgLink.setAttribute('aria-label', 'CFG de ' + playerName + ' do CyberShoke');
     cfgLink.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
-    body.appendChild(cfgLink);
+  }
+  if (actions.children.length) front.appendChild(actions);
+  inner.appendChild(front);
+  if (!canFlip) return flip;
+
+  // ---------- Verso: mouse ou vídeo ----------
+  const back = el('div', 'card face back');
+  const toFrontBtn = el('button', 'flip-btn');
+  toFrontBtn.type = 'button'; toFrontBtn.title = 'Voltar para a mira'; toFrontBtn.setAttribute('aria-label', 'Voltar para a mira');
+  toFrontBtn.appendChild(icon('flipfront'));
+  back.appendChild(mkHead(toFrontBtn));
+  const body = el('div', 'back-body');
+  const secs = {};
+  if (hasMouse) {
+    secs.mouse = el('section', 'back-sec');
+    secs.mouse.append(sectionTitle('mouse', 'Mouse'), statTiles(mouse, MOUSE_FIELDS, 'compact'));
+    body.appendChild(secs.mouse);
+  }
+  if (hasVideo) {
+    secs.video = el('section', 'back-sec');
+    secs.video.append(sectionTitle('monitor', 'Vídeo'), statTiles(mouse, VIDEO_FIELDS, 'compact'));
+    body.appendChild(secs.video);
   }
   back.appendChild(body);
   inner.appendChild(back);
@@ -1089,10 +1091,15 @@ function renderPlayer(p) {
     back.setAttribute('aria-hidden', String(!v));
   }
   setFlipped(false);
-  const go = (v, focusEl) => () => { setFlipped(v); focusEl.focus({ preventScroll: true }); };
-  toBackBtn.onclick = go(true, toFrontBtn);
-  hint.onclick = go(true, toFrontBtn);
-  toFrontBtn.onclick = go(false, toBackBtn);
+  const open = (which, from) => () => {
+    Object.keys(secs).forEach(k => { secs[k].hidden = k !== which; });
+    setFlipped(true);
+    toFrontBtn.focus({ preventScroll: true });
+    toFrontBtn._from = from;
+  };
+  if (mouseAct) mouseAct.onclick = open('mouse', mouseAct);
+  if (videoAct) videoAct.onclick = open('video', videoAct);
+  toFrontBtn.onclick = () => { setFlipped(false); if (toFrontBtn._from) toFrontBtn._from.focus({ preventScroll: true }); };
   return flip;
 }
 
