@@ -32,6 +32,10 @@ jobs:
         continue-on-error: true
         run: python scripts/build_cybershoke_links.py --out data/cybershoke-links.json
 
+      - name: Coletar fotos de perfil da HLTV
+        continue-on-error: true
+        run: python scripts/build_hltv_photos.py --file data/cybershoke-links.json
+
       - name: Salvar e republicar o site
         env:
           GH_TOKEN: ${{ github.token }}
