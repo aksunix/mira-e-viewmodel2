@@ -108,14 +108,14 @@
 
   /* Cartões com abas */
   #cards { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
-  .tabs { display: flex; padding: 0 8px; border-bottom: 1px solid var(--md-outline-variant); }
-  .tabs button { flex: 1; height: 38px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--md-on-surface-variant); font: 500 13px "Inter", "Roboto", sans-serif; cursor: pointer; }
-  .tabs button[aria-selected="true"] { color: var(--md-on-surface); border-color: var(--md-primary); }
-  .pane { padding: 12px; }
-  .pane .card-media { height: 120px; border-radius: 10px; }
-  .pane pre { margin: 10px 0 0; font: 12px/18px "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--md-on-surface-variant); user-select: all; }
-  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
-  .pair .btn { height: 34px; padding: 0 8px; font-size: 12px; margin: 0; }
+  .tabs { display: flex; margin: 0 16px; border-bottom: 1px solid var(--md-outline-variant); }
+  .tabs button { flex: 1; height: 44px; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--md-on-surface); font: 500 14px "Inter", "Roboto", sans-serif; cursor: pointer; }
+  .tabs button[aria-selected="true"] { color: var(--md-primary); border-color: var(--md-primary); }
+  .pane { padding: 16px; }
+  .pane .card-media { height: 112px; border-radius: 12px; }
+  .pane pre { margin: 12px 0 0; padding: 10px 12px; border-radius: 8px; background: var(--md-surface-container-high); font: 12px/18px "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--md-on-surface); user-select: all; }
+  .pair { display: flex; margin-top: 12px; }
+  .pair .btn { height: 36px; padding: 0 20px; margin: 0; background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
   .pane .empty { margin: 0; padding: 28px 0; text-align: center; color: var(--md-on-surface-variant); }
 
 
@@ -265,8 +265,6 @@
   .btn-filled:hover { box-shadow: var(--md-shadow); }
   .btn-tonal { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
   .btn-tonal.done { background: var(--md-primary-container); color: var(--md-on-primary-container); }
-  .actions .btn-text:hover { box-shadow: var(--md-shadow); filter: brightness(1.08); }
-  .actions .btn-text:active { filter: brightness(.92); }
   .btn-text { background: var(--md-primary); color: var(--md-on-primary); padding: 0 14px; border-radius: 20px; }
   :focus-visible { outline: 3px solid var(--md-primary); outline-offset: 2px; }
 
@@ -299,14 +297,15 @@
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
   /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
-  #cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: start; }
+  #cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: start; }
   @media (max-width: 1000px) { #cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 700px) { #cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 420px) { #cards { grid-template-columns: minmax(0, 1fr); } }
   .card {
     display: flex; flex-direction: column; overflow: hidden;
-    background: var(--md-surface-container-low); border: 1px solid var(--md-outline-variant); border-radius: 12px;
+    background: var(--md-surface-container-low); border: 1px solid var(--md-outline-variant); border-radius: 20px;
   }
+  .card > .card-title { padding: 16px 16px 8px; font-size: 16px; font-weight: 400; }
   .card-media {
     position: relative; display: grid; place-items: center; height: 112px;
     background: var(--md-surface-container-highest);
@@ -326,7 +325,11 @@
   .support .lbl { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
   .support .txt { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 18px; letter-spacing: 0; overflow-wrap: anywhere; user-select: all; }
   .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
-  .actions { display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding: 12px; min-height: auto; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px; margin-top: auto; padding: 0 8px 12px; }
+  .actions .mouse-btn, .actions .cfg-link { height: 36px; min-height: 36px; padding: 0 10px; border: 0; border-radius: 18px; background: transparent; color: var(--md-primary); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-transform: none; text-decoration: none; }
+  .actions .mouse-btn::after { display: none; }
+  .actions .mouse-btn:hover, .actions .cfg-link:hover { background: color-mix(in srgb, var(--md-primary) 12%, transparent); }
+  .actions .mouse-btn svg { display: none; }
   .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
   .cfg-link {
     display: inline-flex; align-items: center; justify-content: center;
@@ -348,12 +351,11 @@
   }
   .split-action.open .code-panel { display: block; }
   .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
-  .mouse-block { display: flex; flex-direction: column; }
-  .mouse-btn { width: 100%; justify-content: space-between; }
+  .mouse-block { display: contents; }
   .mouse-btn svg { margin: 0; transition: transform .18s ease; }
   .mouse-block.open .mouse-btn svg { transform: rotate(180deg); }
-  .mouse-panel { display: none; margin-top: 6px; padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px; background: var(--md-surface-container-high); }
-  .mouse-block.open .mouse-panel { display: block; }
+  .mouse-panel { display: none; margin: 4px 4px 0; padding: 12px; border: 0; border-radius: 12px; background: var(--md-surface-container-high); }
+  .mouse-block.open .mouse-panel { display: block; order: 10; flex-basis: 100%; }
   .mouse-panel dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; }
   .mouse-panel dt { color: var(--md-on-surface-variant); }
   .mouse-panel dd { margin: 0; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
@@ -419,7 +421,7 @@
 <div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
-  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Buscar mira e cfg de jogadores</a>
+  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
   <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
@@ -429,7 +431,7 @@
 <section data-view="inicio">
   <div id="intro">
     <div class="hero">
-      <h2>Extraia <span>crosshair</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
+      <h2>Obtenha <span>mira</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
       <p>Faça o upload do arquivo .dem. Ele é lido no seu computador e não é enviado para nenhum servidor.</p>
     </div>
     <button type="button" class="dropzone" id="dropzone">
@@ -481,8 +483,7 @@
 </section>
 
 <section data-view="buscar" hidden>
-  <h2 class="page big">Buscar mira e cfg de <span class="acc">jogadores</span></h2>
-  <p class="lead">Digite o nick</p>
+  <h2 class="page big">Digite o nick do <span class="acc">jogador</span></h2>
   <div class="search">
     <div class="search-field">
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
@@ -536,7 +537,7 @@
       </ul>
     </li>
   </ol>
-  <p class="tut-tip">Quer só a mira de um jogador profissional? Use <a href="#/buscar">Buscar mira e cfg de jogadores</a>.</p>
+  <p class="tut-tip">Quer só a mira de um jogador profissional? Use <a href="#/buscar">Pesquisa</a>.</p>
 </section>
 </main>
 </div>
@@ -879,7 +880,7 @@ const VIDEO_FIELDS = [['resolution', 'Resolution']];
 function mouseBlock(info, title, fields) {
   fields = fields || MOUSE_FIELDS;
   const group = el('div', 'mouse-block');
-  const btn = el('button', 'btn btn-text mouse-btn');
+  const btn = el('button', 'btn mouse-btn');
   btn.type = 'button';
   btn.setAttribute('aria-expanded', 'false');
   btn.append(document.createTextNode(title || 'Mouse'));
@@ -905,7 +906,7 @@ function renderPlayer(p) {
   const card = el('article', 'card');
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
   const base = (p.name || 'jogador').replace(/[^\w.-]+/g, '_');
-  card.appendChild(el('h3', 'card-title', p.name || 'Sem nome')).style.padding = '12px 12px 8px';
+  card.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
 
   const defs = [['Crosshair', p.crosshair_code, base + '-crosshair.txt'], ['Viewmodel', p.viewmodel_cmd, base + '-viewmodel.cfg']];
   const tabs = el('div', 'tabs');
@@ -924,7 +925,7 @@ function renderPlayer(p) {
     if (val) {
       pn.appendChild(el('pre', '', val));
       const pair = el('div', 'pair');
-      const cb = el('button', 'btn btn-outline', 'Copiar');
+      const cb = el('button', 'btn btn-tonal', 'Copiar');
       cb.type = 'button'; cb.dataset.label = 'Copiar';
       cb.onclick = () => copyValue(val, cb);
       pair.append(cb); pn.appendChild(pair);
