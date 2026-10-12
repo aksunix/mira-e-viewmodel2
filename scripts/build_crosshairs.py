@@ -3,8 +3,9 @@
 
 - Le a pagina inicial do site (e as paginas seguintes, se houver paginacao) e, para cada jogador,
   pega o nome, o SteamID64 (da URL /player/<steamid>/<nick>) e o codigo da mira (texto alternativo da imagem).
-- O procrosshairs NAO informa a data da mira. A data gravada ("since") e o dia em que ESTE projeto
-  viu aquele codigo pela primeira vez; se o codigo mudar, a data passa a ser a da mudanca.
+- O procrosshairs NAO informa a data da mira. "since" e o dia em que ESTE projeto viu aquele codigo
+  pela primeira vez (nao e a data real da mira). "changed" so existe quando este projeto viu o codigo
+  TROCAR de um valor para outro; e essa a data que o site mostra ("Mira trocada em ...").
 - Educado: poucas requisicoes (uma por pagina), pausa entre elas, para ao receber 403/429.
 - Rodar a cada 2 dias pelo GitHub Actions (.github/workflows/update-crosshairs.yml).
 """
@@ -43,6 +44,7 @@ def parse(html):
     """Devolve lista de dicts {steamid, handle, name, code, url}."""
     soup = BeautifulSoup(html, "html.parser")
     out, seen = [], set()
+    skipped = []
     for a in soup.find_all("a", href=PLAYER):
         m = PLAYER.search(a["href"])
         sid, handle = m.group(1), m.group(2)
@@ -59,10 +61,13 @@ def parse(html):
                 break
             box = box.parent
         if not code:
+            skipped.append(handle)
             continue
         seen.add(sid)
         out.append({"steamid": sid, "handle": handle, "code": code,
                     "url": f"{BASE}/player/{sid}/{handle}"})
+    if skipped:  # ajuda a ver no log do Actions quem ficou sem mira (o site lista cerca de 100 jogadores)
+        print(f"  {len(skipped)} links de jogador sem codigo de mira encontrado: {', '.join(skipped[:30])}")
     return out
 
 
@@ -123,13 +128,19 @@ def main():
     for e in entries:
         key_id, key_name = "id:" + e["steamid"], norm(e["handle"])
         old = data["players"].get(key_id)
+        changed_on = old.get("changed") if old else None
         if old and old.get("code") == e["code"]:
             since = old.get("since", today)
         else:
             since = today
-            changed += 1 if old else 0
-            new += 0 if old else 1
+            if old:
+                changed += 1
+                changed_on = today
+            else:
+                new += 1
         rec = {"name": e["handle"], "steamid": e["steamid"], "code": e["code"], "since": since, "url": e["url"]}
+        if changed_on:
+            rec["changed"] = changed_on
         data["players"][key_id] = rec
         data["players"][key_name] = rec
     if entries:
