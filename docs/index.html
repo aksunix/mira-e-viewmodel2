@@ -6,9 +6,7 @@
 <meta name="color-scheme" content="light dark">
 <title>CS2 Extract – Crosshair &amp; Viewmodel</title>
 <script>try{var t=localStorage.getItem("cs2x:theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root {
     --md-primary: #D0BCFF; --md-on-primary: #381E72;
@@ -105,15 +103,12 @@
   .sec .search { margin: 0 0 16px; }
   #searchResult { justify-content: start; }
   .checker { background: repeating-conic-gradient(var(--md-surface-container-highest) 0 25%, var(--md-surface-container-high) 0 50%) 0 0 / 16px 16px; }
-  .ex { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
-  .ex-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; border: 1px solid var(--md-outline-variant); border-radius: 12px; background: var(--md-surface-container-low); color: inherit; font: inherit; font-size: 12px; cursor: pointer; }
-  .ex-tile canvas { border-radius: 8px; width: 64px; height: 64px; }
-  .ex-tile:hover { border-color: var(--md-primary); }
 
   /* Cartões com abas */
   #cards { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
   .tabs { display: flex; margin-top: 8px; border-bottom: 1px solid var(--md-outline-variant); }
   .tabs button { position: relative; flex: 1; height: 48px; border: 0; background: none; color: var(--md-on-surface-variant); font: 500 14px "Inter", "Roboto", sans-serif; letter-spacing: .1px; cursor: pointer; transition: background .15s, color .15s; }
+  .tabs button:focus-visible { outline: 2px solid var(--md-primary); outline-offset: -4px; border-radius: 8px; }
   .tabs button:hover { background: color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
   .tabs button::after { content: ""; position: absolute; left: 50%; bottom: -1px; width: 0; height: 3px; border-radius: 3px 3px 0 0; background: var(--md-primary); transform: translateX(-50%); transition: width .2s; }
   .tabs button[aria-selected="true"] { color: var(--md-primary); }
@@ -127,7 +122,6 @@
   .pair .btn { height: 40px; padding: 0 20px 0 16px; margin: 0; gap: 8px; }
   .pair .btn svg { width: 18px; height: 18px; margin: 0; }
   .pane .empty { margin: 0; padding: 28px 0; text-align: center; color: var(--md-on-surface-variant); }
-
 
   /* Análise em andamento */
   .progress:not(.analyzing) .sec-head, .progress:not(.analyzing) .recent, .progress:not(.analyzing) .job-ic, .progress:not(.analyzing) .job-side .timer { display: none; }
@@ -157,7 +151,6 @@
   .recent-list .n { font-size: 13px; color: var(--md-on-surface-variant); text-align: right; }
   @media (max-width: 600px) { .job { flex-wrap: wrap; } .job-ic { display: none; } .recent-list li { grid-template-columns: auto minmax(0, 1fr) auto; } .recent-list .n { display: none; } }
   .pair { grid-template-columns: 1fr; }
-
 
   /* Página de busca */
   .page.big { font-size: clamp(30px, 5vw, 40px); line-height: 1.15; font-weight: 800; letter-spacing: -.5px; }
@@ -219,8 +212,7 @@
   .xh-chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .xh-chip { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 10px; font-size: 12px; font-weight: 500; }
   .xh-chip.tonal { background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
-  .xh-chip.line { border: 1px solid var(--md-outline-variant); color: var(--md-on-surface-variant); text-decoration: none; }
-  a.xh-chip.line:hover { border-color: var(--md-primary); color: var(--md-on-surface); }
+
   .xh-body .btn { margin: 0; }
   @media (max-width: 480px) { .pro-head, .pro-card { padding: 16px; } .pro-name { font-size: 24px; line-height: 30px; } }
 
@@ -332,27 +324,13 @@
     background: var(--md-surface-container-highest);
   }
   .card-media canvas { width: 96px; height: 96px; }
-  .card-media .ph {
-    display: grid; place-items: center; width: 80px; height: 80px; border-radius: 50%;
-    background: var(--md-primary-container); color: var(--md-on-primary-container);
-    font-size: 36px; line-height: 40px; font-weight: 500; text-transform: uppercase;
-  }
-  .card-media .cap { position: absolute; left: 12px; bottom: 8px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
-  .card-body { padding: 10px 12px 0; }
+
   .card-title { margin: 0; min-width: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px; overflow-wrap: anywhere; }
-  .card-sub { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: .4px; }
+  
   .support { margin-top: 10px; }
   .support + .support { margin-top: 8px; }
-  .support .lbl { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
-  .support .txt { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 18px; letter-spacing: 0; overflow-wrap: anywhere; user-select: all; }
-  .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
-  .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: auto 8px 0; padding: 8px 0; border-top: 1px solid var(--md-outline-variant); }
-  .actions .mouse-btn, .actions .cfg-link { height: 40px; min-height: 40px; padding: 0 8px; border: 0; border-radius: 20px; background: transparent; color: var(--md-primary); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-transform: none; text-decoration: none; white-space: nowrap; }
-  .actions .mouse-btn::after { display: none; }
-  @container card (max-width: 235px) { .actions .mouse-btn, .actions .cfg-link { padding: 0 5px; font-size: 12px; } }
-  .actions .mouse-btn:hover, .actions .cfg-link:hover { background: color-mix(in srgb, var(--md-primary) 12%, transparent); }
-  .actions .mouse-btn svg { display: none; }
-  .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
+
+  /* Link "ver histórico" em Demos recentes */
   .cfg-link {
     display: inline-flex; align-items: center; justify-content: center;
     min-height: 36px; padding: 0 12px; border: 1px solid var(--md-outline-variant);
@@ -360,30 +338,6 @@
     text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .6px;
   }
   .cfg-link:hover { border-color: var(--md-primary); background: var(--md-primary-container); }
-
-  .split-action .btn { margin: 0; height: 38px; }
-  .split-main { border-radius: 20px 4px 4px 20px; width: 100%; padding: 0 8px; font-size: 12px; letter-spacing: .1px; white-space: nowrap; }
-  .split-toggle { background: var(--md-primary); color: var(--md-on-primary); border-radius: 4px 20px 20px 4px; padding: 0; }
-  .split-toggle svg { margin: 0; transition: transform .18s ease; }
-  .split-action.open .split-toggle svg { transform: rotate(180deg); }
-  .code-panel {
-    display: none; grid-column: 1 / -1; position: static; margin-top: 6px;
-    padding: 10px; border: 1px solid var(--md-outline-variant); border-radius: 8px;
-    background: var(--md-surface-container-high); box-shadow: 0 4px 12px rgba(0,0,0,.2);
-  }
-  .split-action.open .code-panel { display: block; }
-  .code-panel pre { margin: 0; color: var(--md-on-surface); font: 12px/1.55 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: text; }
-  .mouse-block { display: contents; }
-  .mouse-btn svg { margin: 0; transition: transform .18s ease; }
-  .mouse-block.open .mouse-btn svg { transform: rotate(180deg); }
-  .mouse-panel { display: none; margin: 4px 4px 0; padding: 12px; border: 0; border-radius: 12px; background: var(--md-surface-container-high); }
-  .mouse-block.open .mouse-panel { display: block; order: 10; flex-basis: 100%; }
-  .mouse-panel dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; }
-  .mouse-panel dt { color: var(--md-on-surface-variant); }
-  .mouse-panel dd { margin: 0; font-weight: 500; text-align: right; font-variant-numeric: tabular-nums; }
-  .mouse-panel .src { display: block; margin-top: 8px; font-size: 11px; color: var(--md-on-surface-variant); }
-  .mouse-panel .src a { color: var(--md-primary); }
-  .code-panel .code-copy { margin-top: 8px; height: 30px; padding: 0 12px; font-size: 11px; }
 
   /* Card flip (Material 3): frente = mira/viewmodel, verso = mouse, vídeo e CFG */
   .flip { perspective: 1200px; min-width: 0; display: grid; }
@@ -426,7 +380,6 @@
     .flip.flipped .face.back { visibility: visible; }
     .flip.flipped .face.front { visibility: hidden; }
   }
-
 
   /* Busca de jogador profissional */
   .search { position: relative; max-width: 640px; margin: 0 auto 24px; }
@@ -594,11 +547,19 @@
       <p>Abra o <a href="#/inicio">Início</a>, arraste o arquivo <b>.dem</b> para a caixa ou clique em <b>Selecionar arquivo</b>. O arquivo é lido no seu computador e não é enviado para nenhum servidor. Demos grandes podem levar alguns minutos.</p>
     </li>
     <li>
-      <h3>Copie o crosshair e o viewmodel</h3>
-      <p>Cada jogador da partida aparece em um card, com a prévia da mira, o <b>crosshair code</b> e os comandos de <b>viewmodel</b>. Use o botão <b>Copiar</b>.</p>
+      <h3>Copie a mira e o viewmodel</h3>
+      <p>Cada jogador da partida aparece em um card, com a prévia da mira, o código da mira (<b>crosshair code</b>) e os comandos de <b>viewmodel</b>. Troque entre as abas <b>Mira</b> e <b>Viewmodel</b> e use o botão <b>Copiar</b>.</p>
       <ul>
-        <li><b>Crosshair:</b> no CS2, abra as configurações da mira e importe o código, ou cole no console: <code>apply_crosshair_code CÓDIGO</code>.</li>
+        <li><b>Mira:</b> no CS2, abra as configurações da mira e importe o código, ou cole no console: <code>apply_crosshair_code CÓDIGO</code>.</li>
         <li><b>Viewmodel:</b> abra o console do jogo e cole os comandos copiados.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Veja mouse, vídeo e CFG</h3>
+      <p>No rodapé do card ficam os botões <b>Mouse</b>, <b>Vídeo</b> e <b>CFG</b>, quando houver dados do jogador.</p>
+      <ul>
+        <li><b>Mouse</b> e <b>Vídeo:</b> o card vira e mostra sensibilidade, DPI, eDPI, zoom e Hz, ou a resolução. Use a seta no canto do card para voltar.</li>
+        <li><b>CFG:</b> abre a configuração completa do jogador no CyberShoke (o SteamID do jogador é enviado ao CyberShoke).</li>
       </ul>
     </li>
   </ol>
@@ -976,7 +937,9 @@ function sectionTitle(iconName, text) {
   return h;
 }
 
+let cardSeq = 0;
 function renderPlayer(p) {
+  const uid = ++cardSeq;
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
   const playerName = (p.name || 'jogador').trim();
   const mouse = proSettings[String(p.steamid)];
@@ -1006,6 +969,8 @@ function renderPlayer(p) {
   const panes = defs.map(([label, val], i) => {
     const pn = el('div', 'pane');
     pn.setAttribute('role', 'tabpanel');
+    pn.id = 'pane-' + uid + '-' + i;
+    pn.setAttribute('aria-labelledby', 'tab-' + uid + '-' + i);
     if (i === 0 && xh) {
       const m = el('div', 'card-media checker');
       const c = document.createElement('canvas');
@@ -1032,11 +997,18 @@ function renderPlayer(p) {
   const btns = defs.map(([label], i) => {
     const b = el('button', '', label);
     b.type = 'button'; b.setAttribute('role', 'tab');
+    b.id = 'tab-' + uid + '-' + i;
+    b.setAttribute('aria-controls', 'pane-' + uid + '-' + i);
     b.onclick = () => select(i);
+    b.onkeydown = e => {
+      const k = { ArrowRight: (i + 1) % btns.length, ArrowLeft: (i + btns.length - 1) % btns.length, Home: 0, End: btns.length - 1 }[e.key];
+      if (k === undefined) return;
+      e.preventDefault(); select(k); btns[k].focus();
+    };
     tabs.appendChild(b);
     return b;
   });
-  function select(k) { btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === k)); panes[i].hidden = i !== k; }); }
+  function select(k) { btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === k)); b.tabIndex = i === k ? 0 : -1; panes[i].hidden = i !== k; }); }
   select(p.crosshair_code ? 0 : 1);
   front.append(tabs, ...panes);
 
@@ -1347,13 +1319,13 @@ function renderSearchCard(p) {
         const body = el('div', 'xh-body');
         body.appendChild(el('pre', 'xh-code', d.xh.code));
         const chips = el('div', 'xh-chips');
-        if (d.xh.since) {
-          const since = new Date(d.xh.since + 'T12:00:00').toLocaleDateString('pt-BR');
-          const dt = el('span', 'xh-chip tonal', 'Registrada em ' + since);
-          dt.title = 'Data em que este site registrou este código.';
+        if (d.xh.changed) {
+          const when = new Date(d.xh.changed + 'T12:00:00').toLocaleDateString('pt-BR');
+          const dt = el('span', 'xh-chip tonal', 'Mira trocada em ' + when);
+          dt.title = 'Data em que este site viu o código da mira mudar.';
           chips.appendChild(dt);
         }
-        body.appendChild(chips);
+        if (chips.children.length) body.appendChild(chips);
         const cb = el('button', 'btn btn-filled', 'Copiar mira');
         cb.type = 'button'; cb.dataset.label = 'Copiar mira';
         cb.onclick = () => copyValue(d.xh.code, cb);

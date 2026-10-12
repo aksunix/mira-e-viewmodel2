@@ -109,11 +109,13 @@ func parse(file js.Value) {
 				info.CrosshairCode = cc
 			}
 			vm := pl.ViewmodelOffset()
-			if vm.X != 0 || vm.Y != 0 || vm.Z != 0 {
+			fov := pl.ViewmodelFOV()
+			// antes de a entidade carregar, tudo vem zerado; qualquer valor diferente de zero (inclusive so o FOV) e dado real
+			if vm.X != 0 || vm.Y != 0 || vm.Z != 0 || fov != 0 {
 				info.ViewmodelX = vm.X
 				info.ViewmodelY = vm.Y
 				info.ViewmodelZ = vm.Z
-				info.ViewmodelFOV = pl.ViewmodelFOV()
+				info.ViewmodelFOV = fov
 				// formata como comandos de console, no estilo que o CS2 usa
 				info.ViewmodelCmd = fmt.Sprintf(
 					"viewmodel_fov %s; viewmodel_offset_x %s; viewmodel_offset_y %s; viewmodel_offset_z %s;",

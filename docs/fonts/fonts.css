@@ -1,0 +1,10 @@
+/* Fontes hospedadas no proprio site (Inter, Roboto, Roboto Mono; licenca OFL), sem requisicoes ao Google. */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400; font-display: swap; src: url("inter-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 500; font-display: swap; src: url("inter-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 700; font-display: swap; src: url("inter-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 800; font-display: swap; src: url("inter-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 400; font-display: swap; src: url("roboto-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 500; font-display: swap; src: url("roboto-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 700; font-display: swap; src: url("roboto-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("roboto-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("roboto-mono-latin-500-normal.woff2") format("woff2"); }
