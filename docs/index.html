@@ -56,7 +56,6 @@
   .i { width: 20px; height: 20px; fill: currentColor; flex: none; }
   .icon-btn { display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 10px; background: none; color: var(--md-on-surface-variant); cursor: pointer; }
   .icon-btn:hover { background: var(--md-surface-container-high); }
-  .menu { display: none; }
   .theme { display: flex; padding: 3px; border-radius: 12px; background: var(--md-surface-container-high); }
   .theme .icon-btn { width: 34px; height: 34px; border-radius: 9px; }
   .theme .icon-btn[aria-pressed="true"] { background: var(--md-secondary-container); color: var(--md-on-surface); }
@@ -69,8 +68,8 @@
   .upd { margin: auto 0 0; padding: 12px 14px; font-size: 12px; color: var(--md-on-surface-variant); }
   main { flex: 1; min-width: 0; max-width: 1180px; margin: 0 auto; padding: 32px 24px 96px; }
   .scrim { display: none; }
+  .shell.closed .side { display: none; }
   @media (max-width: 860px) {
-    .menu { display: grid; }
     .side { position: fixed; z-index: 30; top: 68px; bottom: 0; left: 0; transform: translateX(-100%); transition: transform .2s; }
     .side.open { transform: none; }
     .scrim.on { display: block; position: fixed; inset: 68px 0 0; z-index: 25; background: rgba(0,0,0,.5); }
@@ -362,7 +361,7 @@
 <body>
 
 <header class="appbar">
-  <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
+  <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir ou fechar o menu" aria-expanded="true" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
   <a class="brand" href="#/inicio" aria-label="CS2 Extract – ir para o início">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
     <span><b>CS2 <em>Extract</em></b><small>Crosshair &amp; Viewmodel</small></span>
@@ -375,6 +374,7 @@
 </header>
 
 <div class="shell">
+<div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
   <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Buscar jogadores</a>
@@ -383,7 +383,6 @@
   <a href="#/sobre" data-page="sobre"><svg class="i" data-i="info"></svg>Sobre</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
-<div class="scrim" id="scrim"></div>
 
 <main>
 <section data-view="inicio">
@@ -558,15 +557,23 @@ setMode.value = settings.mode; setAuto.checked = settings.autocopy; setNotify.ch
 });
 
 // Páginas (menu lateral) e menu no celular
-const side = document.getElementById('side'), scrim = document.getElementById('scrim'), menuBtn = document.getElementById('menuBtn');
-function toggleMenu(open) { side.classList.toggle('open', open); scrim.classList.toggle('on', open); menuBtn.setAttribute('aria-expanded', String(open)); }
-menuBtn.onclick = () => toggleMenu(!side.classList.contains('open'));
+const side = document.getElementById('side'), scrim = document.getElementById('scrim'), menuBtn = document.getElementById('menuBtn'), shell = document.querySelector('.shell');
+const narrow = matchMedia('(max-width: 860px)');
+// Telas grandes: o menu começa aberto e o botão recolhe/mostra. Telas pequenas: abre por cima do conteúdo.
+function toggleMenu(open) {
+  if (narrow.matches) { side.classList.toggle('open', open); scrim.classList.toggle('on', open); }
+  else shell.classList.toggle('closed', !open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+}
+menuBtn.onclick = () => toggleMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
 scrim.onclick = () => toggleMenu(false);
+narrow.addEventListener('change', () => { side.classList.remove('open'); scrim.classList.remove('on'); shell.classList.remove('closed'); menuBtn.setAttribute('aria-expanded', String(!narrow.matches)); });
+menuBtn.setAttribute('aria-expanded', String(!narrow.matches));
 function route() {
   const p = location.hash.slice(2), v = ['inicio', 'buscar', 'historico', 'configuracoes', 'sobre'].includes(p) ? p : 'inicio';
   document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
   document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
-  toggleMenu(false);
+  if (narrow.matches) toggleMenu(false);
   if (v === 'historico') renderHistory();
   window.scrollTo({ top: 0 });
 }
