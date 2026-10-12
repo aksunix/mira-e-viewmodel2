@@ -177,9 +177,8 @@
   .pro-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .pro-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 16px; border: 1px solid var(--md-outline-variant); border-radius: 18px; background: transparent; color: var(--md-on-surface); font-size: 13px; font-weight: 500; text-decoration: none; transition: background .15s, filter .15s; }
   .pro-btn .i { width: 16px; height: 16px; }
-  .pro-btn.faceit { background: var(--md-surface-container-high); }
-  .pro-btn.faceit .i { color: var(--md-primary); }
-  .pro-btn.faceit:hover { background: var(--md-surface-container-highest); }
+  .pro-btn.faceit { border-color: #FF5500; background: #FF5500; color: #fff; }
+  .pro-btn.faceit:hover { filter: brightness(1.15); }
   .pro-btn.hltv { border-color: #2B6EA4; background: #2B6EA4; color: #fff; }
   .pro-btn.hltv:hover { filter: brightness(1.15); }
   .pro-btn.cfg { border-color: transparent; background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
@@ -297,7 +296,7 @@
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
   /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
-  #cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: start; }
+  #cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: start; }
   @media (max-width: 1000px) { #cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 700px) { #cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 420px) { #cards { grid-template-columns: minmax(0, 1fr); } }
@@ -328,6 +327,7 @@
   .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px; margin-top: auto; padding: 0 8px 12px; }
   .actions .mouse-btn, .actions .cfg-link { height: 36px; min-height: 36px; padding: 0 10px; border: 0; border-radius: 18px; background: transparent; color: var(--md-primary); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-transform: none; text-decoration: none; }
   .actions .mouse-btn::after { display: none; }
+  @media (max-width: 1360px) and (min-width: 1001px) { .actions { padding: 0 4px 12px; } .actions .mouse-btn, .actions .cfg-link { padding: 0 6px; font-size: 12px; } .pane { padding: 12px; } .tabs { margin: 0 12px; } }
   .actions .mouse-btn:hover, .actions .cfg-link:hover { background: color-mix(in srgb, var(--md-primary) 12%, transparent); }
   .actions .mouse-btn svg { display: none; }
   .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
@@ -422,8 +422,8 @@
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
   <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
-  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
+  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
 
