@@ -169,8 +169,11 @@
   .pro-tag { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 6px; background: var(--md-surface-container-high); font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; }
   .pro-links { display: flex; flex-wrap: wrap; gap: 16px; flex: 1; justify-content: flex-end; }
   .pro-btn { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex: 1; min-width: 180px; max-width: 260px; height: 56px; padding: 0 20px; border-radius: 12px; border: 1px solid; background: var(--md-surface-container-low); color: var(--md-on-surface); font-weight: 600; text-decoration: none; }
-  .pro-btn.faceit { border-color: #FF5500; }
-  .pro-btn.hltv { border-color: #3B82F6; }
+  .pro-btn.faceit { border-color: #FF5500; background: #FF5500; color: #fff; }
+  .pro-btn.hltv { border-color: #2B6EA4; background: #2B6EA4; color: #fff; }
+  .pro-btn.faceit:hover, .pro-btn.hltv:hover { filter: brightness(1.12); }
+  .pro-btn .i, .pro-btn svg { flex: none; }
+  .pro-btn .lbl { display: inline-flex; align-items: center; gap: 8px; }
   .pro-btn.cfg { border-color: var(--md-primary); }
   .pro-mouse { flex-basis: 100%; padding-top: 20px; border-top: 1px solid var(--md-outline-variant); }
   .pro-mouse h4 { margin: 0 0 12px; font-size: 14px; font-weight: 600; }
@@ -197,6 +200,24 @@
   .hist .open { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
   .hist .open b { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
   .hist small { color: var(--md-on-surface-variant); }
+  .tut .steps { max-width: 760px; margin: 0; padding: 0; list-style: none; counter-reset: st; display: grid; gap: 16px; }
+  .tut .steps > li { position: relative; padding: 20px 24px 20px 72px; border: 1px solid var(--md-outline-variant); border-radius: 16px; background: var(--md-surface-container-low); counter-increment: st; }
+  .tut .steps > li::before { content: counter(st); position: absolute; left: 20px; top: 20px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--md-primary-container); color: var(--md-on-primary-container); font-weight: 700; }
+  .tut h3 { margin: 0 0 8px; font-size: 18px; line-height: 24px; }
+  .tut p { margin: 0 0 8px; color: var(--md-on-surface-variant); }
+  .tut ul { margin: 0; padding-left: 20px; color: var(--md-on-surface-variant); display: grid; gap: 6px; }
+  .tut code { padding: 2px 6px; border-radius: 6px; background: var(--md-surface-container-high); color: var(--md-on-surface); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 13px; }
+  .tut a { color: var(--md-accent); }
+  .tut-tip { max-width: 760px; margin: 20px 0 0; color: var(--md-on-surface-variant); }
+  .pro-note { flex-basis: 100%; margin: 0; text-align: right; font-size: 12px; color: var(--md-on-surface-variant); }
+  .pro-xh { flex-basis: 100%; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid var(--md-outline-variant); }
+  .pro-xh .xh-prev { display: grid; place-items: center; width: 120px; height: 120px; border-radius: 14px; flex: none; }
+  .pro-xh .xh-prev canvas { width: 96px; height: 96px; }
+  .pro-xh .xh-body { flex: 1; min-width: 220px; }
+  .pro-xh h4 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+  .pro-xh pre { margin: 0 0 8px; font: 12px/1.5 "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; color: var(--md-on-surface); }
+  .pro-xh .xh-date { display: block; margin-bottom: 10px; font-size: 12px; color: var(--md-on-surface-variant); }
+  .pro-xh .xh-date a { color: var(--md-accent); }
   .about p { max-width: 640px; margin: 0 0 12px; color: var(--md-on-surface-variant); }
 
   /* Dropzone */
@@ -387,10 +408,9 @@
 <div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
-  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Buscar jogadores</a>
+  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Buscar mira e cfg de jogadores</a>
+  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
-  <a href="#/configuracoes" data-page="configuracoes"><svg class="i" data-i="tune"></svg>Configurações</a>
-  <a href="#/sobre" data-page="sobre"><svg class="i" data-i="info"></svg>Sobre</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
 
@@ -398,7 +418,7 @@
 <section data-view="inicio">
   <div id="intro">
     <div class="hero">
-      <h2>Extraia seu <span>crosshair</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
+      <h2>Extraia <span>crosshair</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
       <p>Faça o upload do arquivo .dem. Ele é lido no seu computador e não é enviado para nenhum servidor.</p>
     </div>
     <button type="button" class="dropzone" id="dropzone">
@@ -450,8 +470,8 @@
 </section>
 
 <section data-view="buscar" hidden>
-  <h2 class="page big">Buscar <span class="acc">jogadores</span></h2>
-  <p class="lead">Digite o nick de um jogador profissional para abrir o perfil dele na FACEIT e na HLTV.</p>
+  <h2 class="page big">Buscar mira e cfg de <span class="acc">jogadores</span></h2>
+  <p class="lead">Digite o nick</p>
   <div class="search">
     <div class="search-field">
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
@@ -470,21 +490,42 @@
   <button type="button" class="btn btn-outline" id="histClear">Limpar histórico</button>
 </section>
 
-<section data-view="configuracoes" hidden>
-  <h2 class="page">Configurações</h2>
-  <div class="panel">
-    <div class="row"><label for="setMode">Modo de extração<small>Define quais jogadores aparecem nos resultados.</small></label>
-      <select id="setMode"><option value="all">Padrão (recomendado)</option><option value="crosshair">Só quem tem crosshair</option><option value="viewmodel">Só quem tem viewmodel</option></select></div>
-    <div class="row"><label for="setAuto">Copiar automaticamente<small>Copia a mira quando o demo tem um único jogador.</small></label><input type="checkbox" class="sw" id="setAuto"></div>
-    <div class="row"><label for="setNotify">Notificações<small>Avisos rápidos ao copiar ou baixar.</small></label><input type="checkbox" class="sw" id="setNotify"></div>
-  </div>
-</section>
-
-<section data-view="sobre" class="about" hidden>
-  <h2 class="page">Sobre</h2>
-  <p>O CS2 Extract lê um demo (.dem) do CS2 e mostra o crosshair code e os comandos de viewmodel de cada jogador, com prévia da mira, cópia e download.</p>
-  <p>A análise roda no seu navegador (Go compilado para WebAssembly). O arquivo .dem não é enviado para nenhum servidor.</p>
-  <p>O histórico e as configurações ficam salvos só neste navegador. O botão Baixar CFG abre o CyberShoke e envia o SteamID do jogador para lá; os links de FACEIT, HLTV e ProSettings abrem sites externos.</p>
+<section data-view="tutorial" class="tut" hidden>
+  <h2 class="page big">Tutorial</h2>
+  <p class="lead">Como baixar uma demo, extrair o arquivo e enviar para o site.</p>
+  <ol class="steps">
+    <li>
+      <h3>Baixe a demo da partida</h3>
+      <p>A demo é o arquivo da partida, com a extensão <b>.dem</b>. Baixe a partir de onde ela foi jogada:</p>
+      <ul>
+        <li><b>CS2:</b> no menu do jogo, abra <b>Assistir → Suas partidas</b> e baixe a demo da partida. As demos ficam disponíveis por tempo limitado.</li>
+        <li><b>FACEIT:</b> abra a sala da partida e use a opção de baixar a demo.</li>
+        <li><b>HLTV:</b> abra a página da partida e baixe a demo (GOTV) na seção de demos.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Extraia o arquivo</h3>
+      <p>Muitas demos chegam compactadas (<b>.zip</b>, <b>.rar</b>, <b>.gz</b>, <b>.bz2</b> ou <b>.zst</b>). O site só aceita o arquivo já extraído, terminado em <b>.dem</b>.</p>
+      <ul>
+        <li><b>Windows:</b> clique com o botão direito no arquivo e escolha <b>Extrair aqui</b> (7-Zip ou WinRAR). Para <b>.zst</b>, use um programa com suporte, como o NanaZip ou o 7-Zip-zstd.</li>
+        <li><b>Mac:</b> use o The Unarchiver ou o Keka.</li>
+        <li>Depois de extrair, confira se o nome do arquivo termina em <b>.dem</b>.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Envie o arquivo para o site</h3>
+      <p>Abra o <a href="#/inicio">Início</a>, arraste o arquivo <b>.dem</b> para a caixa ou clique em <b>Selecionar arquivo</b>. O arquivo é lido no seu computador e não é enviado para nenhum servidor. Demos grandes podem levar alguns minutos.</p>
+    </li>
+    <li>
+      <h3>Copie o crosshair e o viewmodel</h3>
+      <p>Cada jogador da partida aparece em um card, com a prévia da mira, o <b>crosshair code</b> e os comandos de <b>viewmodel</b>. Use o botão <b>Copiar</b>.</p>
+      <ul>
+        <li><b>Crosshair:</b> no CS2, abra as configurações da mira e importe o código, ou cole no console: <code>apply_crosshair_code CÓDIGO</code>.</li>
+        <li><b>Viewmodel:</b> abra o console do jogo e cole os comandos copiados.</li>
+      </ul>
+    </li>
+  </ol>
+  <p class="tut-tip">Quer só a mira de um jogador profissional? Use <a href="#/buscar">Buscar mira e cfg de jogadores</a>.</p>
 </section>
 </main>
 </div>
@@ -523,6 +564,7 @@ const ICONS = {
   home: 'M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z',
   history: 'M13 3a9 9 0 00-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21a9 9 0 000-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z',
   tune: 'M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z',
+  school: 'M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z',
   info: 'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
   shield: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z',
   lock: 'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
@@ -543,7 +585,7 @@ const LS = {
   set(k, v) { try { localStorage.setItem('cs2x:' + k, JSON.stringify(v)); return true; } catch (e) { return false; } },
 };
 let currentFile = '';
-const settings = Object.assign({ mode: 'all', autocopy: false, notify: true }, LS.get('settings', {}));
+const settings = { mode: 'all', autocopy: false, notify: true };
 
 // Tema claro/escuro
 function applyTheme(t) {
@@ -555,14 +597,6 @@ document.querySelectorAll('[data-theme-set]').forEach(b => b.onclick = () => {
   applyTheme(b.dataset.themeSet);
 });
 applyTheme(document.documentElement.dataset.theme);
-
-// Configurações
-const setMode = document.getElementById('setMode'), setAuto = document.getElementById('setAuto'), setNotify = document.getElementById('setNotify');
-setMode.value = settings.mode; setAuto.checked = settings.autocopy; setNotify.checked = settings.notify;
-[setMode, setAuto, setNotify].forEach(c => c.onchange = () => {
-  settings.mode = setMode.value; settings.autocopy = setAuto.checked; settings.notify = setNotify.checked;
-  LS.set('settings', settings);
-});
 
 // Páginas (menu lateral) e menu no celular
 const side = document.getElementById('side'), scrim = document.getElementById('scrim'), menuBtn = document.getElementById('menuBtn'), shell = document.querySelector('.shell');
@@ -578,7 +612,7 @@ scrim.onclick = () => toggleMenu(false);
 narrow.addEventListener('change', () => { side.classList.remove('open'); scrim.classList.remove('on'); shell.classList.remove('closed'); menuBtn.setAttribute('aria-expanded', String(!narrow.matches)); });
 menuBtn.setAttribute('aria-expanded', String(!narrow.matches));
 function route() {
-  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'historico', 'configuracoes', 'sobre'].includes(p) ? p : 'inicio';
+  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
   document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
   document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
   if (narrow.matches) toggleMenu(false);
@@ -829,30 +863,25 @@ const MOUSE_FIELDS = [
   ['hz', 'Hz'],
 ];
 
-function mouseBlock(info) {
+const VIDEO_FIELDS = [['resolution', 'Resolution']];
+
+function mouseBlock(info, title, fields) {
+  fields = fields || MOUSE_FIELDS;
   const group = el('div', 'mouse-block');
   const btn = el('button', 'btn btn-text mouse-btn');
   btn.type = 'button';
   btn.setAttribute('aria-expanded', 'false');
-  btn.append(document.createTextNode('Mouse'));
+  btn.append(document.createTextNode(title || 'Mouse'));
   btn.insertAdjacentHTML('beforeend', '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>');
 
   const panel = el('div', 'mouse-panel');
   const dl = el('dl');
-  MOUSE_FIELDS.forEach(([key, label]) => {
+  fields.forEach(([key, label]) => {
     if (!info[key]) return;
     dl.appendChild(el('dt', '', label));
     dl.appendChild(el('dd', '', info[key]));
   });
   panel.appendChild(dl);
-  const src = el('span', 'src', 'Fonte: ');
-  const link = el('a', '', 'ProSettings');
-  link.href = info.url;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  src.appendChild(link);
-  panel.appendChild(src);
-
   btn.onclick = () => {
     const open = group.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(open));
@@ -906,7 +935,8 @@ function renderPlayer(p) {
 
   const actions = el('div', 'actions');
   const mouse = proSettings[String(p.steamid)];
-  if (mouse) actions.appendChild(mouseBlock(mouse));
+  if (mouse && MOUSE_FIELDS.some(([k]) => mouse[k])) actions.appendChild(mouseBlock(mouse));
+  if (mouse && mouse.resolution) actions.appendChild(mouseBlock(mouse, 'Vídeo', VIDEO_FIELDS));
   if (p.steamid) {
     const playerName = (p.name || 'jogador').trim();
     const cfgLink = el('a', 'cfg-link', 'BAIXAR CFG');
@@ -929,9 +959,9 @@ async function showResults(data, o) {
     return;
   }
   if (o.save) histAdd(o.title || 'demo.dem', data);
-  const list = data.filter(p => settings.mode === 'crosshair' ? p.crosshair_code : settings.mode === 'viewmodel' ? p.viewmodel_cmd : true);
+  const list = data;
   if (!list.length) {
-    showError('Nenhum jogador tem esse tipo de dado neste demo. Troque o modo de extração em Configurações.');
+    showError('Nenhum jogador tem dados neste demo.');
     return;
   }
   errorBox.classList.remove('on');
@@ -1058,17 +1088,30 @@ const hltvPhotosReady = fetch('hltv-photos.json')
   .then(j => { hltvPhotos = j || {}; })
   .catch(() => {});
 
+// Miras dos profissionais (procrosshairs.com), coletadas a cada 2 dias: docs/crosshairs.json
+let xhData = {};
+const xhReady = fetch('crosshairs.json')
+  .then(r => (r.ok ? r.json() : {}))
+  .then(j => { xhData = (j && j.players) || {}; })
+  .catch(() => {});
+function findCrosshair(p) {
+  if (p.steamid && xhData['id:' + p.steamid]) return xhData['id:' + p.steamid];
+  return xhData[normName(p.name)] || null;
+}
+
 async function fetchProData(p) {
-  await Promise.all([csLinksReady, hltvPhotosReady]);
+  await Promise.all([csLinksReady, hltvPhotosReady, xhReady]);
   const e = csLinks[normName(p.name)];
   const ph = safeUrl(hltvPhotos[normName(p.name)], 'img-cdn.hltv.org');
-  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)', photo: ph };
+  const xh = findCrosshair(p);
+  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)', photo: ph, xh: xh };
   const fu = e.faceit && safeUrl(e.faceit.url, 'faceit.com');
   const hu = e.hltv && safeUrl(e.hltv.url, 'hltv.org');
   return {
     faceit: fu ? { url: fu.replace('/ru/', '/en/'), level: e.faceit.skill_level, elo: e.faceit.elo } : null,
     hltv: hu ? { url: hu } : null,
     photo: ph || (e.hltv && safeUrl(e.hltv.photo, 'img-cdn.hltv.org')),
+    xh: xh,
   };
 }
 
@@ -1100,13 +1143,16 @@ function renderSearchCard(p) {
     cfg.href = CFG_URL(p.steamid); cfg.target = '_blank'; cfg.rel = 'noopener noreferrer';
     cfg.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
     cfg.setAttribute('aria-label', 'Baixar CFG de ' + nick + ' do CyberShoke');
-    cfg.append(el('span', '', 'CFG CyberShoke'), icon('ext'));
+    const lbl = el('span', 'lbl'); lbl.append(icon('file'), document.createTextNode('CFG CyberShoke'));
+    cfg.append(lbl, icon('ext'));
     links.appendChild(cfg);
   }
 
+  links.appendChild(el('p', 'pro-note', 'Baixe a demo para obter mira e viewmodel mais recente'));
+
   if (p.info) {
     const box = el('div', 'pro-mouse');
-    box.appendChild(el('h4', '', 'Configurações de mouse'));
+    box.appendChild(el('h4', '', 'Mouse'));
     const dl = el('dl');
     MOUSE_FIELDS.forEach(([key, label]) => {
       if (!p.info[key]) return;
@@ -1115,12 +1161,6 @@ function renderSearchCard(p) {
       dl.appendChild(it);
     });
     box.appendChild(dl);
-    if (p.info.url) {
-      const src = el('span', 'src', 'Fonte: ');
-      const a = el('a', '', 'ProSettings');
-      a.href = p.info.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
-      src.appendChild(a); box.appendChild(src);
-    }
     card.appendChild(box);
   }
 
@@ -1139,6 +1179,34 @@ function renderSearchCard(p) {
     if (!d || !card.isConnected) return;
     if (d.faceit) { linkEls[0].href = d.faceit.url; linkEls[0].title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
     if (d.hltv) linkEls[1].href = d.hltv.url;
+    if (d.xh && d.xh.code) {
+      const xhd = decodeCrosshair(d.xh.code);
+      if (xhd) {
+        const box = el('div', 'pro-xh');
+        const prev = el('div', 'xh-prev checker');
+        const cv = document.createElement('canvas');
+        cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
+        paintCrosshair(cv, xhd, 140);
+        prev.appendChild(cv);
+        const body = el('div', 'xh-body');
+        body.appendChild(el('h4', '', 'Mira'));
+        body.appendChild(el('pre', '', d.xh.code));
+        const dt = el('span', 'xh-date');
+        const since = d.xh.since ? new Date(d.xh.since + 'T12:00:00').toLocaleDateString('pt-BR') : '';
+        dt.title = 'Data em que este site registrou este código. O procrosshairs.com não informa a data da mira.';
+        dt.append(document.createTextNode(since ? 'Registrada em ' + since + ' · via ' : 'via '));
+        const srcA = el('a', '', 'procrosshairs.com');
+        srcA.href = safeUrl(d.xh.url, 'procrosshairs.com') || 'https://procrosshairs.com/'; srcA.target = '_blank'; srcA.rel = 'noopener noreferrer';
+        dt.appendChild(srcA);
+        body.appendChild(dt);
+        const cb = el('button', 'btn btn-outline', 'Copiar mira');
+        cb.type = 'button'; cb.dataset.label = 'Copiar mira';
+        cb.onclick = () => copyValue(d.xh.code, cb);
+        body.appendChild(cb);
+        box.append(prev, body);
+        links.after(box);
+      }
+    }
     if (d.photo) {
       // foto da HLTV no lugar da inicial; se nao carregar, a inicial continua
       const img = new Image();
