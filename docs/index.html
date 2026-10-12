@@ -23,6 +23,8 @@
     --md-error-container: #8C1D18; --md-on-error-container: #F9DEDC;
     --md-accent: #D0BCFF; --md-grad-a: #D0BCFF; --md-grad-b: #EADDFF;
     --md-shadow: 0 6px 18px rgba(0,0,0,.35);
+    --md-elev1: 0 1px 2px rgba(0,0,0,.5), 0 1px 3px 1px rgba(0,0,0,.3);
+    --md-elev2: 0 1px 2px rgba(0,0,0,.5), 0 2px 6px 2px rgba(0,0,0,.3);
   }
   :root[data-theme="light"] {
     --md-primary: #6750A4; --md-on-primary: #FFFFFF;
@@ -37,6 +39,8 @@
     --md-error-container: #F9DEDC; --md-on-error-container: #410E0B;
     --md-accent: #6750A4; --md-grad-a: #6750A4; --md-grad-b: #9A82DB;
     --md-shadow: 0 6px 18px rgba(40,20,80,.15);
+    --md-elev1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
+    --md-elev2: 0 1px 2px rgba(0,0,0,.3), 0 2px 6px 2px rgba(0,0,0,.15);
   }
 
   * { box-sizing: border-box; }
@@ -108,14 +112,20 @@
 
   /* Cartões com abas */
   #cards { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
-  .tabs { display: flex; margin: 0 16px; border-bottom: 1px solid var(--md-outline-variant); }
-  .tabs button { flex: 1; height: 44px; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; color: var(--md-on-surface); font: 500 14px "Inter", "Roboto", sans-serif; cursor: pointer; }
-  .tabs button[aria-selected="true"] { color: var(--md-primary); border-color: var(--md-primary); }
+  .tabs { display: flex; margin-top: 8px; border-bottom: 1px solid var(--md-outline-variant); }
+  .tabs button { position: relative; flex: 1; height: 48px; border: 0; background: none; color: var(--md-on-surface-variant); font: 500 14px "Inter", "Roboto", sans-serif; letter-spacing: .1px; cursor: pointer; transition: background .15s, color .15s; }
+  .tabs button:hover { background: color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
+  .tabs button::after { content: ""; position: absolute; left: 50%; bottom: -1px; width: 0; height: 3px; border-radius: 3px 3px 0 0; background: var(--md-primary); transform: translateX(-50%); transition: width .2s; }
+  .tabs button[aria-selected="true"] { color: var(--md-primary); }
+  .tabs button[aria-selected="true"]::after { width: min(64px, 70%); }
   .pane { padding: 16px; }
   .pane .card-media { height: 112px; border-radius: 12px; }
-  .pane pre { margin: 12px 0 0; padding: 10px 12px; border-radius: 8px; background: var(--md-surface-container-high); font: 12px/18px "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--md-on-surface); user-select: all; }
+  .codebox { margin-top: 12px; padding: 8px 16px 10px; border-radius: 4px 4px 0 0; border-bottom: 1px solid var(--md-on-surface-variant); background: var(--md-surface-container-highest); }
+  .codelabel { display: block; font: 500 12px/16px "Inter", "Roboto", sans-serif; letter-spacing: .4px; color: var(--md-on-surface-variant); }
+  .codebox pre { margin: 2px 0 0; font: 12px/18px "Roboto Mono", ui-monospace, monospace; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--md-on-surface); user-select: all; }
   .pair { display: flex; margin-top: 12px; }
-  .pair .btn { height: 36px; padding: 0 20px; margin: 0; background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
+  .pair .btn { height: 40px; padding: 0 20px 0 16px; margin: 0; gap: 8px; }
+  .pair .btn svg { width: 18px; height: 18px; margin: 0; }
   .pane .empty { margin: 0; padding: 28px 0; text-align: center; color: var(--md-on-surface-variant); }
 
 
@@ -172,7 +182,6 @@
   .pro-av img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .pro-main { flex: 1; min-width: 0; }
   .pro-name { margin: 0; font-size: 28px; line-height: 36px; font-weight: 500; letter-spacing: 0; overflow-wrap: anywhere; }
-  .pro-sub { margin: 0; font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant); }
   .pro-tag { display: inline-flex; align-items: center; height: 22px; margin-top: 6px; padding: 0 10px; border-radius: 8px; background: var(--md-surface-container-high); font-size: 11px; font-weight: 500; letter-spacing: .4px; text-transform: uppercase; }
   .pro-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .pro-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 0 16px; border: 1px solid var(--md-outline-variant); border-radius: 18px; background: transparent; color: var(--md-on-surface); font-size: 13px; font-weight: 500; text-decoration: none; transition: background .15s, filter .15s; }
@@ -291,20 +300,25 @@
   /* Resultados */
   .results { display: none; margin-top: 32px; }
   .results.on { display: block; }
-  .results-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
-  .results-head h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 400; letter-spacing: 0; }
+  .results-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+  .results-head h2 { margin: 0; font-size: 24px; line-height: 32px; font-weight: 400; letter-spacing: 0; }
+  .results-head .btn svg { width: 18px; height: 18px; margin: 0; }
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
   /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
-  #cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: start; }
+  #cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
   @media (max-width: 1000px) { #cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   @media (max-width: 700px) { #cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 420px) { #cards { grid-template-columns: minmax(0, 1fr); } }
   .card {
+    container: card / inline-size;
     display: flex; flex-direction: column; overflow: hidden;
-    background: var(--md-surface-container-low); border: 1px solid var(--md-outline-variant); border-radius: 20px;
+    background: var(--md-surface-container-low); border-radius: 16px;
+    box-shadow: var(--md-elev1); transition: box-shadow .2s;
   }
-  .card > .card-title { padding: 16px 16px 8px; font-size: 16px; font-weight: 400; }
+  .card:hover { box-shadow: var(--md-elev2); }
+  .card-head { display: flex; align-items: center; gap: 12px; padding: 16px 16px 4px; }
+  .card-av { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--md-primary-container); color: var(--md-on-primary-container); font-size: 16px; font-weight: 500; text-transform: uppercase; }
   .card-media {
     position: relative; display: grid; place-items: center; height: 112px;
     background: var(--md-surface-container-highest);
@@ -317,17 +331,17 @@
   }
   .card-media .cap { position: absolute; left: 12px; bottom: 8px; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .4px; }
   .card-body { padding: 10px 12px 0; }
-  .card-title { margin: 0; font-size: 17px; line-height: 23px; font-weight: 500; letter-spacing: 0; overflow-wrap: anywhere; }
+  .card-title { margin: 0; min-width: 0; font-size: 16px; line-height: 24px; font-weight: 500; letter-spacing: .15px; overflow-wrap: anywhere; }
   .card-sub { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: .4px; }
   .support { margin-top: 10px; }
   .support + .support { margin-top: 8px; }
   .support .lbl { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; letter-spacing: .5px; }
   .support .txt { margin-top: 2px; color: var(--md-on-surface-variant); font-family: "Roboto Mono", ui-monospace, monospace; font-size: 12px; line-height: 18px; letter-spacing: 0; overflow-wrap: anywhere; user-select: all; }
   .support .txt.empty { font-family: "Roboto", system-ui, sans-serif; font-size: 14px; letter-spacing: .25px; user-select: none; opacity: .8; }
-  .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px; margin-top: auto; padding: 0 8px 12px; }
-  .actions .mouse-btn, .actions .cfg-link { height: 36px; min-height: 36px; padding: 0 10px; border: 0; border-radius: 18px; background: transparent; color: var(--md-primary); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-transform: none; text-decoration: none; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: auto 8px 0; padding: 8px 0; border-top: 1px solid var(--md-outline-variant); }
+  .actions .mouse-btn, .actions .cfg-link { height: 40px; min-height: 40px; padding: 0 8px; border: 0; border-radius: 20px; background: transparent; color: var(--md-primary); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-transform: none; text-decoration: none; white-space: nowrap; }
   .actions .mouse-btn::after { display: none; }
-  @media (max-width: 1360px) and (min-width: 1001px) { .actions { padding: 0 4px 12px; } .actions .mouse-btn, .actions .cfg-link { padding: 0 6px; font-size: 12px; } .pane { padding: 12px; } .tabs { margin: 0 12px; } }
+  @container card (max-width: 235px) { .actions .mouse-btn, .actions .cfg-link { padding: 0 5px; font-size: 12px; } }
   .actions .mouse-btn:hover, .actions .cfg-link:hover { background: color-mix(in srgb, var(--md-primary) 12%, transparent); }
   .actions .mouse-btn svg { display: none; }
   .split-action { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 2px; position: relative; }
@@ -473,9 +487,10 @@
   <section class="results" id="results">
     <div class="results-head">
       <div>
+        <h2>Jogadores do demo</h2>
         <p id="resultCount"></p>
       </div>
-      <button type="button" class="btn btn-text" id="again">Analisar outro demo</button>
+      <button type="button" class="btn btn-tonal" id="again"><svg class="i" data-i="sync"></svg>Analisar outro demo</button>
     </div>
     <div id="cards"></div>
   </section>
@@ -582,6 +597,7 @@ const ICONS = {
   lock: 'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
   bolt: 'M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51C12.96 17.55 11 21 11 21z',
   file: 'M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z',
+  copy: 'M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z',
   del: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
 };
 function icon(name) {
@@ -818,9 +834,10 @@ function showSnack(msg, force) {
 function copyValue(text, btn) {
   const label = btn.dataset.label;
   navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'Copiado';
+    const t = btn.querySelector('.t') || btn;
+    t.textContent = 'Copiado'; btn.classList.add('done');
     showSnack('Copiado para a área de transferência');
-    setTimeout(() => { btn.textContent = label; }, 2000);
+    setTimeout(() => { t.textContent = label; btn.classList.remove('done'); }, 2000);
   }).catch(() => showSnack('Não foi possível copiar. Selecione o texto e copie manualmente.'));
 }
 
@@ -906,7 +923,9 @@ function renderPlayer(p) {
   const card = el('article', 'card');
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
   const base = (p.name || 'jogador').replace(/[^\w.-]+/g, '_');
-  card.appendChild(el('h3', 'card-title', p.name || 'Sem nome'));
+  const head = el('div', 'card-head');
+  head.append(el('div', 'card-av', (p.name || '?').trim().charAt(0) || '?'), el('h3', 'card-title', p.name || 'Sem nome'));
+  card.appendChild(head);
 
   const defs = [['Crosshair', p.crosshair_code, base + '-crosshair.txt'], ['Viewmodel', p.viewmodel_cmd, base + '-viewmodel.cfg']];
   const tabs = el('div', 'tabs');
@@ -923,9 +942,12 @@ function renderPlayer(p) {
       m.appendChild(c); pn.appendChild(m);
     }
     if (val) {
-      pn.appendChild(el('pre', '', val));
+      const box = el('div', 'codebox');
+      box.append(el('span', 'codelabel', label === 'Crosshair' ? 'Código da mira' : 'Comandos do viewmodel'), el('pre', '', val));
+      pn.appendChild(box);
       const pair = el('div', 'pair');
-      const cb = el('button', 'btn btn-tonal', 'Copiar');
+      const cb = el('button', 'btn btn-tonal');
+      cb.append(icon('copy'), el('span', 't', 'Copiar'));
       cb.type = 'button'; cb.dataset.label = 'Copiar';
       cb.onclick = () => copyValue(val, cb);
       pair.append(cb); pn.appendChild(pair);
@@ -1140,7 +1162,6 @@ function renderSearchCard(p) {
 
   const main = el('div', 'pro-main');
   main.appendChild(el('h3', 'pro-name', nick));
-  main.appendChild(el('p', 'pro-sub', 'Foto da HLTV quando disponível'));
   if (p.custom) main.appendChild(el('span', 'pro-tag', 'Não listado'));
 
   const links = el('div', 'pro-links');
