@@ -192,7 +192,18 @@
   .pro-btn.hltv:hover { filter: brightness(1.15); }
   .pro-btn.cfg { border-color: transparent; background: var(--md-secondary-container); color: var(--md-on-secondary-container); }
   .pro-btn.cfg:hover { filter: brightness(1.15); }
-  .pro-note { margin: 0; font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant); }
+  .pro-note { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; background: var(--md-primary-container); color: var(--md-on-primary-container); font-size: 15px; line-height: 22px; font-weight: 500; }
+  .pro-note svg { width: 24px; height: 24px; flex: none; fill: currentColor; }
+  .pro-note p { margin: 0; }
+  .pro-note b { font-weight: 700; }
+  .pro-card h3, .back-sec h3 { display: flex; align-items: center; gap: 8px; }
+  .pro-card h3 svg, .back-sec h3 svg { width: 20px; height: 20px; flex: none; fill: var(--md-primary); }
+  .pro-tiles dt { display: flex; align-items: center; gap: 6px; }
+  .pro-tiles dt svg { width: 18px; height: 18px; flex: none; fill: var(--md-primary); }
+  .pro-tiles.compact { gap: 6px; }
+  .pro-tiles.compact div { padding: 10px 10px 8px; }
+  .pro-tiles.compact dd { font-size: 18px; line-height: 22px; }
+  .pro-tiles.compact div:only-child { grid-column: 1 / -1; }
   .pro-card { padding: 24px; border: 1px solid var(--md-outline-variant); border-radius: 20px; }
   .pro-card h3 { margin: 0 0 16px; font-size: 14px; line-height: 20px; font-weight: 500; }
   .pro-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
@@ -306,10 +317,7 @@
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
   /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
-  #cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
-  @media (max-width: 1000px) { #cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 700px) { #cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 420px) { #cards { grid-template-columns: minmax(0, 1fr); } }
+  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 16px; align-items: stretch; }
   .card {
     container: card / inline-size;
     display: flex; flex-direction: column; overflow: hidden;
@@ -376,6 +384,42 @@
   .mouse-panel .src { display: block; margin-top: 8px; font-size: 11px; color: var(--md-on-surface-variant); }
   .mouse-panel .src a { color: var(--md-primary); }
   .code-panel .code-copy { margin-top: 8px; height: 30px; padding: 0 12px; font-size: 11px; }
+
+  /* Card flip (Material 3): frente = mira/viewmodel, verso = mouse, vídeo e CFG */
+  .flip { perspective: 1200px; min-width: 0; display: grid; }
+  .flip-inner { display: grid; transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2, 0, 0, 1); }
+  .flip.flipped .flip-inner { transform: rotateY(180deg); }
+  .face { grid-area: 1 / 1; -webkit-backface-visibility: hidden; backface-visibility: hidden; min-width: 0; }
+  .face.back { transform: rotateY(180deg); }
+  .face .card-head { padding-right: 8px; }
+  .face .card-title { flex: 1; }
+  /* Botão de ícone tonal M3 que indica o flip */
+  .flip-btn { position: relative; overflow: hidden; flex: none; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%; background: var(--md-secondary-container); color: var(--md-on-secondary-container); cursor: pointer; }
+  .flip-btn svg { width: 22px; height: 22px; fill: currentColor; }
+  .flip-btn::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
+  .flip-btn:hover::after { opacity: .08; }
+  .flip-btn:active::after { opacity: .12; }
+  .flip-btn:focus-visible, .flip-hint:focus-visible { outline: 2px solid var(--md-primary); outline-offset: 2px; }
+  /* Assist chip M3 no rodapé da frente */
+  .flip-hint { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 8px; height: 36px; margin: auto 16px 16px; padding: 0 12px; border: 1px solid var(--md-outline); border-radius: 8px; background: transparent; color: var(--md-on-surface); font: 500 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; white-space: nowrap; cursor: pointer; }
+  .flip-hint span { overflow: hidden; text-overflow: ellipsis; }
+  .flip-hint svg { width: 18px; height: 18px; fill: var(--md-primary); flex: none; }
+  .flip-hint::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
+  .flip-hint:hover::after { opacity: .08; }
+  .flip-hint:active::after { opacity: .12; }
+  @media (hover: hover) { .flip:not(.flipped):hover .flip-inner { transform: rotateY(-7deg); } }
+  .back-body { display: flex; flex-direction: column; gap: 16px; flex: 1; padding: 12px 16px 16px; }
+  .back-sec h3 { margin: 0 0 8px; font-size: 14px; line-height: 20px; font-weight: 500; }
+  .back-body .btn { margin: auto 0 0; width: 100%; text-decoration: none; }
+  .back-body .btn svg { margin-left: 0; width: 18px; height: 18px; }
+  .back-body .empty { margin: 0; padding: 12px 0; text-align: center; color: var(--md-on-surface-variant); }
+  @media (prefers-reduced-motion: reduce) {
+    .flip-inner { transition: none; }
+    .flip.flipped .flip-inner, .flip:not(.flipped):hover .flip-inner { transform: none; }
+    .face.back { transform: none; visibility: hidden; }
+    .flip.flipped .face.back { visibility: visible; }
+    .flip.flipped .face.front { visibility: hidden; }
+  }
 
 
   /* Busca de jogador profissional */
@@ -598,12 +642,20 @@ const ICONS = {
   bolt: 'M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51C12.96 17.55 11 21 11 21z',
   file: 'M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z',
   copy: 'M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z',
+  aim: 'M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z',
+  speed: 'M20.38 8.57l-1.23 1.85a8 8 0 01-.22 7.58H5.07A8 8 0 0115.58 6.85l1.85-1.23A10 10 0 003.35 19a2 2 0 001.72 1h13.85a2 2 0 001.74-1 10 10 0 00-.27-10.44zm-9.79 6.84a2 2 0 002.83 0l5.66-8.49-8.49 5.66a2 2 0 000 2.83z',
+  pulse: 'M3 12h4l2.5-7 5 14 2.5-7h4',
+  monitor: 'M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z',
+  mouse: 'M13 1.07V9h7c0-4.08-3.05-7.44-7-7.93zM4 15c0 4.42 3.58 8 8 8s8-3.58 8-8v-4H4v4zm7-13.93C7.05 1.56 4 4.92 4 9h7V1.07z',
+  download: 'M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z',
+  flipback: 'M9 7H7v2h2V7zm0 4H7v2h2v-2zm0-8c-1.11 0-2 .9-2 2h2V3zm4 12h-2v2h2v-2zm6-12v2h2c0-1.1-.9-2-2-2zm-6 0h-2v2h2V3zM9 17v-2H7c0 1.1.89 2 2 2zm10-4h2v-2h-2v2zm0-4h2V7h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zM5 7H3v12c0 1.1.9 2 2 2h12v-2H5V7zm10-2h2V3h-2v2zm0 12h2v-2h-2v2z',
+  flipfront: 'M3 13h2v-2H3v2zm0 4h2v-2H3v2zm2 4v-2H3c0 1.1.89 2 2 2zM3 9h2V7H3v2zm12 12h2v-2h-2v2zm4-18H9c-1.11 0-2 .9-2 2v10c0 1.1.89 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 12H9V5h10v10zm-8 6h2v-2h-2v2zm-4 0h2v-2H7v2z',
   del: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
 };
 function icon(name) {
   const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('class', 'i'); s.setAttribute('aria-hidden', 'true');
-  s.innerHTML = '<path d="' + ICONS[name] + '"/>';
+  s.innerHTML = '<path d="' + ICONS[name] + '"' + (name === 'pulse' ? ' fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"' : '') + '/>';
   return s;
 }
 document.querySelectorAll('[data-i]').forEach(s => { s.setAttribute('viewBox', '0 0 24 24'); s.innerHTML = '<path d="' + ICONS[s.dataset.i] + '"/>'; });
@@ -894,43 +946,65 @@ const MOUSE_FIELDS = [
 
 const VIDEO_FIELDS = [['resolution', 'Resolution']];
 
-function mouseBlock(info, title, fields) {
-  fields = fields || MOUSE_FIELDS;
-  const group = el('div', 'mouse-block');
-  const btn = el('button', 'btn mouse-btn');
-  btn.type = 'button';
-  btn.setAttribute('aria-expanded', 'false');
-  btn.append(document.createTextNode(title || 'Mouse'));
-  btn.insertAdjacentHTML('beforeend', '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>');
+const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
+const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor' };
 
-  const panel = el('div', 'mouse-panel');
-  const dl = el('dl');
+// Grade de informações (mouse / vídeo) com ícone ao lado do rótulo
+function statTiles(info, fields, cls) {
+  const dl = el('dl', 'pro-tiles' + (cls ? ' ' + cls : ''));
   fields.forEach(([key, label]) => {
     if (!info[key]) return;
-    dl.appendChild(el('dt', '', label));
-    dl.appendChild(el('dd', '', info[key]));
+    const it = el('div');
+    const dt = el('dt');
+    dt.append(icon(STAT_ICONS[key] || 'tune'), el('span', '', PRO_LABELS[key] || label));
+    it.append(dt, el('dd', '', info[key]));
+    dl.appendChild(it);
   });
-  panel.appendChild(dl);
-  btn.onclick = () => {
-    const open = group.classList.toggle('open');
-    btn.setAttribute('aria-expanded', String(open));
-  };
-  group.append(btn, panel);
-  return group;
+  return dl;
+}
+
+function sectionTitle(iconName, text) {
+  const h = el('h3');
+  h.append(icon(iconName), document.createTextNode(text));
+  return h;
 }
 
 function renderPlayer(p) {
-  const card = el('article', 'card');
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
   const base = (p.name || 'jogador').replace(/[^\w.-]+/g, '_');
-  const head = el('div', 'card-head');
-  head.append(el('div', 'card-av', (p.name || '?').trim().charAt(0) || '?'), el('h3', 'card-title', p.name || 'Sem nome'));
-  card.appendChild(head);
+  const playerName = (p.name || 'jogador').trim();
+  const mouse = proSettings[String(p.steamid)];
+  const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
+  const hasVideo = !!(mouse && mouse.resolution);
+  const hasCfg = !!p.steamid;
+  const canFlip = hasMouse || hasVideo || hasCfg;
 
-  const defs = [['Crosshair', p.crosshair_code, base + '-crosshair.txt'], ['Viewmodel', p.viewmodel_cmd, base + '-viewmodel.cfg']];
+  const flip = el('article', 'flip');
+  const inner = el('div', 'flip-inner');
+  flip.appendChild(inner);
+
+  const mkHead = (btn) => {
+    const head = el('div', 'card-head');
+    head.append(el('div', 'card-av', (p.name || '?').trim().charAt(0) || '?'), el('h3', 'card-title', p.name || 'Sem nome'));
+    if (btn) head.appendChild(btn);
+    return head;
+  };
+  const mkFlipBtn = (ic, label) => {
+    const b = el('button', 'flip-btn');
+    b.type = 'button'; b.title = label; b.setAttribute('aria-label', label);
+    b.appendChild(icon(ic));
+    return b;
+  };
+
+  // ---------- Frente: mira e viewmodel ----------
+  const front = el('div', 'card face front');
+  const toBackBtn = canFlip ? mkFlipBtn('flipback', 'Virar o card: mouse, vídeo e CFG') : null;
+  front.appendChild(mkHead(toBackBtn));
+
+  const defs = [['Mira', p.crosshair_code], ['Viewmodel', p.viewmodel_cmd]];
   const tabs = el('div', 'tabs');
   tabs.setAttribute('role', 'tablist');
-  const panes = defs.map(([label, val, file], i) => {
+  const panes = defs.map(([label, val], i) => {
     const pn = el('div', 'pane');
     pn.setAttribute('role', 'tabpanel');
     if (i === 0 && xh) {
@@ -943,7 +1017,7 @@ function renderPlayer(p) {
     }
     if (val) {
       const box = el('div', 'codebox');
-      box.append(el('span', 'codelabel', label === 'Crosshair' ? 'Código da mira' : 'Comandos do viewmodel'), el('pre', '', val));
+      box.append(el('span', 'codelabel', i === 0 ? 'Código da mira' : 'Comandos do viewmodel'), el('pre', '', val));
       pn.appendChild(box);
       const pair = el('div', 'pair');
       const cb = el('button', 'btn btn-tonal');
@@ -965,24 +1039,61 @@ function renderPlayer(p) {
   });
   function select(k) { btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === k)); panes[i].hidden = i !== k; }); }
   select(p.crosshair_code ? 0 : 1);
-  card.append(tabs, ...panes);
+  front.append(tabs, ...panes);
 
-  const actions = el('div', 'actions');
-  const mouse = proSettings[String(p.steamid)];
-  if (mouse && MOUSE_FIELDS.some(([k]) => mouse[k])) actions.appendChild(mouseBlock(mouse));
-  if (mouse && mouse.resolution) actions.appendChild(mouseBlock(mouse, 'Vídeo', VIDEO_FIELDS));
-  if (p.steamid) {
-    const playerName = (p.name || 'jogador').trim();
-    const cfgLink = el('a', 'cfg-link', 'Baixar CFG');
+  let hint = null;
+  if (canFlip) {
+    hint = el('button', 'flip-hint');
+    hint.type = 'button';
+    hint.setAttribute('aria-label', 'Virar o card para ver ' + [hasMouse && 'mouse', hasVideo && 'vídeo', hasCfg && 'CFG'].filter(Boolean).join(', '));
+    hint.append(icon('flipback'), el('span', '', [hasMouse && 'Mouse', hasVideo && 'Vídeo', hasCfg && 'CFG'].filter(Boolean).join(' · ')));
+    front.appendChild(hint);
+  }
+  inner.appendChild(front);
+  if (!canFlip) return flip;
+
+  // ---------- Verso: mouse, vídeo e CFG ----------
+  const back = el('div', 'card face back');
+  const toFrontBtn = mkFlipBtn('flipfront', 'Voltar para a mira');
+  back.appendChild(mkHead(toFrontBtn));
+  const body = el('div', 'back-body');
+  if (hasMouse) {
+    const sec = el('section', 'back-sec');
+    sec.append(sectionTitle('mouse', 'Mouse'), statTiles(mouse, MOUSE_FIELDS, 'compact'));
+    body.appendChild(sec);
+  }
+  if (hasVideo) {
+    const sec = el('section', 'back-sec');
+    sec.append(sectionTitle('monitor', 'Vídeo'), statTiles(mouse, VIDEO_FIELDS, 'compact'));
+    body.appendChild(sec);
+  }
+  if (!hasMouse && !hasVideo) body.appendChild(el('p', 'empty', 'Sem dados de mouse e vídeo para este jogador.'));
+  if (hasCfg) {
+    const cfgLink = el('a', 'btn btn-tonal');
+    cfgLink.append(icon('download'), el('span', '', 'CFG'));
     cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
     cfgLink.target = '_blank';
     cfgLink.rel = 'noopener noreferrer';
-    cfgLink.setAttribute('aria-label', 'Baixar CFG de ' + playerName + ' do CyberShoke');
+    cfgLink.setAttribute('aria-label', 'CFG de ' + playerName + ' do CyberShoke');
     cfgLink.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
-    actions.appendChild(cfgLink);
+    body.appendChild(cfgLink);
   }
-  if (actions.children.length) card.appendChild(actions);
-  return card;
+  back.appendChild(body);
+  inner.appendChild(back);
+
+  // O lado oculto não recebe foco nem aparece para leitores de tela
+  function setFlipped(v) {
+    flip.classList.toggle('flipped', v);
+    front.inert = v; back.inert = !v;
+    front.setAttribute('aria-hidden', String(v));
+    back.setAttribute('aria-hidden', String(!v));
+  }
+  setFlipped(false);
+  const go = (v, focusEl) => () => { setFlipped(v); focusEl.focus({ preventScroll: true }); };
+  toBackBtn.onclick = go(true, toFrontBtn);
+  hint.onclick = go(true, toFrontBtn);
+  toFrontBtn.onclick = go(false, toBackBtn);
+  return flip;
 }
 
 async function showResults(data, o) {
@@ -1152,7 +1263,6 @@ async function fetchProData(p) {
 function renderSearchCard(p) {
   const card = el('article', 'pro');
   const nick = (p.name || '?').trim();
-  const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
 
   // Cabeçalho: avatar, nome, links e aviso
   const head = el('div', 'pro-head');
@@ -1186,32 +1296,27 @@ function renderSearchCard(p) {
     links.appendChild(cfg);
   }
 
-  head.appendChild(el('p', 'pro-note', 'Baixe a demo para obter mira e viewmodel mais recente'));
+  const note = el('div', 'pro-note');
+  note.setAttribute('role', 'note');
+  const noteTxt = el('p');
+  const bold = t => { const b = document.createElement('b'); b.textContent = t; return b; };
+  noteTxt.append('Baixe a demo utilizando ', bold('FACEIT'), ' ou ', bold('HLTV'), ' para obter mira e viewmodel mais recente');
+  note.append(icon('info'), noteTxt);
+  head.appendChild(note);
   card.appendChild(head);
 
   // Mouse e vídeo: cartões lado a lado
   const grid = el('div', 'pro-grid');
   if (p.info) {
     const box = el('section', 'pro-card');
-    box.appendChild(el('h3', '', 'Mouse'));
-    const dl = el('dl', 'pro-tiles');
-    MOUSE_FIELDS.forEach(([key, label]) => {
-      if (!p.info[key]) return;
-      const it = el('div');
-      it.append(el('dt', '', PRO_LABELS[key] || label), el('dd', '', p.info[key]));
-      dl.appendChild(it);
-    });
-    box.appendChild(dl);
+    box.appendChild(sectionTitle('mouse', 'Mouse'));
+    box.appendChild(statTiles(p.info, MOUSE_FIELDS));
     grid.appendChild(box);
   }
   if (p.info && p.info.resolution) {
     const vbox = el('section', 'pro-card');
-    vbox.appendChild(el('h3', '', 'Vídeo'));
-    const vdl = el('dl', 'pro-tiles');
-    const vit = el('div');
-    vit.append(el('dt', '', 'Resolution'), el('dd', '', p.info.resolution));
-    vdl.appendChild(vit);
-    vbox.appendChild(vdl);
+    vbox.appendChild(sectionTitle('monitor', 'Vídeo'));
+    vbox.appendChild(statTiles(p.info, VIDEO_FIELDS));
     grid.appendChild(vbox);
   }
   if (grid.children.length) card.appendChild(grid);
@@ -1224,7 +1329,7 @@ function renderSearchCard(p) {
       const xhd = decodeCrosshair(d.xh.code);
       if (xhd) {
         const box = el('section', 'pro-card pro-xh');
-        box.appendChild(el('h3', '', 'Mira'));
+        box.appendChild(sectionTitle('aim', 'Mira'));
         const row = el('div', 'xh-row');
         const prev = el('div', 'xh-prev checker');
         const cv = document.createElement('canvas');
@@ -1237,12 +1342,9 @@ function renderSearchCard(p) {
         if (d.xh.since) {
           const since = new Date(d.xh.since + 'T12:00:00').toLocaleDateString('pt-BR');
           const dt = el('span', 'xh-chip tonal', 'Registrada em ' + since);
-          dt.title = 'Data em que este site registrou este código. O procrosshairs.com não informa a data da mira.';
+          dt.title = 'Data em que este site registrou este código.';
           chips.appendChild(dt);
         }
-        const srcA = el('a', 'xh-chip line', 'via procrosshairs.com');
-        srcA.href = safeUrl(d.xh.url, 'procrosshairs.com') || 'https://procrosshairs.com/'; srcA.target = '_blank'; srcA.rel = 'noopener noreferrer';
-        chips.appendChild(srcA);
         body.appendChild(chips);
         const cb = el('button', 'btn btn-filled', 'Copiar mira');
         cb.type = 'button'; cb.dataset.label = 'Copiar mira';
