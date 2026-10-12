@@ -1,0 +1,42 @@
+name: Atualizar miras dos profissionais
+
+on:
+  schedule:
+    - cron: "0 7 */2 * *"   # a cada 2 dias
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests beautifulsoup4
+
+      - name: Coletar miras (procrosshairs.com)
+        run: python scripts/build_crosshairs.py --out data/crosshairs.json
+
+      - name: Salvar e republicar o site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crosshairs.json
+          if git diff --cached --quiet; then echo "Sem mudancas"; exit 0; fi
+          git commit -m "Atualiza miras dos profissionais"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "Push falhou (tentativa $i), tentando de novo..."
+            sleep 5
+          done
+          git push --dry-run >/dev/null 2>&1 || { echo "Nao foi possivel enviar o commit"; exit 1; }
+          gh workflow run pages.yml

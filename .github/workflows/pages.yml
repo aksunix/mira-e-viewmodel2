@@ -41,6 +41,10 @@ jobs:
         run: |
           if [ -f data/cybershoke-links.json ]; then cp data/cybershoke-links.json docs/cybershoke-links.json; else echo '{"links":{}}' > docs/cybershoke-links.json; fi
 
+      - name: Incluir miras dos profissionais
+        run: |
+          if [ -f data/crosshairs.json ]; then cp data/crosshairs.json docs/crosshairs.json; else echo '{"players":{}}' > docs/crosshairs.json; fi
+
       - name: Gravar data da atualização
         run: sed -i "s#__BUILD_DATE__#$(TZ=America/Sao_Paulo date +%d/%m/%Y)#" docs/index.html
 
