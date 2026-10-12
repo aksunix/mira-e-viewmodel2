@@ -6789,6 +6789,12 @@
    "url": "https://prosettings.net/players/kiy0o/",
    "zoom_sensitivity": "1.3"
   },
+  "kjaer": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Kjaer",
+   "url": "https://prosettings.net/players/trippernn/"
+  },
   "kjaerbye": {
    "dpi": "400",
    "edpi": "640",
@@ -12352,6 +12358,3153 @@
    "url": "https://prosettings.net/players/rpk/",
    "zoom_sensitivity": "1.00"
   },
+  "rpr": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "rpr",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/rpr/"
+  },
+  "rubino": {
+   "dpi": "400",
+   "edpi": "248",
+   "hz": "1000",
+   "name": "RUBINO",
+   "sensitivity": "0.62",
+   "url": "https://prosettings.net/players/rubino/"
+  },
+  "rubkkoide": {
+   "dpi": "800",
+   "edpi": "200.00",
+   "hz": "1000",
+   "name": "rubkkoide",
+   "sensitivity": "0.25",
+   "url": "https://prosettings.net/players/rubkkoide/"
+  },
+  "runi": {
+   "dpi": "800",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "runi",
+   "sensitivity": "0.3",
+   "url": "https://prosettings.net/players/runi/"
+  },
+  "runner": {
+   "dpi": "400",
+   "edpi": "176",
+   "hz": "1000",
+   "name": "runneR",
+   "sensitivity": "0.44",
+   "url": "https://prosettings.net/players/runner/"
+  },
+  "runnin": {
+   "dpi": "Unknown",
+   "edpi": "Unknown",
+   "hz": "Unknown",
+   "name": "Runnin",
+   "sensitivity": "Unknown",
+   "url": "https://prosettings.net/players/runnin/",
+   "zoom_sensitivity": "Unknown"
+  },
+  "rush": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "1000",
+   "name": "RUSH",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/rush/",
+   "zoom_sensitivity": "1"
+  },
+  "rushia": {
+   "dpi": "1600",
+   "edpi": "160",
+   "hz": "4000",
+   "name": "rushia",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/rushia/"
+  },
+  "russ": {
+   "dpi": "800",
+   "edpi": "304",
+   "hz": "1000",
+   "name": "Russ",
+   "sensitivity": "0.38",
+   "url": "https://prosettings.net/players/russ/"
+  },
+  "rusty": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "RuStY",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/rusty/",
+   "zoom_sensitivity": "1"
+  },
+  "rutk0": {
+   "dpi": "800",
+   "edpi": "1320",
+   "hz": "1000",
+   "name": "Rutk0",
+   "sensitivity": "1.65",
+   "url": "https://prosettings.net/players/rutk0/",
+   "zoom_sensitivity": "1"
+  },
+  "ryu": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "2000",
+   "name": "ryu",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/ryu/",
+   "zoom_sensitivity": "1"
+  },
+  "ryujehong": {
+   "dpi": "350",
+   "edpi": "1501.5",
+   "hz": "1000",
+   "name": "ryujehong",
+   "sensitivity": "4.29",
+   "url": "https://prosettings.net/players/ryujehong/",
+   "zoom_sensitivity": "38"
+  },
+  "ryux": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "Ryux",
+   "url": "https://prosettings.net/players/ryux/"
+  },
+  "s-chilla": {
+   "dpi": "1600",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "s-chilla",
+   "sensitivity": "0.55",
+   "url": "https://prosettings.net/players/s-chilla/",
+   "zoom_sensitivity": "1"
+  },
+  "s0m": {
+   "dpi": "400",
+   "edpi": "320",
+   "hz": "1000",
+   "name": "s0m",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/s0m/"
+  },
+  "s0pp": {
+   "dpi": "1600",
+   "edpi": "280.00",
+   "hz": "2000",
+   "name": "s0pp",
+   "sensitivity": "0.175",
+   "url": "https://prosettings.net/players/s0pp/"
+  },
+  "s0tf1k": {
+   "dpi": "800",
+   "edpi": "760",
+   "hz": "1000",
+   "name": "S0TF1k",
+   "sensitivity": "0.95",
+   "url": "https://prosettings.net/players/s0tf1k/",
+   "zoom_sensitivity": "1.00"
+  },
+  "s0und": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "s0und",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/s0und/",
+   "zoom_sensitivity": "1"
+  },
+  "s1mon": {
+   "dpi": "800",
+   "edpi": "344.00",
+   "hz": "Unknown",
+   "name": "S1Mon",
+   "sensitivity": "0.43",
+   "url": "https://prosettings.net/players/s1mon/"
+  },
+  "s1mple": {
+   "dpi": "400",
+   "edpi": "1236",
+   "hz": "1000",
+   "name": "s1mple",
+   "sensitivity": "3.09",
+   "url": "https://prosettings.net/players/s1mple/",
+   "zoom_sensitivity": "1"
+  },
+  "s1n": {
+   "dpi": "800",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "s1n",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/s1n/",
+   "zoom_sensitivity": "1"
+  },
+  "s1ren": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "2000",
+   "name": "s1ren",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/s1ren/",
+   "zoom_sensitivity": "1"
+  },
+  "s1zzi": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "s1zzi",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/s1zzi/",
+   "zoom_sensitivity": "1"
+  },
+  "s3nsey": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "S3NSEY",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/s3nsey/",
+   "zoom_sensitivity": "1"
+  },
+  "saadhak": {
+   "dpi": "900",
+   "edpi": "229.50",
+   "hz": "500",
+   "name": "Saadhak",
+   "sensitivity": "0.255",
+   "url": "https://prosettings.net/players/saadhak/"
+  },
+  "saadzin": {
+   "dpi": "400",
+   "edpi": "1236.00",
+   "hz": "1000",
+   "name": "saadzin",
+   "sensitivity": "3.09",
+   "url": "https://prosettings.net/players/saadzin/",
+   "zoom_sensitivity": "1"
+  },
+  "sacy": {
+   "dpi": "800",
+   "edpi": "352.00",
+   "hz": "2000",
+   "name": "Sacy",
+   "sensitivity": "0.44",
+   "url": "https://prosettings.net/players/sacy/"
+  },
+  "saebyeolbe": {
+   "dpi": "800",
+   "edpi": "3200",
+   "hz": "1000",
+   "name": "Saebyeolbe",
+   "sensitivity": "4.00",
+   "url": "https://prosettings.net/players/saebyeolbe/",
+   "zoom_sensitivity": "37.89"
+  },
+  "saf": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Saf",
+   "url": "https://prosettings.net/players/saf/"
+  },
+  "saffee": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "saffee",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/saffee/",
+   "zoom_sensitivity": "1.00"
+  },
+  "safia": {
+   "dpi": "650",
+   "edpi": "150",
+   "hz": "1000",
+   "name": "Safia",
+   "sensitivity": "0.25",
+   "url": "https://prosettings.net/players/safia/"
+  },
+  "sageon": {
+   "dpi": "400",
+   "hz": "8000",
+   "name": "Sageon",
+   "url": "https://prosettings.net/players/sageon/"
+  },
+  "salazar": {
+   "dpi": "400",
+   "edpi": "940",
+   "hz": "4000",
+   "name": "salazar",
+   "sensitivity": "2.35",
+   "url": "https://prosettings.net/players/salazar/",
+   "zoom_sensitivity": "1"
+  },
+  "salko": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Salko",
+   "url": "https://prosettings.net/players/salko/"
+  },
+  "salo_mux": {
+   "dpi": "800",
+   "edpi": "1400.00",
+   "hz": "1000",
+   "name": "SALO_MUX",
+   "sensitivity": "1.75",
+   "url": "https://prosettings.net/players/salo_mux/",
+   "zoom_sensitivity": "1"
+  },
+  "samed": {
+   "dpi": "800",
+   "edpi": "200",
+   "hz": "2000",
+   "name": "Samed",
+   "sensitivity": "0.25",
+   "url": "https://prosettings.net/players/samed/"
+  },
+  "samey": {
+   "dpi": "400",
+   "edpi": "920.00",
+   "hz": "1000",
+   "name": "SaMey",
+   "sensitivity": "2.3",
+   "url": "https://prosettings.net/players/samey/",
+   "zoom_sensitivity": "1"
+  },
+  "sandrinho": {
+   "dpi": "800",
+   "hz": "4000",
+   "name": "Sandrinho",
+   "url": "https://prosettings.net/players/sandrinho/"
+  },
+  "sanji": {
+   "dpi": "400",
+   "edpi": "488",
+   "hz": "1000",
+   "name": "SANJI",
+   "sensitivity": "1.22",
+   "url": "https://prosettings.net/players/sanji/",
+   "zoom_sensitivity": "1.00"
+  },
+  "sanjog": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "sanjog",
+   "url": "https://prosettings.net/players/sanjog/"
+  },
+  "sanoj": {
+   "dpi": "1600",
+   "edpi": "176",
+   "hz": "2000",
+   "name": "sanoj",
+   "sensitivity": "0.11",
+   "url": "https://prosettings.net/players/sanoj/"
+  },
+  "sapec": {
+   "dpi": "800",
+   "edpi": "904.00",
+   "hz": "1000",
+   "name": "Sapec",
+   "sensitivity": "1.13",
+   "url": "https://prosettings.net/players/sapec/",
+   "zoom_sensitivity": "1"
+  },
+  "sarah": {
+   "dpi": "1600",
+   "edpi": "160.00",
+   "hz": "8000",
+   "name": "sarah",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/sarah/"
+  },
+  "sarie": {
+   "dpi": "1600",
+   "edpi": "240",
+   "hz": "4000",
+   "name": "Sarie",
+   "sensitivity": "0.15",
+   "url": "https://prosettings.net/players/sarie/"
+  },
+  "satellite": {
+   "dpi": "3200",
+   "edpi": "320",
+   "hz": "4000",
+   "name": "Satellite",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/satellite/"
+  },
+  "sato": {
+   "dpi": "800",
+   "edpi": "280.00",
+   "hz": "4000",
+   "name": "Sato",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/sato/"
+  },
+  "satsu": {
+   "dpi": "800",
+   "edpi": "640",
+   "hz": "2000",
+   "name": "satsu",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/satsu/",
+   "zoom_sensitivity": "1"
+  },
+  "sausol": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "sausol",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/sausol/",
+   "zoom_sensitivity": "1"
+  },
+  "savage": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "Savage",
+   "url": "https://prosettings.net/players/savage/"
+  },
+  "sayaplayer": {
+   "dpi": "1000",
+   "edpi": "339.00",
+   "hz": "1000",
+   "name": "Sayaplayer",
+   "sensitivity": "0.339",
+   "url": "https://prosettings.net/players/sayaplayer/"
+  },
+  "sayf": {
+   "dpi": "800",
+   "edpi": "320.00",
+   "hz": "1000",
+   "name": "Sayf",
+   "sensitivity": "0.4",
+   "url": "https://prosettings.net/players/sayf/"
+  },
+  "sayonara": {
+   "dpi": "1600",
+   "edpi": "160",
+   "hz": "1000",
+   "name": "Sayonara",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/sayonara/"
+  },
+  "sbt": {
+   "dpi": "400",
+   "edpi": "1000.00",
+   "hz": "2000",
+   "name": "SBT",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/sbt/",
+   "zoom_sensitivity": "1"
+  },
+  "scales": {
+   "dpi": "800",
+   "edpi": "280",
+   "hz": "1000",
+   "name": "Scales",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/scales/"
+  },
+  "sceptic": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Sceptic",
+   "url": "https://prosettings.net/players/sceptic/"
+  },
+  "scream": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "4000",
+   "name": "ScreaM",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/scream/",
+   "zoom_sensitivity": "1.00"
+  },
+  "scroll": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Scroll",
+   "url": "https://prosettings.net/players/scroll/"
+  },
+  "scrunk": {
+   "dpi": "800",
+   "edpi": "680.00",
+   "hz": "1000",
+   "name": "ScrunK",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/scrunk/",
+   "zoom_sensitivity": "1"
+  },
+  "sdaim": {
+   "dpi": "800",
+   "edpi": "640",
+   "hz": "1000",
+   "name": "Sdaim",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/sdaim/",
+   "zoom_sensitivity": "1"
+  },
+  "sdy": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "4000",
+   "name": "sdy",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/sdy/",
+   "zoom_sensitivity": "1"
+  },
+  "seagull": {
+   "dpi": "1600",
+   "edpi": "1424",
+   "hz": "1000",
+   "name": "Seagull",
+   "url": "https://prosettings.net/players/seagull/"
+  },
+  "seangares": {
+   "dpi": "800",
+   "edpi": "252",
+   "hz": "1000",
+   "name": "seangares",
+   "sensitivity": "0.315",
+   "url": "https://prosettings.net/players/seangares/"
+  },
+  "seb": {
+   "dpi": "400",
+   "edpi": "168",
+   "hz": "1000",
+   "name": "seb",
+   "sensitivity": "0.420",
+   "url": "https://prosettings.net/players/seb/"
+  },
+  "seeyun": {
+   "dpi": "800",
+   "hz": "500",
+   "name": "Seeyun",
+   "url": "https://prosettings.net/players/seeyun/"
+  },
+  "seider": {
+   "dpi": "1600",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "SEIDER",
+   "sensitivity": "0.15",
+   "url": "https://prosettings.net/players/seider/"
+  },
+  "seized": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "seized",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/seized/",
+   "zoom_sensitivity": "0.9"
+  },
+  "sellter": {
+   "dpi": "800",
+   "edpi": "480.00",
+   "hz": "2000",
+   "name": "SELLTER",
+   "sensitivity": "0.6",
+   "url": "https://prosettings.net/players/sellter/",
+   "zoom_sensitivity": "1"
+  },
+  "selly": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "1000",
+   "name": "Selly",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/selly/"
+  },
+  "sener1": {
+   "dpi": "400",
+   "edpi": "1200.00",
+   "hz": "2000",
+   "name": "SENER1",
+   "sensitivity": "3",
+   "url": "https://prosettings.net/players/sener1/",
+   "zoom_sensitivity": "1"
+  },
+  "senoxe": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "Senoxe",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/senoxe/"
+  },
+  "sense": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "sense",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/sense/",
+   "zoom_sensitivity": "1"
+  },
+  "senzu": {
+   "dpi": "400",
+   "edpi": "1200",
+   "hz": "8000",
+   "name": "Senzu",
+   "sensitivity": "3",
+   "url": "https://prosettings.net/players/senzu/",
+   "zoom_sensitivity": "1.1"
+  },
+  "seoeun": {
+   "dpi": "800",
+   "edpi": "304",
+   "hz": "8000",
+   "name": "SeoeuN",
+   "sensitivity": "0.38",
+   "url": "https://prosettings.net/players/seoeun/"
+  },
+  "seoldam": {
+   "dpi": "1600",
+   "edpi": "232.00",
+   "hz": "1000",
+   "name": "Seoldam",
+   "sensitivity": "0.145",
+   "url": "https://prosettings.net/players/seoldam/"
+  },
+  "serena": {
+   "dpi": "800",
+   "edpi": "356",
+   "hz": "8000",
+   "name": "SereNa",
+   "sensitivity": "0.445",
+   "url": "https://prosettings.net/players/serena/"
+  },
+  "sergej": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "sergej",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/sergej/",
+   "zoom_sensitivity": "1.00"
+  },
+  "serialkiller": {
+   "dpi": "1600",
+   "edpi": "88",
+   "hz": "1000",
+   "name": "SerialKiller",
+   "sensitivity": "0.055",
+   "url": "https://prosettings.net/players/serialkiller/"
+  },
+  "sernik": {
+   "dpi": "800",
+   "edpi": "1600",
+   "hz": "1000",
+   "name": "Sernik",
+   "url": "https://prosettings.net/players/sernik/"
+  },
+  "setty": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Setty",
+   "url": "https://prosettings.net/players/setty/"
+  },
+  "seven": {
+   "dpi": "1600",
+   "edpi": "280.00",
+   "hz": "4000",
+   "name": "seven",
+   "sensitivity": "0.175",
+   "url": "https://prosettings.net/players/seven/"
+  },
+  "sevkaan": {
+   "dpi": "1600",
+   "edpi": "280.00",
+   "hz": "4000",
+   "name": "Sevkaan",
+   "sensitivity": "0.175",
+   "url": "https://prosettings.net/players/sevkaan/"
+  },
+  "seyyto": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "SEYYTO",
+   "url": "https://prosettings.net/players/seyyto/"
+  },
+  "sh1ro": {
+   "dpi": "800",
+   "edpi": "832.00",
+   "hz": "1000",
+   "name": "sh1ro",
+   "sensitivity": "1.04",
+   "url": "https://prosettings.net/players/sh1ro/",
+   "zoom_sensitivity": "1"
+  },
+  "sh3nanigan": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "8000",
+   "name": "sh3nanigan",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/sh3nanigan/",
+   "zoom_sensitivity": "1.02"
+  },
+  "sha77e": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "SHA77E",
+   "url": "https://prosettings.net/players/sha77e/"
+  },
+  "shad0w": {
+   "dpi": "1600",
+   "name": "shad0w",
+   "url": "https://prosettings.net/players/shad0w/"
+  },
+  "shadow": {
+   "dpi": "400",
+   "edpi": "163.2",
+   "hz": "1000",
+   "name": "ShadoW",
+   "sensitivity": "0.408",
+   "url": "https://prosettings.net/players/shadow/"
+  },
+  "shahzam": {
+   "dpi": "800",
+   "edpi": "212",
+   "hz": "1000",
+   "name": "ShahZaM",
+   "sensitivity": "0.265",
+   "url": "https://prosettings.net/players/shahzam/"
+  },
+  "shaiiko": {
+   "dpi": "400",
+   "hz": "2000",
+   "name": "Shaiiko",
+   "url": "https://prosettings.net/players/shaiiko/"
+  },
+  "shalaby": {
+   "dpi": "800",
+   "edpi": "280",
+   "hz": "1000",
+   "name": "Shalaby",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/shalaby/"
+  },
+  "shalfey": {
+   "dpi": "400",
+   "edpi": "804",
+   "hz": "1000",
+   "name": "shalfey",
+   "sensitivity": "2.01",
+   "url": "https://prosettings.net/players/shalfey/",
+   "zoom_sensitivity": "1"
+  },
+  "shamokiy": {
+   "dpi": "1600",
+   "hz": "1000",
+   "name": "Shamokiy",
+   "url": "https://prosettings.net/players/shamokiy/"
+  },
+  "shane": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "1000",
+   "name": "shane",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/shane/",
+   "zoom_sensitivity": "1"
+  },
+  "shanks": {
+   "dpi": "800",
+   "edpi": "176.00",
+   "hz": "1000",
+   "name": "Shanks",
+   "sensitivity": "0.22",
+   "url": "https://prosettings.net/players/shanks/"
+  },
+  "shao": {
+   "dpi": "800",
+   "edpi": "280",
+   "hz": "1000",
+   "name": "Shao",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/shao/"
+  },
+  "sharpshot": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Sharpshot",
+   "url": "https://prosettings.net/players/sharpshot/"
+  },
+  "sharshock": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Sharshock",
+   "url": "https://prosettings.net/players/sharshock/"
+  },
+  "sher1o": {
+   "dpi": "1600",
+   "edpi": "320",
+   "hz": "1000",
+   "name": "Sher1o",
+   "sensitivity": "0.2",
+   "url": "https://prosettings.net/players/sher1o/"
+  },
+  "sheydos": {
+   "dpi": "400",
+   "edpi": "332",
+   "hz": "1000",
+   "name": "Sheydos",
+   "sensitivity": "0.83",
+   "url": "https://prosettings.net/players/sheydos/"
+  },
+  "shiba": {
+   "dpi": "1600",
+   "edpi": "480",
+   "hz": "4000",
+   "name": "shiba",
+   "sensitivity": "0.3",
+   "url": "https://prosettings.net/players/shiba/"
+  },
+  "shield": {
+   "dpi": "800",
+   "edpi": "832",
+   "hz": "4000",
+   "name": "shield",
+   "sensitivity": "1.04",
+   "url": "https://prosettings.net/players/shield/",
+   "zoom_sensitivity": "1"
+  },
+  "shin": {
+   "dpi": "400",
+   "edpi": "210",
+   "hz": "1000",
+   "name": "Shin",
+   "sensitivity": "0.525",
+   "url": "https://prosettings.net/players/shin/"
+  },
+  "shine": {
+   "dpi": "800",
+   "edpi": "632.00",
+   "hz": "1000",
+   "name": "SHiNE",
+   "sensitivity": "0.79",
+   "url": "https://prosettings.net/players/shine/",
+   "zoom_sensitivity": "1"
+  },
+  "shinobi": {
+   "dpi": "400",
+   "edpi": "260",
+   "hz": "1000",
+   "name": "shinobi",
+   "sensitivity": "0.65",
+   "url": "https://prosettings.net/players/shinobi/"
+  },
+  "shinsei": {
+   "dpi": "1000",
+   "edpi": "350",
+   "hz": "4000",
+   "name": "SHINSEI",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/shinsei/"
+  },
+  "shion7": {
+   "dpi": "800",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "Shion7",
+   "sensitivity": "0.3",
+   "url": "https://prosettings.net/players/shion7/"
+  },
+  "shionxy": {
+   "dpi": "800",
+   "edpi": "224",
+   "hz": "4000",
+   "name": "Shionxy",
+   "sensitivity": "0.28",
+   "url": "https://prosettings.net/players/shionxy/"
+  },
+  "shipz": {
+   "dpi": "400",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "SHiPZ",
+   "sensitivity": "2.40",
+   "url": "https://prosettings.net/players/shipz/",
+   "zoom_sensitivity": "1.00"
+  },
+  "shirazi": {
+   "dpi": "800",
+   "edpi": "256",
+   "hz": "4000",
+   "name": "shirazi",
+   "sensitivity": "0.32",
+   "url": "https://prosettings.net/players/shirazi/"
+  },
+  "shiv": {
+   "dpi": "800",
+   "edpi": "1200",
+   "hz": "1000",
+   "name": "Shiv",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/shiv/"
+  },
+  "shniider": {
+   "dpi": "400",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "Shniider",
+   "sensitivity": "0.6",
+   "url": "https://prosettings.net/players/shniider/"
+  },
+  "shock": {
+   "dpi": "400",
+   "edpi": "620.00",
+   "hz": "1000",
+   "name": "SHOCK",
+   "sensitivity": "1.55",
+   "url": "https://prosettings.net/players/shock/",
+   "zoom_sensitivity": "0.80"
+  },
+  "shokz": {
+   "dpi": "1600",
+   "edpi": "688",
+   "hz": "1000",
+   "name": "shokz",
+   "sensitivity": "0.43",
+   "url": "https://prosettings.net/players/shokz/",
+   "zoom_sensitivity": "0.9"
+  },
+  "shondex": {
+   "dpi": "800",
+   "edpi": "160",
+   "hz": "1000",
+   "name": "shondex",
+   "sensitivity": "0.2",
+   "url": "https://prosettings.net/players/shondex/"
+  },
+  "shoowtime": {
+   "dpi": "400",
+   "edpi": "760",
+   "hz": "1000",
+   "name": "SHOOWTiMe",
+   "sensitivity": "1.90",
+   "url": "https://prosettings.net/players/shoowtime/",
+   "zoom_sensitivity": "1.00"
+  },
+  "showmaker": {
+   "dpi": "2500",
+   "name": "Showmaker",
+   "url": "https://prosettings.net/players/showmaker/"
+  },
+  "shox": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "shox",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/shox/",
+   "zoom_sensitivity": "1"
+  },
+  "shr": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "4000",
+   "name": "Shr",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/shr/",
+   "zoom_sensitivity": "1"
+  },
+  "shrimzy": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Shrimzy",
+   "url": "https://prosettings.net/players/shrimzy/"
+  },
+  "shroud": {
+   "dpi": "1600",
+   "edpi": "1600",
+   "hz": "1000",
+   "name": "shroud",
+   "url": "https://prosettings.net/players/shroud/"
+  },
+  "shu": {
+   "dpi": "1600",
+   "edpi": "3600",
+   "hz": "1000",
+   "name": "Shu",
+   "sensitivity": "2.36",
+   "url": "https://prosettings.net/players/shu/",
+   "zoom_sensitivity": "33"
+  },
+  "shushan": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "shushan",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/shushan/",
+   "zoom_sensitivity": "1"
+  },
+  "shxrk": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "shxrk",
+   "url": "https://prosettings.net/players/shxrk/"
+  },
+  "shyy": {
+   "dpi": "800",
+   "edpi": "256",
+   "hz": "1000",
+   "name": "Shyy",
+   "sensitivity": "0.32",
+   "url": "https://prosettings.net/players/shyy/"
+  },
+  "shz": {
+   "dpi": "400",
+   "edpi": "500",
+   "hz": "1000",
+   "name": "shz",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/shz/",
+   "zoom_sensitivity": "1.00"
+  },
+  "sick": {
+   "dpi": "800",
+   "edpi": "280.00",
+   "hz": "1000",
+   "name": "SicK",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/sick/"
+  },
+  "sico": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "Sico",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/sico/",
+   "zoom_sensitivity": "1"
+  },
+  "siduzord": {
+   "dpi": "800",
+   "edpi": "320",
+   "hz": "2000",
+   "name": "Siduzord",
+   "sensitivity": "0.4",
+   "url": "https://prosettings.net/players/siduzord/"
+  },
+  "silentzz": {
+   "dpi": "800",
+   "edpi": "250.40",
+   "hz": "1000",
+   "name": "silentzz",
+   "sensitivity": "0.313",
+   "url": "https://prosettings.net/players/silentzz/"
+  },
+  "silerzz": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "SILERZZ",
+   "url": "https://prosettings.net/players/silerzz/"
+  },
+  "simke": {
+   "dpi": "400",
+   "edpi": "760.00",
+   "hz": "1000",
+   "name": "simke",
+   "sensitivity": "1.9",
+   "url": "https://prosettings.net/players/simke/",
+   "zoom_sensitivity": "1.05"
+  },
+  "sinatra": {
+   "dpi": "1200",
+   "name": "Sinatra",
+   "url": "https://prosettings.net/players/sinatra/"
+  },
+  "sinatraa": {
+   "dpi": "800",
+   "edpi": "309.60",
+   "hz": "1000",
+   "name": "sinatraa",
+   "sensitivity": "0.387",
+   "url": "https://prosettings.net/players/sinatraa/"
+  },
+  "sink": {
+   "dpi": "400",
+   "edpi": "940",
+   "hz": "1000",
+   "name": "SinK",
+   "sensitivity": "2.35",
+   "url": "https://prosettings.net/players/sink/",
+   "zoom_sensitivity": "1"
+  },
+  "sinnopsyy": {
+   "dpi": "400",
+   "edpi": "1300",
+   "hz": "2000",
+   "name": "sinnopsyy",
+   "sensitivity": "3.25",
+   "url": "https://prosettings.net/players/sinnopsyy/",
+   "zoom_sensitivity": "1.2"
+  },
+  "sirah": {
+   "dpi": "400",
+   "edpi": "440",
+   "hz": "1000",
+   "name": "sirah",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/sirah/",
+   "zoom_sensitivity": "1"
+  },
+  "sirmaza": {
+   "dpi": "400",
+   "edpi": "200",
+   "hz": "1000",
+   "name": "SirMaza",
+   "sensitivity": "0.5",
+   "url": "https://prosettings.net/players/sirmaza/"
+  },
+  "siufatbb": {
+   "dpi": "800",
+   "edpi": "168",
+   "hz": "4000",
+   "name": "SiuFatBB",
+   "sensitivity": "0.21",
+   "url": "https://prosettings.net/players/siufatbb/"
+  },
+  "siuhy": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "4000",
+   "name": "siuhy",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/siuhy/",
+   "zoom_sensitivity": "1"
+  },
+  "siwoo": {
+   "dpi": "1200",
+   "name": "Siwoo",
+   "url": "https://prosettings.net/players/siwoo/"
+  },
+  "sixer": {
+   "dpi": "800",
+   "edpi": "640.00",
+   "hz": "4000",
+   "name": "SIXER",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/sixer/",
+   "zoom_sensitivity": "1.00"
+  },
+  "sjuush": {
+   "dpi": "800",
+   "edpi": "888.00",
+   "hz": "1000",
+   "name": "sjuush",
+   "sensitivity": "1.11",
+   "url": "https://prosettings.net/players/sjuush/",
+   "zoom_sensitivity": "1.00"
+  },
+  "sk0r": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "500",
+   "name": "sk0R",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/sk0r/",
+   "zoom_sensitivity": "1"
+  },
+  "sk1tt": {
+   "dpi": "800",
+   "edpi": "680.00",
+   "hz": "4000",
+   "name": "sk1tt",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/sk1tt/",
+   "zoom_sensitivity": "1"
+  },
+  "skadoodle": {
+   "dpi": "1600",
+   "edpi": "672",
+   "hz": "1000",
+   "name": "Skadoodle",
+   "sensitivity": "0.42",
+   "url": "https://prosettings.net/players/skadoodle/",
+   "zoom_sensitivity": "1.00"
+  },
+  "skailer": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Skailer",
+   "url": "https://prosettings.net/players/skailer/"
+  },
+  "skanoodles": {
+   "dpi": "800",
+   "edpi": "288",
+   "hz": "1000",
+   "name": "Skanoodles",
+   "sensitivity": "0.36",
+   "url": "https://prosettings.net/players/skanoodles/"
+  },
+  "skejs": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "4000",
+   "name": "Skejs",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/skejs/",
+   "zoom_sensitivity": "1"
+  },
+  "skittlecakes": {
+   "dpi": "1600",
+   "edpi": "4320",
+   "hz": "1000",
+   "name": "SkittleCakes",
+   "sensitivity": "2.7",
+   "url": "https://prosettings.net/players/skittlecakes/"
+  },
+  "skizzyee": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "skizzyee",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/skizzyee/",
+   "zoom_sensitivity": "1"
+  },
+  "skodo": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "Skodo",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/skodo/",
+   "zoom_sensitivity": "1"
+  },
+  "skram": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Skram",
+   "url": "https://prosettings.net/players/skram/"
+  },
+  "skrimo": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "Skrimo",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/skrimo/",
+   "zoom_sensitivity": "1"
+  },
+  "skuba": {
+   "dpi": "800",
+   "edpi": "200",
+   "hz": "Unknown",
+   "name": "skuba",
+   "sensitivity": "0.25",
+   "url": "https://prosettings.net/players/skuba/"
+  },
+  "skuijke": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "SKUIJKE",
+   "url": "https://prosettings.net/players/skuijke/"
+  },
+  "skullz": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "skullz",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/skullz/",
+   "zoom_sensitivity": "1"
+  },
+  "skvii": {
+   "dpi": "1200",
+   "hz": "1000",
+   "name": "Skvii",
+   "url": "https://prosettings.net/players/skvii/"
+  },
+  "sky": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Sky",
+   "url": "https://prosettings.net/players/sky/"
+  },
+  "skywhywalker": {
+   "dpi": "1600",
+   "edpi": "2000.00",
+   "hz": "1000",
+   "name": "skywhywalker",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/skywhywalker/",
+   "zoom_sensitivity": "1"
+  },
+  "skz": {
+   "dpi": "1600",
+   "edpi": "280",
+   "hz": "1000",
+   "name": "Skz",
+   "sensitivity": "0.175",
+   "url": "https://prosettings.net/players/skz/"
+  },
+  "sl1m3": {
+   "dpi": "800",
+   "edpi": "600.00",
+   "hz": "4000",
+   "name": "sL1m3",
+   "sensitivity": "0.75",
+   "url": "https://prosettings.net/players/sl1m3/",
+   "zoom_sensitivity": "2"
+  },
+  "sl3nd": {
+   "dpi": "800",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "sl3nd",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/sl3nd/",
+   "zoom_sensitivity": "1"
+  },
+  "slaxejezzz": {
+   "dpi": "800",
+   "edpi": "592",
+   "hz": "4000",
+   "name": "slaxejezzz",
+   "sensitivity": "0.74",
+   "url": "https://prosettings.net/players/slaxejezzz/",
+   "zoom_sensitivity": "1"
+  },
+  "slaxz-": {
+   "dpi": "800",
+   "edpi": "840.00",
+   "hz": "2000",
+   "name": "slaxz-",
+   "sensitivity": "1.05",
+   "url": "https://prosettings.net/players/slaxz/",
+   "zoom_sensitivity": "1"
+  },
+  "sleepy": {
+   "dpi": "800",
+   "edpi": "3200",
+   "hz": "1000",
+   "name": "Sleepy",
+   "sensitivity": "4.00",
+   "url": "https://prosettings.net/players/sleepy/",
+   "zoom_sensitivity": "30"
+  },
+  "sleepyaria": {
+   "dpi": "1600",
+   "edpi": "174.4",
+   "hz": "2000",
+   "name": "SleepyAria",
+   "sensitivity": "0.109",
+   "url": "https://prosettings.net/players/sleepyaria/"
+  },
+  "slight": {
+   "dpi": "800",
+   "edpi": "1600.00",
+   "hz": "1000",
+   "name": "SLIGHT",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/slight/",
+   "zoom_sensitivity": "1"
+  },
+  "slowi": {
+   "dpi": "400",
+   "edpi": "1280",
+   "hz": "2000",
+   "name": "sLowi",
+   "sensitivity": "3.20",
+   "url": "https://prosettings.net/players/slowi/",
+   "zoom_sensitivity": "0.82"
+  },
+  "slowly": {
+   "dpi": "1600",
+   "edpi": "251.20",
+   "hz": "1000",
+   "name": "SLOWLY",
+   "sensitivity": "0.157",
+   "url": "https://prosettings.net/players/slowly/"
+  },
+  "smekk": {
+   "dpi": "800",
+   "edpi": "1056",
+   "hz": "4000",
+   "name": "smekk",
+   "sensitivity": "1.32",
+   "url": "https://prosettings.net/players/smekk/",
+   "zoom_sensitivity": "1"
+  },
+  "smithzz": {
+   "dpi": "400",
+   "edpi": "752",
+   "hz": "1000",
+   "name": "Smithzz",
+   "sensitivity": "1.88",
+   "url": "https://prosettings.net/players/smithzz/",
+   "zoom_sensitivity": "0.80"
+  },
+  "smoggy": {
+   "dpi": "800",
+   "edpi": "248.00",
+   "hz": "2000",
+   "name": "Smoggy",
+   "sensitivity": "0.31",
+   "url": "https://prosettings.net/players/smoggy/"
+  },
+  "smooya": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "smooya",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/smooya/",
+   "zoom_sensitivity": "1.14"
+  },
+  "smurf": {
+   "dpi": "800",
+   "edpi": "9600",
+   "hz": "1000",
+   "name": "smurf",
+   "sensitivity": "12",
+   "url": "https://prosettings.net/players/smurf/",
+   "zoom_sensitivity": "0"
+  },
+  "snacky": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Snacky",
+   "url": "https://prosettings.net/players/snacky/"
+  },
+  "snappi": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "Snappi",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/snappi/",
+   "zoom_sensitivity": "1.00"
+  },
+  "snapy": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "snapy",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/snapy/",
+   "zoom_sensitivity": "1"
+  },
+  "snatchie": {
+   "dpi": "400",
+   "edpi": "540",
+   "hz": "1000",
+   "name": "snatchie",
+   "sensitivity": "1.35",
+   "url": "https://prosettings.net/players/snatchie/",
+   "zoom_sensitivity": "1.00"
+  },
+  "snav": {
+   "dpi": "800",
+   "edpi": "1200.00",
+   "hz": "1000",
+   "name": "snav",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/snav/",
+   "zoom_sensitivity": "1"
+  },
+  "snax": {
+   "dpi": "400",
+   "edpi": "720.00",
+   "hz": "4000",
+   "name": "Snax",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/snax/",
+   "zoom_sensitivity": "0.93"
+  },
+  "snayzy": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Snayzy",
+   "url": "https://prosettings.net/players/snayzy/"
+  },
+  "snow": {
+   "dpi": "800",
+   "edpi": "640.00",
+   "hz": "1000",
+   "name": "snow",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/snow/",
+   "zoom_sensitivity": "1"
+  },
+  "snowiee": {
+   "dpi": "400",
+   "edpi": "720.00",
+   "hz": "4000",
+   "name": "snowiee",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/snowiee/",
+   "zoom_sensitivity": "1"
+  },
+  "snw": {
+   "dpi": "800",
+   "edpi": "320",
+   "hz": "1000",
+   "name": "snw",
+   "sensitivity": "0.4",
+   "url": "https://prosettings.net/players/snw/"
+  },
+  "snx": {
+   "dpi": "400",
+   "edpi": "712",
+   "hz": "1000",
+   "name": "sNx",
+   "sensitivity": "1.78",
+   "url": "https://prosettings.net/players/snx/",
+   "zoom_sensitivity": "1"
+  },
+  "sobol": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "Sobol",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/sobol/",
+   "zoom_sensitivity": "1"
+  },
+  "sociablee": {
+   "dpi": "800",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "sociablEE",
+   "sensitivity": "0.3",
+   "url": "https://prosettings.net/players/sociablee/"
+  },
+  "somebody": {
+   "dpi": "400",
+   "edpi": "900.00",
+   "hz": "2000",
+   "name": "somebody",
+   "sensitivity": "2.25",
+   "url": "https://prosettings.net/players/somebody/",
+   "zoom_sensitivity": "1.00"
+  },
+  "something": {
+   "dpi": "800",
+   "edpi": "464.00",
+   "hz": "4000",
+   "name": "something",
+   "sensitivity": "0.58",
+   "url": "https://prosettings.net/players/something/"
+  },
+  "sommerset": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Sommerset",
+   "url": "https://prosettings.net/players/sommerset/"
+  },
+  "sonic": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Sonic",
+   "sensitivity": "2.50",
+   "url": "https://prosettings.net/players/sonic-sa/",
+   "zoom_sensitivity": "1.00"
+  },
+  "soon": {
+   "dpi": "800",
+   "edpi": "7200",
+   "hz": "1000",
+   "name": "SoOn",
+   "sensitivity": "9",
+   "url": "https://prosettings.net/players/soon/",
+   "zoom_sensitivity": "40"
+  },
+  "soulcas": {
+   "dpi": "1600",
+   "edpi": "169.60",
+   "hz": "4000",
+   "name": "soulcas",
+   "sensitivity": "0.106",
+   "url": "https://prosettings.net/players/soulcas/"
+  },
+  "soulfly": {
+   "dpi": "800",
+   "edpi": "1120.00",
+   "hz": "1000",
+   "name": "Soulfly",
+   "sensitivity": "1.4",
+   "url": "https://prosettings.net/players/soulfly/",
+   "zoom_sensitivity": "1"
+  },
+  "soulz1": {
+   "dpi": "400",
+   "hz": "2000",
+   "name": "Soulz1",
+   "url": "https://prosettings.net/players/soulz1-2/"
+  },
+  "sowalio": {
+   "dpi": "400",
+   "edpi": "600.00",
+   "hz": "4000",
+   "name": "sowalio",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/sowalio/",
+   "zoom_sensitivity": "1"
+  },
+  "sp1aash": {
+   "dpi": "1600",
+   "hz": "1000",
+   "name": "Sp1aash",
+   "url": "https://prosettings.net/players/sp1aash/"
+  },
+  "sp9rk1e": {
+   "dpi": "800",
+   "edpi": "5400",
+   "hz": "1000",
+   "name": "SP9RK1E",
+   "sensitivity": "6.75",
+   "url": "https://prosettings.net/players/sp9rk1e/",
+   "zoom_sensitivity": "Unknown"
+  },
+  "space": {
+   "dpi": "800",
+   "edpi": "7200",
+   "hz": "1000",
+   "name": "SPACE",
+   "sensitivity": "9.00",
+   "url": "https://prosettings.net/players/space/",
+   "zoom_sensitivity": "Unknown"
+  },
+  "spaz": {
+   "dpi": "800",
+   "edpi": "328",
+   "hz": "1000",
+   "name": "spaz",
+   "sensitivity": "0.41",
+   "url": "https://prosettings.net/players/spaz/"
+  },
+  "speed4k": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "speed4k",
+   "sensitivity": "2.00",
+   "url": "https://prosettings.net/players/speed4k/",
+   "zoom_sensitivity": "1.00"
+  },
+  "spellan": {
+   "dpi": "800",
+   "edpi": "1600",
+   "hz": "1000",
+   "name": "SPELLAN",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/spellan/",
+   "zoom_sensitivity": "1"
+  },
+  "spiidi": {
+   "dpi": "800",
+   "edpi": "640",
+   "hz": "1000",
+   "name": "Spiidi",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/spiidi/",
+   "zoom_sensitivity": "1"
+  },
+  "spikezin": {
+   "dpi": "800",
+   "edpi": "184.00",
+   "hz": "1000",
+   "name": "spikeziN",
+   "sensitivity": "0.23",
+   "url": "https://prosettings.net/players/spikezin/"
+  },
+  "spinx": {
+   "dpi": "900",
+   "edpi": "990.00",
+   "hz": "1000",
+   "name": "Spinx",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/spinx/",
+   "zoom_sensitivity": "1.00"
+  },
+  "spiritz": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "SpiriTz",
+   "url": "https://prosettings.net/players/spiritz/"
+  },
+  "spitflow": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "spitflow",
+   "url": "https://prosettings.net/players/spitflow/"
+  },
+  "splash": {
+   "dpi": "1600",
+   "edpi": "200.00",
+   "hz": "2000",
+   "name": "splash",
+   "sensitivity": "0.125",
+   "url": "https://prosettings.net/players/splash/"
+  },
+  "spoit": {
+   "dpi": "1600",
+   "hz": "2000",
+   "name": "Spoit",
+   "url": "https://prosettings.net/players/spoit/"
+  },
+  "spooke": {
+   "dpi": "800",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "spooke",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/spooke/",
+   "zoom_sensitivity": "1"
+  },
+  "spring": {
+   "dpi": "1600",
+   "edpi": "304.00",
+   "hz": "4000",
+   "name": "Spring",
+   "sensitivity": "0.19",
+   "url": "https://prosettings.net/players/spring/"
+  },
+  "sscary": {
+   "dpi": "1600",
+   "edpi": "288",
+   "hz": "1000",
+   "name": "sScary",
+   "sensitivity": "0.18",
+   "url": "https://prosettings.net/players/sscary/"
+  },
+  "ssen": {
+   "dpi": "400",
+   "edpi": "840",
+   "hz": "4000",
+   "name": "sSen",
+   "sensitivity": "2.1",
+   "url": "https://prosettings.net/players/ssen/",
+   "zoom_sensitivity": "1"
+  },
+  "sstinix": {
+   "dpi": "400",
+   "edpi": "1147.6",
+   "hz": "500",
+   "name": "sstiNiX",
+   "sensitivity": "2.869",
+   "url": "https://prosettings.net/players/sstinix/",
+   "zoom_sensitivity": "1"
+  },
+  "stableronaldo": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Stable Ronaldo",
+   "url": "https://prosettings.net/players/stable-ronaldo/"
+  },
+  "stadodo": {
+   "dpi": "400",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "stadodo",
+   "sensitivity": "2.40",
+   "url": "https://prosettings.net/players/stadodo/",
+   "zoom_sensitivity": "1.00"
+  },
+  "staehr": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Staehr",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/staehr/",
+   "zoom_sensitivity": "1"
+  },
+  "stanislaw": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "4000",
+   "name": "stanislaw",
+   "sensitivity": "2.50",
+   "url": "https://prosettings.net/players/stanislaw/",
+   "zoom_sensitivity": "0.80"
+  },
+  "starplajerz": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "2000",
+   "name": "starplajerz",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/starplajerz/",
+   "zoom_sensitivity": "1"
+  },
+  "starry": {
+   "dpi": "400",
+   "edpi": "708.00",
+   "hz": "2000",
+   "name": "Starry",
+   "sensitivity": "1.77",
+   "url": "https://prosettings.net/players/starry/",
+   "zoom_sensitivity": "1"
+  },
+  "starxo": {
+   "dpi": "800",
+   "edpi": "216",
+   "hz": "1000",
+   "name": "starxo",
+   "sensitivity": "0.27",
+   "url": "https://prosettings.net/players/starxo/"
+  },
+  "stavn": {
+   "dpi": "400",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "stavn",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/stavn/",
+   "zoom_sensitivity": "1"
+  },
+  "stavros": {
+   "dpi": "1600",
+   "edpi": "304",
+   "hz": "1000",
+   "name": "stavros",
+   "sensitivity": "0.19",
+   "url": "https://prosettings.net/players/stavros/"
+  },
+  "stax": {
+   "dpi": "800",
+   "edpi": "172.00",
+   "hz": "1000",
+   "name": "stax",
+   "sensitivity": "0.215",
+   "url": "https://prosettings.net/players/stax/"
+  },
+  "steel": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "1000",
+   "name": "steel",
+   "sensitivity": "1.30",
+   "url": "https://prosettings.net/players/steel/",
+   "zoom_sensitivity": "1"
+  },
+  "stellar": {
+   "dpi": "800",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "stellar",
+   "sensitivity": "0.3",
+   "url": "https://prosettings.net/players/stellar/"
+  },
+  "stemp": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "stemp",
+   "url": "https://prosettings.net/players/stemp/"
+  },
+  "sterling": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "sterling",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/sterling/",
+   "zoom_sensitivity": "1.00"
+  },
+  "stesso": {
+   "dpi": "400",
+   "edpi": "520.00",
+   "hz": "2000",
+   "name": "stesso",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/stesso/",
+   "zoom_sensitivity": "1"
+  },
+  "stev0rr": {
+   "dpi": "800",
+   "edpi": "192",
+   "hz": "1000",
+   "name": "stev0rr",
+   "sensitivity": "0.24",
+   "url": "https://prosettings.net/players/stev0rr/"
+  },
+  "stewie2k": {
+   "dpi": "800",
+   "edpi": "920.00",
+   "hz": "4000",
+   "name": "Stewie2k",
+   "sensitivity": "1.15",
+   "url": "https://prosettings.net/players/stewie2k/",
+   "zoom_sensitivity": "1.15"
+  },
+  "stfn": {
+   "dpi": "400",
+   "edpi": "920",
+   "hz": "1000",
+   "name": "stfN",
+   "sensitivity": "2.30",
+   "url": "https://prosettings.net/players/stfn/",
+   "zoom_sensitivity": "1.00"
+  },
+  "stizo": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Stizo",
+   "url": "https://prosettings.net/players/stizo/"
+  },
+  "stompy": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Stompy",
+   "url": "https://prosettings.net/players/stompy/"
+  },
+  "stormen": {
+   "dpi": "1600",
+   "edpi": "1040.00",
+   "hz": "1000",
+   "name": "Stormen",
+   "sensitivity": "0.65",
+   "url": "https://prosettings.net/players/stormen/"
+  },
+  "stormyrite": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Stormyrite",
+   "url": "https://prosettings.net/players/stormyrite/"
+  },
+  "story": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "2000",
+   "name": "story",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/story/",
+   "zoom_sensitivity": "1"
+  },
+  "stressarn": {
+   "dpi": "800",
+   "edpi": "1040.00",
+   "hz": "4000",
+   "name": "stressarN",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/stressarn/",
+   "zoom_sensitivity": "1"
+  },
+  "stretch": {
+   "dpi": "400",
+   "hz": "500",
+   "name": "Stretch",
+   "url": "https://prosettings.net/players/stretch/"
+  },
+  "striker": {
+   "dpi": "800",
+   "edpi": "3200",
+   "hz": "1000",
+   "name": "Striker",
+   "sensitivity": "4",
+   "url": "https://prosettings.net/players/striker/",
+   "zoom_sensitivity": "30"
+  },
+  "strogo": {
+   "dpi": "600",
+   "edpi": "510.00",
+   "hz": "1000",
+   "name": "StRoGo",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/strogo/",
+   "zoom_sensitivity": "1"
+  },
+  "stryker": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Stryker",
+   "url": "https://prosettings.net/players/stryker/"
+  },
+  "styko": {
+   "dpi": "800",
+   "edpi": "640.00",
+   "hz": "2000",
+   "name": "STYKO",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/styko/",
+   "zoom_sensitivity": "0.80"
+  },
+  "subroza": {
+   "dpi": "800",
+   "edpi": "222.40",
+   "hz": "1000",
+   "name": "Subroza",
+   "sensitivity": "0.278",
+   "url": "https://prosettings.net/players/subroza/"
+  },
+  "sugarfree": {
+   "dpi": "3200",
+   "edpi": "4000",
+   "hz": "Unknown",
+   "name": "Sugarfree",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/sugarfree/",
+   "zoom_sensitivity": "Unknown"
+  },
+  "sugarz3ro": {
+   "dpi": "800",
+   "edpi": "180.00",
+   "hz": "1000",
+   "name": "SugarZ3ro",
+   "sensitivity": "0.225",
+   "url": "https://prosettings.net/players/sugarz3ro/"
+  },
+  "suggest": {
+   "dpi": "1600",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "Suggest",
+   "sensitivity": "0.15",
+   "url": "https://prosettings.net/players/suggest/"
+  },
+  "sukker": {
+   "dpi": "400",
+   "edpi": "1220",
+   "hz": "1000",
+   "name": "Sukker",
+   "sensitivity": "3.05",
+   "url": "https://prosettings.net/players/sukker/",
+   "zoom_sensitivity": "0.9"
+  },
+  "summer": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "Summer",
+   "sensitivity": "2.00",
+   "url": "https://prosettings.net/players/summer/",
+   "zoom_sensitivity": "0.95"
+  },
+  "summit1g": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "500",
+   "name": "summit1g",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/summit1g/",
+   "zoom_sensitivity": "1.00"
+  },
+  "sunny": {
+   "dpi": "800",
+   "edpi": "660",
+   "hz": "1000",
+   "name": "suNny",
+   "sensitivity": "0.825",
+   "url": "https://prosettings.net/players/sunny/",
+   "zoom_sensitivity": "0.80"
+  },
+  "sunpayus": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "2000",
+   "name": "SunPayus",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/sunpayus/",
+   "zoom_sensitivity": "1"
+  },
+  "suns1de": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "8000",
+   "name": "suns1de",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/suns1de/",
+   "zoom_sensitivity": "1"
+  },
+  "supa": {
+   "dpi": "1200",
+   "name": "supa",
+   "url": "https://prosettings.net/players/supa/"
+  },
+  "supamen": {
+   "dpi": "800",
+   "edpi": "227.2",
+   "hz": "2000",
+   "name": "supamen",
+   "sensitivity": "0.284",
+   "url": "https://prosettings.net/players/supamen/"
+  },
+  "super": {
+   "dpi": "800",
+   "edpi": "5200",
+   "hz": "1000",
+   "name": "super",
+   "url": "https://prosettings.net/players/super/"
+  },
+  "superbuss": {
+   "dpi": "800",
+   "edpi": "232",
+   "hz": "1000",
+   "name": "SuperBusS",
+   "sensitivity": "0.29",
+   "url": "https://prosettings.net/players/superbuss/"
+  },
+  "superflik": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "2000",
+   "name": "superflik",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/superflik/",
+   "zoom_sensitivity": "1"
+  },
+  "supr": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "supr",
+   "url": "https://prosettings.net/players/supr/"
+  },
+  "supra": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "2000",
+   "name": "supra",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/supra/",
+   "zoom_sensitivity": "1.00"
+  },
+  "surefour": {
+   "dpi": "1600",
+   "edpi": "800",
+   "hz": "500",
+   "name": "Surefour",
+   "sensitivity": "0.5",
+   "url": "https://prosettings.net/players/surefour/",
+   "zoom_sensitivity": "1"
+  },
+  "surf": {
+   "dpi": "1600",
+   "edpi": "232.00",
+   "hz": "1000",
+   "name": "Surf",
+   "sensitivity": "0.145",
+   "url": "https://prosettings.net/players/surf/"
+  },
+  "surreal": {
+   "dpi": "400",
+   "edpi": "640.00",
+   "hz": "1000",
+   "name": "Surreal",
+   "sensitivity": "1.60",
+   "url": "https://prosettings.net/players/surreal/",
+   "zoom_sensitivity": "0.80"
+  },
+  "surugamonkey": {
+   "dpi": "1600",
+   "edpi": "283.2",
+   "hz": "Unknown",
+   "name": "Surugamonkey",
+   "sensitivity": "0.177",
+   "url": "https://prosettings.net/players/surugamonkey/"
+  },
+  "sushiboys": {
+   "dpi": "800",
+   "edpi": "296",
+   "hz": "1000",
+   "name": "sushiboys",
+   "sensitivity": "0.37",
+   "url": "https://prosettings.net/players/sushiboys/"
+  },
+  "susp": {
+   "dpi": "800",
+   "edpi": "560.00",
+   "hz": "1000",
+   "name": "susp",
+   "sensitivity": "0.7",
+   "url": "https://prosettings.net/players/susp/",
+   "zoom_sensitivity": "1"
+  },
+  "suygetsu": {
+   "dpi": "800",
+   "edpi": "200.00",
+   "hz": "4000",
+   "name": "Suygetsu",
+   "sensitivity": "0.25",
+   "url": "https://prosettings.net/players/suygetsu/"
+  },
+  "suzu": {
+   "dpi": "1600",
+   "edpi": "224",
+   "hz": "1000",
+   "name": "suzu",
+   "sensitivity": "0.14",
+   "url": "https://prosettings.net/players/suzu/"
+  },
+  "svedjehed": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "Svedjehed",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/svedjehed/",
+   "zoom_sensitivity": "1"
+  },
+  "svyat": {
+   "dpi": "1200",
+   "edpi": "750",
+   "hz": "1000",
+   "name": "svyat",
+   "sensitivity": "0.625",
+   "url": "https://prosettings.net/players/svyat/",
+   "zoom_sensitivity": "0.80"
+  },
+  "sw": {
+   "dpi": "1600",
+   "edpi": "168.00",
+   "hz": "8000",
+   "name": "sw",
+   "sensitivity": "0.105",
+   "url": "https://prosettings.net/players/sw/"
+  },
+  "swagzor": {
+   "dpi": "1600",
+   "edpi": "184",
+   "hz": "4000",
+   "name": "Swagzor",
+   "sensitivity": "0.115",
+   "url": "https://prosettings.net/players/swagzor/"
+  },
+  "sweet": {
+   "dpi": "800",
+   "edpi": "1080.00",
+   "hz": "1000",
+   "name": "sweet",
+   "sensitivity": "1.35",
+   "url": "https://prosettings.net/players/sweet/"
+  },
+  "swicher": {
+   "dpi": "400",
+   "edpi": "960.00",
+   "hz": "1000",
+   "name": "swicher",
+   "sensitivity": "2.4",
+   "url": "https://prosettings.net/players/swicher/",
+   "zoom_sensitivity": "1"
+  },
+  "swisher": {
+   "dpi": "400",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "Swisher",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/swisher/",
+   "zoom_sensitivity": "1.1"
+  },
+  "swiz": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "swiz",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/swiz/",
+   "zoom_sensitivity": "1"
+  },
+  "swizzy": {
+   "dpi": "1600",
+   "hz": "4000",
+   "name": "Swizzy",
+   "url": "https://prosettings.net/players/swizzy/"
+  },
+  "sycrone": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "sycrone",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/sycrone/",
+   "zoom_sensitivity": "1.00"
+  },
+  "sylvan": {
+   "dpi": "800",
+   "edpi": "216",
+   "hz": "1000",
+   "name": "Sylvan",
+   "sensitivity": "0.27",
+   "url": "https://prosettings.net/players/sylvan/"
+  },
+  "symfuhny": {
+   "dpi": "800",
+   "hz": "500",
+   "name": "Symfuhny",
+   "sensitivity": "6",
+   "url": "https://prosettings.net/players/symfuhny/"
+  },
+  "syncd": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "syncD",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/syncd/",
+   "zoom_sensitivity": "1"
+  },
+  "synyx": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "2000",
+   "name": "synyx",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/synyx/",
+   "zoom_sensitivity": "1"
+  },
+  "syouta": {
+   "dpi": "800.00",
+   "edpi": "284",
+   "hz": "Unknown",
+   "name": "SyouTa",
+   "sensitivity": "0.355",
+   "url": "https://prosettings.net/players/syouta/"
+  },
+  "syph0": {
+   "dpi": "800",
+   "edpi": "824",
+   "hz": "1000",
+   "name": "SYPH0",
+   "sensitivity": "1.03",
+   "url": "https://prosettings.net/players/syph0/",
+   "zoom_sensitivity": "1"
+  },
+  "sypherpk": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "SypherPK",
+   "url": "https://prosettings.net/players/sypherpk/"
+  },
+  "syrson": {
+   "dpi": "1600",
+   "edpi": "1472",
+   "hz": "2000",
+   "name": "syrsoN",
+   "sensitivity": "0.92",
+   "url": "https://prosettings.net/players/syrson/",
+   "zoom_sensitivity": "1"
+  },
+  "szalony": {
+   "dpi": "1600",
+   "edpi": "320",
+   "hz": "2000",
+   "name": "Szalony",
+   "sensitivity": "0.2",
+   "url": "https://prosettings.net/players/szalony/"
+  },
+  "szejn": {
+   "dpi": "400",
+   "edpi": "1250",
+   "hz": "1000",
+   "name": "szejn",
+   "sensitivity": "3.125",
+   "url": "https://prosettings.net/players/szejn/",
+   "zoom_sensitivity": "1"
+  },
+  "szimpli": {
+   "dpi": "1600",
+   "edpi": "160.00",
+   "hz": "4000",
+   "name": "szimpli",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/szimpli/"
+  },
+  "szpero": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "SZPERO",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/szpero/",
+   "zoom_sensitivity": "1.00"
+  },
+  "t0rick": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "t0rick",
+   "sensitivity": "1.10",
+   "url": "https://prosettings.net/players/t0rick/",
+   "zoom_sensitivity": "1.00"
+  },
+  "t3xture": {
+   "dpi": "800",
+   "edpi": "360",
+   "hz": "1000",
+   "name": "t3xture",
+   "sensitivity": "0.45",
+   "url": "https://prosettings.net/players/t3xture/"
+  },
+  "t9rnay": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "t9rnay",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/t9rnay/",
+   "zoom_sensitivity": "1"
+  },
+  "ta1yo": {
+   "dpi": "1600",
+   "edpi": "2928",
+   "hz": "1000",
+   "name": "ta1yo",
+   "sensitivity": "1.83",
+   "url": "https://prosettings.net/players/ta1yo/",
+   "zoom_sensitivity": "38"
+  },
+  "tabsen": {
+   "dpi": "400",
+   "edpi": "640.00",
+   "hz": "1000",
+   "name": "tabseN",
+   "sensitivity": "1.6",
+   "url": "https://prosettings.net/players/tabsen/",
+   "zoom_sensitivity": "1.10"
+  },
+  "taco": {
+   "dpi": "400",
+   "edpi": "640",
+   "hz": "1000",
+   "name": "TACO",
+   "sensitivity": "1.6",
+   "url": "https://prosettings.net/players/taco/",
+   "zoom_sensitivity": "1.00"
+  },
+  "tacolilla": {
+   "dpi": "800",
+   "edpi": "376",
+   "hz": "1000",
+   "name": "Tacolilla",
+   "sensitivity": "0.47",
+   "url": "https://prosettings.net/players/tacolilla/"
+  },
+  "taikonn": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "Taikonn",
+   "url": "https://prosettings.net/players/taikonn/"
+  },
+  "taisheen": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Taisheen",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/taisheen/"
+  },
+  "tak": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "tAk",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/tak/",
+   "zoom_sensitivity": "1.1"
+  },
+  "takas": {
+   "dpi": "400",
+   "edpi": "192",
+   "hz": "1000",
+   "name": "TakaS",
+   "sensitivity": "0.48",
+   "url": "https://prosettings.net/players/takas/"
+  },
+  "takej": {
+   "dpi": "1600",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "takej",
+   "sensitivity": "0.15",
+   "url": "https://prosettings.net/players/takej/"
+  },
+  "tapewaare": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Tapewaare",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/tapewaare/",
+   "zoom_sensitivity": "0.9"
+  },
+  "tarathiel": {
+   "dpi": "800",
+   "edpi": "480",
+   "hz": "4000",
+   "name": "Tarathiel",
+   "sensitivity": "0.6",
+   "url": "https://prosettings.net/players/tara/"
+  },
+  "tarik": {
+   "dpi": "800",
+   "edpi": "376.80",
+   "hz": "1000",
+   "name": "tarik",
+   "sensitivity": "0.471",
+   "url": "https://prosettings.net/players/tarik/"
+  },
+  "taskmast33r": {
+   "dpi": "800",
+   "edpi": "1120.00",
+   "hz": "1000",
+   "name": "taskmast33r",
+   "sensitivity": "1.4",
+   "url": "https://prosettings.net/players/taskmast33r/"
+  },
+  "tastyy": {
+   "dpi": "1600",
+   "edpi": "208",
+   "hz": "1000",
+   "name": "Tastyy",
+   "sensitivity": "0.13",
+   "url": "https://prosettings.net/players/tastyy/"
+  },
+  "tatazin": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "tatazin",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/tatazin/",
+   "zoom_sensitivity": "1"
+  },
+  "tatu": {
+   "dpi": "850",
+   "name": "Tatu",
+   "url": "https://prosettings.net/players/tatu/"
+  },
+  "tauson": {
+   "dpi": "800",
+   "edpi": "700.00",
+   "hz": "4000",
+   "name": "Tauson",
+   "sensitivity": "0.875",
+   "url": "https://prosettings.net/players/tauson/",
+   "zoom_sensitivity": "1"
+  },
+  "taxi2g": {
+   "dpi": "1600",
+   "edpi": "692.73",
+   "hz": "1000",
+   "name": "taxi2g",
+   "sensitivity": "0.432955",
+   "url": "https://prosettings.net/players/taxi2g/"
+  },
+  "tayson": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "TaySon",
+   "url": "https://prosettings.net/players/tayson/"
+  },
+  "taz": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "TaZ",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/taz/",
+   "zoom_sensitivity": "0.90"
+  },
+  "tck": {
+   "dpi": "800",
+   "edpi": "184.00",
+   "hz": "2000",
+   "name": "TcK",
+   "sensitivity": "0.23",
+   "url": "https://prosettings.net/players/tck/"
+  },
+  "tdawgg": {
+   "dpi": "1600",
+   "edpi": "232.00",
+   "hz": "1000",
+   "name": "tdawgg",
+   "sensitivity": "0.145",
+   "url": "https://prosettings.net/players/tdawgg/"
+  },
+  "techno4k": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "Techno4K",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/techno4k/",
+   "zoom_sensitivity": "1"
+  },
+  "teddy": {
+   "dpi": "1600",
+   "edpi": "160",
+   "hz": "2000",
+   "name": "Teddy",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/teddy-2/"
+  },
+  "teeqzy": {
+   "dpi": "400",
+   "hz": "4000",
+   "name": "Teeqzy",
+   "url": "https://prosettings.net/players/teeqzy/"
+  },
+  "tele": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "tele",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/tele/",
+   "zoom_sensitivity": "1"
+  },
+  "tempz": {
+   "dpi": "1600",
+   "edpi": "224.00",
+   "hz": "2000",
+   "name": "Tempz",
+   "sensitivity": "0.14",
+   "url": "https://prosettings.net/players/tempz/"
+  },
+  "tennn": {
+   "dpi": "800",
+   "edpi": "230.40",
+   "hz": "1000",
+   "name": "TENNN",
+   "sensitivity": "0.288",
+   "url": "https://prosettings.net/players/tennn/"
+  },
+  "tenz": {
+   "dpi": "1600",
+   "edpi": "224.00",
+   "hz": "2000",
+   "name": "TenZ",
+   "sensitivity": "0.14",
+   "url": "https://prosettings.net/players/tenz/"
+  },
+  "tenzki": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "tenzki",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/tenzki/",
+   "zoom_sensitivity": "1.00"
+  },
+  "terd": {
+   "dpi": "1600",
+   "hz": "2000",
+   "name": "Terd",
+   "url": "https://prosettings.net/players/terd/"
+  },
+  "teses": {
+   "dpi": "1600",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "TeSeS",
+   "sensitivity": "0.55",
+   "url": "https://prosettings.net/players/teses/",
+   "zoom_sensitivity": "1"
+  },
+  "tex": {
+   "dpi": "800",
+   "edpi": "176.00",
+   "hz": "2000",
+   "name": "tex",
+   "sensitivity": "0.22",
+   "url": "https://prosettings.net/players/tex/"
+  },
+  "texta": {
+   "dpi": "400",
+   "edpi": "280",
+   "hz": "1000",
+   "name": "Texta",
+   "sensitivity": "0.700",
+   "url": "https://prosettings.net/players/texta/"
+  },
+  "tfue": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "Tfue",
+   "url": "https://prosettings.net/players/tfue/"
+  },
+  "tgltn": {
+   "dpi": "1600",
+   "hz": "1000",
+   "name": "TGLTN",
+   "url": "https://prosettings.net/players/tgltn/"
+  },
+  "th0mashd": {
+   "dpi": "1600",
+   "hz": "1000",
+   "name": "Th0masHD",
+   "url": "https://prosettings.net/players/th0mashd/"
+  },
+  "thamlike": {
+   "dpi": "800",
+   "edpi": "984",
+   "hz": "4000",
+   "name": "thamlike",
+   "sensitivity": "1.23",
+   "url": "https://prosettings.net/players/thamlike/",
+   "zoom_sensitivity": "1"
+  },
+  "thebigfiz": {
+   "dpi": "400",
+   "edpi": "164",
+   "hz": "1000",
+   "name": "TheBigFiz",
+   "sensitivity": "0.41",
+   "url": "https://prosettings.net/players/thebigfiz/"
+  },
+  "theelive": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "The eLiVe",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/the-elive/",
+   "zoom_sensitivity": "1"
+  },
+  "thenderlost": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "Thenderlost",
+   "url": "https://prosettings.net/players/thenderlost/"
+  },
+  "thiagin": {
+   "dpi": "1600",
+   "hz": "1000",
+   "name": "Thiagin",
+   "url": "https://prosettings.net/players/thiagin/"
+  },
+  "thiefs": {
+   "dpi": "800",
+   "hz": "500",
+   "name": "Thiefs",
+   "url": "https://prosettings.net/players/thiefs/"
+  },
+  "thomas": {
+   "dpi": "400",
+   "edpi": "580",
+   "hz": "1000",
+   "name": "Thomas",
+   "sensitivity": "1.45",
+   "url": "https://prosettings.net/players/thomas/",
+   "zoom_sensitivity": "1"
+  },
+  "thour": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "1000",
+   "name": "Thour",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/thour/",
+   "zoom_sensitivity": "1"
+  },
+  "thwifo": {
+   "dpi": "800",
+   "edpi": "224",
+   "hz": "1000",
+   "name": "Thwifo",
+   "sensitivity": "0.28",
+   "url": "https://prosettings.net/players/thwifo/"
+  },
+  "tiezzi": {
+   "dpi": "1600",
+   "edpi": "192",
+   "hz": "2000",
+   "name": "tiezzi",
+   "sensitivity": "0.12",
+   "url": "https://prosettings.net/players/tiezzi/"
+  },
+  "tiger": {
+   "dpi": "1000",
+   "edpi": "1050.00",
+   "hz": "1000",
+   "name": "TiGeR",
+   "sensitivity": "1.05",
+   "url": "https://prosettings.net/players/tiger/",
+   "zoom_sensitivity": "1"
+  },
+  "timhehe": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "TIMhehe",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/timhehe/",
+   "zoom_sensitivity": "1"
+  },
+  "timo": {
+   "dpi": "800",
+   "edpi": "416",
+   "hz": "1000",
+   "name": "timo",
+   "sensitivity": "0.52",
+   "url": "https://prosettings.net/players/timo/",
+   "zoom_sensitivity": "1.1"
+  },
+  "timotino": {
+   "dpi": "1600",
+   "edpi": "225.6",
+   "hz": "1000",
+   "name": "timotino",
+   "sensitivity": "0.141",
+   "url": "https://prosettings.net/players/timotino/"
+  },
+  "timthetatman": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "timthetatman",
+   "sensitivity": "3.93",
+   "url": "https://prosettings.net/players/timthetatman/"
+  },
+  "tinchoff": {
+   "dpi": "400",
+   "edpi": "352",
+   "hz": "4000",
+   "name": "tinchoff",
+   "sensitivity": "0.88",
+   "url": "https://prosettings.net/players/tinchoff/"
+  },
+  "tinka": {
+   "dpi": "800",
+   "hz": "2000",
+   "name": "Tinka",
+   "url": "https://prosettings.net/players/tinka/"
+  },
+  "tisora": {
+   "dpi": "800",
+   "edpi": "184",
+   "hz": "2000",
+   "name": "Tisora",
+   "sensitivity": "0.23",
+   "url": "https://prosettings.net/players/tisora/"
+  },
+  "tixx": {
+   "dpi": "1600",
+   "edpi": "224",
+   "hz": "1000",
+   "name": "tixx",
+   "sensitivity": "0.14",
+   "url": "https://prosettings.net/players/tixx/"
+  },
+  "tizian": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "tiziaN",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/tizian/",
+   "zoom_sensitivity": "1.05"
+  },
+  "tjino": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Tjino",
+   "url": "https://prosettings.net/players/tjino/"
+  },
+  "tjp": {
+   "dpi": "400",
+   "edpi": "580",
+   "hz": "1000",
+   "name": "TjP",
+   "sensitivity": "1.45",
+   "url": "https://prosettings.net/players/tjp/",
+   "zoom_sensitivity": "1"
+  },
+  "tkzin": {
+   "dpi": "1600",
+   "edpi": "160",
+   "hz": "4000",
+   "name": "Tkzin",
+   "sensitivity": "0.1",
+   "url": "https://prosettings.net/players/tkzin/"
+  },
+  "tmb": {
+   "dpi": "800",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "TMB",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/tmb/",
+   "zoom_sensitivity": "1"
+  },
+  "tmkj": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "TMKj",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/tmkj/",
+   "zoom_sensitivity": "1"
+  },
+  "tn1r": {
+   "dpi": "400",
+   "edpi": "400",
+   "hz": "1000",
+   "name": "tN1R",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/tn1r/",
+   "zoom_sensitivity": "1"
+  },
+  "to0ro": {
+   "dpi": "500",
+   "edpi": "1150.00",
+   "hz": "1000",
+   "name": "tO0RO",
+   "sensitivity": "2.3",
+   "url": "https://prosettings.net/players/to0ro/",
+   "zoom_sensitivity": "1"
+  },
+  "toao": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "4000",
+   "name": "TOAO",
+   "sensitivity": "1.10",
+   "url": "https://prosettings.net/players/toao/",
+   "zoom_sensitivity": "1.03"
+  },
+  "togs": {
+   "dpi": "800",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "togs",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/togs/",
+   "zoom_sensitivity": "1"
+  },
+  "tom1jed": {
+   "dpi": "800",
+   "edpi": "1200.00",
+   "hz": "4000",
+   "name": "tom1jed",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/tom1jed/",
+   "zoom_sensitivity": "1.1"
+  },
+  "tom223": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "ToM223",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/tom223/",
+   "zoom_sensitivity": "1"
+  },
+  "tomaszin": {
+   "dpi": "800",
+   "edpi": "960.00",
+   "hz": "1000",
+   "name": "tomaszin",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/tomaszin/",
+   "zoom_sensitivity": "1.1"
+  },
+  "tomaszy": {
+   "dpi": "400",
+   "edpi": "252",
+   "hz": "1000",
+   "name": "tomaszy",
+   "sensitivity": "0.63",
+   "url": "https://prosettings.net/players/tomaszy/"
+  },
+  "tomiko": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "tomiko",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/tomiko/",
+   "zoom_sensitivity": "0.9"
+  },
+  "toose": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Toose",
+   "url": "https://prosettings.net/players/toose/"
+  },
+  "topa": {
+   "dpi": "400",
+   "edpi": "640.00",
+   "hz": "4000",
+   "name": "Topa",
+   "sensitivity": "1.6",
+   "url": "https://prosettings.net/players/topa/",
+   "zoom_sensitivity": "1"
+  },
+  "topz": {
+   "dpi": "800",
+   "edpi": "1024",
+   "hz": "1000",
+   "name": "tOPZ",
+   "sensitivity": "1.28",
+   "url": "https://prosettings.net/players/topz/",
+   "zoom_sensitivity": "1"
+  },
+  "torzsi": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "torzsi",
+   "sensitivity": "1.00",
+   "url": "https://prosettings.net/players/torzsi/",
+   "zoom_sensitivity": "1"
+  },
+  "trash": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Trash",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/trash/",
+   "zoom_sensitivity": "1"
+  },
+  "travis": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "TRAVIS",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/travis/",
+   "zoom_sensitivity": "1"
+  },
+  "treelover": {
+   "dpi": "1600",
+   "edpi": "240",
+   "hz": "2000",
+   "name": "treelover",
+   "sensitivity": "0.15",
+   "url": "https://prosettings.net/players/treelover/"
+  },
+  "trent": {
+   "dpi": "1600",
+   "edpi": "256.00",
+   "hz": "1000",
+   "name": "trent",
+   "sensitivity": "0.16",
+   "url": "https://prosettings.net/players/trent/"
+  },
+  "trexx": {
+   "dpi": "800",
+   "edpi": "180.8",
+   "hz": "1000",
+   "name": "trexx",
+   "sensitivity": "0.226",
+   "url": "https://prosettings.net/players/trexx/"
+  },
+  "trick": {
+   "dpi": "800",
+   "edpi": "244",
+   "hz": "1000",
+   "name": "Trick",
+   "sensitivity": "0.305",
+   "url": "https://prosettings.net/players/trick/"
+  },
+  "tried": {
+   "dpi": "750",
+   "edpi": "1050",
+   "hz": "4000",
+   "name": "tried",
+   "sensitivity": "1.4",
+   "url": "https://prosettings.net/players/tried/",
+   "zoom_sensitivity": "1"
+  },
+  "trk": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "trk",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/trk/",
+   "zoom_sensitivity": "1.00"
+  },
+  "trucklover86": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "2000",
+   "name": "Trucklover86",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/trucklover86/",
+   "zoom_sensitivity": "1"
+  },
+  "trulex": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "TruleX",
+   "url": "https://prosettings.net/players/trulex/"
+  },
+  "try": {
+   "dpi": "400",
+   "edpi": "920",
+   "hz": "2000",
+   "name": "try",
+   "sensitivity": "2.3",
+   "url": "https://prosettings.net/players/try/",
+   "zoom_sensitivity": "1.20"
+  },
+  "ts": {
+   "dpi": "400",
+   "edpi": "233",
+   "hz": "1000",
+   "name": "TS",
+   "sensitivity": "0.583",
+   "url": "https://prosettings.net/players/ts/"
+  },
+  "tteuw": {
+   "dpi": "2000",
+   "edpi": "750",
+   "hz": "1000",
+   "name": "tteuw",
+   "sensitivity": "0.375",
+   "url": "https://prosettings.net/players/tteuw/"
+  },
+  "tudson": {
+   "dpi": "1600",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "tudsoN",
+   "sensitivity": "0.5",
+   "url": "https://prosettings.net/players/tudson/",
+   "zoom_sensitivity": "0.90"
+  },
+  "tuli": {
+   "dpi": "800",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "Tuli",
+   "sensitivity": "0.3",
+   "url": "https://prosettings.net/players/tuli/"
+  },
+  "tura": {
+   "dpi": "800",
+   "edpi": "320",
+   "hz": "4000",
+   "name": "Tura",
+   "sensitivity": "0.4",
+   "url": "https://prosettings.net/players/tura/"
+  },
+  "turkish": {
+   "dpi": "800",
+   "edpi": "160",
+   "hz": "2000",
+   "name": "Turkish",
+   "sensitivity": "0.2",
+   "url": "https://prosettings.net/players/turkish/"
+  },
+  "turko": {
+   "dpi": "400",
+   "edpi": "240",
+   "hz": "1000",
+   "name": "Turko",
+   "sensitivity": "0.6",
+   "url": "https://prosettings.net/players/turko/"
+  },
+  "tutsz": {
+   "dpi": "1500",
+   "name": "Tutsz",
+   "url": "https://prosettings.net/players/tutsz/"
+  },
   "рutrick": {
    "dpi": "800",
    "hz": "1000",
@@ -12360,53 +15513,61 @@
   }
  },
  "pending": {
-  "https://prosettings.net/players/n9xtz/": {
-   "name": "n9xtz",
-   "steam": "https://steamcommunity.com/id/n9xtzfps/"
+  "https://prosettings.net/players/rusty/": {
+   "name": "rusty",
+   "steam": "https://steamcommunity.com/id/RuStYmoFOKa/"
   },
-  "https://prosettings.net/players/nami/": {
-   "name": "nami",
-   "steam": "https://steamcommunity.com/id/namiii1337/"
+  "https://prosettings.net/players/samey/": {
+   "name": "samey",
+   "steam": "https://steamcommunity.com/id/SaMeyoo/"
   },
-  "https://prosettings.net/players/nellozz/": {
-   "name": "nellozz",
-   "steam": "https://steamcommunity.com/id/catfromjungle/"
+  "https://prosettings.net/players/seb/": {
+   "name": "seb",
+   "steam": "https://steamcommunity.com/id/official_seb/"
   },
-  "https://prosettings.net/players/nexa/": {
-   "name": "nexa",
-   "steam": "https://steamcommunity.com/id/nexattack"
+  "https://prosettings.net/players/sellter/": {
+   "name": "sellter",
+   "steam": "https://steamcommunity.com/id/SELLTERRRRRR/"
   },
-  "https://prosettings.net/players/noardra/": {
-   "name": "noardra",
-   "steam": "https://steamcommunity.com/id/noardra"
+  "https://prosettings.net/players/senzu/": {
+   "name": "senzu",
+   "steam": "https://steamcommunity.com/id/senzucs0/"
   },
-  "https://prosettings.net/players/nopzy/": {
-   "name": "nopzy",
-   "steam": "https://steamcommunity.com/id/nopzy03/"
+  "https://prosettings.net/players/sinnopsyy/": {
+   "name": "sinnopsyy",
+   "steam": "https://steamcommunity.com/id/whatsgood0d/"
   },
-  "https://prosettings.net/players/owner/": {
-   "name": "owner",
-   "steam": "https://steamcommunity.com/id/0WNERRR/"
+  "https://prosettings.net/players/skejs/": {
+   "name": "skejs",
+   "steam": "https://steamcommunity.com/id/skejsbrorz/"
   },
-  "https://prosettings.net/players/peppzor/": {
-   "name": "peppzor",
-   "steam": "https://steamcommunity.com/id/officialpeppzor/"
+  "https://prosettings.net/players/stressarn/": {
+   "name": "stressarn",
+   "steam": "https://steamcommunity.com/id/stressarN777/"
   },
-  "https://prosettings.net/players/perx/": {
-   "name": "perx",
-   "steam": "https://steamcommunity.com/id/PerX1337/"
+  "https://prosettings.net/players/svedjehed/": {
+   "name": "svedjehed",
+   "steam": "https://steamcommunity.com/id/Svedjehed/"
   },
-  "https://prosettings.net/players/realzin/": {
-   "name": "realzin",
-   "steam": "https://steamcommunity.com/id/realzincsgo/"
+  "https://prosettings.net/players/synyx/": {
+   "name": "synyx",
+   "steam": "https://steamcommunity.com/profiles/synyxxx"
   },
-  "https://prosettings.net/players/reversive/": {
-   "name": "reversive",
-   "steam": "https://steamcommunity.com/id/reversive10/"
+  "https://prosettings.net/players/syph0/": {
+   "name": "syph0",
+   "steam": "https://steamcommunity.com/id/baklajan13373646/"
   },
-  "https://prosettings.net/players/roux/": {
-   "name": "roux",
-   "steam": "https://steamcommunity.com/id/dasdmqkoemkqowlmkldsz/"
+  "https://prosettings.net/players/szejn/": {
+   "name": "szejn",
+   "steam": "https://steamcommunity.com/id/szejnk1ng/"
+  },
+  "https://prosettings.net/players/topz/": {
+   "name": "topz",
+   "steam": "https://steamcommunity.com/id/-tOPZ-/"
+  },
+  "https://prosettings.net/players/tudson/": {
+   "name": "tudson",
+   "steam": "https://steamcommunity.com/id/tudsonn/"
   }
  },
  "players": {
@@ -12446,6 +15607,23 @@
    "url": "https://prosettings.net/players/f0rest/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197960429732": {
+   "dpi": "800",
+   "edpi": "252",
+   "hz": "1000",
+   "name": "seangares",
+   "sensitivity": "0.315",
+   "url": "https://prosettings.net/players/seangares/"
+  },
+  "76561197960499780": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "TaZ",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/taz/",
+   "zoom_sensitivity": "0.90"
+  },
   "76561197960690195": {
    "dpi": "400",
    "edpi": "800.00",
@@ -12480,6 +15658,14 @@
    "name": "Cutler",
    "sensitivity": "0.3",
    "url": "https://prosettings.net/players/cutler/"
+  },
+  "76561197960968055": {
+   "dpi": "1600",
+   "edpi": "224.00",
+   "hz": "2000",
+   "name": "TenZ",
+   "sensitivity": "0.14",
+   "url": "https://prosettings.net/players/tenz/"
   },
   "76561197961021014": {
    "dpi": "1600",
@@ -12533,6 +15719,15 @@
    "sensitivity": "1.00",
    "url": "https://prosettings.net/players/lekr0/",
    "zoom_sensitivity": "0.59"
+  },
+  "76561197961491680": {
+   "dpi": "400",
+   "edpi": "640.00",
+   "hz": "1000",
+   "name": "tabseN",
+   "sensitivity": "1.6",
+   "url": "https://prosettings.net/players/tabsen/",
+   "zoom_sensitivity": "1.10"
   },
   "76561197961610974": {
    "dpi": "400",
@@ -12597,6 +15792,15 @@
    "url": "https://prosettings.net/players/aerial/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197963077268": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "1000",
+   "name": "steel",
+   "sensitivity": "1.30",
+   "url": "https://prosettings.net/players/steel/",
+   "zoom_sensitivity": "1"
+  },
   "76561197963277583": {
    "dpi": "400",
    "edpi": "604.00",
@@ -12641,6 +15845,15 @@
    "url": "https://prosettings.net/players/hs/",
    "zoom_sensitivity": "0.90"
   },
+  "76561197963914156": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "seized",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/seized/",
+   "zoom_sensitivity": "0.9"
+  },
   "76561197964179892": {
    "dpi": "400",
    "edpi": "251.2",
@@ -12666,6 +15879,13 @@
    "sensitivity": "0.88",
    "url": "https://prosettings.net/players/birdfromsky/",
    "zoom_sensitivity": "1"
+  },
+  "76561197964781654": {
+   "dpi": "1600",
+   "edpi": "1600",
+   "hz": "1000",
+   "name": "shroud",
+   "url": "https://prosettings.net/players/shroud/"
   },
   "76561197965046352": {
    "dpi": "400",
@@ -12816,6 +16036,15 @@
    "url": "https://prosettings.net/players/mezii/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197973730803": {
+   "dpi": "800",
+   "edpi": "640",
+   "hz": "1000",
+   "name": "Spiidi",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/spiidi/",
+   "zoom_sensitivity": "1"
+  },
   "76561197973757802": {
    "dpi": "800",
    "edpi": "720.00",
@@ -12833,6 +16062,42 @@
    "sensitivity": "2",
    "url": "https://prosettings.net/players/pashabiceps/",
    "zoom_sensitivity": "1"
+  },
+  "76561197974106188": {
+   "dpi": "800",
+   "edpi": "680.00",
+   "hz": "1000",
+   "name": "ScrunK",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/scrunk/",
+   "zoom_sensitivity": "1"
+  },
+  "76561197974587647": {
+   "dpi": "400",
+   "edpi": "752",
+   "hz": "1000",
+   "name": "Smithzz",
+   "sensitivity": "1.88",
+   "url": "https://prosettings.net/players/smithzz/",
+   "zoom_sensitivity": "0.80"
+  },
+  "76561197975129851": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Sonic",
+   "sensitivity": "2.50",
+   "url": "https://prosettings.net/players/sonic-sa/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561197976197744": {
+   "dpi": "400",
+   "edpi": "1280",
+   "hz": "2000",
+   "name": "sLowi",
+   "sensitivity": "3.20",
+   "url": "https://prosettings.net/players/slowi/",
+   "zoom_sensitivity": "0.82"
   },
   "76561197977105184": {
    "dpi": "400",
@@ -12886,6 +16151,14 @@
    "url": "https://prosettings.net/players/cajunb/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197978481975": {
+   "dpi": "800",
+   "edpi": "376.80",
+   "hz": "1000",
+   "name": "tarik",
+   "sensitivity": "0.471",
+   "url": "https://prosettings.net/players/tarik/"
+  },
   "76561197978835160": {
    "dpi": "400",
    "edpi": "1200.00",
@@ -12922,6 +16195,24 @@
    "url": "https://prosettings.net/players/k0nfig/",
    "zoom_sensitivity": "1"
   },
+  "76561197979820713": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "SZPERO",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/szpero/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561197980122997": {
+   "dpi": "1600",
+   "edpi": "1472",
+   "hz": "2000",
+   "name": "syrsoN",
+   "sensitivity": "0.92",
+   "url": "https://prosettings.net/players/syrson/",
+   "zoom_sensitivity": "1"
+  },
   "76561197980158081": {
    "dpi": "400",
    "edpi": "680",
@@ -12947,6 +16238,15 @@
    "name": "hAdji",
    "sensitivity": "2.00",
    "url": "https://prosettings.net/players/hadji/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561197981341453": {
+   "dpi": "1600",
+   "edpi": "672",
+   "hz": "1000",
+   "name": "Skadoodle",
+   "sensitivity": "0.42",
+   "url": "https://prosettings.net/players/skadoodle/",
    "zoom_sensitivity": "1.00"
   },
   "76561197981621332": {
@@ -12976,6 +16276,15 @@
    "url": "https://prosettings.net/players/get_right/",
    "zoom_sensitivity": "1"
   },
+  "76561197982141573": {
+   "dpi": "400",
+   "edpi": "720.00",
+   "hz": "4000",
+   "name": "Snax",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/snax/",
+   "zoom_sensitivity": "0.93"
+  },
   "76561197982341849": {
    "dpi": "400",
    "edpi": "780.00",
@@ -13002,6 +16311,14 @@
    "sensitivity": "1.3",
    "url": "https://prosettings.net/players/kaahsensei/",
    "zoom_sensitivity": "1"
+  },
+  "76561197983822687": {
+   "dpi": "800",
+   "edpi": "280.00",
+   "hz": "1000",
+   "name": "SicK",
+   "sensitivity": "0.35",
+   "url": "https://prosettings.net/players/sick/"
   },
   "76561197983956651": {
    "dpi": "800",
@@ -13057,6 +16374,15 @@
    "url": "https://prosettings.net/players/mynio/",
    "zoom_sensitivity": "1"
   },
+  "76561197985565685": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "saffee",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/saffee/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561197986829261": {
    "dpi": "800",
    "edpi": "720",
@@ -13111,6 +16437,15 @@
    "url": "https://prosettings.net/players/chrisj/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197988609490": {
+   "dpi": "800",
+   "edpi": "640.00",
+   "hz": "4000",
+   "name": "SIXER",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/sixer/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561197988627193": {
    "dpi": "800",
    "edpi": "1000.00",
@@ -13119,6 +16454,24 @@
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/olofmeister/",
    "zoom_sensitivity": "1.2"
+  },
+  "76561197988768248": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "4000",
+   "name": "ScreaM",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/scream/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561197989423065": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "Snappi",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/snappi/",
+   "zoom_sensitivity": "1.00"
   },
   "76561197989430253": {
    "dpi": "800",
@@ -13210,6 +16563,15 @@
    "url": "https://prosettings.net/players/denis/",
    "zoom_sensitivity": "0.70"
   },
+  "76561197991593267": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "sausol",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/sausol/",
+   "zoom_sensitivity": "1"
+  },
   "76561197992220633": {
    "dpi": "800",
    "edpi": "1200",
@@ -13272,6 +16634,15 @@
    "url": "https://prosettings.net/players/danoco/",
    "zoom_sensitivity": "1.20"
   },
+  "76561197995102212": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "tatazin",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/tatazin/",
+   "zoom_sensitivity": "1"
+  },
   "76561197995178481": {
    "dpi": "800",
    "edpi": "600.00",
@@ -13280,6 +16651,14 @@
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/poiii/",
    "zoom_sensitivity": "1"
+  },
+  "76561197995369711": {
+   "dpi": "400",
+   "edpi": "248",
+   "hz": "1000",
+   "name": "RUBINO",
+   "sensitivity": "0.62",
+   "url": "https://prosettings.net/players/rubino/"
   },
   "76561197995817501": {
    "dpi": "800",
@@ -13290,6 +16669,15 @@
    "url": "https://prosettings.net/players/fl1t/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197995875352": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "ToM223",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/tom223/",
+   "zoom_sensitivity": "1"
+  },
   "76561197995889730": {
    "dpi": "800",
    "edpi": "840.00",
@@ -13298,6 +16686,15 @@
    "sensitivity": "1.05",
    "url": "https://prosettings.net/players/nitr0/",
    "zoom_sensitivity": "1.04"
+  },
+  "76561197995898576": {
+   "dpi": "1200",
+   "edpi": "750",
+   "hz": "1000",
+   "name": "svyat",
+   "sensitivity": "0.625",
+   "url": "https://prosettings.net/players/svyat/",
+   "zoom_sensitivity": "0.80"
   },
   "76561197996060155": {
    "dpi": "400",
@@ -13317,6 +16714,15 @@
    "url": "https://prosettings.net/players/maluk3/",
    "zoom_sensitivity": "0.78"
   },
+  "76561197996678278": {
+   "dpi": "1600",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "TeSeS",
+   "sensitivity": "0.55",
+   "url": "https://prosettings.net/players/teses/",
+   "zoom_sensitivity": "1"
+  },
   "76561197997247152": {
    "dpi": "400",
    "edpi": "628",
@@ -13334,6 +16740,41 @@
    "sensitivity": "0.92",
    "url": "https://prosettings.net/players/rain/",
    "zoom_sensitivity": "0.9"
+  },
+  "76561197997480650": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "tenzki",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/tenzki/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561197997483962": {
+   "dpi": "1600",
+   "edpi": "1040.00",
+   "hz": "1000",
+   "name": "Stormen",
+   "sensitivity": "0.65",
+   "url": "https://prosettings.net/players/stormen/"
+  },
+  "76561197997556936": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "tiziaN",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/tizian/",
+   "zoom_sensitivity": "1.05"
+  },
+  "76561197997951486": {
+   "dpi": "800",
+   "edpi": "984",
+   "hz": "4000",
+   "name": "thamlike",
+   "sensitivity": "1.23",
+   "url": "https://prosettings.net/players/thamlike/",
+   "zoom_sensitivity": "1"
   },
   "76561197997981170": {
    "dpi": "400",
@@ -13377,6 +16818,15 @@
    "url": "https://prosettings.net/players/hooxi/",
    "zoom_sensitivity": "1"
   },
+  "76561197999004010": {
+   "dpi": "800",
+   "edpi": "920.00",
+   "hz": "4000",
+   "name": "Stewie2k",
+   "sensitivity": "1.15",
+   "url": "https://prosettings.net/players/stewie2k/",
+   "zoom_sensitivity": "1.15"
+  },
   "76561197999186947": {
    "dpi": "400",
    "edpi": "760.00",
@@ -13384,6 +16834,15 @@
    "name": "fer",
    "sensitivity": "1.9",
    "url": "https://prosettings.net/players/fer/",
+   "zoom_sensitivity": "1"
+  },
+  "76561197999532274": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "Sico",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/sico/",
    "zoom_sensitivity": "1"
   },
   "76561197999584343": {
@@ -13403,6 +16862,15 @@
    "sensitivity": "1.8",
    "url": "https://prosettings.net/players/dimke/",
    "zoom_sensitivity": "1.2"
+  },
+  "76561197999855911": {
+   "dpi": "1600",
+   "edpi": "688",
+   "hz": "1000",
+   "name": "shokz",
+   "sensitivity": "0.43",
+   "url": "https://prosettings.net/players/shokz/",
+   "zoom_sensitivity": "0.9"
   },
   "76561198000664245": {
    "dpi": "400",
@@ -13620,6 +17088,15 @@
    "url": "https://prosettings.net/players/gruby/",
    "zoom_sensitivity": "1.25"
   },
+  "76561198005107817": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Staehr",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/staehr/",
+   "zoom_sensitivity": "1"
+  },
   "76561198006379986": {
    "dpi": "800",
    "edpi": "880.00",
@@ -13647,6 +17124,15 @@
    "url": "https://prosettings.net/players/auman/",
    "zoom_sensitivity": "Unknown"
   },
+  "76561198006920295": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "shox",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/shox/",
+   "zoom_sensitivity": "1"
+  },
   "76561198007184371": {
    "dpi": "1800",
    "edpi": "1125",
@@ -13656,6 +17142,24 @@
    "url": "https://prosettings.net/players/bondik/",
    "zoom_sensitivity": "1.00"
   },
+  "76561198007552635": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "t0rick",
+   "sensitivity": "1.10",
+   "url": "https://prosettings.net/players/t0rick/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561198007588478": {
+   "dpi": "400",
+   "edpi": "920",
+   "hz": "1000",
+   "name": "stfN",
+   "sensitivity": "2.30",
+   "url": "https://prosettings.net/players/stfn/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198008157919": {
    "dpi": "400",
    "edpi": "232",
@@ -13663,6 +17167,15 @@
    "name": "NagZet",
    "sensitivity": "0.58",
    "url": "https://prosettings.net/players/nagzet/"
+  },
+  "76561198009427663": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "sycrone",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/sycrone/",
+   "zoom_sensitivity": "1.00"
   },
   "76561198010426775": {
    "dpi": "800",
@@ -13736,6 +17249,24 @@
    "url": "https://prosettings.net/players/mou/",
    "zoom_sensitivity": "0.913"
   },
+  "76561198013142296": {
+   "dpi": "400",
+   "edpi": "640",
+   "hz": "1000",
+   "name": "TACO",
+   "sensitivity": "1.6",
+   "url": "https://prosettings.net/players/taco/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561198013230247": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "Summer",
+   "sensitivity": "2.00",
+   "url": "https://prosettings.net/players/summer/",
+   "zoom_sensitivity": "0.95"
+  },
   "76561198013243326": {
    "dpi": "800",
    "edpi": "848.00",
@@ -13753,6 +17284,12 @@
    "sensitivity": "2.7",
    "url": "https://prosettings.net/players/bodyy/",
    "zoom_sensitivity": "0.88"
+  },
+  "76561198013851557": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "SKUIJKE",
+   "url": "https://prosettings.net/players/skuijke/"
   },
   "76561198014251501": {
    "dpi": "400",
@@ -13814,6 +17351,15 @@
    "url": "https://prosettings.net/players/jboen/",
    "zoom_sensitivity": "1"
   },
+  "76561198016194159": {
+   "dpi": "800",
+   "edpi": "640.00",
+   "hz": "2000",
+   "name": "STYKO",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/styko/",
+   "zoom_sensitivity": "0.80"
+  },
   "76561198016432560": {
    "dpi": "400",
    "edpi": "840",
@@ -13840,6 +17386,15 @@
    "sensitivity": "1",
    "url": "https://prosettings.net/players/acilion/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198017671061": {
+   "dpi": "800",
+   "edpi": "660",
+   "hz": "1000",
+   "name": "suNny",
+   "sensitivity": "0.825",
+   "url": "https://prosettings.net/players/sunny/",
+   "zoom_sensitivity": "0.80"
   },
   "76561198017827676": {
    "dpi": "800",
@@ -13974,6 +17529,24 @@
    "url": "https://prosettings.net/players/hutji/",
    "zoom_sensitivity": "1.00"
   },
+  "76561198022365638": {
+   "dpi": "400",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "stavn",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/stavn/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198023592320": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "1000",
+   "name": "RUSH",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/rush/",
+   "zoom_sensitivity": "1"
+  },
   "76561198024248129": {
    "dpi": "400",
    "edpi": "800.00",
@@ -14001,6 +17574,15 @@
    "url": "https://prosettings.net/players/levi/",
    "zoom_sensitivity": "Unknown"
   },
+  "76561198024615867": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "shushan",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/shushan/",
+   "zoom_sensitivity": "1"
+  },
   "76561198024905796": {
    "dpi": "400",
    "edpi": "880",
@@ -14018,6 +17600,15 @@
    "sensitivity": "1.00",
    "url": "https://prosettings.net/players/hatz/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198025448130": {
+   "dpi": "400",
+   "edpi": "580",
+   "hz": "1000",
+   "name": "Thomas",
+   "sensitivity": "1.45",
+   "url": "https://prosettings.net/players/thomas/",
+   "zoom_sensitivity": "1"
   },
   "76561198025578864": {
    "dpi": "400",
@@ -14045,6 +17636,15 @@
    "sensitivity": "1.3",
    "url": "https://prosettings.net/players/jerry/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198026724513": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "4000",
+   "name": "Shr",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/shr/",
+   "zoom_sensitivity": "1"
   },
   "76561198027330379": {
    "dpi": "800",
@@ -14231,6 +17831,24 @@
    "url": "https://prosettings.net/players/rez/",
    "zoom_sensitivity": "0.8"
   },
+  "76561198034202275": {
+   "dpi": "400",
+   "edpi": "1236",
+   "hz": "1000",
+   "name": "s1mple",
+   "sensitivity": "3.09",
+   "url": "https://prosettings.net/players/s1mple/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198034379704": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "trk",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/trk/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198035334871": {
    "dpi": "400",
    "edpi": "708",
@@ -14321,6 +17939,24 @@
    "url": "https://prosettings.net/players/coldzera/",
    "zoom_sensitivity": "1"
   },
+  "76561198040194649": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "speed4k",
+   "sensitivity": "2.00",
+   "url": "https://prosettings.net/players/speed4k/",
+   "zoom_sensitivity": "1.00"
+  },
+  "76561198040577200": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "4000",
+   "name": "sdy",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/sdy/",
+   "zoom_sensitivity": "1"
+  },
   "76561198041416993": {
    "dpi": "400",
    "edpi": "600.00",
@@ -14384,6 +18020,15 @@
    "url": "https://prosettings.net/players/almazer/",
    "zoom_sensitivity": "1.00"
   },
+  "76561198044840457": {
+   "dpi": "400",
+   "edpi": "640.00",
+   "hz": "1000",
+   "name": "Surreal",
+   "sensitivity": "1.60",
+   "url": "https://prosettings.net/players/surreal/",
+   "zoom_sensitivity": "0.80"
+  },
   "76561198045277210": {
    "dpi": "1600",
    "edpi": "720.00",
@@ -14392,6 +18037,15 @@
    "sensitivity": "0.45",
    "url": "https://prosettings.net/players/ohnepixel/",
    "zoom_sensitivity": "1"
+  },
+  "76561198045397601": {
+   "dpi": "400",
+   "edpi": "900.00",
+   "hz": "2000",
+   "name": "somebody",
+   "sensitivity": "2.25",
+   "url": "https://prosettings.net/players/somebody/",
+   "zoom_sensitivity": "1.00"
   },
   "76561198045433304": {
    "dpi": "800",
@@ -14447,6 +18101,14 @@
    "url": "https://prosettings.net/players/chopper/",
    "zoom_sensitivity": "0.9"
   },
+  "76561198046268744": {
+   "dpi": "800",
+   "edpi": "212",
+   "hz": "1000",
+   "name": "ShahZaM",
+   "sensitivity": "0.265",
+   "url": "https://prosettings.net/players/shahzam/"
+  },
   "76561198046344906": {
    "dpi": "400",
    "edpi": "1120.00",
@@ -14472,6 +18134,15 @@
    "sensitivity": "1",
    "url": "https://prosettings.net/players/kraghen/",
    "zoom_sensitivity": "1"
+  },
+  "76561198047402862": {
+   "dpi": "400",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "stadodo",
+   "sensitivity": "2.40",
+   "url": "https://prosettings.net/players/stadodo/",
+   "zoom_sensitivity": "1.00"
   },
   "76561198047472534": {
    "dpi": "3200",
@@ -14563,6 +18234,14 @@
    "url": "https://prosettings.net/players/aizy/",
    "zoom_sensitivity": "1.00"
   },
+  "76561198051371451": {
+   "dpi": "800",
+   "edpi": "1120.00",
+   "hz": "1000",
+   "name": "taskmast33r",
+   "sensitivity": "1.4",
+   "url": "https://prosettings.net/players/taskmast33r/"
+  },
   "76561198051727799": {
    "dpi": "400",
    "edpi": "594",
@@ -14644,6 +18323,15 @@
    "url": "https://prosettings.net/players/autimatic/",
    "zoom_sensitivity": "0.9"
   },
+  "76561198054929073": {
+   "dpi": "400",
+   "edpi": "1000.00",
+   "hz": "2000",
+   "name": "SBT",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/sbt/",
+   "zoom_sensitivity": "1"
+  },
   "76561198055109028": {
    "dpi": "400",
    "edpi": "880",
@@ -14680,6 +18368,14 @@
    "url": "https://prosettings.net/players/kyxsan/",
    "zoom_sensitivity": "0.9"
   },
+  "76561198057549749": {
+   "dpi": "800",
+   "edpi": "224",
+   "hz": "1000",
+   "name": "Thwifo",
+   "sensitivity": "0.28",
+   "url": "https://prosettings.net/players/thwifo/"
+  },
   "76561198058045464": {
    "dpi": "800",
    "edpi": "800",
@@ -14688,6 +18384,15 @@
    "sensitivity": "1",
    "url": "https://prosettings.net/players/mol011/",
    "zoom_sensitivity": "1"
+  },
+  "76561198058204642": {
+   "dpi": "400",
+   "edpi": "760",
+   "hz": "1000",
+   "name": "SHOOWTiMe",
+   "sensitivity": "1.90",
+   "url": "https://prosettings.net/players/shoowtime/",
+   "zoom_sensitivity": "1.00"
   },
   "76561198058500492": {
    "dpi": "800",
@@ -14734,6 +18439,15 @@
    "url": "https://prosettings.net/players/br0/",
    "zoom_sensitivity": "0.7"
   },
+  "76561198060490349": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "sterling",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/sterling/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198060916227": {
    "dpi": "800",
    "edpi": "800.00",
@@ -14741,6 +18455,15 @@
    "name": "bobeksde",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/bobeksde/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198060923015": {
+   "dpi": "800",
+   "edpi": "1056",
+   "hz": "4000",
+   "name": "smekk",
+   "sensitivity": "1.32",
+   "url": "https://prosettings.net/players/smekk/",
    "zoom_sensitivity": "1"
   },
   "76561198061763596": {
@@ -14797,6 +18520,15 @@
    "url": "https://prosettings.net/players/kind0/",
    "zoom_sensitivity": "1"
   },
+  "76561198063336407": {
+   "dpi": "900",
+   "edpi": "990.00",
+   "hz": "1000",
+   "name": "Spinx",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/spinx/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198063479252": {
    "dpi": "800",
    "edpi": "880",
@@ -14804,6 +18536,15 @@
    "name": "j0w",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/j0w/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198064010365": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "S3NSEY",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/s3nsey/",
    "zoom_sensitivity": "1"
   },
   "76561198064058958": {
@@ -14814,6 +18555,15 @@
    "sensitivity": "3.1",
    "url": "https://prosettings.net/players/junior/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198064353169": {
+   "dpi": "800",
+   "edpi": "840.00",
+   "hz": "2000",
+   "name": "slaxz-",
+   "sensitivity": "1.05",
+   "url": "https://prosettings.net/players/slaxz/",
+   "zoom_sensitivity": "1"
   },
   "76561198064596050": {
    "dpi": "400",
@@ -14841,6 +18591,15 @@
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/forsyy/",
    "zoom_sensitivity": "0.8"
+  },
+  "76561198065448360": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "2000",
+   "name": "story",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/story/",
+   "zoom_sensitivity": "1"
   },
   "76561198065606574": {
    "dpi": "800",
@@ -14874,6 +18633,15 @@
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/imorr/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198067523525": {
+   "dpi": "800",
+   "edpi": "904.00",
+   "hz": "1000",
+   "name": "Sapec",
+   "sensitivity": "1.13",
+   "url": "https://prosettings.net/players/sapec/",
+   "zoom_sensitivity": "1"
   },
   "76561198067722198": {
    "dpi": "800",
@@ -14956,6 +18724,15 @@
    "url": "https://prosettings.net/players/captainmo/",
    "zoom_sensitivity": "0.90"
   },
+  "76561198069557840": {
+   "dpi": "400",
+   "edpi": "960.00",
+   "hz": "1000",
+   "name": "swicher",
+   "sensitivity": "2.4",
+   "url": "https://prosettings.net/players/swicher/",
+   "zoom_sensitivity": "1"
+  },
   "76561198069638193": {
    "dpi": "1000",
    "edpi": "1000.00",
@@ -14989,6 +18766,24 @@
    "url": "https://prosettings.net/players/ro1f/",
    "zoom_sensitivity": "0.818933027098955175"
   },
+  "76561198071291375": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "The eLiVe",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/the-elive/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198071702537": {
+   "dpi": "400",
+   "edpi": "540",
+   "hz": "1000",
+   "name": "snatchie",
+   "sensitivity": "1.35",
+   "url": "https://prosettings.net/players/snatchie/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198071910365": {
    "dpi": "800",
    "edpi": "684.00",
@@ -15015,6 +18810,14 @@
    "sensitivity": "2.1",
    "url": "https://prosettings.net/players/jackinho/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198072264947": {
+   "dpi": "800",
+   "edpi": "222.40",
+   "hz": "1000",
+   "name": "Subroza",
+   "sensitivity": "0.278",
+   "url": "https://prosettings.net/players/subroza/"
   },
   "76561198072321716": {
    "dpi": "800",
@@ -15202,6 +19005,15 @@
    "name": "Braexco",
    "url": "https://prosettings.net/players/braexco/"
   },
+  "76561198079183361": {
+   "dpi": "800",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "spooke",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/spooke/",
+   "zoom_sensitivity": "1"
+  },
   "76561198079764052": {
    "dpi": "400",
    "edpi": "920.00",
@@ -15237,6 +19049,15 @@
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/malbsmd/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198081484775": {
+   "dpi": "800",
+   "edpi": "832.00",
+   "hz": "1000",
+   "name": "sh1ro",
+   "sensitivity": "1.04",
+   "url": "https://prosettings.net/players/sh1ro/",
+   "zoom_sensitivity": "1"
   },
   "76561198081528911": {
    "dpi": "400",
@@ -15274,6 +19095,15 @@
    "url": "https://prosettings.net/players/nbqq/",
    "zoom_sensitivity": "Unknown"
   },
+  "76561198084607254": {
+   "dpi": "800",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "TMB",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/tmb/",
+   "zoom_sensitivity": "1"
+  },
   "76561198085180615": {
    "dpi": "400",
    "edpi": "620",
@@ -15290,6 +19120,15 @@
    "name": "jedqr",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/jedqr/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198086856525": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "tele",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/tele/",
    "zoom_sensitivity": "1"
   },
   "76561198086945950": {
@@ -15427,6 +19266,15 @@
    "url": "https://prosettings.net/players/extinct/",
    "zoom_sensitivity": "1"
   },
+  "76561198098071693": {
+   "dpi": "800",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "sl3nd",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/sl3nd/",
+   "zoom_sensitivity": "1"
+  },
   "76561198098344244": {
    "dpi": "400",
    "edpi": "824.32",
@@ -15480,6 +19328,24 @@
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/juho/",
    "zoom_sensitivity": "1.2"
+  },
+  "76561198100494962": {
+   "dpi": "400",
+   "edpi": "1236.00",
+   "hz": "1000",
+   "name": "saadzin",
+   "sensitivity": "3.09",
+   "url": "https://prosettings.net/players/saadzin/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198102263776": {
+   "dpi": "400",
+   "edpi": "940",
+   "hz": "4000",
+   "name": "salazar",
+   "sensitivity": "2.35",
+   "url": "https://prosettings.net/players/salazar/",
+   "zoom_sensitivity": "1"
   },
   "76561198103921828": {
    "dpi": "400",
@@ -15585,6 +19451,14 @@
    "sensitivity": "0.175",
    "url": "https://prosettings.net/players/logan/"
   },
+  "76561198113347898": {
+   "dpi": "400",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Taisheen",
+   "sensitivity": "2.5",
+   "url": "https://prosettings.net/players/taisheen/"
+  },
   "76561198116523276": {
    "dpi": "800",
    "edpi": "592.00",
@@ -15626,6 +19500,15 @@
    "sensitivity": "0.12",
    "url": "https://prosettings.net/players/curry/"
   },
+  "76561198118646644": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "4000",
+   "name": "skullz",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/skullz/",
+   "zoom_sensitivity": "1"
+  },
   "76561198119098292": {
    "dpi": "400",
    "edpi": "1000",
@@ -15642,6 +19525,15 @@
    "name": "Draken",
    "sensitivity": "1.95",
    "url": "https://prosettings.net/players/draken/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198119513781": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "2000",
+   "name": "Trucklover86",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/trucklover86/",
    "zoom_sensitivity": "1"
   },
   "76561198119648519": {
@@ -15748,6 +19640,15 @@
    "sensitivity": "1.15",
    "url": "https://prosettings.net/players/andr1x/",
    "zoom_sensitivity": "1.2"
+  },
+  "76561198125067919": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "2000",
+   "name": "supra",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/supra/",
+   "zoom_sensitivity": "1.00"
   },
   "76561198125068631": {
    "dpi": "400",
@@ -15907,6 +19808,33 @@
    "url": "https://prosettings.net/players/fear/",
    "zoom_sensitivity": "1"
   },
+  "76561198132414056": {
+   "dpi": "600",
+   "edpi": "510.00",
+   "hz": "1000",
+   "name": "StRoGo",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/strogo/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198134742883": {
+   "dpi": "400",
+   "edpi": "640.00",
+   "hz": "4000",
+   "name": "Topa",
+   "sensitivity": "1.6",
+   "url": "https://prosettings.net/players/topa/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198135123440": {
+   "dpi": "800",
+   "edpi": "760",
+   "hz": "1000",
+   "name": "S0TF1k",
+   "sensitivity": "0.95",
+   "url": "https://prosettings.net/players/s0tf1k/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198135228658": {
    "dpi": "400",
    "edpi": "1170.00",
@@ -15979,6 +19907,15 @@
    "url": "https://prosettings.net/players/rainwaker/",
    "zoom_sensitivity": "1.00"
   },
+  "76561198138460341": {
+   "dpi": "400",
+   "edpi": "500",
+   "hz": "1000",
+   "name": "shz",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/shz/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198138828475": {
    "dpi": "800",
    "edpi": "920.00",
@@ -15995,6 +19932,15 @@
    "name": "BOROS",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/boros/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198139297306": {
+   "dpi": "800",
+   "edpi": "1400.00",
+   "hz": "1000",
+   "name": "SALO_MUX",
+   "sensitivity": "1.75",
+   "url": "https://prosettings.net/players/salo_mux/",
    "zoom_sensitivity": "1"
   },
   "76561198139312718": {
@@ -16068,6 +20014,15 @@
    "url": "https://prosettings.net/players/keiz/",
    "zoom_sensitivity": "1"
   },
+  "76561198143856298": {
+   "dpi": "400",
+   "edpi": "1147.6",
+   "hz": "500",
+   "name": "sstiNiX",
+   "sensitivity": "2.869",
+   "url": "https://prosettings.net/players/sstinix/",
+   "zoom_sensitivity": "1"
+  },
   "76561198144245969": {
    "dpi": "800",
    "edpi": "720",
@@ -16093,6 +20048,15 @@
    "name": "Alisson",
    "sensitivity": "1.3",
    "url": "https://prosettings.net/players/alisson/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198146097490": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "TIMhehe",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/timhehe/",
    "zoom_sensitivity": "1"
   },
   "76561198146202997": {
@@ -16149,6 +20113,30 @@
    "url": "https://prosettings.net/players/maaryy/",
    "zoom_sensitivity": "1"
   },
+  "76561198150624072": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "Shrimzy",
+   "url": "https://prosettings.net/players/shrimzy/"
+  },
+  "76561198150625317": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "Sobol",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/sobol/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198150673360": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "4000",
+   "name": "siuhy",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/siuhy/",
+   "zoom_sensitivity": "1"
+  },
   "76561198150702257": {
    "dpi": "Unknown",
    "edpi": "Unknown",
@@ -16176,6 +20164,15 @@
    "url": "https://prosettings.net/players/levi-brazilian/",
    "zoom_sensitivity": "1"
   },
+  "76561198152378187": {
+   "dpi": "400",
+   "edpi": "1200.00",
+   "hz": "2000",
+   "name": "SENER1",
+   "sensitivity": "3",
+   "url": "https://prosettings.net/players/sener1/",
+   "zoom_sensitivity": "1"
+  },
   "76561198153097618": {
    "dpi": "400",
    "edpi": "800.00",
@@ -16184,6 +20181,15 @@
    "sensitivity": "2",
    "url": "https://prosettings.net/players/mizu/",
    "zoom_sensitivity": "1.1"
+  },
+  "76561198153580037": {
+   "dpi": "800",
+   "edpi": "1600.00",
+   "hz": "1000",
+   "name": "SLIGHT",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/slight/",
+   "zoom_sensitivity": "1"
   },
   "76561198153651861": {
    "dpi": "400",
@@ -16230,6 +20236,15 @@
    "url": "https://prosettings.net/players/mhn1/",
    "zoom_sensitivity": "1"
   },
+  "76561198156197967": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "s0und",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/s0und/",
+   "zoom_sensitivity": "1"
+  },
   "76561198156353883": {
    "dpi": "400",
    "edpi": "880",
@@ -16248,6 +20263,24 @@
    "url": "https://prosettings.net/players/fostar/",
    "zoom_sensitivity": "1"
   },
+  "76561198156369374": {
+   "dpi": "800",
+   "edpi": "1600",
+   "hz": "1000",
+   "name": "SPELLAN",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/spellan/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198156373160": {
+   "dpi": "800",
+   "edpi": "880",
+   "hz": "4000",
+   "name": "TOAO",
+   "sensitivity": "1.10",
+   "url": "https://prosettings.net/players/toao/",
+   "zoom_sensitivity": "1.03"
+  },
   "76561198156778414": {
    "dpi": "800",
    "edpi": "1195.82",
@@ -16255,6 +20288,15 @@
    "name": "Artfr0st",
    "sensitivity": "1.494774",
    "url": "https://prosettings.net/players/artfr0st/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198157089888": {
+   "dpi": "800",
+   "edpi": "632.00",
+   "hz": "1000",
+   "name": "SHiNE",
+   "sensitivity": "0.79",
+   "url": "https://prosettings.net/players/shine/",
    "zoom_sensitivity": "1"
   },
   "76561198157388473": {
@@ -16293,6 +20335,15 @@
    "url": "https://prosettings.net/players/2high/",
    "zoom_sensitivity": "1.2"
   },
+  "76561198160709585": {
+   "dpi": "800",
+   "edpi": "888.00",
+   "hz": "1000",
+   "name": "sjuush",
+   "sensitivity": "1.11",
+   "url": "https://prosettings.net/players/sjuush/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198160794709": {
    "dpi": "400",
    "edpi": "800.00",
@@ -16327,6 +20378,24 @@
    "name": "d4rty",
    "sensitivity": "0.8",
    "url": "https://prosettings.net/players/d4rty/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198163780030": {
+   "dpi": "400",
+   "edpi": "580",
+   "hz": "1000",
+   "name": "TjP",
+   "sensitivity": "1.45",
+   "url": "https://prosettings.net/players/tjp/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198164733410": {
+   "dpi": "400",
+   "edpi": "940",
+   "hz": "1000",
+   "name": "SinK",
+   "sensitivity": "2.35",
+   "url": "https://prosettings.net/players/sink/",
    "zoom_sensitivity": "1"
   },
   "76561198164926020": {
@@ -16373,6 +20442,15 @@
    "url": "https://prosettings.net/players/mwlky/",
    "zoom_sensitivity": "1"
   },
+  "76561198167785069": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "2000",
+   "name": "s1ren",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/s1ren/",
+   "zoom_sensitivity": "1"
+  },
   "76561198168198200": {
    "dpi": "400",
    "edpi": "800",
@@ -16381,6 +20459,15 @@
    "sensitivity": "2.00",
    "url": "https://prosettings.net/players/ex3rcice/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198168401372": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "2000",
+   "name": "ryu",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/ryu/",
+   "zoom_sensitivity": "1"
   },
   "76561198168621443": {
    "dpi": "400",
@@ -16399,6 +20486,15 @@
    "sensitivity": "1",
    "url": "https://prosettings.net/players/k4nfuz/",
    "zoom_sensitivity": "1.1"
+  },
+  "76561198169560297": {
+   "dpi": "400",
+   "edpi": "620.00",
+   "hz": "1000",
+   "name": "SHOCK",
+   "sensitivity": "1.55",
+   "url": "https://prosettings.net/players/shock/",
+   "zoom_sensitivity": "0.80"
   },
   "76561198170025691": {
    "dpi": "800",
@@ -16435,6 +20531,15 @@
    "sensitivity": "1.35",
    "url": "https://prosettings.net/players/idisbalance/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198171689321": {
+   "dpi": "400",
+   "edpi": "720",
+   "hz": "1000",
+   "name": "smooya",
+   "sensitivity": "1.80",
+   "url": "https://prosettings.net/players/smooya/",
+   "zoom_sensitivity": "1.14"
   },
   "76561198171719689": {
    "dpi": "800",
@@ -16607,6 +20712,15 @@
    "url": "https://prosettings.net/players/k1to/",
    "zoom_sensitivity": "1.10"
   },
+  "76561198183003671": {
+   "dpi": "400",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "Swisher",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/swisher/",
+   "zoom_sensitivity": "1.1"
+  },
   "76561198184153575": {
    "dpi": "400",
    "edpi": "680.00",
@@ -16642,6 +20756,24 @@
    "sensitivity": "0.68",
    "url": "https://prosettings.net/players/mistr/",
    "zoom_sensitivity": "0.752412"
+  },
+  "76561198190463461": {
+   "dpi": "800",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "s1n",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/s1n/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198190685310": {
+   "dpi": "400",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "tAk",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/tak/",
+   "zoom_sensitivity": "1.1"
   },
   "76561198190930470": {
    "dpi": "800",
@@ -16686,6 +20818,24 @@
    "name": "atarax1a",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/atarax1a/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198192887714": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "syncD",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/syncd/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198192927541": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "sense",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/sense/",
    "zoom_sensitivity": "1"
   },
   "76561198194104747": {
@@ -16914,6 +21064,15 @@
    "url": "https://prosettings.net/players/lattykk/",
    "zoom_sensitivity": "1"
   },
+  "76561198215214621": {
+   "dpi": "400",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "SHiPZ",
+   "sensitivity": "2.40",
+   "url": "https://prosettings.net/players/shipz/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198215434685": {
    "dpi": "400",
    "edpi": "580",
@@ -16940,6 +21099,15 @@
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/dgt/",
    "zoom_sensitivity": "1"
+  },
+  "76561198218597455": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "tomiko",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/tomiko/",
+   "zoom_sensitivity": "0.9"
   },
   "76561198218879055": {
    "dpi": "400",
@@ -16992,6 +21160,15 @@
    "url": "https://prosettings.net/players/brehze/",
    "zoom_sensitivity": "1"
   },
+  "76561198228964552": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "snapy",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/snapy/",
+   "zoom_sensitivity": "1"
+  },
   "76561198234835452": {
    "dpi": "400",
    "edpi": "800",
@@ -17000,6 +21177,15 @@
    "sensitivity": "2",
    "url": "https://prosettings.net/players/gxx/",
    "zoom_sensitivity": "1.2"
+  },
+  "76561198235230328": {
+   "dpi": "800",
+   "edpi": "680.00",
+   "hz": "4000",
+   "name": "sk1tt",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/sk1tt/",
+   "zoom_sensitivity": "1"
   },
   "76561198238366860": {
    "dpi": "400",
@@ -17010,6 +21196,15 @@
    "url": "https://prosettings.net/players/dgl/",
    "zoom_sensitivity": "1"
   },
+  "76561198238642986": {
+   "dpi": "800",
+   "edpi": "1200.00",
+   "hz": "1000",
+   "name": "snav",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/snav/",
+   "zoom_sensitivity": "1"
+  },
   "76561198242601266": {
    "dpi": "1600",
    "edpi": "1024.00",
@@ -17017,6 +21212,15 @@
    "name": "detr0ittJ",
    "sensitivity": "0.64",
    "url": "https://prosettings.net/players/detr0ittj/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198242885242": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "swiz",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/swiz/",
    "zoom_sensitivity": "1"
   },
   "76561198242950384": {
@@ -17063,6 +21267,14 @@
    "sensitivity": "0.825",
    "url": "https://prosettings.net/players/b1t/",
    "zoom_sensitivity": "1"
+  },
+  "76561198247554160": {
+   "dpi": "400",
+   "edpi": "320",
+   "hz": "1000",
+   "name": "s0m",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/s0m/"
   },
   "76561198248953762": {
    "dpi": "400",
@@ -17117,6 +21329,15 @@
    "url": "https://prosettings.net/players/kisserek/",
    "zoom_sensitivity": "1"
   },
+  "76561198252982142": {
+   "dpi": "800",
+   "edpi": "1320",
+   "hz": "1000",
+   "name": "Rutk0",
+   "sensitivity": "1.65",
+   "url": "https://prosettings.net/players/rutk0/",
+   "zoom_sensitivity": "1"
+  },
   "76561198253438070": {
    "dpi": "400",
    "edpi": "800.00",
@@ -17133,6 +21354,15 @@
    "name": "BELCHONOKK",
    "sensitivity": "1.15",
    "url": "https://prosettings.net/players/belchonokk/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198253891911": {
+   "dpi": "800",
+   "edpi": "832",
+   "hz": "4000",
+   "name": "shield",
+   "sensitivity": "1.04",
+   "url": "https://prosettings.net/players/shield/",
    "zoom_sensitivity": "1"
   },
   "76561198254686734": {
@@ -17169,6 +21399,15 @@
    "name": "brutmonster",
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/brutmonster/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198259435197": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "2000",
+   "name": "superflik",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/superflik/",
    "zoom_sensitivity": "1"
   },
   "76561198259727379": {
@@ -17216,6 +21455,15 @@
    "url": "https://prosettings.net/players/ewjerkz/",
    "zoom_sensitivity": "1"
   },
+  "76561198262777749": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "1000",
+   "name": "Thour",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/thour/",
+   "zoom_sensitivity": "1"
+  },
   "76561198263656468": {
    "dpi": "400",
    "edpi": "600",
@@ -17259,6 +21507,15 @@
    "name": "AW",
    "sensitivity": "0.65",
    "url": "https://prosettings.net/players/aw/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198271282649": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "Skrimo",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/skrimo/",
    "zoom_sensitivity": "1"
   },
   "76561198271683669": {
@@ -17564,6 +21821,24 @@
    "url": "https://prosettings.net/players/jocab/",
    "zoom_sensitivity": "1"
   },
+  "76561198308941038": {
+   "dpi": "400",
+   "edpi": "440",
+   "hz": "1000",
+   "name": "sirah",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/sirah/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198309839541": {
+   "dpi": "400",
+   "edpi": "680",
+   "hz": "2000",
+   "name": "SunPayus",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/sunpayus/",
+   "zoom_sensitivity": "1"
+  },
   "76561198310561479": {
    "dpi": "400",
    "edpi": "580.00",
@@ -17591,6 +21866,15 @@
    "url": "https://prosettings.net/players/aunkere/",
    "zoom_sensitivity": "1.11"
   },
+  "76561198316706174": {
+   "dpi": "800",
+   "edpi": "700.00",
+   "hz": "4000",
+   "name": "Tauson",
+   "sensitivity": "0.875",
+   "url": "https://prosettings.net/players/tauson/",
+   "zoom_sensitivity": "1"
+  },
   "76561198317464800": {
    "dpi": "400",
    "edpi": "800",
@@ -17600,6 +21884,15 @@
    "url": "https://prosettings.net/players/divine/",
    "zoom_sensitivity": "1.1"
   },
+  "76561198317627284": {
+   "dpi": "400",
+   "edpi": "488",
+   "hz": "1000",
+   "name": "SANJI",
+   "sensitivity": "1.22",
+   "url": "https://prosettings.net/players/sanji/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561198319723208": {
    "dpi": "800",
    "edpi": "608.00",
@@ -17607,6 +21900,24 @@
    "name": "HUASOPEEK",
    "sensitivity": "0.76",
    "url": "https://prosettings.net/players/huasopeek/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198324810333": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "t9rnay",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/t9rnay/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198327068178": {
+   "dpi": "800",
+   "edpi": "1120.00",
+   "hz": "1000",
+   "name": "Soulfly",
+   "sensitivity": "1.4",
+   "url": "https://prosettings.net/players/soulfly/",
    "zoom_sensitivity": "1"
   },
   "76561198328716965": {
@@ -17627,6 +21938,15 @@
    "url": "https://prosettings.net/players/depreshn/",
    "zoom_sensitivity": "1"
   },
+  "76561198330729329": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Trash",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/trash/",
+   "zoom_sensitivity": "1"
+  },
   "76561198332845251": {
    "dpi": "400",
    "edpi": "800.00",
@@ -17643,6 +21963,24 @@
    "name": "reck",
    "sensitivity": "3.5",
    "url": "https://prosettings.net/players/reck/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198335534043": {
+   "dpi": "400",
+   "edpi": "760.00",
+   "hz": "1000",
+   "name": "simke",
+   "sensitivity": "1.9",
+   "url": "https://prosettings.net/players/simke/",
+   "zoom_sensitivity": "1.05"
+  },
+  "76561198336561021": {
+   "dpi": "1600",
+   "edpi": "2000.00",
+   "hz": "1000",
+   "name": "skywhywalker",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/skywhywalker/",
    "zoom_sensitivity": "1"
   },
   "76561198336814871": {
@@ -17679,6 +22017,24 @@
    "name": "bevve",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/bevve/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198342718168": {
+   "dpi": "800",
+   "edpi": "560.00",
+   "hz": "1000",
+   "name": "susp",
+   "sensitivity": "0.7",
+   "url": "https://prosettings.net/players/susp/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198343056868": {
+   "dpi": "400",
+   "edpi": "840",
+   "hz": "4000",
+   "name": "sSen",
+   "sensitivity": "2.1",
+   "url": "https://prosettings.net/players/ssen/",
    "zoom_sensitivity": "1"
   },
   "76561198344226986": {
@@ -17771,6 +22127,24 @@
    "url": "https://prosettings.net/players/moseyuh/",
    "zoom_sensitivity": "1"
   },
+  "76561198355739212": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "1000",
+   "name": "torzsi",
+   "sensitivity": "1.00",
+   "url": "https://prosettings.net/players/torzsi/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198356252021": {
+   "dpi": "800",
+   "edpi": "592",
+   "hz": "4000",
+   "name": "slaxejezzz",
+   "sensitivity": "0.74",
+   "url": "https://prosettings.net/players/slaxejezzz/",
+   "zoom_sensitivity": "1"
+  },
   "76561198359234494": {
    "dpi": "400",
    "edpi": "680.00",
@@ -17816,6 +22190,24 @@
    "url": "https://prosettings.net/players/controlez/",
    "zoom_sensitivity": "1"
   },
+  "76561198362970723": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "TRAVIS",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/travis/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198364207482": {
+   "dpi": "800",
+   "edpi": "416",
+   "hz": "1000",
+   "name": "timo",
+   "sensitivity": "0.52",
+   "url": "https://prosettings.net/players/timo/",
+   "zoom_sensitivity": "1.1"
+  },
   "76561198364750517": {
    "dpi": "800",
    "edpi": "680",
@@ -17832,6 +22224,24 @@
    "name": "JamYoung",
    "sensitivity": "2.2",
    "url": "https://prosettings.net/players/jamyoung/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198365118288": {
+   "dpi": "400",
+   "edpi": "920",
+   "hz": "2000",
+   "name": "try",
+   "sensitivity": "2.3",
+   "url": "https://prosettings.net/players/try/",
+   "zoom_sensitivity": "1.20"
+  },
+  "76561198365697700": {
+   "dpi": "400",
+   "edpi": "804",
+   "hz": "1000",
+   "name": "shalfey",
+   "sensitivity": "2.01",
+   "url": "https://prosettings.net/players/shalfey/",
    "zoom_sensitivity": "1"
   },
   "76561198370086461": {
@@ -17852,6 +22262,15 @@
    "url": "https://prosettings.net/players/gr1ks/",
    "zoom_sensitivity": "1"
   },
+  "76561198370264168": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "1000",
+   "name": "shane",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/shane/",
+   "zoom_sensitivity": "1"
+  },
   "76561198372023214": {
    "dpi": "800",
    "edpi": "800.00",
@@ -17870,6 +22289,15 @@
    "url": "https://prosettings.net/players/eraa/",
    "zoom_sensitivity": "1"
   },
+  "76561198377335846": {
+   "dpi": "800",
+   "edpi": "640.00",
+   "hz": "1000",
+   "name": "snow",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/snow/",
+   "zoom_sensitivity": "1"
+  },
   "76561198379204570": {
    "dpi": "400",
    "edpi": "1000",
@@ -17877,6 +22305,15 @@
    "name": "Neqy",
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/neqy/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198380323585": {
+   "dpi": "400",
+   "edpi": "712",
+   "hz": "1000",
+   "name": "sNx",
+   "sensitivity": "1.78",
+   "url": "https://prosettings.net/players/snx/",
    "zoom_sensitivity": "1"
   },
   "76561198382173659": {
@@ -17984,6 +22421,14 @@
    "url": "https://prosettings.net/players/flying/",
    "zoom_sensitivity": "1"
   },
+  "76561198403715595": {
+   "dpi": "1600",
+   "edpi": "251.20",
+   "hz": "1000",
+   "name": "SLOWLY",
+   "sensitivity": "0.157",
+   "url": "https://prosettings.net/players/slowly/"
+  },
   "76561198405751018": {
    "dpi": "800",
    "edpi": "1000.00",
@@ -18074,6 +22519,15 @@
    "url": "https://prosettings.net/players/m1n1/",
    "zoom_sensitivity": "1"
   },
+  "76561198422434044": {
+   "dpi": "800",
+   "edpi": "960.00",
+   "hz": "1000",
+   "name": "tomaszin",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/tomaszin/",
+   "zoom_sensitivity": "1.1"
+  },
   "76561198422822248": {
    "dpi": "800",
    "edpi": "680.00",
@@ -18131,6 +22585,15 @@
    "url": "https://prosettings.net/players/jackasmo/",
    "zoom_sensitivity": "1"
   },
+  "76561198451083203": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "2000",
+   "name": "starplajerz",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/starplajerz/",
+   "zoom_sensitivity": "1"
+  },
   "76561198452804081": {
    "dpi": "1600",
    "edpi": "1320.00",
@@ -18138,6 +22601,15 @@
    "name": "Peeping",
    "sensitivity": "0.825",
    "url": "https://prosettings.net/players/peeping/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198453919902": {
+   "dpi": "800",
+   "edpi": "680",
+   "hz": "1000",
+   "name": "togs",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/togs/",
    "zoom_sensitivity": "1"
   },
   "76561198728588606": {
@@ -18157,6 +22629,24 @@
    "sensitivity": "2",
    "url": "https://prosettings.net/players/noway/",
    "zoom_sensitivity": "1"
+  },
+  "76561198798935520": {
+   "dpi": "800",
+   "edpi": "1000.00",
+   "hz": "1000",
+   "name": "TMKj",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/tmkj/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198798954973": {
+   "dpi": "400",
+   "edpi": "1220",
+   "hz": "1000",
+   "name": "Sukker",
+   "sensitivity": "3.05",
+   "url": "https://prosettings.net/players/sukker/",
+   "zoom_sensitivity": "0.9"
   },
   "76561198799340122": {
    "dpi": "400",
@@ -18257,6 +22747,24 @@
    "url": "https://prosettings.net/players/emiliaqaq/",
    "zoom_sensitivity": "1"
   },
+  "76561198823425843": {
+   "dpi": "800",
+   "edpi": "1040",
+   "hz": "500",
+   "name": "sk0R",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/sk0r/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198829202374": {
+   "dpi": "800",
+   "edpi": "640",
+   "hz": "1000",
+   "name": "Sdaim",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/sdaim/",
+   "zoom_sensitivity": "1"
+  },
   "76561198833618656": {
    "dpi": "800",
    "edpi": "680.00",
@@ -18338,6 +22846,15 @@
    "url": "https://prosettings.net/players/poppins/",
    "zoom_sensitivity": "1"
   },
+  "76561198846994023": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "skizzyee",
+   "sensitivity": "2.2",
+   "url": "https://prosettings.net/players/skizzyee/",
+   "zoom_sensitivity": "1"
+  },
   "76561198850020186": {
    "dpi": "800",
    "edpi": "1000",
@@ -18401,6 +22918,15 @@
    "url": "https://prosettings.net/players/edv/",
    "zoom_sensitivity": "1"
   },
+  "76561198872013168": {
+   "dpi": "400",
+   "edpi": "400",
+   "hz": "1000",
+   "name": "tN1R",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/tn1r/",
+   "zoom_sensitivity": "1"
+  },
   "76561198874308218": {
    "dpi": "800",
    "edpi": "1440.00",
@@ -18436,6 +22962,15 @@
    "sensitivity": "1.40",
    "url": "https://prosettings.net/players/kvik/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198880299543": {
+   "dpi": "400",
+   "edpi": "708.00",
+   "hz": "2000",
+   "name": "Starry",
+   "sensitivity": "1.77",
+   "url": "https://prosettings.net/players/starry/",
+   "zoom_sensitivity": "1"
   },
   "76561198883522068": {
    "dpi": "400",
@@ -18491,6 +23026,15 @@
    "url": "https://prosettings.net/players/fnl/",
    "zoom_sensitivity": "1"
   },
+  "76561198930218135": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Tapewaare",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/tapewaare/",
+   "zoom_sensitivity": "0.9"
+  },
   "76561198950367286": {
    "dpi": "400",
    "edpi": "800.00",
@@ -18518,6 +23062,24 @@
    "url": "https://prosettings.net/players/blitz/",
    "zoom_sensitivity": "1"
   },
+  "76561198964042711": {
+   "dpi": "1600",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "s-chilla",
+   "sensitivity": "0.55",
+   "url": "https://prosettings.net/players/s-chilla/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198966340160": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "Techno4K",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/techno4k/",
+   "zoom_sensitivity": "1"
+  },
   "76561198971718392": {
    "dpi": "800",
    "edpi": "920.00",
@@ -18536,6 +23098,15 @@
    "url": "https://prosettings.net/players/launx/",
    "zoom_sensitivity": "1"
   },
+  "76561198973527469": {
+   "dpi": "1000",
+   "edpi": "1050.00",
+   "hz": "1000",
+   "name": "TiGeR",
+   "sensitivity": "1.05",
+   "url": "https://prosettings.net/players/tiger/",
+   "zoom_sensitivity": "1"
+  },
   "76561198975070027": {
    "dpi": "800",
    "edpi": "1000",
@@ -18545,6 +23116,24 @@
    "url": "https://prosettings.net/players/nota/",
    "zoom_sensitivity": "1.25"
   },
+  "76561198979314075": {
+   "dpi": "400",
+   "edpi": "720.00",
+   "hz": "4000",
+   "name": "snowiee",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/snowiee/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198981301404": {
+   "dpi": "800",
+   "edpi": "1200.00",
+   "hz": "4000",
+   "name": "tom1jed",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/tom1jed/",
+   "zoom_sensitivity": "1.1"
+  },
   "76561198987550079": {
    "dpi": "400",
    "edpi": "920.00",
@@ -18553,6 +23142,15 @@
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/drop/",
    "zoom_sensitivity": "1.00"
+  },
+  "76561198997106539": {
+   "dpi": "800",
+   "edpi": "640",
+   "hz": "2000",
+   "name": "satsu",
+   "sensitivity": "0.8",
+   "url": "https://prosettings.net/players/satsu/",
+   "zoom_sensitivity": "1"
   },
   "76561198997281453": {
    "dpi": "800",
@@ -18571,6 +23169,24 @@
    "sensitivity": "1",
    "url": "https://prosettings.net/players/ga1de/",
    "zoom_sensitivity": "1"
+  },
+  "76561199001538362": {
+   "dpi": "800",
+   "edpi": "960",
+   "hz": "1000",
+   "name": "s1zzi",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/s1zzi/",
+   "zoom_sensitivity": "1"
+  },
+  "76561199002772152": {
+   "dpi": "400",
+   "edpi": "680.00",
+   "hz": "8000",
+   "name": "sh3nanigan",
+   "sensitivity": "1.7",
+   "url": "https://prosettings.net/players/sh3nanigan/",
+   "zoom_sensitivity": "1.02"
   },
   "76561199006855597": {
    "dpi": "800",
@@ -18626,6 +23242,15 @@
    "url": "https://prosettings.net/players/kiy0o/",
    "zoom_sensitivity": "1.3"
   },
+  "76561199018118161": {
+   "dpi": "400",
+   "edpi": "520.00",
+   "hz": "2000",
+   "name": "stesso",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/stesso/",
+   "zoom_sensitivity": "1"
+  },
   "76561199024583803": {
    "dpi": "3200",
    "edpi": "4000",
@@ -18661,6 +23286,15 @@
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/bl1x1/",
    "zoom_sensitivity": "1.2"
+  },
+  "76561199034495166": {
+   "dpi": "400",
+   "edpi": "600.00",
+   "hz": "4000",
+   "name": "sowalio",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/sowalio/",
+   "zoom_sensitivity": "1"
   },
   "76561199044598928": {
    "dpi": "550",
@@ -18806,6 +23440,15 @@
    "url": "https://prosettings.net/players/jugi/",
    "zoom_sensitivity": "1.00"
   },
+  "76561199116332388": {
+   "dpi": "500",
+   "edpi": "1150.00",
+   "hz": "1000",
+   "name": "tO0RO",
+   "sensitivity": "2.3",
+   "url": "https://prosettings.net/players/to0ro/",
+   "zoom_sensitivity": "1"
+  },
   "76561199120712009": {
    "dpi": "800",
    "edpi": "1080",
@@ -18841,6 +23484,15 @@
    "sensitivity": "0.68",
    "url": "https://prosettings.net/players/maxster/",
    "zoom_sensitivity": "0.8"
+  },
+  "76561199152003116": {
+   "dpi": "750",
+   "edpi": "1050",
+   "hz": "4000",
+   "name": "tried",
+   "sensitivity": "1.4",
+   "url": "https://prosettings.net/players/tried/",
+   "zoom_sensitivity": "1"
   },
   "76561199152181207": {
    "dpi": "800",
@@ -18958,6 +23610,15 @@
    "url": "https://prosettings.net/players/cmtry/",
    "zoom_sensitivity": "1"
   },
+  "76561199359257120": {
+   "dpi": "400",
+   "edpi": "880",
+   "hz": "1000",
+   "name": "sergej",
+   "sensitivity": "2.20",
+   "url": "https://prosettings.net/players/sergej/",
+   "zoom_sensitivity": "1.00"
+  },
   "76561199430871803": {
    "dpi": "800",
    "edpi": "1120.00",
@@ -19029,6 +23690,15 @@
    "url": "https://prosettings.net/players/ponter/",
    "zoom_sensitivity": "1"
   },
+  "76561199591180118": {
+   "dpi": "Unknown",
+   "edpi": "Unknown",
+   "hz": "Unknown",
+   "name": "Runnin",
+   "sensitivity": "Unknown",
+   "url": "https://prosettings.net/players/runnin/",
+   "zoom_sensitivity": "Unknown"
+  },
   "76561199619969844": {
    "dpi": "400",
    "edpi": "760.00",
@@ -19046,6 +23716,15 @@
    "sensitivity": "0.7",
    "url": "https://prosettings.net/players/ren/",
    "zoom_sensitivity": "0.8"
+  },
+  "76561199789317942": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "8000",
+   "name": "suns1de",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/suns1de/",
+   "zoom_sensitivity": "1"
   },
   "76561199863719441": {
    "dpi": "400",
@@ -20870,6 +25549,406 @@
   "https://prosettings.net/players/roux/": "2026-10-12",
   "https://prosettings.net/players/rox/": "2026-10-12",
   "https://prosettings.net/players/roxie/": "2026-10-12",
-  "https://prosettings.net/players/rpk/": "2026-10-12"
+  "https://prosettings.net/players/rpk/": "2026-10-12",
+  "https://prosettings.net/players/rpr/": "2026-10-12",
+  "https://prosettings.net/players/rubino/": "2026-10-12",
+  "https://prosettings.net/players/rubkkoide/": "2026-10-12",
+  "https://prosettings.net/players/runi/": "2026-10-12",
+  "https://prosettings.net/players/runner/": "2026-10-12",
+  "https://prosettings.net/players/runnin/": "2026-10-12",
+  "https://prosettings.net/players/rush/": "2026-10-12",
+  "https://prosettings.net/players/rushia/": "2026-10-12",
+  "https://prosettings.net/players/russ-turkey/": "2026-10-12",
+  "https://prosettings.net/players/russ/": "2026-10-12",
+  "https://prosettings.net/players/rusty/": "2026-10-12",
+  "https://prosettings.net/players/rutk0/": "2026-10-12",
+  "https://prosettings.net/players/ryu/": "2026-10-12",
+  "https://prosettings.net/players/ryujehong/": "2026-10-12",
+  "https://prosettings.net/players/ryux/": "2026-10-12",
+  "https://prosettings.net/players/s-chilla/": "2026-10-12",
+  "https://prosettings.net/players/s0m/": "2026-10-12",
+  "https://prosettings.net/players/s0pp/": "2026-10-12",
+  "https://prosettings.net/players/s0tf1k/": "2026-10-12",
+  "https://prosettings.net/players/s0und/": "2026-10-12",
+  "https://prosettings.net/players/s1mon/": "2026-10-12",
+  "https://prosettings.net/players/s1mple/": "2026-10-12",
+  "https://prosettings.net/players/s1n/": "2026-10-12",
+  "https://prosettings.net/players/s1ren/": "2026-10-12",
+  "https://prosettings.net/players/s1zzi/": "2026-10-12",
+  "https://prosettings.net/players/s3nsey/": "2026-10-12",
+  "https://prosettings.net/players/saadhak/": "2026-10-12",
+  "https://prosettings.net/players/saadzin/": "2026-10-12",
+  "https://prosettings.net/players/sacy/": "2026-10-12",
+  "https://prosettings.net/players/saebyeolbe/": "2026-10-12",
+  "https://prosettings.net/players/saf/": "2026-10-12",
+  "https://prosettings.net/players/saffee/": "2026-10-12",
+  "https://prosettings.net/players/safia/": "2026-10-12",
+  "https://prosettings.net/players/sageon/": "2026-10-12",
+  "https://prosettings.net/players/salazar/": "2026-10-12",
+  "https://prosettings.net/players/salko/": "2026-10-12",
+  "https://prosettings.net/players/salo_mux/": "2026-10-12",
+  "https://prosettings.net/players/samed/": "2026-10-12",
+  "https://prosettings.net/players/samey/": "2026-10-12",
+  "https://prosettings.net/players/sandrinho/": "2026-10-12",
+  "https://prosettings.net/players/sanji/": "2026-10-12",
+  "https://prosettings.net/players/sanjog/": "2026-10-12",
+  "https://prosettings.net/players/sanoj/": "2026-10-12",
+  "https://prosettings.net/players/sapec/": "2026-10-12",
+  "https://prosettings.net/players/sarah/": "2026-10-12",
+  "https://prosettings.net/players/sarie/": "2026-10-12",
+  "https://prosettings.net/players/satellite/": "2026-10-12",
+  "https://prosettings.net/players/sato/": "2026-10-12",
+  "https://prosettings.net/players/satsu/": "2026-10-12",
+  "https://prosettings.net/players/satuki/": "2026-10-12",
+  "https://prosettings.net/players/sausol/": "2026-10-12",
+  "https://prosettings.net/players/savage/": "2026-10-12",
+  "https://prosettings.net/players/sayaplayer/": "2026-10-12",
+  "https://prosettings.net/players/sayf/": "2026-10-12",
+  "https://prosettings.net/players/sayonara/": "2026-10-12",
+  "https://prosettings.net/players/sbt/": "2026-10-12",
+  "https://prosettings.net/players/scales/": "2026-10-12",
+  "https://prosettings.net/players/sceptic/": "2026-10-12",
+  "https://prosettings.net/players/scoped/": "2026-10-12",
+  "https://prosettings.net/players/scream/": "2026-10-12",
+  "https://prosettings.net/players/scroll/": "2026-10-12",
+  "https://prosettings.net/players/scrunk/": "2026-10-12",
+  "https://prosettings.net/players/sdaim/": "2026-10-12",
+  "https://prosettings.net/players/sdy/": "2026-10-12",
+  "https://prosettings.net/players/seagull/": "2026-10-12",
+  "https://prosettings.net/players/seangares/": "2026-10-12",
+  "https://prosettings.net/players/seb/": "2026-10-12",
+  "https://prosettings.net/players/seeyun/": "2026-10-12",
+  "https://prosettings.net/players/seider/": "2026-10-12",
+  "https://prosettings.net/players/seized/": "2026-10-12",
+  "https://prosettings.net/players/sellter/": "2026-10-12",
+  "https://prosettings.net/players/selly/": "2026-10-12",
+  "https://prosettings.net/players/sener1/": "2026-10-12",
+  "https://prosettings.net/players/senoxe/": "2026-10-12",
+  "https://prosettings.net/players/sense/": "2026-10-12",
+  "https://prosettings.net/players/senzu/": "2026-10-12",
+  "https://prosettings.net/players/seoeun/": "2026-10-12",
+  "https://prosettings.net/players/seoldam/": "2026-10-12",
+  "https://prosettings.net/players/serena/": "2026-10-12",
+  "https://prosettings.net/players/sergej/": "2026-10-12",
+  "https://prosettings.net/players/serialkiller/": "2026-10-12",
+  "https://prosettings.net/players/sernik/": "2026-10-12",
+  "https://prosettings.net/players/setty/": "2026-10-12",
+  "https://prosettings.net/players/seven/": "2026-10-12",
+  "https://prosettings.net/players/sevkaan/": "2026-10-12",
+  "https://prosettings.net/players/seyyto/": "2026-10-12",
+  "https://prosettings.net/players/sh1ro/": "2026-10-12",
+  "https://prosettings.net/players/sh3nanigan/": "2026-10-12",
+  "https://prosettings.net/players/sha77e/": "2026-10-12",
+  "https://prosettings.net/players/shad0w/": "2026-10-12",
+  "https://prosettings.net/players/shadow/": "2026-10-12",
+  "https://prosettings.net/players/shahzam/": "2026-10-12",
+  "https://prosettings.net/players/shaiiko/": "2026-10-12",
+  "https://prosettings.net/players/shalaby/": "2026-10-12",
+  "https://prosettings.net/players/shalfey/": "2026-10-12",
+  "https://prosettings.net/players/shamokiy/": "2026-10-12",
+  "https://prosettings.net/players/shane/": "2026-10-12",
+  "https://prosettings.net/players/shanks/": "2026-10-12",
+  "https://prosettings.net/players/shao/": "2026-10-12",
+  "https://prosettings.net/players/sharpshot/": "2026-10-12",
+  "https://prosettings.net/players/sharshock/": "2026-10-12",
+  "https://prosettings.net/players/sher1o/": "2026-10-12",
+  "https://prosettings.net/players/sheydos/": "2026-10-12",
+  "https://prosettings.net/players/shiba/": "2026-10-12",
+  "https://prosettings.net/players/shield/": "2026-10-12",
+  "https://prosettings.net/players/shin/": "2026-10-12",
+  "https://prosettings.net/players/shine/": "2026-10-12",
+  "https://prosettings.net/players/shinobi/": "2026-10-12",
+  "https://prosettings.net/players/shinsei/": "2026-10-12",
+  "https://prosettings.net/players/shion7/": "2026-10-12",
+  "https://prosettings.net/players/shionxy/": "2026-10-12",
+  "https://prosettings.net/players/shipz/": "2026-10-12",
+  "https://prosettings.net/players/shirazi/": "2026-10-12",
+  "https://prosettings.net/players/shiv/": "2026-10-12",
+  "https://prosettings.net/players/shniider/": "2026-10-12",
+  "https://prosettings.net/players/shock/": "2026-10-12",
+  "https://prosettings.net/players/shokz/": "2026-10-12",
+  "https://prosettings.net/players/shondex/": "2026-10-12",
+  "https://prosettings.net/players/shoowtime/": "2026-10-12",
+  "https://prosettings.net/players/showmaker/": "2026-10-12",
+  "https://prosettings.net/players/shox/": "2026-10-12",
+  "https://prosettings.net/players/shr/": "2026-10-12",
+  "https://prosettings.net/players/shrimzy/": "2026-10-12",
+  "https://prosettings.net/players/shroud/": "2026-10-12",
+  "https://prosettings.net/players/shu/": "2026-10-12",
+  "https://prosettings.net/players/shushan/": "2026-10-12",
+  "https://prosettings.net/players/shxrk/": "2026-10-12",
+  "https://prosettings.net/players/shyy/": "2026-10-12",
+  "https://prosettings.net/players/shz/": "2026-10-12",
+  "https://prosettings.net/players/sick/": "2026-10-12",
+  "https://prosettings.net/players/sico/": "2026-10-12",
+  "https://prosettings.net/players/siduzord/": "2026-10-12",
+  "https://prosettings.net/players/silentzz/": "2026-10-12",
+  "https://prosettings.net/players/silerzz/": "2026-10-12",
+  "https://prosettings.net/players/simke/": "2026-10-12",
+  "https://prosettings.net/players/sinatra/": "2026-10-12",
+  "https://prosettings.net/players/sinatraa/": "2026-10-12",
+  "https://prosettings.net/players/sink/": "2026-10-12",
+  "https://prosettings.net/players/sinnopsyy/": "2026-10-12",
+  "https://prosettings.net/players/sirah/": "2026-10-12",
+  "https://prosettings.net/players/sirmaza/": "2026-10-12",
+  "https://prosettings.net/players/siufatbb/": "2026-10-12",
+  "https://prosettings.net/players/siuhy/": "2026-10-12",
+  "https://prosettings.net/players/siwoo/": "2026-10-12",
+  "https://prosettings.net/players/sixer/": "2026-10-12",
+  "https://prosettings.net/players/sjuush/": "2026-10-12",
+  "https://prosettings.net/players/sk0r/": "2026-10-12",
+  "https://prosettings.net/players/sk1tt/": "2026-10-12",
+  "https://prosettings.net/players/skadoodle/": "2026-10-12",
+  "https://prosettings.net/players/skailer/": "2026-10-12",
+  "https://prosettings.net/players/skanoodles/": "2026-10-12",
+  "https://prosettings.net/players/skejs/": "2026-10-12",
+  "https://prosettings.net/players/skittlecakes/": "2026-10-12",
+  "https://prosettings.net/players/skizzyee/": "2026-10-12",
+  "https://prosettings.net/players/skodo/": "2026-10-12",
+  "https://prosettings.net/players/skram/": "2026-10-12",
+  "https://prosettings.net/players/skrimo/": "2026-10-12",
+  "https://prosettings.net/players/skuba/": "2026-10-12",
+  "https://prosettings.net/players/skuijke/": "2026-10-12",
+  "https://prosettings.net/players/skullz/": "2026-10-12",
+  "https://prosettings.net/players/skvii/": "2026-10-12",
+  "https://prosettings.net/players/sky/": "2026-10-12",
+  "https://prosettings.net/players/skywhywalker/": "2026-10-12",
+  "https://prosettings.net/players/skz/": "2026-10-12",
+  "https://prosettings.net/players/sl1m3/": "2026-10-12",
+  "https://prosettings.net/players/sl3nd/": "2026-10-12",
+  "https://prosettings.net/players/slaxejezzz/": "2026-10-12",
+  "https://prosettings.net/players/slaxz/": "2026-10-12",
+  "https://prosettings.net/players/sleepy/": "2026-10-12",
+  "https://prosettings.net/players/sleepyaria/": "2026-10-12",
+  "https://prosettings.net/players/slight/": "2026-10-12",
+  "https://prosettings.net/players/slowi/": "2026-10-12",
+  "https://prosettings.net/players/slowly/": "2026-10-12",
+  "https://prosettings.net/players/smekk/": "2026-10-12",
+  "https://prosettings.net/players/smithzz/": "2026-10-12",
+  "https://prosettings.net/players/smoggy/": "2026-10-12",
+  "https://prosettings.net/players/smooya/": "2026-10-12",
+  "https://prosettings.net/players/smurf/": "2026-10-12",
+  "https://prosettings.net/players/snacky/": "2026-10-12",
+  "https://prosettings.net/players/snappi/": "2026-10-12",
+  "https://prosettings.net/players/snapy/": "2026-10-12",
+  "https://prosettings.net/players/snatchie/": "2026-10-12",
+  "https://prosettings.net/players/snav/": "2026-10-12",
+  "https://prosettings.net/players/snax/": "2026-10-12",
+  "https://prosettings.net/players/snayzy/": "2026-10-12",
+  "https://prosettings.net/players/snip3down/": "2026-10-12",
+  "https://prosettings.net/players/snow/": "2026-10-12",
+  "https://prosettings.net/players/snowiee/": "2026-10-12",
+  "https://prosettings.net/players/snw/": "2026-10-12",
+  "https://prosettings.net/players/snx/": "2026-10-12",
+  "https://prosettings.net/players/sobol/": "2026-10-12",
+  "https://prosettings.net/players/sociablee/": "2026-10-12",
+  "https://prosettings.net/players/somebody/": "2026-10-12",
+  "https://prosettings.net/players/something/": "2026-10-12",
+  "https://prosettings.net/players/sommerset/": "2026-10-12",
+  "https://prosettings.net/players/sonic-sa/": "2026-10-12",
+  "https://prosettings.net/players/soon/": "2026-10-12",
+  "https://prosettings.net/players/soulcas/": "2026-10-12",
+  "https://prosettings.net/players/soulfly/": "2026-10-12",
+  "https://prosettings.net/players/soulz1-2/": "2026-10-12",
+  "https://prosettings.net/players/sowalio/": "2026-10-12",
+  "https://prosettings.net/players/sp1aash/": "2026-10-12",
+  "https://prosettings.net/players/sp9rk1e/": "2026-10-12",
+  "https://prosettings.net/players/space/": "2026-10-12",
+  "https://prosettings.net/players/spaz/": "2026-10-12",
+  "https://prosettings.net/players/speed4k/": "2026-10-12",
+  "https://prosettings.net/players/spellan/": "2026-10-12",
+  "https://prosettings.net/players/spiidi/": "2026-10-12",
+  "https://prosettings.net/players/spikezin/": "2026-10-12",
+  "https://prosettings.net/players/spinx/": "2026-10-12",
+  "https://prosettings.net/players/spiritz/": "2026-10-12",
+  "https://prosettings.net/players/spitflow/": "2026-10-12",
+  "https://prosettings.net/players/splash/": "2026-10-12",
+  "https://prosettings.net/players/spoit/": "2026-10-12",
+  "https://prosettings.net/players/spooke/": "2026-10-12",
+  "https://prosettings.net/players/spring/": "2026-10-12",
+  "https://prosettings.net/players/sscary/": "2026-10-12",
+  "https://prosettings.net/players/ssen/": "2026-10-12",
+  "https://prosettings.net/players/sstinix/": "2026-10-12",
+  "https://prosettings.net/players/stable-ronaldo/": "2026-10-12",
+  "https://prosettings.net/players/stadodo/": "2026-10-12",
+  "https://prosettings.net/players/staehr/": "2026-10-12",
+  "https://prosettings.net/players/stanislaw/": "2026-10-12",
+  "https://prosettings.net/players/starplajerz/": "2026-10-12",
+  "https://prosettings.net/players/starry/": "2026-10-12",
+  "https://prosettings.net/players/starxo/": "2026-10-12",
+  "https://prosettings.net/players/stavn/": "2026-10-12",
+  "https://prosettings.net/players/stavros/": "2026-10-12",
+  "https://prosettings.net/players/stax/": "2026-10-12",
+  "https://prosettings.net/players/steel-brazil/": "2026-10-12",
+  "https://prosettings.net/players/steel/": "2026-10-12",
+  "https://prosettings.net/players/stellar/": "2026-10-12",
+  "https://prosettings.net/players/stemp/": "2026-10-12",
+  "https://prosettings.net/players/sterling/": "2026-10-12",
+  "https://prosettings.net/players/stesso/": "2026-10-12",
+  "https://prosettings.net/players/stev0rr/": "2026-10-12",
+  "https://prosettings.net/players/stewie2k/": "2026-10-12",
+  "https://prosettings.net/players/stfn/": "2026-10-12",
+  "https://prosettings.net/players/stizo/": "2026-10-12",
+  "https://prosettings.net/players/stompy/": "2026-10-12",
+  "https://prosettings.net/players/stormen/": "2026-10-12",
+  "https://prosettings.net/players/stormyrite/": "2026-10-12",
+  "https://prosettings.net/players/story/": "2026-10-12",
+  "https://prosettings.net/players/stressarn/": "2026-10-12",
+  "https://prosettings.net/players/stretch/": "2026-10-12",
+  "https://prosettings.net/players/striker/": "2026-10-12",
+  "https://prosettings.net/players/strogo/": "2026-10-12",
+  "https://prosettings.net/players/stryker/": "2026-10-12",
+  "https://prosettings.net/players/styko/": "2026-10-12",
+  "https://prosettings.net/players/subroza/": "2026-10-12",
+  "https://prosettings.net/players/sugarfree/": "2026-10-12",
+  "https://prosettings.net/players/sugarz3ro/": "2026-10-12",
+  "https://prosettings.net/players/suggest/": "2026-10-12",
+  "https://prosettings.net/players/sukker/": "2026-10-12",
+  "https://prosettings.net/players/summer/": "2026-10-12",
+  "https://prosettings.net/players/summit1g/": "2026-10-12",
+  "https://prosettings.net/players/sunny/": "2026-10-12",
+  "https://prosettings.net/players/sunpayus/": "2026-10-12",
+  "https://prosettings.net/players/suns1de/": "2026-10-12",
+  "https://prosettings.net/players/supa/": "2026-10-12",
+  "https://prosettings.net/players/supamen/": "2026-10-12",
+  "https://prosettings.net/players/super/": "2026-10-12",
+  "https://prosettings.net/players/superbuss/": "2026-10-12",
+  "https://prosettings.net/players/superflik/": "2026-10-12",
+  "https://prosettings.net/players/supr/": "2026-10-12",
+  "https://prosettings.net/players/supra/": "2026-10-12",
+  "https://prosettings.net/players/surefour/": "2026-10-12",
+  "https://prosettings.net/players/surf/": "2026-10-12",
+  "https://prosettings.net/players/surreal/": "2026-10-12",
+  "https://prosettings.net/players/surugamonkey/": "2026-10-12",
+  "https://prosettings.net/players/sushiboys/": "2026-10-12",
+  "https://prosettings.net/players/susp/": "2026-10-12",
+  "https://prosettings.net/players/suygetsu/": "2026-10-12",
+  "https://prosettings.net/players/suzu/": "2026-10-12",
+  "https://prosettings.net/players/svedjehed/": "2026-10-12",
+  "https://prosettings.net/players/svyat/": "2026-10-12",
+  "https://prosettings.net/players/sw/": "2026-10-12",
+  "https://prosettings.net/players/swagg/": "2026-10-12",
+  "https://prosettings.net/players/swagzor/": "2026-10-12",
+  "https://prosettings.net/players/sway/": "2026-10-12",
+  "https://prosettings.net/players/sweet/": "2026-10-12",
+  "https://prosettings.net/players/swicher/": "2026-10-12",
+  "https://prosettings.net/players/swisher/": "2026-10-12",
+  "https://prosettings.net/players/swiz/": "2026-10-12",
+  "https://prosettings.net/players/swizzy/": "2026-10-12",
+  "https://prosettings.net/players/syaaz/": "2026-10-12",
+  "https://prosettings.net/players/sycrone/": "2026-10-12",
+  "https://prosettings.net/players/sylvan/": "2026-10-12",
+  "https://prosettings.net/players/symfuhny/": "2026-10-12",
+  "https://prosettings.net/players/syncd/": "2026-10-12",
+  "https://prosettings.net/players/synyx/": "2026-10-12",
+  "https://prosettings.net/players/syouta/": "2026-10-12",
+  "https://prosettings.net/players/syph0/": "2026-10-12",
+  "https://prosettings.net/players/sypherpk/": "2026-10-12",
+  "https://prosettings.net/players/syrson/": "2026-10-12",
+  "https://prosettings.net/players/szalony/": "2026-10-12",
+  "https://prosettings.net/players/szejn/": "2026-10-12",
+  "https://prosettings.net/players/szimpli/": "2026-10-12",
+  "https://prosettings.net/players/szpero/": "2026-10-12",
+  "https://prosettings.net/players/t0rick/": "2026-10-12",
+  "https://prosettings.net/players/t3eny/": "2026-10-12",
+  "https://prosettings.net/players/t3xture/": "2026-10-12",
+  "https://prosettings.net/players/t9rnay/": "2026-10-12",
+  "https://prosettings.net/players/ta1yo/": "2026-10-12",
+  "https://prosettings.net/players/tabsen/": "2026-10-12",
+  "https://prosettings.net/players/taco/": "2026-10-12",
+  "https://prosettings.net/players/tacolilla/": "2026-10-12",
+  "https://prosettings.net/players/taikonn/": "2026-10-12",
+  "https://prosettings.net/players/taisheen/": "2026-10-12",
+  "https://prosettings.net/players/tak/": "2026-10-12",
+  "https://prosettings.net/players/takas/": "2026-10-12",
+  "https://prosettings.net/players/takej/": "2026-10-12",
+  "https://prosettings.net/players/tapewaare/": "2026-10-12",
+  "https://prosettings.net/players/tara/": "2026-10-12",
+  "https://prosettings.net/players/tarik/": "2026-10-12",
+  "https://prosettings.net/players/taskmast33r/": "2026-10-12",
+  "https://prosettings.net/players/tastyy/": "2026-10-12",
+  "https://prosettings.net/players/tatazin/": "2026-10-12",
+  "https://prosettings.net/players/tatu/": "2026-10-12",
+  "https://prosettings.net/players/tauson/": "2026-10-12",
+  "https://prosettings.net/players/taxi2g/": "2026-10-12",
+  "https://prosettings.net/players/tayson/": "2026-10-12",
+  "https://prosettings.net/players/taz/": "2026-10-12",
+  "https://prosettings.net/players/tck/": "2026-10-12",
+  "https://prosettings.net/players/tdawgg/": "2026-10-12",
+  "https://prosettings.net/players/techno4k/": "2026-10-12",
+  "https://prosettings.net/players/teddy-2/": "2026-10-12",
+  "https://prosettings.net/players/teeqzy/": "2026-10-12",
+  "https://prosettings.net/players/tele/": "2026-10-12",
+  "https://prosettings.net/players/tempz/": "2026-10-12",
+  "https://prosettings.net/players/tennn/": "2026-10-12",
+  "https://prosettings.net/players/tenz/": "2026-10-12",
+  "https://prosettings.net/players/tenzki/": "2026-10-12",
+  "https://prosettings.net/players/terd/": "2026-10-12",
+  "https://prosettings.net/players/teses/": "2026-10-12",
+  "https://prosettings.net/players/tex/": "2026-10-12",
+  "https://prosettings.net/players/texta/": "2026-10-12",
+  "https://prosettings.net/players/tfue/": "2026-10-12",
+  "https://prosettings.net/players/tgltn/": "2026-10-12",
+  "https://prosettings.net/players/th0mashd/": "2026-10-12",
+  "https://prosettings.net/players/thamlike/": "2026-10-12",
+  "https://prosettings.net/players/the-elive/": "2026-10-12",
+  "https://prosettings.net/players/thebigfiz/": "2026-10-12",
+  "https://prosettings.net/players/thenderlost/": "2026-10-12",
+  "https://prosettings.net/players/thiagin/": "2026-10-12",
+  "https://prosettings.net/players/thiefs/": "2026-10-12",
+  "https://prosettings.net/players/thomas/": "2026-10-12",
+  "https://prosettings.net/players/thour/": "2026-10-12",
+  "https://prosettings.net/players/thwifo/": "2026-10-12",
+  "https://prosettings.net/players/tiezzi/": "2026-10-12",
+  "https://prosettings.net/players/tiger/": "2026-10-12",
+  "https://prosettings.net/players/tilt/": "2026-10-12",
+  "https://prosettings.net/players/timhehe/": "2026-10-12",
+  "https://prosettings.net/players/timo/": "2026-10-12",
+  "https://prosettings.net/players/timotino/": "2026-10-12",
+  "https://prosettings.net/players/timthetatman/": "2026-10-12",
+  "https://prosettings.net/players/tinchoff/": "2026-10-12",
+  "https://prosettings.net/players/tinka/": "2026-10-12",
+  "https://prosettings.net/players/tisora/": "2026-10-12",
+  "https://prosettings.net/players/tixx/": "2026-10-12",
+  "https://prosettings.net/players/tizian/": "2026-10-12",
+  "https://prosettings.net/players/tjino/": "2026-10-12",
+  "https://prosettings.net/players/tjp/": "2026-10-12",
+  "https://prosettings.net/players/tkay/": "2026-10-12",
+  "https://prosettings.net/players/tkzin/": "2026-10-12",
+  "https://prosettings.net/players/tmb/": "2026-10-12",
+  "https://prosettings.net/players/tmkj/": "2026-10-12",
+  "https://prosettings.net/players/tn1r/": "2026-10-12",
+  "https://prosettings.net/players/to0ro/": "2026-10-12",
+  "https://prosettings.net/players/toao/": "2026-10-12",
+  "https://prosettings.net/players/togs/": "2026-10-12",
+  "https://prosettings.net/players/tom1jed/": "2026-10-12",
+  "https://prosettings.net/players/tom223/": "2026-10-12",
+  "https://prosettings.net/players/tomaszin/": "2026-10-12",
+  "https://prosettings.net/players/tomaszy/": "2026-10-12",
+  "https://prosettings.net/players/tomiko/": "2026-10-12",
+  "https://prosettings.net/players/toose/": "2026-10-12",
+  "https://prosettings.net/players/topa/": "2026-10-12",
+  "https://prosettings.net/players/topz/": "2026-10-12",
+  "https://prosettings.net/players/torzsi/": "2026-10-12",
+  "https://prosettings.net/players/trash/": "2026-10-12",
+  "https://prosettings.net/players/travis/": "2026-10-12",
+  "https://prosettings.net/players/treelover/": "2026-10-12",
+  "https://prosettings.net/players/trent/": "2026-10-12",
+  "https://prosettings.net/players/trexx/": "2026-10-12",
+  "https://prosettings.net/players/trick/": "2026-10-12",
+  "https://prosettings.net/players/tried/": "2026-10-12",
+  "https://prosettings.net/players/trippernn/": "2026-10-12",
+  "https://prosettings.net/players/trk/": "2026-10-12",
+  "https://prosettings.net/players/trucklover86/": "2026-10-12",
+  "https://prosettings.net/players/trulex/": "2026-10-12",
+  "https://prosettings.net/players/try/": "2026-10-12",
+  "https://prosettings.net/players/ts/": "2026-10-12",
+  "https://prosettings.net/players/tteuw/": "2026-10-12",
+  "https://prosettings.net/players/tudson/": "2026-10-12",
+  "https://prosettings.net/players/tuli/": "2026-10-12",
+  "https://prosettings.net/players/tura/": "2026-10-12",
+  "https://prosettings.net/players/turkish/": "2026-10-12",
+  "https://prosettings.net/players/turko/": "2026-10-12",
+  "https://prosettings.net/players/tutsz/": "2026-10-12"
  }
 }
