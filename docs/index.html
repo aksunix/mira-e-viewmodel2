@@ -1051,16 +1051,24 @@ const csLinksReady = fetch('cybershoke-links.json')
 function safeUrl(u, host) {
   try { const x = new URL(u); return x.protocol === 'https:' && x.hostname.endsWith(host) ? x.href : null; } catch (e) { return null; }
 }
+// Fotos da HLTV (docs/hltv-photos.json: { nick_minusculo: url_da_foto }), geradas no navegador com hltv-fotos-console.js
+let hltvPhotos = {};
+const hltvPhotosReady = fetch('hltv-photos.json')
+  .then(r => (r.ok ? r.json() : {}))
+  .then(j => { hltvPhotos = j || {}; })
+  .catch(() => {});
+
 async function fetchProData(p) {
-  await csLinksReady;
+  await Promise.all([csLinksReady, hltvPhotosReady]);
   const e = csLinks[normName(p.name)];
-  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)' };
+  const ph = safeUrl(hltvPhotos[normName(p.name)], 'img-cdn.hltv.org');
+  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)', photo: ph };
   const fu = e.faceit && safeUrl(e.faceit.url, 'faceit.com');
   const hu = e.hltv && safeUrl(e.hltv.url, 'hltv.org');
   return {
     faceit: fu ? { url: fu.replace('/ru/', '/en/'), level: e.faceit.skill_level, elo: e.faceit.elo } : null,
     hltv: hu ? { url: hu } : null,
-    photo: e.hltv && safeUrl(e.hltv.photo, 'img-cdn.hltv.org'),
+    photo: ph || (e.hltv && safeUrl(e.hltv.photo, 'img-cdn.hltv.org')),
   };
 }
 
