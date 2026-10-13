@@ -273,6 +273,13 @@
    "steamid": "76561198016255205",
    "url": "https://procrosshairs.com/player/76561198016255205/Twistzz"
   },
+  "id:76561198022365638": {
+   "code": "CSvziQytzUjprHkH4eQwFO9eV8KOfKFmG5WmmQKxXdzbiA",
+   "name": "stavn",
+   "since": "2026-10-13",
+   "steamid": "76561198022365638",
+   "url": "https://procrosshairs.com/player/76561198022365638/stavn"
+  },
   "id:76561198028292758": {
    "code": "CSzyB88dDJSOhdHz2VchQU6rWOHqONGV7S3jWGvCB6zeGG",
    "name": "HObbit",
@@ -622,6 +629,13 @@
    "since": "2026-10-12",
    "steamid": "76561198355739212",
    "url": "https://procrosshairs.com/player/76561198355739212/torzsi"
+  },
+  "id:76561198362964332": {
+   "code": "CSEZ3sBZZL8dO2ZxRSid3TRuVApsnGN2yrRMLJLtiMb6tW",
+   "name": "xKacpersky",
+   "since": "2026-10-13",
+   "steamid": "76561198362964332",
+   "url": "https://procrosshairs.com/player/76561198362964332/xKacpersky"
   },
   "id:76561198365118288": {
    "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
@@ -1008,6 +1022,13 @@
    "steamid": "76561198005107817",
    "url": "https://procrosshairs.com/player/76561198005107817/Staehr"
   },
+  "stavn": {
+   "code": "CSvziQytzUjprHkH4eQwFO9eV8KOfKFmG5WmmQKxXdzbiA",
+   "name": "stavn",
+   "since": "2026-10-13",
+   "steamid": "76561198022365638",
+   "url": "https://procrosshairs.com/player/76561198022365638/stavn"
+  },
   "swisher": {
    "code": "CStP3KJdXWG3qZHNkY4pOUXFnJBc3RvkoPBsLpnjLZKGhF",
    "name": "Swisher",
@@ -1106,6 +1127,13 @@
    "steamid": "76561198141272052",
    "url": "https://procrosshairs.com/player/76561198141272052/xiELO"
   },
+  "xkacpersky": {
+   "code": "CSEZ3sBZZL8dO2ZxRSid3TRuVApsnGN2yrRMLJLtiMb6tW",
+   "name": "xKacpersky",
+   "since": "2026-10-13",
+   "steamid": "76561198362964332",
+   "url": "https://procrosshairs.com/player/76561198362964332/xKacpersky"
+  },
   "yekindar": {
    "code": "CSY7QnQ7Mr6c34PAtkS2RDkZMFmon6EycDpQFMVBaSnGtZ",
    "name": "YEKINDAR",
@@ -1149,5 +1177,5 @@
    "url": "https://procrosshairs.com/player/76561198113666193/ZywOo"
   }
  },
- "updated": "2026-10-12"
+ "updated": "2026-10-13"
 }
