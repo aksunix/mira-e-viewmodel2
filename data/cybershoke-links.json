@@ -590,6 +590,7 @@
   "emstar": "2026-10-12",
   "ender": "2026-10-12",
   "endretta": "2026-10-12",
+  "enemy": "2026-10-13",
   "enerii": "2026-10-12",
   "enzo": "2026-10-12",
   "eomzo": "2026-10-12",
@@ -655,6 +656,7 @@
   "fer": "2026-10-12",
   "fessor": "2026-10-12",
   "fexx": "2026-10-12",
+  "fhd": "2026-10-13",
   "filu": "2026-10-12",
   "finigan": "2026-10-12",
   "fino": "2026-10-12",
@@ -766,6 +768,7 @@
   "gon": "2026-10-12",
   "goofy": "2026-10-12",
   "goosebreeder": "2026-10-12",
+  "gordete": "2026-10-13",
   "gotaga": "2026-10-12",
   "governor": "2026-10-12",
   "gr1ks": "2026-10-12",
@@ -873,6 +876,7 @@
   "iluri": "2026-10-12",
   "ilyynina": "2026-10-12",
   "im": "2026-10-12",
+  "immikeyyyz": "2026-10-13",
   "imorr": "2026-10-12",
   "imperialhal": "2026-10-12",
   "impulse": "2026-10-12",
@@ -880,6 +884,7 @@
   "infiltrator": "2026-10-12",
   "infinite": "2026-10-12",
   "innocent": "2026-10-12",
+  "innocents": "2026-10-13",
   "inonix": "2026-10-12",
   "ins": "2026-10-12",
   "insani": "2026-10-12",
@@ -905,6 +910,7 @@
   "jackk": "2026-10-12",
   "jackz": "2026-10-12",
   "jacob": "2026-10-12",
+  "jacobbb": "2026-10-13",
   "jahq": "2026-10-12",
   "jake": "2026-10-12",
   "jakee": "2026-10-12",
@@ -918,6 +924,7 @@
   "japko": "2026-10-12",
   "jared": "2026-10-12",
   "jarko": "2026-10-12",
+  "jarvis": "2026-10-13",
   "jasonr": "2026-10-12",
   "jawgemo": "2026-10-12",
   "jay3": "2026-10-12",
@@ -6042,6 +6049,15 @@
    },
    "name": "Ender"
   },
+  "enemy": {
+   "faceit": {
+    "elo": 1135,
+    "name": "6bIKOB",
+    "skill_level": 5,
+    "url": "https://www.faceit.com/ru/players/6bIKOB"
+   },
+   "name": "Enemy"
+  },
   "enzo": {
    "faceit": {
     "elo": 1125,
@@ -8147,6 +8163,15 @@
     "url": "https://www.faceit.com/ru/players/406"
    },
    "name": "Jarko"
+  },
+  "jarvis": {
+   "faceit": {
+    "elo": 913,
+    "name": "Not_Zm3y",
+    "skill_level": 4,
+    "url": "https://www.faceit.com/ru/players/Not_Zm3y"
+   },
+   "name": "Jarvis"
   },
   "jasonr": {
    "faceit": {
