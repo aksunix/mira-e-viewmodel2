@@ -1047,6 +1047,7 @@
   "kensi": "2026-10-12",
   "kensizor": "2026-10-12",
   "kenzo": "2026-10-12",
+  "keon": "2026-10-14",
   "keoz": "2026-10-12",
   "kephrii": "2026-10-12",
   "keria": "2026-10-12",
@@ -1057,6 +1058,7 @@
   "kheyze": "2026-10-12",
   "kicks": "2026-10-12",
   "kickstart": "2026-10-12",
+  "kikoo": "2026-10-14",
   "kiles": "2026-10-12",
   "kind0": "2026-10-12",
   "kingg": "2026-10-12",
@@ -1064,6 +1066,7 @@
   "kinqie": "2026-10-12",
   "kinstaar": "2026-10-12",
   "kioshima": "2026-10-12",
+  "kirillian": "2026-10-14",
   "kiro": "2026-10-12",
   "kirwa": "2026-10-12",
   "kiryache32": "2026-10-12",
@@ -1089,6 +1092,7 @@
   "koshmaras": "2026-10-12",
   "kovaak": "2026-10-12",
   "kovaq": "2026-10-12",
+  "koyful": "2026-10-14",
   "koyota": "2026-10-12",
   "kr1stal": "2026-10-12",
   "krabeni": "2026-10-12",
@@ -1174,6 +1178,7 @@
   "leongids": "2026-10-12",
   "lequy": "2026-10-12",
   "less": "2026-10-12",
+  "letshe": "2026-10-14",
   "letw1k3": "2026-10-12",
   "levi": "2026-10-12",
   "levius": "2026-10-12",
@@ -1260,6 +1265,7 @@
   "manguss": "2026-10-12",
   "maniac": "2026-10-12",
   "mankz": "2026-10-12",
+  "mansour": "2026-10-14",
   "mantuu": "2026-10-12",
   "mappi": "2026-10-12",
   "marcelek": "2026-10-12",
@@ -1310,6 +1316,7 @@
   "memset": "2026-10-12",
   "mendo": "2026-10-12",
   "mercury": "2026-10-12",
+  "mero": "2026-10-14",
   "merstach": "2026-10-12",
   "mertz": "2026-10-12",
   "mesportt": "2026-10-12",
@@ -1734,6 +1741,7 @@
   "riens": "2026-10-12",
   "righi": "2026-10-12",
   "rigon": "2026-10-12",
+  "rim3": "2026-10-14",
   "rimuru": "2026-10-12",
   "rin": "2026-10-12",
   "rip": "2026-10-12",
@@ -8937,6 +8945,15 @@
    },
    "name": "kensizor"
   },
+  "keon": {
+   "faceit": {
+    "elo": 1115,
+    "name": "Keonchi",
+    "skill_level": 5,
+    "url": "https://www.faceit.com/ru/players/Keonchi"
+   },
+   "name": "Keon"
+  },
   "keoz": {
    "faceit": {
     "elo": 3535,
@@ -13440,6 +13457,15 @@
     "url": "https://www.hltv.org/stats/players/12708/rigon"
    },
    "name": "rigoN"
+  },
+  "rim3": {
+   "faceit": {
+    "elo": 3845,
+    "name": "-rim3",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/-rim3"
+   },
+   "name": "rim3"
   },
   "rimuru": {
    "faceit": {
