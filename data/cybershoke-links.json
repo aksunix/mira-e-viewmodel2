@@ -335,6 +335,7 @@
   "cender": "2026-10-12",
   "cented": "2026-10-12",
   "centir": "2026-10-12",
+  "cerolzin": "2026-10-15",
   "cerq": "2026-10-12",
   "cgrs": "2026-10-12",
   "chalalala": "2026-10-12",
@@ -1340,6 +1341,7 @@
   "mindfreak": "2026-10-12",
   "miniboo": "2026-10-12",
   "minny": "2026-10-12",
+  "minori": "2026-10-15",
   "mint": "2026-10-12",
   "miq": "2026-10-12",
   "mir": "2026-10-12",
@@ -1373,6 +1375,7 @@
   "molodoy": "2026-10-12",
   "molsi": "2026-10-12",
   "momsy": "2026-10-12",
+  "moneymaker": "2026-10-15",
   "mongraal": "2026-10-12",
   "monk": "2026-10-12",
   "monsoon": "2026-10-12",
@@ -1441,6 +1444,7 @@
   "nbk-": "2026-10-12",
   "nbqq": "2026-10-12",
   "nealan": "2026-10-12",
+  "neazul": "2026-10-15",
   "nebs": "2026-10-12",
   "necros": "2026-10-12",
   "neityu": "2026-10-12",
@@ -1469,6 +1473,7 @@
   "nicc": "2026-10-12",
   "nickeh30": "2026-10-12",
   "nickelback": "2026-10-12",
+  "nickmercs": "2026-10-15",
   "nicks": "2026-10-12",
   "nicksz": "2026-10-12",
   "nickyb": "2026-10-12",
@@ -1486,6 +1491,7 @@
   "ninebody": "2026-10-12",
   "ninja": "2026-10-12",
   "ninjaz": "2026-10-12",
+  "nipsy": "2026-10-15",
   "nismo": "2026-10-12",
   "nitr0": "2026-10-12",
   "nivera": "2026-10-12",
@@ -1501,6 +1507,7 @@
   "noia": "2026-10-12",
   "noko": "2026-10-12",
   "noktse": "2026-10-12",
+  "nomzz": "2026-10-15",
   "nopeej": "2026-10-12",
   "nopzy": "2026-10-12",
   "norwi": "2026-10-12",
@@ -1518,6 +1525,7 @@
   "nukkye": "2026-10-12",
   "nutnut": "2026-10-12",
   "nx1": "2026-10-12",
+  "nxthan": "2026-10-15",
   "nyezin": "2026-10-12",
   "nyhrox": "2026-10-12",
   "nython": "2026-10-12",
@@ -1532,6 +1540,7 @@
   "ohnepixel": "2026-10-12",
   "ojrein": "2026-10-12",
   "okeanos": "2026-10-12",
+  "okis": "2026-10-15",
   "okoliciouz": "2026-10-12",
   "olaie": "2026-10-12",
   "olga": "2026-10-12",
@@ -1593,6 +1602,7 @@
   "pgod": "2026-10-12",
   "phantom2x": "2026-10-12",
   "phaze": "2026-10-12",
+  "phony": "2026-10-15",
   "phoonyj": "2026-10-12",
   "phr": "2026-10-12",
   "phzin": "2026-10-12",
@@ -1653,6 +1663,7 @@
   "punisher": "2026-10-12",
   "purp0": "2026-10-12",
   "pxlarized": "2026-10-12",
+  "pxmp": "2026-10-15",
   "pxs": "2026-10-12",
   "pyth": "2026-10-12",
   "python": "2026-10-12",
@@ -1697,6 +1708,7 @@
   "ras": "2026-10-12",
   "rawkus": "2026-10-12",
   "rax": "2026-10-12",
+  "razorx": "2026-10-15",
   "razzmo": "2026-10-12",
   "rb": "2026-10-12",
   "rdnzao": "2026-10-12",
@@ -1712,6 +1724,7 @@
   "refrezh": "2026-10-12",
   "refsgaard": "2026-10-12",
   "regali": "2026-10-12",
+  "regs": "2026-10-15",
   "rehx": "2026-10-12",
   "reiko": "2026-10-12",
   "reita": "2026-10-12",
@@ -2291,6 +2304,7 @@
   "xarola": "2026-10-12",
   "xavi": "2026-10-12",
   "xavi8k": "2026-10-12",
+  "xavier": "2026-10-15",
   "xccurate": "2026-10-12",
   "xdll": "2026-10-12",
   "xelex": "2026-10-12",
@@ -4536,6 +4550,15 @@
     "url": "https://www.hltv.org/stats/players/22702/cej0t"
    },
    "name": "cej0t"
+  },
+  "cerolzin": {
+   "faceit": {
+    "elo": 2615,
+    "name": "cerol",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/cerol"
+   },
+   "name": "cerolzin"
   },
   "cerq": {
    "faceit": {
@@ -11112,6 +11135,15 @@
    },
    "name": "molodoy"
   },
+  "moneymaker": {
+   "faceit": {
+    "elo": 0,
+    "name": "percosexxxxx",
+    "skill_level": 1,
+    "url": "https://www.faceit.com/ru/players/percosexxxxx"
+   },
+   "name": "moneymaker"
+  },
   "monsoon": {
    "faceit": {
     "elo": 923,
@@ -17013,6 +17045,15 @@
     "url": "https://www.hltv.org/stats/players/7938/xantares"
    },
    "name": "XANTARES"
+  },
+  "xavier": {
+   "faceit": {
+    "elo": 1693,
+    "name": "pr_xavier",
+    "skill_level": 8,
+    "url": "https://www.faceit.com/ru/players/pr_xavier"
+   },
+   "name": "Xavier"
   },
   "xccurate": {
    "faceit": {
