@@ -33,10 +33,15 @@ jobs:
           git add data/crosshairs.json
           if git diff --cached --quiet; then echo "Sem mudancas"; exit 0; fi
           git commit -m "Atualiza miras dos profissionais"
+          pushed=0
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              pushed=1
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
             echo "Push falhou (tentativa $i), tentando de novo..."
             sleep 5
           done
-          git push --dry-run >/dev/null 2>&1 || { echo "Nao foi possivel enviar o commit"; exit 1; }
+          if [ "$pushed" != 1 ]; then echo "Nao foi possivel enviar o commit"; exit 1; fi
           gh workflow run pages.yml

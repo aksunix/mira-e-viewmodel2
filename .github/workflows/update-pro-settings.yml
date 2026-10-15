@@ -26,7 +26,11 @@ jobs:
       - run: pip install requests beautifulsoup4
 
       - name: Coletar dados
-        run: python scripts/build_pro_settings.py --out data/pro-settings.json --max "${{ github.event.inputs.max || '400' }}"
+        env:
+          MAX_PAGES: ${{ github.event.inputs.max || '400' }}
+        run: |
+          case "$MAX_PAGES" in ''|*[!0-9]*) echo "Valor invalido para max: $MAX_PAGES"; exit 1;; esac
+          python scripts/build_pro_settings.py --out data/pro-settings.json --max "$MAX_PAGES"
 
       - name: Coletar FACEIT/HLTV pelo CyberShoke
         continue-on-error: true
@@ -45,10 +49,15 @@ jobs:
           git add data/pro-settings.json data/cybershoke-links.json data/cybershoke-extra.txt
           if git diff --cached --quiet; then echo "Sem mudancas"; exit 0; fi
           git commit -m "Atualiza dados do ProSettings"
+          pushed=0
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              pushed=1
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
             echo "Push falhou (tentativa $i), tentando de novo..."
             sleep 5
           done
-          git push --dry-run >/dev/null 2>&1 || { echo "Nao foi possivel enviar o commit"; exit 1; }
+          if [ "$pushed" != 1 ]; then echo "Nao foi possivel enviar o commit"; exit 1; fi
           gh workflow run pages.yml

@@ -118,6 +118,13 @@ def main():
             break
         if entry:
             entry["name"] = name
+            # preserva a foto da HLTV (coletada por build_hltv_photos.py) se o perfil continua o mesmo
+            old_h = (out["links"].get(k) or {}).get("hltv") or {}
+            new_h = entry.get("hltv")
+            if new_h and old_h.get("url") == new_h.get("url"):
+                for keep in ("photo", "no_photo"):
+                    if keep in old_h:
+                        new_h[keep] = old_h[keep]
             out["links"][k] = entry
             found += 1
         out["checked"][k] = today.isoformat()
