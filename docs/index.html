@@ -1204,14 +1204,8 @@ const csLinksReady = fetch('cybershoke-links.json')
   .then(j => { csLinks = (j && j.links) || {}; })
   .catch(() => {});
 function safeUrl(u, host) {
-  try { const x = new URL(u); return x.protocol === 'https:' && x.hostname.endsWith(host) ? x.href : null; } catch (e) { return null; }
+  try { const x = new URL(u); return x.protocol === 'https:' && (x.hostname === host || x.hostname.endsWith('.' + host)) ? x.href : null; } catch (e) { return null; }
 }
-// Fotos da HLTV (docs/hltv-photos.json: { nick_minusculo: url_da_foto }), geradas no navegador com hltv-fotos-console.js
-let hltvPhotos = {};
-const hltvPhotosReady = fetch('hltv-photos.json')
-  .then(r => (r.ok ? r.json() : {}))
-  .then(j => { hltvPhotos = j || {}; })
-  .catch(() => {});
 
 // Miras dos profissionais (procrosshairs.com), coletadas a cada 2 dias: docs/crosshairs.json
 let xhData = {};
@@ -1225,17 +1219,16 @@ function findCrosshair(p) {
 }
 
 async function fetchProData(p) {
-  await Promise.all([csLinksReady, hltvPhotosReady, xhReady]);
+  await Promise.all([csLinksReady, xhReady]);
   const e = csLinks[normName(p.name)];
-  const ph = safeUrl(hltvPhotos[normName(p.name)], 'img-cdn.hltv.org');
   const xh = findCrosshair(p);
-  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)', photo: ph, xh: xh };
+  if (!e) return { err: 'ainda não coletei o perfil deste jogador (a coleta roda todo dia no GitHub)', xh: xh };
   const fu = e.faceit && safeUrl(e.faceit.url, 'faceit.com');
   const hu = e.hltv && safeUrl(e.hltv.url, 'hltv.org');
   return {
     faceit: fu ? { url: fu.replace('/ru/', '/en/'), level: e.faceit.skill_level, elo: e.faceit.elo } : null,
     hltv: hu ? { url: hu } : null,
-    photo: ph || (e.hltv && safeUrl(e.hltv.photo, 'img-cdn.hltv.org')),
+    photo: e.hltv && safeUrl(e.hltv.photo, 'img-cdn.hltv.org'),
     xh: xh,
   };
 }
