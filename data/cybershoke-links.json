@@ -1771,6 +1771,7 @@
   "robbiebk": "2026-10-12",
   "robiin": "2026-10-12",
   "robo": "2026-10-12",
+  "robott": "2026-10-16",
   "rock1ng": "2026-10-12",
   "rocker": "2026-10-12",
   "rocket": "2026-10-12",
@@ -1833,6 +1834,7 @@
   "satellite": "2026-10-12",
   "sato": "2026-10-12",
   "satsu": "2026-10-12",
+  "satuki": "2026-10-16",
   "sausol": "2026-10-12",
   "savage": "2026-10-12",
   "sayaplayer": "2026-10-12",
@@ -1841,6 +1843,7 @@
   "sbt": "2026-10-12",
   "scales": "2026-10-12",
   "sceptic": "2026-10-12",
+  "scoped": "2026-10-16",
   "scream": "2026-10-12",
   "scroll": "2026-10-12",
   "scrunk": "2026-10-12",
@@ -1967,6 +1970,7 @@
   "snav": "2026-10-12",
   "snax": "2026-10-12",
   "snayzy": "2026-10-12",
+  "snip3down": "2026-10-16",
   "snow": "2026-10-12",
   "snowiee": "2026-10-12",
   "snw": "2026-10-12",
@@ -2057,12 +2061,15 @@
   "svedjehed": "2026-10-12",
   "svyat": "2026-10-12",
   "sw": "2026-10-12",
+  "swagg": "2026-10-16",
   "swagzor": "2026-10-12",
+  "sway": "2026-10-16",
   "sweet": "2026-10-12",
   "swicher": "2026-10-12",
   "swisher": "2026-10-12",
   "swiz": "2026-10-12",
   "swizzy": "2026-10-12",
+  "syaaz": "2026-10-16",
   "sycrone": "2026-10-12",
   "sylvan": "2026-10-12",
   "symfuhny": "2026-10-12",
@@ -2077,6 +2084,7 @@
   "szimpli": "2026-10-12",
   "szpero": "2026-10-12",
   "t0rick": "2026-10-12",
+  "t3eny": "2026-10-16",
   "t3xture": "2026-10-12",
   "t9rnay": "2026-10-12",
   "ta1yo": "2026-10-12",
@@ -16163,6 +16171,24 @@
     "url": "https://www.faceit.com/ru/players/swolk"
    },
    "name": "sw"
+  },
+  "swagg": {
+   "faceit": {
+    "elo": 729,
+    "name": "shm0neyy",
+    "skill_level": 2,
+    "url": "https://www.faceit.com/ru/players/shm0neyy"
+   },
+   "name": "Swagg"
+  },
+  "sway": {
+   "faceit": {
+    "elo": 990,
+    "name": "Drasterw",
+    "skill_level": 4,
+    "url": "https://www.faceit.com/ru/players/Drasterw"
+   },
+   "name": "Sway"
   },
   "sweet": {
    "faceit": {
