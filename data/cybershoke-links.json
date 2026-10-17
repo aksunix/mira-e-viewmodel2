@@ -2135,6 +2135,7 @@
   "thwifo": "2026-10-12",
   "tiezzi": "2026-10-12",
   "tiger": "2026-10-12",
+  "tilt": "2026-10-17",
   "timhehe": "2026-10-12",
   "timo": "2026-10-12",
   "timotino": "2026-10-12",
@@ -2146,6 +2147,7 @@
   "tizian": "2026-10-12",
   "tjino": "2026-10-12",
   "tjp": "2026-10-12",
+  "tkay": "2026-10-17",
   "tkzin": "2026-10-12",
   "tmb": "2026-10-12",
   "tmkj": "2026-10-12",
@@ -16617,6 +16619,15 @@
     "url": "https://www.faceit.com/ru/players/T-iger"
    },
    "name": "TiGeR"
+  },
+  "tilt": {
+   "faceit": {
+    "elo": 1164,
+    "name": "egorblvck",
+    "skill_level": 5,
+    "url": "https://www.faceit.com/ru/players/egorblvck"
+   },
+   "name": "Tilt"
   },
   "timhehe": {
    "faceit": {

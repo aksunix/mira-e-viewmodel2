@@ -9565,6 +9565,7 @@
    "dpi": "800",
    "hz": "1000",
    "name": "Kjaer",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/trippernn/"
   },
   "kjaerbye": {
@@ -18970,6 +18971,7 @@
    "edpi": "984",
    "hz": "4000",
    "name": "thamlike",
+   "resolution": "1280x960",
    "sensitivity": "1.23",
    "url": "https://prosettings.net/players/thamlike/",
    "zoom_sensitivity": "1"
@@ -18979,6 +18981,7 @@
    "edpi": "164",
    "hz": "1000",
    "name": "TheBigFiz",
+   "resolution": "1920x1080",
    "sensitivity": "0.41",
    "url": "https://prosettings.net/players/thebigfiz/"
   },
@@ -18987,6 +18990,7 @@
    "edpi": "880",
    "hz": "1000",
    "name": "The eLiVe",
+   "resolution": "1920x1080",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/the-elive/",
    "zoom_sensitivity": "1"
@@ -18995,18 +18999,21 @@
    "dpi": "400",
    "hz": "1000",
    "name": "Thenderlost",
+   "resolution": "1728x1080",
    "url": "https://prosettings.net/players/thenderlost/"
   },
   "thiagin": {
    "dpi": "1600",
    "hz": "1000",
    "name": "Thiagin",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/thiagin/"
   },
   "thiefs": {
    "dpi": "800",
    "hz": "500",
    "name": "Thiefs",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/thiefs/"
   },
   "thomas": {
@@ -19014,6 +19021,7 @@
    "edpi": "580",
    "hz": "1000",
    "name": "Thomas",
+   "resolution": "1920x1080",
    "sensitivity": "1.45",
    "url": "https://prosettings.net/players/thomas/",
    "zoom_sensitivity": "1"
@@ -19023,6 +19031,7 @@
    "edpi": "680.00",
    "hz": "1000",
    "name": "Thour",
+   "resolution": "1280x960",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/thour/",
    "zoom_sensitivity": "1"
@@ -19032,6 +19041,7 @@
    "edpi": "224",
    "hz": "1000",
    "name": "Thwifo",
+   "resolution": "1600x900",
    "sensitivity": "0.28",
    "url": "https://prosettings.net/players/thwifo/"
   },
@@ -19040,6 +19050,7 @@
    "edpi": "192",
    "hz": "2000",
    "name": "tiezzi",
+   "resolution": "1920x1080",
    "sensitivity": "0.12",
    "url": "https://prosettings.net/players/tiezzi/"
   },
@@ -19048,15 +19059,22 @@
    "edpi": "1050.00",
    "hz": "1000",
    "name": "TiGeR",
+   "resolution": "1280x960",
    "sensitivity": "1.05",
    "url": "https://prosettings.net/players/tiger/",
    "zoom_sensitivity": "1"
+  },
+  "tilt": {
+   "name": "Tilt",
+   "resolution": "1920x1080",
+   "url": "https://prosettings.net/players/tilt/"
   },
   "timhehe": {
    "dpi": "800",
    "edpi": "800.00",
    "hz": "1000",
    "name": "TIMhehe",
+   "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/timhehe/",
    "zoom_sensitivity": "1"
@@ -19066,6 +19084,7 @@
    "edpi": "416",
    "hz": "1000",
    "name": "timo",
+   "resolution": "1280x960",
    "sensitivity": "0.52",
    "url": "https://prosettings.net/players/timo/",
    "zoom_sensitivity": "1.1"
@@ -19075,6 +19094,7 @@
    "edpi": "225.6",
    "hz": "1000",
    "name": "timotino",
+   "resolution": "1920x1080",
    "sensitivity": "0.141",
    "url": "https://prosettings.net/players/timotino/"
   },
@@ -19082,6 +19102,7 @@
    "dpi": "800",
    "hz": "1000",
    "name": "timthetatman",
+   "resolution": "1920x1080",
    "sensitivity": "3.93",
    "url": "https://prosettings.net/players/timthetatman/"
   },
@@ -19090,6 +19111,7 @@
    "edpi": "352",
    "hz": "4000",
    "name": "tinchoff",
+   "resolution": "1920x1080",
    "sensitivity": "0.88",
    "url": "https://prosettings.net/players/tinchoff/"
   },
@@ -19097,6 +19119,7 @@
    "dpi": "800",
    "hz": "2000",
    "name": "Tinka",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/tinka/"
   },
   "tisora": {
@@ -19104,6 +19127,7 @@
    "edpi": "184",
    "hz": "2000",
    "name": "Tisora",
+   "resolution": "1920x1080",
    "sensitivity": "0.23",
    "url": "https://prosettings.net/players/tisora/"
   },
@@ -19112,6 +19136,7 @@
    "edpi": "224",
    "hz": "1000",
    "name": "tixx",
+   "resolution": "1920x1080",
    "sensitivity": "0.14",
    "url": "https://prosettings.net/players/tixx/"
   },
@@ -19120,6 +19145,7 @@
    "edpi": "680",
    "hz": "1000",
    "name": "tiziaN",
+   "resolution": "1280x960",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/tizian/",
    "zoom_sensitivity": "1.05"
@@ -19128,6 +19154,7 @@
    "dpi": "800",
    "hz": "1000",
    "name": "Tjino",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/tjino/"
   },
   "tjp": {
@@ -19135,15 +19162,22 @@
    "edpi": "580",
    "hz": "1000",
    "name": "TjP",
+   "resolution": "1280x960",
    "sensitivity": "1.45",
    "url": "https://prosettings.net/players/tjp/",
    "zoom_sensitivity": "1"
+  },
+  "tkay": {
+   "name": "Tkay",
+   "resolution": "1920x1080",
+   "url": "https://prosettings.net/players/tkay/"
   },
   "tkzin": {
    "dpi": "1600",
    "edpi": "160",
    "hz": "4000",
    "name": "Tkzin",
+   "resolution": "1920x1080",
    "sensitivity": "0.1",
    "url": "https://prosettings.net/players/tkzin/"
   },
@@ -19152,6 +19186,7 @@
    "edpi": "720",
    "hz": "1000",
    "name": "TMB",
+   "resolution": "1280x960",
    "sensitivity": "0.9",
    "url": "https://prosettings.net/players/tmb/",
    "zoom_sensitivity": "1"
@@ -19161,6 +19196,7 @@
    "edpi": "1000.00",
    "hz": "1000",
    "name": "TMKj",
+   "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/tmkj/",
    "zoom_sensitivity": "1"
@@ -19170,6 +19206,7 @@
    "edpi": "400",
    "hz": "1000",
    "name": "tN1R",
+   "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/tn1r/",
    "zoom_sensitivity": "1"
@@ -19179,6 +19216,7 @@
    "edpi": "1150.00",
    "hz": "1000",
    "name": "tO0RO",
+   "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/to0ro/",
    "zoom_sensitivity": "1"
@@ -19188,6 +19226,7 @@
    "edpi": "880",
    "hz": "4000",
    "name": "TOAO",
+   "resolution": "1920x1440",
    "sensitivity": "1.10",
    "url": "https://prosettings.net/players/toao/",
    "zoom_sensitivity": "1.03"
@@ -19197,6 +19236,7 @@
    "edpi": "680",
    "hz": "1000",
    "name": "togs",
+   "resolution": "1280x960",
    "sensitivity": "0.85",
    "url": "https://prosettings.net/players/togs/",
    "zoom_sensitivity": "1"
@@ -19206,6 +19246,7 @@
    "edpi": "1200.00",
    "hz": "4000",
    "name": "tom1jed",
+   "resolution": "1280x960",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/tom1jed/",
    "zoom_sensitivity": "1.1"
@@ -19215,6 +19256,7 @@
    "edpi": "960",
    "hz": "1000",
    "name": "ToM223",
+   "resolution": "1280x960",
    "sensitivity": "1.2",
    "url": "https://prosettings.net/players/tom223/",
    "zoom_sensitivity": "1"
@@ -19224,6 +19266,7 @@
    "edpi": "960.00",
    "hz": "1000",
    "name": "tomaszin",
+   "resolution": "1280x960",
    "sensitivity": "1.2",
    "url": "https://prosettings.net/players/tomaszin/",
    "zoom_sensitivity": "1.1"
@@ -19233,6 +19276,7 @@
    "edpi": "252",
    "hz": "1000",
    "name": "tomaszy",
+   "resolution": "1600x1024",
    "sensitivity": "0.63",
    "url": "https://prosettings.net/players/tomaszy/"
   },
@@ -19241,6 +19285,7 @@
    "edpi": "800",
    "hz": "1000",
    "name": "tomiko",
+   "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/tomiko/",
    "zoom_sensitivity": "0.9"
@@ -19249,6 +19294,7 @@
    "dpi": "800",
    "hz": "1000",
    "name": "Toose",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/toose/"
   },
   "topa": {
@@ -19256,6 +19302,7 @@
    "edpi": "640.00",
    "hz": "4000",
    "name": "Topa",
+   "resolution": "1280x960",
    "sensitivity": "1.6",
    "url": "https://prosettings.net/players/topa/",
    "zoom_sensitivity": "1"
@@ -19265,6 +19312,7 @@
    "edpi": "1024",
    "hz": "1000",
    "name": "tOPZ",
+   "resolution": "1280x960",
    "sensitivity": "1.28",
    "url": "https://prosettings.net/players/topz/",
    "zoom_sensitivity": "1"
@@ -19274,6 +19322,7 @@
    "edpi": "800",
    "hz": "1000",
    "name": "torzsi",
+   "resolution": "1280x960",
    "sensitivity": "1.00",
    "url": "https://prosettings.net/players/torzsi/",
    "zoom_sensitivity": "1"
@@ -19283,6 +19332,7 @@
    "edpi": "800.00",
    "hz": "1000",
    "name": "Trash",
+   "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/trash/",
    "zoom_sensitivity": "1"
@@ -19292,6 +19342,7 @@
    "edpi": "880.00",
    "hz": "1000",
    "name": "TRAVIS",
+   "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/travis/",
    "zoom_sensitivity": "1"
@@ -19301,6 +19352,7 @@
    "edpi": "240",
    "hz": "2000",
    "name": "treelover",
+   "resolution": "1280x960",
    "sensitivity": "0.15",
    "url": "https://prosettings.net/players/treelover/"
   },
@@ -19309,6 +19361,7 @@
    "edpi": "256.00",
    "hz": "1000",
    "name": "trent",
+   "resolution": "1440x1080",
    "sensitivity": "0.16",
    "url": "https://prosettings.net/players/trent/"
   },
@@ -19317,6 +19370,7 @@
    "edpi": "180.8",
    "hz": "1000",
    "name": "trexx",
+   "resolution": "1920x1080",
    "sensitivity": "0.226",
    "url": "https://prosettings.net/players/trexx/"
   },
@@ -19325,6 +19379,7 @@
    "edpi": "244",
    "hz": "1000",
    "name": "Trick",
+   "resolution": "1920x1080",
    "sensitivity": "0.305",
    "url": "https://prosettings.net/players/trick/"
   },
@@ -19333,6 +19388,7 @@
    "edpi": "1050",
    "hz": "4000",
    "name": "tried",
+   "resolution": "1280x960",
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/tried/",
    "zoom_sensitivity": "1"
@@ -19342,6 +19398,7 @@
    "edpi": "880",
    "hz": "1000",
    "name": "trk",
+   "resolution": "1280x960",
    "sensitivity": "2.20",
    "url": "https://prosettings.net/players/trk/",
    "zoom_sensitivity": "1.00"
@@ -19351,6 +19408,7 @@
    "edpi": "1000",
    "hz": "2000",
    "name": "Trucklover86",
+   "resolution": "1920x1080",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/trucklover86/",
    "zoom_sensitivity": "1"
@@ -19359,6 +19417,7 @@
    "dpi": "800",
    "hz": "1000",
    "name": "TruleX",
+   "resolution": "1780x1080",
    "url": "https://prosettings.net/players/trulex/"
   },
   "try": {
@@ -19366,6 +19425,7 @@
    "edpi": "920",
    "hz": "2000",
    "name": "try",
+   "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/try/",
    "zoom_sensitivity": "1.20"
@@ -19375,6 +19435,7 @@
    "edpi": "233",
    "hz": "1000",
    "name": "TS",
+   "resolution": "1920x1080",
    "sensitivity": "0.583",
    "url": "https://prosettings.net/players/ts/"
   },
@@ -19383,6 +19444,7 @@
    "edpi": "750",
    "hz": "1000",
    "name": "tteuw",
+   "resolution": "1920x1080",
    "sensitivity": "0.375",
    "url": "https://prosettings.net/players/tteuw/"
   },
@@ -19391,6 +19453,7 @@
    "edpi": "800.00",
    "hz": "4000",
    "name": "tudsoN",
+   "resolution": "1280x960",
    "sensitivity": "0.5",
    "url": "https://prosettings.net/players/tudson/",
    "zoom_sensitivity": "0.90"
@@ -19400,6 +19463,7 @@
    "edpi": "240",
    "hz": "1000",
    "name": "Tuli",
+   "resolution": "1680x1050",
    "sensitivity": "0.3",
    "url": "https://prosettings.net/players/tuli/"
   },
@@ -19408,6 +19472,7 @@
    "edpi": "320",
    "hz": "4000",
    "name": "Tura",
+   "resolution": "1920x1080",
    "sensitivity": "0.4",
    "url": "https://prosettings.net/players/tura/"
   },
@@ -19416,6 +19481,7 @@
    "edpi": "160",
    "hz": "2000",
    "name": "Turkish",
+   "resolution": "1920x1080",
    "sensitivity": "0.2",
    "url": "https://prosettings.net/players/turkish/"
   },
@@ -19424,12 +19490,14 @@
    "edpi": "240",
    "hz": "1000",
    "name": "Turko",
+   "resolution": "1920x1080",
    "sensitivity": "0.6",
    "url": "https://prosettings.net/players/turko/"
   },
   "tutsz": {
    "dpi": "1500",
    "name": "Tutsz",
+   "resolution": "1920x1080",
    "url": "https://prosettings.net/players/tutsz/"
   },
   "tuurtle": {
@@ -21564,65 +21632,13 @@
   }
  },
  "pending": {
-  "https://prosettings.net/players/reversive/": {
-   "name": "reversive",
-   "steam": "https://steamcommunity.com/id/reversive10/"
+  "https://prosettings.net/players/topz/": {
+   "name": "topz",
+   "steam": "https://steamcommunity.com/id/-tOPZ-/"
   },
-  "https://prosettings.net/players/roux/": {
-   "name": "roux",
-   "steam": "https://steamcommunity.com/id/dasdmqkoemkqowlmkldsz/"
-  },
-  "https://prosettings.net/players/rusty/": {
-   "name": "rusty",
-   "steam": "https://steamcommunity.com/id/RuStYmoFOKa/"
-  },
-  "https://prosettings.net/players/samey/": {
-   "name": "samey",
-   "steam": "https://steamcommunity.com/id/SaMeyoo/"
-  },
-  "https://prosettings.net/players/seb/": {
-   "name": "seb",
-   "steam": "https://steamcommunity.com/id/official_seb/"
-  },
-  "https://prosettings.net/players/sellter/": {
-   "name": "sellter",
-   "steam": "https://steamcommunity.com/id/SELLTERRRRRR/"
-  },
-  "https://prosettings.net/players/senzu/": {
-   "name": "senzu",
-   "steam": "https://steamcommunity.com/id/senzucs0/"
-  },
-  "https://prosettings.net/players/shield/": {
-   "name": "shield",
-   "steam": "https://steamcommunity.com/id/shieldxjesus/"
-  },
-  "https://prosettings.net/players/sinnopsyy/": {
-   "name": "sinnopsyy",
-   "steam": "https://steamcommunity.com/id/whatsgood0d/"
-  },
-  "https://prosettings.net/players/skejs/": {
-   "name": "skejs",
-   "steam": "https://steamcommunity.com/id/skejsbrorz/"
-  },
-  "https://prosettings.net/players/stressarn/": {
-   "name": "stressarn",
-   "steam": "https://steamcommunity.com/id/stressarN777/"
-  },
-  "https://prosettings.net/players/svedjehed/": {
-   "name": "svedjehed",
-   "steam": "https://steamcommunity.com/id/Svedjehed/"
-  },
-  "https://prosettings.net/players/synyx/": {
-   "name": "synyx",
-   "steam": "https://steamcommunity.com/profiles/synyxxx"
-  },
-  "https://prosettings.net/players/syph0/": {
-   "name": "syph0",
-   "steam": "https://steamcommunity.com/id/baklajan13373646/"
-  },
-  "https://prosettings.net/players/szejn/": {
-   "name": "szejn",
-   "steam": "https://steamcommunity.com/id/szejnk1ng/"
+  "https://prosettings.net/players/tudson/": {
+   "name": "tudson",
+   "steam": "https://steamcommunity.com/id/tudsonn/"
   }
  },
  "players": {
@@ -22963,6 +22979,7 @@
    "edpi": "960",
    "hz": "1000",
    "name": "ToM223",
+   "resolution": "1280x960",
    "sensitivity": "1.2",
    "url": "https://prosettings.net/players/tom223/",
    "zoom_sensitivity": "1"
@@ -23071,6 +23088,7 @@
    "edpi": "680",
    "hz": "1000",
    "name": "tiziaN",
+   "resolution": "1280x960",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/tizian/",
    "zoom_sensitivity": "1.05"
@@ -23080,6 +23098,7 @@
    "edpi": "984",
    "hz": "4000",
    "name": "thamlike",
+   "resolution": "1280x960",
    "sensitivity": "1.23",
    "url": "https://prosettings.net/players/thamlike/",
    "zoom_sensitivity": "1"
@@ -24145,6 +24164,7 @@
    "edpi": "580",
    "hz": "1000",
    "name": "Thomas",
+   "resolution": "1920x1080",
    "sensitivity": "1.45",
    "url": "https://prosettings.net/players/thomas/",
    "zoom_sensitivity": "1"
@@ -24421,6 +24441,7 @@
    "edpi": "880",
    "hz": "1000",
    "name": "trk",
+   "resolution": "1280x960",
    "sensitivity": "2.20",
    "url": "https://prosettings.net/players/trk/",
    "zoom_sensitivity": "1.00"
@@ -25077,6 +25098,7 @@
    "edpi": "224",
    "hz": "1000",
    "name": "Thwifo",
+   "resolution": "1600x900",
    "sensitivity": "0.28",
    "url": "https://prosettings.net/players/thwifo/"
   },
@@ -25529,6 +25551,7 @@
    "edpi": "880",
    "hz": "1000",
    "name": "The eLiVe",
+   "resolution": "1920x1080",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/the-elive/",
    "zoom_sensitivity": "1"
@@ -25914,6 +25937,7 @@
    "edpi": "720",
    "hz": "1000",
    "name": "TMB",
+   "resolution": "1280x960",
    "sensitivity": "0.9",
    "url": "https://prosettings.net/players/tmb/",
    "zoom_sensitivity": "1"
@@ -26480,6 +26504,7 @@
    "edpi": "1000",
    "hz": "2000",
    "name": "Trucklover86",
+   "resolution": "1920x1080",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/trucklover86/",
    "zoom_sensitivity": "1"
@@ -26842,6 +26867,7 @@
    "edpi": "640.00",
    "hz": "4000",
    "name": "Topa",
+   "resolution": "1280x960",
    "sensitivity": "1.6",
    "url": "https://prosettings.net/players/topa/",
    "zoom_sensitivity": "1"
@@ -27139,6 +27165,7 @@
    "edpi": "800.00",
    "hz": "1000",
    "name": "TIMhehe",
+   "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/timhehe/",
    "zoom_sensitivity": "1"
@@ -27404,6 +27431,7 @@
    "edpi": "880",
    "hz": "4000",
    "name": "TOAO",
+   "resolution": "1920x1440",
    "sensitivity": "1.10",
    "url": "https://prosettings.net/players/toao/",
    "zoom_sensitivity": "1.03"
@@ -27533,6 +27561,7 @@
    "edpi": "580",
    "hz": "1000",
    "name": "TjP",
+   "resolution": "1280x960",
    "sensitivity": "1.45",
    "url": "https://prosettings.net/players/tjp/",
    "zoom_sensitivity": "1"
@@ -28413,6 +28442,7 @@
    "edpi": "800",
    "hz": "1000",
    "name": "tomiko",
+   "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/tomiko/",
    "zoom_sensitivity": "0.9"
@@ -28717,6 +28747,7 @@
    "edpi": "832",
    "hz": "4000",
    "name": "shield",
+   "resolution": "1280x960",
    "sensitivity": "1.04",
    "url": "https://prosettings.net/players/shield/",
    "zoom_sensitivity": "1"
@@ -28826,6 +28857,7 @@
    "edpi": "680.00",
    "hz": "1000",
    "name": "Thour",
+   "resolution": "1280x960",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/thour/",
    "zoom_sensitivity": "1"
@@ -29392,6 +29424,7 @@
    "edpi": "800.00",
    "hz": "1000",
    "name": "Trash",
+   "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/trash/",
    "zoom_sensitivity": "1"
@@ -29611,6 +29644,7 @@
    "edpi": "800",
    "hz": "1000",
    "name": "torzsi",
+   "resolution": "1280x960",
    "sensitivity": "1.00",
    "url": "https://prosettings.net/players/torzsi/",
    "zoom_sensitivity": "1"
@@ -29690,6 +29724,7 @@
    "edpi": "880.00",
    "hz": "1000",
    "name": "TRAVIS",
+   "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/travis/",
    "zoom_sensitivity": "1"
@@ -29699,6 +29734,7 @@
    "edpi": "416",
    "hz": "1000",
    "name": "timo",
+   "resolution": "1280x960",
    "sensitivity": "0.52",
    "url": "https://prosettings.net/players/timo/",
    "zoom_sensitivity": "1.1"
@@ -29728,6 +29764,7 @@
    "edpi": "920",
    "hz": "2000",
    "name": "try",
+   "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/try/",
    "zoom_sensitivity": "1.20"
@@ -30077,6 +30114,7 @@
    "edpi": "960.00",
    "hz": "1000",
    "name": "tomaszin",
+   "resolution": "1280x960",
    "sensitivity": "1.2",
    "url": "https://prosettings.net/players/tomaszin/",
    "zoom_sensitivity": "1.1"
@@ -30170,6 +30208,7 @@
    "edpi": "680",
    "hz": "1000",
    "name": "togs",
+   "resolution": "1280x960",
    "sensitivity": "0.85",
    "url": "https://prosettings.net/players/togs/",
    "zoom_sensitivity": "1"
@@ -30199,6 +30238,7 @@
    "edpi": "1000.00",
    "hz": "1000",
    "name": "TMKj",
+   "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/tmkj/",
    "zoom_sensitivity": "1"
@@ -30598,6 +30638,7 @@
    "edpi": "400",
    "hz": "1000",
    "name": "tN1R",
+   "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/tn1r/",
    "zoom_sensitivity": "1"
@@ -30817,6 +30858,7 @@
    "edpi": "1050.00",
    "hz": "1000",
    "name": "TiGeR",
+   "resolution": "1280x960",
    "sensitivity": "1.05",
    "url": "https://prosettings.net/players/tiger/",
    "zoom_sensitivity": "1"
@@ -30866,6 +30908,7 @@
    "edpi": "1200.00",
    "hz": "4000",
    "name": "tom1jed",
+   "resolution": "1280x960",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/tom1jed/",
    "zoom_sensitivity": "1.1"
@@ -31275,6 +31318,7 @@
    "edpi": "1150.00",
    "hz": "1000",
    "name": "tO0RO",
+   "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/to0ro/",
    "zoom_sensitivity": "1"
@@ -31344,6 +31388,7 @@
    "edpi": "1050",
    "hz": "4000",
    "name": "tried",
+   "resolution": "1280x960",
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/tried/",
    "zoom_sensitivity": "1"
@@ -33784,66 +33829,66 @@
   "https://prosettings.net/players/tfue/": "2026-10-16",
   "https://prosettings.net/players/tgltn/": "2026-10-16",
   "https://prosettings.net/players/th0mashd/": "2026-10-16",
-  "https://prosettings.net/players/thamlike/": "2026-10-12",
-  "https://prosettings.net/players/the-elive/": "2026-10-12",
-  "https://prosettings.net/players/thebigfiz/": "2026-10-12",
-  "https://prosettings.net/players/thenderlost/": "2026-10-12",
-  "https://prosettings.net/players/thiagin/": "2026-10-12",
-  "https://prosettings.net/players/thiefs/": "2026-10-12",
-  "https://prosettings.net/players/thomas/": "2026-10-12",
-  "https://prosettings.net/players/thour/": "2026-10-12",
-  "https://prosettings.net/players/thwifo/": "2026-10-12",
-  "https://prosettings.net/players/tiezzi/": "2026-10-12",
-  "https://prosettings.net/players/tiger/": "2026-10-12",
-  "https://prosettings.net/players/tilt/": "2026-10-12",
-  "https://prosettings.net/players/timhehe/": "2026-10-12",
-  "https://prosettings.net/players/timo/": "2026-10-12",
-  "https://prosettings.net/players/timotino/": "2026-10-12",
-  "https://prosettings.net/players/timthetatman/": "2026-10-12",
-  "https://prosettings.net/players/tinchoff/": "2026-10-12",
-  "https://prosettings.net/players/tinka/": "2026-10-12",
-  "https://prosettings.net/players/tisora/": "2026-10-12",
-  "https://prosettings.net/players/tixx/": "2026-10-12",
-  "https://prosettings.net/players/tizian/": "2026-10-12",
-  "https://prosettings.net/players/tjino/": "2026-10-12",
-  "https://prosettings.net/players/tjp/": "2026-10-12",
-  "https://prosettings.net/players/tkay/": "2026-10-12",
-  "https://prosettings.net/players/tkzin/": "2026-10-12",
-  "https://prosettings.net/players/tmb/": "2026-10-12",
-  "https://prosettings.net/players/tmkj/": "2026-10-12",
-  "https://prosettings.net/players/tn1r/": "2026-10-12",
-  "https://prosettings.net/players/to0ro/": "2026-10-12",
-  "https://prosettings.net/players/toao/": "2026-10-12",
-  "https://prosettings.net/players/togs/": "2026-10-12",
-  "https://prosettings.net/players/tom1jed/": "2026-10-12",
-  "https://prosettings.net/players/tom223/": "2026-10-12",
-  "https://prosettings.net/players/tomaszin/": "2026-10-12",
-  "https://prosettings.net/players/tomaszy/": "2026-10-12",
-  "https://prosettings.net/players/tomiko/": "2026-10-12",
-  "https://prosettings.net/players/toose/": "2026-10-12",
-  "https://prosettings.net/players/topa/": "2026-10-12",
-  "https://prosettings.net/players/topz/": "2026-10-12",
-  "https://prosettings.net/players/torzsi/": "2026-10-12",
-  "https://prosettings.net/players/trash/": "2026-10-12",
-  "https://prosettings.net/players/travis/": "2026-10-12",
-  "https://prosettings.net/players/treelover/": "2026-10-12",
-  "https://prosettings.net/players/trent/": "2026-10-12",
-  "https://prosettings.net/players/trexx/": "2026-10-12",
-  "https://prosettings.net/players/trick/": "2026-10-12",
-  "https://prosettings.net/players/tried/": "2026-10-12",
-  "https://prosettings.net/players/trippernn/": "2026-10-12",
-  "https://prosettings.net/players/trk/": "2026-10-12",
-  "https://prosettings.net/players/trucklover86/": "2026-10-12",
-  "https://prosettings.net/players/trulex/": "2026-10-12",
-  "https://prosettings.net/players/try/": "2026-10-12",
-  "https://prosettings.net/players/ts/": "2026-10-12",
-  "https://prosettings.net/players/tteuw/": "2026-10-12",
-  "https://prosettings.net/players/tudson/": "2026-10-12",
-  "https://prosettings.net/players/tuli/": "2026-10-12",
-  "https://prosettings.net/players/tura/": "2026-10-12",
-  "https://prosettings.net/players/turkish/": "2026-10-12",
-  "https://prosettings.net/players/turko/": "2026-10-12",
-  "https://prosettings.net/players/tutsz/": "2026-10-12",
+  "https://prosettings.net/players/thamlike/": "2026-10-17",
+  "https://prosettings.net/players/the-elive/": "2026-10-17",
+  "https://prosettings.net/players/thebigfiz/": "2026-10-17",
+  "https://prosettings.net/players/thenderlost/": "2026-10-17",
+  "https://prosettings.net/players/thiagin/": "2026-10-17",
+  "https://prosettings.net/players/thiefs/": "2026-10-17",
+  "https://prosettings.net/players/thomas/": "2026-10-17",
+  "https://prosettings.net/players/thour/": "2026-10-17",
+  "https://prosettings.net/players/thwifo/": "2026-10-17",
+  "https://prosettings.net/players/tiezzi/": "2026-10-17",
+  "https://prosettings.net/players/tiger/": "2026-10-17",
+  "https://prosettings.net/players/tilt/": "2026-10-17",
+  "https://prosettings.net/players/timhehe/": "2026-10-17",
+  "https://prosettings.net/players/timo/": "2026-10-17",
+  "https://prosettings.net/players/timotino/": "2026-10-17",
+  "https://prosettings.net/players/timthetatman/": "2026-10-17",
+  "https://prosettings.net/players/tinchoff/": "2026-10-17",
+  "https://prosettings.net/players/tinka/": "2026-10-17",
+  "https://prosettings.net/players/tisora/": "2026-10-17",
+  "https://prosettings.net/players/tixx/": "2026-10-17",
+  "https://prosettings.net/players/tizian/": "2026-10-17",
+  "https://prosettings.net/players/tjino/": "2026-10-17",
+  "https://prosettings.net/players/tjp/": "2026-10-17",
+  "https://prosettings.net/players/tkay/": "2026-10-17",
+  "https://prosettings.net/players/tkzin/": "2026-10-17",
+  "https://prosettings.net/players/tmb/": "2026-10-17",
+  "https://prosettings.net/players/tmkj/": "2026-10-17",
+  "https://prosettings.net/players/tn1r/": "2026-10-17",
+  "https://prosettings.net/players/to0ro/": "2026-10-17",
+  "https://prosettings.net/players/toao/": "2026-10-17",
+  "https://prosettings.net/players/togs/": "2026-10-17",
+  "https://prosettings.net/players/tom1jed/": "2026-10-17",
+  "https://prosettings.net/players/tom223/": "2026-10-17",
+  "https://prosettings.net/players/tomaszin/": "2026-10-17",
+  "https://prosettings.net/players/tomaszy/": "2026-10-17",
+  "https://prosettings.net/players/tomiko/": "2026-10-17",
+  "https://prosettings.net/players/toose/": "2026-10-17",
+  "https://prosettings.net/players/topa/": "2026-10-17",
+  "https://prosettings.net/players/topz/": "2026-10-17",
+  "https://prosettings.net/players/torzsi/": "2026-10-17",
+  "https://prosettings.net/players/trash/": "2026-10-17",
+  "https://prosettings.net/players/travis/": "2026-10-17",
+  "https://prosettings.net/players/treelover/": "2026-10-17",
+  "https://prosettings.net/players/trent/": "2026-10-17",
+  "https://prosettings.net/players/trexx/": "2026-10-17",
+  "https://prosettings.net/players/trick/": "2026-10-17",
+  "https://prosettings.net/players/tried/": "2026-10-17",
+  "https://prosettings.net/players/trippernn/": "2026-10-17",
+  "https://prosettings.net/players/trk/": "2026-10-17",
+  "https://prosettings.net/players/trucklover86/": "2026-10-17",
+  "https://prosettings.net/players/trulex/": "2026-10-17",
+  "https://prosettings.net/players/try/": "2026-10-17",
+  "https://prosettings.net/players/ts/": "2026-10-17",
+  "https://prosettings.net/players/tteuw/": "2026-10-17",
+  "https://prosettings.net/players/tudson/": "2026-10-17",
+  "https://prosettings.net/players/tuli/": "2026-10-17",
+  "https://prosettings.net/players/tura/": "2026-10-17",
+  "https://prosettings.net/players/turkish/": "2026-10-17",
+  "https://prosettings.net/players/turko/": "2026-10-17",
+  "https://prosettings.net/players/tutsz/": "2026-10-17",
   "https://prosettings.net/players/tuurtle/": "2026-10-12",
   "https://prosettings.net/players/tuyz/": "2026-10-12",
   "https://prosettings.net/players/tvirusluke/": "2026-10-12",
@@ -36245,6 +36290,66 @@
   "https://prosettings.net/players/tfue/": "2026-10-16",
   "https://prosettings.net/players/tgltn/": "2026-10-16",
   "https://prosettings.net/players/th0mashd/": "2026-10-16",
+  "https://prosettings.net/players/thamlike/": "2026-10-17",
+  "https://prosettings.net/players/the-elive/": "2026-10-17",
+  "https://prosettings.net/players/thebigfiz/": "2026-10-17",
+  "https://prosettings.net/players/thenderlost/": "2026-10-17",
+  "https://prosettings.net/players/thiagin/": "2026-10-17",
+  "https://prosettings.net/players/thiefs/": "2026-10-17",
+  "https://prosettings.net/players/thomas/": "2026-10-17",
+  "https://prosettings.net/players/thour/": "2026-10-17",
+  "https://prosettings.net/players/thwifo/": "2026-10-17",
+  "https://prosettings.net/players/tiezzi/": "2026-10-17",
+  "https://prosettings.net/players/tiger/": "2026-10-17",
+  "https://prosettings.net/players/tilt/": "2026-10-17",
+  "https://prosettings.net/players/timhehe/": "2026-10-17",
+  "https://prosettings.net/players/timo/": "2026-10-17",
+  "https://prosettings.net/players/timotino/": "2026-10-17",
+  "https://prosettings.net/players/timthetatman/": "2026-10-17",
+  "https://prosettings.net/players/tinchoff/": "2026-10-17",
+  "https://prosettings.net/players/tinka/": "2026-10-17",
+  "https://prosettings.net/players/tisora/": "2026-10-17",
+  "https://prosettings.net/players/tixx/": "2026-10-17",
+  "https://prosettings.net/players/tizian/": "2026-10-17",
+  "https://prosettings.net/players/tjino/": "2026-10-17",
+  "https://prosettings.net/players/tjp/": "2026-10-17",
+  "https://prosettings.net/players/tkay/": "2026-10-17",
+  "https://prosettings.net/players/tkzin/": "2026-10-17",
+  "https://prosettings.net/players/tmb/": "2026-10-17",
+  "https://prosettings.net/players/tmkj/": "2026-10-17",
+  "https://prosettings.net/players/tn1r/": "2026-10-17",
+  "https://prosettings.net/players/to0ro/": "2026-10-17",
+  "https://prosettings.net/players/toao/": "2026-10-17",
+  "https://prosettings.net/players/togs/": "2026-10-17",
+  "https://prosettings.net/players/tom1jed/": "2026-10-17",
+  "https://prosettings.net/players/tom223/": "2026-10-17",
+  "https://prosettings.net/players/tomaszin/": "2026-10-17",
+  "https://prosettings.net/players/tomaszy/": "2026-10-17",
+  "https://prosettings.net/players/tomiko/": "2026-10-17",
+  "https://prosettings.net/players/toose/": "2026-10-17",
+  "https://prosettings.net/players/topa/": "2026-10-17",
+  "https://prosettings.net/players/topz/": "2026-10-17",
+  "https://prosettings.net/players/torzsi/": "2026-10-17",
+  "https://prosettings.net/players/trash/": "2026-10-17",
+  "https://prosettings.net/players/travis/": "2026-10-17",
+  "https://prosettings.net/players/treelover/": "2026-10-17",
+  "https://prosettings.net/players/trent/": "2026-10-17",
+  "https://prosettings.net/players/trexx/": "2026-10-17",
+  "https://prosettings.net/players/trick/": "2026-10-17",
+  "https://prosettings.net/players/tried/": "2026-10-17",
+  "https://prosettings.net/players/trippernn/": "2026-10-17",
+  "https://prosettings.net/players/trk/": "2026-10-17",
+  "https://prosettings.net/players/trucklover86/": "2026-10-17",
+  "https://prosettings.net/players/trulex/": "2026-10-17",
+  "https://prosettings.net/players/try/": "2026-10-17",
+  "https://prosettings.net/players/ts/": "2026-10-17",
+  "https://prosettings.net/players/tteuw/": "2026-10-17",
+  "https://prosettings.net/players/tudson/": "2026-10-17",
+  "https://prosettings.net/players/tuli/": "2026-10-17",
+  "https://prosettings.net/players/tura/": "2026-10-17",
+  "https://prosettings.net/players/turkish/": "2026-10-17",
+  "https://prosettings.net/players/turko/": "2026-10-17",
+  "https://prosettings.net/players/tutsz/": "2026-10-17",
   "https://prosettings.net/players/tuurtle/": "2026-10-12",
   "https://prosettings.net/players/tuyz/": "2026-10-12",
   "https://prosettings.net/players/tvirusluke/": "2026-10-12",
