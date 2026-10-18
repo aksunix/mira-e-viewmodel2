@@ -21631,16 +21631,7 @@
    "url": "https://prosettings.net/players/putrick/"
   }
  },
- "pending": {
-  "https://prosettings.net/players/topz/": {
-   "name": "topz",
-   "steam": "https://steamcommunity.com/id/-tOPZ-/"
-  },
-  "https://prosettings.net/players/tudson/": {
-   "name": "tudson",
-   "steam": "https://steamcommunity.com/id/tudsonn/"
-  }
- },
+ "pending": {},
  "players": {
   "76561197960284752": {
    "dpi": "400",
