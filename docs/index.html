@@ -239,6 +239,8 @@
   .cv-result .btn { margin-top: 16px; background: var(--md-primary); color: var(--md-on-primary); }
   .cv-result .btn svg { margin-left: -4px; width: 18px; height: 18px; }
   .cv-note { margin: 16px 0 0; font-size: 12px; line-height: 18px; color: var(--md-on-surface-variant); }
+  .cv-title { margin: 0 0 12px; font-size: 22px; line-height: 28px; font-weight: 700; }
+  .cv-sep { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--md-outline-variant); max-width: 720px; }
   @media (max-width: 480px) { .cv-card { padding: 16px; } .cv-fields { grid-template-columns: minmax(0, 1fr); } }
 
   /* Configurações e histórico */
@@ -542,8 +544,9 @@
 
 <section data-view="sens" hidden>
   <h2 class="page big">Converter <span class="acc">sensibilidade</span></h2>
-  <p class="lead">Troque a DPI do mouse e mantenha exatamente a mesma mira no CS2.</p>
-  <div class="cv">
+  <p class="lead">Ferramentas de sensibilidade para o CS2: troca de DPI e ajuste pelo peso do mouse.</p>
+  <h2 class="cv-title">Converter por DPI</h2>
+  <div class="cv" id="cvDpi">
     <div class="cv-card">
       <h3><svg class="i" data-i="aim"></svg>Sua configuração atual</h3>
       <div class="cv-fields">
@@ -573,6 +576,40 @@
         <div><dt>in/360°</dt><dd id="cvIn">—</dd></div>
       </dl>
       <p class="cv-note">Sens nova = sens atual × DPI atual ÷ DPI nova. O eDPI e a distância de 360° não mudam, então a mira continua a mesma. Cálculo feito com o m_yaw padrão do CS2 (0,022).</p>
+    </div>
+  </div>
+
+  <h2 class="cv-title cv-sep">Ajustar pelo peso do mouse</h2>
+  <p class="lead">Trocou de mouse? Estime a nova sensibilidade a partir da diferença de peso, sem mexer na DPI.</p>
+  <div class="cv" id="cvPeso">
+    <div class="cv-card">
+      <h3><svg class="i" data-i="aim"></svg>Seu mouse atual</h3>
+      <div class="cv-fields">
+        <label class="cv-field"><span>Sensibilidade</span><input type="text" id="cvwSens" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="1,625"></label>
+        <label class="cv-field"><span>Peso atual (g)</span><input type="text" id="cvwOld" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="85"></label>
+      </div>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="speed"></svg>Mouse novo</h3>
+      <div class="cv-fields one">
+        <label class="cv-field"><span>Peso novo (g)</span><input type="text" id="cvwNew" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="70"></label>
+      </div>
+    </div>
+    <div class="cv-card cv-result" aria-live="polite">
+      <h3><svg class="i" data-i="tune"></svg>Sensibilidade sugerida</h3>
+      <div class="cv-big" id="cvwOut">—</div>
+      <p class="cv-sub" id="cvwHint"></p>
+      <button type="button" class="btn" id="cvwCopy" data-label="Copiar sensibilidade"><svg class="i" data-i="copy"></svg><span class="t">Copiar sensibilidade</span></button>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="bars"></svg>Detalhes</h3>
+      <dl class="pro-tiles">
+        <div><dt>Sens por grama</dt><dd id="cvwPer">—</dd></div>
+        <div><dt>Diferença de peso</dt><dd id="cvwDiff">—</dd></div>
+        <div><dt>Variação na sens</dt><dd id="cvwDelta">—</dd></div>
+        <div><dt>Sens exata</dt><dd id="cvwExact">—</dd></div>
+      </dl>
+      <p class="cv-note">Fórmula: sens por grama = sens atual ÷ peso atual; sens nova = sens atual − (sens por grama × diferença de peso). Mouse mais leve diminui a sens, mais pesado aumenta. Use a mesma DPI nos dois mouses (se for diferente, converta pela seção de DPI acima antes). É uma regra prática para chegar perto: não considera o tamanho do mouse, então faça o ajuste fino jogando. Fórmula de um post do r/MouseReview.</p>
     </div>
   </div>
 </section>
@@ -782,6 +819,40 @@ document.getElementById('upd').textContent = /^\d/.test(bd) ? bd : new Date(docu
   [sensIn, oldIn, newIn].forEach(i => i.addEventListener('input', calc));
   copyBtn.onclick = () => { if (value) copyValue(value, copyBtn); };
   calc();
+
+  // Ajuste pelo peso do mouse (fórmula do r/MouseReview): sens - (sens/peso atual) x (peso atual - peso novo)
+  const wS = $('cvwSens'), wO = $('cvwOld'), wN = $('cvwNew'), wOut = $('cvwOut'), wHint = $('cvwHint'), wCopy = $('cvwCopy');
+  const wSaved = LS.get('convw', { s: '1,625', o: '85', n: '70' });
+  wS.value = wSaved.s; wO.value = wSaved.o; wN.value = wSaved.n;
+  const wIds = ['cvwPer', 'cvwDiff', 'cvwDelta', 'cvwExact'];
+  let wValue = '';
+  const sign = n => (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), 3);
+
+  function calcW() {
+    const s = num(wS.value), o = num(wO.value), n = num(wN.value);
+    const ok = [s, o, n].map(x => x > 0 && isFinite(x));
+    wS.setAttribute('aria-invalid', String(!ok[0] && wS.value !== ''));
+    wO.setAttribute('aria-invalid', String(!ok[1] && wO.value !== ''));
+    wN.setAttribute('aria-invalid', String(!ok[2] && wN.value !== ''));
+    LS.set('convw', { s: wS.value, o: wO.value, n: wN.value });
+    if (!ok.every(Boolean)) {
+      wValue = ''; wOut.textContent = '—'; wHint.textContent = 'Preencha a sensibilidade e os dois pesos.';
+      wCopy.disabled = true; wIds.forEach(i => { $(i).textContent = '—'; });
+      return;
+    }
+    const per = s / o, diff = o - n, ns = s - per * diff;
+    wValue = String(Math.round(ns * 1000) / 1000).replace('.', ',');
+    wOut.textContent = fmt(ns, 3);
+    wHint.textContent = fmt(s, 3) + ' com ' + fmt(o, 0) + ' g  →  ' + fmt(ns, 3) + ' com ' + fmt(n, 0) + ' g';
+    wCopy.disabled = false;
+    $('cvwPer').textContent = fmt(per, 4);
+    $('cvwDiff').textContent = (diff > 0 ? '−' : diff < 0 ? '+' : '') + fmt(Math.abs(diff), 1) + ' g';
+    $('cvwDelta').textContent = sign(ns - s);
+    $('cvwExact').textContent = fmt(ns, 6).replace(/,?0+$/, '');
+  }
+  [wS, wO, wN].forEach(i => i.addEventListener('input', calcW));
+  wCopy.onclick = () => { if (wValue) copyValue(wValue, wCopy); };
+  calcW();
 })();
 
 // Histórico (salvo só neste navegador)
