@@ -217,7 +217,7 @@
   @media (max-width: 480px) { .pro-head, .pro-card { padding: 16px; } .pro-name { font-size: 24px; line-height: 30px; } }
 
   /* Conversor de sensibilidade (DPI) */
-  .cv { display: grid; gap: 16px; max-width: 720px; }
+  .cv { display: contents; }
   .cv-card { padding: 24px; border: 1px solid var(--md-outline-variant); border-radius: 20px; background: var(--md-surface-container-low); }
   .cv-card h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 16px; font-size: 14px; line-height: 20px; font-weight: 500; }
   .cv-card h3 svg { width: 20px; height: 20px; fill: var(--md-primary); }
@@ -240,7 +240,11 @@
   .cv-result .btn svg { margin-left: -4px; width: 18px; height: 18px; }
   .cv-note { margin: 16px 0 0; font-size: 12px; line-height: 18px; color: var(--md-on-surface-variant); }
   .cv-title { margin: 0 0 12px; font-size: 22px; line-height: 28px; font-weight: 700; }
-  .cv-sep { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--md-outline-variant); max-width: 720px; }
+  .cv-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; }
+  .cv-col { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 16px; }
+  .cv-col .cv-title { margin: 0 0 -4px; }
+  .cv-col .lead { margin: 0 0 4px; }
+  @media (max-width: 1100px) { .cv-cols { grid-template-columns: minmax(0, 1fr); gap: 40px; } .cv-col { grid-row: auto; grid-template-rows: none; } }
   @media (max-width: 480px) { .cv-card { padding: 16px; } .cv-fields { grid-template-columns: minmax(0, 1fr); } }
 
   /* Configurações e histórico */
@@ -545,7 +549,10 @@
 <section data-view="sens" hidden>
   <h2 class="page big">Converter <span class="acc">sensibilidade</span></h2>
   <p class="lead">Ferramentas de sensibilidade para o CS2: troca de DPI e ajuste pelo peso do mouse.</p>
+  <div class="cv-cols">
+  <div class="cv-col">
   <h2 class="cv-title">Converter por DPI</h2>
+  <p class="lead">Troque a DPI e mantenha a mesma mira.</p>
   <div class="cv" id="cvDpi">
     <div class="cv-card">
       <h3><svg class="i" data-i="aim"></svg>Sua configuração atual</h3>
@@ -579,8 +586,10 @@
     </div>
   </div>
 
-  <h2 class="cv-title cv-sep">Ajustar pelo peso do mouse</h2>
-  <p class="lead">Trocou de mouse? Estime a nova sensibilidade a partir da diferença de peso, sem mexer na DPI.</p>
+  </div>
+  <div class="cv-col">
+  <h2 class="cv-title">Ajustar pelo peso do mouse</h2>
+  <p class="lead">Trocou de mouse? Estime a sens pelo peso.</p>
   <div class="cv" id="cvPeso">
     <div class="cv-card">
       <h3><svg class="i" data-i="aim"></svg>Seu mouse atual</h3>
@@ -609,8 +618,10 @@
         <div><dt>Variação na sens</dt><dd id="cvwDelta">—</dd></div>
         <div><dt>Sens exata</dt><dd id="cvwExact">—</dd></div>
       </dl>
-      <p class="cv-note">Fórmula: sens por grama = sens atual ÷ peso atual; sens nova = sens atual − (sens por grama × diferença de peso). Mouse mais leve diminui a sens, mais pesado aumenta. Use a mesma DPI nos dois mouses (se for diferente, converta pela seção de DPI acima antes). É uma regra prática para chegar perto: não considera o tamanho do mouse, então faça o ajuste fino jogando. Fórmula de um post do r/MouseReview.</p>
+      <p class="cv-note">Fórmula: sens por grama = sens atual ÷ peso atual; sens nova = sens atual − (sens por grama × diferença de peso). Mouse mais leve diminui a sens, mais pesado aumenta. Use a mesma DPI nos dois mouses (se for diferente, converta antes pelo conversor de DPI). É uma regra prática para chegar perto: não considera o tamanho do mouse, então faça o ajuste fino jogando. Fórmula de um post do r/MouseReview.</p>
     </div>
+  </div>
+  </div>
   </div>
 </section>
 
