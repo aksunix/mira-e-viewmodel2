@@ -5301,6 +5301,15 @@
    "url": "https://prosettings.net/players/eraa/",
    "zoom_sensitivity": "1"
   },
+  "erde": {
+   "dpi": "800",
+   "edpi": "296.00",
+   "hz": "4000",
+   "name": "erde",
+   "resolution": "1920x1080",
+   "sensitivity": "0.37",
+   "url": "https://prosettings.net/players/erde/"
+  },
   "eren": {
    "dpi": "1600",
    "edpi": "320",
@@ -32274,6 +32283,7 @@
   "https://prosettings.net/players/eomzo/": "2026-10-13",
   "https://prosettings.net/players/epikwhale/": "2026-10-13",
   "https://prosettings.net/players/eraa/": "2026-10-13",
+  "https://prosettings.net/players/erde/": "2026-10-19",
   "https://prosettings.net/players/eren/": "2026-10-13",
   "https://prosettings.net/players/erkast/": "2026-10-13",
   "https://prosettings.net/players/errorterror/": "2026-10-13",
@@ -34735,6 +34745,7 @@
   "https://prosettings.net/players/eomzo/": "2026-10-13",
   "https://prosettings.net/players/epikwhale/": "2026-10-13",
   "https://prosettings.net/players/eraa/": "2026-10-13",
+  "https://prosettings.net/players/erde/": "2026-10-19",
   "https://prosettings.net/players/eren/": "2026-10-13",
   "https://prosettings.net/players/erkast/": "2026-10-13",
   "https://prosettings.net/players/errorterror/": "2026-10-13",
