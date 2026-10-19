@@ -216,6 +216,31 @@
   .xh-body .btn { margin: 0; }
   @media (max-width: 480px) { .pro-head, .pro-card { padding: 16px; } .pro-name { font-size: 24px; line-height: 30px; } }
 
+  /* Conversor de sensibilidade (DPI) */
+  .cv { display: grid; gap: 16px; max-width: 720px; }
+  .cv-card { padding: 24px; border: 1px solid var(--md-outline-variant); border-radius: 20px; background: var(--md-surface-container-low); }
+  .cv-card h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 16px; font-size: 14px; line-height: 20px; font-weight: 500; }
+  .cv-card h3 svg { width: 20px; height: 20px; fill: var(--md-primary); }
+  .cv-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .cv-fields.one { grid-template-columns: minmax(0, 1fr); }
+  .cv-field { display: block; }
+  .cv-field span { display: block; margin: 0 0 6px 4px; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: .4px; color: var(--md-on-surface-variant); }
+  .cv-field input { width: 100%; height: 56px; padding: 0 16px; border: 1px solid var(--md-outline); border-radius: 12px; background: var(--md-surface); color: var(--md-on-surface); font: 500 18px "Inter", system-ui, sans-serif; letter-spacing: 0; font-variant-numeric: tabular-nums; }
+  .cv-field input:hover { border-color: var(--md-on-surface); }
+  .cv-field input:focus { outline: none; border-color: var(--md-primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-primary) 28%, transparent); }
+  .cv-field input[aria-invalid="true"] { border-color: var(--md-error); }
+  .cv-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+  .cv-chips > small { margin-right: 4px; color: var(--md-on-surface-variant); }
+  .cv-result { text-align: center; background: var(--md-primary-container); border-color: transparent; color: var(--md-on-primary-container); }
+  .cv-result h3 { justify-content: center; }
+  .cv-result h3 svg { fill: currentColor; }
+  .cv-big { font-size: clamp(40px, 8vw, 64px); line-height: 1.1; font-weight: 800; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
+  .cv-sub { margin: 8px 0 0; font-size: 14px; opacity: .85; font-variant-numeric: tabular-nums; }
+  .cv-result .btn { margin-top: 16px; background: var(--md-primary); color: var(--md-on-primary); }
+  .cv-result .btn svg { margin-left: -4px; width: 18px; height: 18px; }
+  .cv-note { margin: 16px 0 0; font-size: 12px; line-height: 18px; color: var(--md-on-surface-variant); }
+  @media (max-width: 480px) { .cv-card { padding: 16px; } .cv-fields { grid-template-columns: minmax(0, 1fr); } }
+
   /* Configurações e histórico */
   .panel { max-width: 560px; padding: 4px 20px; border: 1px solid var(--md-outline-variant); border-radius: 20px; background: var(--md-surface-container-low); }
   .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--md-outline-variant); }
@@ -439,6 +464,7 @@
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
   <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
+  <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
   <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
@@ -512,6 +538,43 @@
   </div>
   <div class="rs" id="recentSearches" hidden></div>
   <div id="searchResult" aria-live="polite"></div>
+</section>
+
+<section data-view="sens" hidden>
+  <h2 class="page big">Converter <span class="acc">sensibilidade</span></h2>
+  <p class="lead">Troque a DPI do mouse e mantenha exatamente a mesma mira no CS2.</p>
+  <div class="cv">
+    <div class="cv-card">
+      <h3><svg class="i" data-i="aim"></svg>Sua configuração atual</h3>
+      <div class="cv-fields">
+        <label class="cv-field"><span>Sensibilidade</span><input type="text" id="cvSens" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="1,45"></label>
+        <label class="cv-field"><span>DPI atual</span><input type="text" id="cvOld" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="400"></label>
+      </div>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="speed"></svg>Converter para</h3>
+      <div class="cv-fields one">
+        <label class="cv-field"><span>DPI nova</span><input type="text" id="cvNew" inputmode="numeric" autocomplete="off" spellcheck="false" placeholder="800"></label>
+      </div>
+      <div class="cv-chips" id="cvChips" role="group" aria-label="DPIs comuns"><small>DPIs comuns</small></div>
+    </div>
+    <div class="cv-card cv-result" aria-live="polite">
+      <h3><svg class="i" data-i="tune"></svg>Sensibilidade convertida</h3>
+      <div class="cv-big" id="cvOut">—</div>
+      <p class="cv-sub" id="cvHint"></p>
+      <button type="button" class="btn" id="cvCopy" data-label="Copiar sensibilidade"><svg class="i" data-i="copy"></svg><span class="t">Copiar sensibilidade</span></button>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="bars"></svg>Detalhes</h3>
+      <dl class="pro-tiles">
+        <div><dt>Sens exata</dt><dd id="cvExact">—</dd></div>
+        <div><dt>eDPI</dt><dd id="cvEdpi">—</dd></div>
+        <div><dt>cm/360°</dt><dd id="cvCm">—</dd></div>
+        <div><dt>in/360°</dt><dd id="cvIn">—</dd></div>
+      </dl>
+      <p class="cv-note">Sens nova = sens atual × DPI atual ÷ DPI nova. O eDPI e a distância de 360° não mudam, então a mira continua a mesma. Cálculo feito com o m_yaw padrão do CS2 (0,022).</p>
+    </div>
+  </div>
 </section>
 
 <section data-view="historico" hidden>
@@ -660,7 +723,7 @@ scrim.onclick = () => toggleMenu(false);
 narrow.addEventListener('change', () => { side.classList.remove('open'); scrim.classList.remove('on'); shell.classList.remove('closed'); menuBtn.setAttribute('aria-expanded', String(!narrow.matches)); });
 menuBtn.setAttribute('aria-expanded', String(!narrow.matches));
 function route() {
-  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
+  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'sens', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
   document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
   document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
   if (narrow.matches) toggleMenu(false);
@@ -672,6 +735,54 @@ function setUpload(show) { document.getElementById('intro').hidden = !show; }
 
 const bd = '__BUILD_DATE__';
 document.getElementById('upd').textContent = /^\d/.test(bd) ? bd : new Date(document.lastModified).toLocaleDateString('pt-BR');
+
+// Conversor de sensibilidade (só troca de DPI, CS2)
+(function () {
+  const YAW = 0.022; // m_yaw padrão do CS2
+  const $ = id => document.getElementById(id);
+  const sensIn = $('cvSens'), oldIn = $('cvOld'), newIn = $('cvNew'), chips = $('cvChips');
+  const out = $('cvOut'), hint = $('cvHint'), copyBtn = $('cvCopy');
+  const saved = LS.get('conv', { s: '1,45', o: '400', n: '800' });
+  sensIn.value = saved.s; oldIn.value = saved.o; newIn.value = saved.n;
+  const num = v => parseFloat(String(v).trim().replace(',', '.'));
+  const fmt = (n, d) => n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const ids = ['cvExact', 'cvEdpi', 'cvCm', 'cvIn'];
+  let value = '';
+
+  function calc() {
+    const s = num(sensIn.value), o = num(oldIn.value), n = num(newIn.value);
+    const ok = [s, o, n].map(x => x > 0 && isFinite(x));
+    sensIn.setAttribute('aria-invalid', String(!ok[0] && sensIn.value !== ''));
+    oldIn.setAttribute('aria-invalid', String(!ok[1] && oldIn.value !== ''));
+    newIn.setAttribute('aria-invalid', String(!ok[2] && newIn.value !== ''));
+    LS.set('conv', { s: sensIn.value, o: oldIn.value, n: newIn.value });
+    if (!ok.every(Boolean)) {
+      value = ''; out.textContent = '—'; hint.textContent = 'Preencha a sensibilidade e as duas DPIs.';
+      copyBtn.disabled = true; ids.forEach(i => { $(i).textContent = '—'; });
+      return;
+    }
+    const ns = s * o / n;
+    const inches = 360 / (ns * YAW * n);
+    value = String(Math.round(ns * 1000) / 1000).replace('.', ',');
+    out.textContent = fmt(ns, 3);
+    hint.textContent = fmt(s, 3) + ' em ' + o + ' DPI  →  ' + fmt(ns, 3) + ' em ' + n + ' DPI';
+    copyBtn.disabled = false;
+    $('cvExact').textContent = fmt(ns, 6).replace(/,?0+$/, '');
+    $('cvEdpi').textContent = fmt(ns * n, 1);
+    $('cvCm').textContent = fmt(inches * 2.54, 2) + ' cm';
+    $('cvIn').textContent = fmt(inches, 2) + ' in';
+  }
+
+  [400, 800, 1200, 1600].forEach(d => {
+    const b = el('button', 'chip', String(d));
+    b.type = 'button';
+    b.onclick = () => { newIn.value = String(d); calc(); };
+    chips.appendChild(b);
+  });
+  [sensIn, oldIn, newIn].forEach(i => i.addEventListener('input', calc));
+  copyBtn.onclick = () => { if (value) copyValue(value, copyBtn); };
+  calc();
+})();
 
 // Histórico (salvo só neste navegador)
 function histAdd(name, players) {
