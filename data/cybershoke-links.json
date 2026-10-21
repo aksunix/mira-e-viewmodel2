@@ -1879,6 +1879,7 @@
   "shadow": "2026-10-12",
   "shahzam": "2026-10-12",
   "shaiiko": "2026-10-12",
+  "shaik": "2026-10-21",
   "shalaby": "2026-10-12",
   "shalfey": "2026-10-12",
   "shamokiy": "2026-10-12",
@@ -14896,6 +14897,15 @@
     "url": "https://www.hltv.org/stats/players/7810/shahzam"
    },
    "name": "ShahZaM"
+  },
+  "shaik": {
+   "faceit": {
+    "elo": 3583,
+    "name": "shaiK",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/shaiK"
+   },
+   "name": "shaiK"
   },
   "shalfey": {
    "faceit": {

@@ -16753,6 +16753,16 @@
    "resolution": "1920x1080",
    "url": "https://prosettings.net/players/shaiiko/"
   },
+  "shaik": {
+   "dpi": "800",
+   "edpi": "1200",
+   "hz": "1000",
+   "name": "shaiK",
+   "resolution": "1280x960",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/shaik/",
+   "zoom_sensitivity": "1"
+  },
   "shalaby": {
    "dpi": "800",
    "edpi": "280",
@@ -27965,6 +27975,16 @@
    "url": "https://prosettings.net/players/swisher/",
    "zoom_sensitivity": "1.1"
   },
+  "76561198183557682": {
+   "dpi": "800",
+   "edpi": "1200",
+   "hz": "1000",
+   "name": "shaiK",
+   "resolution": "1280x960",
+   "sensitivity": "1.5",
+   "url": "https://prosettings.net/players/shaik/",
+   "zoom_sensitivity": "1"
+  },
   "76561198184153575": {
    "dpi": "400",
    "edpi": "680.00",
@@ -33583,6 +33603,7 @@
   "https://prosettings.net/players/shadow/": "2026-10-16",
   "https://prosettings.net/players/shahzam/": "2026-10-16",
   "https://prosettings.net/players/shaiiko/": "2026-10-16",
+  "https://prosettings.net/players/shaik/": "2026-10-21",
   "https://prosettings.net/players/shalaby/": "2026-10-16",
   "https://prosettings.net/players/shalfey/": "2026-10-16",
   "https://prosettings.net/players/shamokiy/": "2026-10-16",
@@ -36045,6 +36066,7 @@
   "https://prosettings.net/players/shadow/": "2026-10-16",
   "https://prosettings.net/players/shahzam/": "2026-10-16",
   "https://prosettings.net/players/shaiiko/": "2026-10-16",
+  "https://prosettings.net/players/shaik/": "2026-10-21",
   "https://prosettings.net/players/shalaby/": "2026-10-16",
   "https://prosettings.net/players/shalfey/": "2026-10-16",
   "https://prosettings.net/players/shamokiy/": "2026-10-16",
