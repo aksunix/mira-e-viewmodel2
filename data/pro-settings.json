@@ -8191,6 +8191,15 @@
    "url": "https://prosettings.net/players/jame/",
    "zoom_sensitivity": "0.92"
   },
+  "jamelinho": {
+   "dpi": "800",
+   "edpi": "184",
+   "hz": "1000",
+   "name": "Jamelinho",
+   "resolution": "1280x960",
+   "sensitivity": "0.23",
+   "url": "https://prosettings.net/players/jamelinho/"
+  },
   "jamppi": {
    "dpi": "800",
    "edpi": "336.00",
@@ -9438,6 +9447,15 @@
    "name": "Kheyze",
    "resolution": "1920x1080",
    "url": "https://prosettings.net/players/kheyze/"
+  },
+  "ki1wsy": {
+   "dpi": "400",
+   "edpi": "280",
+   "hz": "2000",
+   "name": "ki1wsy",
+   "resolution": "1920x1080",
+   "sensitivity": "0.7",
+   "url": "https://prosettings.net/players/ki1wsy/"
   },
   "kicks": {
    "dpi": "800",
@@ -14855,6 +14873,15 @@
    "sensitivity": "0.4",
    "url": "https://prosettings.net/players/pxs/"
   },
+  "pyrix": {
+   "dpi": "800",
+   "edpi": "264",
+   "hz": "1000",
+   "name": "Pyrix",
+   "resolution": "1920x1080",
+   "sensitivity": "0.33",
+   "url": "https://prosettings.net/players/pyrix/"
+  },
   "pyth": {
    "dpi": "400",
    "edpi": "880",
@@ -18867,13 +18894,13 @@
    "zoom_sensitivity": "1"
   },
   "teddy": {
-   "dpi": "1600",
-   "edpi": "160",
+   "dpi": "800",
+   "edpi": "140.8",
    "hz": "2000",
    "name": "Teddy",
-   "resolution": "1920x1080",
-   "sensitivity": "0.1",
-   "url": "https://prosettings.net/players/teddy-2/"
+   "resolution": "1280x1024",
+   "sensitivity": "0.176",
+   "url": "https://prosettings.net/players/teddy/"
   },
   "teeqzy": {
    "dpi": "400",
@@ -32625,6 +32652,7 @@
   "https://prosettings.net/players/jakee/": "2026-10-13",
   "https://prosettings.net/players/jambo/": "2026-10-13",
   "https://prosettings.net/players/jame/": "2026-10-13",
+  "https://prosettings.net/players/jamelinho/": "2026-10-27",
   "https://prosettings.net/players/jamppi/": "2026-10-13",
   "https://prosettings.net/players/jamside/": "2026-10-13",
   "https://prosettings.net/players/jamyoung/": "2026-10-13",
@@ -32769,6 +32797,7 @@
   "https://prosettings.net/players/khan/": "2026-10-14",
   "https://prosettings.net/players/khanada/": "2026-10-14",
   "https://prosettings.net/players/kheyze/": "2026-10-14",
+  "https://prosettings.net/players/ki1wsy/": "2026-10-27",
   "https://prosettings.net/players/kicks/": "2026-10-14",
   "https://prosettings.net/players/kickstart/": "2026-10-14",
   "https://prosettings.net/players/kikoo/": "2026-10-14",
@@ -33388,6 +33417,7 @@
   "https://prosettings.net/players/pxlarized/": "2026-10-15",
   "https://prosettings.net/players/pxmp/": "2026-10-15",
   "https://prosettings.net/players/pxs/": "2026-10-15",
+  "https://prosettings.net/players/pyrix/": "2026-10-27",
   "https://prosettings.net/players/pyth/": "2026-10-15",
   "https://prosettings.net/players/python/": "2026-10-15",
   "https://prosettings.net/players/q-q/": "2026-10-15",
@@ -33838,6 +33868,7 @@
   "https://prosettings.net/players/tdawgg/": "2026-10-16",
   "https://prosettings.net/players/techno4k/": "2026-10-16",
   "https://prosettings.net/players/teddy-2/": "2026-10-16",
+  "https://prosettings.net/players/teddy/": "2026-10-27",
   "https://prosettings.net/players/teeqzy/": "2026-10-16",
   "https://prosettings.net/players/tele/": "2026-10-16",
   "https://prosettings.net/players/tempz/": "2026-10-16",
@@ -35088,6 +35119,7 @@
   "https://prosettings.net/players/jakee/": "2026-10-13",
   "https://prosettings.net/players/jambo/": "2026-10-13",
   "https://prosettings.net/players/jame/": "2026-10-13",
+  "https://prosettings.net/players/jamelinho/": "2026-10-27",
   "https://prosettings.net/players/jamppi/": "2026-10-13",
   "https://prosettings.net/players/jamside/": "2026-10-13",
   "https://prosettings.net/players/jamyoung/": "2026-10-13",
@@ -35232,6 +35264,7 @@
   "https://prosettings.net/players/khan/": "2026-10-14",
   "https://prosettings.net/players/khanada/": "2026-10-14",
   "https://prosettings.net/players/kheyze/": "2026-10-14",
+  "https://prosettings.net/players/ki1wsy/": "2026-10-27",
   "https://prosettings.net/players/kicks/": "2026-10-14",
   "https://prosettings.net/players/kickstart/": "2026-10-14",
   "https://prosettings.net/players/kikoo/": "2026-10-14",
@@ -35851,6 +35884,7 @@
   "https://prosettings.net/players/pxlarized/": "2026-10-15",
   "https://prosettings.net/players/pxmp/": "2026-10-15",
   "https://prosettings.net/players/pxs/": "2026-10-15",
+  "https://prosettings.net/players/pyrix/": "2026-10-27",
   "https://prosettings.net/players/pyth/": "2026-10-15",
   "https://prosettings.net/players/python/": "2026-10-15",
   "https://prosettings.net/players/q-q/": "2026-10-15",
@@ -36301,6 +36335,7 @@
   "https://prosettings.net/players/tdawgg/": "2026-10-16",
   "https://prosettings.net/players/techno4k/": "2026-10-16",
   "https://prosettings.net/players/teddy-2/": "2026-10-16",
+  "https://prosettings.net/players/teddy/": "2026-10-27",
   "https://prosettings.net/players/teeqzy/": "2026-10-16",
   "https://prosettings.net/players/tele/": "2026-10-16",
   "https://prosettings.net/players/tempz/": "2026-10-16",
