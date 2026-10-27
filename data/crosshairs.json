@@ -1,5 +1,12 @@
 {
  "players": {
+  "910": {
+   "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+   "name": "910",
+   "since": "2026-10-27",
+   "steamid": "76561199203563345",
+   "url": "https://procrosshairs.com/player/76561199203563345/910"
+  },
   "aleksib": {
    "code": "CSDcomrJBKpqwRGP3676xoNKTGhHdCOaZ6xY5v5wUQHzyD",
    "name": "Aleksib",
@@ -13,6 +20,13 @@
    "since": "2026-10-12",
    "steamid": "76561197989744167",
    "url": "https://procrosshairs.com/player/76561197989744167/apEX"
+  },
+  "art": {
+   "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+   "name": "arT",
+   "since": "2026-10-27",
+   "steamid": "76561198043769572",
+   "url": "https://procrosshairs.com/player/76561198043769572/arT"
   },
   "artfr0st": {
    "code": "CSeW6NpvrmN2hxUdZTLJveTtAhj8CkZt3UpmMhLe2brZFL",
@@ -49,31 +63,56 @@
    "steamid": "76561198028458803",
    "url": "https://procrosshairs.com/player/76561198028458803/blameF"
   },
+  "blitz": {
+   "code": "CSVtFZ4zoaV89mHGPhYfFy3YwwW52rtMevJnCDFydmVGwO",
+   "name": "bLitz",
+   "since": "2026-10-27",
+   "steamid": "76561198959824088",
+   "url": "https://procrosshairs.com/player/76561198959824088/bLitz"
+  },
   "boombl4": {
-   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "changed": "2026-10-27",
+   "code": "CSNPRU57bvYRiQjtazKWibCC2qjwXfxEUvM3r6d4eWmv9A",
    "name": "Boombl4",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198146207066",
    "url": "https://procrosshairs.com/player/76561198146207066/Boombl4"
   },
+  "cmtry": {
+   "code": "CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM",
+   "name": "cmtry",
+   "since": "2026-10-27",
+   "steamid": "76561199313968259",
+   "url": "https://procrosshairs.com/player/76561199313968259/cmtry"
+  },
   "d1ledez": {
-   "code": "CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A",
+   "changed": "2026-10-27",
+   "code": "CSqLHMiCDdfEZjxBx8AsB2dnU9SJrDqyZ35zt6ZsDeOSrB",
    "name": "d1Ledez",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198859428279",
    "url": "https://procrosshairs.com/player/76561198859428279/d1Ledez"
   },
+  "dem0n": {
+   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "name": "dem0n",
+   "since": "2026-10-27",
+   "steamid": "76561198875633179",
+   "url": "https://procrosshairs.com/player/76561198875633179/dem0n"
+  },
   "dgt": {
-   "code": "CS4NyroAB32xjVCCopJspkTATL64jEyaiFZhZe5sBOGRrB",
+   "changed": "2026-10-27",
+   "code": "CSLDW6qG76j2SSG28iSTYhhv7rvHVrHsqjuOckHF6FeN6O",
    "name": "dgt",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198216891576",
    "url": "https://procrosshairs.com/player/76561198216891576/dgt"
   },
   "donk": {
-   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+   "changed": "2026-10-27",
+   "code": "CSdpH9aUv4mNAWc2hfAOdTrJ8J6H6HUFuvWxYMZXshvmPG",
    "name": "donk",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198386265483",
    "url": "https://procrosshairs.com/player/76561198386265483/donk"
   },
@@ -84,10 +123,18 @@
    "steamid": "76561198194325317",
    "url": "https://procrosshairs.com/player/76561198194325317/dumau"
   },
+  "dziugss": {
+   "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
+   "name": "dziugss",
+   "since": "2026-10-27",
+   "steamid": "76561199100725838",
+   "url": "https://procrosshairs.com/player/76561199100725838/dziugss"
+  },
   "fallen": {
-   "code": "CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD",
+   "changed": "2026-10-27",
+   "code": "CSZnexV3r5hMCdKeHnQOWPbV42BeCTttd5dM4utKdmsO3Z",
    "name": "FalleN",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561197960690195",
    "url": "https://procrosshairs.com/player/76561197960690195/FalleN"
   },
@@ -134,16 +181,18 @@
    "url": "https://procrosshairs.com/player/76561198370176682/gr1ks"
   },
   "heavygod": {
-   "code": "CSQiZVvcLDPyU36SjEdiMjaZhR2Ouw3kaNsYrPKweoOoie",
+   "changed": "2026-10-27",
+   "code": "CSmvCoRjzt9i8m9x72zRBjhLtjOpHd4uMBRetab6kzJrKZ",
    "name": "HeavyGod",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198068002993",
    "url": "https://procrosshairs.com/player/76561198068002993/HeavyGod"
   },
   "hobbit": {
-   "code": "CSzyB88dDJSOhdHz2VchQU6rWOHqONGV7S3jWGvCB6zeGG",
+   "changed": "2026-10-27",
+   "code": "CSjS2K6jjYaPyibYzBkPc5f8cL4Wo7n63NWsz2356uF85P",
    "name": "HObbit",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198028292758",
    "url": "https://procrosshairs.com/player/76561198028292758/HObbit"
   },
@@ -162,16 +211,18 @@
    "url": "https://procrosshairs.com/player/76561198319723208/HUASOPEEK"
   },
   "hunter-": {
-   "code": "CScTUQTZAnvuUu3cO628uwKqf2rq9FrErrooTqpK3wiXwN",
+   "changed": "2026-10-27",
+   "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
    "name": "huNter-",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198012872053",
    "url": "https://procrosshairs.com/player/76561198012872053/huNter-"
   },
   "id:76561197960690195": {
-   "code": "CSaGZfHaBrr5bU6mQbnXniJFEmwP6KF9yUfeiOwFiBThYD",
+   "changed": "2026-10-27",
+   "code": "CSZnexV3r5hMCdKeHnQOWPbV42BeCTttd5dM4utKdmsO3Z",
    "name": "FalleN",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561197960690195",
    "url": "https://procrosshairs.com/player/76561197960690195/FalleN"
   },
@@ -183,9 +234,10 @@
    "url": "https://procrosshairs.com/player/76561197961491680/tabseN"
   },
   "id:76561197973140692": {
-   "code": "CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C",
+   "changed": "2026-10-27",
+   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
    "name": "mezii",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561197973140692",
    "url": "https://procrosshairs.com/player/76561197973140692/mezii"
   },
@@ -197,9 +249,10 @@
    "url": "https://procrosshairs.com/player/76561197978835160/flameZ"
   },
   "id:76561197989430253": {
-   "code": "CSs9nVBNbDZVYCE2JaMV4iqieMsBZx8cpkRcsj54Xf5fZe",
+   "changed": "2026-10-27",
+   "code": "CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO",
    "name": "karrigan",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561197989430253",
    "url": "https://procrosshairs.com/player/76561197989430253/karrigan"
   },
@@ -239,16 +292,18 @@
    "url": "https://procrosshairs.com/player/76561197998926770/HooXi"
   },
   "id:76561198005107817": {
-   "code": "CSz7HQSGDvhq5oqmYq7uExLjheFrWawMh64MqsTTJtjhPn",
+   "changed": "2026-10-27",
+   "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
    "name": "Staehr",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198005107817",
    "url": "https://procrosshairs.com/player/76561198005107817/Staehr"
   },
   "id:76561198012872053": {
-   "code": "CScTUQTZAnvuUu3cO628uwKqf2rq9FrErrooTqpK3wiXwN",
+   "changed": "2026-10-27",
+   "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
    "name": "huNter-",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198012872053",
    "url": "https://procrosshairs.com/player/76561198012872053/huNter-"
   },
@@ -281,9 +336,10 @@
    "url": "https://procrosshairs.com/player/76561198022365638/stavn"
   },
   "id:76561198028292758": {
-   "code": "CSzyB88dDJSOhdHz2VchQU6rWOHqONGV7S3jWGvCB6zeGG",
+   "changed": "2026-10-27",
+   "code": "CSjS2K6jjYaPyibYzBkPc5f8cL4Wo7n63NWsz2356uF85P",
    "name": "HObbit",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198028292758",
    "url": "https://procrosshairs.com/player/76561198028292758/HObbit"
   },
@@ -294,19 +350,35 @@
    "steamid": "76561198028458803",
    "url": "https://procrosshairs.com/player/76561198028458803/blameF"
   },
+  "id:76561198034202275": {
+   "code": "CSFixytqLkySObUWyBYDX6CrTZQTJ6ptHnHEvH5juMcXpJ",
+   "name": "s1mple",
+   "since": "2026-10-27",
+   "steamid": "76561198034202275",
+   "url": "https://procrosshairs.com/player/76561198034202275/s1mple"
+  },
   "id:76561198036125584": {
-   "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
+   "changed": "2026-10-27",
+   "code": "CS5fJGovv5awtKyQdcYOqHfy4CtSRqxMvodVjzEwwzKKFM",
    "name": "Jame",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198036125584",
    "url": "https://procrosshairs.com/player/76561198036125584/Jame"
   },
   "id:76561198041683378": {
-   "code": "CS7y6nxCz8ivDjMczcJLnjXWPNowD2Dpa6dfPFK5QhC3ze",
+   "changed": "2026-10-27",
+   "code": "CSjjQVLnqmjh7O3G3VADW9tw3o3DTNavZfDsNDd7byXdxJ",
    "name": "NiKo",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198041683378",
    "url": "https://procrosshairs.com/player/76561198041683378/NiKo"
+  },
+  "id:76561198043769572": {
+   "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
+   "name": "arT",
+   "since": "2026-10-27",
+   "steamid": "76561198043769572",
+   "url": "https://procrosshairs.com/player/76561198043769572/arT"
   },
   "id:76561198044118796": {
    "code": "CSbTEaGDR5GhNAifhXfx8dnavVdRCvsLSCeTDvSS8ndJQE",
@@ -323,37 +395,42 @@
    "url": "https://procrosshairs.com/player/76561198045433304/Ax1Le"
   },
   "id:76561198050250233": {
-   "code": "CSEQvcDJf3yq59EoObCmL9MYjR5xBUUmqFQdw4dpFMFifH",
+   "changed": "2026-10-27",
+   "code": "CSivFaGr7nSRmaKWM8CLYQN3wGKAOZkpWr9j2r6JecFQOM",
    "name": "iM",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198050250233",
    "url": "https://procrosshairs.com/player/76561198050250233/iM"
   },
   "id:76561198053126645": {
-   "code": "CSLE9yGAG45MOrvzAqprr9COQJ9ui5aHQAinkq5GiBThYD",
+   "changed": "2026-10-27",
+   "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
    "name": "NertZ",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198053126645",
    "url": "https://procrosshairs.com/player/76561198053126645/NertZ"
   },
   "id:76561198057282432": {
-   "code": "CSQaHG2Moau8ecdQzGUHEAPn6i9auNVGRCc6r77f9Hxcjb",
+   "changed": "2026-10-27",
+   "code": "CSERGEO2zcyhT6avwXOw3xLEaJzuPvBAbSfbKLyW6omcqE",
    "name": "kyxsan",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198057282432",
    "url": "https://procrosshairs.com/player/76561198057282432/kyxsan"
   },
   "id:76561198058500492": {
-   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+   "changed": "2026-10-27",
+   "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
    "name": "KSCERATO",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198058500492",
    "url": "https://procrosshairs.com/player/76561198058500492/KSCERATO"
   },
   "id:76561198059614402": {
-   "code": "CSp7wAbBtndyHiiDixK9HwVeqkMpmP62LHkVJOGKEDDO3Z",
+   "changed": "2026-10-27",
+   "code": "CSw8tqHyP8nNNd5BrkQncC9JGbsLaAokVbcY6pTwVZHHtZ",
    "name": "zorte",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198059614402",
    "url": "https://procrosshairs.com/player/76561198059614402/zorte"
   },
@@ -364,6 +441,13 @@
    "steamid": "76561198059714128",
    "url": "https://procrosshairs.com/player/76561198059714128/nafany"
   },
+  "id:76561198061423730": {
+   "code": "CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU",
+   "name": "insani",
+   "since": "2026-10-27",
+   "steamid": "76561198061423730",
+   "url": "https://procrosshairs.com/player/76561198061423730/insani"
+  },
   "id:76561198061763596": {
    "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
    "name": "n1ssim",
@@ -372,9 +456,10 @@
    "url": "https://procrosshairs.com/player/76561198061763596/n1ssim"
   },
   "id:76561198063336407": {
-   "code": "CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR",
+   "changed": "2026-10-27",
+   "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
    "name": "Spinx",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198063336407",
    "url": "https://procrosshairs.com/player/76561198063336407/Spinx"
   },
@@ -386,16 +471,18 @@
    "url": "https://procrosshairs.com/player/76561198064353169/slaxz-"
   },
   "id:76561198067722198": {
-   "code": "CSqjUHUbyddyDLRpYUSF3rfAX58KinuhFbJ59F2oSS6Y8F",
+   "changed": "2026-10-27",
+   "code": "CSYBGZsXE8EepJ6eNN2kHoZuU3vLo9dMfULKzhESkpATyF",
    "name": "luchov",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198067722198",
    "url": "https://procrosshairs.com/player/76561198067722198/luchov"
   },
   "id:76561198068002993": {
-   "code": "CSQiZVvcLDPyU36SjEdiMjaZhR2Ouw3kaNsYrPKweoOoie",
+   "changed": "2026-10-27",
+   "code": "CSmvCoRjzt9i8m9x72zRBjhLtjOpHd4uMBRetab6kzJrKZ",
    "name": "HeavyGod",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198068002993",
    "url": "https://procrosshairs.com/player/76561198068002993/HeavyGod"
   },
@@ -407,9 +494,10 @@
    "url": "https://procrosshairs.com/player/76561198068422762/frozen"
   },
   "id:76561198074762801": {
-   "code": "CSHZJowmcXaUVz57pSOTSCRPU5x887Wq65OuOGCVi9JDAA",
+   "changed": "2026-10-27",
+   "code": "CS9U6sKn87U9SVzObspu2WV7OXVxUa2ATQ4MLLyZ9WnO6O",
    "name": "m0NESY",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198074762801",
    "url": "https://procrosshairs.com/player/76561198074762801/m0NESY"
   },
@@ -421,9 +509,10 @@
    "url": "https://procrosshairs.com/player/76561198080114546/fame"
   },
   "id:76561198081484775": {
-   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+   "changed": "2026-10-27",
+   "code": "CSBxKrcaLUVjhUmOKLuKNiNL9ZnKVo475iaKFOGKEDDO3Z",
    "name": "sh1ro",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198081484775",
    "url": "https://procrosshairs.com/player/76561198081484775/sh1ro"
   },
@@ -434,10 +523,25 @@
    "steamid": "76561198083485506",
    "url": "https://procrosshairs.com/player/76561198083485506/woxic"
   },
+  "id:76561198104626893": {
+   "code": "CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW",
+   "name": "LNZ",
+   "since": "2026-10-27",
+   "steamid": "76561198104626893",
+   "url": "https://procrosshairs.com/player/76561198104626893/LNZ"
+  },
+  "id:76561198108796479": {
+   "code": "CSsep3Vb7FqOj9DxcGfHxZwv4hBnpnUnam2S2hzbO6dkzf",
+   "name": "Mercury",
+   "since": "2026-10-27",
+   "steamid": "76561198108796479",
+   "url": "https://procrosshairs.com/player/76561198108796479/Mercury"
+  },
   "id:76561198113666193": {
-   "code": "CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H",
+   "changed": "2026-10-27",
+   "code": "CS6bn6bJeOmmd35ur7m83TdDtmCPucSTUjz3hSNuwJMiyE",
    "name": "ZywOo",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198113666193",
    "url": "https://procrosshairs.com/player/76561198113666193/ZywOo"
   },
@@ -456,23 +560,26 @@
    "url": "https://procrosshairs.com/player/76561198120557348/jabbi"
   },
   "id:76561198134401925": {
-   "code": "CSY7QnQ7Mr6c34PAtkS2RDkZMFmon6EycDpQFMVBaSnGtZ",
+   "changed": "2026-10-27",
+   "code": "CSDF94OWLondOfWjK8zLWCqRFoRtvoxekDhHbH7bc5KXtY",
    "name": "YEKINDAR",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198134401925",
    "url": "https://procrosshairs.com/player/76561198134401925/YEKINDAR"
   },
   "id:76561198141272052": {
-   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+   "changed": "2026-10-27",
+   "code": "CSt4FsjaHUdQYk3HbYKTnHCjjtMArwq8VWobWbeiLZKGhF",
    "name": "xiELO",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198141272052",
    "url": "https://procrosshairs.com/player/76561198141272052/xiELO"
   },
   "id:76561198146207066": {
-   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "changed": "2026-10-27",
+   "code": "CSNPRU57bvYRiQjtazKWibCC2qjwXfxEUvM3r6d4eWmv9A",
    "name": "Boombl4",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198146207066",
    "url": "https://procrosshairs.com/player/76561198146207066/Boombl4"
   },
@@ -484,16 +591,18 @@
    "url": "https://procrosshairs.com/player/76561198156778414/ArtFr0st"
   },
   "id:76561198164970560": {
-   "code": "CSRnXMDxjVPr78TqYCvDEOLa2LEPynmcvwpGK5sMcwOAYF",
+   "changed": "2026-10-27",
+   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
    "name": "yuurih",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198164970560",
    "url": "https://procrosshairs.com/player/76561198164970560/yuurih"
   },
   "id:76561198167785069": {
-   "code": "CSnAsjPRBNqk5C2vFMDDjZW6FLXqJ6Q9YJfL8SYapAiUEP",
+   "changed": "2026-10-27",
+   "code": "CSGDYD5VaQqjnavBsuCEiVQwnn7xa4DHNueqVsyJ3ajFpK",
    "name": "S1ren",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198167785069",
    "url": "https://procrosshairs.com/player/76561198167785069/S1ren"
   },
@@ -503,6 +612,20 @@
    "since": "2026-10-12",
    "steamid": "76561198168401372",
    "url": "https://procrosshairs.com/player/76561198168401372/ryu"
+  },
+  "id:76561198176878303": {
+   "code": "CSYcovh8jvHZoVooS3G8aecdDPqUXsUaqbQh9zAHH7PxLV",
+   "name": "jL",
+   "since": "2026-10-27",
+   "steamid": "76561198176878303",
+   "url": "https://procrosshairs.com/player/76561198176878303/jL"
+  },
+  "id:76561198178209109": {
+   "code": "CSXsyUTOpwQOBGW2h97Me8XQwAY5pX5oXSmpOG3bmuVbnQ",
+   "name": "xfl0ud",
+   "since": "2026-10-27",
+   "steamid": "76561198178209109",
+   "url": "https://procrosshairs.com/player/76561198178209109/xfl0ud"
   },
   "id:76561198178737429": {
    "code": "CSZuppBVQOPAOSh5P6GzLpWoXjUPfpx2tOdpxcRpFY9CvS",
@@ -533,9 +656,10 @@
    "url": "https://procrosshairs.com/player/76561198190463461/s1n"
   },
   "id:76561198193174134": {
-   "code": "CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac",
+   "changed": "2026-10-27",
+   "code": "CSaBV9zYubjoK5cCkzou2FLcNr8UtzTtk8BO4GfvucxhrA",
    "name": "xertioN",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198193174134",
    "url": "https://procrosshairs.com/player/76561198193174134/xertioN"
   },
@@ -547,37 +671,49 @@
    "url": "https://procrosshairs.com/player/76561198194325317/dumau"
   },
   "id:76561198195642865": {
-   "code": "CSiP592ocHXTKn4VT9zUHEfUw4mK2x4hSGqhRz6KGHvirA",
+   "changed": "2026-10-27",
+   "code": "CSyvN2JQk9VanrinSU8RT7P7k7DVrkjUfSropzzhxtqpzA",
    "name": "meyern",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198195642865",
    "url": "https://procrosshairs.com/player/76561198195642865/meyern"
   },
   "id:76561198200982290": {
-   "code": "CSikVAyUW5jWMvoSsVELW4Ca5mhz2G4WBYPAv75NDjhRfJ",
+   "changed": "2026-10-27",
+   "code": "CSpxaYsCrCP5Hk4GPu7Kmv2z2QFpzrNGuwX2RTWNb628CU",
    "name": "molodoy",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198200982290",
    "url": "https://procrosshairs.com/player/76561198200982290/molodoy"
   },
   "id:76561198210626739": {
-   "code": "CSWAPOhFFyCwrRTTArGnvpKDVsnhMWCXcP6XWsktnRhjyE",
+   "changed": "2026-10-27",
+   "code": "CSSVPfStFhmBY56mDdmBokcQO5R36NLNRuK8uG6kTHZoaa",
    "name": "zweih",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198210626739",
    "url": "https://procrosshairs.com/player/76561198210626739/zweih"
   },
   "id:76561198216891576": {
-   "code": "CS4NyroAB32xjVCCopJspkTATL64jEyaiFZhZe5sBOGRrB",
+   "changed": "2026-10-27",
+   "code": "CSLDW6qG76j2SSG28iSTYhhv7rvHVrHsqjuOckHF6FeN6O",
    "name": "dgt",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198216891576",
    "url": "https://procrosshairs.com/player/76561198216891576/dgt"
   },
+  "id:76561198218265253": {
+   "code": "CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ",
+   "name": "venomzera",
+   "since": "2026-10-27",
+   "steamid": "76561198218265253",
+   "url": "https://procrosshairs.com/player/76561198218265253/venomzera"
+  },
   "id:76561198242950384": {
-   "code": "CSRTG9C6Vwry5eZj9zGj4xZ3GTuvMPPJvUfrjGjsvSSwLV",
+   "changed": "2026-10-27",
+   "code": "CSUYncMATQadNhmtDopEE2WPGZc3Bs3Lm8bCmMKweoOoie",
    "name": "max",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198242950384",
    "url": "https://procrosshairs.com/player/76561198242950384/max"
   },
@@ -603,9 +739,10 @@
    "url": "https://procrosshairs.com/player/76561198294381090/r1nkle"
   },
   "id:76561198310561479": {
-   "code": "CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h",
+   "changed": "2026-10-27",
+   "code": "CS66kA6YM7kRTQHGiikDK4rkAPeD5nREphvP2PqZkrEXqk",
    "name": "PR",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198310561479",
    "url": "https://procrosshairs.com/player/76561198310561479/PR"
   },
@@ -623,6 +760,20 @@
    "steamid": "76561198337484196",
    "url": "https://procrosshairs.com/player/76561198337484196/Lake"
   },
+  "id:76561198350342505": {
+   "code": "CSfNF4iCMhPZ2Sf7tyOUn6iFJMS7JZeSWoeTaybwwzKKFM",
+   "name": "nqz",
+   "since": "2026-10-27",
+   "steamid": "76561198350342505",
+   "url": "https://procrosshairs.com/player/76561198350342505/nqz"
+  },
+  "id:76561198355197522": {
+   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "name": "Moseyuh",
+   "since": "2026-10-27",
+   "steamid": "76561198355197522",
+   "url": "https://procrosshairs.com/player/76561198355197522/Moseyuh"
+  },
   "id:76561198355739212": {
    "code": "CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A",
    "name": "torzsi",
@@ -637,10 +788,18 @@
    "steamid": "76561198362964332",
    "url": "https://procrosshairs.com/player/76561198362964332/xKacpersky"
   },
+  "id:76561198364937038": {
+   "code": "CSnNDnx9BTAACBFc7wM6OxikZZFUtL5UzTYC4DE2uKT4PF",
+   "name": "JamYoung",
+   "since": "2026-10-27",
+   "steamid": "76561198364937038",
+   "url": "https://procrosshairs.com/player/76561198364937038/JamYoung"
+  },
   "id:76561198365118288": {
-   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "changed": "2026-10-27",
+   "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
    "name": "try",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198365118288",
    "url": "https://procrosshairs.com/player/76561198365118288/try"
   },
@@ -652,25 +811,35 @@
    "url": "https://procrosshairs.com/player/76561198370176682/gr1ks"
   },
   "id:76561198372023214": {
-   "code": "CSB2BVvb5G5TKEVnAjhfqQrQLp3siht9O8bbty2Hodzbjb",
+   "changed": "2026-10-27",
+   "code": "CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X",
    "name": "Magnojez",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198372023214",
    "url": "https://procrosshairs.com/player/76561198372023214/Magnojez"
   },
   "id:76561198386265483": {
-   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+   "changed": "2026-10-27",
+   "code": "CSdpH9aUv4mNAWc2hfAOdTrJ8J6H6HUFuvWxYMZXshvmPG",
    "name": "donk",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198386265483",
    "url": "https://procrosshairs.com/player/76561198386265483/donk"
   },
   "id:76561198408199043": {
-   "code": "CSdCurYhanpOaQ7sr48f9SCxjfKmd8YFcJWqr5tSWrwZCW",
+   "changed": "2026-10-27",
+   "code": "CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd",
    "name": "phzy",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198408199043",
    "url": "https://procrosshairs.com/player/76561198408199043/phzy"
+  },
+  "id:76561198422434044": {
+   "code": "CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J",
+   "name": "tomaszin",
+   "since": "2026-10-27",
+   "steamid": "76561198422434044",
+   "url": "https://procrosshairs.com/player/76561198422434044/tomaszin"
   },
   "id:76561198812513923": {
    "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
@@ -687,25 +856,63 @@
    "url": "https://procrosshairs.com/player/76561198850020186/latto"
   },
   "id:76561198855375325": {
-   "code": "CSS3icJJQwV55YBzYH92DceaxScLJYKMhkQWdzLxWncaNP",
+   "changed": "2026-10-27",
+   "code": "CS8pi5Z9WbSeWXDR5OjcruQ462pMOBQXY7syxcXtyfBZ5R",
    "name": "Jimpphat",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198855375325",
    "url": "https://procrosshairs.com/player/76561198855375325/Jimpphat"
   },
   "id:76561198859428279": {
-   "code": "CSpxF4M4EZDKyukZACPqDCVVseSSH6vKEODqo6d4eWmv9A",
+   "changed": "2026-10-27",
+   "code": "CSqLHMiCDdfEZjxBx8AsB2dnU9SJrDqyZ35zt6ZsDeOSrB",
    "name": "d1Ledez",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198859428279",
    "url": "https://procrosshairs.com/player/76561198859428279/d1Ledez"
   },
   "id:76561198872013168": {
-   "code": "CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G",
+   "changed": "2026-10-27",
+   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
    "name": "tN1R",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198872013168",
    "url": "https://procrosshairs.com/player/76561198872013168/tN1R"
+  },
+  "id:76561198875633179": {
+   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "name": "dem0n",
+   "since": "2026-10-27",
+   "steamid": "76561198875633179",
+   "url": "https://procrosshairs.com/player/76561198875633179/dem0n"
+  },
+  "id:76561198956909643": {
+   "code": "CSYMYA8ETisjFaTOc3raPnoK67OJPX3xMwUdaRQBpRhjyE",
+   "name": "Zero",
+   "since": "2026-10-27",
+   "steamid": "76561198956909643",
+   "url": "https://procrosshairs.com/player/76561198956909643/Zero"
+  },
+  "id:76561198959824088": {
+   "code": "CSVtFZ4zoaV89mHGPhYfFy3YwwW52rtMevJnCDFydmVGwO",
+   "name": "bLitz",
+   "since": "2026-10-27",
+   "steamid": "76561198959824088",
+   "url": "https://procrosshairs.com/player/76561198959824088/bLitz"
+  },
+  "id:76561198966340160": {
+   "code": "CSvNj9foxSCThSHrP4edBnf7DPwZecfcdBuRs5mbO6dkzf",
+   "name": "Techno",
+   "since": "2026-10-27",
+   "steamid": "76561198966340160",
+   "url": "https://procrosshairs.com/player/76561198966340160/Techno"
+  },
+  "id:76561198991278425": {
+   "code": "CS788ewGhNmaSXVTSRAO5c89mPH3CBn4mz758xJq223WmU",
+   "name": "Krabeni",
+   "since": "2026-10-27",
+   "steamid": "76561198991278425",
+   "url": "https://procrosshairs.com/player/76561198991278425/Krabeni"
   },
   "id:76561198995880877": {
    "code": "CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH",
@@ -715,53 +922,88 @@
    "url": "https://procrosshairs.com/player/76561198995880877/zont1x"
   },
   "id:76561198998266210": {
-   "code": "CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD",
+   "changed": "2026-10-27",
+   "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
    "name": "xelex",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198998266210",
    "url": "https://procrosshairs.com/player/76561198998266210/xelex"
   },
   "id:76561199032006224": {
-   "code": "CSHZJowmcXaUVz57pSOTSCRPU5x887Wq65OuOGCVi9JDAA",
+   "changed": "2026-10-27",
+   "code": "CSjjQVLnqmjh7O3G3VADW9tw3o3DTNavZfDsNDd7byXdxJ",
    "name": "kyousuke",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199032006224",
    "url": "https://procrosshairs.com/player/76561199032006224/kyousuke"
   },
   "id:76561199046478501": {
-   "code": "CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c",
+   "changed": "2026-10-27",
+   "code": "CSPniCTsWW4D7xfkpavNy8jZW8tZM56Sq6jMp8nXBJKY2c",
    "name": "MATYS",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199046478501",
    "url": "https://procrosshairs.com/player/76561199046478501/MATYS"
   },
   "id:76561199063068840": {
-   "code": "CSsvf4rTi5ZDmQWKPR6nrTJrwmBvLZV8pGJdwnbMAJaVdQ",
+   "changed": "2026-10-27",
+   "code": "CSi7izaV3Etc3HAKvMYTvOLcjWvLj8cwO4ZjrsVURjyOLX",
    "name": "w0nderful",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199063068840",
    "url": "https://procrosshairs.com/player/76561199063068840/w0nderful"
   },
   "id:76561199063238565": {
-   "code": "CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW",
+   "changed": "2026-10-27",
+   "code": "CSztEhEt9QadbRnTfWZswHPP2fXDit2bUu4RfNTJbPWndP",
    "name": "magixx",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199063238565",
    "url": "https://procrosshairs.com/player/76561199063238565/magixx"
   },
   "id:76561199076189612": {
-   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+   "changed": "2026-10-27",
+   "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
    "name": "makazze",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199076189612",
    "url": "https://procrosshairs.com/player/76561199076189612/makazze"
   },
+  "id:76561199100725838": {
+   "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
+   "name": "dziugss",
+   "since": "2026-10-27",
+   "steamid": "76561199100725838",
+   "url": "https://procrosshairs.com/player/76561199100725838/dziugss"
+  },
+  "id:76561199203563345": {
+   "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
+   "name": "910",
+   "since": "2026-10-27",
+   "steamid": "76561199203563345",
+   "url": "https://procrosshairs.com/player/76561199203563345/910"
+  },
+  "id:76561199313968259": {
+   "code": "CS2zytXLV6B5CkjpMVZLEteSAKiyQhS3QfGyX82ewfUVWM",
+   "name": "cmtry",
+   "since": "2026-10-27",
+   "steamid": "76561199313968259",
+   "url": "https://procrosshairs.com/player/76561199313968259/cmtry"
+  },
   "im": {
-   "code": "CSEQvcDJf3yq59EoObCmL9MYjR5xBUUmqFQdw4dpFMFifH",
+   "changed": "2026-10-27",
+   "code": "CSivFaGr7nSRmaKWM8CLYQN3wGKAOZkpWr9j2r6JecFQOM",
    "name": "iM",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198050250233",
    "url": "https://procrosshairs.com/player/76561198050250233/iM"
+  },
+  "insani": {
+   "code": "CSfSbfP9AOERLfDeK8xcqJk5E7KfdQxYJJzLp8UYypRQcU",
+   "name": "insani",
+   "since": "2026-10-27",
+   "steamid": "76561198061423730",
+   "url": "https://procrosshairs.com/player/76561198061423730/insani"
   },
   "jabbi": {
    "code": "CSOrscXLqUUwGpNt8p2NpxC2CoNqWXcRQwB8vhESkpATyF",
@@ -771,11 +1013,19 @@
    "url": "https://procrosshairs.com/player/76561198120557348/jabbi"
   },
   "jame": {
-   "code": "CShRKw4iuRavYQumGNHdDN7dsnFhRoENMYG6L4bkXrwZCW",
+   "changed": "2026-10-27",
+   "code": "CS5fJGovv5awtKyQdcYOqHfy4CtSRqxMvodVjzEwwzKKFM",
    "name": "Jame",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198036125584",
    "url": "https://procrosshairs.com/player/76561198036125584/Jame"
+  },
+  "jamyoung": {
+   "code": "CSnNDnx9BTAACBFc7wM6OxikZZFUtL5UzTYC4DE2uKT4PF",
+   "name": "JamYoung",
+   "since": "2026-10-27",
+   "steamid": "76561198364937038",
+   "url": "https://procrosshairs.com/player/76561198364937038/JamYoung"
   },
   "jba": {
    "code": "CS4QeBFrQ97iYjH3EOSPxvdkt5WqZ78rUMvzShhNQqXJ8G",
@@ -799,37 +1049,56 @@
    "url": "https://procrosshairs.com/player/76561198178737429/jcobbb"
   },
   "jimpphat": {
-   "code": "CSS3icJJQwV55YBzYH92DceaxScLJYKMhkQWdzLxWncaNP",
+   "changed": "2026-10-27",
+   "code": "CS8pi5Z9WbSeWXDR5OjcruQ462pMOBQXY7syxcXtyfBZ5R",
    "name": "Jimpphat",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198855375325",
    "url": "https://procrosshairs.com/player/76561198855375325/Jimpphat"
   },
+  "jl": {
+   "code": "CSYcovh8jvHZoVooS3G8aecdDPqUXsUaqbQh9zAHH7PxLV",
+   "name": "jL",
+   "since": "2026-10-27",
+   "steamid": "76561198176878303",
+   "url": "https://procrosshairs.com/player/76561198176878303/jL"
+  },
   "karrigan": {
-   "code": "CSs9nVBNbDZVYCE2JaMV4iqieMsBZx8cpkRcsj54Xf5fZe",
+   "changed": "2026-10-27",
+   "code": "CSrhPPJ5yNyGSCtOZb96JO8JOk7WfFcLAs99cc63rmFmEO",
    "name": "karrigan",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561197989430253",
    "url": "https://procrosshairs.com/player/76561197989430253/karrigan"
   },
+  "krabeni": {
+   "code": "CS788ewGhNmaSXVTSRAO5c89mPH3CBn4mz758xJq223WmU",
+   "name": "Krabeni",
+   "since": "2026-10-27",
+   "steamid": "76561198991278425",
+   "url": "https://procrosshairs.com/player/76561198991278425/Krabeni"
+  },
   "kscerato": {
-   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+   "changed": "2026-10-27",
+   "code": "CSmruJvT2oNMbuQTnT7AxpUbmoAippt23rntOEkDXkT7wL",
    "name": "KSCERATO",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198058500492",
    "url": "https://procrosshairs.com/player/76561198058500492/KSCERATO"
   },
   "kyousuke": {
-   "code": "CSHZJowmcXaUVz57pSOTSCRPU5x887Wq65OuOGCVi9JDAA",
+   "changed": "2026-10-27",
+   "code": "CSjjQVLnqmjh7O3G3VADW9tw3o3DTNavZfDsNDd7byXdxJ",
    "name": "kyousuke",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199032006224",
    "url": "https://procrosshairs.com/player/76561199032006224/kyousuke"
   },
   "kyxsan": {
-   "code": "CSQaHG2Moau8ecdQzGUHEAPn6i9auNVGRCc6r77f9Hxcjb",
+   "changed": "2026-10-27",
+   "code": "CSERGEO2zcyhT6avwXOw3xLEaJzuPvBAbSfbKLyW6omcqE",
    "name": "kyxsan",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198057282432",
    "url": "https://procrosshairs.com/player/76561198057282432/kyxsan"
   },
@@ -847,75 +1116,106 @@
    "steamid": "76561198850020186",
    "url": "https://procrosshairs.com/player/76561198850020186/latto"
   },
+  "lnz": {
+   "code": "CSYAfzsJ6QDCCPb5YePk5czdZJ4FoMDiQtxLJPVqejitbW",
+   "name": "LNZ",
+   "since": "2026-10-27",
+   "steamid": "76561198104626893",
+   "url": "https://procrosshairs.com/player/76561198104626893/LNZ"
+  },
   "luchov": {
-   "code": "CSqjUHUbyddyDLRpYUSF3rfAX58KinuhFbJ59F2oSS6Y8F",
+   "changed": "2026-10-27",
+   "code": "CSYBGZsXE8EepJ6eNN2kHoZuU3vLo9dMfULKzhESkpATyF",
    "name": "luchov",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198067722198",
    "url": "https://procrosshairs.com/player/76561198067722198/luchov"
   },
   "m0nesy": {
-   "code": "CSHZJowmcXaUVz57pSOTSCRPU5x887Wq65OuOGCVi9JDAA",
+   "changed": "2026-10-27",
+   "code": "CS9U6sKn87U9SVzObspu2WV7OXVxUa2ATQ4MLLyZ9WnO6O",
    "name": "m0NESY",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198074762801",
    "url": "https://procrosshairs.com/player/76561198074762801/m0NESY"
   },
   "magixx": {
-   "code": "CSiueEZGhe7cBS3eoAhmRfnPuyZPEPmWeNJhLYQ5BEzYCW",
+   "changed": "2026-10-27",
+   "code": "CSztEhEt9QadbRnTfWZswHPP2fXDit2bUu4RfNTJbPWndP",
    "name": "magixx",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199063238565",
    "url": "https://procrosshairs.com/player/76561199063238565/magixx"
   },
   "magnojez": {
-   "code": "CSB2BVvb5G5TKEVnAjhfqQrQLp3siht9O8bbty2Hodzbjb",
+   "changed": "2026-10-27",
+   "code": "CST2tOWtDMdP3OsX5EnztdeKOSh8jYCvEboxzeZoONzu3X",
    "name": "Magnojez",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198372023214",
    "url": "https://procrosshairs.com/player/76561198372023214/Magnojez"
   },
   "makazze": {
-   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+   "changed": "2026-10-27",
+   "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
    "name": "makazze",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199076189612",
    "url": "https://procrosshairs.com/player/76561199076189612/makazze"
   },
   "matys": {
-   "code": "CSSGDzFTCkM7oLBfiTdcZBxyooZ7xYdSuwbNPqvYBJKY2c",
+   "changed": "2026-10-27",
+   "code": "CSPniCTsWW4D7xfkpavNy8jZW8tZM56Sq6jMp8nXBJKY2c",
    "name": "MATYS",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199046478501",
    "url": "https://procrosshairs.com/player/76561199046478501/MATYS"
   },
   "max": {
-   "code": "CSRTG9C6Vwry5eZj9zGj4xZ3GTuvMPPJvUfrjGjsvSSwLV",
+   "changed": "2026-10-27",
+   "code": "CSUYncMATQadNhmtDopEE2WPGZc3Bs3Lm8bCmMKweoOoie",
    "name": "max",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198242950384",
    "url": "https://procrosshairs.com/player/76561198242950384/max"
   },
+  "mercury": {
+   "code": "CSsep3Vb7FqOj9DxcGfHxZwv4hBnpnUnam2S2hzbO6dkzf",
+   "name": "Mercury",
+   "since": "2026-10-27",
+   "steamid": "76561198108796479",
+   "url": "https://procrosshairs.com/player/76561198108796479/Mercury"
+  },
   "meyern": {
-   "code": "CSiP592ocHXTKn4VT9zUHEfUw4mK2x4hSGqhRz6KGHvirA",
+   "changed": "2026-10-27",
+   "code": "CSyvN2JQk9VanrinSU8RT7P7k7DVrkjUfSropzzhxtqpzA",
    "name": "meyern",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198195642865",
    "url": "https://procrosshairs.com/player/76561198195642865/meyern"
   },
   "mezii": {
-   "code": "CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C",
+   "changed": "2026-10-27",
+   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
    "name": "mezii",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561197973140692",
    "url": "https://procrosshairs.com/player/76561197973140692/mezii"
   },
   "molodoy": {
-   "code": "CSikVAyUW5jWMvoSsVELW4Ca5mhz2G4WBYPAv75NDjhRfJ",
+   "changed": "2026-10-27",
+   "code": "CSpxaYsCrCP5Hk4GPu7Kmv2z2QFpzrNGuwX2RTWNb628CU",
    "name": "molodoy",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198200982290",
    "url": "https://procrosshairs.com/player/76561198200982290/molodoy"
+  },
+  "moseyuh": {
+   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "name": "Moseyuh",
+   "since": "2026-10-27",
+   "steamid": "76561198355197522",
+   "url": "https://procrosshairs.com/player/76561198355197522/Moseyuh"
   },
   "n1ssim": {
    "code": "CSUxjvBKxbaTKG5sfdufqzDvzeAiaTuveQmT6XFOvWmvAc",
@@ -932,30 +1232,41 @@
    "url": "https://procrosshairs.com/player/76561198059714128/nafany"
   },
   "nertz": {
-   "code": "CSLE9yGAG45MOrvzAqprr9COQJ9ui5aHQAinkq5GiBThYD",
+   "changed": "2026-10-27",
+   "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
    "name": "NertZ",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198053126645",
    "url": "https://procrosshairs.com/player/76561198053126645/NertZ"
   },
   "niko": {
-   "code": "CS7y6nxCz8ivDjMczcJLnjXWPNowD2Dpa6dfPFK5QhC3ze",
+   "changed": "2026-10-27",
+   "code": "CSjjQVLnqmjh7O3G3VADW9tw3o3DTNavZfDsNDd7byXdxJ",
    "name": "NiKo",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198041683378",
    "url": "https://procrosshairs.com/player/76561198041683378/NiKo"
   },
+  "nqz": {
+   "code": "CSfNF4iCMhPZ2Sf7tyOUn6iFJMS7JZeSWoeTaybwwzKKFM",
+   "name": "nqz",
+   "since": "2026-10-27",
+   "steamid": "76561198350342505",
+   "url": "https://procrosshairs.com/player/76561198350342505/nqz"
+  },
   "phzy": {
-   "code": "CSdCurYhanpOaQ7sr48f9SCxjfKmd8YFcJWqr5tSWrwZCW",
+   "changed": "2026-10-27",
+   "code": "CSxFJ4ihRRo4mxRyF8ZokRvB3pYwAdRTPTXvUWVQMRxyZd",
    "name": "phzy",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198408199043",
    "url": "https://procrosshairs.com/player/76561198408199043/phzy"
   },
   "pr": {
-   "code": "CSQLSQnN7JUPt7DVEaUdCXEiFdkpzdoNmU982zydJxfY9h",
+   "changed": "2026-10-27",
+   "code": "CS66kA6YM7kRTQHGiikDK4rkAPeD5nREphvP2PqZkrEXqk",
    "name": "PR",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198310561479",
    "url": "https://procrosshairs.com/player/76561198310561479/PR"
   },
@@ -980,6 +1291,13 @@
    "steamid": "76561198168401372",
    "url": "https://procrosshairs.com/player/76561198168401372/ryu"
   },
+  "s1mple": {
+   "code": "CSFixytqLkySObUWyBYDX6CrTZQTJ6ptHnHEvH5juMcXpJ",
+   "name": "s1mple",
+   "since": "2026-10-27",
+   "steamid": "76561198034202275",
+   "url": "https://procrosshairs.com/player/76561198034202275/s1mple"
+  },
   "s1n": {
    "code": "CSxJxY5w5K4FkuxFizBR3ftDtNaMQqoTxiJnqjaAaJhO9C",
    "name": "s1n",
@@ -988,16 +1306,18 @@
    "url": "https://procrosshairs.com/player/76561198190463461/s1n"
   },
   "s1ren": {
-   "code": "CSnAsjPRBNqk5C2vFMDDjZW6FLXqJ6Q9YJfL8SYapAiUEP",
+   "changed": "2026-10-27",
+   "code": "CSGDYD5VaQqjnavBsuCEiVQwnn7xa4DHNueqVsyJ3ajFpK",
    "name": "S1ren",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198167785069",
    "url": "https://procrosshairs.com/player/76561198167785069/S1ren"
   },
   "sh1ro": {
-   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
+   "changed": "2026-10-27",
+   "code": "CSBxKrcaLUVjhUmOKLuKNiNL9ZnKVo475iaKFOGKEDDO3Z",
    "name": "sh1ro",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198081484775",
    "url": "https://procrosshairs.com/player/76561198081484775/sh1ro"
   },
@@ -1009,16 +1329,18 @@
    "url": "https://procrosshairs.com/player/76561198064353169/slaxz-"
   },
   "spinx": {
-   "code": "CSjGwcuQ5w33D6ajCD3wsVc8sFR9dRbK2BPF5WzAZRLNnR",
+   "changed": "2026-10-27",
+   "code": "CSb7uHXB989YebCcoiuafDiUKZntFPoXCVySN5sMcwOAYF",
    "name": "Spinx",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198063336407",
    "url": "https://procrosshairs.com/player/76561198063336407/Spinx"
   },
   "staehr": {
-   "code": "CSz7HQSGDvhq5oqmYq7uExLjheFrWawMh64MqsTTJtjhPn",
+   "changed": "2026-10-27",
+   "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
    "name": "Staehr",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198005107817",
    "url": "https://procrosshairs.com/player/76561198005107817/Staehr"
   },
@@ -1043,6 +1365,13 @@
    "steamid": "76561197961491680",
    "url": "https://procrosshairs.com/player/76561197961491680/tabseN"
   },
+  "techno": {
+   "code": "CSvNj9foxSCThSHrP4edBnf7DPwZecfcdBuRs5mbO6dkzf",
+   "name": "Techno",
+   "since": "2026-10-27",
+   "steamid": "76561198966340160",
+   "url": "https://procrosshairs.com/player/76561198966340160/Techno"
+  },
   "teses": {
    "code": "CSCGKsJy8pO3kWLUYrerppFQNFxmtk5bxq93ZZ25x79hkX",
    "name": "TeSeS",
@@ -1051,11 +1380,19 @@
    "url": "https://procrosshairs.com/player/76561197996678278/TeSeS"
   },
   "tn1r": {
-   "code": "CSsCoPC6G5Rf28vk8rbfXCsDOmR4RUMhWawq7rWNQqXJ8G",
+   "changed": "2026-10-27",
+   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
    "name": "tN1R",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198872013168",
    "url": "https://procrosshairs.com/player/76561198872013168/tN1R"
+  },
+  "tomaszin": {
+   "code": "CSduseuhCpiPXwhTSqevNABCdRwvkobq5pwYoqZTLbTk7J",
+   "name": "tomaszin",
+   "since": "2026-10-27",
+   "steamid": "76561198422434044",
+   "url": "https://procrosshairs.com/player/76561198422434044/tomaszin"
   },
   "torzsi": {
    "code": "CSM9yeif5somwBWXz5xPknj5SjSSH6vKEODqo6d4eWmv9A",
@@ -1065,9 +1402,10 @@
    "url": "https://procrosshairs.com/player/76561198355739212/torzsi"
   },
   "try": {
-   "code": "CS8JZeN59V7PbLpLXVUs2GV4ZkXTNRfxdGF6dXsfxtqpzA",
+   "changed": "2026-10-27",
+   "code": "CSqvLJtn4UrvzStpGJP9PjwVCYhsA44tkbwDWbeiLZKGhF",
    "name": "try",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198365118288",
    "url": "https://procrosshairs.com/player/76561198365118288/try"
   },
@@ -1078,10 +1416,18 @@
    "steamid": "76561198016255205",
    "url": "https://procrosshairs.com/player/76561198016255205/Twistzz"
   },
+  "venomzera": {
+   "code": "CSwOYu7q4ZySYDKFPubj6CSBUfwVdWh4QoDiA83OLiZ7FJ",
+   "name": "venomzera",
+   "since": "2026-10-27",
+   "steamid": "76561198218265253",
+   "url": "https://procrosshairs.com/player/76561198218265253/venomzera"
+  },
   "w0nderful": {
-   "code": "CSsvf4rTi5ZDmQWKPR6nrTJrwmBvLZV8pGJdwnbMAJaVdQ",
+   "changed": "2026-10-27",
+   "code": "CSi7izaV3Etc3HAKvMYTvOLcjWvLj8cwO4ZjrsVURjyOLX",
    "name": "w0nderful",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561199063068840",
    "url": "https://procrosshairs.com/player/76561199063068840/w0nderful"
   },
@@ -1107,23 +1453,33 @@
    "url": "https://procrosshairs.com/player/76561198044118796/XANTARES"
   },
   "xelex": {
-   "code": "CSO9NvUTWBk4W3FaPBUtvkKveOy9o9r2mTjpwOqcQoOohD",
+   "changed": "2026-10-27",
+   "code": "CSEdromTGM7ij4BWeDiWRhvP5pGSYTZoO3TFLyE2uKT4PF",
    "name": "xelex",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198998266210",
    "url": "https://procrosshairs.com/player/76561198998266210/xelex"
   },
   "xertion": {
-   "code": "CSkb7VCZbRdkiRV5soFESLNwR9SGsBaOZYGNiCaT4PXFac",
+   "changed": "2026-10-27",
+   "code": "CSaBV9zYubjoK5cCkzou2FLcNr8UtzTtk8BO4GfvucxhrA",
    "name": "xertioN",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198193174134",
    "url": "https://procrosshairs.com/player/76561198193174134/xertioN"
   },
+  "xfl0ud": {
+   "code": "CSXsyUTOpwQOBGW2h97Me8XQwAY5pX5oXSmpOG3bmuVbnQ",
+   "name": "xfl0ud",
+   "since": "2026-10-27",
+   "steamid": "76561198178209109",
+   "url": "https://procrosshairs.com/player/76561198178209109/xfl0ud"
+  },
   "xielo": {
-   "code": "CSvfsMCShd5uL4nTGYcUtuSqy4PJRHmCU6UoT9q5FK6DHE",
+   "changed": "2026-10-27",
+   "code": "CSt4FsjaHUdQYk3HbYKTnHCjjtMArwq8VWobWbeiLZKGhF",
    "name": "xiELO",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198141272052",
    "url": "https://procrosshairs.com/player/76561198141272052/xiELO"
   },
@@ -1135,18 +1491,27 @@
    "url": "https://procrosshairs.com/player/76561198362964332/xKacpersky"
   },
   "yekindar": {
-   "code": "CSY7QnQ7Mr6c34PAtkS2RDkZMFmon6EycDpQFMVBaSnGtZ",
+   "changed": "2026-10-27",
+   "code": "CSDF94OWLondOfWjK8zLWCqRFoRtvoxekDhHbH7bc5KXtY",
    "name": "YEKINDAR",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198134401925",
    "url": "https://procrosshairs.com/player/76561198134401925/YEKINDAR"
   },
   "yuurih": {
-   "code": "CSRnXMDxjVPr78TqYCvDEOLa2LEPynmcvwpGK5sMcwOAYF",
+   "changed": "2026-10-27",
+   "code": "CSHMaMsuZ4tkuSMkpx6ajXU9XyuWcjcxMG5nKQKj8STPGH",
    "name": "yuurih",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198164970560",
    "url": "https://procrosshairs.com/player/76561198164970560/yuurih"
+  },
+  "zero": {
+   "code": "CSYMYA8ETisjFaTOc3raPnoK67OJPX3xMwUdaRQBpRhjyE",
+   "name": "Zero",
+   "since": "2026-10-27",
+   "steamid": "76561198956909643",
+   "url": "https://procrosshairs.com/player/76561198956909643/Zero"
   },
   "zont1x": {
    "code": "CSjUSNNAY5RBt2uVjLwEDEBz9ZBtWnA8Of6HWRuZpSjtxH",
@@ -1156,26 +1521,29 @@
    "url": "https://procrosshairs.com/player/76561198995880877/zont1x"
   },
   "zorte": {
-   "code": "CSp7wAbBtndyHiiDixK9HwVeqkMpmP62LHkVJOGKEDDO3Z",
+   "changed": "2026-10-27",
+   "code": "CSw8tqHyP8nNNd5BrkQncC9JGbsLaAokVbcY6pTwVZHHtZ",
    "name": "zorte",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198059614402",
    "url": "https://procrosshairs.com/player/76561198059614402/zorte"
   },
   "zweih": {
-   "code": "CSWAPOhFFyCwrRTTArGnvpKDVsnhMWCXcP6XWsktnRhjyE",
+   "changed": "2026-10-27",
+   "code": "CSSVPfStFhmBY56mDdmBokcQO5R36NLNRuK8uG6kTHZoaa",
    "name": "zweih",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198210626739",
    "url": "https://procrosshairs.com/player/76561198210626739/zweih"
   },
   "zywoo": {
-   "code": "CSH2Rx7cGRU5apQ4VSnZwjsr9RyLEiOrCAaVYWYvW6dz7H",
+   "changed": "2026-10-27",
+   "code": "CS6bn6bJeOmmd35ur7m83TdDtmCPucSTUjz3hSNuwJMiyE",
    "name": "ZywOo",
-   "since": "2026-10-12",
+   "since": "2026-10-27",
    "steamid": "76561198113666193",
    "url": "https://procrosshairs.com/player/76561198113666193/ZywOo"
   }
  },
- "updated": "2026-10-25"
+ "updated": "2026-10-27"
 }
