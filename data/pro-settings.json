@@ -19326,6 +19326,16 @@
    "sensitivity": "0.63",
    "url": "https://prosettings.net/players/tomaszy/"
   },
+  "tomate": {
+   "dpi": "800",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "tomate",
+   "resolution": "1280x960",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/tomate/",
+   "zoom_sensitivity": "1"
+  },
   "tomiko": {
    "dpi": "800",
    "edpi": "800",
@@ -27543,6 +27553,16 @@
    "url": "https://prosettings.net/players/2high/",
    "zoom_sensitivity": "1.2"
   },
+  "76561198160550112": {
+   "dpi": "800",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "tomate",
+   "resolution": "1280x960",
+   "sensitivity": "0.9",
+   "url": "https://prosettings.net/players/tomate/",
+   "zoom_sensitivity": "1"
+  },
   "76561198160709585": {
    "dpi": "800",
    "edpi": "888.00",
@@ -33917,6 +33937,7 @@
   "https://prosettings.net/players/tom223/": "2026-10-17",
   "https://prosettings.net/players/tomaszin/": "2026-10-17",
   "https://prosettings.net/players/tomaszy/": "2026-10-17",
+  "https://prosettings.net/players/tomate/": "2026-10-29",
   "https://prosettings.net/players/tomiko/": "2026-10-17",
   "https://prosettings.net/players/toose/": "2026-10-17",
   "https://prosettings.net/players/topa/": "2026-10-17",
@@ -36384,6 +36405,7 @@
   "https://prosettings.net/players/tom223/": "2026-10-17",
   "https://prosettings.net/players/tomaszin/": "2026-10-17",
   "https://prosettings.net/players/tomaszy/": "2026-10-17",
+  "https://prosettings.net/players/tomate/": "2026-10-29",
   "https://prosettings.net/players/tomiko/": "2026-10-17",
   "https://prosettings.net/players/toose/": "2026-10-17",
   "https://prosettings.net/players/topa/": "2026-10-17",
