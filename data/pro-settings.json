@@ -4767,6 +4767,16 @@
    "url": "https://prosettings.net/players/doto/",
    "zoom_sensitivity": "1.00"
   },
+  "dr3nquu": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Dr3nquu",
+   "resolution": "1280x960",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/dr3nquu/",
+   "zoom_sensitivity": "1"
+  },
   "dragon": {
    "dpi": "400",
    "edpi": "600",
@@ -31350,6 +31360,16 @@
    "url": "https://prosettings.net/players/nickyb/",
    "zoom_sensitivity": "1"
   },
+  "76561199107744807": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Dr3nquu",
+   "resolution": "1280x960",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/dr3nquu/",
+   "zoom_sensitivity": "1"
+  },
   "76561199112319728": {
    "dpi": "400",
    "edpi": "856.00",
@@ -32285,6 +32305,7 @@
   "https://prosettings.net/players/dos9/": "2026-10-12",
   "https://prosettings.net/players/dosia/": "2026-10-12",
   "https://prosettings.net/players/doto/": "2026-10-12",
+  "https://prosettings.net/players/dr3nquu/": "2026-10-30",
   "https://prosettings.net/players/dragon/": "2026-10-12",
   "https://prosettings.net/players/dragzikw/": "2026-10-12",
   "https://prosettings.net/players/draken/": "2026-10-12",
@@ -34753,6 +34774,7 @@
   "https://prosettings.net/players/dos9/": "2026-10-12",
   "https://prosettings.net/players/dosia/": "2026-10-12",
   "https://prosettings.net/players/doto/": "2026-10-12",
+  "https://prosettings.net/players/dr3nquu/": "2026-10-30",
   "https://prosettings.net/players/dragon/": "2026-10-12",
   "https://prosettings.net/players/dragzikw/": "2026-10-12",
   "https://prosettings.net/players/draken/": "2026-10-12",

@@ -535,6 +535,7 @@
   "dos9": "2026-10-12",
   "dosia": "2026-10-12",
   "doto": "2026-10-12",
+  "dr3nquu": "2026-10-30",
   "dragon": "2026-10-12",
   "dragzikw": "2026-10-12",
   "draken": "2026-10-12",
@@ -5883,6 +5884,15 @@
     "url": "https://www.faceit.com/ru/players/dotoooo"
    },
    "name": "doto"
+  },
+  "dr3nquu": {
+   "faceit": {
+    "elo": 3374,
+    "name": "Dr3nquu",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/Dr3nquu"
+   },
+   "name": "Dr3nquu"
   },
   "dragon": {
    "faceit": {
