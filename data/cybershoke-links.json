@@ -1632,6 +1632,7 @@
   "poka": "2026-10-12",
   "pokamolodoy": "2026-10-12",
   "poko": "2026-10-12",
+  "polbandana": "2026-11-02",
   "pollo": "2026-10-12",
   "pollofn": "2026-10-12",
   "pollu": "2026-10-12",
@@ -13197,6 +13198,15 @@
     "url": "https://www.faceit.com/ru/players/secre12t4"
    },
    "name": "Poko"
+  },
+  "polbandana": {
+   "faceit": {
+    "elo": 3289,
+    "name": "Polbandana",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/Polbandana"
+   },
+   "name": "Polbandana"
   },
   "pollo": {
    "faceit": {

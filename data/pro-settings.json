@@ -14561,6 +14561,16 @@
    "url": "https://prosettings.net/players/poko/",
    "zoom_sensitivity": "Unknown"
   },
+  "polbandana": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Polbandana",
+   "resolution": "1280x960",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/polbandana/",
+   "zoom_sensitivity": "1"
+  },
   "pollo": {
    "dpi": "1600",
    "edpi": "1280",
@@ -29856,6 +29866,16 @@
    "url": "https://prosettings.net/players/shalfey/",
    "zoom_sensitivity": "1"
   },
+  "76561198366635943": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "Polbandana",
+   "resolution": "1280x960",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/polbandana/",
+   "zoom_sensitivity": "1"
+  },
   "76561198370086461": {
    "dpi": "400",
    "edpi": "800.00",
@@ -33419,6 +33439,7 @@
   "https://prosettings.net/players/poka/": "2026-10-15",
   "https://prosettings.net/players/pokamolodoy/": "2026-10-15",
   "https://prosettings.net/players/poko/": "2026-10-15",
+  "https://prosettings.net/players/polbandana/": "2026-11-02",
   "https://prosettings.net/players/pollo-br/": "2026-10-15",
   "https://prosettings.net/players/pollofn/": "2026-10-15",
   "https://prosettings.net/players/pollu/": "2026-10-15",
@@ -35888,6 +35909,7 @@
   "https://prosettings.net/players/poka/": "2026-10-15",
   "https://prosettings.net/players/pokamolodoy/": "2026-10-15",
   "https://prosettings.net/players/poko/": "2026-10-15",
+  "https://prosettings.net/players/polbandana/": "2026-11-02",
   "https://prosettings.net/players/pollo-br/": "2026-10-15",
   "https://prosettings.net/players/pollofn/": "2026-10-15",
   "https://prosettings.net/players/pollu/": "2026-10-15",
