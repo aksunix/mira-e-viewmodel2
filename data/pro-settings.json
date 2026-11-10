@@ -3091,6 +3091,16 @@
    "url": "https://prosettings.net/players/chelo/",
    "zoom_sensitivity": "1.00"
   },
+  "cher1on": {
+   "dpi": "1000",
+   "edpi": "1300",
+   "hz": "2000",
+   "name": "Cher1on",
+   "resolution": "1280x960",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/cher1on/",
+   "zoom_sensitivity": "1"
+  },
   "chiawei": {
    "dpi": "1600",
    "edpi": "176.00",
@@ -8941,6 +8951,16 @@
    "resolution": "1280x960",
    "sensitivity": "2.2",
    "url": "https://prosettings.net/players/k0nfig/",
+   "zoom_sensitivity": "1"
+  },
+  "k0rdy": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "k0rdy",
+   "resolution": "1280x960",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/k0rdy/",
    "zoom_sensitivity": "1"
   },
   "k1-fida": {
@@ -15337,6 +15357,16 @@
    "resolution": "1920x1080",
    "sensitivity": "0.22",
    "url": "https://prosettings.net/players/reazy/"
+  },
+  "rec1se": {
+   "dpi": "400",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "rec1se",
+   "resolution": "1280x960",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/rec1se/",
+   "zoom_sensitivity": "1"
   },
   "reck": {
    "dpi": "400",
@@ -28660,6 +28690,16 @@
    "url": "https://prosettings.net/players/detr0ittj/",
    "zoom_sensitivity": "1"
   },
+  "76561198242772376": {
+   "dpi": "1000",
+   "edpi": "1300",
+   "hz": "2000",
+   "name": "Cher1on",
+   "resolution": "1280x960",
+   "sensitivity": "1.3",
+   "url": "https://prosettings.net/players/cher1on/",
+   "zoom_sensitivity": "1"
+  },
   "76561198242885242": {
    "dpi": "800",
    "edpi": "1000.00",
@@ -29794,6 +29834,16 @@
    "resolution": "1024x768",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/controlez/",
+   "zoom_sensitivity": "1"
+  },
+  "76561198362632938": {
+   "dpi": "800",
+   "edpi": "1000",
+   "hz": "1000",
+   "name": "k0rdy",
+   "resolution": "1280x960",
+   "sensitivity": "1.25",
+   "url": "https://prosettings.net/players/k0rdy/",
    "zoom_sensitivity": "1"
   },
   "76561198362964332": {
@@ -31490,6 +31540,16 @@
    "url": "https://prosettings.net/players/yxngstxr/",
    "zoom_sensitivity": "1"
   },
+  "76561199137320571": {
+   "dpi": "400",
+   "edpi": "720.00",
+   "hz": "1000",
+   "name": "rec1se",
+   "resolution": "1280x960",
+   "sensitivity": "1.8",
+   "url": "https://prosettings.net/players/rec1se/",
+   "zoom_sensitivity": "1"
+  },
   "76561199152003116": {
    "dpi": "750",
    "edpi": "1050",
@@ -32136,6 +32196,7 @@
   "https://prosettings.net/players/chawzyyy/": "2026-10-12",
   "https://prosettings.net/players/chay/": "2026-10-12",
   "https://prosettings.net/players/chelo/": "2026-10-12",
+  "https://prosettings.net/players/cher1on/": "2026-11-10",
   "https://prosettings.net/players/chiawei/": "2026-10-12",
   "https://prosettings.net/players/chichoo/": "2026-10-12",
   "https://prosettings.net/players/chico/": "2026-10-12",
@@ -32797,6 +32858,7 @@
   "https://prosettings.net/players/jyo/": "2026-10-14",
   "https://prosettings.net/players/jzz/": "2026-10-14",
   "https://prosettings.net/players/k0nfig/": "2026-10-14",
+  "https://prosettings.net/players/k0rdy/": "2026-11-10",
   "https://prosettings.net/players/k1-fida/": "2026-10-14",
   "https://prosettings.net/players/k1ng-korea/": "2026-10-14",
   "https://prosettings.net/players/k1ng/": "2026-10-14",
@@ -33530,6 +33592,7 @@
   "https://prosettings.net/players/rdnzao/": "2026-10-15",
   "https://prosettings.net/players/realzin/": "2026-10-15",
   "https://prosettings.net/players/reazy/": "2026-10-15",
+  "https://prosettings.net/players/rec1se/": "2026-11-10",
   "https://prosettings.net/players/reck/": "2026-10-15",
   "https://prosettings.net/players/recrent/": "2026-10-15",
   "https://prosettings.net/players/red/": "2026-10-15",
@@ -34606,6 +34669,7 @@
   "https://prosettings.net/players/chawzyyy/": "2026-10-12",
   "https://prosettings.net/players/chay/": "2026-10-12",
   "https://prosettings.net/players/chelo/": "2026-10-12",
+  "https://prosettings.net/players/cher1on/": "2026-11-10",
   "https://prosettings.net/players/chiawei/": "2026-10-12",
   "https://prosettings.net/players/chichoo/": "2026-10-12",
   "https://prosettings.net/players/chico/": "2026-10-12",
@@ -35267,6 +35331,7 @@
   "https://prosettings.net/players/jyo/": "2026-10-14",
   "https://prosettings.net/players/jzz/": "2026-10-14",
   "https://prosettings.net/players/k0nfig/": "2026-10-14",
+  "https://prosettings.net/players/k0rdy/": "2026-11-10",
   "https://prosettings.net/players/k1-fida/": "2026-10-14",
   "https://prosettings.net/players/k1ng-korea/": "2026-10-14",
   "https://prosettings.net/players/k1ng/": "2026-10-14",
@@ -36000,6 +36065,7 @@
   "https://prosettings.net/players/rdnzao/": "2026-10-15",
   "https://prosettings.net/players/realzin/": "2026-10-15",
   "https://prosettings.net/players/reazy/": "2026-10-15",
+  "https://prosettings.net/players/rec1se/": "2026-11-10",
   "https://prosettings.net/players/reck/": "2026-10-15",
   "https://prosettings.net/players/recrent/": "2026-10-15",
   "https://prosettings.net/players/red/": "2026-10-15",

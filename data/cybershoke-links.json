@@ -347,6 +347,7 @@
   "chawzyyy": "2026-10-12",
   "chay": "2026-10-12",
   "chelo": "2026-10-12",
+  "cher1on": "2026-11-10",
   "chiawei": "2026-10-12",
   "chichoo": "2026-10-12",
   "chico": "2026-10-12",
@@ -1002,6 +1003,7 @@
   "jyo": "2026-10-12",
   "jzz": "2026-10-12",
   "k0nfig": "2026-10-12",
+  "k0rdy": "2026-11-10",
   "k1-fida": "2026-10-12",
   "k1ng": "2026-10-12",
   "k1nzell": "2026-10-12",
@@ -1720,6 +1722,7 @@
   "rdnzao": "2026-10-12",
   "realzin": "2026-10-12",
   "reazy": "2026-10-12",
+  "rec1se": "2026-11-10",
   "reck": "2026-10-12",
   "recrent": "2026-10-12",
   "red": "2026-10-12",
@@ -4687,6 +4690,15 @@
     "url": "https://www.hltv.org/stats/players/10566/chelo"
    },
    "name": "chelo"
+  },
+  "cher1on": {
+   "faceit": {
+    "elo": 3608,
+    "name": "Cher1on",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/Cher1on"
+   },
+   "name": "Cher1on"
   },
   "chichoo": {
    "faceit": {
@@ -8930,6 +8942,15 @@
     "url": "https://www.hltv.org/stats/players/9078/k0nfig"
    },
    "name": "k0nfig"
+  },
+  "k0rdy": {
+   "faceit": {
+    "elo": 4053,
+    "name": "k99y",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/k99y"
+   },
+   "name": "k0rdy"
   },
   "k1-fida": {
    "faceit": {
@@ -13725,6 +13746,15 @@
     "url": "https://www.faceit.com/ru/players/ReaZy0"
    },
    "name": "reazy"
+  },
+  "rec1se": {
+   "faceit": {
+    "elo": 3885,
+    "name": "rec1se",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/rec1se"
+   },
+   "name": "rec1se"
   },
   "reck": {
    "faceit": {
