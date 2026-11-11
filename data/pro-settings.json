@@ -9661,6 +9661,16 @@
    "resolution": "1920x1080",
    "url": "https://prosettings.net/players/klownski/"
   },
+  "klyro": {
+   "dpi": "800",
+   "edpi": "960.00",
+   "hz": "2000",
+   "name": "klyrO",
+   "resolution": "1280x960",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/klyro/",
+   "zoom_sensitivity": "1"
+  },
   "kngv-": {
    "dpi": "400",
    "edpi": "1080.00",
@@ -22803,6 +22813,16 @@
    "url": "https://prosettings.net/players/scream/",
    "zoom_sensitivity": "1.00"
   },
+  "76561197989140494": {
+   "dpi": "800",
+   "edpi": "960.00",
+   "hz": "2000",
+   "name": "klyrO",
+   "resolution": "1280x960",
+   "sensitivity": "1.2",
+   "url": "https://prosettings.net/players/klyro/",
+   "zoom_sensitivity": "1"
+  },
   "76561197989423065": {
    "dpi": "800",
    "edpi": "800.00",
@@ -32942,6 +32962,7 @@
   "https://prosettings.net/players/kl1m/": "2026-10-14",
   "https://prosettings.net/players/klaus/": "2026-10-14",
   "https://prosettings.net/players/klownski/": "2026-10-14",
+  "https://prosettings.net/players/klyro/": "2026-11-11",
   "https://prosettings.net/players/kngv/": "2026-10-14",
   "https://prosettings.net/players/knight-2/": "2026-10-14",
   "https://prosettings.net/players/knight/": "2026-10-14",
@@ -35415,6 +35436,7 @@
   "https://prosettings.net/players/kl1m/": "2026-10-14",
   "https://prosettings.net/players/klaus/": "2026-10-14",
   "https://prosettings.net/players/klownski/": "2026-10-14",
+  "https://prosettings.net/players/klyro/": "2026-11-11",
   "https://prosettings.net/players/kngv/": "2026-10-14",
   "https://prosettings.net/players/knight-2/": "2026-10-14",
   "https://prosettings.net/players/knight/": "2026-10-14",
