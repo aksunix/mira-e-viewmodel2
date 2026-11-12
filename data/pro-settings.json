@@ -9818,6 +9818,15 @@
    "resolution": "Unknown",
    "url": "https://prosettings.net/players/koyota/"
   },
+  "kozzy": {
+   "dpi": "1600",
+   "edpi": "144",
+   "hz": "4000",
+   "name": "Kozzy",
+   "resolution": "1920x1080",
+   "sensitivity": "0.09",
+   "url": "https://prosettings.net/players/kozzy/"
+  },
   "kr1stal": {
    "dpi": "1600",
    "edpi": "336",
@@ -21192,6 +21201,16 @@
    "resolution": "1920x1080",
    "sensitivity": "0.393",
    "url": "https://prosettings.net/players/yong/"
+  },
+  "yoom": {
+   "dpi": "800",
+   "edpi": "1080.00",
+   "hz": "1000",
+   "name": "yoom",
+   "resolution": "1280x960",
+   "sensitivity": "1.35",
+   "url": "https://prosettings.net/players/yoom/",
+   "zoom_sensitivity": "1"
   },
   "yosemite": {
    "dpi": "800",
@@ -32981,6 +33000,7 @@
   "https://prosettings.net/players/kovaq/": "2026-10-14",
   "https://prosettings.net/players/koyful/": "2026-10-14",
   "https://prosettings.net/players/koyota/": "2026-10-14",
+  "https://prosettings.net/players/kozzy/": "2026-11-12",
   "https://prosettings.net/players/kr1stal/": "2026-10-14",
   "https://prosettings.net/players/krabeni/": "2026-10-14",
   "https://prosettings.net/players/krad/": "2026-10-14",
@@ -34269,6 +34289,7 @@
   "https://prosettings.net/players/yoghi/": "2026-10-12",
   "https://prosettings.net/players/yome/": "2026-10-12",
   "https://prosettings.net/players/yong/": "2026-10-12",
+  "https://prosettings.net/players/yoom/": "2026-11-12",
   "https://prosettings.net/players/yosemite/": "2026-10-12",
   "https://prosettings.net/players/yuicaw/": "2026-10-12",
   "https://prosettings.net/players/yukaf/": "2026-10-12",
@@ -35455,6 +35476,7 @@
   "https://prosettings.net/players/kovaq/": "2026-10-14",
   "https://prosettings.net/players/koyful/": "2026-10-14",
   "https://prosettings.net/players/koyota/": "2026-10-14",
+  "https://prosettings.net/players/kozzy/": "2026-11-12",
   "https://prosettings.net/players/kr1stal/": "2026-10-14",
   "https://prosettings.net/players/krabeni/": "2026-10-14",
   "https://prosettings.net/players/krad/": "2026-10-14",
@@ -36743,6 +36765,7 @@
   "https://prosettings.net/players/yoghi/": "2026-10-12",
   "https://prosettings.net/players/yome/": "2026-10-12",
   "https://prosettings.net/players/yong/": "2026-10-12",
+  "https://prosettings.net/players/yoom/": "2026-11-12",
   "https://prosettings.net/players/yosemite/": "2026-10-12",
   "https://prosettings.net/players/yuicaw/": "2026-10-12",
   "https://prosettings.net/players/yukaf/": "2026-10-12",
