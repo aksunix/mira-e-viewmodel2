@@ -2174,6 +2174,16 @@
    "url": "https://prosettings.net/players/bl1x1/",
    "zoom_sensitivity": "1.2"
   },
+  "bl4sez": {
+   "dpi": "1600",
+   "edpi": "824",
+   "hz": "4000",
+   "name": "bL4SEZ",
+   "resolution": "1280x960",
+   "sensitivity": "0.515",
+   "url": "https://prosettings.net/players/bl4sez/",
+   "zoom_sensitivity": "1"
+  },
   "blackoutz": {
    "dpi": "4800",
    "hz": "4000",
@@ -12587,6 +12597,16 @@
    "sensitivity": "0.3",
    "url": "https://prosettings.net/players/mta/"
   },
+  "muciek": {
+   "dpi": "1600",
+   "edpi": "1360.00",
+   "hz": "2000",
+   "name": "Muciek",
+   "resolution": "1280x960",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/muciek/",
+   "zoom_sensitivity": "0.96"
+  },
   "munchkin": {
    "dpi": "1600",
    "edpi": "160.00",
@@ -21766,7 +21786,16 @@
    "url": "https://prosettings.net/players/putrick/"
   }
  },
- "pending": {},
+ "pending": {
+  "https://prosettings.net/players/bl4sez/": {
+   "name": "bl4sez",
+   "steam": "https://steamcommunity.com/id/bL4SEZ/"
+  },
+  "https://prosettings.net/players/muciek/": {
+   "name": "muciek",
+   "steam": "https://steamcommunity.com/profiles/76561198259230534/"
+  }
+ },
  "players": {
   "76561197960284752": {
    "dpi": "400",
@@ -32131,6 +32160,7 @@
   "https://prosettings.net/players/bizzle/": "2026-10-12",
   "https://prosettings.net/players/bk1/": "2026-10-12",
   "https://prosettings.net/players/bl1x1/": "2026-10-12",
+  "https://prosettings.net/players/bl4sez/": "2026-11-14",
   "https://prosettings.net/players/blackoutz/": "2026-10-12",
   "https://prosettings.net/players/blamef/": "2026-10-12",
   "https://prosettings.net/players/blitz/": "2026-10-12",
@@ -33312,6 +33342,7 @@
   "https://prosettings.net/players/mrtnssj/": "2026-10-15",
   "https://prosettings.net/players/msl/": "2026-10-15",
   "https://prosettings.net/players/mta/": "2026-10-15",
+  "https://prosettings.net/players/muciek/": "2026-11-14",
   "https://prosettings.net/players/munchkin/": "2026-10-15",
   "https://prosettings.net/players/murii/": "2026-10-15",
   "https://prosettings.net/players/murizzz/": "2026-10-15",
@@ -34607,6 +34638,7 @@
   "https://prosettings.net/players/bizzle/": "2026-10-12",
   "https://prosettings.net/players/bk1/": "2026-10-12",
   "https://prosettings.net/players/bl1x1/": "2026-10-12",
+  "https://prosettings.net/players/bl4sez/": "2026-11-14",
   "https://prosettings.net/players/blackoutz/": "2026-10-12",
   "https://prosettings.net/players/blamef/": "2026-10-12",
   "https://prosettings.net/players/blitz/": "2026-10-12",
@@ -35788,6 +35820,7 @@
   "https://prosettings.net/players/mrtnssj/": "2026-10-15",
   "https://prosettings.net/players/msl/": "2026-10-15",
   "https://prosettings.net/players/mta/": "2026-10-15",
+  "https://prosettings.net/players/muciek/": "2026-11-14",
   "https://prosettings.net/players/munchkin/": "2026-10-15",
   "https://prosettings.net/players/murii/": "2026-10-15",
   "https://prosettings.net/players/murizzz/": "2026-10-15",
