@@ -21786,16 +21786,7 @@
    "url": "https://prosettings.net/players/putrick/"
   }
  },
- "pending": {
-  "https://prosettings.net/players/bl4sez/": {
-   "name": "bl4sez",
-   "steam": "https://steamcommunity.com/id/bL4SEZ/"
-  },
-  "https://prosettings.net/players/muciek/": {
-   "name": "muciek",
-   "steam": "https://steamcommunity.com/profiles/76561198259230534/"
-  }
- },
+ "pending": {},
  "players": {
   "76561197960284752": {
    "dpi": "400",
@@ -28987,6 +28978,16 @@
    "url": "https://prosettings.net/players/brutmonster/",
    "zoom_sensitivity": "1"
   },
+  "76561198259230534": {
+   "dpi": "1600",
+   "edpi": "1360.00",
+   "hz": "2000",
+   "name": "Muciek",
+   "resolution": "1280x960",
+   "sensitivity": "0.85",
+   "url": "https://prosettings.net/players/muciek/",
+   "zoom_sensitivity": "0.96"
+  },
   "76561198259435197": {
    "dpi": "800",
    "edpi": "1000",
@@ -29503,6 +29504,16 @@
    "sensitivity": "1.45",
    "url": "https://prosettings.net/players/pr-czech/",
    "zoom_sensitivity": "0.9"
+  },
+  "76561198311857376": {
+   "dpi": "1600",
+   "edpi": "824",
+   "hz": "4000",
+   "name": "bL4SEZ",
+   "resolution": "1280x960",
+   "sensitivity": "0.515",
+   "url": "https://prosettings.net/players/bl4sez/",
+   "zoom_sensitivity": "1"
   },
   "76561198314392309": {
    "dpi": "400",
