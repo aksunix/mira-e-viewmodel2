@@ -7239,6 +7239,13 @@
    "url": "https://prosettings.net/players/hampus/",
    "zoom_sensitivity": "0.784"
   },
+  "handyy": {
+   "dpi": "400",
+   "hz": "1000",
+   "name": "Handyy",
+   "resolution": "1920x1080",
+   "url": "https://prosettings.net/players/handyy/"
+  },
   "haodong": {
    "dpi": "400",
    "edpi": "276",
@@ -7553,6 +7560,16 @@
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/hobbit/",
    "zoom_sensitivity": "0.86"
+  },
+  "holy": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "HOLY",
+   "resolution": "1280x960",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/holy/",
+   "zoom_sensitivity": "1"
   },
   "honda": {
    "dpi": "400",
@@ -18991,6 +19008,13 @@
    "sensitivity": "0.176",
    "url": "https://prosettings.net/players/teddy/"
   },
+  "teeq": {
+   "dpi": "800",
+   "hz": "1000",
+   "name": "teeq",
+   "resolution": "1920x1080",
+   "url": "https://prosettings.net/players/teeq/"
+  },
   "teeqzy": {
    "dpi": "400",
    "hz": "4000",
@@ -21131,6 +21155,15 @@
    "sensitivity": "0.1",
    "url": "https://prosettings.net/players/yassa/"
   },
+  "yassien": {
+   "dpi": "1600",
+   "edpi": "368",
+   "hz": "4000",
+   "name": "Yassien",
+   "resolution": "1280x960",
+   "sensitivity": "0.23",
+   "url": "https://prosettings.net/players/yassien/"
+  },
   "yay": {
    "dpi": "800",
    "edpi": "304",
@@ -21786,7 +21819,12 @@
    "url": "https://prosettings.net/players/putrick/"
   }
  },
- "pending": {},
+ "pending": {
+  "https://prosettings.net/players/holy/": {
+   "name": "holy",
+   "steam": "https://steamcommunity.com/id/-Holy--/"
+  }
+ },
  "players": {
   "76561197960284752": {
    "dpi": "400",
@@ -32743,6 +32781,7 @@
   "https://prosettings.net/players/hambak/": "2026-10-13",
   "https://prosettings.net/players/hamlinz/": "2026-10-13",
   "https://prosettings.net/players/hampus/": "2026-10-13",
+  "https://prosettings.net/players/handyy/": "2026-11-16",
   "https://prosettings.net/players/haodong/": "2026-10-13",
   "https://prosettings.net/players/happ/": "2026-10-13",
   "https://prosettings.net/players/happy-ow/": "2026-10-13",
@@ -32778,6 +32817,7 @@
   "https://prosettings.net/players/history/": "2026-10-13",
   "https://prosettings.net/players/hiswattson/": "2026-10-13",
   "https://prosettings.net/players/hobbit/": "2026-10-13",
+  "https://prosettings.net/players/holy/": "2026-11-16",
   "https://prosettings.net/players/honda/": "2026-10-13",
   "https://prosettings.net/players/hongq/": "2026-10-13",
   "https://prosettings.net/players/hoody/": "2026-10-13",
@@ -34077,6 +34117,7 @@
   "https://prosettings.net/players/techno4k/": "2026-10-16",
   "https://prosettings.net/players/teddy-2/": "2026-10-16",
   "https://prosettings.net/players/teddy/": "2026-10-27",
+  "https://prosettings.net/players/teeq/": "2026-11-16",
   "https://prosettings.net/players/teeqzy/": "2026-10-16",
   "https://prosettings.net/players/tele/": "2026-10-16",
   "https://prosettings.net/players/tempz/": "2026-10-16",
@@ -34321,6 +34362,7 @@
   "https://prosettings.net/players/yamzzi/": "2026-10-12",
   "https://prosettings.net/players/yasir/": "2026-10-12",
   "https://prosettings.net/players/yassa/": "2026-10-12",
+  "https://prosettings.net/players/yassien/": "2026-11-16",
   "https://prosettings.net/players/yay/": "2026-10-12",
   "https://prosettings.net/players/ye-qiu/": "2026-10-12",
   "https://prosettings.net/players/yekindar/": "2026-10-12",
@@ -35221,6 +35263,7 @@
   "https://prosettings.net/players/hambak/": "2026-10-13",
   "https://prosettings.net/players/hamlinz/": "2026-10-13",
   "https://prosettings.net/players/hampus/": "2026-10-13",
+  "https://prosettings.net/players/handyy/": "2026-11-16",
   "https://prosettings.net/players/haodong/": "2026-10-13",
   "https://prosettings.net/players/happ/": "2026-10-13",
   "https://prosettings.net/players/happy-ow/": "2026-10-13",
@@ -35256,6 +35299,7 @@
   "https://prosettings.net/players/history/": "2026-10-13",
   "https://prosettings.net/players/hiswattson/": "2026-10-13",
   "https://prosettings.net/players/hobbit/": "2026-10-13",
+  "https://prosettings.net/players/holy/": "2026-11-16",
   "https://prosettings.net/players/honda/": "2026-10-13",
   "https://prosettings.net/players/hongq/": "2026-10-13",
   "https://prosettings.net/players/hoody/": "2026-10-13",
@@ -36555,6 +36599,7 @@
   "https://prosettings.net/players/techno4k/": "2026-10-16",
   "https://prosettings.net/players/teddy-2/": "2026-10-16",
   "https://prosettings.net/players/teddy/": "2026-10-27",
+  "https://prosettings.net/players/teeq/": "2026-11-16",
   "https://prosettings.net/players/teeqzy/": "2026-10-16",
   "https://prosettings.net/players/tele/": "2026-10-16",
   "https://prosettings.net/players/tempz/": "2026-10-16",
@@ -36799,6 +36844,7 @@
   "https://prosettings.net/players/yamzzi/": "2026-10-12",
   "https://prosettings.net/players/yasir/": "2026-10-12",
   "https://prosettings.net/players/yassa/": "2026-10-12",
+  "https://prosettings.net/players/yassien/": "2026-11-16",
   "https://prosettings.net/players/yay/": "2026-10-12",
   "https://prosettings.net/players/ye-qiu/": "2026-10-12",
   "https://prosettings.net/players/yekindar/": "2026-10-12",
