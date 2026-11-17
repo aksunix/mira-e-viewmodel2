@@ -1099,10 +1099,11 @@ const MOUSE_FIELDS = [
   ['hz', 'Hz'],
 ];
 
-const VIDEO_FIELDS = [['resolution', 'Resolution']];
+// resolution = resolução real (ProSettings); demo_height = altura em que a mira foi criada (lida do código da mira na demo)
+const VIDEO_FIELDS = [['resolution', 'Resolution'], ['demo_height', 'Altura da mira']];
 
-const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
-const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor' };
+const PRO_LABELS = { zoom_sensitivity: 'Zoom', demo_height: 'Altura da mira (demo)' };
+const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor', demo_height: 'monitor' };
 
 // Grade de informações (mouse / vídeo) com ícone ao lado do rótulo
 function statTiles(info, fields, cls) {
@@ -1131,7 +1132,11 @@ function renderPlayer(p) {
   const playerName = (p.name || 'jogador').trim();
   const mouse = proSettings[String(p.steamid)];
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
-  const hasVideo = !!(mouse && mouse.resolution);
+  // altura da mira (cl_crosshair_screen_height), vinda do código da mira da demo; ignora valores absurdos
+  const sh = xh ? xh.screenHeight : 0;
+  const demoHeight = sh >= 240 && sh <= 4320 ? sh + 'p' : '';
+  const video = { resolution: mouse && mouse.resolution, demo_height: demoHeight };
+  const hasVideo = !!(video.resolution || video.demo_height);
   const hasCfg = !!p.steamid;
   const canFlip = hasMouse || hasVideo;
 
@@ -1237,7 +1242,7 @@ function renderPlayer(p) {
   }
   if (hasVideo) {
     secs.video = el('section', 'back-sec');
-    secs.video.append(sectionTitle('monitor', 'Vídeo'), statTiles(mouse, VIDEO_FIELDS, 'compact'));
+    secs.video.append(sectionTitle('monitor', 'Vídeo'), statTiles(video, VIDEO_FIELDS, 'compact'));
     body.appendChild(secs.video);
   }
   back.appendChild(body);
