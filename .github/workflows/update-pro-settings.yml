@@ -1,12 +1,14 @@
 name: Atualizar dados do ProSettings
 
+concurrency:
+  group: prosettings-sync
+  cancel-in-progress: false
+
 on:
   push:
     branches: [main]
     paths:
-      - "scripts/build_pro_settings.py"
       - "data/priority-players.txt"
-      - ".github/workflows/update-pro-settings.yml"
   schedule:
     - cron: "0 6 * * *"
   workflow_dispatch:
@@ -33,7 +35,7 @@ jobs:
 
       - name: Coletar dados
         env:
-          MAX_PAGES: ${{ github.event.inputs.max || '400' }}
+          MAX_PAGES: ${{ github.event.inputs.max || '2500' }}
         run: |
           case "$MAX_PAGES" in ''|*[!0-9]*) echo "Valor invalido para max: $MAX_PAGES"; exit 1;; esac
           python scripts/build_pro_settings.py --out data/pro-settings.json --max "$MAX_PAGES"
