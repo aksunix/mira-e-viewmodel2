@@ -1099,11 +1099,19 @@ const MOUSE_FIELDS = [
   ['hz', 'Hz'],
 ];
 
-// resolution = resolução real (ProSettings); demo_height = altura em que a mira foi criada (lida do código da mira na demo)
-const VIDEO_FIELDS = [['resolution', 'Resolution'], ['demo_height', 'Altura da mira']];
+const VIDEO_FIELDS = [['resolution', 'Resolution']];
 
-const PRO_LABELS = { zoom_sensitivity: 'Zoom', demo_height: 'Altura da mira (demo)' };
-const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor', demo_height: 'monitor' };
+const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
+const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor' };
+
+// Converte a altura da mira (cl_crosshair_screen_height, lida do código da mira na demo) em resolução.
+// 960 e 768 são 4:3 (1280x960, 1024x768); as demais são 16:9. Altura fora da lista usa 16:9.
+const RES_BY_HEIGHT = { 720: '1280x720', 768: '1024x768', 900: '1600x900', 960: '1280x960', 1080: '1920x1080', 1440: '2560x1440', 2160: '3840x2160' };
+function resolutionFromHeight(h) {
+  if (!(h >= 240 && h <= 4320)) return '';
+  if (RES_BY_HEIGHT[h]) return RES_BY_HEIGHT[h];
+  return (Math.round(h * 16 / 9 / 2) * 2) + 'x' + h;
+}
 
 // Grade de informações (mouse / vídeo) com ícone ao lado do rótulo
 function statTiles(info, fields, cls) {
@@ -1132,11 +1140,10 @@ function renderPlayer(p) {
   const playerName = (p.name || 'jogador').trim();
   const mouse = proSettings[String(p.steamid)];
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
-  // altura da mira (cl_crosshair_screen_height), vinda do código da mira da demo; ignora valores absurdos
-  const sh = xh ? xh.screenHeight : 0;
-  const demoHeight = sh >= 240 && sh <= 4320 ? sh + 'p' : '';
-  const video = { resolution: mouse && mouse.resolution, demo_height: demoHeight };
-  const hasVideo = !!(video.resolution || video.demo_height);
+  // resolução: a da demo (cl_crosshair_screen_height) tem prioridade; sem ela, usa a do ProSettings
+  const demoRes = resolutionFromHeight(xh ? xh.screenHeight : 0);
+  const video = { resolution: demoRes || (mouse && mouse.resolution) };
+  const hasVideo = !!video.resolution;
   const hasCfg = !!p.steamid;
   const canFlip = hasMouse || hasVideo;
 
