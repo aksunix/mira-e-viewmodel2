@@ -1161,7 +1161,7 @@ function paintCrosshair(canvas, xh, size) {
 
 let proSettings = {};
 let proNames = {};
-const proSettingsReady = fetch('pro-settings.json?v=20261117-keyboardtab2')
+const proSettingsReady = fetch('pro-settings.json?v=' + Date.now(), { cache: 'no-store' })
   .then(r => (r.ok ? r.json() : { players: {} }))
   .then(j => { proSettings = (j && j.players) || {}; proNames = (j && j.names) || {}; })
   .catch(() => {});
