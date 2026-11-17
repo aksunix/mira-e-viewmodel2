@@ -11,6 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://prosettings.net"
+KEYBOARD_PARSER_VERSION = "2"
 UA = "cs2-demo-analyzer-prosettings-sync/1.0 (projeto pessoal; 1 req a cada poucos segundos)"
 FIELDS = {"sensitivity": "sensitivity", "dpi": "dpi", "edpi": "edpi",
           "zoom sensitivity": "zoom_sensitivity", "hz": "hz"}
@@ -72,9 +73,14 @@ def _comment_date(node):
 
 
 def _comment_id(node):
-    value = str(node.get("id") or "")
-    m = re.search(r"(?:div-)?comment-(\d+)", value)
-    return m.group(1) if m else ""
+    for attr in ("id", "data-comment-id", "data-id"):
+        value = str(node.get(attr) or "").strip()
+        if value.isdigit():
+            return value
+        m = re.search(r"(?:div-)?comment-(\d+)|wpd-(?:comm|comment)-(\d+)", value, re.I)
+        if m:
+            return next(group for group in m.groups() if group)
+    return ""
 
 
 def _setting_number(text, patterns):
@@ -98,9 +104,8 @@ def _setting_scope(text, setting):
         r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\b"
     )
 
-    # Separadores comuns em comentários de configurações evitam misturar
-    # "Actuation em todas" com "Rapid Trigger somente no WASD".
-    chunks = re.split(r"[|;\n]+", lower)
+    # Separadores comuns evitam misturar o escopo do Actuation com o do RT.
+    chunks = re.split(r"[|;\\n]+", lower)
     chunk = next((part for part in chunks if re.search(own_pattern, part)), lower)
     match = re.search(own_pattern, chunk)
     if not match:
@@ -110,17 +115,18 @@ def _setting_scope(text, setting):
     other = re.search(other_pattern, tail[match.end() - match.start():])
     if other:
         tail = tail[:match.end() - match.start() + other.start()]
-    window = tail
+    prefix = chunk[max(0, match.start() - 90):match.start()]
+    context = prefix + " " + tail
 
-    if re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b|\bwhole\s+keyboard\b", window):
-        return "Todas as teclas", []
-
+    # Uma indicação explícita de teclas específicas tem prioridade sobre "all keys"
+    # quando o comentário separa o escopo de Actuation e Rapid Trigger.
     keys = []
-    if re.search(r"\bwasd\b", window):
+    if re.search(r"\bwasd\b", tail):
         keys.extend(["W", "A", "S", "D"])
-
-    # Procura listas explicitamente associadas ao ajuste (ex.: "only A/D", "on WASD + Space").
-    scoped = re.search(r"(?:\bonly\b(?:\s+on)?|\b(?:on|for)\s+(?:the\s+)?|\bkeys?\s*[:=])\s*(.{1,55})", window)
+    scoped = re.search(
+        r"(?:\bonly\b(?:\s+on)?|\b(?:on|for)\s+(?:the\s+)?|\bkeys?\s*[:=])\s*(.{1,55})",
+        tail
+    )
     if scoped:
         phrase = re.split(r"[.;]", scoped.group(1), maxsplit=1)[0]
         aliases = [
@@ -134,7 +140,6 @@ def _setting_scope(text, setting):
             (r"\bbackspace\b", "Backspace"),
             (r"\b(?:delete|del)\b", "Del"),
             (r"\b(?:insert|ins)\b", "Ins"),
-            (r"\b(?:up|down|left|right)\b", None),
             (r"\b[a-z0-9]\b", None),
         ]
         for key_pattern, label in aliases:
@@ -142,11 +147,12 @@ def _setting_scope(text, setting):
                 value = label or token.upper()
                 if value not in keys:
                     keys.append(value)
-
     if keys:
         return "Teclas específicas", keys
-    return "Não informado", []
 
+    if re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b|\bwhole\s+keyboard\b", context):
+        return "Todas as teclas", []
+    return "Não informado", []
 
 def _keyboard_values(text):
     actuation = _setting_number(text, [
@@ -183,12 +189,20 @@ def parse_keyboard_comments(soup, profile_url):
 
     nodes = []
     seen = set()
-    for selector in ('li[id^="comment-"]', 'article[id^="comment-"]', '[id^="div-comment-"]'):
+    for selector in (
+        'li[id^="comment-"]',
+        'article[id^="comment-"]',
+        '[id^="div-comment-"]',
+        '.wpd-comment-wrap',
+        '[id^="wpd-comm-"]',
+        '[data-comment-id]',
+    ):
         for node in soup.select(selector):
             cid = _comment_id(node)
-            if cid and cid not in seen:
+            node_key = cid or str(node.get("id") or node.get("data-comment-id") or "")
+            if node_key and node_key not in seen:
                 nodes.append(node)
-                seen.add(cid)
+                seen.add(node_key)
     if not nodes:
         return None
 
@@ -233,7 +247,7 @@ def parse_keyboard_comments(soup, profile_url):
                 urls.append(href)
 
         parent_id = ""
-        parent = node.find_parent(id=re.compile(r"^(?:div-)?comment-\d+$"))
+        parent = node.find_parent(id=re.compile(r"^(?:div-)?comment-\d+$|^wpd-(?:comm|comment)-\d+$", re.I))
         if parent is not None:
             parent_id = _comment_id(parent)
         for attr in ("data-parent", "data-parent-id", "data-comment-parent"):
@@ -244,8 +258,10 @@ def parse_keyboard_comments(soup, profile_url):
                     parent_id = m.group(0)
                     break
 
+        node_id = str(node.get("id") or "")
         records.append({
-            "id": cid,
+            "id": cid or node_id or str(len(records) + 1),
+            "node_id": node_id,
             "parent_id": parent_id,
             "author": author,
             "role": role,
@@ -310,7 +326,11 @@ def parse_keyboard_comments(soup, profile_url):
             "author": record["author"],
             "date": record["date"],
             "date_iso": record["date_iso"],
-            "source_url": profile_url.rstrip("/") + "/#comment-" + record["id"],
+            "source_url": (
+                profile_url.rstrip("/") + "/#" + record["node_id"]
+                if record.get("node_id") else
+                (profile_url.rstrip("/") + "/#comment-" + record["id"] if record["id"].isdigit() else profile_url.rstrip("/") + "/")
+            ),
             "evidence_urls": evidence,
             "evidence_url": clip_urls[0] if clip_urls else "",
             "confidence": "admin" if admin_verified else ("clip" if clip_urls else ("link" if evidence else "community")),
@@ -415,7 +435,10 @@ def main():
 
     def stale(url):
         d = data["seen"].get(url)
-        if url not in data["video_done"] or url not in data.get("keyboard_done", {}):  # pagina ainda nao lida para video/teclado
+        if url not in data["video_done"] or url not in data.get("keyboard_done", {}):
+            return True
+        # Reprocessa páginas lidas por versões antigas do parser de comentários.
+        if data.get("keyboard_parser_version", {}).get(url) != KEYBOARD_PARSER_VERSION:
             return True
         return d is None or (today - dt.date.fromisoformat(d)).days >= a.refresh_days
 
@@ -485,6 +508,7 @@ def main():
                 data["seen"][url] = today.isoformat()
                 data["video_done"][url] = today.isoformat()
                 data.setdefault("keyboard_done", {})[url] = today.isoformat()
+                data.setdefault("keyboard_parser_version", {})[url] = KEYBOARD_PARSER_VERSION
             except requests.RequestException as e:
                 print("erro (pulando):", url, e)
             if i % 50 == 0:
@@ -495,7 +519,7 @@ def main():
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)
-    print("com SteamID:", len(data["players"]), "| por nome:", len(data["names"]), "| SteamID pendente:", len(data["pending"]), "| perfis com teclado:", sum(1 for v in data["players"].values() if v.get("keyboard")))
+    print("com SteamID:", len(data["players"]), "| por nome:", len(data["names"]), "| SteamID pendente:", len(data["pending"]), "| perfis com teclado:", sum(1 for v in data["names"].values() if v.get("keyboard")))
 
 
 if __name__ == "__main__":
