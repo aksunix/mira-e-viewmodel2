@@ -1219,7 +1219,7 @@ let cardSeq = 0;
 function safeEvidenceUrl(url) {
   try {
     const x = new URL(url);
-    const hosts = ['twitch.tv', 'clips.twitch.tv', 'youtube.com', 'youtu.be', 'streamable.com', 'twitter.com', 'x.com', 'imgur.com', 'gyazo.com', 't.me', 'telegram.me', 'telegram.org'];
+    const hosts = ['twitch.tv', 'clips.twitch.tv', 'youtube.com', 'youtu.be', 'streamable.com', 'twitter.com', 'x.com', 'imgur.com', 'gyazo.com', 't.me', 'telegram.me', 'telegram.org', 'hltv.org', 'cybershoke.net', 'steamcommunity.com'];
     return x.protocol === 'https:' && hosts.some(h => x.hostname === h || x.hostname.endsWith('.' + h)) ? x.href : null;
   } catch (e) { return null; }
 }
