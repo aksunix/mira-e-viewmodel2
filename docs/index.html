@@ -1011,6 +1011,45 @@ main{
 .featured-shortcuts span{overflow:hidden;text-overflow:ellipsis}
 @media(max-width:860px){.featured-shortcuts{font-size:8px!important}.featured-identity{padding:6px 5px 2px!important}.featured-logo{width:23px!important;height:23px!important}}
 
+/* Todos os cards em destaque usam o mesmo cartão de perfil vertical da referência */
+.featured-layout{display:block!important;width:100%!important}
+.featured-main{width:100%!important;min-height:0!important;height:auto!important;padding:14px!important}
+.featured-list{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:14px!important;align-items:start!important}
+.featured-detail{display:none!important}
+.featured-profile-card.dex-player-card{
+  display:flex!important;flex-direction:column!important;width:100%!important;max-width:none!important;
+  min-width:0!important;height:auto!important;min-height:0!important;margin:0!important;padding:10px!important;
+  border:3px solid #ed1736!important;border-radius:25px!important;background:#fff8f0!important;
+  box-shadow:0 4px 12px rgba(120,28,35,.13)!important;overflow:hidden!important;
+}
+.featured-profile-card .dex-card-top{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:25px!important;padding:0 5px 7px!important}
+.featured-profile-card .dex-number{display:inline-flex!important;align-items:center!important;min-height:22px!important;padding:2px 9px!important;border:1px solid #dfc9bd!important;border-radius:15px!important;background:#fffdf9!important;font-size:10px!important;font-weight:800!important}
+.featured-profile-card .dex-fav{color:#ed1736!important;font-size:19px!important;line-height:20px!important}
+.featured-profile-card .dex-photo{height:145px!important;min-height:145px!important;flex:none!important;border:1px solid #20aee8!important;border-radius:13px!important;background:#3e5059!important;overflow:hidden!important}
+.featured-profile-card .dex-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 18%!important}
+.featured-profile-card .dex-identity{padding:10px 3px 8px!important;text-align:left!important}
+.featured-profile-card .dex-player-name{font-size:18px!important;line-height:22px!important;font-weight:850!important;color:#10243b!important}
+.featured-profile-card .dex-team{font-size:12px!important;line-height:17px!important;color:#68768a!important}
+.featured-profile-card .dex-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0 0 9px!important;border-bottom:1px solid #eadbd3!important}
+.featured-profile-card .dex-tab{display:flex!important;justify-content:center!important;align-items:center!important;min-width:0!important;height:29px!important;min-height:29px!important;padding:0 4px!important;border-radius:12px!important;background:#f0e8e2!important;color:#172b40!important;font-size:10px!important;font-weight:700!important;white-space:nowrap!important}
+.featured-profile-card .dex-tab[aria-selected="true"]{background:#ed1736!important;color:#fff!important}
+.featured-profile-card .dex-panel{display:block!important;min-height:0!important;padding:9px 1px 1px!important;overflow:visible!important}
+.featured-profile-card .dex-panel[hidden]{display:none!important}
+.featured-profile-card .dex-summary{display:flex!important;flex-direction:column!important;gap:0!important}
+.featured-profile-card .dex-summary-row{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:29px!important;padding:5px 8px!important;border-bottom:1px solid #f0e4dc!important;font-size:11px!important;line-height:15px!important}
+.featured-profile-card .dex-summary-label{color:#26384b!important}
+.featured-profile-card .dex-summary-value{color:#10243b!important;font-size:11px!important;font-weight:800!important;text-align:right!important}
+.featured-profile-card .dex-extra{margin:8px 1px 0!important;padding:0!important;font-size:10px!important}
+.featured-profile-card .dex-extra summary{cursor:pointer;font-weight:750!important}
+.featured-profile-card .dex-extra .dex-code{max-height:90px!important;font-size:9px!important;line-height:13px!important}
+.featured-profile-card .dex-empty{font-size:10px!important;line-height:15px!important}
+.featured-profile-card .dex-code{max-height:150px!important;font-size:9px!important;line-height:13px!important;overflow:auto!important}
+.featured-profile-card .dex-copy{width:100%!important;min-height:34px!important;margin-top:7px!important;border-radius:12px!important;background:#ed1736!important;color:#fff!important;font-size:11px!important;font-weight:800!important}
+.featured-profile-card .dex-photo-fallback{color:#fff!important}
+@media(max-width:1200px){.featured-list{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}.featured-profile-card .dex-photo{height:135px!important;min-height:135px!important}}
+@media(max-width:760px){.featured-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.featured-profile-card.dex-player-card{padding:8px!important;border-radius:21px!important}.featured-profile-card .dex-photo{height:125px!important;min-height:125px!important}}
+@media(max-width:460px){.featured-list{grid-template-columns:1fr!important}.featured-profile-card.dex-player-card{max-width:320px!important;margin:0 auto!important;width:100%!important}}
+
 </style>
 </head>
 <body>
@@ -2070,10 +2109,10 @@ async function fetchProData(p) {
   };
 }
 
-function renderSearchCard(p) {
+function renderSearchCard(p, cardNumber) {
   const uid='search-'+(++cardSeq), nick=(p.name||'?').trim(), info=p.info||{};
   const card=el('article','dex-player-card'), top=el('div','dex-card-top');
-  top.appendChild(el('span','dex-number','#001'));
+  top.appendChild(el('span','dex-number','#'+String(cardNumber||1).padStart(3,'0')));
   const fav=el('span','dex-fav','♡'); fav.setAttribute('aria-label','Favorito'); top.appendChild(fav);
   const photo=el('div','dex-photo'); photo.appendChild(el('span','dex-photo-fallback',nick.charAt(0).toUpperCase())); card.append(top,photo);
   const identity=el('div','dex-identity');
@@ -2173,30 +2212,15 @@ function renderFeatured() {
   if (!featuredList) return;
   featuredList.innerHTML = '';
   featuredNames.forEach((item,i) => {
-    const card = el('button','featured-card tone-'+item.tone);
-    card.type = 'button';
-    card.setAttribute('aria-label','Ver configurações de '+item.name);
-    const number = el('span','featured-number','#'+String(i+1).padStart(3,'0'));
-    const image = el('span','featured-photo');
-    image.appendChild(el('span','featured-initial',item.name.charAt(0).toUpperCase()));
-    const identity = el('span','featured-identity');
-    const logo = el('span','featured-logo',({ 'Team Spirit':'S','NAVI':'N','Vitality':'V','G2':'G2' })[item.team] || item.team.charAt(0));
-    const copy = el('span','featured-copy');
-    copy.append(el('strong','featured-name',item.name),el('span','featured-team',item.team));
-    identity.append(logo,copy);
-    const shortcuts = el('span','featured-shortcuts');
-    shortcuts.append(el('span','', '⊙ Mira'),el('span','', '▣ Viewmodel'));
-    card.append(number,image,identity,shortcuts);
-    card.onclick = () => selectFeatured(i);
+    const found = buildIndex().find(x => normName(x.name) === normName(item.name));
+    const player = found || {key:normName(item.name),name:item.name,info:{},steamid:null,custom:true};
+    player.info = Object.assign({},player.info||{},{team:(player.info&&(player.info.team||player.info.team_name||player.info.teamName))||item.team});
+    const card = renderSearchCard(player, i+1);
+    card.classList.add('featured-profile-card');
+    card.setAttribute('aria-label','Configurações de '+item.name);
     featuredList.appendChild(card);
-    fetchProData({name:item.name}).then(data=>{
-      if (!data || !data.photo || !image.isConnected) return;
-      const img = new Image(); img.alt = 'Foto de '+item.name; img.referrerPolicy='no-referrer';
-      img.onload=()=>{image.innerHTML='';image.appendChild(img);};
-      img.src=data.photo;
-    }).catch(()=>{});
   });
-  selectFeatured(0);
+  if (featuredDetail) featuredDetail.hidden = true;
 }
 const featuredAll = document.getElementById('featuredAll');
 if (featuredAll) featuredAll.onclick = () => { location.hash='#/buscar'; setTimeout(()=>proSearch&&proSearch.focus(),80); };
