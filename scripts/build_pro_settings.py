@@ -380,7 +380,7 @@ def parse_keyboard_comments(soup, profile_url):
             json.dumps(values.get("groups", []), sort_keys=True)
         )
         score = (6 if admin_verified else 0) + (5 if clip_urls else 0) + (2 if evidence else 0)
-        score += 2 if values["actuation"] and values["rapid_trigger"] else 0
+        score += 2 if values["actuation"] and (values["rapid_trigger"] or values.get("rapid_trigger_disabled")) else 0
         grouped.setdefault(key, []).append({
             **values,
             "author": record["author"],
