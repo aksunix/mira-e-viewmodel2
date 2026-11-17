@@ -1059,6 +1059,37 @@ main{
 .featured-profile-card .dex-copy{display:block!important;width:100%!important;min-height:34px!important;margin-top:7px!important;border-radius:12px!important;background:#ed1736!important;color:#fff!important;font-size:11px!important;font-weight:800!important}
 .featured-profile-card .dex-copy:disabled{opacity:.65!important}
 
+/* Início simplificado: upload de DEM no formato clássico, com o tema Setup Dex */
+[data-view="inicio"]{padding-top:8px!important}
+#intro{width:min(100%,1040px)!important;margin:24px auto 26px!important;padding:clamp(18px,3vw,34px)!important;border:1.5px solid #e8c9bd!important;border-radius:26px!important;background:linear-gradient(145deg,#fffaf5 0%,#fff1e9 100%)!important;box-shadow:0 6px 18px rgba(120,28,35,.09)!important}
+#intro .hero{max-width:760px!important;margin:0 auto 24px!important;text-align:center!important}
+#intro .hero h2{margin:0 0 12px!important;color:#10243b!important;font-size:clamp(27px,4vw,42px)!important;line-height:1.12!important;letter-spacing:-1.2px!important;font-weight:850!important}
+#intro .hero h2 span{background:linear-gradient(90deg,#e71935,#ff6472)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+#intro .hero p{max-width:660px!important;margin:0 auto!important;color:#596579!important;font-size:14px!important;line-height:1.65!important}
+#intro .dropzone{display:flex!important;width:100%!important;min-height:245px!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important;padding:24px!important;border:2px dashed #ed8794!important;border-radius:20px!important;background:rgba(255,255,255,.58)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)!important;color:#10243b!important;transition:background .18s,border-color .18s,transform .18s!important}
+#intro .dropzone:hover,#intro .dropzone:focus-visible{border-color:#e71935!important;background:#fff1e9!important;transform:translateY(-1px)!important}
+#intro .dropzone .icon{display:grid!important;place-items:center!important;width:58px!important;height:58px!important;margin:0 0 4px!important;border-radius:18px!important;background:#ffe0e3!important;color:#e71935!important}
+#intro .dropzone .icon svg{width:30px!important;height:30px!important;fill:#e71935!important}
+#intro .dropzone .title{font-size:17px!important;line-height:24px!important;font-weight:750!important;color:#10243b!important}
+#intro .dropzone .support{font-size:13px!important;color:#68768a!important}
+#intro .dropzone .btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:42px!important;margin:5px 0 2px!important;padding:0 23px!important;border:0!important;border-radius:24px!important;background:#e71935!important;color:#fff!important;font-size:13px!important;font-weight:750!important;line-height:1!important;box-shadow:0 3px 8px rgba(231,25,53,.18)!important}
+#intro .dropzone .dz-meta{margin-top:4px!important;color:#87909a!important;font-size:10px!important;line-height:15px!important}
+#intro .trust{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;margin-top:18px!important;border:0!important;background:transparent!important}
+#intro .trust>div{display:flex!important;align-items:center!important;gap:11px!important;min-width:0!important;padding:13px 14px!important;border:1px solid #ead2c8!important;border-radius:15px!important;background:#fffaf5!important}
+#intro .trust svg{width:23px!important;height:23px!important;flex:none!important;fill:#e71935!important}
+#intro .trust b{display:block!important;margin-bottom:2px!important;color:#10243b!important;font-size:12px!important;line-height:16px!important}
+#intro .trust span{display:block!important;color:#68768a!important;font-size:10px!important;line-height:14px!important}
+[data-view="inicio"] .progress,[data-view="inicio"] .error,[data-view="inicio"] .results{width:min(100%,1040px)!important;margin:22px auto 0!important}
+@media(max-width:760px){
+ #intro{margin:12px auto 20px!important;padding:18px 14px!important;border-radius:20px!important}
+ #intro .hero{margin-bottom:18px!important}
+ #intro .hero h2{font-size:clamp(25px,7vw,34px)!important}
+ #intro .hero p{font-size:12px!important;line-height:19px!important}
+ #intro .dropzone{min-height:220px!important;padding:18px 12px!important}
+ #intro .trust{grid-template-columns:1fr!important;gap:7px!important}
+ #intro .trust>div{padding:10px 12px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1093,58 +1124,24 @@ main{
 <main>
 <section data-view="inicio">
   <div id="intro">
-    <section class="home-hero">
-      <div class="home-mascot">
-        <span class="home-number">#001</span>
-        <div class="mascot-back"></div>
-        <svg class="mascot-svg" viewBox="0 0 360 300" role="img" aria-label="Ilustração de operador tático do Setup Dex">
-          <defs>
-            <linearGradient id="helmetG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#555b60"/><stop offset="1" stop-color="#171b20"/></linearGradient>
-            <linearGradient id="armorG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4b4c4d"/><stop offset="1" stop-color="#15191e"/></linearGradient>
-          </defs>
-          <path d="M82 286 Q43 260 58 211 L97 164 Q119 149 148 155 L214 157 Q260 161 284 204 L318 281Z" fill="url(#armorG)" stroke="#080c11" stroke-width="7" stroke-linejoin="round"/>
-          <path d="M102 190 L64 230 L37 260 Q29 276 48 282 L111 285 L151 244Z" fill="#292d31" stroke="#080c11" stroke-width="7"/>
-          <path d="M225 190 L274 216 L310 258 Q326 274 313 284 L264 283 L214 243Z" fill="#303438" stroke="#080c11" stroke-width="7"/>
-          <path d="M115 77 Q119 21 185 18 Q255 16 267 78 L259 123 L121 123Z" fill="url(#helmetG)" stroke="#080c11" stroke-width="8"/>
-          <path d="M115 84 Q102 61 90 79 L88 119 Q91 143 116 145 L132 120Z" fill="#292e33" stroke="#080c11" stroke-width="7"/>
-          <path d="M267 84 Q281 67 292 88 L291 123 Q286 144 263 146 L249 119Z" fill="#292e33" stroke="#080c11" stroke-width="7"/>
-          <path d="M122 89 Q181 65 260 91 L259 130 Q210 153 126 131Z" fill="#17262d" stroke="#05090d" stroke-width="8"/>
-          <path d="M140 94 L183 89 L178 132 L139 126Z M195 89 L243 96 L246 130 L195 132Z" fill="#42616a" opacity=".7"/>
-          <path d="M129 136 Q185 160 255 137 L244 186 Q201 222 143 187Z" fill="#25282b" stroke="#080c11" stroke-width="7"/>
-          <path d="M146 174 Q185 187 232 173 L224 201 L159 202Z" fill="#35383b"/>
-          <path d="M94 180 L131 159 L165 181 L142 224 L91 213Z" fill="#373b3e" stroke="#080c11" stroke-width="7"/>
-          <path d="M235 180 L270 164 L294 204 L264 224 L226 212Z" fill="#363a3e" stroke="#080c11" stroke-width="7"/>
-          <path d="M96 232 L224 211 L279 233 L292 251 L176 267 L75 260Z" fill="#252a2e" stroke="#080c11" stroke-width="7"/>
-          <path d="M117 233 L160 224 L180 260 L142 271Z M193 223 L234 218 L251 252 L207 263Z" fill="#45494b" stroke="#111519" stroke-width="5"/>
-          <path d="M66 222 L169 232 L241 214 L254 229 L174 256 L69 245Z" fill="#5b493a" stroke="#090d11" stroke-width="8"/>
-          <path d="M169 230 L286 247 L331 239 L337 252 L288 266 L166 250Z" fill="#34393d" stroke="#090d11" stroke-width="8"/>
-          <path d="M79 215 L104 204 L139 229 L121 247 L91 241Z M241 211 L265 210 L285 238 L265 251 L237 232Z" fill="#202529" stroke="#090d11" stroke-width="6"/>
-          <path d="M178 250 L200 256 L194 283 L169 279Z" fill="#171b1f" stroke="#080c11" stroke-width="5"/>
-          <path d="M113 36 Q180 2 245 39" fill="none" stroke="#747b80" stroke-width="5" opacity=".55"/>
-        </svg>
-      </div>
-      <div class="home-upload">
-        <h1>Setup Dex</h1>
-        <p>Explore as melhores configurações dos jogadores de CS2.</p>
-        <button type="button" class="dropzone" id="dropzone">
-          <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
-          <span class="title">Arraste o arquivo .dem aqui</span>
-          <span class="support">ou clique para selecionar</span>
-          <span class="btn btn-filled" id="pick">Selecionar arquivo</span>
-          <span class="dz-meta">Suporte: .dem · o arquivo é lido em partes, direto do seu disco</span>
-        </button>
-        <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
-      </div>
-    </section>
-    <div class="home-banner"><span></span><p>Explore as melhores configurações, descubra<br class="desktop-only"> seus jogadores favoritos e muito mais!</p><button type="button" id="bannerPlayers" aria-label="Ver jogadores"><svg class="i" data-i="chevron-right"></svg></button></div>
-  </div>
-  <section class="featured-layout" id="featuredLayout">
-    <div class="featured-main">
-      <div class="featured-heading"><h2>Jogadores em Destaque</h2><button type="button" id="featuredAll">Ver todos <svg class="i" data-i="arrow-right"></svg></button></div>
-      <div class="featured-list" id="featuredList"></div>
+    <div class="hero">
+      <h2>Obtenha <span>mira</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
+      <p>Faça o upload do arquivo .dem. Ele é lido no seu computador e não é enviado para nenhum servidor.</p>
     </div>
-    <aside class="featured-detail" id="featuredDetail" aria-label="Jogador selecionado"></aside>
-  </section>
+    <button type="button" class="dropzone" id="dropzone">
+      <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
+      <span class="title">Arraste o arquivo .dem aqui</span>
+      <span class="support">ou clique para selecionar</span>
+      <span class="btn btn-filled" id="pick">Selecionar arquivo</span>
+      <span class="dz-meta">Suporte: .dem · o arquivo é lido em partes, direto do seu disco</span>
+    </button>
+    <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
+    <div class="trust">
+      <div><svg data-i="shield" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Processamento local</b><span>Seu demo é lido no próprio navegador</span></p></div>
+      <div><svg data-i="lock" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Sem envio para servidores</b><span>O arquivo .dem não sai do seu dispositivo</span></p></div>
+      <div><svg data-i="bolt" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Rápido e simples</b><span>Sem cadastro e sem instalar nada</span></p></div>
+    </div>
+  </div>
 
   <section class="progress" id="progress" aria-live="polite">
     <div class="sec-head"><svg class="i" data-i="bars"></svg><div><h2>Análise em andamento</h2><p>Processando o demo para extrair crosshair e viewmodel.</p></div></div>
