@@ -401,6 +401,7 @@
   .card-act:active::after { opacity: .12; }
   .back-body { display: flex; flex-direction: column; gap: 16px; flex: 1; padding: 12px 16px 16px; }
   .back-sec h3 { margin: 0 0 8px; font-size: 14px; line-height: 20px; font-weight: 500; }
+  .video-note { margin: 8px 0 0; font-size: 11px; line-height: 16px; color: var(--md-on-surface-variant); }
   .back-body .btn { margin: auto 0 0; width: 100%; text-decoration: none; }
   .back-body .btn svg { margin-left: 0; width: 18px; height: 18px; }
   .back-body .empty { margin: 0; padding: 12px 0; text-align: center; color: var(--md-on-surface-variant); }
@@ -681,7 +682,7 @@
 
 <div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
 
-<script src="crosshair.js"></script>
+<script src="crosshair.js?v=20261117-video1"></script>
 <script>
 const dropzone = document.getElementById('dropzone');
 const fileInput = document.getElementById('fileInput');
@@ -1099,7 +1100,15 @@ const MOUSE_FIELDS = [
   ['hz', 'Hz'],
 ];
 
-const VIDEO_FIELDS = [['resolution', 'Resolution']];
+const VIDEO_FIELDS = [['resolution', 'Resolução'], ['screenHeight', 'cl_crosshair_screen_height']];
+const DEMO_RESOLUTIONS = {
+  720: '1280x720',
+  768: '1024x768',
+  900: '1600x900',
+  960: '1280x960',
+  1024: '1280x1024',
+  1080: '1920x1080',
+};
 
 const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
 const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor' };
@@ -1128,10 +1137,17 @@ let cardSeq = 0;
 function renderPlayer(p) {
   const uid = ++cardSeq;
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
+  const screenHeight = xh && Number.isInteger(xh.screenHeight) && xh.screenHeight > 0 ? xh.screenHeight : null;
   const playerName = (p.name || 'jogador').trim();
   const mouse = proSettings[String(p.steamid)];
+  const videoInfo = screenHeight !== null
+    ? { resolution: DEMO_RESOLUTIONS[screenHeight] || 'Não mapeada', screenHeight: screenHeight + ' px' }
+    : (mouse && mouse.resolution ? { resolution: mouse.resolution, screenHeight: '' } : null);
+  const videoNote = screenHeight !== null
+    ? 'Estimativa pela altura de referência da mira. Isso não confirma a resolução ativa do jogador.'
+    : 'Resolução obtida do perfil do jogador; não foi identificada na demo.';
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
-  const hasVideo = !!(mouse && mouse.resolution);
+  const hasVideo = !!videoInfo;
   const hasCfg = !!p.steamid;
   const canFlip = hasMouse || hasVideo;
 
@@ -1237,7 +1253,11 @@ function renderPlayer(p) {
   }
   if (hasVideo) {
     secs.video = el('section', 'back-sec');
-    secs.video.append(sectionTitle('monitor', 'Vídeo'), statTiles(mouse, VIDEO_FIELDS, 'compact'));
+    secs.video.append(
+      sectionTitle('monitor', 'Vídeo'),
+      statTiles(videoInfo, VIDEO_FIELDS, 'compact'),
+      el('p', 'video-note', videoNote)
+    );
     body.appendChild(secs.video);
   }
   back.appendChild(body);
