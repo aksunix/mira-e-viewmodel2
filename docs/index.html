@@ -161,16 +161,16 @@
   .page.big { font-size: clamp(30px, 5vw, 40px); line-height: 1.15; font-weight: 800; letter-spacing: -.5px; }
   .acc { background: linear-gradient(90deg, var(--md-grad-a), var(--md-grad-b)); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .lead { margin: 0 0 20px; color: var(--md-on-surface-variant); }
-  [data-view="buscar"] .search { max-width: none; margin: 0 0 16px; }
-  [data-view="buscar"] .search-field { height: 64px; padding: 0 12px 0 24px; border-radius: 32px; border-color: var(--md-primary); background: var(--md-surface-container-low); }
-  [data-view="buscar"] .search-field:focus-within { box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-primary) 28%, transparent); }
-  [data-view="buscar"] .search-field input { font: 500 18px "Inter", system-ui, sans-serif; letter-spacing: 0; }
-  [data-view="buscar"] .suggest { top: 72px; }
+  [data-view="inicio"] .search { max-width: none; margin: 0 0 16px; }
+  [data-view="inicio"] .search-field { height: 64px; padding: 0 12px 0 24px; border-radius: 32px; border-color: var(--md-primary); background: var(--md-surface-container-low); }
+  [data-view="inicio"] .search-field:focus-within { box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-primary) 28%, transparent); }
+  [data-view="inicio"] .search-field input { font: 500 18px "Inter", system-ui, sans-serif; letter-spacing: 0; }
+  [data-view="inicio"] .suggest { top: 72px; }
   .rs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 24px; }
   .rs > span { display: flex; align-items: center; gap: 8px; margin-right: 4px; font-size: 13px; color: var(--md-on-surface-variant); }
   .chip { height: 34px; padding: 0 14px; border-radius: 17px; border: 1px solid var(--md-outline-variant); background: var(--md-surface-container-high); color: inherit; font: inherit; font-size: 13px; cursor: pointer; }
   .chip:hover { border-color: var(--md-primary); }
-  [data-view="buscar"] #searchResult { grid-template-columns: minmax(0, 1fr); margin: 0; }
+  [data-view="inicio"] #searchResult { grid-template-columns: minmax(0, 1fr); margin: 0; }
   /* Card do jogador: cabeçalho, mira e mouse/vídeo em cartões separados */
   .pro { display: grid; gap: 16px; }
   .pro-head { display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 20px; background: var(--md-surface-container-low); }
@@ -591,8 +591,8 @@
 
   /* Pesquisa */
   .search-field { border-width: 3px; background: var(--md-surface-container-low); box-shadow: 0 4px 0 var(--sd-border); }
-  .search-field:focus-within, [data-view="buscar"] .search-field:focus-within, [data-view="teclado"] .search-field:focus-within { border-color: var(--sd-border); box-shadow: 0 4px 0 var(--sd-border), 0 0 0 4px var(--sd-lime); }
-  [data-view="buscar"] .search-field, [data-view="teclado"] .search-field { border-color: var(--sd-border); }
+  .search-field:focus-within, [data-view="inicio"] .search-field:focus-within, [data-view="teclado"] .search-field:focus-within { border-color: var(--sd-border); box-shadow: 0 4px 0 var(--sd-border), 0 0 0 4px var(--sd-lime); }
+  [data-view="inicio"] .search-field, [data-view="teclado"] .search-field { border-color: var(--sd-border); }
   .suggest { border-width: 3px; border-radius: 20px; background: var(--md-surface-container-low); box-shadow: 0 5px 0 var(--sd-border); }
   .suggest li[aria-selected="true"], .suggest li:hover { background: var(--sd-lime); color: #1B1B1B; }
   .suggest li[aria-selected="true"] .tag, .suggest li:hover .tag { color: #1B1B1B; }
@@ -614,6 +614,29 @@
     .brand b { font-size: 26px; line-height: 26px; }
   }
   @media (max-width: 480px) { .brand svg { width: 34px; height: 34px; } }
+
+  /* SetupDex: grade de jogadores, abas da demo e detalhe */
+  #suggest { display: none !important; }
+  .side a { border: 2.5px solid var(--sd-border, #1B1B1B); border-radius: 16px; font-weight: 600; }
+  .dex-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0 14px; }
+  .dex-head h2 { margin: 0; font-size: 24px; }
+  .dex-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .dex-card { border: 2.5px solid var(--sd-border, #1B1B1B); border-radius: 18px; background: var(--md-surface-container); color: var(--md-on-surface); padding: 10px 14px; display: flex; flex-direction: column; gap: 6px; cursor: pointer; text-align: center; }
+  .dex-card:hover, .dex-card:focus-visible { box-shadow: 0 0 0 4px var(--md-primary); outline: 0; }
+  .dex-top { display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
+  .dex-star { background: none; border: 0; font-size: 26px; line-height: 1; color: inherit; opacity: .4; cursor: pointer; }
+  .dex-star.on { color: #FFE94A; opacity: 1; -webkit-text-stroke: 2px #1B1B1B; }
+  .dex-av { width: 92px; height: 92px; margin: 6px auto; border-radius: 50%; background: #8FA7B0; border: 2.5px solid var(--sd-border, #1B1B1B); display: flex; align-items: center; justify-content: center; font: 800 46px "Inter", system-ui, sans-serif; color: #FBF3E4; text-shadow: 2px 2px 0 #1B1B1B; }
+  .dex-nm { font-size: 21px; font-weight: 700; }
+  .dex-meta { font-size: 13px; opacity: .75; }
+  .dex-pages { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+  .dex-pg, .dtabs button { min-width: 40px; height: 40px; padding: 0 16px; border: 2.5px solid var(--sd-border, #1B1B1B); border-radius: 12px; background: var(--md-surface); color: var(--md-on-surface); font: 600 16px "Inter", system-ui, sans-serif; cursor: pointer; }
+  .dex-pg.on, .dtabs button.on { background: var(--md-primary-container); }
+  .dtabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+  .dex-overlay { position: fixed; inset: 0; z-index: 50; background: rgba(27, 27, 27, .55); display: flex; justify-content: center; align-items: flex-start; overflow: auto; padding: 24px; }
+  .dex-overlay[hidden] { display: none; }
+  .dex-modal { width: min(960px, 100%); background: var(--md-surface); color: var(--md-on-surface); border: 3px solid var(--sd-border, #1B1B1B); border-radius: 28px; padding: 16px; }
+  .dex-modal > .icon-btn { margin-left: auto; display: flex; }
 </style>
 </head>
 <body>
@@ -634,12 +657,8 @@
 <div class="shell">
 <div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
-  <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
-  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
-  <a href="#/teclado" data-page="teclado"><svg class="i" data-i="keyboard"></svg>Teclado</a>
-  <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
-  <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
-  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
+  <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>SetupDex</a>
+  <a href="#/demo" data-page="demo"><svg class="i" data-i="aim"></svg>Analisar Demo</a>
   <div class="side-promo">
     <div class="sp-ball" aria-hidden="true"></div>
     <p>Descubra a mira, o mouse e o teclado dos melhores jogadores de CS2.</p>
@@ -648,7 +667,9 @@
 </nav>
 
 <main>
-<section data-view="inicio">
+<section data-view="demo" hidden>
+<div class="dtabs" role="tablist"><button type="button" class="on" data-dtab="demo">Demo</button><button type="button" data-dtab="fav">Favoritos</button><button type="button" data-dtab="hist">Histórico</button></div>
+<div data-dpane="demo">
   <div id="intro">
     <div class="hero">
       <h2>Obtenha <span>mira</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
@@ -680,7 +701,7 @@
       <div class="job-side"><span class="badge" id="badge">Analisando</span><span class="timer" id="timer">00:00:00</span></div>
     </div>
     <div class="recent">
-      <div class="recent-head"><div><h2>Demos recentes</h2><p>Últimos arquivos analisados neste navegador.</p></div><a class="cfg-link" href="#/historico">Ver todos</a></div>
+      <div class="recent-head"><div><h2>Demos recentes</h2><p>Últimos arquivos analisados neste navegador.</p></div><a class="cfg-link" href="#/demo" data-tab="hist">Ver todos</a></div>
       <ul class="recent-list" id="recentList"></ul>
     </div>
   </section>
@@ -701,10 +722,15 @@
     <div id="cards"></div>
   </section>
 
+</div>
+<div data-dpane="fav" hidden><h2 class="page">Favoritos</h2><div class="dex-grid" id="favGrid"></div></div>
+<div data-dpane="hist" hidden><h2 class="page">Histórico</h2>
+  <ul class="hist" id="histList"></ul>
+  <button type="button" class="btn btn-outline" id="histClear">Limpar histórico</button></div>
 </section>
 
-<section data-view="buscar" hidden>
-  <h2 class="page big">Digite o nick do <span class="acc">jogador</span></h2>
+<section data-view="inicio">
+  <h2 class="page big">Todos os <span class="acc">jogadores</span></h2>
   <div class="search">
     <div class="search-field">
       <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
@@ -714,7 +740,9 @@
     <ul class="suggest" id="suggest" role="listbox"></ul>
   </div>
   <div class="rs" id="recentSearches" hidden></div>
-  <div id="searchResult" aria-live="polite"></div>
+  <div class="dex-head"><h2 id="dexCount">Carregando jogadores…</h2></div>
+  <div class="dex-grid" id="dexGrid"></div>
+  <div class="dex-pages" id="dexPages"></div>
 </section>
 
 <section data-view="teclado" hidden>
@@ -811,12 +839,6 @@
   </div>
 </section>
 
-<section data-view="historico" hidden>
-  <h2 class="page">Histórico</h2>
-  <ul class="hist" id="histList"></ul>
-  <button type="button" class="btn btn-outline" id="histClear">Limpar histórico</button>
-</section>
-
 <section data-view="tutorial" class="tut" hidden>
   <h2 class="page big">Tutorial</h2>
   <p class="lead">Como baixar uma demo, extrair o arquivo e enviar para o site.</p>
@@ -866,6 +888,8 @@
 </div>
 
 <div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
+
+<div class="dex-overlay" id="dexOverlay" hidden><div class="dex-modal"><button type="button" class="icon-btn" id="dexClose" aria-label="Fechar"><svg class="i" data-i="close"></svg></button><div id="searchResult" aria-live="polite"></div></div></div>
 
 <script src="crosshair.js?v=20261117-video1"></script>
 <script>
@@ -959,11 +983,11 @@ scrim.onclick = () => toggleMenu(false);
 narrow.addEventListener('change', () => { side.classList.remove('open'); scrim.classList.remove('on'); shell.classList.remove('closed'); menuBtn.setAttribute('aria-expanded', String(!narrow.matches)); });
 menuBtn.setAttribute('aria-expanded', String(!narrow.matches));
 function route() {
-  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'teclado', 'sens', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
+  const p = location.hash.slice(2), v = ['inicio', 'demo'].includes(p) ? p : 'inicio';
   document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
   document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
   if (narrow.matches) toggleMenu(false);
-  if (v === 'historico') renderHistory();
+  if (v === 'demo') renderHistory();
   window.scrollTo({ top: 0 });
 }
 addEventListener('hashchange', route);
@@ -1059,13 +1083,13 @@ function renderHistory() {
   const list = document.getElementById('histList'), h = LS.get('history', []);
   list.innerHTML = '';
   document.getElementById('histClear').hidden = !h.length;
-  if (!h.length) { list.appendChild(el('li', '', 'Nenhuma análise ainda. Envie um demo na página Início e ele aparece aqui.')).style.padding = '16px'; return; }
+  if (!h.length) { list.appendChild(el('li', '', 'Nenhuma análise ainda. Envie um demo na aba Demo e ele aparece aqui.')).style.padding = '16px'; return; }
   h.forEach(it => {
     const li = el('li');
     const open = el('button', 'open'); open.type = 'button';
     const txt = el('span'); txt.append(el('b', '', it.name), el('small', '', new Date(it.date).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }) + ' · ' + it.players.length + ' jogadores'));
     open.append(icon('file'), txt);
-    open.onclick = () => { location.hash = '#/inicio'; showResults(it.players, { title: it.name }); };
+    open.onclick = () => { location.hash = '#/demo'; demoTab('demo'); showResults(it.players, { title: it.name }); };
     const del = el('button', 'icon-btn'); del.type = 'button'; del.setAttribute('aria-label', 'Excluir ' + it.name); del.appendChild(icon('del'));
     del.onclick = () => { LS.set('history', LS.get('history', []).filter(x => x.id !== it.id)); renderHistory(); };
     li.append(open, del); list.appendChild(li);
@@ -1849,6 +1873,7 @@ function choosePlayer(p) {
   r.unshift(p.name);
   LS.set('recentSearches', r.slice(0, 5));
   renderRecentSearches();
+  openDetail();
 }
 renderRecentSearches();
 
@@ -2136,7 +2161,73 @@ function goHome() {
   errorBox.classList.remove('on');
   setUpload(true);
 }
-document.querySelectorAll('.side a[data-page="inicio"], .brand').forEach(a => a.addEventListener('click', goHome));
+document.querySelectorAll('.side a[data-page="demo"]').forEach(a => a.addEventListener('click', () => { demoTab('demo'); goHome(); }));
+
+// ---------- SetupDex: grade de jogadores, favoritos e abas da demo ----------
+const dexGrid = document.getElementById('dexGrid'), dexPages = document.getElementById('dexPages'), dexCount = document.getElementById('dexCount');
+const favGrid = document.getElementById('favGrid'), dexOverlay = document.getElementById('dexOverlay');
+const DEX_PER = 12;
+let dexPage = 1, dexReady = false;
+function openDetail() { dexOverlay.hidden = false; document.body.style.overflow = 'hidden'; }
+function closeDetail() { dexOverlay.hidden = true; document.body.style.overflow = ''; }
+document.getElementById('dexClose').onclick = closeDetail;
+dexOverlay.addEventListener('click', e => { if (e.target === dexOverlay) closeDetail(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !dexOverlay.hidden) closeDetail(); });
+function favKeys() { return LS.get('favorites', []); }
+function toggleFav(k) {
+  const f = favKeys();
+  LS.set('favorites', f.includes(k) ? f.filter(x => x !== k) : f.concat([k]));
+  paintDex(); paintFav();
+}
+function dexList() {
+  const q = normName(proSearch.value);
+  return buildIndex().filter(p => !q || p.key.includes(q)).sort((a, b) => (b.steamid ? 1 : 0) - (a.steamid ? 1 : 0));
+}
+function dexCard(p, i) {
+  const c = el('div', 'dex-card'); c.tabIndex = 0; c.setAttribute('role', 'button');
+  const top = el('div', 'dex-top'); top.appendChild(el('b', '', '#' + String(i + 1).padStart(3, '0')));
+  const st = el('button', 'dex-star' + (favKeys().includes(p.key) ? ' on' : ''), '★'); st.type = 'button';
+  st.setAttribute('aria-label', 'Favoritar ' + p.name);
+  st.onclick = e => { e.stopPropagation(); toggleFav(p.key); };
+  top.appendChild(st);
+  const meta = [p.info && p.info.edpi ? 'eDPI ' + Math.round(+p.info.edpi) : '', p.info && p.info.resolution || ''].filter(Boolean).join(' · ') || 'Ver perfil';
+  c.append(top, el('div', 'dex-av', (p.name[0] || '?').toUpperCase()), el('div', 'dex-nm', p.name), el('div', 'dex-meta', meta));
+  const open = () => { const q = proSearch.value; choosePlayer(p); proSearch.value = q; searchClear.hidden = !q; };
+  c.onclick = open;
+  c.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } };
+  return c;
+}
+function paintDex() {
+  if (!dexReady) return;
+  const l = dexList(), np = Math.max(1, Math.ceil(l.length / DEX_PER));
+  dexPage = Math.min(dexPage, np);
+  dexCount.textContent = 'Jogadores encontrados (' + l.length.toLocaleString('pt-BR') + ')';
+  dexGrid.innerHTML = '';
+  l.slice((dexPage - 1) * DEX_PER, dexPage * DEX_PER).forEach((p, i) => dexGrid.appendChild(dexCard(p, (dexPage - 1) * DEX_PER + i)));
+  dexPages.innerHTML = '';
+  const add = (t, n, on) => { const b = el('button', 'dex-pg' + (on ? ' on' : ''), t); b.type = 'button'; b.onclick = () => { dexPage = n; paintDex(); scrollTo({ top: 0 }); }; dexPages.appendChild(b); };
+  add('‹', Math.max(1, dexPage - 1));
+  const s0 = Math.max(1, Math.min(dexPage - 2, np - 4));
+  for (let n = s0; n <= Math.min(np, s0 + 4); n++) add(String(n), n, n === dexPage);
+  if (s0 + 4 < np) { dexPages.appendChild(el('span', '', '…')); add(String(np), np); }
+  add('›', Math.min(np, dexPage + 1));
+}
+function paintFav() {
+  if (!dexReady) return;
+  favGrid.innerHTML = '';
+  const idx = buildIndex(), l = favKeys().map(k => idx.find(p => p.key === k)).filter(Boolean);
+  if (!l.length) { favGrid.appendChild(el('p', '', 'Nenhum favorito ainda. Toque na estrela de um jogador em SetupDex para guardá-lo aqui.')); return; }
+  l.forEach((p, i) => favGrid.appendChild(dexCard(p, i)));
+}
+function demoTab(t) {
+  document.querySelectorAll('[data-dtab]').forEach(b => b.classList.toggle('on', b.dataset.dtab === t));
+  document.querySelectorAll('[data-dpane]').forEach(x => { x.hidden = x.dataset.dpane !== t; });
+  if (t === 'hist') renderHistory();
+  if (t === 'fav') paintFav();
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-dtab],[data-tab]'); if (b) demoTab(b.dataset.dtab || b.dataset.tab); });
+proSearch.addEventListener('input', () => { dexPage = 1; paintDex(); });
+Promise.all([proSettingsReady, csLinksReady]).then(() => { dexReady = true; paintDex(); paintFav(); });
 
 route();
 startWorker();
