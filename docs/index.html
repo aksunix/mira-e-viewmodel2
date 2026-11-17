@@ -955,6 +955,49 @@ main{
   .mascot-svg{height:130px}
 }
 
+/* ===== Fidelidade dos cards à referência enviada ===== */
+.featured-layout{grid-template-columns:minmax(0,2.66fr) minmax(218px,1fr)!important;gap:12px!important;align-items:start!important}
+.featured-main{padding:12px 11px 13px!important;min-height:0!important;height:auto!important}
+.featured-heading{margin:0 0 10px!important;min-height:24px!important}
+.featured-heading h2{font-size:17px!important;line-height:24px!important}
+.featured-list{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:7px!important;align-items:stretch!important}
+.featured-card{height:202px!important;min-height:202px!important;padding:0 0 8px!important;border:1px solid #e8c9bd!important;border-radius:14px!important;background:linear-gradient(180deg,#fffaf4 0%,#fff5ed 100%)!important;box-shadow:0 2px 5px rgba(115,37,29,.13)!important}
+.featured-card:hover,.featured-card.selected{transform:translateY(-1px)!important;border-color:#e71935!important}
+.featured-photo{height:98px!important;flex:none!important}
+.featured-photo img{object-fit:cover!important;object-position:center 18%!important}
+.featured-name{padding:8px 8px 0!important;font-size:13px!important;line-height:17px!important}
+.featured-team{padding:0 8px!important;font-size:10px!important;line-height:14px!important}
+.featured-number{margin:6px!important;padding:2px 7px!important;font-size:9px!important}
+.featured-detail{height:335px!important;min-height:335px!important;max-height:335px!important;padding:7px!important;border:3px solid #e71935!important;border-radius:23px!important;background:#fff8f0!important;box-shadow:0 4px 10px rgba(115,25,29,.15)!important;overflow:hidden!important}
+.featured-detail .dex-player-card{width:100%!important;height:100%!important;max-width:none!important;margin:0!important;padding:5px!important;border:0!important;border-radius:15px!important;background:transparent!important;box-shadow:none!important;overflow:hidden!important}
+.featured-detail .dex-card-top{height:25px!important;min-height:25px!important;padding:0 5px 4px!important}
+.featured-detail .dex-number{height:21px!important;padding:2px 8px!important;font-size:10px!important}
+.featured-detail .dex-fav{font-size:19px!important;line-height:20px!important}
+.featured-detail .dex-photo{height:84px!important;min-height:84px!important;flex:none!important;border:1px solid #20aee8!important;border-radius:10px!important;background:#65c6ee!important;overflow:hidden!important}
+.featured-detail .dex-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 20%!important}
+.featured-detail .dex-identity{padding:8px 4px 7px!important;text-align:left!important}
+.featured-detail .dex-player-name{font-size:15px!important;line-height:19px!important;font-weight:800!important}
+.featured-detail .dex-team{font-size:10px!important;line-height:14px!important}
+.featured-detail .dex-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0 0 7px!important}
+.featured-detail .dex-tab{height:24px!important;min-height:24px!important;padding:0 4px!important;border-radius:14px!important;font-size:9px!important;white-space:nowrap!important}
+.featured-detail .dex-panel{min-height:0!important;padding:5px 1px!important;border-top:1px solid #ead8ce!important;overflow:auto!important}
+.featured-detail .dex-summary{display:flex!important;flex-direction:column!important;gap:0!important}
+.featured-detail .dex-summary-row{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:26px!important;padding:4px 6px!important;border-bottom:1px solid #f0e3dc!important;font-size:10px!important;line-height:14px!important}
+.featured-detail .dex-summary-label{color:#26384b!important}
+.featured-detail .dex-summary-value{color:#10243b!important;font-size:10px!important;font-weight:800!important;text-align:right!important}
+.featured-detail .dex-extra{margin:5px 5px 0!important;font-size:9px!important;color:#586477!important}
+.featured-detail .dex-extra summary{cursor:pointer;font-weight:700}
+.featured-detail .dex-extra .dex-code{max-height:60px!important;font-size:8px!important;line-height:11px!important}
+.featured-detail .dex-panel .pro-tiles div{padding:6px!important}
+.featured-detail .dex-panel .pro-tiles dt{font-size:9px!important}
+.featured-detail .dex-panel .pro-tiles dd{font-size:11px!important;line-height:15px!important}
+.featured-detail .dex-empty{font-size:9px!important;line-height:13px!important}
+.featured-detail .dex-code{font-size:8px!important;line-height:11px!important}
+.featured-detail .dex-copy{height:25px!important;font-size:9px!important}
+@media(min-width:1500px){.featured-layout{grid-template-columns:minmax(0,2.66fr) minmax(290px,1fr)!important;gap:14px!important}.featured-card{height:220px!important;min-height:220px!important}.featured-photo{height:112px!important}.featured-detail{height:350px!important;min-height:350px!important;max-height:350px!important}}
+@media(max-width:1150px){.featured-layout{grid-template-columns:minmax(0,2.35fr) minmax(225px,1fr)!important}.featured-card{height:190px!important;min-height:190px!important}.featured-photo{height:90px!important}}
+@media(max-width:860px){.featured-layout{grid-template-columns:1fr!important}.featured-list{grid-template-columns:repeat(3,minmax(0,1fr))!important}.featured-card{height:205px!important;min-height:205px!important}.featured-photo{height:110px!important}.featured-detail{width:100%!important;max-width:340px!important;margin:0 auto!important}}
+@media(max-width:560px){.featured-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}.featured-card{height:210px!important;min-height:210px!important}.featured-photo{height:120px!important}}
 </style>
 </head>
 <body>
@@ -2015,125 +2058,50 @@ async function fetchProData(p) {
 }
 
 function renderSearchCard(p) {
-  const uid = 'search-' + (++cardSeq);
-  const nick = (p.name || '?').trim();
-  const info = p.info || {};
-  const card = el('article', 'dex-player-card');
-  const top = el('div', 'dex-card-top');
-  top.appendChild(el('span', 'dex-number', '#001'));
-  top.appendChild(el('span', 'dex-fav', '♥'));
-  const photo = el('div', 'dex-photo');
-  photo.appendChild(el('span', 'dex-photo-fallback', nick.charAt(0).toUpperCase()));
-  card.append(top, photo);
-  const identity = el('div', 'dex-identity');
-  identity.appendChild(el('h3', 'dex-player-name', nick));
-  identity.appendChild(el('p', 'dex-team', info.team || info.team_name || info.teamName || 'Jogador profissional'));
-  card.appendChild(identity);
-
-  const definitions = ['Mira', 'Teclado', 'Viewmodel', 'Resolução'];
-  const tabs = el('div', 'dex-tabs');
-  tabs.setAttribute('role', 'tablist');
-  tabs.setAttribute('aria-label', 'Configurações de ' + nick);
-  const panels = [], buttons = [];
-  definitions.forEach((label, i) => {
-    const b = el('button', 'dex-tab', label);
-    b.type = 'button'; b.setAttribute('role', 'tab');
-    b.id = 'dex-tab-' + uid + '-' + i;
-    b.setAttribute('aria-controls', 'dex-panel-' + uid + '-' + i);
-    b.onclick = () => select(i);
-    b.onkeydown = e => {
-      const next = { ArrowRight:(i+1)%4, ArrowLeft:(i+3)%4, Home:0, End:3 }[e.key];
-      if (next === undefined) return;
-      e.preventDefault(); select(next); buttons[next].focus();
-    };
-    tabs.appendChild(b); buttons.push(b);
-    const pn = el('section', 'dex-panel');
-    pn.setAttribute('role', 'tabpanel');
-    pn.id = 'dex-panel-' + uid + '-' + i;
-    pn.setAttribute('aria-labelledby', b.id);
-    panels.push(pn);
+  const uid='search-'+(++cardSeq), nick=(p.name||'?').trim(), info=p.info||{};
+  const card=el('article','dex-player-card'), top=el('div','dex-card-top');
+  top.appendChild(el('span','dex-number','#001'));
+  const fav=el('span','dex-fav','♡'); fav.setAttribute('aria-label','Favorito'); top.appendChild(fav);
+  const photo=el('div','dex-photo'); photo.appendChild(el('span','dex-photo-fallback',nick.charAt(0).toUpperCase())); card.append(top,photo);
+  const identity=el('div','dex-identity');
+  identity.appendChild(el('h3','dex-player-name',nick));
+  identity.appendChild(el('p','dex-team',info.team||info.team_name||info.teamName||'Jogador profissional')); card.appendChild(identity);
+  const definitions=['Mira','Teclado','Viewmodel'], tabs=el('div','dex-tabs');
+  tabs.setAttribute('role','tablist'); tabs.setAttribute('aria-label','Configurações de '+nick);
+  const panels=[],buttons=[];
+  definitions.forEach((label,i)=>{
+    const b=el('button','dex-tab',label); b.type='button'; b.setAttribute('role','tab');
+    b.id='dex-tab-'+uid+'-'+i; b.setAttribute('aria-controls','dex-panel-'+uid+'-'+i); b.onclick=()=>select(i);
+    b.onkeydown=e=>{const next={ArrowRight:(i+1)%3,ArrowLeft:(i+2)%3,Home:0,End:2}[e.key];if(next===undefined)return;e.preventDefault();select(next);buttons[next].focus();};
+    tabs.appendChild(b);buttons.push(b);
+    const pn=el('section','dex-panel');pn.setAttribute('role','tabpanel');pn.id='dex-panel-'+uid+'-'+i;pn.setAttribute('aria-labelledby',b.id);panels.push(pn);
   });
-  function select(index) {
-    buttons.forEach((b, i) => {
-      b.setAttribute('aria-selected', String(i === index));
-      b.tabIndex = i === index ? 0 : -1;
-      panels[i].hidden = i !== index;
-    });
-  }
-
-  panels[0].appendChild(el('p', 'dex-empty', 'Carregando mira…'));
-  const keyboard = info.keyboard && info.keyboard.current;
-  if (keyboard && (keyboard.actuation || keyboard.rapid_trigger || keyboard.rapid_trigger_disabled || (keyboard.groups && keyboard.groups.length))) {
-    const keyboardInfo = {
-      actuation: keyboard.actuation ? keyboard.actuation + ' mm' : '',
-      rapid_trigger: keyboard.rapid_trigger ? keyboard.rapid_trigger + ' mm' : (keyboard.rapid_trigger_disabled ? 'Desativado' : ''),
-      actuation_scope: keyboard.actuation_scope || 'Não informado',
-      rapid_trigger_scope: keyboard.rapid_trigger_scope || 'Não informado',
-      rapid_trigger_activate: keyboard.rapid_trigger_activate ? keyboard.rapid_trigger_activate + ' mm' : '',
-      rapid_trigger_deactivate: keyboard.rapid_trigger_deactivate ? keyboard.rapid_trigger_deactivate + ' mm' : ''
-    };
-    panels[1].appendChild(statTiles(keyboardInfo, KEYBOARD_FIELDS, 'compact'));
-    const note = [keyboard.status || 'Relato da comunidade', keyboard.author ? 'por ' + keyboard.author : '', keyboard.date || ''].filter(Boolean).join(' · ');
-    if (note) panels[1].appendChild(el('p', 'dex-note', note));
-    if (Array.isArray(keyboard.groups) && keyboard.groups.length > 1) {
-      const details = el('details', 'dex-details');
-      details.appendChild(el('summary', '', 'Ver ajustes por grupo de teclas'));
-      const list = el('ul');
-      keyboard.groups.forEach(group => {
-        const parts = [];
-        if (group.actuation) parts.push('AP ' + group.actuation + ' mm');
-        if (group.rapid_trigger) parts.push('RT ' + group.rapid_trigger + ' mm');
-        else if (group.rapid_trigger_disabled) parts.push('RT desativado');
-        list.appendChild(el('li', '', (group.label || 'Grupo') + ': ' + parts.join(' · ')));
-      });
-      details.appendChild(list); panels[1].appendChild(details);
-    }
-  } else panels[1].appendChild(el('p', 'dex-empty', 'Configurações de teclado ainda não disponíveis.'));
-
-  const viewmodel = info.viewmodel_cmd || info.viewmodel || '';
-  if (typeof viewmodel === 'string' && viewmodel.trim()) {
-    panels[2].appendChild(el('pre', 'dex-code', viewmodel));
-    const copy = el('button', 'dex-copy', 'Copiar viewmodel');
-    copy.type = 'button'; copy.onclick = () => copyValue(viewmodel, copy);
-    panels[2].appendChild(copy);
-  } else panels[2].appendChild(el('p', 'dex-empty', 'Viewmodel não disponível para este jogador.'));
-
-  if (info.resolution) panels[3].appendChild(statTiles({ resolution:info.resolution, screenHeight:'' }, VIDEO_FIELDS, 'compact'));
-  else panels[3].appendChild(el('p', 'dex-empty', 'Resolução não disponível para este jogador.'));
-
-  card.appendChild(tabs);
-  panels.forEach(pn => card.appendChild(pn));
-  select(0);
-
-  fetchProData(p).then(data => {
-    if (!data || !card.isConnected) return;
-    if (data.photo) {
-      const img = new Image();
-      img.alt = 'Foto de ' + nick;
-      img.referrerPolicy = 'no-referrer';
-      img.onload = () => { photo.innerHTML = ''; photo.appendChild(img); };
-      img.src = data.photo;
-    }
-    if (data.xh && data.xh.code) {
-      const decoded = decodeCrosshair(data.xh.code);
-      panels[0].innerHTML = '';
-      if (decoded) {
-        const preview = el('div', 'dex-crosshair-preview checker');
-        const canvas = document.createElement('canvas');
-        canvas.setAttribute('role', 'img');
-        canvas.setAttribute('aria-label', 'Prévia da mira de ' + nick);
-        paintCrosshair(canvas, decoded, 140);
-        preview.appendChild(canvas);
-        panels[0].appendChild(preview);
-      }
-      panels[0].appendChild(el('pre', 'dex-code', data.xh.code));
-      const copy = el('button', 'dex-copy', 'Copiar mira');
-      copy.type = 'button'; copy.onclick = () => copyValue(data.xh.code, copy);
-      panels[0].appendChild(copy);
-    } else panels[0].innerHTML = '<p class="dex-empty">Mira não disponível para este jogador.</p>';
-  }).catch(() => {
-    panels[0].innerHTML = '<p class="dex-empty">Mira não disponível para este jogador.</p>';
-  });
+  function select(index){buttons.forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1;panels[i].hidden=i!==index;});}
+  function summaryRow(label,value){const row=el('div','dex-summary-row');row.appendChild(el('span','dex-summary-label',label));row.appendChild(el('strong','dex-summary-value',value||'—'));return row;}
+  const summary=el('div','dex-summary');
+  summary.appendChild(summaryRow('Mira',info.role||info.position||info.rifle||'—'));
+  summary.appendChild(summaryRow('Viewmodel',info.viewmodel_name||(info.viewmodel_cmd||info.viewmodel?'Personalizado':'—')));
+  summary.appendChild(summaryRow('Resolução',info.resolution||'—'));
+  panels[0].appendChild(summary);
+  const xhDetails=el('details','dex-extra');xhDetails.appendChild(el('summary','','Código da mira'));xhDetails.appendChild(el('p','dex-empty','Carregando mira…'));panels[0].appendChild(xhDetails);
+  const keyboard=info.keyboard&&info.keyboard.current;
+  if(keyboard&&(keyboard.actuation||keyboard.rapid_trigger||keyboard.rapid_trigger_disabled||(keyboard.groups&&keyboard.groups.length))){
+    const keyboardInfo={actuation:keyboard.actuation?keyboard.actuation+' mm':'',rapid_trigger:keyboard.rapid_trigger?keyboard.rapid_trigger+' mm':(keyboard.rapid_trigger_disabled?'Desativado':''),actuation_scope:keyboard.actuation_scope||'Não informado',rapid_trigger_scope:keyboard.rapid_trigger_scope||'Não informado',rapid_trigger_activate:keyboard.rapid_trigger_activate?keyboard.rapid_trigger_activate+' mm':'',rapid_trigger_deactivate:keyboard.rapid_trigger_deactivate?keyboard.rapid_trigger_deactivate+' mm':''};
+    panels[1].appendChild(statTiles(keyboardInfo,KEYBOARD_FIELDS,'compact'));
+    const note=[keyboard.status||'Relato da comunidade',keyboard.author?'por '+keyboard.author:'',keyboard.date||''].filter(Boolean).join(' · ');
+    if(note)panels[1].appendChild(el('p','dex-note',note));
+    if(Array.isArray(keyboard.groups)&&keyboard.groups.length>1){const details=el('details','dex-details');details.appendChild(el('summary','','Ver ajustes por grupo de teclas'));const list=el('ul');keyboard.groups.forEach(group=>{const parts=[];if(group.actuation)parts.push('AP '+group.actuation+' mm');if(group.rapid_trigger)parts.push('RT '+group.rapid_trigger+' mm');else if(group.rapid_trigger_disabled)parts.push('RT desativado');list.appendChild(el('li','',(group.label||'Grupo')+': '+parts.join(' · ')));});details.appendChild(list);panels[1].appendChild(details);}
+  }else panels[1].appendChild(el('p','dex-empty','Configurações de teclado ainda não disponíveis.'));
+  const viewmodel=info.viewmodel_cmd||info.viewmodel||'';
+  if(typeof viewmodel==='string'&&viewmodel.trim()){panels[2].appendChild(el('pre','dex-code',viewmodel));const copy=el('button','dex-copy','Copiar viewmodel');copy.type='button';copy.onclick=()=>copyValue(viewmodel,copy);panels[2].appendChild(copy);}
+  else panels[2].appendChild(el('p','dex-empty','Viewmodel não disponível para este jogador.'));
+  card.appendChild(tabs);panels.forEach(pn=>card.appendChild(pn));select(0);
+  fetchProData(p).then(data=>{
+    if(!data||!card.isConnected)return;
+    if(data.photo){const img=new Image();img.alt='Foto de '+nick;img.referrerPolicy='no-referrer';img.onload=()=>{photo.innerHTML='';photo.appendChild(img);};img.src=data.photo;}
+    if(data.xh&&data.xh.code){xhDetails.innerHTML='';xhDetails.appendChild(el('summary','','Código da mira'));xhDetails.appendChild(el('pre','dex-code',data.xh.code));const copy=el('button','dex-copy','Copiar mira');copy.type='button';copy.onclick=()=>copyValue(data.xh.code,copy);xhDetails.appendChild(copy);}
+    else xhDetails.innerHTML='<summary>Código da mira</summary><p class="dex-empty">Mira não disponível para este jogador.</p>';
+  }).catch(()=>{xhDetails.innerHTML='<summary>Código da mira</summary><p class="dex-empty">Mira não disponível para este jogador.</p>';});
   return card;
 }
 
