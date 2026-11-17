@@ -241,7 +241,7 @@ def _keyboard_values(text):
 def _is_keyboard_evidence_url(url):
     # Links genéricos de ajuda (por exemplo, a página inicial do Wootility) não são prova do ajuste.
     return bool(re.search(
-        r"(twitch\\.tv|clips\\.twitch|youtube\\.com|youtu\\.be|streamable\\.com|twitter\\.com|x\\.com|imgur\\.com|gyazo\\.com|t\\.me|telegram\\.org|hltv\\.org|cybershoke\\.net|steamcommunity\\.com)",
+        r"(twitch\.tv|clips\.twitch|youtube\.com|youtu\.be|streamable\.com|twitter\.com|x\.com|imgur\.com|gyazo\.com|t\.me|telegram\.org|hltv\.org|cybershoke\.net|steamcommunity\.com)",
         url, re.I
     ))
 
