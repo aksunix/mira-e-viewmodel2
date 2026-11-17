@@ -7,14 +7,15 @@ package main
 
 import (
 	"bufio"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
 	"sort"
 	"syscall/js"
 
-	demoinfocs "github.com/markus-wa/demoinfocs-golang/v5/pkg/demoinfocs"
-	events "github.com/markus-wa/demoinfocs-golang/v5/pkg/demoinfocs/events"
+	demoinfocs "github.com/markus-wa/demoinfocs-golang/v6/pkg/demoinfocs"
+	events "github.com/markus-wa/demoinfocs-golang/v6/pkg/demoinfocs/events"
 )
 
 type PlayerInfo struct {
@@ -125,7 +126,7 @@ func parse(file js.Value) {
 		}
 	})
 
-	parseErr := p.ParseToEnd()
+	parseErr := p.ParseToEnd(context.Background())
 	if parseErr != nil && len(players) == 0 {
 		post(map[string]any{"type": "error", "message": "não consegui ler este arquivo (" + parseErr.Error() + ")"})
 		return
