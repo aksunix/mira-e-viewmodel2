@@ -27,13 +27,6 @@ jobs:
         with:
           go-version-file: go.mod
 
-      - name: Atualizar a biblioteca de leitura de demos (v6)
-        run: |
-          go get github.com/markus-wa/demoinfocs-golang/v6@v6.0.0-rc.1
-          go mod tidy
-          go list -m github.com/markus-wa/demoinfocs-golang/v6
-          go version
-
       - name: Compilar o analisador para WebAssembly
         run: |
           GOOS=js GOARCH=wasm go build -o docs/parser.wasm ./wasm
