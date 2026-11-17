@@ -1161,7 +1161,7 @@ function paintCrosshair(canvas, xh, size) {
 
 let proSettings = {};
 let proNames = {};
-const proSettingsReady = fetch('pro-settings.json?v=20261117-keyboard1')
+const proSettingsReady = fetch('pro-settings.json?v=20261117-keyboardtab2')
   .then(r => (r.ok ? r.json() : { players: {} }))
   .then(j => { proSettings = (j && j.players) || {}; proNames = (j && j.names) || {}; })
   .catch(() => {});
@@ -1855,6 +1855,7 @@ function renderKeyboardProfile(p) {
   foot.appendChild(el('span', 'keyboard-status' + (current.confidence === 'admin' ? '' : ' community'), statusText));
   const byline = [current.author ? 'Comentário de ' + current.author : '', current.date || ''].filter(Boolean).join(' · ');
   if (byline) foot.appendChild(el('p', 'keyboard-note', byline));
+  foot.appendChild(el('p', 'keyboard-note', 'Os marcadores são ilustrativos; os valores e o escopo são os dados informados no comentário.'));
   card.appendChild(foot);
 
   if (keyboard.alternatives && keyboard.alternatives.length) {

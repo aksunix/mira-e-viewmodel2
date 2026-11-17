@@ -87,43 +87,43 @@ def _setting_number(text, patterns):
 
 def _setting_scope(text, setting):
     lower = text.lower()
-    patterns = (
-        [r"\\b(?:actuation(?:\\s+point)?|action\\s+point|act|ap)\\b"]
+    pattern = (
+        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\b"
         if setting == "actuation" else
-        [r"\\b(?:rapid(?:\\s*trigger)?|rt)\\b"]
+        r"\b(?:rapid(?:\s*trigger)?|rt)\b"
     )
-    match = re.search("|".join(patterns), lower)
+    match = re.search(pattern, lower)
     if not match:
         return "Não informado", []
 
     window = lower[max(0, match.start() - 35):min(len(lower), match.end() + 85)]
-    if re.search(r"\\ball\\s+(?:the\\s+)?keys\\b|\\bevery\\s+key\\b|\\bwhole\\s+keyboard\\b", window):
+    if re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b|\bwhole\s+keyboard\b", window):
         return "Todas as teclas", []
 
     keys = []
-    if re.search(r"\\bwasd\\b", window):
+    if re.search(r"\bwasd\b", window):
         keys.extend(["W", "A", "S", "D"])
 
     # Procura listas explicitamente associadas ao ajuste (ex.: "only A/D", "on WASD + Space").
-    scoped = re.search(r"(?:\\bonly\\b(?:\\s+on)?|\\b(?:on|for)\\s+(?:the\\s+)?|\\bkeys?\\s*[:=])\\s*(.{1,55})", window)
+    scoped = re.search(r"(?:\bonly\b(?:\s+on)?|\b(?:on|for)\s+(?:the\s+)?|\bkeys?\s*[:=])\s*(.{1,55})", window)
     if scoped:
         phrase = re.split(r"[.;|]", scoped.group(1), maxsplit=1)[0]
         aliases = [
-            (r"\\bspace(?:bar)?\\b", "Space"),
-            (r"\\bshift\\b", "Shift"),
-            (r"\\b(?:ctrl|control)\\b", "Ctrl"),
-            (r"\\balt\\b", "Alt"),
-            (r"\\btab\\b", "Tab"),
-            (r"\\bcaps(?:\\s+lock)?\\b", "Caps"),
-            (r"\\b(?:enter|return)\\b", "Enter"),
-            (r"\\bbackspace\\b", "Backspace"),
-            (r"\\b(?:delete|del)\\b", "Del"),
-            (r"\\b(?:insert|ins)\\b", "Ins"),
-            (r"\\b(?:up|down|left|right)\\b", None),
-            (r"\\b[a-z0-9]\\b", None),
+            (r"\bspace(?:bar)?\b", "Space"),
+            (r"\bshift\b", "Shift"),
+            (r"\b(?:ctrl|control)\b", "Ctrl"),
+            (r"\balt\b", "Alt"),
+            (r"\btab\b", "Tab"),
+            (r"\bcaps(?:\s+lock)?\b", "Caps"),
+            (r"\b(?:enter|return)\b", "Enter"),
+            (r"\bbackspace\b", "Backspace"),
+            (r"\b(?:delete|del)\b", "Del"),
+            (r"\b(?:insert|ins)\b", "Ins"),
+            (r"\b(?:up|down|left|right)\b", None),
+            (r"\b[a-z0-9]\b", None),
         ]
-        for pattern, label in aliases:
-            for token in re.findall(pattern, phrase):
+        for key_pattern, label in aliases:
+            for token in re.findall(key_pattern, phrase):
                 value = label or token.upper()
                 if value not in keys:
                     keys.append(value)
@@ -135,14 +135,14 @@ def _setting_scope(text, setting):
 
 def _keyboard_values(text):
     actuation = _setting_number(text, [
-        r"\\b(?:actuation(?:\\s+point)?|action\\s+point|act|ap)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*mm?\\s*(?:actuation(?:\\s+point)?|action\\s+point|act)\\b",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*(?:actuation(?:\\s+point)?|action\\s+point|act)\\b",
+        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
     ])
     rapid = _setting_number(text, [
-        r"\\b(?:rapid(?:\\s*trigger)?|rt)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*mm?\\s*(?:rapid(?:\\s*trigger)?|rt)\\b",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*(?:rapid(?:\\s*trigger)?|rt)\\b",
+        r"\b(?:rapid(?:\s*trigger)?|rt)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:rapid(?:\s*trigger)?|rt)\b",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:rapid(?:\s*trigger)?|rt)\b",
     ])
     if not actuation and not rapid:
         return None
