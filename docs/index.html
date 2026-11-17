@@ -2045,7 +2045,7 @@ async function selectFeatured(index) {
   await Promise.all([proSettingsReady, csLinksReady]);
   const found = buildIndex().find(x => normName(x.name) === normName(item.name));
   const player = found || {key:normName(item.name),name:item.name,info:{team:item.team},steamid:null,custom:true};
-  if (!player.info) player.info = {team:item.team};
+  player.info = Object.assign({}, player.info || {}, {team:(player.info && (player.info.team || player.info.team_name || player.info.teamName)) || item.team});
   featuredDetail.innerHTML = '';
   featuredDetail.appendChild(renderSearchCard(player));
   [...featuredList.children].forEach((node,i)=>node.classList.toggle('selected',i===index));
