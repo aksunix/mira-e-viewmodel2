@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://prosettings.net"
-KEYBOARD_PARSER_VERSION = "5"
+KEYBOARD_PARSER_VERSION = "6"
 UA = "cs2-demo-analyzer-prosettings-sync/1.0 (projeto pessoal; 1 req a cada poucos segundos)"
 FIELDS = {"sensitivity": "sensitivity", "dpi": "dpi", "edpi": "edpi",
           "zoom sensitivity": "zoom_sensitivity", "hz": "hz"}
@@ -238,6 +238,14 @@ def _keyboard_values(text):
         values.update({k: v for k, v in groups[0].items() if k != "label"})
     return values
 
+def _is_keyboard_evidence_url(url):
+    # Links genéricos de ajuda (por exemplo, a página inicial do Wootility) não são prova do ajuste.
+    return bool(re.search(
+        r"(twitch\\.tv|clips\\.twitch|youtube\\.com|youtu\\.be|streamable\\.com|twitter\\.com|x\\.com|imgur\\.com|gyazo\\.com|t\\.me|telegram\\.org|hltv\\.org|cybershoke\\.net|steamcommunity\\.com)",
+        url, re.I
+    ))
+
+
 def parse_keyboard_comments(soup, profile_url):
     """Extrai relatos de Actuation Point/RT dos comentários e classifica evidências e conflitos."""
     headings = [h.get_text(" ", strip=True).lower() for h in soup.find_all(re.compile(r"^h[1-6]$"))]
@@ -365,7 +373,7 @@ def parse_keyboard_comments(soup, profile_url):
         evidence = []
         for item in [record] + related:
             for url in item["urls"]:
-                if url not in evidence:
+                if _is_keyboard_evidence_url(url) and url not in evidence:
                     evidence.append(url)
         clip_urls = [u for u in evidence if re.search(r"(twitch\.tv|clips\.twitch|youtube\.com|youtu\.be|streamable\.com|twitter\.com|x\.com|imgur\.com|gyazo\.com)", u, re.I)]
         admin_verified = any(
