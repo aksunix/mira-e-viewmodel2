@@ -1826,7 +1826,7 @@ function renderKeyboardProfile(p) {
   if (!current || (!current.actuation && !current.rapid_trigger)) {
     const empty = el('div', 'keyboard-empty');
     empty.append(
-      el('strong', '', 'Sem configuração de teclado encontrada'),
+      el('strong', '', p.name + ' — sem configuração de teclado encontrada'),
       document.createTextNode('Ainda não encontramos um relato identificável de Actuation Point ou Rapid Trigger para este jogador. Isso não significa que ele não use esses recursos.')
     );
     const profileUrl = safeUrl(p.info && p.info.url, 'prosettings.net');
@@ -1943,6 +1943,16 @@ keyboardSearchClear.onclick = () => {
   closeKeyboardSuggest();
   keyboardSearch.focus();
 };
+
+Promise.all([proSettingsReady, csLinksReady]).then(() => {
+  const all = getKeyboardIndex();
+  const withSettings = all.filter(p => {
+    const current = p.info && p.info.keyboard && p.info.keyboard.current;
+    return !!(current && (current.actuation || current.rapid_trigger));
+  }).length;
+  keyboardHint.textContent = all.length.toLocaleString('pt-BR') + ' perfis pesquisáveis · ' +
+    withSettings.toLocaleString('pt-BR') + ' com relatos de teclado coletados.';
+});
 
 // Clicar em "Início" (ou na logo) sempre volta para a tela de upload
 function goHome() {
