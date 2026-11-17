@@ -257,9 +257,17 @@ def parse_keyboard_comments(soup, profile_url):
     seen = set()
     for selector in (
         'li[id^="comment-"]',
+        'li.comment',
         'article[id^="comment-"]',
+        'article.comment',
         '[id^="div-comment-"]',
+        '[id*="comment-"]',
+        '.comment',
+        '.comment-body',
+        '.comment-content',
         '.wpd-comment-wrap',
+        '.wpd-comment',
+        '.wpd-comment-text',
         '[id^="wpd-comm-"]',
         '[data-comment-id]',
     ):
