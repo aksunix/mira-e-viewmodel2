@@ -1106,7 +1106,7 @@ const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensit
 
 // Converte a altura da mira (cl_crosshair_screen_height, lida do código da mira na demo) em resolução.
 // 960 e 768 são 4:3 (1280x960, 1024x768); as demais são 16:9. Altura fora da lista usa 16:9.
-const RES_BY_HEIGHT = { 720: '1280x720', 768: '1024x768', 900: '1600x900', 960: '1280x960', 1080: '1920x1080', 1440: '2560x1440', 2160: '3840x2160' };
+const RES_BY_HEIGHT = { 720: '1280x720', 768: '1024x768', 900: '1600x900', 960: '1280x960', 1024: '1280x1024', 1080: '1920x1080', 1440: '2560x1440', 2160: '3840x2160' };
 function resolutionFromHeight(h) {
   if (!(h >= 240 && h <= 4320)) return '';
   if (RES_BY_HEIGHT[h]) return RES_BY_HEIGHT[h];
