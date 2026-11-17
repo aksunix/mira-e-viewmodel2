@@ -1685,108 +1685,124 @@ async function fetchProData(p) {
 }
 
 function renderSearchCard(p) {
-  const card = el('article', 'pro');
+  const uid = 'search-' + (++cardSeq);
   const nick = (p.name || '?').trim();
+  const info = p.info || {};
+  const card = el('article', 'dex-player-card');
+  const top = el('div', 'dex-card-top');
+  top.appendChild(el('span', 'dex-number', '#001'));
+  top.appendChild(el('span', 'dex-fav', '♥'));
+  const photo = el('div', 'dex-photo');
+  photo.appendChild(el('span', 'dex-photo-fallback', nick.charAt(0).toUpperCase()));
+  card.append(top, photo);
+  const identity = el('div', 'dex-identity');
+  identity.appendChild(el('h3', 'dex-player-name', nick));
+  identity.appendChild(el('p', 'dex-team', info.team || info.team_name || info.teamName || 'Jogador profissional'));
+  card.appendChild(identity);
 
-  // Cabeçalho: avatar, nome, links e aviso
-  const head = el('div', 'pro-head');
-  const top = el('div', 'pro-top');
-  const av = el('div', 'pro-av', nick.charAt(0) || '?');
-  top.appendChild(av);
-
-  const main = el('div', 'pro-main');
-  main.appendChild(el('h3', 'pro-name', nick));
-  if (p.custom) main.appendChild(el('span', 'pro-tag', 'Não listado'));
-
-  const links = el('div', 'pro-links');
-  main.appendChild(links);
-  top.appendChild(main);
-  head.appendChild(top);
-
-  const linkEls = proLinks(p).map(([label, href]) => {
-    const a = el('a', 'pro-btn ' + label.toLowerCase());
-    a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
-    a.append(icon('ext'), el('span', '', label));
-    links.appendChild(a);
-    return a;
+  const definitions = ['Mira', 'Teclado', 'Viewmodel', 'Resolução'];
+  const tabs = el('div', 'dex-tabs');
+  tabs.setAttribute('role', 'tablist');
+  tabs.setAttribute('aria-label', 'Configurações de ' + nick);
+  const panels = [], buttons = [];
+  definitions.forEach((label, i) => {
+    const b = el('button', 'dex-tab', label);
+    b.type = 'button'; b.setAttribute('role', 'tab');
+    b.id = 'dex-tab-' + uid + '-' + i;
+    b.setAttribute('aria-controls', 'dex-panel-' + uid + '-' + i);
+    b.onclick = () => select(i);
+    b.onkeydown = e => {
+      const next = { ArrowRight:(i+1)%4, ArrowLeft:(i+3)%4, Home:0, End:3 }[e.key];
+      if (next === undefined) return;
+      e.preventDefault(); select(next); buttons[next].focus();
+    };
+    tabs.appendChild(b); buttons.push(b);
+    const pn = el('section', 'dex-panel');
+    pn.setAttribute('role', 'tabpanel');
+    pn.id = 'dex-panel-' + uid + '-' + i;
+    pn.setAttribute('aria-labelledby', b.id);
+    panels.push(pn);
   });
-
-  if (p.steamid) {
-    const cfg = el('a', 'pro-btn cfg');
-    cfg.href = CFG_URL(p.steamid); cfg.target = '_blank'; cfg.rel = 'noopener noreferrer';
-    cfg.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
-    cfg.setAttribute('aria-label', 'Baixar CFG de ' + nick + ' do CyberShoke');
-    cfg.appendChild(el('span', '', 'CFG CyberShoke'));
-    links.appendChild(cfg);
+  function select(index) {
+    buttons.forEach((b, i) => {
+      b.setAttribute('aria-selected', String(i === index));
+      b.tabIndex = i === index ? 0 : -1;
+      panels[i].hidden = i !== index;
+    });
   }
 
-  const note = el('div', 'pro-note');
-  note.setAttribute('role', 'note');
-  const noteTxt = el('p');
-  const bold = t => { const b = document.createElement('b'); b.textContent = t; return b; };
-  noteTxt.append('Baixe a demo utilizando ', bold('FACEIT'), ' ou ', bold('HLTV'), ' para obter mira e viewmodel mais recente');
-  note.append(icon('info'), noteTxt);
-  head.appendChild(note);
-  card.appendChild(head);
-
-  // Mouse e vídeo: cartões lado a lado
-  const grid = el('div', 'pro-grid');
-  if (p.info) {
-    const box = el('section', 'pro-card');
-    box.appendChild(sectionTitle('mouse', 'Mouse'));
-    box.appendChild(statTiles(p.info, MOUSE_FIELDS));
-    grid.appendChild(box);
-  }
-  if (p.info && p.info.resolution) {
-    const vbox = el('section', 'pro-card');
-    vbox.appendChild(sectionTitle('monitor', 'Vídeo'));
-    vbox.appendChild(statTiles(p.info, VIDEO_FIELDS));
-    grid.appendChild(vbox);
-  }
-  if (grid.children.length) card.appendChild(grid);
-
-  fetchProData(p).then(d => {
-    if (!d || !card.isConnected) return;
-    if (d.faceit) { linkEls[0].href = d.faceit.url; linkEls[0].title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
-    if (d.hltv) linkEls[1].href = d.hltv.url;
-    if (d.xh && d.xh.code) {
-      const xhd = decodeCrosshair(d.xh.code);
-      if (xhd) {
-        const box = el('section', 'pro-card pro-xh');
-        box.appendChild(sectionTitle('aim', 'Mira'));
-        const row = el('div', 'xh-row');
-        const prev = el('div', 'xh-prev checker');
-        const cv = document.createElement('canvas');
-        cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
-        paintCrosshair(cv, xhd, 140);
-        prev.appendChild(cv);
-        const body = el('div', 'xh-body');
-        body.appendChild(el('pre', 'xh-code', d.xh.code));
-        const chips = el('div', 'xh-chips');
-        if (d.xh.changed) {
-          const when = new Date(d.xh.changed + 'T12:00:00').toLocaleDateString('pt-BR');
-          const dt = el('span', 'xh-chip tonal', 'Mira trocada em ' + when);
-          dt.title = 'Data em que este site viu o código da mira mudar.';
-          chips.appendChild(dt);
-        }
-        if (chips.children.length) body.appendChild(chips);
-        const cb = el('button', 'btn btn-filled', 'Copiar mira');
-        cb.type = 'button'; cb.dataset.label = 'Copiar mira';
-        cb.onclick = () => copyValue(d.xh.code, cb);
-        body.appendChild(cb);
-        row.append(prev, body);
-        box.appendChild(row);
-        head.after(box);
-      }
+  panels[0].appendChild(el('p', 'dex-empty', 'Carregando mira…'));
+  const keyboard = info.keyboard && info.keyboard.current;
+  if (keyboard && (keyboard.actuation || keyboard.rapid_trigger || keyboard.rapid_trigger_disabled || (keyboard.groups && keyboard.groups.length))) {
+    const keyboardInfo = {
+      actuation: keyboard.actuation ? keyboard.actuation + ' mm' : '',
+      rapid_trigger: keyboard.rapid_trigger ? keyboard.rapid_trigger + ' mm' : (keyboard.rapid_trigger_disabled ? 'Desativado' : ''),
+      actuation_scope: keyboard.actuation_scope || 'Não informado',
+      rapid_trigger_scope: keyboard.rapid_trigger_scope || 'Não informado',
+      rapid_trigger_activate: keyboard.rapid_trigger_activate ? keyboard.rapid_trigger_activate + ' mm' : '',
+      rapid_trigger_deactivate: keyboard.rapid_trigger_deactivate ? keyboard.rapid_trigger_deactivate + ' mm' : ''
+    };
+    panels[1].appendChild(statTiles(keyboardInfo, KEYBOARD_FIELDS, 'compact'));
+    const note = [keyboard.status || 'Relato da comunidade', keyboard.author ? 'por ' + keyboard.author : '', keyboard.date || ''].filter(Boolean).join(' · ');
+    if (note) panels[1].appendChild(el('p', 'dex-note', note));
+    if (Array.isArray(keyboard.groups) && keyboard.groups.length > 1) {
+      const details = el('details', 'dex-details');
+      details.appendChild(el('summary', '', 'Ver ajustes por grupo de teclas'));
+      const list = el('ul');
+      keyboard.groups.forEach(group => {
+        const parts = [];
+        if (group.actuation) parts.push('AP ' + group.actuation + ' mm');
+        if (group.rapid_trigger) parts.push('RT ' + group.rapid_trigger + ' mm');
+        else if (group.rapid_trigger_disabled) parts.push('RT desativado');
+        list.appendChild(el('li', '', (group.label || 'Grupo') + ': ' + parts.join(' · ')));
+      });
+      details.appendChild(list); panels[1].appendChild(details);
     }
-    if (d.photo) {
-      // foto da HLTV no lugar da inicial; se nao carregar, a inicial continua
+  } else panels[1].appendChild(el('p', 'dex-empty', 'Configurações de teclado ainda não disponíveis.'));
+
+  const viewmodel = info.viewmodel_cmd || info.viewmodel || '';
+  if (typeof viewmodel === 'string' && viewmodel.trim()) {
+    panels[2].appendChild(el('pre', 'dex-code', viewmodel));
+    const copy = el('button', 'dex-copy', 'Copiar viewmodel');
+    copy.type = 'button'; copy.onclick = () => copyValue(viewmodel, copy);
+    panels[2].appendChild(copy);
+  } else panels[2].appendChild(el('p', 'dex-empty', 'Viewmodel não disponível para este jogador.'));
+
+  if (info.resolution) panels[3].appendChild(statTiles({ resolution:info.resolution, screenHeight:'' }, VIDEO_FIELDS, 'compact'));
+  else panels[3].appendChild(el('p', 'dex-empty', 'Resolução não disponível para este jogador.'));
+
+  card.appendChild(tabs);
+  panels.forEach(pn => card.appendChild(pn));
+  select(0);
+
+  fetchProData(p).then(data => {
+    if (!data || !card.isConnected) return;
+    if (data.photo) {
       const img = new Image();
       img.alt = 'Foto de ' + nick;
       img.referrerPolicy = 'no-referrer';
-      img.onload = () => { av.textContent = ''; av.classList.add('has-photo'); av.appendChild(img); };
-      img.src = d.photo;
+      img.onload = () => { photo.innerHTML = ''; photo.appendChild(img); };
+      img.src = data.photo;
     }
+    if (data.xh && data.xh.code) {
+      const decoded = decodeCrosshair(data.xh.code);
+      panels[0].innerHTML = '';
+      if (decoded) {
+        const preview = el('div', 'dex-crosshair-preview checker');
+        const canvas = document.createElement('canvas');
+        canvas.setAttribute('role', 'img');
+        canvas.setAttribute('aria-label', 'Prévia da mira de ' + nick);
+        paintCrosshair(canvas, decoded, 140);
+        preview.appendChild(canvas);
+        panels[0].appendChild(preview);
+      }
+      panels[0].appendChild(el('pre', 'dex-code', data.xh.code));
+      const copy = el('button', 'dex-copy', 'Copiar mira');
+      copy.type = 'button'; copy.onclick = () => copyValue(data.xh.code, copy);
+      panels[0].appendChild(copy);
+    } else panels[0].innerHTML = '<p class="dex-empty">Mira não disponível para este jogador.</p>';
+  }).catch(() => {
+    panels[0].innerHTML = '<p class="dex-empty">Mira não disponível para este jogador.</p>';
   });
   return card;
 }
