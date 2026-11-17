@@ -4,41 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>CS2 Extract – Crosshair &amp; Viewmodel</title>
-<script>try{var t=localStorage.getItem("cs2x:theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}</script>
+<meta name="theme-color" content="#F25C54">
+<meta name="description" content="SetupDex: mira, viewmodel, mouse e teclado dos jogadores de CS2. Leia demos no navegador e pesquise setups de profissionais.">
+<title>SetupDex – Mira, viewmodel e setups de CS2</title>
+<script>try{var t=localStorage.getItem("cs2x:theme")||"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}</script>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
+  /* SetupDex: tema escuro (padrão do :root) e tema claro coral/creme/lima */
   :root {
-    --md-primary: #D0BCFF; --md-on-primary: #381E72;
-    --md-primary-container: #4F378B; --md-on-primary-container: #EADDFF;
-    --md-secondary-container: #4A4458; --md-on-secondary-container: #E8DEF8;
-    --md-surface: #141218; --md-surface-container-low: #1D1B20;
-    --md-surface-container: #211F26; --md-surface-container-high: #2B2930;
-    --md-surface-container-highest: #36343B; --md-on-surface: #E6E0E9;
-    --md-on-surface-variant: #CAC4D0; --md-outline: #938F99;
-    --md-outline-variant: #49454F; --md-inverse-surface: #E6E0E9;
-    --md-inverse-on-surface: #322F35; --md-error: #F2B8B5;
+    --md-primary: #D9F23A; --md-on-primary: #1B1B1B;
+    --md-primary-container: #46510F; --md-on-primary-container: #EEFA9A;
+    --md-secondary-container: #4A2E2F; --md-on-secondary-container: #FBE4D6;
+    --md-surface: #1B1112; --md-surface-container-low: #33201F;
+    --md-surface-container: #3C2625; --md-surface-container-high: #47302F;
+    --md-surface-container-highest: #523A39; --md-on-surface: #FBF3E4;
+    --md-on-surface-variant: #D9C6B8; --md-outline: #A8887C;
+    --md-outline-variant: #6B4A47; --md-inverse-surface: #FBF3E4;
+    --md-inverse-on-surface: #1B1B1B; --md-error: #FFB4A9;
     --md-error-container: #8C1D18; --md-on-error-container: #F9DEDC;
-    --md-accent: #D0BCFF; --md-grad-a: #D0BCFF; --md-grad-b: #EADDFF;
-    --md-shadow: 0 6px 18px rgba(0,0,0,.35);
-    --md-elev1: 0 1px 2px rgba(0,0,0,.5), 0 1px 3px 1px rgba(0,0,0,.3);
-    --md-elev2: 0 1px 2px rgba(0,0,0,.5), 0 2px 6px 2px rgba(0,0,0,.3);
+    --md-accent: #D9F23A; --md-grad-a: #D9F23A; --md-grad-b: #FFE94A;
+    --md-shadow: 0 5px 0 #000;
+    --md-elev1: 0 4px 0 #000; --md-elev2: 0 6px 0 #000;
+    --sd-page: #1B1112; --sd-panel: #241617; --sd-border: #7A5A55; --sd-on-page: #FBF3E4;
+    --sd-lime: #D9F23A; --sd-ok: #9BE7A8;
   }
   :root[data-theme="light"] {
-    --md-primary: #6750A4; --md-on-primary: #FFFFFF;
-    --md-primary-container: #EADDFF; --md-on-primary-container: #21005D;
-    --md-secondary-container: #E8DEF8; --md-on-secondary-container: #1D192B;
-    --md-surface: #FEF7FF; --md-surface-container-low: #F7F2FA;
-    --md-surface-container: #F3EDF7; --md-surface-container-high: #ECE6F0;
-    --md-surface-container-highest: #E6E0E9; --md-on-surface: #1D1B20;
-    --md-on-surface-variant: #49454F; --md-outline: #79747E;
-    --md-outline-variant: #CAC4D0; --md-inverse-surface: #322F35;
-    --md-inverse-on-surface: #F5EFF7; --md-error: #B3261E;
+    --md-primary: #1B1B1B; --md-on-primary: #D9F23A;
+    --md-primary-container: #D9F23A; --md-on-primary-container: #1B1B1B;
+    --md-secondary-container: #EADFC8; --md-on-secondary-container: #1B1B1B;
+    --md-surface: #FFFFFF; --md-surface-container-low: #FFFFFF;
+    --md-surface-container: #F6EEDD; --md-surface-container-high: #EADFC8;
+    --md-surface-container-highest: #E2D5B8; --md-on-surface: #1B1B1B;
+    --md-on-surface-variant: #4A4A4A; --md-outline: #1B1B1B;
+    --md-outline-variant: #1B1B1B; --md-inverse-surface: #1B1B1B;
+    --md-inverse-on-surface: #FBF3E4; --md-error: #B3261E;
     --md-error-container: #F9DEDC; --md-on-error-container: #410E0B;
-    --md-accent: #6750A4; --md-grad-a: #6750A4; --md-grad-b: #9A82DB;
-    --md-shadow: 0 6px 18px rgba(40,20,80,.15);
-    --md-elev1: 0 1px 2px rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
-    --md-elev2: 0 1px 2px rgba(0,0,0,.3), 0 2px 6px 2px rgba(0,0,0,.15);
+    --md-accent: #C9362E; --md-grad-a: #C9362E; --md-grad-b: #E0653B;
+    --md-shadow: 0 5px 0 #1B1B1B;
+    --md-elev1: 0 4px 0 #1B1B1B; --md-elev2: 0 6px 0 #1B1B1B;
+    --sd-page: #F25C54; --sd-panel: #FBF3E4; --sd-border: #1B1B1B; --sd-on-page: #1B1B1B;
+    --sd-lime: #D9F23A; --sd-ok: #9BE7A8;
   }
 
   * { box-sizing: border-box; }
@@ -505,15 +510,119 @@
     * { transition: none !important; }
     .linear.indeterminate .bar { animation: none; left: 0; width: 100%; opacity: .5; }
   }
+  /* ===== SetupDex: visual de "dex" (painéis com contorno, sombra dura e destaque em lima) ===== */
+  body { background: var(--sd-page); }
+  .appbar { height: 76px; padding: 0 20px; background: transparent; border-bottom: 0; color: var(--sd-on-page); }
+  .brand { transform: rotate(-2deg); }
+  .brand svg { width: 42px; height: 42px; fill: var(--sd-on-page); }
+  .brand b { font-size: 32px; line-height: 32px; font-weight: 800; font-style: italic; letter-spacing: -.5px; color: #FFE94A; text-shadow: 2px 2px 0 #1B1B1B, -2px 2px 0 #1B1B1B, 2px -2px 0 #1B1B1B, -2px -2px 0 #1B1B1B, 0 4px 0 #1B1B1B; }
+  .brand b em { color: inherit; }
+  .brand small { margin-top: 2px; color: var(--sd-on-page); font-weight: 600; }
+  .appbar .icon-btn { color: var(--sd-on-page); }
+  .appbar .icon-btn:hover { background: rgba(0,0,0,.14); }
+  .theme { padding: 3px; border: 2.5px solid var(--sd-border); border-radius: 14px; background: var(--md-surface-container-low); box-shadow: 0 3px 0 var(--sd-border); }
+  .theme .icon-btn { color: var(--md-on-surface); }
+  .theme .icon-btn:hover { background: var(--md-surface-container-high); }
+  .theme .icon-btn[aria-pressed="true"] { background: var(--sd-lime); color: #1B1B1B; }
+
+  .shell { gap: 18px; padding: 0 20px 20px; min-height: calc(100vh - 76px); align-items: flex-start; }
+  .side { position: sticky; top: 16px; width: 250px; gap: 8px; padding: 16px 14px; background: var(--sd-panel); border: 3px solid var(--sd-border); border-radius: 28px; box-shadow: 0 5px 0 var(--sd-border); }
+  .side a { height: 48px; padding: 0 16px; border: 2.5px solid var(--sd-border); border-radius: 16px; background: var(--md-surface-container-low); color: var(--md-on-surface); font-weight: 700; box-shadow: 0 3px 0 var(--sd-border); transition: transform .1s, box-shadow .1s; }
+  .side a:hover { background: var(--md-surface-container-low); transform: translateY(-1px); box-shadow: 0 4px 0 var(--sd-border); }
+  .side a[aria-current="page"] { background: var(--sd-lime); color: #1B1B1B; }
+  .side-promo { margin-top: auto; padding-top: 12px; text-align: center; }
+  .sp-ball { width: 112px; height: 112px; margin: 0 auto 12px; border-radius: 50%; border: 3px solid var(--sd-border); background: radial-gradient(circle, #FFE94A 0 7px, #1B1B1B 7px 10px, transparent 10px), linear-gradient(#1B1B1B, #1B1B1B) center / 4px 72% no-repeat, linear-gradient(#1B1B1B, #1B1B1B) center / 72% 4px no-repeat, #F25C54; }
+  .side-promo p { margin: 0; padding: 12px; border: 2.5px solid var(--sd-border); border-radius: 16px; background: var(--md-surface-container-low); font-size: 13px; line-height: 18px; font-weight: 600; }
+  .upd { margin: 0; text-align: center; }
+  main { flex: 1; align-self: stretch; max-width: none; margin: 0; padding: 28px; background: var(--sd-panel); border: 3px solid var(--sd-border); border-radius: 28px; box-shadow: 0 5px 0 var(--sd-border); }
+
+  /* Contorno e sombra dura nos painéis */
+  .trust, .job, .recent, .recent-list, .pro-head, .pro-card, .cv-card, .panel, .hist li, .tut .steps > li, .keyboard-profile, .keyboard-setting, .keyboard-history, .card, .search-field, .suggest, .cv-field input, select, .chip, .keyboard-profile-links a, .pro-btn, .error { border: 2.5px solid var(--sd-border); }
+  .trust, .job, .recent, .pro-head, .pro-card, .cv-card, .panel, .hist li, .tut .steps > li, .keyboard-profile, .keyboard-setting { box-shadow: 0 4px 0 var(--sd-border); }
+  .card, .pro-head, .pro-card, .cv-card, .job, .recent, .trust { border-radius: 20px; }
+  .pro-head { background: var(--md-surface-container-low); }
+  .pro-tiles div { border: 2px solid var(--sd-border); background: var(--md-surface-container); }
+  .pro-btn.faceit, .pro-btn.hltv, .pro-btn.cfg { border-color: var(--sd-border); }
+  .pro-btn { font-weight: 700; }
+
+  /* Botões */
+  .btn { height: 44px; border: 2.5px solid var(--sd-border); border-radius: 14px; font-weight: 700; box-shadow: 0 3px 0 var(--sd-border); transition: transform .08s, box-shadow .08s; }
+  .btn:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--sd-border); }
+  .btn-filled, .btn-text, .face .pair .btn { background: var(--sd-lime); color: #1B1B1B; }
+  .btn-tonal, .btn-outline { background: var(--md-surface-container-low); color: var(--md-on-surface); }
+  .cv-result .btn { background: var(--md-surface-container-low); color: var(--md-on-surface); }
+  .btn.done, .btn-tonal.done, .face .pair .btn.done { background: var(--sd-ok); color: #1B1B1B; }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  .chip { border-radius: 999px; background: var(--md-surface-container-low); font-weight: 600; }
+  .chip:hover { background: var(--sd-lime); color: #1B1B1B; }
+  .icon-btn:hover { background: var(--md-surface-container-high); }
+
+  /* Cartões de jogador */
+  .card-av { border: 2px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; font-weight: 800; }
+  .checker { border: 2px solid var(--sd-border); background: repeating-conic-gradient(#7E96A0 0 25%, #8FA7B0 0 50%) 0 0 / 16px 16px; }
+  .tabs { border-bottom: 2.5px solid var(--sd-border); }
+  .tabs button { font-weight: 700; }
+  .card-actions { border-top: 2.5px solid var(--sd-border); }
+  .card-act { font-weight: 700; }
+  .codebox, .face .codebox { border: 2px solid var(--sd-border); border-radius: 12px; background: var(--md-surface-container); }
+  .face .codelabel { background: var(--md-surface-container-low); }
+  .xh-code { border: 2px solid var(--sd-border); }
+  .flip-btn { border: 2px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; }
+  .pro-av { border: 3px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; font-weight: 800; }
+  .pro-av.has-photo { background: #3e4c54; }
+  .pro-tag { border: 2px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; font-weight: 700; }
+  .xh-chip { border: 2px solid var(--sd-border); }
+  .keyboard-profile-avatar { border: 2.5px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; }
+
+  /* Início: envio da demo e andamento */
+  .dropzone { border: 3px dashed var(--sd-border); border-radius: 24px; background: color-mix(in srgb, var(--sd-lime) 28%, var(--md-surface-container-low)); }
+  .dropzone:hover { background: color-mix(in srgb, var(--sd-lime) 45%, var(--md-surface-container-low)); }
+  .dropzone.hover { border-style: solid; background: var(--sd-lime); color: #1B1B1B; }
+  .dropzone .icon { border: 2.5px solid var(--sd-border); background: var(--md-surface-container-low); }
+  .dropzone .icon svg { fill: var(--md-on-surface); }
+  .dropzone .title { font-weight: 800; }
+  .job-ic { border: 2.5px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; }
+  .linear { height: 16px; border: 2.5px solid var(--sd-border); border-radius: 999px; background: var(--md-surface-container-low); }
+  .linear .bar { background: var(--sd-lime); border-radius: 0; box-shadow: inset -3px 0 0 var(--sd-border); }
+  .badge { border: 2px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; font-weight: 700; }
+  :root[data-theme] .badge.done { background: var(--sd-ok); color: #1B1B1B; }
+  .cfg-link { border: 2.5px solid var(--sd-border); font-weight: 700; }
+  .cfg-link:hover { background: var(--sd-lime); color: #1B1B1B; }
+
+  /* Pesquisa */
+  .search-field { border-width: 3px; background: var(--md-surface-container-low); box-shadow: 0 4px 0 var(--sd-border); }
+  .search-field:focus-within, [data-view="buscar"] .search-field:focus-within, [data-view="teclado"] .search-field:focus-within { border-color: var(--sd-border); box-shadow: 0 4px 0 var(--sd-border), 0 0 0 4px var(--sd-lime); }
+  [data-view="buscar"] .search-field, [data-view="teclado"] .search-field { border-color: var(--sd-border); }
+  .suggest { border-width: 3px; border-radius: 20px; background: var(--md-surface-container-low); box-shadow: 0 5px 0 var(--sd-border); }
+  .suggest li[aria-selected="true"], .suggest li:hover { background: var(--sd-lime); color: #1B1B1B; }
+  .suggest li[aria-selected="true"] .tag, .suggest li:hover .tag { color: #1B1B1B; }
+
+  /* Outras páginas */
+  .tut .steps > li::before { border: 2.5px solid var(--sd-border); background: var(--sd-lime); color: #1B1B1B; font-weight: 800; }
+  .sw { border: 2px solid var(--sd-border); }
+  .cv-field input:focus { border-color: var(--sd-border); box-shadow: 0 0 0 4px var(--sd-lime); }
+  .keyboard-key { border-color: var(--sd-border); }
+  .snackbar { border: 2px solid var(--sd-border); border-radius: 14px; font-weight: 600; }
+
+  @media (max-width: 860px) {
+    .shell { padding: 0 12px 16px; }
+    .side { position: fixed; z-index: 30; top: 84px; bottom: 12px; left: 12px; width: 260px; overflow-y: auto; transform: translateX(-120%); }
+    .side.open { transform: none; }
+    .scrim.on { inset: 76px 0 0; }
+    main { padding: 18px 16px 24px; border-radius: 22px; }
+    .appbar { padding: 0 14px; }
+    .brand b { font-size: 26px; line-height: 26px; }
+  }
+  @media (max-width: 480px) { .brand svg { width: 34px; height: 34px; } }
 </style>
 </head>
 <body>
 
 <header class="appbar">
   <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir ou fechar o menu" aria-expanded="true" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
-  <a class="brand" href="#/inicio" aria-label="CS2 Extract – ir para o início">
+  <a class="brand" href="#/inicio" aria-label="SetupDex – ir para o início">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-    <span><b>CS2 <em>Extract</em></b><small>Crosshair &amp; Viewmodel</small></span>
+    <span><b>Setup<em>Dex</em></b><small>Mira, viewmodel e setups de CS2</small></span>
   </a>
   <div class="spacer"></div>
   <div class="theme" role="group" aria-label="Tema">
@@ -531,6 +640,10 @@
   <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
   <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
+  <div class="side-promo">
+    <div class="sp-ball" aria-hidden="true"></div>
+    <p>Descubra a mira, o mouse e o teclado dos melhores jogadores de CS2.</p>
+  </div>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
 

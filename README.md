@@ -1,6 +1,6 @@
-# CS2 Demo Analyzer (CS2 Extract)
+# SetupDex
 
-Extrai a mira (crosshair code) e os comandos de viewmodel de cada jogador de um demo do CS2, e permite
+Catálogo de setups de CS2 com visual de "dex". Extrai a mira (crosshair code) e os comandos de viewmodel de cada jogador de um demo do CS2, e permite
 pesquisar o perfil de jogadores profissionais (mira, mouse, vídeo e CFG).
 A análise do demo roda no navegador (Go compilado para WebAssembly): o `.dem` não é enviado para nenhum servidor.
 
