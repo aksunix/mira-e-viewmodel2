@@ -595,7 +595,16 @@ def main():
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)
-    print("com SteamID:", len(data["players"]), "| por nome:", len(data["names"]), "| SteamID pendente:", len(data["pending"]), "| perfis com teclado:", sum(1 for v in data["names"].values() if v.get("keyboard")))
+    keyboard_profiles = [v.get("keyboard", {}).get("current", {}) for v in data["names"].values() if v.get("keyboard", {}).get("current")]
+    print(
+        "com SteamID:", len(data["players"]),
+        "| por nome:", len(data["names"]),
+        "| SteamID pendente:", len(data["pending"]),
+        "| perfis com teclado:", len(keyboard_profiles),
+        "| com grupos de teclas:", sum(1 for v in keyboard_profiles if len(v.get("groups", [])) > 1),
+        "| com limites RT separados:", sum(1 for v in keyboard_profiles if v.get("rapid_trigger_activate") or v.get("rapid_trigger_deactivate")),
+        "| com RT desativado:", sum(1 for v in keyboard_profiles if v.get("rapid_trigger_disabled"))
+    )
 
 
 if __name__ == "__main__":
