@@ -16,7 +16,8 @@ async function load() {
   go.run(result.instance); // o Go avisa "ready" quando estiver pronto
 }
 
-load().catch(err => postMessage({ type: 'error', message: 'não foi possível carregar o analisador: ' + err.message }));
+// fatal: true faz a pagina travar o envio de arquivos em vez de liberar a caixa com um analisador que nao existe
+load().catch(err => postMessage({ type: 'error', fatal: true, message: 'não foi possível carregar o analisador: ' + err.message }));
 
 onmessage = e => {
   if (typeof self.parseDemo !== 'function') {

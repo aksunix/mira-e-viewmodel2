@@ -11,7 +11,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"math"
 	"sort"
+	"strconv"
 	"syscall/js"
 
 	demoinfocs "github.com/markus-wa/demoinfocs-golang/v6/pkg/demoinfocs"
@@ -57,12 +59,14 @@ func (r *fileReader) Read(p []byte) (int, error) {
 	return got, nil
 }
 
-// trimFloat formata um numero sem casas decimais desnecessarias (2.5 fica 2.5, 0.0 fica 0, 68.0 fica 68)
+// trimFloat formata um numero sem casas decimais desnecessarias (2.5 fica 2.5, 0.0 fica 0, 68.0 fica 68).
+// Os valores do demo sao float32 (ex.: -1.9 chega como -1.899999976158142 depois de virar float64),
+// entao formatamos com precisao de 32 bits para sair o numero que o jogador digitou.
 func trimFloat(f float64) string {
-	if f == float64(int64(f)) {
-		return fmt.Sprintf("%d", int64(f))
+	if math.IsNaN(f) || math.IsInf(f, 0) || f == 0 {
+		return "0"
 	}
-	return fmt.Sprintf("%g", f)
+	return strconv.FormatFloat(float64(float32(f)), 'f', -1, 32)
 }
 
 func post(msg map[string]any) {
