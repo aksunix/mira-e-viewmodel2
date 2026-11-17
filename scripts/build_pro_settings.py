@@ -100,7 +100,7 @@ def _setting_scope(text, setting):
 
     # Separadores comuns em comentários de configurações evitam misturar
     # "Actuation em todas" com "Rapid Trigger somente no WASD".
-    chunks = re.split(r"[|;\\n]+", lower)
+    chunks = re.split(r"[|;\n]+", lower)
     chunk = next((part for part in chunks if re.search(own_pattern, part)), lower)
     match = re.search(own_pattern, chunk)
     if not match:
