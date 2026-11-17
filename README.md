@@ -8,7 +8,7 @@ A análise do demo roda no navegador (Go compilado para WebAssembly): o `.dem` n
 
 - **Início:** arraste um `.dem`; cada jogador vira um card com a mira e o viewmodel. O rodapé do card tem
   Mouse, Vídeo (o card vira) e CFG (abre a configuração no CyberShoke).
-- **Pesquisa:** busca um jogador profissional e mostra mira, mouse, vídeo, FACEIT e HLTV.
+- **Pesquisa:** busca um jogador profissional e mostra mira, mouse, vídeo, teclado (quando há relatos nos comentários), FACEIT e HLTV.
 - **Histórico:** análises anteriores, salvas só no navegador (localStorage).
 
 ## Arquivos
@@ -17,7 +17,7 @@ A análise do demo roda no navegador (Go compilado para WebAssembly): o `.dem` n
 - `docs/`: site (`index.html`, `crosshair.js` que desenha a mira, `worker.js`, `fonts/` hospedadas localmente)
 - `data/`: dados coletados automaticamente (`pro-settings.json`, `crosshairs.json`, `cybershoke-links.json`, `cybershoke-extra.txt`)
 - `scripts/`: coletores de dados em Python
-  - `build_pro_settings.py`: mouse e resolução (prosettings.net), 400 páginas por execução
+  - `build_pro_settings.py`: mouse, resolução e comentários sobre Actuation Point/Rapid Trigger (ProSettings), 400 páginas por execução
   - `build_crosshairs.py`: miras dos profissionais (procrosshairs.com)
   - `build_cybershoke_links.py`: perfis FACEIT/HLTV via CyberShoke
   - `build_hltv_photos.py`: fotos de perfil da HLTV

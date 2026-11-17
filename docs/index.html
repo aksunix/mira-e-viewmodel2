@@ -393,7 +393,7 @@
   .face .pair .btn { width: 100%; height: 48px; border-radius: 24px; background: var(--md-primary); color: var(--md-on-primary); font-size: 15px; }
   .face .pair .btn.done { background: var(--md-primary-container); color: var(--md-on-primary-container); }
   /* Rodapé de ações: Mouse · Vídeo · CFG */
-  .card-actions { display: flex; align-items: center; justify-content: space-between; gap: 4px; margin: auto 0 0; padding: 8px 12px; border-top: 1px solid var(--md-outline-variant); }
+  .card-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around; gap: 4px; margin: auto 0 0; padding: 8px 10px; border-top: 1px solid var(--md-outline-variant); }
   .card-act { position: relative; overflow: hidden; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 10px; border: 0; border-radius: 20px; background: transparent; color: var(--md-on-surface); font: 600 13px/20px "Inter", "Roboto", sans-serif; letter-spacing: .1px; text-decoration: none; white-space: nowrap; cursor: pointer; }
   .card-act svg { width: 18px; height: 18px; fill: var(--md-on-surface-variant); flex: none; }
   .card-act::after { content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity .15s; }
@@ -401,7 +401,9 @@
   .card-act:active::after { opacity: .12; }
   .back-body { display: flex; flex-direction: column; gap: 16px; flex: 1; padding: 12px 16px 16px; }
   .back-sec h3 { margin: 0 0 8px; font-size: 14px; line-height: 20px; font-weight: 500; }
-  .video-note { margin: 8px 0 0; font-size: 11px; line-height: 16px; color: var(--md-on-surface-variant); }
+  .video-note, .keyboard-note { margin: 8px 0 0; font-size: 11px; line-height: 16px; color: var(--md-on-surface-variant); }
+  .keyboard-source { display: inline-flex; margin-top: 8px; color: var(--md-primary); font-size: 12px; font-weight: 600; text-decoration: none; }
+  .keyboard-source:hover { text-decoration: underline; }
   .back-body .btn { margin: auto 0 0; width: 100%; text-decoration: none; }
   .back-body .btn svg { margin-left: 0; width: 18px; height: 18px; }
   .back-body .empty { margin: 0; padding: 12px 0; text-align: center; color: var(--md-on-surface-variant); }
@@ -1087,7 +1089,7 @@ function paintCrosshair(canvas, xh, size) {
 
 let proSettings = {};
 let proNames = {};
-const proSettingsReady = fetch('pro-settings.json')
+const proSettingsReady = fetch('pro-settings.json?v=20261117-keyboard1')
   .then(r => (r.ok ? r.json() : { players: {} }))
   .then(j => { proSettings = (j && j.players) || {}; proNames = (j && j.names) || {}; })
   .catch(() => {});
@@ -1111,7 +1113,13 @@ const DEMO_RESOLUTIONS = {
 };
 
 const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
-const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor' };
+const KEYBOARD_FIELDS = [
+  ['actuation', 'Actuation Point'],
+  ['rapid_trigger', 'Rapid Trigger'],
+  ['actuation_scope', 'Actuation em'],
+  ['rapid_trigger_scope', 'Rapid Trigger em'],
+];
+const STAT_ICONS = { sensitivity: 'aim', dpi: 'speed', edpi: 'tune', zoom_sensitivity: 'search', hz: 'pulse', resolution: 'monitor', actuation: 'keyboard', rapid_trigger: 'zap' };
 
 // Grade de informações (mouse / vídeo) com ícone ao lado do rótulo
 function statTiles(info, fields, cls) {
@@ -1134,12 +1142,24 @@ function sectionTitle(iconName, text) {
 }
 
 let cardSeq = 0;
+function safeEvidenceUrl(url) {
+  try {
+    const x = new URL(url);
+    const hosts = ['twitch.tv', 'clips.twitch.tv', 'youtube.com', 'youtu.be', 'streamable.com', 'twitter.com', 'x.com', 'imgur.com', 'gyazo.com'];
+    return x.protocol === 'https:' && hosts.some(h => x.hostname === h || x.hostname.endsWith('.' + h)) ? x.href : null;
+  } catch (e) { return null; }
+}
+
 function renderPlayer(p) {
   const uid = ++cardSeq;
   const xh = p.crosshair_code ? decodeCrosshair(p.crosshair_code) : null;
   const screenHeight = xh && Number.isInteger(xh.screenHeight) && xh.screenHeight > 0 ? xh.screenHeight : null;
   const playerName = (p.name || 'jogador').trim();
-  const mouse = proSettings[String(p.steamid)];
+  const proInfo = proSettings[String(p.steamid)] || proNames[normName(p.name)] || {};
+  const mouse = proInfo;
+  const keyboard = proInfo.keyboard || null;
+  const keyboardCurrent = keyboard && keyboard.current;
+  const hasKeyboard = !!(keyboardCurrent && (keyboardCurrent.actuation || keyboardCurrent.rapid_trigger));
   const videoInfo = screenHeight !== null
     ? { resolution: DEMO_RESOLUTIONS[screenHeight] || 'Não mapeada', screenHeight: screenHeight + ' px' }
     : (mouse && mouse.resolution ? { resolution: mouse.resolution, screenHeight: '' } : null);
@@ -1149,7 +1169,7 @@ function renderPlayer(p) {
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
   const hasVideo = !!videoInfo;
   const hasCfg = !!p.steamid;
-  const canFlip = hasMouse || hasVideo;
+  const canFlip = hasMouse || hasVideo || hasKeyboard;
 
   const flip = el('article', 'flip');
   const inner = el('div', 'flip-inner');
@@ -1226,6 +1246,7 @@ function renderPlayer(p) {
   };
   const mouseAct = hasMouse ? mkAct('button', 'mouse', 'Mouse') : null;
   const videoAct = hasVideo ? mkAct('button', 'monitor', 'Vídeo') : null;
+  const keyboardAct = hasKeyboard ? mkAct('button', 'keyboard', 'Teclado') : null;
   if (hasCfg) {
     const cfgLink = mkAct('a', 'download', 'CFG');
     cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
@@ -1260,6 +1281,49 @@ function renderPlayer(p) {
     );
     body.appendChild(secs.video);
   }
+  if (hasKeyboard) {
+    secs.keyboard = el('section', 'back-sec');
+    const current = keyboardCurrent;
+    const keyboardInfo = {
+      actuation: current.actuation ? current.actuation + ' mm' : '',
+      rapid_trigger: current.rapid_trigger ? current.rapid_trigger + ' mm' : '',
+      actuation_scope: current.actuation_scope || 'Não informado',
+      rapid_trigger_scope: current.rapid_trigger_scope || 'Não informado'
+    };
+    secs.keyboard.append(sectionTitle('keyboard', 'Teclado'), statTiles(keyboardInfo, KEYBOARD_FIELDS, 'compact'));
+    const noteParts = [current.status || 'Relato da comunidade'];
+    if (current.author) noteParts.push('por ' + current.author);
+    if (current.date) noteParts.push(current.date);
+    if (current.support_count > 1) noteParts.push(current.support_count + ' relatos semelhantes');
+    secs.keyboard.appendChild(el('p', 'keyboard-note', noteParts.join(' · ')));
+    const sourceUrl = safeUrl(current.source_url, 'prosettings.net');
+    if (sourceUrl) {
+      const sourceLink = el('a', 'keyboard-source', 'Ver discussão no ProSettings');
+      sourceLink.href = sourceUrl;
+      sourceLink.target = '_blank';
+      sourceLink.rel = 'noopener noreferrer';
+      secs.keyboard.appendChild(sourceLink);
+    }
+    const evidenceUrl = safeEvidenceUrl(current.evidence_url || (current.evidence_urls || [])[0]);
+    if (evidenceUrl) {
+      const evidenceLink = el('a', 'keyboard-source', 'Abrir clipe / prova compartilhada');
+      evidenceLink.href = evidenceUrl;
+      evidenceLink.target = '_blank';
+      evidenceLink.rel = 'noopener noreferrer';
+      secs.keyboard.appendChild(evidenceLink);
+    }
+    if (keyboard.alternatives && keyboard.alternatives.length) {
+      const altText = keyboard.alternatives.slice(0, 2).map(item => {
+        const bits = [];
+        if (item.actuation) bits.push('AP ' + item.actuation + ' mm' + (item.actuation_scope && item.actuation_scope !== 'Não informado' ? ' (' + item.actuation_scope + ')' : ''));
+        if (item.rapid_trigger) bits.push('RT ' + item.rapid_trigger + ' mm' + (item.rapid_trigger_scope && item.rapid_trigger_scope !== 'Não informado' ? ' (' + item.rapid_trigger_scope + ')' : ''));
+        if (item.date) bits.push(item.date);
+        return bits.join(' · ');
+      }).join(' | ');
+      if (altText) secs.keyboard.appendChild(el('p', 'keyboard-note', 'Outros relatos: ' + altText));
+    }
+    body.appendChild(secs.keyboard);
+  }
   back.appendChild(body);
   inner.appendChild(back);
 
@@ -1279,6 +1343,7 @@ function renderPlayer(p) {
   };
   if (mouseAct) mouseAct.onclick = open('mouse', mouseAct);
   if (videoAct) videoAct.onclick = open('video', videoAct);
+  if (keyboardAct) keyboardAct.onclick = open('keyboard', keyboardAct);
   toFrontBtn.onclick = () => { setFlipped(false); if (toFrontBtn._from) toFrontBtn._from.focus({ preventScroll: true }); };
   return flip;
 }

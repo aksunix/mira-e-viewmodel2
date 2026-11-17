@@ -50,7 +50,250 @@ def player_urls(delay):
     return sorted(set(urls))
 
 
-def parse_player(html):
+
+def _comment_date(node):
+    time_node = node.select_one("time[datetime]")
+    if time_node:
+        raw = (time_node.get("datetime") or "").strip()
+        try:
+            parsed = dt.datetime.fromisoformat(raw.replace("Z", "+00:00"))
+            return parsed.date().isoformat(), time_node.get_text(" ", strip=True) or raw[:10]
+        except ValueError:
+            pass
+    date_node = node.select_one(".comment-metadata, .comment-date, .wpd-comment-date, .comment__date, time")
+    display = date_node.get_text(" ", strip=True) if date_node else ""
+    m = re.search(r"(\d+)\s+(minute|hour|day|week|month|year)s?\s+ago", display, re.I)
+    if m:
+        n = int(m.group(1))
+        unit = m.group(2).lower()
+        days = {"minute": 0, "hour": 0, "day": 1, "week": 7, "month": 30, "year": 365}[unit] * n
+        return (dt.date.today() - dt.timedelta(days=days)).isoformat(), display
+    return "", display
+
+
+def _comment_id(node):
+    value = str(node.get("id") or "")
+    m = re.search(r"(?:div-)?comment-(\d+)", value)
+    return m.group(1) if m else ""
+
+
+def _setting_number(text, patterns):
+    for pattern in patterns:
+        m = re.search(pattern, text, re.I)
+        if m:
+            return m.group(1).replace(",", ".")
+    return ""
+
+
+def _keyboard_values(text):
+    actuation = _setting_number(text, [
+        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
+    ])
+    rapid = _setting_number(text, [
+        r"\b(?:rapid(?:\s*trigger)?|rt)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:rapid(?:\s*trigger)?|rt)\b",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:rapid(?:\s*trigger)?|rt)\b",
+    ])
+    if not actuation and not rapid:
+        return None
+
+    lower = text.lower()
+    act_scope = "Todas as teclas" if re.search(r"\ball\s+keys\b|\bevery\s+key\b", lower) else "Não informado"
+    if re.search(r"(?:rapid(?:\s*trigger)?|rt).{0,45}\bwasd\b|\bwasd\b.{0,45}(?:rapid(?:\s*trigger)?|rt)", lower):
+        rapid_scope = "WASD"
+    elif re.search(r"(?:rapid(?:\s*trigger)?|rt).{0,35}\ball\s+keys\b", lower):
+        rapid_scope = "Todas as teclas"
+    else:
+        rapid_scope = "Não informado"
+    return {
+        "actuation": actuation,
+        "rapid_trigger": rapid,
+        "actuation_scope": act_scope,
+        "rapid_trigger_scope": rapid_scope,
+    }
+
+
+def parse_keyboard_comments(soup, profile_url):
+    """Extrai relatos de Actuation Point/RT dos comentários e classifica evidências e conflitos."""
+    headings = [h.get_text(" ", strip=True).lower() for h in soup.find_all(re.compile(r"^h[1-6]$"))]
+    page_text = soup.get_text(" ", strip=True).lower()
+    if not any("cs2 settings" in h or "counter-strike 2 settings" in h for h in headings) and "counter-strike 2" not in page_text[:2500]:
+        return None
+
+    nodes = []
+    seen = set()
+    for selector in ('li[id^="comment-"]', 'article[id^="comment-"]', '[id^="div-comment-"]'):
+        for node in soup.select(selector):
+            cid = _comment_id(node)
+            if cid and cid not in seen:
+                nodes.append(node)
+                seen.add(cid)
+    if not nodes:
+        return None
+
+    records = []
+    for node in nodes:
+        cid = _comment_id(node)
+        content = node.select_one(".comment-content, .wpd-comment-text, .comment-text, .comment__content")
+        if content is None:
+            article = node.select_one(".comment-body") or node
+            paragraphs = []
+            for p in article.find_all("p"):
+                owner = p.find_parent("li", id=re.compile(r"^(?:div-)?comment-\d+$"))
+                if owner is not None and owner is not node:
+                    continue
+                paragraphs.append(p)
+            text = " ".join(p.get_text(" ", strip=True) for p in paragraphs).strip()
+            link_root = article
+        else:
+            text = content.get_text(" ", strip=True)
+            link_root = content
+        if not text:
+            continue
+
+        values = _keyboard_values(text)
+        if not values:
+            continue
+
+        author_node = node.select_one(".comment-author .fn, .comment-author-name, .wpd-comment-author, .comment__author, .fn")
+        author = author_node.get_text(" ", strip=True) if author_node else str(node.get("data-author") or "Usuário")
+        role_text = " ".join(node.get("class", [])) + " " + (node.select_one(".comment-author").get_text(" ", strip=True) if node.select_one(".comment-author") else "")
+        role = "admin" if re.search(r"\badmin\b|administrator", role_text, re.I) else "member"
+        date_iso, date_display = _comment_date(node)
+
+        urls = []
+        for a in link_root.find_all("a", href=True):
+            href = a["href"].strip()
+            if href.startswith("https://") and "prosettings.net" not in href.lower() and href not in urls:
+                urls.append(href)
+        for href in re.findall(r"https://[^\s<>\])]+", text):
+            href = href.rstrip(".,;")
+            if "prosettings.net" not in href.lower() and href not in urls:
+                urls.append(href)
+
+        parent_id = ""
+        parent = node.find_parent(id=re.compile(r"^(?:div-)?comment-\d+$"))
+        if parent is not None:
+            parent_id = _comment_id(parent)
+        for attr in ("data-parent", "data-parent-id", "data-comment-parent"):
+            raw_parent = node.get(attr)
+            if raw_parent:
+                m = re.search(r"\d+", str(raw_parent))
+                if m:
+                    parent_id = m.group(0)
+                    break
+
+        records.append({
+            "id": cid,
+            "parent_id": parent_id,
+            "author": author,
+            "role": role,
+            "text": text,
+            "date": date_display,
+            "date_iso": date_iso,
+            "values": values,
+            "urls": urls,
+        })
+
+    if not records:
+        return None
+
+    by_id = {r["id"]: r for r in records}
+    children = {}
+    for r in records:
+        if r["parent_id"] in by_id:
+            children.setdefault(r["parent_id"], []).append(r)
+
+    def descendants(comment_id):
+        found, stack, visited = [], list(children.get(comment_id, [])), set()
+        while stack:
+            item = stack.pop(0)
+            if item["id"] in visited:
+                continue
+            visited.add(item["id"])
+            found.append(item)
+            stack.extend(children.get(item["id"], []))
+        return found
+
+    grouped = {}
+    for index, record in enumerate(records):
+        thread = descendants(record["id"])
+        related = list(thread)
+        # Alguns temas achatam as respostas no HTML; nesse caso, associa um link de prova
+        # apenas quando o mesmo autor o publica logo depois do relato de configuração.
+        if not any(r["urls"] for r in related):
+            for followup in records[index + 1:index + 6]:
+                if followup["author"].strip().lower() == record["author"].strip().lower() and followup["urls"]:
+                    related.append(followup)
+                    break
+
+        evidence = []
+        for item in [record] + related:
+            for url in item["urls"]:
+                if url not in evidence:
+                    evidence.append(url)
+        clip_urls = [u for u in evidence if re.search(r"(twitch\.tv|clips\.twitch|youtube\.com|youtu\.be|streamable\.com|twitter\.com|x\.com|imgur\.com|gyazo\.com)", u, re.I)]
+        admin_verified = any(
+            r["role"] == "admin" and re.search(r"\b(updated|fixed|confirmed|verified|changed|sorted|corrected|added)\b", r["text"], re.I)
+            for r in related
+        )
+        values = record["values"]
+        key = (
+            values["actuation"], values["rapid_trigger"],
+            values["actuation_scope"], values["rapid_trigger_scope"]
+        )
+        score = (6 if admin_verified else 0) + (5 if clip_urls else 0) + (2 if evidence else 0)
+        score += 2 if values["actuation"] and values["rapid_trigger"] else 0
+        grouped.setdefault(key, []).append({
+            **values,
+            "author": record["author"],
+            "date": record["date"],
+            "date_iso": record["date_iso"],
+            "source_url": profile_url.rstrip("/") + "/#comment-" + record["id"],
+            "evidence_urls": evidence,
+            "evidence_url": clip_urls[0] if clip_urls else "",
+            "confidence": "admin" if admin_verified else ("clip" if clip_urls else ("link" if evidence else "community")),
+            "status": (
+                "Administrador do ProSettings confirmou a atualização" if admin_verified else
+                ("Clipe compartilhado na discussão; conteúdo ainda não verificado" if clip_urls else
+                 ("Link de referência compartilhado pela comunidade" if evidence else "Relato da comunidade, sem prova anexada"))
+            ),
+            "raw_text": record["text"],
+            "score": score,
+        })
+
+    candidates = []
+    for same in grouped.values():
+        same.sort(key=lambda c: (c["score"], c["date_iso"]), reverse=True)
+        best = dict(same[0])
+        best["support_count"] = len(same)
+        all_urls = []
+        for candidate in same:
+            for url in candidate["evidence_urls"]:
+                if url not in all_urls:
+                    all_urls.append(url)
+        best["evidence_urls"] = all_urls
+        if not best["evidence_url"]:
+            best["evidence_url"] = next((u for u in all_urls if re.search(r"(twitch\.tv|clips\.twitch|youtube\.com|youtu\.be|streamable\.com|twitter\.com|x\.com|imgur\.com|gyazo\.com)", u, re.I)), "")
+        candidates.append(best)
+
+    candidates.sort(key=lambda c: (c["score"], c["date_iso"], c["support_count"]), reverse=True)
+    if not candidates:
+        return None
+    current = candidates[0]
+    alternatives = []
+    for candidate in candidates[1:4]:
+        if (candidate["actuation"], candidate["rapid_trigger"], candidate["actuation_scope"], candidate["rapid_trigger_scope"]) != (current["actuation"], current["rapid_trigger"], current["actuation_scope"], current["rapid_trigger_scope"]):
+            alternatives.append(candidate)
+    return {
+        "current": current,
+        "alternatives": alternatives,
+        "scanned_at": dt.date.today().isoformat(),
+    }
+
+def parse_player(html, profile_url=""):
     """Devolve (nome, steam_link, mouse_dict, video_dict). Dicts vazios se nao houver a tabela."""
     soup = BeautifulSoup(html, "html.parser")
     h1 = soup.find("h1")
@@ -77,7 +320,8 @@ def parse_player(html):
         if len(cells) >= 2 and cells[0].lower() == "resolution" and cells[1]:
             video["resolution"] = cells[1]
             break
-    return name, steam, mouse, video
+    keyboard = parse_keyboard_comments(soup, profile_url) if profile_url else None
+    return name, steam, mouse, video, keyboard
 
 
 def steam_id64(link, delay):
@@ -104,7 +348,7 @@ def main():
     ap.add_argument("--refresh-days", type=int, default=60)
     a = ap.parse_args()
 
-    data = {"players": {}, "names": {}, "seen": {}, "pending": {}, "video_done": {}}
+    data = {"players": {}, "names": {}, "seen": {}, "pending": {}, "video_done": {}, "keyboard_done": {}}
     if os.path.exists(a.out):
         with open(a.out, encoding="utf-8") as f:
             data.update(json.load(f))
@@ -112,7 +356,7 @@ def main():
 
     def stale(url):
         d = data["seen"].get(url)
-        if url not in data["video_done"]:  # paginas ainda nao lidas com a Resolution
+        if url not in data["video_done"] or url not in data.get("keyboard_done", {}):  # pagina ainda nao lida para video/teclado
             return True
         return d is None or (today - dt.date.fromisoformat(d)).days >= a.refresh_days
 
@@ -154,13 +398,15 @@ def main():
         for i, url in enumerate(todo, 1):
             try:
                 html = get(url, a.delay)
-                name, steam, mouse, video = parse_player(html)
+                name, steam, mouse, video, keyboard = parse_player(html, url)
                 if url in prio_todo:
                     print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)} video={sorted(video)}")
-                if mouse or video:
-                    entry = {"name": name, "url": url, **mouse, **video}
-                    if name:
-                        data["names"][norm(name)] = entry
+                if name:
+                    old_entry = data["names"].get(norm(name), {})
+                    entry = {**old_entry, "name": name, "url": url, **mouse, **video}
+                    if keyboard:
+                        entry["keyboard"] = keyboard
+                    data["names"][norm(name)] = entry
                     sid = None
                     if steam and steam_ok:
                         try:
@@ -169,15 +415,17 @@ def main():
                             print("Steam limitou as consultas; seguindo so com o nome:", e)
                             steam_ok = False
                     if sid:
-                        data["players"][sid] = entry
+                        old_player = data["players"].get(sid, {})
+                        data["players"][sid] = {**old_player, **entry}
                     elif steam and name:
                         data["pending"][url] = {"steam": steam, "name": norm(name)}
-                elif no_mouse_logged < 5:
+                if not (mouse or video or keyboard) and no_mouse_logged < 5:
                     no_mouse_logged += 1
                     heads = [h.get_text(" ", strip=True) for h in BeautifulSoup(html, "html.parser").find_all(re.compile(r"^h[1-6]$"))][:15]
-                    print(f"sem tabela Mouse em {url}; titulos encontrados: {heads}")
+                    print(f"sem tabela Mouse/Video/Teclado em {url}; titulos encontrados: {heads}")
                 data["seen"][url] = today.isoformat()
                 data["video_done"][url] = today.isoformat()
+                data.setdefault("keyboard_done", {})[url] = today.isoformat()
             except requests.RequestException as e:
                 print("erro (pulando):", url, e)
             if i % 50 == 0:
@@ -188,7 +436,7 @@ def main():
     os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1, sort_keys=True)
-    print("com SteamID:", len(data["players"]), "| por nome:", len(data["names"]), "| SteamID pendente:", len(data["pending"]))
+    print("com SteamID:", len(data["players"]), "| por nome:", len(data["names"]), "| SteamID pendente:", len(data["pending"]), "| perfis com teclado:", sum(1 for v in data["players"].values() if v.get("keyboard")))
 
 
 if __name__ == "__main__":

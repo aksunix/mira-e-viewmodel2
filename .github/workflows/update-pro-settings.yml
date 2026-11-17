@@ -1,6 +1,12 @@
 name: Atualizar dados do ProSettings
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/build_pro_settings.py"
+      - "data/priority-players.txt"
+      - ".github/workflows/update-pro-settings.yml"
   schedule:
     - cron: "0 6 * * *"
   workflow_dispatch:

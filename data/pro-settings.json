@@ -1,5 +1,15 @@
 {
  "names": {
+  "910": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "910",
+   "resolution": "1280x960",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/910/",
+   "zoom_sensitivity": "1"
+  },
   "0samas": {
    "dpi": "3200",
    "edpi": "4000",
@@ -114,16 +124,6 @@
    "resolution": "1600x900",
    "sensitivity": "0.11",
    "url": "https://prosettings.net/players/7ssk7/"
-  },
-  "910": {
-   "dpi": "800",
-   "edpi": "800.00",
-   "hz": "1000",
-   "name": "910",
-   "resolution": "1280x960",
-   "sensitivity": "1",
-   "url": "https://prosettings.net/players/910/",
-   "zoom_sensitivity": "1"
   },
   "916gon": {
    "dpi": "1600",
@@ -4747,7 +4747,46 @@
    "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/donk/",
-   "zoom_sensitivity": "1"
+   "zoom_sensitivity": "1",
+   "keyboard": {
+    "current": {
+     "actuation": "0.7",
+     "rapid_trigger": "0.4",
+     "actuation_scope": "Não informado",
+     "rapid_trigger_scope": "Não informado",
+     "author": "tador1437",
+     "date": "8 days ago",
+     "source_url": "https://prosettings.net/players/donk/#comment-359034",
+     "evidence_url": "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d",
+     "evidence_urls": [
+      "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d"
+     ],
+     "confidence": "clip",
+     "status": "Clipe compartilhado na discussão; conteúdo ainda não verificado",
+     "raw_text": "act 0.7 rapid 0.4",
+     "support_count": 3,
+     "score": 7
+    },
+    "alternatives": [
+     {
+      "actuation": "1.5",
+      "rapid_trigger": "0.4",
+      "actuation_scope": "Todas as teclas",
+      "rapid_trigger_scope": "WASD",
+      "author": "tador1437",
+      "date": "19 days ago",
+      "source_url": "https://prosettings.net/players/donk/#comments",
+      "evidence_urls": [],
+      "evidence_url": "",
+      "confidence": "community",
+      "status": "Relato anterior da comunidade, sem prova anexada",
+      "raw_text": "1.5 act all keys | 0.4 rapid only WASD",
+      "support_count": 1,
+      "score": 2
+     }
+    ],
+    "scanned_at": "2026-11-17"
+   }
   },
   "dooplex": {
    "dpi": "800",
@@ -30151,7 +30190,46 @@
    "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/donk/",
-   "zoom_sensitivity": "1"
+   "zoom_sensitivity": "1",
+   "keyboard": {
+    "current": {
+     "actuation": "0.7",
+     "rapid_trigger": "0.4",
+     "actuation_scope": "Não informado",
+     "rapid_trigger_scope": "Não informado",
+     "author": "tador1437",
+     "date": "8 days ago",
+     "source_url": "https://prosettings.net/players/donk/#comment-359034",
+     "evidence_url": "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d",
+     "evidence_urls": [
+      "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d"
+     ],
+     "confidence": "clip",
+     "status": "Clipe compartilhado na discussão; conteúdo ainda não verificado",
+     "raw_text": "act 0.7 rapid 0.4",
+     "support_count": 3,
+     "score": 7
+    },
+    "alternatives": [
+     {
+      "actuation": "1.5",
+      "rapid_trigger": "0.4",
+      "actuation_scope": "Todas as teclas",
+      "rapid_trigger_scope": "WASD",
+      "author": "tador1437",
+      "date": "19 days ago",
+      "source_url": "https://prosettings.net/players/donk/#comments",
+      "evidence_urls": [],
+      "evidence_url": "",
+      "confidence": "community",
+      "status": "Relato anterior da comunidade, sem prova anexada",
+      "raw_text": "1.5 act all keys | 0.4 rapid only WASD",
+      "support_count": 1,
+      "score": 2
+     }
+    ],
+    "scanned_at": "2026-11-17"
+   }
   },
   "76561198387556863": {
    "dpi": "400",
