@@ -1,4 +1,5 @@
 # Perfis CS2 para coletar primeiro; o restante do sitemap será processado em lotes diários.
+# Revarredura completa solicitada em 2026-11-17 após correção do parser de comentários.
 donk
 m0nesy
 zywoo
