@@ -1217,7 +1217,7 @@ let cardSeq = 0;
 function safeEvidenceUrl(url) {
   try {
     const x = new URL(url);
-    const hosts = ['twitch.tv', 'clips.twitch.tv', 'youtube.com', 'youtu.be', 'streamable.com', 'twitter.com', 'x.com', 'imgur.com', 'gyazo.com'];
+    const hosts = ['twitch.tv', 'clips.twitch.tv', 'youtube.com', 'youtu.be', 'streamable.com', 'twitter.com', 'x.com', 'imgur.com', 'gyazo.com', 't.me', 'telegram.me', 'telegram.org'];
     return x.protocol === 'https:' && hosts.some(h => x.hostname === h || x.hostname.endsWith('.' + h)) ? x.href : null;
   } catch (e) { return null; }
 }
@@ -1773,6 +1773,7 @@ function keyboardScope(setting, type) {
   const scope = String(setting[type + '_scope'] || '').trim();
   let keys = Array.isArray(setting[type + '_keys']) ? setting[type + '_keys'].slice() : [];
   if (!keys.length && /^wasd$/i.test(scope)) keys = ['W', 'A', 'S', 'D'];
+  if (/demais teclas|other keys|other buttons|remaining keys|rest of keys/i.test(scope)) return { label: 'Demais teclas', keys: [] };
   if (/todas as teclas|all keys|every key/i.test(scope)) return { label: 'Todas as teclas', keys: [] };
   if (keys.length || /teclas específicas|specific keys/i.test(scope) || /^wasd$/i.test(scope)) {
     return { label: 'Teclas específicas', keys: keys };
@@ -1781,24 +1782,38 @@ function keyboardScope(setting, type) {
 }
 
 function appendKeyboardSetting(grid, label, value, type, setting) {
-  if (!value) return;
-  const num = Number(String(value).replace(',', '.'));
+  const disabled = type === 'rapid_trigger' && !!setting.rapid_trigger_disabled;
+  if (!value && !disabled) return;
+  const num = Number(String(value || '').replace(',', '.'));
   const pct = Number.isFinite(num) ? Math.max(5, Math.min(95, num / 4 * 100)) : 25;
   const scope = keyboardScope(setting, type);
   const card = el('section', 'keyboard-setting');
-  const trackWrap = el('div', 'keyboard-slider-wrap');
-  const track = el('div', 'keyboard-slider');
-  const fill = el('div', 'keyboard-slider-fill');
-  const thumb = el('div', 'keyboard-slider-thumb');
-  track.style.setProperty('--position', pct + '%');
-  track.style.setProperty('--fill', pct + '%');
-  track.append(fill, thumb);
-  trackWrap.appendChild(track);
+
+  if (!disabled && Number.isFinite(num)) {
+    const trackWrap = el('div', 'keyboard-slider-wrap');
+    const track = el('div', 'keyboard-slider');
+    const fill = el('div', 'keyboard-slider-fill');
+    const thumb = el('div', 'keyboard-slider-thumb');
+    track.style.setProperty('--position', pct + '%');
+    track.style.setProperty('--fill', pct + '%');
+    track.append(fill, thumb);
+    trackWrap.appendChild(track);
+    card.appendChild(trackWrap);
+  }
+
   const info = el('div', 'keyboard-setting-info');
   info.append(
     el('span', 'keyboard-setting-label', label),
-    el('div', 'keyboard-setting-value', value + ' mm')
+    el('div', 'keyboard-setting-value', disabled ? 'Desativado' : value + ' mm')
   );
+  if (type === 'rapid_trigger' && (setting.rapid_trigger_activate || setting.rapid_trigger_deactivate)) {
+    const activate = setting.rapid_trigger_activate;
+    const deactivate = setting.rapid_trigger_deactivate;
+    const detail = activate && deactivate && activate === deactivate
+      ? 'Ativação/desativação: ' + activate + ' mm'
+      : [activate ? 'Ativação: ' + activate + ' mm' : '', deactivate ? 'Desativação: ' + deactivate + ' mm' : ''].filter(Boolean).join(' · ');
+    info.appendChild(el('p', 'keyboard-note', detail));
+  }
   const scopeChip = el('span', 'keyboard-scope-chip', scope.label);
   info.appendChild(scopeChip);
   if (scope.keys.length) {
@@ -1806,7 +1821,7 @@ function appendKeyboardSetting(grid, label, value, type, setting) {
     scope.keys.forEach(k => keys.appendChild(el('span', 'keyboard-key', k)));
     info.appendChild(keys);
   }
-  card.append(trackWrap, info);
+  card.appendChild(info);
   grid.appendChild(card);
 }
 
@@ -1857,6 +1872,31 @@ function renderKeyboardProfile(p) {
   appendKeyboardSetting(grid, 'Actuation Point', current.actuation, 'actuation', current);
   appendKeyboardSetting(grid, 'Rapid Trigger', current.rapid_trigger, 'rapid_trigger', current);
   card.appendChild(grid);
+
+  if (Array.isArray(current.groups) && current.groups.length > 1) {
+    const details = el('details', 'keyboard-history');
+    details.appendChild(el('summary', '', 'Ver ajustes por grupo de teclas'));
+    const list = el('ul', 'keyboard-history-list');
+    current.groups.forEach(group => {
+      const li = el('li');
+      const bits = [];
+      if (group.actuation) bits.push('Actuation ' + group.actuation + ' mm');
+      if (group.rapid_trigger) bits.push('Rapid Trigger ' + group.rapid_trigger + ' mm');
+      else if (group.rapid_trigger_disabled) bits.push('Rapid Trigger desativado');
+      if (group.rapid_trigger_activate || group.rapid_trigger_deactivate) {
+        if (group.rapid_trigger_activate && group.rapid_trigger_deactivate && group.rapid_trigger_activate === group.rapid_trigger_deactivate) {
+          bits.push('Ativação/desativação ' + group.rapid_trigger_activate + ' mm');
+        } else {
+          if (group.rapid_trigger_activate) bits.push('Ativação ' + group.rapid_trigger_activate + ' mm');
+          if (group.rapid_trigger_deactivate) bits.push('Desativação ' + group.rapid_trigger_deactivate + ' mm');
+        }
+      }
+      li.append(el('b', '', group.label || 'Grupo de teclas'), document.createTextNode(' — ' + bits.join(' · ')));
+      list.appendChild(li);
+    });
+    details.appendChild(list);
+    card.appendChild(details);
+  }
 
   const foot = el('div', 'keyboard-foot');
   const statusText = current.status || (current.confidence === 'admin' ? 'Atualização confirmada pelo ProSettings' : current.confidence === 'clip' ? 'Clipe compartilhado; não verificado' : 'Relato da comunidade');
