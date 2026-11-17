@@ -610,12 +610,12 @@
   <div class="search keyboard-search">
     <div class="search-field">
       <svg class="i" data-i="search" aria-hidden="true"></svg>
-      <input type="text" id="keyboardSearch" placeholder="Buscar jogador com dados de teclado" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="keyboardSuggest" aria-label="Buscar jogador com configurações de teclado">
+      <input type="text" id="keyboardSearch" placeholder="Buscar qualquer jogador" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="keyboardSuggest" aria-label="Buscar jogador e suas configurações de teclado">
       <button type="button" class="icon-btn" id="keyboardSearchClear" aria-label="Limpar busca" hidden><svg class="i" data-i="close"></svg></button>
     </div>
     <ul class="suggest" id="keyboardSuggest" role="listbox"></ul>
   </div>
-  <p class="keyboard-hint" id="keyboardHint" aria-live="polite">Digite o nick para encontrar jogadores com configurações de teclado disponíveis.</p>
+  <p class="keyboard-hint" id="keyboardHint" aria-live="polite">A busca inclui todos os perfis. Os valores só aparecem quando há relatos de teclado nos comentários do ProSettings.</p>
   <div id="keyboardResult" aria-live="polite"></div>
 </section>
 
@@ -1731,8 +1731,8 @@ const keyboardHint = document.getElementById('keyboardHint');
 let keyboardSuggestItems = [], keyboardSuggestSel = -1;
 
 function getKeyboardIndex() {
-  return buildIndex().filter(p => p.info && p.info.keyboard && p.info.keyboard.current &&
-    (p.info.keyboard.current.actuation || p.info.keyboard.current.rapid_trigger));
+  // Inclui todos os jogadores, mesmo quando ainda não há relato de AP/RT.
+  return buildIndex();
 }
 
 function searchKeyboardPlayers(q) {
@@ -1758,7 +1758,9 @@ function paintKeyboardSuggest() {
     li.setAttribute('role', 'option');
     li.setAttribute('aria-selected', String(i === keyboardSuggestSel));
     const title = el('span', '', p.name);
-    const meta = el('span', 'tag', ' · Actuation / Rapid Trigger');
+    const current = p.info && p.info.keyboard && p.info.keyboard.current;
+    const hasSettings = !!(current && (current.actuation || current.rapid_trigger));
+    const meta = el('span', 'tag', hasSettings ? ' · Dados encontrados' : ' · Sem dados coletados');
     li.append(title, meta);
     li.onmousedown = e => { e.preventDefault(); chooseKeyboardPlayer(p); };
     keyboardSuggest.appendChild(li);
@@ -1823,7 +1825,13 @@ function renderKeyboardProfile(p) {
   const current = keyboard && keyboard.current;
   if (!current || (!current.actuation && !current.rapid_trigger)) {
     const empty = el('div', 'keyboard-empty');
-    empty.append(el('strong', '', 'Configuração de teclado não encontrada'), document.createTextNode('Este perfil ainda não possui valores de Actuation Point ou Rapid Trigger coletados.'));
+    empty.append(
+      el('strong', '', 'Sem configuração de teclado encontrada'),
+      document.createTextNode('Ainda não encontramos um relato identificável de Actuation Point ou Rapid Trigger para este jogador. Isso não significa que ele não use esses recursos.')
+    );
+    const profileUrl = safeUrl(p.info && p.info.url, 'prosettings.net');
+    const source = keyboardSourceLink('Ver perfil e comentários no ProSettings', profileUrl, profileUrl);
+    if (source) empty.appendChild(source);
     return empty;
   }
 
@@ -1896,7 +1904,10 @@ function chooseKeyboardPlayer(p) {
   closeKeyboardSuggest();
   keyboardResult.innerHTML = '';
   keyboardResult.appendChild(renderKeyboardProfile(p));
-  keyboardHint.textContent = 'Configurações de teclado disponíveis para ' + p.name + '.';
+  const current = p.info && p.info.keyboard && p.info.keyboard.current;
+  keyboardHint.textContent = current && (current.actuation || current.rapid_trigger)
+    ? 'Relatos de configuração encontrados para ' + p.name + '.'
+    : 'Nenhum valor de teclado foi encontrado para ' + p.name + ' nos comentários coletados até agora.';
 }
 
 keyboardSearch.addEventListener('input', async () => {
@@ -1906,9 +1917,9 @@ keyboardSearch.addEventListener('input', async () => {
   paintKeyboardSuggest();
   keyboardSearchClear.hidden = !keyboardSearch.value;
   if (keyboardSearch.value.trim() && !keyboardSuggestItems.length) {
-    keyboardHint.textContent = 'Nenhum perfil com dados de teclado encontrado para esse nome.';
+    keyboardHint.textContent = 'Nenhum jogador encontrado. Confira a grafia do nick.';
   } else {
-    keyboardHint.textContent = 'Selecione um jogador para visualizar os ajustes e o escopo das teclas.';
+    keyboardHint.textContent = 'Selecione um jogador para consultar os relatos disponíveis e o escopo das teclas.';
   }
   if (!keyboardSearch.value.trim()) keyboardResult.innerHTML = '';
 });
@@ -1919,7 +1930,7 @@ keyboardSearch.addEventListener('keydown', e => {
   else if (e.key === 'Enter') {
     e.preventDefault();
     if (keyboardSuggestItems[keyboardSuggestSel]) chooseKeyboardPlayer(keyboardSuggestItems[keyboardSuggestSel]);
-    else if (keyboardSearch.value.trim()) keyboardHint.textContent = 'Nenhum perfil com dados de teclado encontrado para esse nome.';
+    else if (keyboardSearch.value.trim()) keyboardHint.textContent = 'Nenhum jogador encontrado. Confira a grafia do nick.';
   } else if (e.key === 'Escape') closeKeyboardSuggest();
 });
 keyboardSearch.addEventListener('blur', closeKeyboardSuggest);
@@ -1927,7 +1938,7 @@ keyboardSearchClear.onclick = () => {
   keyboardSearch.value = '';
   keyboardSearchClear.hidden = true;
   keyboardResult.innerHTML = '';
-  keyboardHint.textContent = 'Digite o nick para encontrar jogadores com configurações de teclado disponíveis.';
+  keyboardHint.textContent = 'A busca inclui todos os perfis. Os valores só aparecem quando há relatos de teclado nos comentários do ProSettings.';
   keyboardSuggestItems = [];
   closeKeyboardSuggest();
   keyboardSearch.focus();
