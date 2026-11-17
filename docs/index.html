@@ -1050,6 +1050,15 @@ main{
 @media(max-width:760px){.featured-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.featured-profile-card.dex-player-card{padding:8px!important;border-radius:21px!important}.featured-profile-card .dex-photo{height:125px!important;min-height:125px!important}}
 @media(max-width:460px){.featured-list{grid-template-columns:1fr!important}.featured-profile-card.dex-player-card{max-width:320px!important;margin:0 auto!important;width:100%!important}}
 
+/* Perfil completo: quatro abas e área de mira no padrão da referência */
+.featured-profile-card .dex-tabs{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}
+.featured-profile-card .dex-tab{font-size:9px!important;padding:0 2px!important}
+.featured-profile-card .dex-mira-preview{height:100px!important;min-height:100px!important;margin:0 0 7px!important;border-radius:12px!important;border:1px solid #ead8ce!important;background-color:#f8e9e2!important;background-image:linear-gradient(45deg,#f1dcd2 25%,transparent 25%),linear-gradient(-45deg,#f1dcd2 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f1dcd2 75%),linear-gradient(-45deg,transparent 75%,#f1dcd2 75%)!important;background-size:16px 16px!important;background-position:0 0,0 8px,8px -8px,-8px 0!important;position:relative!important}
+.featured-profile-card .dex-mira-preview:after{content:'＋';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#75d9a5;font-size:14px}
+.featured-profile-card .dex-mira-code{display:block!important;max-height:52px!important;min-height:42px!important;margin:0!important;padding:9px!important;border-radius:11px!important;background:#f1e8e1!important;color:#26384b!important;font-size:9px!important;line-height:13px!important;overflow:auto!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important}
+.featured-profile-card .dex-copy{display:block!important;width:100%!important;min-height:34px!important;margin-top:7px!important;border-radius:12px!important;background:#ed1736!important;color:#fff!important;font-size:11px!important;font-weight:800!important}
+.featured-profile-card .dex-copy:disabled{opacity:.65!important}
+
 </style>
 </head>
 <body>
@@ -2113,29 +2122,26 @@ function renderSearchCard(p, cardNumber) {
   const uid='search-'+(++cardSeq), nick=(p.name||'?').trim(), info=p.info||{};
   const card=el('article','dex-player-card'), top=el('div','dex-card-top');
   top.appendChild(el('span','dex-number','#'+String(cardNumber||1).padStart(3,'0')));
-  const fav=el('span','dex-fav','♡'); fav.setAttribute('aria-label','Favorito'); top.appendChild(fav);
-  const photo=el('div','dex-photo'); photo.appendChild(el('span','dex-photo-fallback',nick.charAt(0).toUpperCase())); card.append(top,photo);
+  const fav=el('span','dex-fav','♥');fav.setAttribute('aria-label','Favorito');top.appendChild(fav);
+  const photo=el('div','dex-photo');photo.appendChild(el('span','dex-photo-fallback',nick.charAt(0).toUpperCase()));card.append(top,photo);
   const identity=el('div','dex-identity');
-  identity.appendChild(el('h3','dex-player-name',nick));
-  identity.appendChild(el('p','dex-team',info.team||info.team_name||info.teamName||'Jogador profissional')); card.appendChild(identity);
-  const definitions=['Mira','Teclado','Viewmodel'], tabs=el('div','dex-tabs');
-  tabs.setAttribute('role','tablist'); tabs.setAttribute('aria-label','Configurações de '+nick);
+  identity.append(el('h3','dex-player-name',nick),el('p','dex-team',info.team||info.team_name||info.teamName||'Jogador profissional'));card.appendChild(identity);
+  const definitions=['Mira','Teclado','Viewmodel','Resolução'],tabs=el('div','dex-tabs');
+  tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Configurações de '+nick);
   const panels=[],buttons=[];
   definitions.forEach((label,i)=>{
-    const b=el('button','dex-tab',label); b.type='button'; b.setAttribute('role','tab');
-    b.id='dex-tab-'+uid+'-'+i; b.setAttribute('aria-controls','dex-panel-'+uid+'-'+i); b.onclick=()=>select(i);
-    b.onkeydown=e=>{const next={ArrowRight:(i+1)%3,ArrowLeft:(i+2)%3,Home:0,End:2}[e.key];if(next===undefined)return;e.preventDefault();select(next);buttons[next].focus();};
+    const b=el('button','dex-tab',label);b.type='button';b.setAttribute('role','tab');
+    b.id='dex-tab-'+uid+'-'+i;b.setAttribute('aria-controls','dex-panel-'+uid+'-'+i);b.onclick=()=>select(i);
+    b.onkeydown=e=>{const next={ArrowRight:(i+1)%4,ArrowLeft:(i+3)%4,Home:0,End:3}[e.key];if(next===undefined)return;e.preventDefault();select(next);buttons[next].focus();};
     tabs.appendChild(b);buttons.push(b);
     const pn=el('section','dex-panel');pn.setAttribute('role','tabpanel');pn.id='dex-panel-'+uid+'-'+i;pn.setAttribute('aria-labelledby',b.id);panels.push(pn);
   });
   function select(index){buttons.forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1;panels[i].hidden=i!==index;});}
-  function summaryRow(label,value){const row=el('div','dex-summary-row');row.appendChild(el('span','dex-summary-label',label));row.appendChild(el('strong','dex-summary-value',value||'—'));return row;}
-  const summary=el('div','dex-summary');
-  summary.appendChild(summaryRow('Mira',info.role||info.position||info.rifle||'—'));
-  summary.appendChild(summaryRow('Viewmodel',info.viewmodel_name||(info.viewmodel_cmd||info.viewmodel?'Personalizado':'—')));
-  summary.appendChild(summaryRow('Resolução',info.resolution||'—'));
-  panels[0].appendChild(summary);
-  const xhDetails=el('details','dex-extra');xhDetails.appendChild(el('summary','','Código da mira'));xhDetails.appendChild(el('p','dex-empty','Carregando mira…'));panels[0].appendChild(xhDetails);
+  const miraPreview=el('div','dex-mira-preview');
+  miraPreview.setAttribute('aria-label','Prévia da mira');
+  const miraCode=el('pre','dex-code dex-mira-code','Carregando código da mira…');
+  const miraCopy=el('button','dex-copy','Copiar mira');miraCopy.type='button';miraCopy.disabled=true;
+  panels[0].append(miraPreview,miraCode,miraCopy);
   const keyboard=info.keyboard&&info.keyboard.current;
   if(keyboard&&(keyboard.actuation||keyboard.rapid_trigger||keyboard.rapid_trigger_disabled||(keyboard.groups&&keyboard.groups.length))){
     const keyboardInfo={actuation:keyboard.actuation?keyboard.actuation+' mm':'',rapid_trigger:keyboard.rapid_trigger?keyboard.rapid_trigger+' mm':(keyboard.rapid_trigger_disabled?'Desativado':''),actuation_scope:keyboard.actuation_scope||'Não informado',rapid_trigger_scope:keyboard.rapid_trigger_scope||'Não informado',rapid_trigger_activate:keyboard.rapid_trigger_activate?keyboard.rapid_trigger_activate+' mm':'',rapid_trigger_deactivate:keyboard.rapid_trigger_deactivate?keyboard.rapid_trigger_deactivate+' mm':''};
@@ -2147,13 +2153,16 @@ function renderSearchCard(p, cardNumber) {
   const viewmodel=info.viewmodel_cmd||info.viewmodel||'';
   if(typeof viewmodel==='string'&&viewmodel.trim()){panels[2].appendChild(el('pre','dex-code',viewmodel));const copy=el('button','dex-copy','Copiar viewmodel');copy.type='button';copy.onclick=()=>copyValue(viewmodel,copy);panels[2].appendChild(copy);}
   else panels[2].appendChild(el('p','dex-empty','Viewmodel não disponível para este jogador.'));
+  const resolution=el('div','dex-summary');
+  const resolutionRow=el('div','dex-summary-row');resolutionRow.append(el('span','dex-summary-label','Resolução'),el('strong','dex-summary-value',info.resolution||'—'));resolution.appendChild(resolutionRow);
+  panels[3].appendChild(resolution);
   card.appendChild(tabs);panels.forEach(pn=>card.appendChild(pn));select(0);
   fetchProData(p).then(data=>{
     if(!data||!card.isConnected)return;
     if(data.photo){const img=new Image();img.alt='Foto de '+nick;img.referrerPolicy='no-referrer';img.onload=()=>{photo.innerHTML='';photo.appendChild(img);};img.src=data.photo;}
-    if(data.xh&&data.xh.code){xhDetails.innerHTML='';xhDetails.appendChild(el('summary','','Código da mira'));xhDetails.appendChild(el('pre','dex-code',data.xh.code));const copy=el('button','dex-copy','Copiar mira');copy.type='button';copy.onclick=()=>copyValue(data.xh.code,copy);xhDetails.appendChild(copy);}
-    else xhDetails.innerHTML='<summary>Código da mira</summary><p class="dex-empty">Mira não disponível para este jogador.</p>';
-  }).catch(()=>{xhDetails.innerHTML='<summary>Código da mira</summary><p class="dex-empty">Mira não disponível para este jogador.</p>';});
+    if(data.xh&&data.xh.code){miraCode.textContent=data.xh.code;miraCopy.disabled=false;miraCopy.onclick=()=>copyValue(data.xh.code,miraCopy);}
+    else miraCode.textContent='Mira não disponível para este jogador.';
+  }).catch(()=>{miraCode.textContent='Mira não disponível para este jogador.';});
   return card;
 }
 
