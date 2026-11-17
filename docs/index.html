@@ -666,6 +666,157 @@ a { accent-color:#e71935; }
 [data-view="buscar"] #searchResult { grid-template-columns:minmax(0,360px); justify-content:center; }
 [data-view="buscar"] .dex-player-card { width:100%; }
 
+
+/* ===== HOME 1:1 COM A REFERÊNCIA VISUAL SETUP DEX ===== */
+:root,:root[data-theme="light"],:root[data-theme="dark"]{
+ color-scheme:light;--md-primary:#e71935;--md-on-primary:#fff;--md-primary-container:#ffe0e3;--md-on-primary-container:#72101f;
+ --md-secondary-container:#ffe7c2;--md-on-secondary-container:#3c2810;--md-surface:#fff8f0;--md-surface-container-low:#fffaf5;
+ --md-surface-container:#fff1e7;--md-surface-container-high:#f8e8df;--md-surface-container-highest:#f1ded3;--md-on-surface:#10243b;
+ --md-on-surface-variant:#596579;--md-outline:#cbb9b0;--md-outline-variant:#ead2c8;--md-accent:#e71935;
+ --md-grad-a:#e71935;--md-grad-b:#ff6472;--md-shadow:0 8px 24px rgba(101,25,29,.12);
+}
+body{min-height:100vh;background:linear-gradient(135deg,#f01435 0%,#d80e2b 58%,#b90d27 100%)!important;color:#10243b}
+.appbar{height:60px;margin-left:140px;padding:0 18px 0 26px;background:#fff8f0!important;border:0;border-radius:28px 28px 0 0;color:#10243b;gap:14px}
+.appbar:before{content:"";display:block;width:50px;height:16px;flex:none;background:radial-gradient(circle at 8px 8px,#e71935 0 7px,transparent 8px),radial-gradient(circle at 29px 8px,#f6a900 0 7px,transparent 8px),radial-gradient(circle at 50px 8px,#58a83d 0 7px,transparent 8px)}
+.appbar .brand,.appbar .menu{display:none}
+.header-search{display:flex;align-items:center;gap:12px;width:min(360px,42vw);height:42px;padding:0 14px;border:1.5px solid #cbb9b0;border-radius:24px;background:#fffaf5;color:#10243b;text-align:left;box-shadow:0 1px 3px rgba(30,20,15,.08);cursor:pointer}
+.header-search span{flex:1;font-size:13px}
+.header-search .i{width:20px;height:20px}
+.header-search .header-arrow{width:18px;height:18px}
+.appbar .spacer{flex:1}
+.appbar .theme{padding:0;background:transparent;border-left:1px solid #ead2c8;border-radius:0}
+.appbar .theme .icon-btn{width:42px;height:42px;color:#10243b}
+.appbar .theme [data-theme-set="dark"]{display:none}
+.shell{min-height:calc(100vh - 60px);gap:0;padding:0 12px 12px;align-items:stretch}
+.side{width:134px;min-height:calc(100vh - 60px);padding:62px 0 12px;gap:8px;flex:none;background:transparent!important;border:0}
+.side a{height:42px;padding:0 12px;gap:10px;border-radius:0 17px 17px 0;color:#fff8f0;font-size:13px;font-weight:500}
+.side a .i{width:19px;height:19px}
+.side a:hover{background:rgba(255,255,255,.13)}
+.side a[aria-current="page"]{background:#fff8f0;color:#10243b;font-weight:700;box-shadow:0 3px 10px rgba(90,0,15,.12)}
+.upd{margin:auto 8px 0;padding:12px 10px;border:1px solid rgba(255,255,255,.2);border-radius:17px;background:rgba(130,0,20,.22);color:#fff8f0;font-size:11px}
+main{flex:1;min-width:0;max-width:none;margin:0;padding:0 14px 32px;border-radius:0 0 28px 28px;background:#fff8f0;box-shadow:0 12px 34px rgba(90,0,15,.18);overflow:hidden}
+h2.page{color:#10243b}
+[data-view="inicio"]{padding-top:0}
+#intro{margin:0}
+.home-hero{display:grid;grid-template-columns:minmax(190px,250px) minmax(0,1fr);align-items:center;gap:16px;min-height:188px;padding:10px 12px 0;border:2px solid #e71935;border-bottom:0;border-radius:24px 24px 0 0;background:linear-gradient(130deg,#fff0e8,#fffaf5);position:relative;overflow:hidden}
+.home-hero:after{content:"";position:absolute;right:14px;top:0;width:90px;height:16px;background:repeating-linear-gradient(130deg,#e71935 0 13px,transparent 13px 23px);opacity:.9}
+.home-mascot{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:170px}
+.home-number{position:absolute;top:7px;left:5px;z-index:3;padding:3px 12px;border:1px solid #d9c9c0;border-radius:18px;background:#fffaf5;color:#10243b;font-size:12px;font-weight:800}
+.mascot-back{position:absolute;left:2%;bottom:0;width:88%;height:82%;border-radius:42px 42px 30px 30px;background:#ff4b5b;clip-path:path("M 0 50 Q 0 10 45 10 L 185 10 Q 225 10 225 55 L 225 170 L 0 170 Z")}
+.mascot-svg{position:relative;z-index:1;width:115%;max-width:285px;height:180px;object-fit:contain;filter:drop-shadow(0 4px 2px rgba(0,0,0,.18))}
+.home-upload{min-width:0;padding:0 8px 10px}
+.home-upload h1{margin:0 0 3px;color:#10243b;font-size:clamp(26px,3.3vw,42px);line-height:1.05;font-weight:800;letter-spacing:-1px}
+.home-upload>p{margin:0 0 8px;color:#596579;font-size:12px}
+.home-upload .dropzone{display:flex;width:100%;min-height:140px;padding:14px 12px;align-items:center;justify-content:center;gap:3px;border:1.5px dashed #ed8794;border-radius:0;background:rgba(255,250,245,.7);box-shadow:none;color:#10243b}
+.home-upload .dropzone .icon{display:grid;place-items:center;width:28px;height:28px;margin-bottom:2px;border-radius:50%;background:#ffe0e3;color:#72101f}
+.home-upload .dropzone .icon svg{width:16px;height:16px;fill:#72101f}
+.home-upload .dropzone .title{font-size:12px;line-height:18px}
+.home-upload .dropzone .support{font-size:9px}
+.home-upload .dropzone .btn{height:24px;margin:4px 0;padding:0 13px;border-radius:14px;font-size:9px;line-height:24px}
+.home-upload .dz-meta{margin-top:4px;font-size:7px;color:#87909a}
+.home-banner{display:flex;align-items:center;gap:14px;min-height:54px;margin:0 0 14px;padding:7px 12px;border-radius:0 0 24px 24px;background:linear-gradient(90deg,#f8e5dc,#fbeee5);box-shadow:0 3px 7px rgba(120,20,25,.12)}
+.home-banner>span{width:5px;height:34px;flex:none;border-radius:4px;background:#e71935}
+.home-banner p{flex:1;margin:0;color:#10243b;font-size:13px;line-height:18px}
+.home-banner button{display:grid;place-items:center;width:30px;height:34px;border:0;background:transparent;color:#e71935;cursor:pointer}
+.home-banner button .i{width:22px;height:22px}
+.trust{display:none!important}
+.featured-layout{display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:12px;align-items:stretch;margin-top:0}
+.featured-main{min-width:0;padding:12px 10px;border:1.5px solid #e4c8be;border-radius:18px;background:#fffaf5;box-shadow:0 3px 8px rgba(120,20,25,.08)}
+.featured-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 10px}
+.featured-heading h2{position:relative;margin:0;padding-left:12px;color:#10243b;font-size:16px;line-height:24px;font-weight:800}
+.featured-heading h2:before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:4px;border-radius:4px;background:#e71935}
+.featured-heading button{display:flex;align-items:center;gap:4px;border:0;background:transparent;color:#e71935;font-size:11px;font-weight:700;cursor:pointer}
+.featured-heading button .i{width:16px;height:16px}
+.featured-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.featured-card{display:flex;min-width:0;flex-direction:column;align-items:stretch;overflow:hidden;padding:0 0 9px;border:1px solid #e3c8bd;border-radius:13px;background:#fff8f0;color:#10243b;text-align:left;box-shadow:0 2px 5px rgba(110,20,25,.12);cursor:pointer;transition:transform .15s,border-color .15s}
+.featured-card:hover,.featured-card.selected{transform:translateY(-2px);border-color:#e71935;box-shadow:0 4px 10px rgba(110,20,25,.16)}
+.featured-number{align-self:flex-start;position:absolute;margin:6px;padding:2px 7px;border-radius:12px;background:rgba(255,255,255,.9);color:#10243b;font-size:9px;font-weight:800}
+.featured-card{position:relative}
+.featured-photo{display:grid;place-items:center;width:100%;height:112px;overflow:hidden;background:#79d0f4}
+.tone-gold .featured-photo{background:#ffc54b}
+.tone-rose .featured-photo{background:#f56b75}
+.featured-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.featured-initial{font-size:38px;font-weight:800;color:rgba(16,36,59,.65)}
+.featured-name{padding:7px 6px 0;font-size:12px;line-height:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-team{padding:0 6px;color:#596579;font-size:10px;line-height:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-detail{min-width:0;padding:6px;border:3px solid #e71935;border-radius:24px;background:#fff8f0;box-shadow:0 5px 12px rgba(110,20,25,.15)}
+.featured-detail .dex-player-card{width:100%;padding:7px;border:0;border-radius:17px;box-shadow:none;background:transparent}
+.featured-detail .dex-card-top{height:22px;padding:0 5px 5px}
+.featured-detail .dex-number{height:20px;font-size:10px}
+.featured-detail .dex-fav{font-size:17px}
+.featured-detail .dex-photo{height:90px;border-radius:10px}
+.featured-detail .dex-identity{padding:7px 4px 5px}
+.featured-detail .dex-player-name{font-size:15px;line-height:19px}
+.featured-detail .dex-team{font-size:10px}
+.featured-detail .dex-tabs{gap:3px;padding-bottom:5px}
+.featured-detail .dex-tab{height:25px;font-size:9px;border-radius:12px}
+.featured-detail .dex-panel{min-height:95px;padding:5px 2px}
+.featured-detail .dex-panel .pro-tiles div{padding:6px 7px}
+.featured-detail .dex-panel .pro-tiles dt{font-size:9px}
+.featured-detail .dex-panel .pro-tiles dd{font-size:12px;line-height:16px}
+.featured-detail .dex-empty{font-size:10px;line-height:15px}
+.featured-detail .dex-code{font-size:8px;line-height:12px}
+.featured-detail .dex-copy{height:27px;font-size:10px}
+.results{margin-top:22px}
+.results-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:14px}
+[data-view="buscar"] #searchResult{grid-template-columns:minmax(0,360px);justify-content:center}
+@media(min-width:1300px){
+ .appbar{margin-left:190px}
+ .side{width:184px;padding-top:76px}
+ .shell{min-height:calc(100vh - 60px)}
+ main{padding-left:18px;padding-right:18px}
+ .home-hero{grid-template-columns:300px minmax(0,1fr);min-height:230px}
+ .mascot-svg{height:220px;max-width:320px}
+ .home-upload .dropzone{min-height:160px}
+ .featured-layout{grid-template-columns:minmax(0,1fr) 300px}
+ .featured-photo{height:135px}
+}
+@media(max-width:900px){
+ .appbar{margin-left:110px}
+ .side{width:104px;padding-top:48px}
+ .side a{font-size:11px;padding:0 9px;gap:7px}
+ .featured-layout{grid-template-columns:minmax(0,1fr) 215px}
+ .featured-photo{height:92px}
+}
+@media(max-width:680px){
+ .appbar{margin-left:0;height:58px;border-radius:0;padding:0 12px}
+ .appbar:before{width:50px}
+ .header-search{width:min(300px,52vw);height:38px}
+ .shell{display:block;padding:0 7px 7px}
+ .side{position:fixed;z-index:30;top:58px;bottom:0;left:0;width:220px;padding:18px 10px;background:#d91431!important;border-radius:0 18px 18px 0;transform:translateX(-110%);transition:transform .2s}
+ .side.open{transform:none}
+ .side a{height:44px;font-size:14px;padding:0 12px}
+ .scrim.on{top:58px;inset:58px 0 0}
+ main{padding:0 10px 28px;border-radius:0 0 20px 20px}
+ .home-hero{grid-template-columns:115px minmax(0,1fr);gap:8px;min-height:170px;padding:8px 6px 0}
+ .home-mascot{min-height:155px}
+ .mascot-svg{width:140%;height:145px}
+ .home-number{left:0;top:4px;font-size:9px;padding:2px 7px}
+ .home-upload h1{font-size:22px}
+ .home-upload>p{font-size:10px}
+ .home-upload .dropzone{min-height:120px;padding:8px 5px}
+ .home-upload .dropzone .title{font-size:10px}
+ .home-upload .dropzone .support{font-size:8px}
+ .home-upload .dz-meta{font-size:6px}
+ .home-banner{min-height:50px;margin-bottom:10px;padding:6px 8px}
+ .home-banner p{font-size:11px;line-height:15px}
+ .featured-layout{grid-template-columns:1fr}
+ .featured-list{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
+ .featured-photo{height:78px}
+ .featured-name{font-size:10px;padding:5px 4px 0}
+ .featured-team{font-size:8px;padding:0 4px}
+ .featured-detail{max-width:340px;width:100%;margin:0 auto}
+}
+@media(max-width:390px){
+ .home-hero{grid-template-columns:92px minmax(0,1fr)}
+ .mascot-svg{height:125px}
+ .home-upload h1{font-size:19px}
+ .featured-photo{height:62px}
+ .featured-number{margin:3px;padding:1px 4px;font-size:7px}
+ .featured-name{font-size:9px}
+}
+
 </style>
 </head>
 <body>
@@ -673,12 +824,14 @@ a { accent-color:#e71935; }
 <header class="appbar">
   <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir ou fechar o menu" aria-expanded="true" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
   <a class="brand" href="#/inicio" aria-label="Setup Dex – ir para o início">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-    <span><b>Setup <em>Dex</em></b><small>CS2 Player Setups</small></span>
+    <span><b>Setup <em>Dex</em></b></span>
   </a>
+  <button type="button" class="header-search" id="headerSearch" aria-label="Buscar jogador">
+    <svg class="i" data-i="search"></svg><span>Buscar jogador...</span><svg class="i header-arrow" data-i="chevron-right"></svg>
+  </button>
   <div class="spacer"></div>
   <div class="theme" role="group" aria-label="Tema">
-    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Tema claro"><svg class="i" data-i="sun"></svg></button>
+    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Alternar tema"><svg class="i" data-i="sun"></svg></button>
     <button type="button" class="icon-btn" data-theme-set="dark" aria-label="Tema escuro"><svg class="i" data-i="moon"></svg></button>
   </div>
 </header>
@@ -687,35 +840,69 @@ a { accent-color:#e71935; }
 <div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
-  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
+  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="user"></svg>Jogadores</a>
   <a href="#/teclado" data-page="teclado"><svg class="i" data-i="keyboard"></svg>Teclado</a>
   <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
-  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
+  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="play-square"></svg>Último Tutorial</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
 
 <main>
 <section data-view="inicio">
   <div id="intro">
-    <div class="hero">
-      <h2>Obtenha <span>mira</span> e <span>viewmodel</span> do CS2 de forma rápida e fácil</h2>
-      <p>Faça o upload do arquivo .dem. Ele é lido no seu computador e não é enviado para nenhum servidor.</p>
-    </div>
-    <button type="button" class="dropzone" id="dropzone">
-      <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
-      <span class="title">Arraste o arquivo .dem aqui</span>
-      <span class="support">ou clique para selecionar</span>
-      <span class="btn btn-filled" id="pick">Selecionar arquivo</span>
-      <span class="dz-meta">Suporte: .dem · o arquivo é lido em partes, direto do seu disco</span>
-    </button>
-    <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
-    <div class="trust">
-      <div><svg data-i="shield" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Processamento local</b><span>Seu demo é lido no próprio navegador</span></p></div>
-      <div><svg data-i="lock" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Sem envio para servidores</b><span>O arquivo .dem não sai do seu dispositivo</span></p></div>
-      <div><svg data-i="bolt" viewBox="0 0 24 24" aria-hidden="true"></svg><p style="margin:0"><b>Rápido e simples</b><span>Sem cadastro e sem instalar nada</span></p></div>
-    </div>
+    <section class="home-hero">
+      <div class="home-mascot">
+        <span class="home-number">#001</span>
+        <div class="mascot-back"></div>
+        <svg class="mascot-svg" viewBox="0 0 360 300" role="img" aria-label="Ilustração de operador tático do Setup Dex">
+          <defs>
+            <linearGradient id="helmetG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#555b60"/><stop offset="1" stop-color="#171b20"/></linearGradient>
+            <linearGradient id="armorG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4b4c4d"/><stop offset="1" stop-color="#15191e"/></linearGradient>
+          </defs>
+          <path d="M82 286 Q43 260 58 211 L97 164 Q119 149 148 155 L214 157 Q260 161 284 204 L318 281Z" fill="url(#armorG)" stroke="#080c11" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M102 190 L64 230 L37 260 Q29 276 48 282 L111 285 L151 244Z" fill="#292d31" stroke="#080c11" stroke-width="7"/>
+          <path d="M225 190 L274 216 L310 258 Q326 274 313 284 L264 283 L214 243Z" fill="#303438" stroke="#080c11" stroke-width="7"/>
+          <path d="M115 77 Q119 21 185 18 Q255 16 267 78 L259 123 L121 123Z" fill="url(#helmetG)" stroke="#080c11" stroke-width="8"/>
+          <path d="M115 84 Q102 61 90 79 L88 119 Q91 143 116 145 L132 120Z" fill="#292e33" stroke="#080c11" stroke-width="7"/>
+          <path d="M267 84 Q281 67 292 88 L291 123 Q286 144 263 146 L249 119Z" fill="#292e33" stroke="#080c11" stroke-width="7"/>
+          <path d="M122 89 Q181 65 260 91 L259 130 Q210 153 126 131Z" fill="#17262d" stroke="#05090d" stroke-width="8"/>
+          <path d="M140 94 L183 89 L178 132 L139 126Z M195 89 L243 96 L246 130 L195 132Z" fill="#42616a" opacity=".7"/>
+          <path d="M129 136 Q185 160 255 137 L244 186 Q201 222 143 187Z" fill="#25282b" stroke="#080c11" stroke-width="7"/>
+          <path d="M146 174 Q185 187 232 173 L224 201 L159 202Z" fill="#35383b"/>
+          <path d="M94 180 L131 159 L165 181 L142 224 L91 213Z" fill="#373b3e" stroke="#080c11" stroke-width="7"/>
+          <path d="M235 180 L270 164 L294 204 L264 224 L226 212Z" fill="#363a3e" stroke="#080c11" stroke-width="7"/>
+          <path d="M96 232 L224 211 L279 233 L292 251 L176 267 L75 260Z" fill="#252a2e" stroke="#080c11" stroke-width="7"/>
+          <path d="M117 233 L160 224 L180 260 L142 271Z M193 223 L234 218 L251 252 L207 263Z" fill="#45494b" stroke="#111519" stroke-width="5"/>
+          <path d="M66 222 L169 232 L241 214 L254 229 L174 256 L69 245Z" fill="#5b493a" stroke="#090d11" stroke-width="8"/>
+          <path d="M169 230 L286 247 L331 239 L337 252 L288 266 L166 250Z" fill="#34393d" stroke="#090d11" stroke-width="8"/>
+          <path d="M79 215 L104 204 L139 229 L121 247 L91 241Z M241 211 L265 210 L285 238 L265 251 L237 232Z" fill="#202529" stroke="#090d11" stroke-width="6"/>
+          <path d="M178 250 L200 256 L194 283 L169 279Z" fill="#171b1f" stroke="#080c11" stroke-width="5"/>
+          <path d="M113 36 Q180 2 245 39" fill="none" stroke="#747b80" stroke-width="5" opacity=".55"/>
+        </svg>
+      </div>
+      <div class="home-upload">
+        <h1>Setup Dex</h1>
+        <p>Explore as melhores configurações dos jogadores de CS2.</p>
+        <button type="button" class="dropzone" id="dropzone">
+          <span class="icon"><svg width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.35 10.04A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.04A5.994 5.994 0 000 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg></span>
+          <span class="title">Arraste o arquivo .dem aqui</span>
+          <span class="support">ou clique para selecionar</span>
+          <span class="btn btn-filled" id="pick">Selecionar arquivo</span>
+          <span class="dz-meta">Suporte: .dem · o arquivo é lido em partes, direto do seu disco</span>
+        </button>
+        <input type="file" id="fileInput" accept=".dem" class="sr" tabindex="-1">
+      </div>
+    </section>
+    <div class="home-banner"><span></span><p>Explore as melhores configurações, descubra<br class="desktop-only"> seus jogadores favoritos e muito mais!</p><button type="button" id="bannerPlayers" aria-label="Ver jogadores"><svg class="i" data-i="chevron-right"></svg></button></div>
   </div>
+  <section class="featured-layout" id="featuredLayout">
+    <div class="featured-main">
+      <div class="featured-heading"><h2>Jogadores em Destaque</h2><button type="button" id="featuredAll">Ver todos <svg class="i" data-i="arrow-right"></svg></button></div>
+      <div class="featured-list" id="featuredList"></div>
+    </div>
+    <aside class="featured-detail" id="featuredDetail" aria-label="Jogador selecionado"></aside>
+  </section>
 
   <section class="progress" id="progress" aria-live="polite">
     <div class="sec-head"><svg class="i" data-i="bars"></svg><div><h2>Análise em andamento</h2><p>Processando o demo para extrair crosshair e viewmodel.</p></div></div>
@@ -1836,6 +2023,62 @@ function clearSearch() {
 }
 searchClear.onclick = clearSearch;
 proSearch.addEventListener('input', () => { searchClear.hidden = !proSearch.value; });
+
+const headerSearch = document.getElementById('headerSearch');
+if (headerSearch) headerSearch.onclick = () => {
+  location.hash = '#/buscar';
+  setTimeout(() => proSearch && proSearch.focus(), 80);
+};
+const featuredNames = [
+  {name:'donk',team:'Team Spirit',tone:'blue'},
+  {name:'s1mple',team:'NAVI',tone:'gold'},
+  {name:'ZywOo',team:'Vitality',tone:'blue'},
+  {name:'NiKo',team:'G2',tone:'rose'},
+  {name:'m0NESY',team:'G2',tone:'rose'}
+];
+const featuredList = document.getElementById('featuredList');
+const featuredDetail = document.getElementById('featuredDetail');
+let featuredSelected = 0;
+async function selectFeatured(index) {
+  featuredSelected = index;
+  const item = featuredNames[index];
+  await Promise.all([proSettingsReady, csLinksReady]);
+  const found = buildIndex().find(x => normName(x.name) === normName(item.name));
+  const player = found || {key:normName(item.name),name:item.name,info:{team:item.team},steamid:null,custom:true};
+  if (!player.info) player.info = {team:item.team};
+  featuredDetail.innerHTML = '';
+  featuredDetail.appendChild(renderSearchCard(player));
+  [...featuredList.children].forEach((node,i)=>node.classList.toggle('selected',i===index));
+}
+function renderFeatured() {
+  if (!featuredList) return;
+  featuredList.innerHTML = '';
+  featuredNames.forEach((item,i) => {
+    const card = el('button','featured-card tone-'+item.tone);
+    card.type = 'button';
+    card.setAttribute('aria-label','Ver configurações de '+item.name);
+    const number = el('span','featured-number','#'+String(i+1).padStart(3,'0'));
+    const image = el('span','featured-photo');
+    image.appendChild(el('span','featured-initial',item.name.charAt(0).toUpperCase()));
+    const title = el('strong','featured-name',item.name);
+    const team = el('span','featured-team',item.team);
+    card.append(number,image,title,team);
+    card.onclick = () => selectFeatured(i);
+    featuredList.appendChild(card);
+    fetchProData({name:item.name}).then(data=>{
+      if (!data || !data.photo || !image.isConnected) return;
+      const img = new Image(); img.alt = 'Foto de '+item.name; img.referrerPolicy='no-referrer';
+      img.onload=()=>{image.innerHTML='';image.appendChild(img);};
+      img.src=data.photo;
+    }).catch(()=>{});
+  });
+  selectFeatured(0);
+}
+const featuredAll = document.getElementById('featuredAll');
+if (featuredAll) featuredAll.onclick = () => { location.hash='#/buscar'; setTimeout(()=>proSearch&&proSearch.focus(),80); };
+const bannerPlayers = document.getElementById('bannerPlayers');
+if (bannerPlayers) bannerPlayers.onclick = () => { location.hash='#/buscar'; setTimeout(()=>proSearch&&proSearch.focus(),80); };
+renderFeatured();
 
 function choosePlayer(p) {
   proSearch.value = p.name;
