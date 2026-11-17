@@ -998,6 +998,19 @@ main{
 @media(max-width:1150px){.featured-layout{grid-template-columns:minmax(0,2.35fr) minmax(225px,1fr)!important}.featured-card{height:190px!important;min-height:190px!important}.featured-photo{height:90px!important}}
 @media(max-width:860px){.featured-layout{grid-template-columns:1fr!important}.featured-list{grid-template-columns:repeat(3,minmax(0,1fr))!important}.featured-card{height:205px!important;min-height:205px!important}.featured-photo{height:110px!important}.featured-detail{width:100%!important;max-width:340px!important;margin:0 auto!important}}
 @media(max-width:560px){.featured-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}.featured-card{height:210px!important;min-height:210px!important}.featured-photo{height:120px!important}}
+/* Cartão de jogador com identidade de equipe e atalhos como na referência */
+.featured-card{padding-bottom:7px!important}
+.featured-identity{display:flex!important;align-items:center!important;gap:7px!important;min-width:0!important;padding:7px 7px 2px!important}
+.featured-logo{display:grid!important;place-items:center!important;flex:none!important;width:27px!important;height:27px!important;border-radius:50%!important;background:#f5e6d8!important;color:#172b3d!important;font-size:13px!important;font-weight:900!important;letter-spacing:-.7px!important}
+.tone-gold .featured-logo{background:#ffe7a0!important;color:#171717!important}
+.tone-rose .featured-logo{background:#f6d9d8!important;color:#172b3d!important}
+.featured-copy{display:flex!important;flex-direction:column!important;min-width:0!important;line-height:1.15!important}
+.featured-copy .featured-name{padding:0!important;font-size:13px!important;line-height:17px!important}
+.featured-copy .featured-team{padding:1px 0 0!important;font-size:10px!important;line-height:13px!important}
+.featured-shortcuts{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:3px!important;margin:auto 6px 0!important;padding-top:5px!important;border-top:1px solid #f0e2d9!important;color:#1d2d3e!important;font-size:8px!important;font-weight:600!important;white-space:nowrap!important}
+.featured-shortcuts span{overflow:hidden;text-overflow:ellipsis}
+@media(max-width:860px){.featured-shortcuts{font-size:8px!important}.featured-identity{padding:6px 5px 2px!important}.featured-logo{width:23px!important;height:23px!important}}
+
 </style>
 </head>
 <body>
@@ -2166,9 +2179,14 @@ function renderFeatured() {
     const number = el('span','featured-number','#'+String(i+1).padStart(3,'0'));
     const image = el('span','featured-photo');
     image.appendChild(el('span','featured-initial',item.name.charAt(0).toUpperCase()));
-    const title = el('strong','featured-name',item.name);
-    const team = el('span','featured-team',item.team);
-    card.append(number,image,title,team);
+    const identity = el('span','featured-identity');
+    const logo = el('span','featured-logo',({ 'Team Spirit':'S','NAVI':'N','Vitality':'V','G2':'G2' })[item.team] || item.team.charAt(0));
+    const copy = el('span','featured-copy');
+    copy.append(el('strong','featured-name',item.name),el('span','featured-team',item.team));
+    identity.append(logo,copy);
+    const shortcuts = el('span','featured-shortcuts');
+    shortcuts.append(el('span','', '⊙ Mira'),el('span','', '▣ Viewmodel'));
+    card.append(number,image,identity,shortcuts);
     card.onclick = () => selectFeatured(i);
     featuredList.appendChild(card);
     fetchProData({name:item.name}).then(data=>{
