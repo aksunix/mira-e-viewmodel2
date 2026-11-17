@@ -1403,6 +1403,9 @@ function renderPlayer(p) {
         const bits = [];
         if (item.actuation) bits.push('AP ' + item.actuation + ' mm' + (item.actuation_scope && item.actuation_scope !== 'Não informado' ? ' (' + item.actuation_scope + ')' : ''));
         if (item.rapid_trigger) bits.push('RT ' + item.rapid_trigger + ' mm' + (item.rapid_trigger_scope && item.rapid_trigger_scope !== 'Não informado' ? ' (' + item.rapid_trigger_scope + ')' : ''));
+        else if (item.rapid_trigger_disabled) bits.push('RT desativado');
+        if (item.rapid_trigger_activate || item.rapid_trigger_deactivate) bits.push('RT ativa ' + (item.rapid_trigger_activate || '—') + ' / desativa ' + (item.rapid_trigger_deactivate || '—') + ' mm');
+        if (item.groups && item.groups.length > 1) bits.push('ajustes por grupos de teclas');
         if (item.date) bits.push(item.date);
         return bits.join(' · ');
       }).join(' | ');
@@ -1929,11 +1932,16 @@ function renderKeyboardProfile(p) {
       const bits = [];
       if (alt.actuation) bits.push('Actuation ' + alt.actuation + ' mm');
       if (alt.rapid_trigger) bits.push('Rapid Trigger ' + alt.rapid_trigger + ' mm');
+      else if (alt.rapid_trigger_disabled) bits.push('Rapid Trigger desativado');
+      if (alt.rapid_trigger_activate || alt.rapid_trigger_deactivate) {
+        bits.push('Ativação ' + (alt.rapid_trigger_activate || '—') + ' mm · Desativação ' + (alt.rapid_trigger_deactivate || '—') + ' mm');
+      }
+      if (alt.groups && alt.groups.length > 1) bits.push('Ajustes por grupos de teclas');
       const actScope = keyboardScope(alt, 'actuation');
       const rtScope = keyboardScope(alt, 'rapid_trigger');
       const scopeText = [];
       if (alt.actuation) scopeText.push('Actuation: ' + (actScope.keys.length ? actScope.keys.join(' ') : actScope.label));
-      if (alt.rapid_trigger) scopeText.push('RT: ' + (rtScope.keys.length ? rtScope.keys.join(' ') : rtScope.label));
+      if (alt.rapid_trigger || alt.rapid_trigger_disabled) scopeText.push('RT: ' + (rtScope.keys.length ? rtScope.keys.join(' ') : rtScope.label));
       li.append(el('b', '', bits.join(' · ')), document.createTextNode(' — ' + scopeText.join(' · ') + (alt.date ? ' · ' + alt.date : '')));
       if (alt.source_url) {
         const altUrl = safeUrl(alt.source_url, 'prosettings.net');
