@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
     inputs:
       max:
-        description: "Maximo de paginas por execucao"
-        default: "400"
+        description: "Maximo de paginas por execucao (2500 para varrer todos os perfis)"
+        default: "2500"
 
 permissions:
   contents: write
