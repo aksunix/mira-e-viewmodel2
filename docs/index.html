@@ -661,6 +661,11 @@ a { accent-color:#e71935; }
   .dex-tab { font-size:11px; }
 }
 
+
+/* Pesquisa mostra um perfil compacto, com proporção de cartão mobile */
+[data-view="buscar"] #searchResult { grid-template-columns:minmax(0,360px); justify-content:center; }
+[data-view="buscar"] .dex-player-card { width:100%; }
+
 </style>
 </head>
 <body>
