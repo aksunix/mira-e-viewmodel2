@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://prosettings.net"
-KEYBOARD_PARSER_VERSION = "2"
+KEYBOARD_PARSER_VERSION = "3"
 UA = "cs2-demo-analyzer-prosettings-sync/1.0 (projeto pessoal; 1 req a cada poucos segundos)"
 FIELDS = {"sensitivity": "sensitivity", "dpi": "dpi", "edpi": "edpi",
           "zoom sensitivity": "zoom_sensitivity", "hz": "hz"}
@@ -105,7 +105,7 @@ def _setting_scope(text, setting):
     )
 
     # Separadores comuns evitam misturar o escopo do Actuation com o do RT.
-    chunks = re.split(r"[|;\\n]+", lower)
+    chunks = re.split(r"[|;\n]+", lower)
     chunk = next((part for part in chunks if re.search(own_pattern, part)), lower)
     match = re.search(own_pattern, chunk)
     if not match:
