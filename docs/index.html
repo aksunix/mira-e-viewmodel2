@@ -1392,7 +1392,7 @@ function renderPlayer(p) {
     }
     const evidenceUrl = safeEvidenceUrl(current.evidence_url || (current.evidence_urls || [])[0]);
     if (evidenceUrl) {
-      const evidenceLink = el('a', 'keyboard-source', 'Abrir clipe / prova compartilhada');
+      const evidenceLink = el('a', 'keyboard-source', 'Abrir prova / referência');
       evidenceLink.href = evidenceUrl;
       evidenceLink.target = '_blank';
       evidenceLink.rel = 'noopener noreferrer';
@@ -1876,7 +1876,7 @@ function renderKeyboardProfile(p) {
   const source = keyboardSourceLink('Ver comentário', profileUrl, profileUrl);
   if (source) links.appendChild(source);
   const clipUrl = safeEvidenceUrl(current.evidence_url || (current.evidence_urls || [])[0]);
-  const clip = keyboardSourceLink('Ver prova', clipUrl, clipUrl);
+  const clip = keyboardSourceLink('Abrir evidência', clipUrl, clipUrl);
   if (clip) links.appendChild(clip);
   if (links.childNodes.length) head.appendChild(links);
   card.appendChild(head);
