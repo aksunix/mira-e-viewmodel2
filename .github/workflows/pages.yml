@@ -27,6 +27,12 @@ jobs:
         with:
           go-version-file: go.mod
 
+      - name: Resolver dependências do parser
+        run: |
+          go mod tidy
+          go mod verify
+          go version
+
       - name: Compilar o analisador para WebAssembly
         run: |
           GOOS=js GOARCH=wasm go build -o docs/parser.wasm ./wasm
