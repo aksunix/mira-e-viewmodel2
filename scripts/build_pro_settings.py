@@ -122,7 +122,7 @@ def _setting_scope(text, setting):
         if previous_setting:
             # Não herda "all keys" se a expressão estiver ligada apenas ao Actuation.
             before_previous_setting = prefix[:previous_setting[-1].start()]
-            context = (before_previous_setting + " " + tail) if re.search(r"\\ball\\s+(?:the\\s+)?keys\\b|\\bevery\\s+key\\b|\\bwhole\\s+keyboard\\b", before_previous_setting) else tail
+            context = (before_previous_setting + " " + tail) if re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b|\bwhole\s+keyboard\b", before_previous_setting) else tail
 
     # Uma indicação explícita de teclas específicas tem prioridade sobre "all keys"
     # quando o comentário separa o escopo de Actuation e Rapid Trigger.
