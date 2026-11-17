@@ -960,7 +960,7 @@ function setLoading(on) {
 function startWorker() {
   setLoading(true);
   try {
-    worker = new Worker('worker.js');
+    worker = new Worker('worker.js?v=20261117-rc2');
   } catch (e) {
     failLoading('Seu navegador não conseguiu iniciar o analisador. Tente o Chrome, Edge ou Firefox atualizados.');
     return;
