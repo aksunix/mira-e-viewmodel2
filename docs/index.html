@@ -404,6 +404,60 @@
   .video-note, .keyboard-note { margin: 8px 0 0; font-size: 11px; line-height: 16px; color: var(--md-on-surface-variant); }
   .keyboard-source { display: inline-flex; margin-top: 8px; color: var(--md-primary); font-size: 12px; font-weight: 600; text-decoration: none; }
   .keyboard-source:hover { text-decoration: underline; }
+
+  /* Página Teclado — Material Design 3 */
+  [data-view="teclado"] .keyboard-search { max-width: 760px; margin: 20px 0 12px; }
+  [data-view="teclado"] .search-field { height: 64px; padding: 0 12px 0 22px; border-radius: 32px; background: var(--md-surface-container-low); }
+  [data-view="teclado"] .search-field:focus-within { box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-primary) 24%, transparent); }
+  [data-view="teclado"] .search-field input { font: 500 17px "Inter", system-ui, sans-serif; letter-spacing: 0; }
+  [data-view="teclado"] .suggest { top: 72px; }
+  .keyboard-hint { margin: 0 0 20px; color: var(--md-on-surface-variant); font-size: 13px; line-height: 20px; }
+  #keyboardResult { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; max-width: 920px; }
+  .keyboard-profile { overflow: hidden; border: 1px solid var(--md-outline-variant); border-radius: 24px; background: var(--md-surface-container-low); box-shadow: var(--md-elev1); }
+  .keyboard-profile-head { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 22px 24px; }
+  .keyboard-profile-avatar { display: grid; place-items: center; flex: none; width: 56px; height: 56px; border-radius: 18px; background: var(--md-primary-container); color: var(--md-on-primary-container); font-size: 24px; font-weight: 700; text-transform: uppercase; }
+  .keyboard-profile-main { flex: 1; min-width: 160px; }
+  .keyboard-profile-name { margin: 0; font-size: 22px; line-height: 28px; font-weight: 600; overflow-wrap: anywhere; }
+  .keyboard-profile-sub { margin: 3px 0 0; color: var(--md-on-surface-variant); font-size: 12px; }
+  .keyboard-profile-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .keyboard-profile-links a { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 36px; padding: 0 14px; border: 1px solid var(--md-outline-variant); border-radius: 18px; color: var(--md-on-surface); text-decoration: none; font-size: 12px; font-weight: 600; }
+  .keyboard-profile-links a:hover { background: var(--md-surface-container-high); border-color: var(--md-primary); }
+  .keyboard-profile-links .i { width: 16px; height: 16px; }
+  .keyboard-divider { height: 1px; background: var(--md-outline-variant); }
+  .keyboard-settings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 20px 24px 24px; }
+  .keyboard-setting { display: flex; align-items: center; gap: 18px; min-width: 0; min-height: 168px; padding: 18px; border: 1px solid var(--md-outline-variant); border-radius: 20px; background: var(--md-surface-container); }
+  .keyboard-slider-wrap { display: grid; place-items: center; flex: none; width: 48px; height: 126px; }
+  .keyboard-slider { position: relative; width: 6px; height: 108px; border-radius: 999px; background: var(--md-surface-container-highest); }
+  .keyboard-slider-fill { position: absolute; right: 0; bottom: 0; left: 0; height: var(--fill, 25%); border-radius: inherit; background: var(--md-primary); opacity: .7; }
+  .keyboard-slider-thumb { position: absolute; left: 50%; bottom: var(--position, 25%); width: 18px; height: 18px; border: 3px solid var(--md-surface-container); border-radius: 50%; background: var(--md-primary); box-shadow: 0 1px 3px rgba(0,0,0,.35); transform: translate(-50%, 50%); }
+  .keyboard-setting-info { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; min-width: 0; }
+  .keyboard-setting-label { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .35px; text-transform: uppercase; }
+  .keyboard-setting-value { font-size: 30px; line-height: 36px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.5px; }
+  .keyboard-setting-unit { margin-left: 3px; color: var(--md-on-surface-variant); font-size: 14px; font-weight: 500; }
+  .keyboard-scope-label { color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px; }
+  .keyboard-scope-chip { display: inline-flex; align-items: center; min-height: 26px; padding: 3px 10px; border-radius: 8px; background: var(--md-secondary-container); color: var(--md-on-secondary-container); font-size: 11px; line-height: 16px; font-weight: 600; }
+  .keyboard-keys { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+  .keyboard-key { display: grid; place-items: center; min-width: 25px; height: 25px; padding: 0 6px; border: 1px solid var(--md-outline); border-bottom-width: 2px; border-radius: 6px; background: var(--md-surface-container-highest); color: var(--md-on-surface); font: 600 10px/1 "Roboto Mono", ui-monospace, monospace; }
+  .keyboard-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 0 24px 20px; }
+  .keyboard-status { display: inline-flex; align-items: center; min-height: 28px; padding: 4px 10px; border-radius: 8px; background: var(--md-tertiary-container, var(--md-secondary-container)); color: var(--md-on-secondary-container); font-size: 11px; font-weight: 600; }
+  .keyboard-status.community { background: var(--md-surface-container-high); color: var(--md-on-surface-variant); }
+  .keyboard-note { margin: 0; color: var(--md-on-surface-variant); font-size: 12px; line-height: 18px; }
+  .keyboard-history { margin: 0 24px 22px; padding: 12px 16px; border: 1px solid var(--md-outline-variant); border-radius: 14px; background: var(--md-surface-container); }
+  .keyboard-history summary { cursor: pointer; color: var(--md-primary); font-size: 13px; font-weight: 600; }
+  .keyboard-history-list { display: grid; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+  .keyboard-history-list li { padding-top: 8px; border-top: 1px solid var(--md-outline-variant); color: var(--md-on-surface-variant); font-size: 12px; line-height: 18px; }
+  .keyboard-history-list b { color: var(--md-on-surface); font-weight: 600; }
+  .keyboard-empty { max-width: 640px; padding: 24px; border: 1px dashed var(--md-outline-variant); border-radius: 20px; color: var(--md-on-surface-variant); text-align: center; }
+  .keyboard-empty strong { display: block; margin-bottom: 4px; color: var(--md-on-surface); font-size: 15px; }
+  @media (max-width: 680px) {
+    .keyboard-settings { grid-template-columns: minmax(0, 1fr); padding: 16px; }
+    .keyboard-profile-head { padding: 18px 16px; }
+    .keyboard-foot { padding: 0 16px 16px; }
+    .keyboard-history { margin: 0 16px 16px; }
+    .keyboard-setting { min-height: 150px; }
+  }
+  @media (max-width: 380px) { .keyboard-setting { gap: 12px; padding: 14px; } .keyboard-setting-value { font-size: 26px; } }
+
   .back-body .btn { margin: auto 0 0; width: 100%; text-decoration: none; }
   .back-body .btn svg { margin-left: 0; width: 18px; height: 18px; }
   .back-body .empty { margin: 0; padding: 12px 0; text-align: center; color: var(--md-on-surface-variant); }
@@ -473,6 +527,7 @@
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
   <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
+  <a href="#/teclado" data-page="teclado"><svg class="i" data-i="keyboard"></svg>Teclado</a>
   <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
   <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
@@ -547,6 +602,21 @@
   </div>
   <div class="rs" id="recentSearches" hidden></div>
   <div id="searchResult" aria-live="polite"></div>
+</section>
+
+<section data-view="teclado" hidden>
+  <h2 class="page big">Configurações de <span class="acc">teclado</span></h2>
+  <p class="lead">Pesquise um jogador para consultar Actuation Point, Rapid Trigger e em quais teclas cada ajuste foi informado.</p>
+  <div class="search keyboard-search">
+    <div class="search-field">
+      <svg class="i" data-i="search" aria-hidden="true"></svg>
+      <input type="text" id="keyboardSearch" placeholder="Buscar jogador com dados de teclado" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="keyboardSuggest" aria-label="Buscar jogador com configurações de teclado">
+      <button type="button" class="icon-btn" id="keyboardSearchClear" aria-label="Limpar busca" hidden><svg class="i" data-i="close"></svg></button>
+    </div>
+    <ul class="suggest" id="keyboardSuggest" role="listbox"></ul>
+  </div>
+  <p class="keyboard-hint" id="keyboardHint" aria-live="polite">Digite o nick para encontrar jogadores com configurações de teclado disponíveis.</p>
+  <div id="keyboardResult" aria-live="polite"></div>
 </section>
 
 <section data-view="sens" hidden>
@@ -728,6 +798,8 @@ const ICONS = {
   pulse: 'M3 12h4l2.5-7 5 14 2.5-7h4',
   monitor: 'M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z',
   mouse: 'M13 1.07V9h7c0-4.08-3.05-7.44-7-7.93zM4 15c0 4.42 3.58 8 8 8s8-3.58 8-8v-4H4v4zm7-13.93C7.05 1.56 4 4.92 4 9h7V1.07z',
+  keyboard: 'M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zM4 7h16v10H4V7zm2 2h2v2H6V9zm3 0h2v2H9V9zm3 0h2v2h-2V9zm3 0h2v2h-2V9zm3 0h2v2h-2V9zM7 12h2v2H7v-2zm3 0h2v2h-2v-2zm3 0h2v2h-2v-2zm3 0h2v2h-2v-2zm-7 3h6v1H9v-1z',
+  zap: 'M13 2 3 14h7l-1 8 12-14h-7l1-6z',
   download: 'M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z',
   back: 'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
   flipback: 'M9 7H7v2h2V7zm0 4H7v2h2v-2zm0-8c-1.11 0-2 .9-2 2h2V3zm4 12h-2v2h2v-2zm6-12v2h2c0-1.1-.9-2-2-2zm-6 0h-2v2h2V3zM9 17v-2H7c0 1.1.89 2 2 2zm10-4h2v-2h-2v2zm0-4h2V7h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zM5 7H3v12c0 1.1.9 2 2 2h12v-2H5V7zm10-2h2V3h-2v2zm0 12h2v-2h-2v2z',
@@ -774,7 +846,7 @@ scrim.onclick = () => toggleMenu(false);
 narrow.addEventListener('change', () => { side.classList.remove('open'); scrim.classList.remove('on'); shell.classList.remove('closed'); menuBtn.setAttribute('aria-expanded', String(!narrow.matches)); });
 menuBtn.setAttribute('aria-expanded', String(!narrow.matches));
 function route() {
-  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'sens', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
+  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'teclado', 'sens', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
   document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
   document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
   if (narrow.matches) toggleMenu(false);
@@ -1649,6 +1721,216 @@ function choosePlayer(p) {
   renderRecentSearches();
 }
 renderRecentSearches();
+
+// Pesquisa independente de jogadores com dados de teclado.
+const keyboardSearch = document.getElementById('keyboardSearch');
+const keyboardSuggest = document.getElementById('keyboardSuggest');
+const keyboardSearchClear = document.getElementById('keyboardSearchClear');
+const keyboardResult = document.getElementById('keyboardResult');
+const keyboardHint = document.getElementById('keyboardHint');
+let keyboardSuggestItems = [], keyboardSuggestSel = -1;
+
+function getKeyboardIndex() {
+  return buildIndex().filter(p => p.info && p.info.keyboard && p.info.keyboard.current &&
+    (p.info.keyboard.current.actuation || p.info.keyboard.current.rapid_trigger));
+}
+
+function searchKeyboardPlayers(q) {
+  const key = normName(q);
+  if (!key) return [];
+  const idx = getKeyboardIndex();
+  const score = p => p.key === key ? 0 : p.key.startsWith(key) ? 1 : p.key.includes(key) ? 2 : 9;
+  return idx.map(p => [score(p), p]).filter(x => x[0] < 9)
+    .sort((a, b) => a[0] - b[0] || a[1].name.length - b[1].name.length)
+    .slice(0, 8).map(x => x[1]);
+}
+
+function closeKeyboardSuggest() {
+  keyboardSuggest.classList.remove('on');
+  keyboardSearch.setAttribute('aria-expanded', 'false');
+  keyboardSuggestSel = -1;
+}
+
+function paintKeyboardSuggest() {
+  keyboardSuggest.innerHTML = '';
+  keyboardSuggestItems.forEach((p, i) => {
+    const li = el('li');
+    li.setAttribute('role', 'option');
+    li.setAttribute('aria-selected', String(i === keyboardSuggestSel));
+    const title = el('span', '', p.name);
+    const meta = el('span', 'tag', ' · Actuation / Rapid Trigger');
+    li.append(title, meta);
+    li.onmousedown = e => { e.preventDefault(); chooseKeyboardPlayer(p); };
+    keyboardSuggest.appendChild(li);
+  });
+  keyboardSuggest.classList.toggle('on', keyboardSuggestItems.length > 0);
+  keyboardSearch.setAttribute('aria-expanded', String(keyboardSuggestItems.length > 0));
+}
+
+function keyboardScope(setting, type) {
+  const scope = String(setting[type + '_scope'] || '').trim();
+  let keys = Array.isArray(setting[type + '_keys']) ? setting[type + '_keys'].slice() : [];
+  if (!keys.length && /^wasd$/i.test(scope)) keys = ['W', 'A', 'S', 'D'];
+  if (/todas as teclas|all keys|every key/i.test(scope)) return { label: 'Todas as teclas', keys: [] };
+  if (keys.length || /teclas específicas|specific keys/i.test(scope) || /^wasd$/i.test(scope)) {
+    return { label: 'Teclas específicas', keys: keys };
+  }
+  return { label: 'Escopo não informado', keys: [] };
+}
+
+function appendKeyboardSetting(grid, label, value, type, setting) {
+  if (!value) return;
+  const num = Number(String(value).replace(',', '.'));
+  const pct = Number.isFinite(num) ? Math.max(5, Math.min(95, num / 4 * 100)) : 25;
+  const scope = keyboardScope(setting, type);
+  const card = el('section', 'keyboard-setting');
+  const trackWrap = el('div', 'keyboard-slider-wrap');
+  const track = el('div', 'keyboard-slider');
+  const fill = el('div', 'keyboard-slider-fill');
+  const thumb = el('div', 'keyboard-slider-thumb');
+  track.style.setProperty('--position', pct + '%');
+  track.style.setProperty('--fill', pct + '%');
+  track.append(fill, thumb);
+  trackWrap.appendChild(track);
+  const info = el('div', 'keyboard-setting-info');
+  info.append(
+    el('span', 'keyboard-setting-label', label),
+    el('div', 'keyboard-setting-value', value + ' mm')
+  );
+  const scopeChip = el('span', 'keyboard-scope-chip', scope.label);
+  info.appendChild(scopeChip);
+  if (scope.keys.length) {
+    const keys = el('div', 'keyboard-keys');
+    scope.keys.forEach(k => keys.appendChild(el('span', 'keyboard-key', k)));
+    info.appendChild(keys);
+  }
+  card.append(trackWrap, info);
+  grid.appendChild(card);
+}
+
+function keyboardSourceLink(label, url, safe) {
+  if (!safe) return null;
+  const a = el('a');
+  a.href = safe;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.append(icon('ext'), document.createTextNode(label));
+  return a;
+}
+
+function renderKeyboardProfile(p) {
+  const keyboard = p.info && p.info.keyboard;
+  const current = keyboard && keyboard.current;
+  if (!current || (!current.actuation && !current.rapid_trigger)) {
+    const empty = el('div', 'keyboard-empty');
+    empty.append(el('strong', '', 'Configuração de teclado não encontrada'), document.createTextNode('Este perfil ainda não possui valores de Actuation Point ou Rapid Trigger coletados.'));
+    return empty;
+  }
+
+  const card = el('article', 'keyboard-profile');
+  const head = el('header', 'keyboard-profile-head');
+  head.appendChild(el('div', 'keyboard-profile-avatar', (p.name || '?').charAt(0)));
+  const main = el('div', 'keyboard-profile-main');
+  main.append(el('h3', 'keyboard-profile-name', p.name), el('p', 'keyboard-profile-sub', 'Configurações encontradas nos comentários do ProSettings'));
+  head.appendChild(main);
+
+  const links = el('div', 'keyboard-profile-links');
+  const profileUrl = safeUrl(current.source_url || p.info.url, 'prosettings.net');
+  const source = keyboardSourceLink('Ver comentário', profileUrl, profileUrl);
+  if (source) links.appendChild(source);
+  const clipUrl = safeEvidenceUrl(current.evidence_url || (current.evidence_urls || [])[0]);
+  const clip = keyboardSourceLink('Ver prova', clipUrl, clipUrl);
+  if (clip) links.appendChild(clip);
+  if (links.childNodes.length) head.appendChild(links);
+  card.appendChild(head);
+  card.appendChild(el('div', 'keyboard-divider'));
+
+  const grid = el('div', 'keyboard-settings');
+  appendKeyboardSetting(grid, 'Actuation Point', current.actuation, 'actuation', current);
+  appendKeyboardSetting(grid, 'Rapid Trigger', current.rapid_trigger, 'rapid_trigger', current);
+  card.appendChild(grid);
+
+  const foot = el('div', 'keyboard-foot');
+  const statusText = current.status || (current.confidence === 'admin' ? 'Atualização confirmada pelo ProSettings' : current.confidence === 'clip' ? 'Clipe compartilhado; não verificado' : 'Relato da comunidade');
+  foot.appendChild(el('span', 'keyboard-status' + (current.confidence === 'admin' ? '' : ' community'), statusText));
+  const byline = [current.author ? 'Comentário de ' + current.author : '', current.date || ''].filter(Boolean).join(' · ');
+  if (byline) foot.appendChild(el('p', 'keyboard-note', byline));
+  card.appendChild(foot);
+
+  if (keyboard.alternatives && keyboard.alternatives.length) {
+    const details = el('details', 'keyboard-history');
+    details.appendChild(el('summary', '', 'Ver relatos anteriores ou configurações divergentes'));
+    const list = el('ul', 'keyboard-history-list');
+    keyboard.alternatives.forEach(alt => {
+      const li = el('li');
+      const bits = [];
+      if (alt.actuation) bits.push('Actuation ' + alt.actuation + ' mm');
+      if (alt.rapid_trigger) bits.push('Rapid Trigger ' + alt.rapid_trigger + ' mm');
+      const actScope = keyboardScope(alt, 'actuation');
+      const rtScope = keyboardScope(alt, 'rapid_trigger');
+      const scopeText = [];
+      if (alt.actuation) scopeText.push('Actuation: ' + (actScope.keys.length ? actScope.keys.join(' ') : actScope.label));
+      if (alt.rapid_trigger) scopeText.push('RT: ' + (rtScope.keys.length ? rtScope.keys.join(' ') : rtScope.label));
+      li.append(el('b', '', bits.join(' · ')), document.createTextNode(' — ' + scopeText.join(' · ') + (alt.date ? ' · ' + alt.date : '')));
+      if (alt.source_url) {
+        const altUrl = safeUrl(alt.source_url, 'prosettings.net');
+        if (altUrl) {
+          const link = el('a', 'keyboard-source', 'Abrir relato');
+          link.href = altUrl; link.target = '_blank'; link.rel = 'noopener noreferrer';
+          li.appendChild(document.createTextNode(' · '));
+          li.appendChild(link);
+        }
+      }
+      list.appendChild(li);
+    });
+    details.appendChild(list);
+    card.appendChild(details);
+  }
+  return card;
+}
+
+function chooseKeyboardPlayer(p) {
+  keyboardSearch.value = p.name;
+  keyboardSearchClear.hidden = false;
+  closeKeyboardSuggest();
+  keyboardResult.innerHTML = '';
+  keyboardResult.appendChild(renderKeyboardProfile(p));
+  keyboardHint.textContent = 'Configurações de teclado disponíveis para ' + p.name + '.';
+}
+
+keyboardSearch.addEventListener('input', async () => {
+  await Promise.all([proSettingsReady, csLinksReady]);
+  keyboardSuggestItems = searchKeyboardPlayers(keyboardSearch.value);
+  keyboardSuggestSel = keyboardSuggestItems.length ? 0 : -1;
+  paintKeyboardSuggest();
+  keyboardSearchClear.hidden = !keyboardSearch.value;
+  if (keyboardSearch.value.trim() && !keyboardSuggestItems.length) {
+    keyboardHint.textContent = 'Nenhum perfil com dados de teclado encontrado para esse nome.';
+  } else {
+    keyboardHint.textContent = 'Selecione um jogador para visualizar os ajustes e o escopo das teclas.';
+  }
+  if (!keyboardSearch.value.trim()) keyboardResult.innerHTML = '';
+});
+
+keyboardSearch.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' && keyboardSuggestItems.length) { e.preventDefault(); keyboardSuggestSel = (keyboardSuggestSel + 1) % keyboardSuggestItems.length; paintKeyboardSuggest(); }
+  else if (e.key === 'ArrowUp' && keyboardSuggestItems.length) { e.preventDefault(); keyboardSuggestSel = (keyboardSuggestSel - 1 + keyboardSuggestItems.length) % keyboardSuggestItems.length; paintKeyboardSuggest(); }
+  else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (keyboardSuggestItems[keyboardSuggestSel]) chooseKeyboardPlayer(keyboardSuggestItems[keyboardSuggestSel]);
+    else if (keyboardSearch.value.trim()) keyboardHint.textContent = 'Nenhum perfil com dados de teclado encontrado para esse nome.';
+  } else if (e.key === 'Escape') closeKeyboardSuggest();
+});
+keyboardSearch.addEventListener('blur', closeKeyboardSuggest);
+keyboardSearchClear.onclick = () => {
+  keyboardSearch.value = '';
+  keyboardSearchClear.hidden = true;
+  keyboardResult.innerHTML = '';
+  keyboardHint.textContent = 'Digite o nick para encontrar jogadores com configurações de teclado disponíveis.';
+  keyboardSuggestItems = [];
+  closeKeyboardSuggest();
+  keyboardSearch.focus();
+};
 
 // Clicar em "Início" (ou na logo) sempre volta para a tela de upload
 function goHome() {
