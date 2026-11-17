@@ -87,16 +87,31 @@ def _setting_number(text, patterns):
 
 def _setting_scope(text, setting):
     lower = text.lower()
-    pattern = (
+    own_pattern = (
         r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\b"
         if setting == "actuation" else
         r"\b(?:rapid(?:\s*trigger)?|rt)\b"
     )
-    match = re.search(pattern, lower)
+    other_pattern = (
+        r"\b(?:rapid(?:\s*trigger)?|rt)\b"
+        if setting == "actuation" else
+        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\b"
+    )
+
+    # Separadores comuns em comentários de configurações evitam misturar
+    # "Actuation em todas" com "Rapid Trigger somente no WASD".
+    chunks = re.split(r"[|;\\n]+", lower)
+    chunk = next((part for part in chunks if re.search(own_pattern, part)), lower)
+    match = re.search(own_pattern, chunk)
     if not match:
         return "Não informado", []
 
-    window = lower[max(0, match.start() - 35):min(len(lower), match.end() + 85)]
+    tail = chunk[match.start():]
+    other = re.search(other_pattern, tail[match.end() - match.start():])
+    if other:
+        tail = tail[:match.end() - match.start() + other.start()]
+    window = tail
+
     if re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b|\bwhole\s+keyboard\b", window):
         return "Todas as teclas", []
 
@@ -107,7 +122,7 @@ def _setting_scope(text, setting):
     # Procura listas explicitamente associadas ao ajuste (ex.: "only A/D", "on WASD + Space").
     scoped = re.search(r"(?:\bonly\b(?:\s+on)?|\b(?:on|for)\s+(?:the\s+)?|\bkeys?\s*[:=])\s*(.{1,55})", window)
     if scoped:
-        phrase = re.split(r"[.;|]", scoped.group(1), maxsplit=1)[0]
+        phrase = re.split(r"[.;]", scoped.group(1), maxsplit=1)[0]
         aliases = [
             (r"\bspace(?:bar)?\b", "Space"),
             (r"\bshift\b", "Shift"),
