@@ -103,7 +103,7 @@ def _setting_scope(text, setting):
         if setting == "actuation" else
         r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\b"
     )
-    chunks = re.split(r"[|;\\n]+", lower)
+    chunks = re.split(r"[|;\n]+", lower)
     chunk = next((part for part in chunks if re.search(own_pattern, part)), lower)
     match = re.search(own_pattern, chunk)
     if not match:
@@ -122,29 +122,29 @@ def _setting_scope(text, setting):
             before_previous_setting = prefix[:previous_setting[-1].start()]
             scope_context = before_previous_setting + " " + tail
 
-    if re.search(r"\\b(?:other|remaining|rest\\s+of)\\s+(?:keys|buttons)\\b", scope_context):
+    if re.search(r"\b(?:other|remaining|rest\s+of)\s+(?:keys|buttons)\b", scope_context):
         return "Demais teclas", []
     keys = []
-    if re.search(r"\\bwasd\\b", scope_context):
+    if re.search(r"\bwasd\b", scope_context):
         keys.extend(["W", "A", "S", "D"])
     scoped = re.search(
-        r"(?:\\bonly\\b(?:\\s+on)?|\\b(?:on|for)\\s+(?:the\\s+)?|\\bkeys?\\s*[:=])\\s*(.{1,55})",
+        r"(?:\bonly\b(?:\s+on)?|\b(?:on|for)\s+(?:the\s+)?|\bkeys?\s*[:=])\s*(.{1,55})",
         tail
     )
     if scoped:
         phrase = re.split(r"[.;]", scoped.group(1), maxsplit=1)[0]
         aliases = [
-            (r"\\bspace(?:bar)?\\b", "Space"),
-            (r"\\bshift\\b", "Shift"),
-            (r"\\b(?:ctrl|control)\\b", "Ctrl"),
-            (r"\\balt\\b", "Alt"),
-            (r"\\btab\\b", "Tab"),
-            (r"\\bcaps(?:\\s+lock)?\\b", "Caps"),
-            (r"\\b(?:enter|return)\\b", "Enter"),
-            (r"\\bbackspace\\b", "Backspace"),
-            (r"\\b(?:delete|del)\\b", "Del"),
-            (r"\\b(?:insert|ins)\\b", "Ins"),
-            (r"\\b[a-z0-9]\\b", None),
+            (r"\bspace(?:bar)?\b", "Space"),
+            (r"\bshift\b", "Shift"),
+            (r"\b(?:ctrl|control)\b", "Ctrl"),
+            (r"\balt\b", "Alt"),
+            (r"\btab\b", "Tab"),
+            (r"\bcaps(?:\s+lock)?\b", "Caps"),
+            (r"\b(?:enter|return)\b", "Enter"),
+            (r"\bbackspace\b", "Backspace"),
+            (r"\b(?:delete|del)\b", "Del"),
+            (r"\b(?:insert|ins)\b", "Ins"),
+            (r"\b[a-z0-9]\b", None),
         ]
         for key_pattern, label in aliases:
             for token in re.findall(key_pattern, phrase):
@@ -154,24 +154,25 @@ def _setting_scope(text, setting):
     if keys:
         return "Teclas específicas", keys
 
-    if re.search(r"\\ball\\s+(?:the\\s+)?keys\\b|\\bevery\\s+key\\b|\\bwhole\\s+keyboard\\b", scope_context):
+    if re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b|\bwhole\s+keyboard\b", scope_context):
         return "Todas as teclas", []
     return "Não informado", []
 
+
 def _keyboard_values_basic(text):
     actuation = _setting_number(text, [
-        r"\\b(?:actuation(?:\\s+point)?|action\\s+point|act|ap)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*mm?\\s*(?:actuation(?:\\s+point)?|action\\s+point|act)\\b",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*(?:actuation(?:\\s+point)?|action\\s+point|act)\\b",
+        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
     ])
     rapid = _setting_number(text, [
-        r"\\b(?:rapid(?:\\s*trigger)?|rt)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*mm?\\s*(?:rapid(?:\\s*trigger)?|rt)\\b",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*(?:rapid(?:\\s*trigger)?|rt)\\b",
+        r"\b(?:rapid(?:\s*trigger)?|rt)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:rapid(?:\s*trigger)?|rt)\b",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:rapid(?:\s*trigger)?|rt)\b",
     ])
     rapid_disabled = bool(re.search(
-        r"\\b(?:no|without|disabled|off|not\\s+using|does\\s+not\\s+use|doesn't\\s+use)\\s+(?:rapid(?:\\s*trigger)?|rt)\\b"
-        r"|\\b(?:rapid(?:\\s*trigger)?|rt)\\s*(?:is|:)?\\s*(?:off|disabled|not\\s+used)\\b",
+        r"\b(?:no|without|disabled|off|not\s+using|does\s+not\s+use|doesn't\s+use)\s+(?:rapid(?:\s*trigger)?|rt)\b"
+        r"|\b(?:rapid(?:\s*trigger)?|rt)\s*(?:is|:)?\s*(?:off|disabled|not\s+used)\b",
         text, re.I
     ))
     if not actuation and not rapid and not rapid_disabled:
@@ -180,16 +181,16 @@ def _keyboard_values_basic(text):
     act_scope, act_keys = _setting_scope(text, "actuation") if actuation else ("Não informado", [])
     rapid_scope, rapid_keys = _setting_scope(text, "rapid_trigger") if rapid or rapid_disabled else ("Não informado", [])
     activate = _setting_number(text, [
-        r"\\b(?:rapid(?:\\s*trigger)?|rt)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)\\s*(?:mm\\s*)?(?:activate|activation)\\b",
-        r"\\b(?:activate|activation)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*(?:mm\\s*)?(?:activate|activation)\\b",
+        r"\b(?:rapid(?:\s*trigger)?|rt)\s*[:=]?\s*(\d+(?:[.,]\d+)?)\s*(?:mm\s*)?(?:activate|activation)\b",
+        r"\b(?:activate|activation)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:mm\s*)?(?:activate|activation)\b",
     ])
     deactivate = _setting_number(text, [
-        r"\\b(?:rapid(?:\\s*trigger)?|rt)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)\\s*(?:mm\\s*)?(?:deactivate|deactivation)\\b",
-        r"\\b(?:deactivate|deactivation)\\s*[:=]?\\s*(\\d+(?:[.,]\\d+)?)",
-        r"\\b(\\d+(?:[.,]\\d+)?)\\s*(?:mm\\s*)?(?:deactivate|deactivation)\\b",
+        r"\b(?:rapid(?:\s*trigger)?|rt)\s*[:=]?\s*(\d+(?:[.,]\d+)?)\s*(?:mm\s*)?(?:deactivate|deactivation)\b",
+        r"\b(?:deactivate|deactivation)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(\d+(?:[.,]\d+)?)\s*(?:mm\s*)?(?:deactivate|deactivation)\b",
     ])
-    if rapid and re.search(r"activate\\s*(?:\\+|and|&)\\s*deactivate", text, re.I):
+    if rapid and re.search(r"activate\s*(?:\+|and|&)\s*deactivate", text, re.I):
         activate = activate or rapid
         deactivate = deactivate or rapid
     return {
@@ -212,7 +213,7 @@ def _keyboard_values(text):
 
     # Comentários podem descrever grupos diferentes, por exemplo WASD e demais teclas.
     parts = re.split(
-        r"(?=\\b(?:other|remaining|rest\\s+of)\\s+(?:keys|buttons)\\b)",
+        r"(?=\b(?:other|remaining|rest\s+of)\s+(?:keys|buttons)\b)",
         text,
         flags=re.I
     )
@@ -222,11 +223,11 @@ def _keyboard_values(text):
             group = _keyboard_values_basic(part)
             if not group:
                 continue
-            if re.search(r"\\bwasd\\b", part, re.I):
+            if re.search(r"\bwasd\b", part, re.I):
                 label = "WASD"
-            elif re.search(r"\\b(?:other|remaining|rest\\s+of)\\s+(?:keys|buttons)\\b", part, re.I):
+            elif re.search(r"\b(?:other|remaining|rest\s+of)\s+(?:keys|buttons)\b", part, re.I):
                 label = "Demais teclas"
-            elif re.search(r"\\ball\\s+(?:the\\s+)?keys\\b|\\bevery\\s+key\\b", part, re.I):
+            elif re.search(r"\ball\s+(?:the\s+)?keys\b|\bevery\s+key\b", part, re.I):
                 label = "Todas as teclas"
             else:
                 label = "Escopo não informado"
