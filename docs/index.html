@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>CS2 Extract – Crosshair &amp; Viewmodel</title>
+<title>Setup Dex — CS2 Player Setups</title>
 <script>try{var t=localStorage.getItem("cs2x:theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}</script>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -505,15 +505,132 @@
     * { transition: none !important; }
     .linear.indeterminate .bar { animation: none; left: 0; width: 100%; opacity: .5; }
   }
+
+/* ===== SETUP DEX / REDESIGN 2026 ===== */
+:root, :root[data-theme="light"], :root[data-theme="dark"] {
+  color-scheme: light;
+  --md-primary:#e71935; --md-on-primary:#fff;
+  --md-primary-container:#ffe0e3; --md-on-primary-container:#72101f;
+  --md-secondary-container:#ffe7c2; --md-on-secondary-container:#3c2810;
+  --md-surface:#fff8f0; --md-surface-container-low:#fffaf5;
+  --md-surface-container:#fff1e7; --md-surface-container-high:#f8e8df;
+  --md-surface-container-highest:#f1ded3; --md-on-surface:#10243b;
+  --md-on-surface-variant:#596579; --md-outline:#cbb9b0;
+  --md-outline-variant:#ead2c8; --md-inverse-surface:#10243b;
+  --md-inverse-on-surface:#fff8f0; --md-error:#b3261e;
+  --md-error-container:#f9dedc; --md-on-error-container:#410e0b;
+  --md-accent:#e71935; --md-grad-a:#e71935; --md-grad-b:#ff6472;
+  --md-shadow:0 8px 24px rgba(101,25,29,.12);
+  --md-elev1:0 2px 5px rgba(101,25,29,.10),0 8px 18px rgba(101,25,29,.07);
+  --md-elev2:0 5px 12px rgba(101,25,29,.12),0 14px 28px rgba(101,25,29,.08);
+}
+html, body { min-height:100%; }
+body { background:linear-gradient(135deg,#f01435 0%,#dc1230 58%,#bd1029 100%) !important; color:#10243b; }
+.appbar { position:relative; height:78px; padding:0 28px; background:transparent !important; color:#fff8f0; border:0; }
+.brand { color:#fff8f0; gap:10px; }
+.brand svg { fill:#fff8f0; width:30px; height:30px; }
+.brand b { font-size:21px; letter-spacing:-.6px; }
+.brand b em { color:#ffe0a6; }
+.brand small { color:rgba(255,248,240,.78); }
+.appbar .icon-btn { color:#fff8f0; }
+.appbar .icon-btn:hover { background:rgba(255,255,255,.14); }
+.theme { background:rgba(110,0,20,.2); border:1px solid rgba(255,255,255,.2); }
+.theme .icon-btn[aria-pressed="true"] { background:rgba(255,255,255,.2); color:#fff; }
+.shell { min-height:calc(100vh - 78px); gap:0; padding:0 12px 12px; align-items:stretch; }
+.side { position:relative; width:194px; padding:96px 0 12px; gap:8px; flex:none; background:transparent !important; border:0; }
+.side a { height:52px; padding:0 16px; gap:14px; border-radius:0 18px 18px 0; color:rgba(255,255,255,.9); font-size:15px; font-weight:500; }
+.side a .i { width:22px; height:22px; }
+.side a:hover { background:rgba(255,255,255,.13); }
+.side a[aria-current="page"] { background:#fff8f0; color:#10243b; font-weight:700; box-shadow:0 3px 10px rgba(90,0,15,.12); }
+.upd { color:rgba(255,255,255,.72); padding:12px 16px; }
+main { max-width:none; width:100%; min-width:0; margin:0; padding:26px 30px 56px; border-radius:30px; background:#fff8f0; box-shadow:0 12px 34px rgba(90,0,15,.18); overflow:hidden; }
+h2.page { color:#10243b; }
+.page.big { font-size:clamp(30px,4vw,42px); line-height:1.12; font-weight:800; letter-spacing:-1.2px; }
+.acc, .hero h2 span { background:linear-gradient(90deg,#e71935,#ff6472); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero { max-width:800px; margin:4px auto 26px; text-align:left; }
+.hero h2 { font-size:clamp(30px,4vw,44px); line-height:1.1; letter-spacing:-1.2px; color:#10243b; }
+.hero p { max-width:660px; font-size:15px; line-height:24px; color:#596579; }
+.dropzone { width:100%; min-height:260px; border:2px dashed #ed8794; border-radius:24px; background:linear-gradient(135deg,#fff1e7,#fffaf5); box-shadow:0 3px 12px rgba(101,25,29,.06); color:#10243b; }
+.dropzone:hover { border-color:#e71935; background:#fff1e7; }
+.dropzone .icon { color:#e71935; }
+.btn, .btn-filled { border-radius:22px; background:#e71935; color:white; }
+.btn:hover, .btn-filled:hover { filter:brightness(1.06); }
+.btn-tonal { background:#ffe0e3; color:#72101f; }
+.btn-outline { background:#fffaf5; color:#10243b; border-color:#ead2c8; }
+.trust { border:1px solid #ead2c8; border-radius:18px; background:#fffaf5; }
+.trust svg { fill:#e71935; }
+.trust b { color:#10243b; }
+.trust span { color:#596579; }
+.sec, .progress, .results, .error, .recent { border-radius:22px; }
+.progress, .results { margin-top:24px; }
+.job, .recent, .cv-card, .keyboard-profile, .pro-head { background:#fffaf5; border:1px solid #ead2c8; border-radius:20px; box-shadow:0 2px 8px rgba(101,25,29,.05); }
+.job-ic { background:#ffe0e3; color:#e71935; }
+.sec-head svg { color:#e71935; }
+.recent-head h2, .sec-head h2 { color:#10243b; }
+.recent-list { border-color:#ead2c8; }
+.recent-list li + li { border-color:#ead2c8; }
+.search-field { background:#fffaf5; border-color:#d8c4bb; border-radius:30px; }
+.search-field:focus-within { border-color:#e71935; box-shadow:0 0 0 3px rgba(231,25,53,.12); }
+.search-field input { color:#10243b; }
+.suggest { background:#fffaf5; border-color:#ead2c8; box-shadow:0 12px 24px rgba(90,0,15,.12); }
+.suggest li[aria-selected="true"], .suggest li:hover { background:#ffe0e3; }
+.side a .i { color:currentColor; }
+.page, .cv-title, .keyboard-profile-name { color:#10243b; }
+.lead, .keyboard-hint { color:#596579; }
+.cv-card { border-color:#ead2c8; }
+.cv-card h3 { color:#10243b; }
+.cv-field { background:#fffaf5; border-color:#ead2c8; }
+.cv-field input { color:#10243b; }
+.cv-result { background:#fff1e7; }
+.cv-big { color:#e71935; }
+.pro-btn { border-color:#ead2c8; background:#fffaf5; }
+.pro-btn.cfg { background:#ffe0e3; color:#72101f; }
+.pro-note { background:#ffe0e3; color:#72101f; }
+.keyboard-profile { background:#fffaf5; border-color:#ead2c8; }
+.keyboard-setting { background:#fff1e7; border-color:#ead2c8; }
+.keyboard-setting-value { color:#10243b; }
+.keyboard-scope-chip { background:#ffe7c2; color:#3c2810; }
+.keyboard-history { background:#fff1e7; border-color:#ead2c8; }
+.keyboard-status { background:#e2f2d6; color:#24552a; }
+.keyboard-status.community { background:#f8e8df; color:#596579; }
+.chip { border-color:#ead2c8; background:#fff1e7; color:#10243b; }
+.chip:hover { border-color:#e71935; }
+.snackbar { border-radius:14px; }
+.error { border-radius:16px; }
+.hist li { border-color:#ead2c8; }
+a { accent-color:#e71935; }
+@media (min-width:861px) {
+  .side { min-height:calc(100vh - 90px); }
+  main { min-height:calc(100vh - 90px); }
+}
+@media (max-width:860px) {
+  .shell { padding:0 8px 8px; }
+  .side { top:78px; padding:18px 10px; background:#d91431 !important; border-radius:0 20px 20px 0; }
+  .side a { border-radius:16px; }
+  .scrim.on { top:78px; }
+  main { padding:24px 20px 44px; border-radius:24px; }
+  .appbar { height:70px; padding:0 16px; }
+}
+@media (max-width:560px) {
+  .shell { display:block; }
+  main { padding:22px 15px 36px; border-radius:22px; }
+  .brand b { font-size:18px; }
+  .hero { margin-top:0; }
+  .hero h2 { font-size:30px; }
+  .dropzone { min-height:230px; padding:28px 14px; }
+  .trust { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; } }
+
 </style>
 </head>
 <body>
 
 <header class="appbar">
   <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir ou fechar o menu" aria-expanded="true" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
-  <a class="brand" href="#/inicio" aria-label="CS2 Extract – ir para o início">
+  <a class="brand" href="#/inicio" aria-label="Setup Dex – ir para o início">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-    <span><b>CS2 <em>Extract</em></b><small>Crosshair &amp; Viewmodel</small></span>
+    <span><b>Setup <em>Dex</em></b><small>CS2 Player Setups</small></span>
   </a>
   <div class="spacer"></div>
   <div class="theme" role="group" aria-label="Tema">
