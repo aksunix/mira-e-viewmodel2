@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://prosettings.net"
-KEYBOARD_PARSER_VERSION = "3"
+KEYBOARD_PARSER_VERSION = "4"
 UA = "cs2-demo-analyzer-prosettings-sync/1.0 (projeto pessoal; 1 req a cada poucos segundos)"
 FIELDS = {"sensitivity": "sensitivity", "dpi": "dpi", "edpi": "edpi",
           "zoom sensitivity": "zoom_sensitivity", "hz": "hz"}
@@ -117,6 +117,12 @@ def _setting_scope(text, setting):
         tail = tail[:match.end() - match.start() + other.start()]
     prefix = chunk[max(0, match.start() - 90):match.start()]
     context = prefix + " " + tail
+    if setting == "rapid_trigger":
+        previous_setting = list(re.finditer(other_pattern, prefix))
+        if previous_setting:
+            # Não herda "all keys" se a expressão estiver ligada apenas ao Actuation.
+            before_previous_setting = prefix[:previous_setting[-1].start()]
+            context = (before_previous_setting + " " + tail) if re.search(r"\\ball\\s+(?:the\\s+)?keys\\b|\\bevery\\s+key\\b|\\bwhole\\s+keyboard\\b", before_previous_setting) else tail
 
     # Uma indicação explícita de teclas específicas tem prioridade sobre "all keys"
     # quando o comentário separa o escopo de Actuation e Rapid Trigger.
