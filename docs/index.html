@@ -246,6 +246,13 @@
   .cv-col .lead { margin: 0 0 4px; }
   @media (max-width: 1100px) { .cv-cols { grid-template-columns: minmax(0, 1fr); gap: 40px; } .cv-col { grid-row: auto; grid-template-rows: none; } }
   @media (max-width: 480px) { .cv-card { padding: 16px; } .cv-fields { grid-template-columns: minmax(0, 1fr); } }
+  /* Página Teclado: cards em duas colunas (reaproveita .cv-card e .pro-tiles) */
+  .kb-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; align-items: start; }
+  .kb-grid p:not(.cv-note) { margin: 0 0 12px; font-size: 14px; line-height: 20px; }
+  .kb-grid .pro-tiles { margin-bottom: 4px; }
+  .kb-src { margin: 24px 0 0; font-size: 12px; line-height: 18px; color: var(--md-on-surface-variant); }
+  .kb-src a { color: var(--md-primary); }
+  @media (max-width: 1100px) { .kb-grid { grid-template-columns: minmax(0, 1fr); } }
 
   /* Configurações e histórico */
   .panel { max-width: 560px; padding: 4px 20px; border: 1px solid var(--md-outline-variant); border-radius: 20px; background: var(--md-surface-container-low); }
@@ -471,6 +478,7 @@
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
   <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
   <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
+  <a href="#/teclado" data-page="teclado"><svg class="i" data-i="keyboard"></svg>Teclado</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
   <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
@@ -625,6 +633,56 @@
   </div>
 </section>
 
+<section data-view="teclado" hidden>
+  <h2 class="page big">Ajustes de <span class="acc">teclado</span></h2>
+  <p class="lead">Actuation point e Rapid Trigger para o CS2: valores de partida e o que cada ajuste faz. Ajuste jogando, porque o ideal muda de jogador para jogador.</p>
+  <div class="kb-grid">
+    <div class="cv-card">
+      <h3><svg class="i" data-i="tune"></svg>Actuation point</h3>
+      <p>É a distância que a tecla precisa descer para registrar o toque. Quanto menor, mais rápido responde, mas aumenta o risco de toques acidentais.</p>
+      <dl class="pro-tiles">
+        <div><dt>WASD (faixa inicial)</dt><dd>0,4–0,7 mm</dd></div>
+        <div><dt>WASD (referência)</dt><dd>0,7 mm</dd></div>
+        <div><dt>Demais teclas</dt><dd>1,5 mm</dd></div>
+        <div><dt>Mais agressivo*</dt><dd>0,1–0,2 mm</dd></div>
+      </dl>
+      <p class="cv-note">Valores da Wooting, exceto *, que vem de um guia da DrunkDeer (fabricante de teclados). Comece pela faixa da Wooting e só desça mais se não tiver toques acidentais.</p>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="speed"></svg>Rapid Trigger (RT)</h3>
+      <p>A tecla deixa de registrar assim que sobe uma distância mínima, sem precisar voltar ao actuation point. É o ajuste que mais influencia a rapidez para parar (counter-strafe) e fazer o re-peek.</p>
+      <dl class="pro-tiles">
+        <div><dt>Sensibilidade nas WASD</dt><dd>0,2–0,5 mm</dd></div>
+        <div><dt>Referência</dt><dd>0,5 mm</dd></div>
+        <div><dt>RT contínuo</dt><dd>Desligado</dd></div>
+        <div><dt>Tecla de defuse (E)</dt><dd>Sem RT</dd></div>
+      </dl>
+      <p class="cv-note">Valores da Wooting. Ligue o RT só nas WASD. Valores como 0,15 mm parecem ótimos no papel, mas uma variação leve na pressão do dedo pode registrar a tecla de novo sem querer. O RT contínuo tira a exigência de passar do actuation point antes de o RT funcionar; alguns jogadores preferem ligado.</p>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="bolt"></svg>Outros ajustes</h3>
+      <p><b>Tachyon Mode (Wooting):</b> recomendado ligado. Desliga efeitos de RGB e reduz o brilho para ganhar velocidade de entrada. No 60HE v2 e no 80HE, ativa o polling de 8K real.</p>
+      <p><b>Snappy Tappy e Rappy Snappy:</b> desative antes de jogar em servidores da Valve. Segundo a Wooting, usar esses recursos resulta em kick da partida.</p>
+      <p class="cv-note">Só os teclados com sensor analógico (Hall effect, magnético ou óptico analógico) têm actuation ajustável e Rapid Trigger.</p>
+    </div>
+    <div class="cv-card">
+      <h3><svg class="i" data-i="keyboard"></svg>Mais usados pelos profissionais</h3>
+      <p>Participação entre 957 jogadores de CS2 listados no ProSettings.</p>
+      <dl class="pro-tiles">
+        <div><dt>Wooting 80HE+</dt><dd>29,26%</dd></div>
+        <div><dt>Razer Huntsman V3 Pro TKL</dt><dd>17,97%</dd></div>
+        <div><dt>Logitech G Pro X TKL Rapid</dt><dd>4,70%</dd></div>
+        <div><dt>Wooting 60HE V2</dt><dd>4,49%</dd></div>
+      </dl>
+      <p class="cv-note">Dados da página do ProSettings consultada em 17/11/2026; os números mudam com o tempo. O ProSettings informa o modelo do teclado, mas não publica o actuation point e o RT de cada jogador.</p>
+    </div>
+  </div>
+  <p class="kb-src">Fontes:
+    <a href="https://wooting.io/post/wooting-cs2-guide-in-game-benefits-rapid-trigger-settings-and-pro-profiles" target="_blank" rel="noopener">Wooting – guia de CS2</a> ·
+    <a href="https://prosettings.net/guides/cs2-keyboard" target="_blank" rel="noopener">ProSettings – Best Keyboard for CS2</a> ·
+    <a href="https://drunkdeer.com/blogs/news/rapid-trigger-settings-for-cs2-that-actually-improve-your-aim-2026" target="_blank" rel="noopener">DrunkDeer – Rapid Trigger no CS2</a></p>
+</section>
+
 <section data-view="historico" hidden>
   <h2 class="page">Histórico</h2>
   <ul class="hist" id="histList"></ul>
@@ -725,6 +783,7 @@ const ICONS = {
   pulse: 'M3 12h4l2.5-7 5 14 2.5-7h4',
   monitor: 'M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z',
   mouse: 'M13 1.07V9h7c0-4.08-3.05-7.44-7-7.93zM4 15c0 4.42 3.58 8 8 8s8-3.58 8-8v-4H4v4zm7-13.93C7.05 1.56 4 4.92 4 9h7V1.07z',
+  keyboard: 'M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z',
   download: 'M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z',
   back: 'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
   flipback: 'M9 7H7v2h2V7zm0 4H7v2h2v-2zm0-8c-1.11 0-2 .9-2 2h2V3zm4 12h-2v2h2v-2zm6-12v2h2c0-1.1-.9-2-2-2zm-6 0h-2v2h2V3zM9 17v-2H7c0 1.1.89 2 2 2zm10-4h2v-2h-2v2zm0-4h2V7h-2v2zm0 8c1.1 0 2-.9 2-2h-2v2zM5 7H3v12c0 1.1.9 2 2 2h12v-2H5V7zm10-2h2V3h-2v2zm0 12h2v-2h-2v2z',
@@ -771,7 +830,7 @@ scrim.onclick = () => toggleMenu(false);
 narrow.addEventListener('change', () => { side.classList.remove('open'); scrim.classList.remove('on'); shell.classList.remove('closed'); menuBtn.setAttribute('aria-expanded', String(!narrow.matches)); });
 menuBtn.setAttribute('aria-expanded', String(!narrow.matches));
 function route() {
-  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'sens', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
+  const p = location.hash.slice(2), v = ['inicio', 'buscar', 'sens', 'teclado', 'tutorial', 'historico'].includes(p) ? p : 'inicio';
   document.querySelectorAll('[data-view]').forEach(s => { s.hidden = s.dataset.view !== v; });
   document.querySelectorAll('.side a').forEach(a => a.dataset.page === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
   if (narrow.matches) toggleMenu(false);

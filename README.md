@@ -9,6 +9,8 @@ A análise do demo roda no navegador (Go compilado para WebAssembly): o `.dem` n
 - **Início:** arraste um `.dem`; cada jogador vira um card com a mira e o viewmodel. O rodapé do card tem
   Mouse, Vídeo (o card vira) e CFG (abre a configuração no CyberShoke).
 - **Pesquisa:** busca um jogador profissional e mostra mira, mouse, vídeo, FACEIT e HLTV.
+- **Sensibilidade:** conversor de DPI e ajuste da sens pelo peso do mouse.
+- **Teclado:** valores de partida e explicação de actuation point e Rapid Trigger (RT) para o CS2, com os teclados mais usados pelos profissionais. O conteúdo é fixo em `docs/index.html`, com as fontes no fim da página; o ProSettings não publica o actuation/RT de cada jogador, então não há coleta automática.
 - **Histórico:** análises anteriores, salvas só no navegador (localStorage).
 
 ## Arquivos
