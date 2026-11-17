@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Setup Dex — CS2 Player Setups</title>
+<title>CS2 Extract – Crosshair &amp; Viewmodel</title>
 <script>try{var t=localStorage.getItem("cs2x:theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}</script>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -505,606 +505,19 @@
     * { transition: none !important; }
     .linear.indeterminate .bar { animation: none; left: 0; width: 100%; opacity: .5; }
   }
-
-/* ===== SETUP DEX / REDESIGN 2026 ===== */
-:root, :root[data-theme="light"], :root[data-theme="dark"] {
-  color-scheme: light;
-  --md-primary:#e71935; --md-on-primary:#fff;
-  --md-primary-container:#ffe0e3; --md-on-primary-container:#72101f;
-  --md-secondary-container:#ffe7c2; --md-on-secondary-container:#3c2810;
-  --md-surface:#fff8f0; --md-surface-container-low:#fffaf5;
-  --md-surface-container:#fff1e7; --md-surface-container-high:#f8e8df;
-  --md-surface-container-highest:#f1ded3; --md-on-surface:#10243b;
-  --md-on-surface-variant:#596579; --md-outline:#cbb9b0;
-  --md-outline-variant:#ead2c8; --md-inverse-surface:#10243b;
-  --md-inverse-on-surface:#fff8f0; --md-error:#b3261e;
-  --md-error-container:#f9dedc; --md-on-error-container:#410e0b;
-  --md-accent:#e71935; --md-grad-a:#e71935; --md-grad-b:#ff6472;
-  --md-shadow:0 8px 24px rgba(101,25,29,.12);
-  --md-elev1:0 2px 5px rgba(101,25,29,.10),0 8px 18px rgba(101,25,29,.07);
-  --md-elev2:0 5px 12px rgba(101,25,29,.12),0 14px 28px rgba(101,25,29,.08);
-}
-html, body { min-height:100%; }
-body { background:linear-gradient(135deg,#f01435 0%,#dc1230 58%,#bd1029 100%) !important; color:#10243b; }
-.appbar { position:relative; height:78px; padding:0 28px; background:transparent !important; color:#fff8f0; border:0; }
-.brand { color:#fff8f0; gap:10px; }
-.brand svg { fill:#fff8f0; width:30px; height:30px; }
-.brand b { font-size:21px; letter-spacing:-.6px; }
-.brand b em { color:#ffe0a6; }
-.brand small { color:rgba(255,248,240,.78); }
-.appbar .icon-btn { color:#fff8f0; }
-.appbar .icon-btn:hover { background:rgba(255,255,255,.14); }
-.theme { background:rgba(110,0,20,.2); border:1px solid rgba(255,255,255,.2); }
-.theme .icon-btn[aria-pressed="true"] { background:rgba(255,255,255,.2); color:#fff; }
-.shell { min-height:calc(100vh - 78px); gap:0; padding:0 12px 12px; align-items:stretch; }
-.side { position:relative; width:194px; padding:96px 0 12px; gap:8px; flex:none; background:transparent !important; border:0; }
-.side a { height:52px; padding:0 16px; gap:14px; border-radius:0 18px 18px 0; color:rgba(255,255,255,.9); font-size:15px; font-weight:500; }
-.side a .i { width:22px; height:22px; }
-.side a:hover { background:rgba(255,255,255,.13); }
-.side a[aria-current="page"] { background:#fff8f0; color:#10243b; font-weight:700; box-shadow:0 3px 10px rgba(90,0,15,.12); }
-.upd { color:rgba(255,255,255,.72); padding:12px 16px; }
-main { max-width:none; width:100%; min-width:0; margin:0; padding:26px 30px 56px; border-radius:30px; background:#fff8f0; box-shadow:0 12px 34px rgba(90,0,15,.18); overflow:hidden; }
-h2.page { color:#10243b; }
-.page.big { font-size:clamp(30px,4vw,42px); line-height:1.12; font-weight:800; letter-spacing:-1.2px; }
-.acc, .hero h2 span { background:linear-gradient(90deg,#e71935,#ff6472); -webkit-background-clip:text; background-clip:text; color:transparent; }
-.hero { max-width:800px; margin:4px auto 26px; text-align:left; }
-.hero h2 { font-size:clamp(30px,4vw,44px); line-height:1.1; letter-spacing:-1.2px; color:#10243b; }
-.hero p { max-width:660px; font-size:15px; line-height:24px; color:#596579; }
-.dropzone { width:100%; min-height:260px; border:2px dashed #ed8794; border-radius:24px; background:linear-gradient(135deg,#fff1e7,#fffaf5); box-shadow:0 3px 12px rgba(101,25,29,.06); color:#10243b; }
-.dropzone:hover { border-color:#e71935; background:#fff1e7; }
-.dropzone .icon { color:#e71935; }
-.btn, .btn-filled { border-radius:22px; background:#e71935; color:white; }
-.btn:hover, .btn-filled:hover { filter:brightness(1.06); }
-.btn-tonal { background:#ffe0e3; color:#72101f; }
-.btn-outline { background:#fffaf5; color:#10243b; border-color:#ead2c8; }
-.trust { border:1px solid #ead2c8; border-radius:18px; background:#fffaf5; }
-.trust svg { fill:#e71935; }
-.trust b { color:#10243b; }
-.trust span { color:#596579; }
-.sec, .progress, .results, .error, .recent { border-radius:22px; }
-.progress, .results { margin-top:24px; }
-.job, .recent, .cv-card, .keyboard-profile, .pro-head { background:#fffaf5; border:1px solid #ead2c8; border-radius:20px; box-shadow:0 2px 8px rgba(101,25,29,.05); }
-.job-ic { background:#ffe0e3; color:#e71935; }
-.sec-head svg { color:#e71935; }
-.recent-head h2, .sec-head h2 { color:#10243b; }
-.recent-list { border-color:#ead2c8; }
-.recent-list li + li { border-color:#ead2c8; }
-.search-field { background:#fffaf5; border-color:#d8c4bb; border-radius:30px; }
-.search-field:focus-within { border-color:#e71935; box-shadow:0 0 0 3px rgba(231,25,53,.12); }
-.search-field input { color:#10243b; }
-.suggest { background:#fffaf5; border-color:#ead2c8; box-shadow:0 12px 24px rgba(90,0,15,.12); }
-.suggest li[aria-selected="true"], .suggest li:hover { background:#ffe0e3; }
-.side a .i { color:currentColor; }
-.page, .cv-title, .keyboard-profile-name { color:#10243b; }
-.lead, .keyboard-hint { color:#596579; }
-.cv-card { border-color:#ead2c8; }
-.cv-card h3 { color:#10243b; }
-.cv-field { background:#fffaf5; border-color:#ead2c8; }
-.cv-field input { color:#10243b; }
-.cv-result { background:#fff1e7; }
-.cv-big { color:#e71935; }
-.pro-btn { border-color:#ead2c8; background:#fffaf5; }
-.pro-btn.cfg { background:#ffe0e3; color:#72101f; }
-.pro-note { background:#ffe0e3; color:#72101f; }
-.keyboard-profile { background:#fffaf5; border-color:#ead2c8; }
-.keyboard-setting { background:#fff1e7; border-color:#ead2c8; }
-.keyboard-setting-value { color:#10243b; }
-.keyboard-scope-chip { background:#ffe7c2; color:#3c2810; }
-.keyboard-history { background:#fff1e7; border-color:#ead2c8; }
-.keyboard-status { background:#e2f2d6; color:#24552a; }
-.keyboard-status.community { background:#f8e8df; color:#596579; }
-.chip { border-color:#ead2c8; background:#fff1e7; color:#10243b; }
-.chip:hover { border-color:#e71935; }
-.snackbar { border-radius:14px; }
-.error { border-radius:16px; }
-.hist li { border-color:#ead2c8; }
-a { accent-color:#e71935; }
-@media (min-width:861px) {
-  .side { min-height:calc(100vh - 90px); }
-  main { min-height:calc(100vh - 90px); }
-}
-@media (max-width:860px) {
-  .shell { padding:0 8px 8px; }
-  .side { top:78px; padding:18px 10px; background:#d91431 !important; border-radius:0 20px 20px 0; }
-  .side a { border-radius:16px; }
-  .scrim.on { top:78px; }
-  main { padding:24px 20px 44px; border-radius:24px; }
-  .appbar { height:70px; padding:0 16px; }
-}
-@media (max-width:560px) {
-  .shell { display:block; }
-  main { padding:22px 15px 36px; border-radius:22px; }
-  .brand b { font-size:18px; }
-  .hero { margin-top:0; }
-  .hero h2 { font-size:30px; }
-  .dropzone { min-height:230px; padding:28px 14px; }
-  .trust { grid-template-columns:1fr; }
-}
-@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; } }
-
-
-/* ===== Cartão Pokédex de jogador ===== */
-#cards { grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr)); gap:22px; align-items:start; }
-.dex-player-card { position:relative; overflow:hidden; padding:12px; border:3px solid #d71932; border-radius:28px; background:#fff8ef; color:#10243b; box-shadow:0 7px 18px rgba(130,18,35,.16),inset 0 0 0 1px rgba(255,255,255,.9); }
-.dex-card-top { height:25px; display:flex; align-items:center; justify-content:space-between; padding:0 8px 8px; }
-.dex-number { display:inline-flex; align-items:center; height:23px; padding:0 10px; border:1px solid #cbb9b0; border-radius:13px; background:#fffaf5; color:#10243b; font-size:11px; font-weight:800; }
-.dex-fav { color:#e71935; font-size:20px; line-height:1; }
-.dex-photo { position:relative; display:grid; place-items:center; width:100%; height:148px; overflow:hidden; border:1.5px solid #169ed0; border-radius:14px; background:linear-gradient(135deg,#8edcff,#48b9e9); }
-.dex-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 25%; }
-.dex-photo-fallback { display:grid; place-items:center; width:78px; height:78px; border-radius:50%; background:#d71932; color:white; font-size:36px; font-weight:800; }
-.dex-identity { display:flex; flex-direction:column; gap:1px; padding:10px 4px 8px; }
-.dex-player-name { margin:0; color:#10243b; font-size:18px; line-height:23px; font-weight:800; }
-.dex-team { margin:0; color:#596579; font-size:12px; line-height:17px; }
-.dex-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; padding:0 0 9px; }
-.dex-tab { min-width:0; height:30px; padding:0 3px; border:0; border-radius:9px; background:#f0e8e1; color:#10243b; font:600 10px/1 Inter,Roboto,system-ui,sans-serif; cursor:pointer; white-space:nowrap; }
-.dex-tab[aria-selected="true"] { background:#df1c35; color:white; box-shadow:0 2px 5px rgba(170,10,35,.18); }
-.dex-panel { min-height:112px; padding:7px 2px 4px; border-top:1px solid #ead2c8; }
-.dex-panel[hidden] { display:none !important; }
-.dex-panel .pro-tiles { gap:5px; }
-.dex-panel .pro-tiles div { padding:8px 9px; background:#f3ebe4; border-radius:8px; }
-.dex-panel .pro-tiles dt { font-size:11px; }
-.dex-panel .pro-tiles dd { font-size:15px; line-height:20px; }
-.dex-crosshair-preview { display:grid; place-items:center; width:100%; height:100px; overflow:hidden; border-radius:10px; }
-.dex-crosshair-preview canvas { width:100px; height:100px; }
-.dex-code { max-height:94px; overflow:auto; margin:7px 0; padding:9px; border-radius:9px; background:#f0e8e1; color:#10243b; font:10px/15px "Roboto Mono",monospace; white-space:pre-wrap; overflow-wrap:anywhere; user-select:all; }
-.dex-copy { width:100%; height:34px; border:0; border-radius:10px; background:#df1c35; color:#fff; font:600 12px Inter,Roboto,system-ui,sans-serif; cursor:pointer; }
-.dex-copy:hover { filter:brightness(1.08); }
-.dex-empty { margin:12px 3px; color:#596579; font-size:12px; line-height:18px; text-align:center; }
-.dex-note { margin:8px 2px 2px; color:#596579; font-size:10px; line-height:15px; }
-.dex-details { margin-top:8px; color:#596579; font-size:11px; }
-.dex-details summary { cursor:pointer; font-weight:700; }
-.dex-details ul { margin:6px 0 0; padding-left:18px; }
-@media(max-width:560px) {
-  #cards { grid-template-columns:minmax(0,1fr); max-width:390px; margin-inline:auto; }
-  .dex-player-card { border-radius:26px; }
-  .dex-photo { height:180px; }
-  .dex-tab { font-size:11px; }
-}
-
-
-/* Pesquisa mostra um perfil compacto, com proporção de cartão mobile */
-[data-view="buscar"] #searchResult { grid-template-columns:minmax(0,360px); justify-content:center; }
-[data-view="buscar"] .dex-player-card { width:100%; }
-
-
-/* ===== HOME 1:1 COM A REFERÊNCIA VISUAL SETUP DEX ===== */
-:root,:root[data-theme="light"],:root[data-theme="dark"]{
- color-scheme:light;--md-primary:#e71935;--md-on-primary:#fff;--md-primary-container:#ffe0e3;--md-on-primary-container:#72101f;
- --md-secondary-container:#ffe7c2;--md-on-secondary-container:#3c2810;--md-surface:#fff8f0;--md-surface-container-low:#fffaf5;
- --md-surface-container:#fff1e7;--md-surface-container-high:#f8e8df;--md-surface-container-highest:#f1ded3;--md-on-surface:#10243b;
- --md-on-surface-variant:#596579;--md-outline:#cbb9b0;--md-outline-variant:#ead2c8;--md-accent:#e71935;
- --md-grad-a:#e71935;--md-grad-b:#ff6472;--md-shadow:0 8px 24px rgba(101,25,29,.12);
-}
-body{min-height:100vh;background:linear-gradient(135deg,#f01435 0%,#d80e2b 58%,#b90d27 100%)!important;color:#10243b}
-.appbar{height:60px;margin-left:140px;padding:0 18px 0 26px;background:#fff8f0!important;border:0;border-radius:28px 28px 0 0;color:#10243b;gap:14px}
-.appbar:before{content:"";display:block;width:50px;height:16px;flex:none;background:radial-gradient(circle at 8px 8px,#e71935 0 7px,transparent 8px),radial-gradient(circle at 29px 8px,#f6a900 0 7px,transparent 8px),radial-gradient(circle at 50px 8px,#58a83d 0 7px,transparent 8px)}
-.appbar .brand,.appbar .menu{display:none}
-.header-search{display:flex;align-items:center;gap:12px;width:min(360px,42vw);height:42px;padding:0 14px;border:1.5px solid #cbb9b0;border-radius:24px;background:#fffaf5;color:#10243b;text-align:left;box-shadow:0 1px 3px rgba(30,20,15,.08);cursor:pointer}
-.header-search span{flex:1;font-size:13px}
-.header-search .i{width:20px;height:20px}
-.header-search .header-arrow{width:18px;height:18px}
-.appbar .spacer{flex:1}
-.appbar .theme{padding:0;background:transparent;border-left:1px solid #ead2c8;border-radius:0}
-.appbar .theme .icon-btn{width:42px;height:42px;color:#10243b}
-.appbar .theme [data-theme-set="dark"]{display:none}
-.shell{min-height:calc(100vh - 60px);gap:0;padding:0 12px 12px;align-items:stretch}
-.side{width:134px;min-height:calc(100vh - 60px);padding:62px 0 12px;gap:8px;flex:none;background:transparent!important;border:0}
-.side a{height:42px;padding:0 12px;gap:10px;border-radius:0 17px 17px 0;color:#fff8f0;font-size:13px;font-weight:500}
-.side a .i{width:19px;height:19px}
-.side a:hover{background:rgba(255,255,255,.13)}
-.side a[aria-current="page"]{background:#fff8f0;color:#10243b;font-weight:700;box-shadow:0 3px 10px rgba(90,0,15,.12)}
-.upd{margin:auto 8px 0;padding:12px 10px;border:1px solid rgba(255,255,255,.2);border-radius:17px;background:rgba(130,0,20,.22);color:#fff8f0;font-size:11px}
-main{flex:1;min-width:0;max-width:none;margin:0;padding:0 14px 32px;border-radius:0 0 28px 28px;background:#fff8f0;box-shadow:0 12px 34px rgba(90,0,15,.18);overflow:hidden}
-h2.page{color:#10243b}
-[data-view="inicio"]{padding-top:0}
-#intro{margin:0}
-.home-hero{display:grid;grid-template-columns:minmax(190px,250px) minmax(0,1fr);align-items:center;gap:16px;min-height:188px;padding:10px 12px 0;border:2px solid #e71935;border-bottom:0;border-radius:24px 24px 0 0;background:linear-gradient(130deg,#fff0e8,#fffaf5);position:relative;overflow:hidden}
-.home-hero:after{content:"";position:absolute;right:14px;top:0;width:90px;height:16px;background:repeating-linear-gradient(130deg,#e71935 0 13px,transparent 13px 23px);opacity:.9}
-.home-mascot{position:relative;align-self:stretch;display:flex;align-items:flex-end;justify-content:center;min-height:170px}
-.home-number{position:absolute;top:7px;left:5px;z-index:3;padding:3px 12px;border:1px solid #d9c9c0;border-radius:18px;background:#fffaf5;color:#10243b;font-size:12px;font-weight:800}
-.mascot-back{position:absolute;left:2%;bottom:0;width:88%;height:82%;border-radius:42px 42px 30px 30px;background:#ff4b5b;clip-path:path("M 0 50 Q 0 10 45 10 L 185 10 Q 225 10 225 55 L 225 170 L 0 170 Z")}
-.mascot-svg{position:relative;z-index:1;width:115%;max-width:285px;height:180px;object-fit:contain;filter:drop-shadow(0 4px 2px rgba(0,0,0,.18))}
-.home-upload{min-width:0;padding:0 8px 10px}
-.home-upload h1{margin:0 0 3px;color:#10243b;font-size:clamp(26px,3.3vw,42px);line-height:1.05;font-weight:800;letter-spacing:-1px}
-.home-upload>p{margin:0 0 8px;color:#596579;font-size:12px}
-.home-upload .dropzone{display:flex;width:100%;min-height:140px;padding:14px 12px;align-items:center;justify-content:center;gap:3px;border:1.5px dashed #ed8794;border-radius:0;background:rgba(255,250,245,.7);box-shadow:none;color:#10243b}
-.home-upload .dropzone .icon{display:grid;place-items:center;width:28px;height:28px;margin-bottom:2px;border-radius:50%;background:#ffe0e3;color:#72101f}
-.home-upload .dropzone .icon svg{width:16px;height:16px;fill:#72101f}
-.home-upload .dropzone .title{font-size:12px;line-height:18px}
-.home-upload .dropzone .support{font-size:9px}
-.home-upload .dropzone .btn{height:24px;margin:4px 0;padding:0 13px;border-radius:14px;font-size:9px;line-height:24px}
-.home-upload .dz-meta{margin-top:4px;font-size:7px;color:#87909a}
-.home-banner{display:flex;align-items:center;gap:14px;min-height:54px;margin:0 0 14px;padding:7px 12px;border-radius:0 0 24px 24px;background:linear-gradient(90deg,#f8e5dc,#fbeee5);box-shadow:0 3px 7px rgba(120,20,25,.12)}
-.home-banner>span{width:5px;height:34px;flex:none;border-radius:4px;background:#e71935}
-.home-banner p{flex:1;margin:0;color:#10243b;font-size:13px;line-height:18px}
-.home-banner button{display:grid;place-items:center;width:30px;height:34px;border:0;background:transparent;color:#e71935;cursor:pointer}
-.home-banner button .i{width:22px;height:22px}
-.trust{display:none!important}
-.featured-layout{display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:12px;align-items:stretch;margin-top:0}
-.featured-main{min-width:0;padding:12px 10px;border:1.5px solid #e4c8be;border-radius:18px;background:#fffaf5;box-shadow:0 3px 8px rgba(120,20,25,.08)}
-.featured-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 10px}
-.featured-heading h2{position:relative;margin:0;padding-left:12px;color:#10243b;font-size:16px;line-height:24px;font-weight:800}
-.featured-heading h2:before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:4px;border-radius:4px;background:#e71935}
-.featured-heading button{display:flex;align-items:center;gap:4px;border:0;background:transparent;color:#e71935;font-size:11px;font-weight:700;cursor:pointer}
-.featured-heading button .i{width:16px;height:16px}
-.featured-list{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
-.featured-card{display:flex;min-width:0;flex-direction:column;align-items:stretch;overflow:hidden;padding:0 0 9px;border:1px solid #e3c8bd;border-radius:13px;background:#fff8f0;color:#10243b;text-align:left;box-shadow:0 2px 5px rgba(110,20,25,.12);cursor:pointer;transition:transform .15s,border-color .15s}
-.featured-card:hover,.featured-card.selected{transform:translateY(-2px);border-color:#e71935;box-shadow:0 4px 10px rgba(110,20,25,.16)}
-.featured-number{align-self:flex-start;position:absolute;margin:6px;padding:2px 7px;border-radius:12px;background:rgba(255,255,255,.9);color:#10243b;font-size:9px;font-weight:800}
-.featured-card{position:relative}
-.featured-photo{display:grid;place-items:center;width:100%;height:112px;overflow:hidden;background:#79d0f4}
-.tone-gold .featured-photo{background:#ffc54b}
-.tone-rose .featured-photo{background:#f56b75}
-.featured-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
-.featured-initial{font-size:38px;font-weight:800;color:rgba(16,36,59,.65)}
-.featured-name{padding:7px 6px 0;font-size:12px;line-height:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.featured-team{padding:0 6px;color:#596579;font-size:10px;line-height:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.featured-detail{min-width:0;padding:6px;border:3px solid #e71935;border-radius:24px;background:#fff8f0;box-shadow:0 5px 12px rgba(110,20,25,.15)}
-.featured-detail .dex-player-card{width:100%;padding:7px;border:0;border-radius:17px;box-shadow:none;background:transparent}
-.featured-detail .dex-card-top{height:22px;padding:0 5px 5px}
-.featured-detail .dex-number{height:20px;font-size:10px}
-.featured-detail .dex-fav{font-size:17px}
-.featured-detail .dex-photo{height:90px;border-radius:10px}
-.featured-detail .dex-identity{padding:7px 4px 5px}
-.featured-detail .dex-player-name{font-size:15px;line-height:19px}
-.featured-detail .dex-team{font-size:10px}
-.featured-detail .dex-tabs{gap:3px;padding-bottom:5px}
-.featured-detail .dex-tab{height:25px;font-size:9px;border-radius:12px}
-.featured-detail .dex-panel{min-height:95px;padding:5px 2px}
-.featured-detail .dex-panel .pro-tiles div{padding:6px 7px}
-.featured-detail .dex-panel .pro-tiles dt{font-size:9px}
-.featured-detail .dex-panel .pro-tiles dd{font-size:12px;line-height:16px}
-.featured-detail .dex-empty{font-size:10px;line-height:15px}
-.featured-detail .dex-code{font-size:8px;line-height:12px}
-.featured-detail .dex-copy{height:27px;font-size:10px}
-.results{margin-top:22px}
-.results-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-#cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:14px}
-[data-view="buscar"] #searchResult{grid-template-columns:minmax(0,360px);justify-content:center}
-@media(min-width:1300px){
- .appbar{margin-left:190px}
- .side{width:184px;padding-top:76px}
- .shell{min-height:calc(100vh - 60px)}
- main{padding-left:18px;padding-right:18px}
- .home-hero{grid-template-columns:300px minmax(0,1fr);min-height:230px}
- .mascot-svg{height:220px;max-width:320px}
- .home-upload .dropzone{min-height:160px}
- .featured-layout{grid-template-columns:minmax(0,1fr) 300px}
- .featured-photo{height:135px}
-}
-@media(max-width:900px){
- .appbar{margin-left:110px}
- .side{width:104px;padding-top:48px}
- .side a{font-size:11px;padding:0 9px;gap:7px}
- .featured-layout{grid-template-columns:minmax(0,1fr) 215px}
- .featured-photo{height:92px}
-}
-@media(max-width:680px){
- .appbar{margin-left:0;height:58px;border-radius:0;padding:0 12px}
- .appbar:before{width:50px}
- .header-search{width:min(300px,52vw);height:38px}
- .shell{display:block;padding:0 7px 7px}
- .side{position:fixed;z-index:30;top:58px;bottom:0;left:0;width:220px;padding:18px 10px;background:#d91431!important;border-radius:0 18px 18px 0;transform:translateX(-110%);transition:transform .2s}
- .side.open{transform:none}
- .side a{height:44px;font-size:14px;padding:0 12px}
- .scrim.on{top:58px;inset:58px 0 0}
- main{padding:0 10px 28px;border-radius:0 0 20px 20px}
- .home-hero{grid-template-columns:115px minmax(0,1fr);gap:8px;min-height:170px;padding:8px 6px 0}
- .home-mascot{min-height:155px}
- .mascot-svg{width:140%;height:145px}
- .home-number{left:0;top:4px;font-size:9px;padding:2px 7px}
- .home-upload h1{font-size:22px}
- .home-upload>p{font-size:10px}
- .home-upload .dropzone{min-height:120px;padding:8px 5px}
- .home-upload .dropzone .title{font-size:10px}
- .home-upload .dropzone .support{font-size:8px}
- .home-upload .dz-meta{font-size:6px}
- .home-banner{min-height:50px;margin-bottom:10px;padding:6px 8px}
- .home-banner p{font-size:11px;line-height:15px}
- .featured-layout{grid-template-columns:1fr}
- .featured-list{grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
- .featured-photo{height:78px}
- .featured-name{font-size:10px;padding:5px 4px 0}
- .featured-team{font-size:8px;padding:0 4px}
- .featured-detail{max-width:340px;width:100%;margin:0 auto}
-}
-@media(max-width:390px){
- .home-hero{grid-template-columns:92px minmax(0,1fr)}
- .mascot-svg{height:125px}
- .home-upload h1{font-size:19px}
- .featured-photo{height:62px}
- .featured-number{margin:3px;padding:1px 4px;font-size:7px}
- .featured-name{font-size:9px}
-}
-
-
-/* ===== REFINO DE ALINHAMENTO / GRID / ESCALA ===== */
-html{scroll-behavior:smooth}
-body{overflow-x:hidden}
-.appbar{
-  width:auto;margin-left:190px;height:60px;padding:0 24px;
-  border-bottom:1px solid #ead2c8;box-shadow:0 2px 8px rgba(75,20,25,.05);
-}
-.shell{display:flex;align-items:stretch;gap:0;padding:0 12px 14px 0;min-height:calc(100vh - 60px)}
-.side{
-  width:190px;flex:0 0 190px;min-height:calc(100vh - 60px);
-  padding:76px 0 14px;gap:7px;align-items:stretch;
-}
-.side a{width:calc(100% - 10px);height:44px;margin:0;padding:0 14px 0 18px;border-radius:0 18px 18px 0}
-.side a .i{width:20px;height:20px;flex:0 0 20px}
-.upd{margin: auto 12px 0;padding:12px 10px;text-align:center;line-height:16px}
-main{
-  flex:1 1 0;min-width:0;width:calc(100% - 190px);max-width:none;
-  margin:0;padding:0 18px 34px;border-radius:0 0 28px 28px;
-  background:#fff8f0;overflow:visible;
-}
-[data-view="inicio"]{width:100%;max-width:none;margin:0;padding:0}
-#intro{width:100%;max-width:none;margin:0}
-.home-hero{
-  width:100%;min-height:238px;grid-template-columns:clamp(220px,20%,300px) minmax(0,1fr);
-  gap:24px;padding:12px 18px 0;align-items:stretch;
-}
-.home-mascot{min-height:220px;align-self:stretch}
-.mascot-back{left:3%;width:91%;height:78%;border-radius:48px 48px 8px 8px;clip-path:none}
-.mascot-svg{width:100%;max-width:300px;height:220px;object-fit:contain}
-.home-upload{display:flex;min-width:0;flex-direction:column;justify-content:center;padding:0 8px 12px}
-.home-upload h1{font-size:clamp(32px,3vw,48px);line-height:1.08;margin:0 0 5px}
-.home-upload>p{font-size:13px;line-height:19px;margin:0 0 12px}
-.home-upload .dropzone{min-height:142px;width:100%;border-radius:14px;padding:15px;gap:5px}
-.home-upload .dz-meta{font-size:9px}
-.home-banner{min-height:58px;margin-bottom:14px;padding:8px 15px;border-radius:0 0 20px 20px}
-.home-banner p{font-size:14px;line-height:20px}
-.featured-layout{
-  width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,300px);
-  gap:14px;align-items:start;margin:0;
-}
-.featured-main{
-  width:100%;min-width:0;min-height:0;height:auto;align-self:start;
-  padding:14px 13px 16px;border-radius:18px;
-}
-.featured-heading{min-height:28px;margin:0 0 12px}
-.featured-heading h2{font-size:18px;line-height:26px}
-.featured-heading button{font-size:12px}
-.featured-list{width:100%;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:stretch}
-.featured-card{
-  min-width:0;min-height:0;height:100%;padding:0 0 11px;
-  border-radius:15px;align-self:start;
-}
-.featured-photo{height:clamp(130px,12vw,172px);flex:none}
-.featured-photo img{object-fit:cover;object-position:center 18%}
-.featured-name{padding:9px 9px 1px;font-size:14px;line-height:19px}
-.featured-team{padding:0 9px;font-size:11px;line-height:16px}
-.featured-number{margin:8px;padding:3px 8px;font-size:10px;z-index:1}
-.featured-detail{
-  width:100%;min-width:0;align-self:start;padding:8px;
-  border-width:3px;border-radius:24px;
-}
-.featured-detail .dex-player-card{max-width:none;margin:0;padding:7px}
-.featured-detail .dex-photo{height:clamp(100px,8vw,128px)}
-.featured-detail .dex-identity{padding:9px 5px 7px}
-.featured-detail .dex-player-name{font-size:17px;line-height:22px}
-.featured-detail .dex-team{font-size:11px;line-height:16px}
-.featured-detail .dex-tabs{gap:4px;padding-bottom:8px}
-.featured-detail .dex-tab{height:29px;font-size:10px}
-.featured-detail .dex-panel{min-height:112px;padding:8px 3px}
-.featured-detail .dex-panel .pro-tiles div{padding:8px}
-.featured-detail .dex-panel .pro-tiles dt{font-size:10px}
-.featured-detail .dex-panel .pro-tiles dd{font-size:13px;line-height:18px}
-.featured-detail .dex-crosshair-preview{height:92px}
-.featured-detail .dex-code{font-size:9px;line-height:13px}
-.featured-detail .dex-copy{height:30px;font-size:11px}
-.results{width:100%;max-width:none}
-@media(min-width:1500px){
-  .appbar{margin-left:200px}
-  .side{width:200px;flex-basis:200px}
-  main{width:calc(100% - 200px)}
-  .home-hero{grid-template-columns:300px minmax(0,1fr);min-height:250px}
-  .home-mascot{min-height:232px}
-  .mascot-svg{height:232px;max-width:320px}
-  .featured-layout{grid-template-columns:minmax(0,1fr) 310px;gap:16px}
-  .featured-photo{height:164px}
-}
-@media(max-width:1150px){
-  .appbar{margin-left:150px}
-  .side{width:150px;flex-basis:150px}
-  main{width:calc(100% - 150px);padding-left:14px;padding-right:14px}
-  .featured-layout{grid-template-columns:minmax(0,1fr) 260px;gap:10px}
-  .featured-list{gap:7px}
-  .featured-photo{height:120px}
-  .featured-name{font-size:12px}
-}
-@media(max-width:860px){
-  .appbar{margin-left:0;height:58px;padding:0 14px;border-radius:0}
-  .shell{display:block;padding:0 7px 7px}
-  .side{position:fixed;z-index:30;top:58px;bottom:0;left:0;width:230px;min-height:0;padding:18px 10px;flex-basis:auto;background:#d91431!important;border-radius:0 18px 18px 0;transform:translateX(-110%);transition:transform .2s}
-  .side.open{transform:none}
-  .side a{width:100%;height:44px;border-radius:16px}
-  .scrim.on{top:58px;inset:58px 0 0}
-  main{width:100%;padding:0 12px 28px;border-radius:0 0 20px 20px}
-  .home-hero{grid-template-columns:180px minmax(0,1fr);min-height:195px;gap:12px;padding:10px 10px 0}
-  .home-mascot{min-height:180px}
-  .mascot-svg{height:180px}
-  .home-upload .dropzone{min-height:125px}
-  .featured-layout{grid-template-columns:minmax(0,1fr) 240px;gap:10px}
-  .featured-list{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .featured-photo{height:130px}
-}
-@media(max-width:620px){
-  .header-search{width:min(280px,58vw)}
-  .home-hero{grid-template-columns:112px minmax(0,1fr);min-height:170px;gap:8px;padding:8px 6px 0}
-  .home-mascot{min-height:154px}
-  .mascot-svg{height:150px;width:130%}
-  .home-number{font-size:9px;padding:2px 7px}
-  .home-upload h1{font-size:22px}
-  .home-upload>p{font-size:10px;line-height:14px}
-  .home-upload .dropzone{min-height:112px;padding:7px 5px}
-  .home-upload .dropzone .title{font-size:10px}
-  .home-upload .dropzone .support{font-size:8px}
-  .home-upload .dz-meta{font-size:6px}
-  .home-banner{min-height:48px;padding:6px 8px;gap:8px}
-  .home-banner p{font-size:10px;line-height:14px}
-  .featured-layout{grid-template-columns:1fr}
-  .featured-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .featured-photo{height:125px}
-  .featured-detail{width:100%;max-width:360px;margin:0 auto}
-}
-@media(max-width:380px){
-  .featured-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .featured-photo{height:105px}
-  .home-hero{grid-template-columns:90px minmax(0,1fr)}
-  .mascot-svg{height:130px}
-}
-
-/* ===== Fidelidade dos cards à referência enviada ===== */
-.featured-layout{grid-template-columns:minmax(0,2.66fr) minmax(218px,1fr)!important;gap:12px!important;align-items:start!important}
-.featured-main{padding:12px 11px 13px!important;min-height:0!important;height:auto!important}
-.featured-heading{margin:0 0 10px!important;min-height:24px!important}
-.featured-heading h2{font-size:17px!important;line-height:24px!important}
-.featured-list{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:7px!important;align-items:stretch!important}
-.featured-card{height:202px!important;min-height:202px!important;padding:0 0 8px!important;border:1px solid #e8c9bd!important;border-radius:14px!important;background:linear-gradient(180deg,#fffaf4 0%,#fff5ed 100%)!important;box-shadow:0 2px 5px rgba(115,37,29,.13)!important}
-.featured-card:hover,.featured-card.selected{transform:translateY(-1px)!important;border-color:#e71935!important}
-.featured-photo{height:98px!important;flex:none!important}
-.featured-photo img{object-fit:cover!important;object-position:center 18%!important}
-.featured-name{padding:8px 8px 0!important;font-size:13px!important;line-height:17px!important}
-.featured-team{padding:0 8px!important;font-size:10px!important;line-height:14px!important}
-.featured-number{margin:6px!important;padding:2px 7px!important;font-size:9px!important}
-.featured-detail{height:335px!important;min-height:335px!important;max-height:335px!important;padding:7px!important;border:3px solid #e71935!important;border-radius:23px!important;background:#fff8f0!important;box-shadow:0 4px 10px rgba(115,25,29,.15)!important;overflow:hidden!important}
-.featured-detail .dex-player-card{width:100%!important;height:100%!important;max-width:none!important;margin:0!important;padding:5px!important;border:0!important;border-radius:15px!important;background:transparent!important;box-shadow:none!important;overflow:hidden!important}
-.featured-detail .dex-card-top{height:25px!important;min-height:25px!important;padding:0 5px 4px!important}
-.featured-detail .dex-number{height:21px!important;padding:2px 8px!important;font-size:10px!important}
-.featured-detail .dex-fav{font-size:19px!important;line-height:20px!important}
-.featured-detail .dex-photo{height:84px!important;min-height:84px!important;flex:none!important;border:1px solid #20aee8!important;border-radius:10px!important;background:#65c6ee!important;overflow:hidden!important}
-.featured-detail .dex-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 20%!important}
-.featured-detail .dex-identity{padding:8px 4px 7px!important;text-align:left!important}
-.featured-detail .dex-player-name{font-size:15px!important;line-height:19px!important;font-weight:800!important}
-.featured-detail .dex-team{font-size:10px!important;line-height:14px!important}
-.featured-detail .dex-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0 0 7px!important}
-.featured-detail .dex-tab{height:24px!important;min-height:24px!important;padding:0 4px!important;border-radius:14px!important;font-size:9px!important;white-space:nowrap!important}
-.featured-detail .dex-panel{min-height:0!important;padding:5px 1px!important;border-top:1px solid #ead8ce!important;overflow:auto!important}
-.featured-detail .dex-summary{display:flex!important;flex-direction:column!important;gap:0!important}
-.featured-detail .dex-summary-row{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:26px!important;padding:4px 6px!important;border-bottom:1px solid #f0e3dc!important;font-size:10px!important;line-height:14px!important}
-.featured-detail .dex-summary-label{color:#26384b!important}
-.featured-detail .dex-summary-value{color:#10243b!important;font-size:10px!important;font-weight:800!important;text-align:right!important}
-.featured-detail .dex-extra{margin:5px 5px 0!important;font-size:9px!important;color:#586477!important}
-.featured-detail .dex-extra summary{cursor:pointer;font-weight:700}
-.featured-detail .dex-extra .dex-code{max-height:60px!important;font-size:8px!important;line-height:11px!important}
-.featured-detail .dex-panel .pro-tiles div{padding:6px!important}
-.featured-detail .dex-panel .pro-tiles dt{font-size:9px!important}
-.featured-detail .dex-panel .pro-tiles dd{font-size:11px!important;line-height:15px!important}
-.featured-detail .dex-empty{font-size:9px!important;line-height:13px!important}
-.featured-detail .dex-code{font-size:8px!important;line-height:11px!important}
-.featured-detail .dex-copy{height:25px!important;font-size:9px!important}
-@media(min-width:1500px){.featured-layout{grid-template-columns:minmax(0,2.66fr) minmax(290px,1fr)!important;gap:14px!important}.featured-card{height:220px!important;min-height:220px!important}.featured-photo{height:112px!important}.featured-detail{height:350px!important;min-height:350px!important;max-height:350px!important}}
-@media(max-width:1150px){.featured-layout{grid-template-columns:minmax(0,2.35fr) minmax(225px,1fr)!important}.featured-card{height:190px!important;min-height:190px!important}.featured-photo{height:90px!important}}
-@media(max-width:860px){.featured-layout{grid-template-columns:1fr!important}.featured-list{grid-template-columns:repeat(3,minmax(0,1fr))!important}.featured-card{height:205px!important;min-height:205px!important}.featured-photo{height:110px!important}.featured-detail{width:100%!important;max-width:340px!important;margin:0 auto!important}}
-@media(max-width:560px){.featured-list{grid-template-columns:repeat(2,minmax(0,1fr))!important}.featured-card{height:210px!important;min-height:210px!important}.featured-photo{height:120px!important}}
-/* Cartão de jogador com identidade de equipe e atalhos como na referência */
-.featured-card{padding-bottom:7px!important}
-.featured-identity{display:flex!important;align-items:center!important;gap:7px!important;min-width:0!important;padding:7px 7px 2px!important}
-.featured-logo{display:grid!important;place-items:center!important;flex:none!important;width:27px!important;height:27px!important;border-radius:50%!important;background:#f5e6d8!important;color:#172b3d!important;font-size:13px!important;font-weight:900!important;letter-spacing:-.7px!important}
-.tone-gold .featured-logo{background:#ffe7a0!important;color:#171717!important}
-.tone-rose .featured-logo{background:#f6d9d8!important;color:#172b3d!important}
-.featured-copy{display:flex!important;flex-direction:column!important;min-width:0!important;line-height:1.15!important}
-.featured-copy .featured-name{padding:0!important;font-size:13px!important;line-height:17px!important}
-.featured-copy .featured-team{padding:1px 0 0!important;font-size:10px!important;line-height:13px!important}
-.featured-shortcuts{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:3px!important;margin:auto 6px 0!important;padding-top:5px!important;border-top:1px solid #f0e2d9!important;color:#1d2d3e!important;font-size:8px!important;font-weight:600!important;white-space:nowrap!important}
-.featured-shortcuts span{overflow:hidden;text-overflow:ellipsis}
-@media(max-width:860px){.featured-shortcuts{font-size:8px!important}.featured-identity{padding:6px 5px 2px!important}.featured-logo{width:23px!important;height:23px!important}}
-
-/* Todos os cards em destaque usam o mesmo cartão de perfil vertical da referência */
-.featured-layout{display:block!important;width:100%!important}
-.featured-main{width:100%!important;min-height:0!important;height:auto!important;padding:14px!important}
-.featured-list{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:14px!important;align-items:start!important}
-.featured-detail{display:none!important}
-.featured-profile-card.dex-player-card{
-  display:flex!important;flex-direction:column!important;width:100%!important;max-width:none!important;
-  min-width:0!important;height:auto!important;min-height:0!important;margin:0!important;padding:10px!important;
-  border:3px solid #ed1736!important;border-radius:25px!important;background:#fff8f0!important;
-  box-shadow:0 4px 12px rgba(120,28,35,.13)!important;overflow:hidden!important;
-}
-.featured-profile-card .dex-card-top{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:25px!important;padding:0 5px 7px!important}
-.featured-profile-card .dex-number{display:inline-flex!important;align-items:center!important;min-height:22px!important;padding:2px 9px!important;border:1px solid #dfc9bd!important;border-radius:15px!important;background:#fffdf9!important;font-size:10px!important;font-weight:800!important}
-.featured-profile-card .dex-fav{color:#ed1736!important;font-size:19px!important;line-height:20px!important}
-.featured-profile-card .dex-photo{height:145px!important;min-height:145px!important;flex:none!important;border:1px solid #20aee8!important;border-radius:13px!important;background:#3e5059!important;overflow:hidden!important}
-.featured-profile-card .dex-photo img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 18%!important}
-.featured-profile-card .dex-identity{padding:10px 3px 8px!important;text-align:left!important}
-.featured-profile-card .dex-player-name{font-size:18px!important;line-height:22px!important;font-weight:850!important;color:#10243b!important}
-.featured-profile-card .dex-team{font-size:12px!important;line-height:17px!important;color:#68768a!important}
-.featured-profile-card .dex-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0 0 9px!important;border-bottom:1px solid #eadbd3!important}
-.featured-profile-card .dex-tab{display:flex!important;justify-content:center!important;align-items:center!important;min-width:0!important;height:29px!important;min-height:29px!important;padding:0 4px!important;border-radius:12px!important;background:#f0e8e2!important;color:#172b40!important;font-size:10px!important;font-weight:700!important;white-space:nowrap!important}
-.featured-profile-card .dex-tab[aria-selected="true"]{background:#ed1736!important;color:#fff!important}
-.featured-profile-card .dex-panel{display:block!important;min-height:0!important;padding:9px 1px 1px!important;overflow:visible!important}
-.featured-profile-card .dex-panel[hidden]{display:none!important}
-.featured-profile-card .dex-summary{display:flex!important;flex-direction:column!important;gap:0!important}
-.featured-profile-card .dex-summary-row{display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:29px!important;padding:5px 8px!important;border-bottom:1px solid #f0e4dc!important;font-size:11px!important;line-height:15px!important}
-.featured-profile-card .dex-summary-label{color:#26384b!important}
-.featured-profile-card .dex-summary-value{color:#10243b!important;font-size:11px!important;font-weight:800!important;text-align:right!important}
-.featured-profile-card .dex-extra{margin:8px 1px 0!important;padding:0!important;font-size:10px!important}
-.featured-profile-card .dex-extra summary{cursor:pointer;font-weight:750!important}
-.featured-profile-card .dex-extra .dex-code{max-height:90px!important;font-size:9px!important;line-height:13px!important}
-.featured-profile-card .dex-empty{font-size:10px!important;line-height:15px!important}
-.featured-profile-card .dex-code{max-height:150px!important;font-size:9px!important;line-height:13px!important;overflow:auto!important}
-.featured-profile-card .dex-copy{width:100%!important;min-height:34px!important;margin-top:7px!important;border-radius:12px!important;background:#ed1736!important;color:#fff!important;font-size:11px!important;font-weight:800!important}
-.featured-profile-card .dex-photo-fallback{color:#fff!important}
-@media(max-width:1200px){.featured-list{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}.featured-profile-card .dex-photo{height:135px!important;min-height:135px!important}}
-@media(max-width:760px){.featured-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}.featured-profile-card.dex-player-card{padding:8px!important;border-radius:21px!important}.featured-profile-card .dex-photo{height:125px!important;min-height:125px!important}}
-@media(max-width:460px){.featured-list{grid-template-columns:1fr!important}.featured-profile-card.dex-player-card{max-width:320px!important;margin:0 auto!important;width:100%!important}}
-
-/* Perfil completo: quatro abas e área de mira no padrão da referência */
-.featured-profile-card .dex-tabs{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important}
-.featured-profile-card .dex-tab{font-size:9px!important;padding:0 2px!important}
-.featured-profile-card .dex-mira-preview{height:100px!important;min-height:100px!important;margin:0 0 7px!important;border-radius:12px!important;border:1px solid #ead8ce!important;background-color:#f8e9e2!important;background-image:linear-gradient(45deg,#f1dcd2 25%,transparent 25%),linear-gradient(-45deg,#f1dcd2 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f1dcd2 75%),linear-gradient(-45deg,transparent 75%,#f1dcd2 75%)!important;background-size:16px 16px!important;background-position:0 0,0 8px,8px -8px,-8px 0!important;position:relative!important}
-.featured-profile-card .dex-mira-preview:after{content:'＋';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#75d9a5;font-size:14px}
-.featured-profile-card .dex-mira-code{display:block!important;max-height:52px!important;min-height:42px!important;margin:0!important;padding:9px!important;border-radius:11px!important;background:#f1e8e1!important;color:#26384b!important;font-size:9px!important;line-height:13px!important;overflow:auto!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important}
-.featured-profile-card .dex-copy{display:block!important;width:100%!important;min-height:34px!important;margin-top:7px!important;border-radius:12px!important;background:#ed1736!important;color:#fff!important;font-size:11px!important;font-weight:800!important}
-.featured-profile-card .dex-copy:disabled{opacity:.65!important}
-
-/* Início simplificado: upload de DEM no formato clássico, com o tema Setup Dex */
-[data-view="inicio"]{padding-top:8px!important}
-#intro{width:min(100%,1040px)!important;margin:24px auto 26px!important;padding:clamp(18px,3vw,34px)!important;border:1.5px solid #e8c9bd!important;border-radius:26px!important;background:linear-gradient(145deg,#fffaf5 0%,#fff1e9 100%)!important;box-shadow:0 6px 18px rgba(120,28,35,.09)!important}
-#intro .hero{max-width:760px!important;margin:0 auto 24px!important;text-align:center!important}
-#intro .hero h2{margin:0 0 12px!important;color:#10243b!important;font-size:clamp(27px,4vw,42px)!important;line-height:1.12!important;letter-spacing:-1.2px!important;font-weight:850!important}
-#intro .hero h2 span{background:linear-gradient(90deg,#e71935,#ff6472)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
-#intro .hero p{max-width:660px!important;margin:0 auto!important;color:#596579!important;font-size:14px!important;line-height:1.65!important}
-#intro .dropzone{display:flex!important;width:100%!important;min-height:245px!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important;padding:24px!important;border:2px dashed #ed8794!important;border-radius:20px!important;background:rgba(255,255,255,.58)!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.55)!important;color:#10243b!important;transition:background .18s,border-color .18s,transform .18s!important}
-#intro .dropzone:hover,#intro .dropzone:focus-visible{border-color:#e71935!important;background:#fff1e9!important;transform:translateY(-1px)!important}
-#intro .dropzone .icon{display:grid!important;place-items:center!important;width:58px!important;height:58px!important;margin:0 0 4px!important;border-radius:18px!important;background:#ffe0e3!important;color:#e71935!important}
-#intro .dropzone .icon svg{width:30px!important;height:30px!important;fill:#e71935!important}
-#intro .dropzone .title{font-size:17px!important;line-height:24px!important;font-weight:750!important;color:#10243b!important}
-#intro .dropzone .support{font-size:13px!important;color:#68768a!important}
-#intro .dropzone .btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:42px!important;margin:5px 0 2px!important;padding:0 23px!important;border:0!important;border-radius:24px!important;background:#e71935!important;color:#fff!important;font-size:13px!important;font-weight:750!important;line-height:1!important;box-shadow:0 3px 8px rgba(231,25,53,.18)!important}
-#intro .dropzone .dz-meta{margin-top:4px!important;color:#87909a!important;font-size:10px!important;line-height:15px!important}
-#intro .trust{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important;margin-top:18px!important;border:0!important;background:transparent!important}
-#intro .trust>div{display:flex!important;align-items:center!important;gap:11px!important;min-width:0!important;padding:13px 14px!important;border:1px solid #ead2c8!important;border-radius:15px!important;background:#fffaf5!important}
-#intro .trust svg{width:23px!important;height:23px!important;flex:none!important;fill:#e71935!important}
-#intro .trust b{display:block!important;margin-bottom:2px!important;color:#10243b!important;font-size:12px!important;line-height:16px!important}
-#intro .trust span{display:block!important;color:#68768a!important;font-size:10px!important;line-height:14px!important}
-[data-view="inicio"] .progress,[data-view="inicio"] .error,[data-view="inicio"] .results{width:min(100%,1040px)!important;margin:22px auto 0!important}
-@media(max-width:760px){
- #intro{margin:12px auto 20px!important;padding:18px 14px!important;border-radius:20px!important}
- #intro .hero{margin-bottom:18px!important}
- #intro .hero h2{font-size:clamp(25px,7vw,34px)!important}
- #intro .hero p{font-size:12px!important;line-height:19px!important}
- #intro .dropzone{min-height:220px!important;padding:18px 12px!important}
- #intro .trust{grid-template-columns:1fr!important;gap:7px!important}
- #intro .trust>div{padding:10px 12px!important}
-}
-
 </style>
 </head>
 <body>
 
 <header class="appbar">
   <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir ou fechar o menu" aria-expanded="true" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
-  <a class="brand" href="#/inicio" aria-label="Setup Dex – ir para o início">
-    <span><b>Setup <em>Dex</em></b></span>
+  <a class="brand" href="#/inicio" aria-label="CS2 Extract – ir para o início">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+    <span><b>CS2 <em>Extract</em></b><small>Crosshair &amp; Viewmodel</small></span>
   </a>
-  <button type="button" class="header-search" id="headerSearch" aria-label="Buscar jogador">
-    <svg class="i" data-i="search"></svg><span>Buscar jogador...</span><svg class="i header-arrow" data-i="chevron-right"></svg>
-  </button>
   <div class="spacer"></div>
   <div class="theme" role="group" aria-label="Tema">
-    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Alternar tema"><svg class="i" data-i="sun"></svg></button>
+    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Tema claro"><svg class="i" data-i="sun"></svg></button>
     <button type="button" class="icon-btn" data-theme-set="dark" aria-label="Tema escuro"><svg class="i" data-i="moon"></svg></button>
   </div>
 </header>
@@ -1113,11 +526,11 @@ main{
 <div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
   <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>Início</a>
-  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="user"></svg>Jogadores</a>
+  <a href="#/buscar" data-page="buscar"><svg class="i" data-i="search"></svg>Pesquisa</a>
   <a href="#/teclado" data-page="teclado"><svg class="i" data-i="keyboard"></svg>Teclado</a>
   <a href="#/sens" data-page="sens"><svg class="i" data-i="mouse"></svg>Sensibilidade</a>
   <a href="#/historico" data-page="historico"><svg class="i" data-i="history"></svg>Histórico</a>
-  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="play-square"></svg>Último Tutorial</a>
+  <a href="#/tutorial" data-page="tutorial"><svg class="i" data-i="school"></svg>Tutorial</a>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
 
@@ -1817,72 +1230,135 @@ function renderPlayer(p) {
   const screenHeight = xh && Number.isInteger(xh.screenHeight) && xh.screenHeight > 0 ? xh.screenHeight : null;
   const playerName = (p.name || 'jogador').trim();
   const proInfo = proSettings[String(p.steamid)] || proNames[normName(p.name)] || {};
+  const mouse = proInfo;
   const keyboard = proInfo.keyboard || null;
   const keyboardCurrent = keyboard && keyboard.current;
   const hasKeyboard = !!(keyboardCurrent && (keyboardCurrent.actuation || keyboardCurrent.rapid_trigger || keyboardCurrent.rapid_trigger_disabled || (keyboardCurrent.groups && keyboardCurrent.groups.length)));
   const videoInfo = screenHeight !== null
     ? { resolution: DEMO_RESOLUTIONS[screenHeight] || 'Não mapeada', screenHeight: screenHeight + ' px' }
-    : (proInfo.resolution ? { resolution: proInfo.resolution, screenHeight: '' } : null);
+    : (mouse && mouse.resolution ? { resolution: mouse.resolution, screenHeight: '' } : null);
   const videoNote = screenHeight !== null
-    ? 'Estimativa pela altura de referência da mira. Não confirma a resolução ativa do jogador.'
-    : 'Resolução obtida do perfil do jogador.';
-  const card = el('article', 'dex-player-card');
-  const top = el('div', 'dex-card-top');
-  top.appendChild(el('span', 'dex-number', '#' + String(uid).padStart(3, '0')));
-  const fav = el('span', 'dex-fav', '♥');
-  fav.setAttribute('aria-hidden', 'true');
-  top.appendChild(fav);
-  const photo = el('div', 'dex-photo');
-  const fallback = el('span', 'dex-photo-fallback', playerName.charAt(0).toUpperCase());
-  photo.appendChild(fallback);
-  card.append(top, photo);
-  const identity = el('div', 'dex-identity');
-  identity.appendChild(el('h3', 'dex-player-name', playerName));
-  const team = p.team || proInfo.team || proInfo.team_name || proInfo.teamName || 'Jogador profissional';
-  identity.appendChild(el('p', 'dex-team', team));
-  card.appendChild(identity);
+    ? 'Estimativa pela altura de referência da mira. Isso não confirma a resolução ativa do jogador.'
+    : 'Resolução obtida do perfil do jogador; não foi identificada na demo.';
+  const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
+  const hasVideo = !!videoInfo;
+  const hasCfg = !!p.steamid;
+  const canFlip = hasMouse || hasVideo || hasKeyboard;
 
-  const defs = [
-    { label: 'Mira', key: 'mira' },
-    { label: 'Teclado', key: 'teclado' },
-    { label: 'Viewmodel', key: 'viewmodel' },
-    { label: 'Resolução', key: 'resolucao' }
-  ];
-  const tabs = el('div', 'dex-tabs');
-  tabs.setAttribute('role', 'tablist');
-  tabs.setAttribute('aria-label', 'Configurações de ' + playerName);
-  const panels = [];
-  const buttons = [];
-  const panel = (index) => {
-    const pn = el('section', 'dex-panel');
-    pn.setAttribute('role', 'tabpanel');
-    pn.id = 'dex-panel-' + uid + '-' + index;
-    pn.setAttribute('aria-labelledby', 'dex-tab-' + uid + '-' + index);
-    panels.push(pn);
-    return pn;
+  const flip = el('article', 'flip');
+  const inner = el('div', 'flip-inner');
+  flip.appendChild(inner);
+
+  const mkHead = (btn) => {
+    const head = el('div', 'card-head');
+    head.append(el('div', 'card-av', (p.name || '?').trim().charAt(0) || '?'), el('h3', 'card-title', p.name || 'Sem nome'));
+    if (btn) head.appendChild(btn);
+    return head;
   };
-  const mira = panel(0);
-  if (xh) {
-    const preview = el('div', 'dex-crosshair-preview checker');
-    const canvas = document.createElement('canvas');
-    canvas.setAttribute('role', 'img');
-    canvas.setAttribute('aria-label', 'Prévia da mira de ' + playerName);
-    paintCrosshair(canvas, xh, 140);
-    preview.appendChild(canvas);
-    mira.appendChild(preview);
-  }
-  if (p.crosshair_code) {
-    const code = el('pre', 'dex-code', p.crosshair_code);
-    mira.appendChild(code);
-    const copy = el('button', 'dex-copy', 'Copiar mira');
-    copy.type = 'button'; copy.onclick = () => copyValue(p.crosshair_code, copy);
-    mira.appendChild(copy);
-  } else mira.appendChild(el('p', 'dex-empty', 'Mira não disponível para este jogador.'));
 
-  const teclado = panel(1);
+  // ---------- Frente: mira e viewmodel ----------
+  const front = el('div', 'card face front');
+  front.appendChild(mkHead());
+
+  const defs = [['Mira', p.crosshair_code], ['Viewmodel', p.viewmodel_cmd]];
+  const tabs = el('div', 'tabs');
+  tabs.setAttribute('role', 'tablist');
+  const panes = defs.map(([label, val], i) => {
+    const pn = el('div', 'pane');
+    pn.setAttribute('role', 'tabpanel');
+    pn.id = 'pane-' + uid + '-' + i;
+    pn.setAttribute('aria-labelledby', 'tab-' + uid + '-' + i);
+    if (i === 0 && xh) {
+      const m = el('div', 'card-media checker');
+      const c = document.createElement('canvas');
+      c.setAttribute('role', 'img');
+      c.setAttribute('aria-label', 'Prévia da mira de ' + (p.name || 'jogador'));
+      paintCrosshair(c, xh, 140);
+      m.appendChild(c); pn.appendChild(m);
+    }
+    if (val) {
+      const box = el('div', 'codebox');
+      box.append(el('span', 'codelabel', i === 0 ? 'Código da mira' : 'Comandos do viewmodel'), el('pre', '', val));
+      pn.appendChild(box);
+      const pair = el('div', 'pair');
+      const cb = el('button', 'btn');
+      cb.append(icon('copy'), el('span', 't', 'Copiar'));
+      cb.type = 'button'; cb.dataset.label = 'Copiar';
+      cb.onclick = () => copyValue(val, cb);
+      pair.append(cb); pn.appendChild(pair);
+    } else {
+      pn.appendChild(el('p', 'empty', 'Este jogador não tem ' + label.toLowerCase() + ' neste demo.'));
+    }
+    return pn;
+  });
+  const btns = defs.map(([label], i) => {
+    const b = el('button', '', label);
+    b.type = 'button'; b.setAttribute('role', 'tab');
+    b.id = 'tab-' + uid + '-' + i;
+    b.setAttribute('aria-controls', 'pane-' + uid + '-' + i);
+    b.onclick = () => select(i);
+    b.onkeydown = e => {
+      const k = { ArrowRight: (i + 1) % btns.length, ArrowLeft: (i + btns.length - 1) % btns.length, Home: 0, End: btns.length - 1 }[e.key];
+      if (k === undefined) return;
+      e.preventDefault(); select(k); btns[k].focus();
+    };
+    tabs.appendChild(b);
+    return b;
+  });
+  function select(k) { btns.forEach((b, i) => { b.setAttribute('aria-selected', String(i === k)); b.tabIndex = i === k ? 0 : -1; panes[i].hidden = i !== k; }); }
+  select(p.crosshair_code ? 0 : 1);
+  front.append(tabs, ...panes);
+
+  // Rodapé: Mouse e Vídeo viram o card; CFG abre direto
+  const actions = el('div', 'card-actions');
+  const mkAct = (tag, ic, label) => {
+    const a = el(tag, 'card-act');
+    a.append(icon(ic), el('span', '', label));
+    if (tag === 'button') a.type = 'button';
+    actions.appendChild(a);
+    return a;
+  };
+  const mouseAct = hasMouse ? mkAct('button', 'mouse', 'Mouse') : null;
+  const videoAct = hasVideo ? mkAct('button', 'monitor', 'Vídeo') : null;
+  const keyboardAct = hasKeyboard ? mkAct('button', 'keyboard', 'Teclado') : null;
+  if (hasCfg) {
+    const cfgLink = mkAct('a', 'download', 'CFG');
+    cfgLink.href = 'https://cybershoke.net/api/api/v1/user/download/cfg/' + encodeURIComponent(String(p.steamid).trim());
+    cfgLink.target = '_blank';
+    cfgLink.rel = 'noopener noreferrer';
+    cfgLink.setAttribute('aria-label', 'CFG de ' + playerName + ' do CyberShoke');
+    cfgLink.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
+  }
+  if (actions.children.length) front.appendChild(actions);
+  inner.appendChild(front);
+  if (!canFlip) return flip;
+
+  // ---------- Verso: mouse ou vídeo ----------
+  const back = el('div', 'card face back');
+  const toFrontBtn = el('button', 'flip-btn');
+  toFrontBtn.type = 'button'; toFrontBtn.title = 'Voltar para a mira'; toFrontBtn.setAttribute('aria-label', 'Voltar para a mira');
+  toFrontBtn.appendChild(icon('back'));
+  back.appendChild(mkHead(toFrontBtn));
+  const body = el('div', 'back-body');
+  const secs = {};
+  if (hasMouse) {
+    secs.mouse = el('section', 'back-sec');
+    secs.mouse.append(sectionTitle('mouse', 'Mouse'), statTiles(mouse, MOUSE_FIELDS, 'compact'));
+    body.appendChild(secs.mouse);
+  }
+  if (hasVideo) {
+    secs.video = el('section', 'back-sec');
+    secs.video.append(
+      sectionTitle('monitor', 'Vídeo'),
+      statTiles(videoInfo, VIDEO_FIELDS, 'compact'),
+      el('p', 'video-note', videoNote)
+    );
+    body.appendChild(secs.video);
+  }
   if (hasKeyboard) {
+    secs.keyboard = el('section', 'back-sec');
     const current = keyboardCurrent;
-    const info = {
+    const keyboardInfo = {
       actuation: current.actuation ? current.actuation + ' mm' : '',
       rapid_trigger: current.rapid_trigger ? current.rapid_trigger + ' mm' : (current.rapid_trigger_disabled ? 'Desativado' : ''),
       actuation_scope: current.actuation_scope || 'Não informado',
@@ -1890,72 +1366,75 @@ function renderPlayer(p) {
       rapid_trigger_activate: current.rapid_trigger_activate ? current.rapid_trigger_activate + ' mm' : '',
       rapid_trigger_deactivate: current.rapid_trigger_deactivate ? current.rapid_trigger_deactivate + ' mm' : ''
     };
-    teclado.appendChild(statTiles(info, KEYBOARD_FIELDS, 'compact'));
-    const note = [current.status || 'Relato da comunidade', current.author ? 'por ' + current.author : '', current.date || ''].filter(Boolean).join(' · ');
-    if (note) teclado.appendChild(el('p', 'dex-note', note));
+    secs.keyboard.append(sectionTitle('keyboard', 'Teclado'), statTiles(keyboardInfo, KEYBOARD_FIELDS, 'compact'));
+    const noteParts = [current.status || 'Relato da comunidade'];
+    if (current.author) noteParts.push('por ' + current.author);
+    if (current.date) noteParts.push(current.date);
+    if (current.support_count > 1) noteParts.push(current.support_count + ' relatos semelhantes');
+    secs.keyboard.appendChild(el('p', 'keyboard-note', noteParts.join(' · ')));
     if (Array.isArray(current.groups) && current.groups.length > 1) {
-      const details = el('details', 'dex-details');
-      details.appendChild(el('summary', '', 'Ver ajustes por grupo de teclas'));
-      const list = el('ul');
-      current.groups.forEach(group => {
-        const bits = [];
-        if (group.actuation) bits.push('AP ' + group.actuation + ' mm');
-        if (group.rapid_trigger) bits.push('RT ' + group.rapid_trigger + ' mm');
-        else if (group.rapid_trigger_disabled) bits.push('RT desativado');
-        list.appendChild(el('li', '', (group.label || 'Grupo') + ': ' + bits.join(' · ')));
-      });
-      details.appendChild(list); teclado.appendChild(details);
+      const groupText = current.groups.map(group => {
+        const parts = [];
+        if (group.actuation) parts.push('AP ' + group.actuation + ' mm');
+        if (group.rapid_trigger) parts.push('RT ' + group.rapid_trigger + ' mm');
+        else if (group.rapid_trigger_disabled) parts.push('RT desativado');
+        return (group.label || 'Grupo') + ': ' + parts.join(' · ');
+      }).join(' | ');
+      if (groupText) secs.keyboard.appendChild(el('p', 'keyboard-note', groupText));
     }
-  } else teclado.appendChild(el('p', 'dex-empty', 'Configurações de teclado ainda não disponíveis.'));
-
-  const viewmodel = panel(2);
-  if (p.viewmodel_cmd) {
-    viewmodel.appendChild(el('pre', 'dex-code', p.viewmodel_cmd));
-    const copy = el('button', 'dex-copy', 'Copiar viewmodel');
-    copy.type = 'button'; copy.onclick = () => copyValue(p.viewmodel_cmd, copy);
-    viewmodel.appendChild(copy);
-  } else viewmodel.appendChild(el('p', 'dex-empty', 'Viewmodel não disponível para este jogador.'));
-
-  const resolucao = panel(3);
-  if (videoInfo && videoInfo.resolution) {
-    resolucao.appendChild(statTiles(videoInfo, VIDEO_FIELDS, 'compact'));
-    resolucao.appendChild(el('p', 'dex-note', videoNote));
-  } else resolucao.appendChild(el('p', 'dex-empty', 'Resolução não disponível para este jogador.'));
-
-  defs.forEach((def, i) => {
-    const b = el('button', 'dex-tab', def.label);
-    b.type = 'button'; b.setAttribute('role', 'tab');
-    b.id = 'dex-tab-' + uid + '-' + i;
-    b.setAttribute('aria-controls', 'dex-panel-' + uid + '-' + i);
-    b.onclick = () => select(i);
-    b.onkeydown = e => {
-      const next = { ArrowRight: (i + 1) % defs.length, ArrowLeft: (i + defs.length - 1) % defs.length, Home: 0, End: defs.length - 1 }[e.key];
-      if (next === undefined) return;
-      e.preventDefault(); select(next); buttons[next].focus();
-    };
-    tabs.appendChild(b); buttons.push(b);
-  });
-  function select(index) {
-    buttons.forEach((b, i) => {
-      b.setAttribute('aria-selected', String(i === index));
-      b.tabIndex = i === index ? 0 : -1;
-      panels[i].hidden = i !== index;
-    });
+    const sourceUrl = safeUrl(current.source_url, 'prosettings.net');
+    if (sourceUrl) {
+      const sourceLink = el('a', 'keyboard-source', 'Ver discussão no ProSettings');
+      sourceLink.href = sourceUrl;
+      sourceLink.target = '_blank';
+      sourceLink.rel = 'noopener noreferrer';
+      secs.keyboard.appendChild(sourceLink);
+    }
+    const evidenceUrl = safeEvidenceUrl(current.evidence_url || (current.evidence_urls || [])[0]);
+    if (evidenceUrl) {
+      const evidenceLink = el('a', 'keyboard-source', 'Abrir prova / referência');
+      evidenceLink.href = evidenceUrl;
+      evidenceLink.target = '_blank';
+      evidenceLink.rel = 'noopener noreferrer';
+      secs.keyboard.appendChild(evidenceLink);
+    }
+    if (keyboard.alternatives && keyboard.alternatives.length) {
+      const altText = keyboard.alternatives.slice(0, 2).map(item => {
+        const bits = [];
+        if (item.actuation) bits.push('AP ' + item.actuation + ' mm' + (item.actuation_scope && item.actuation_scope !== 'Não informado' ? ' (' + item.actuation_scope + ')' : ''));
+        if (item.rapid_trigger) bits.push('RT ' + item.rapid_trigger + ' mm' + (item.rapid_trigger_scope && item.rapid_trigger_scope !== 'Não informado' ? ' (' + item.rapid_trigger_scope + ')' : ''));
+        else if (item.rapid_trigger_disabled) bits.push('RT desativado');
+        if (item.rapid_trigger_activate || item.rapid_trigger_deactivate) bits.push('RT ativa ' + (item.rapid_trigger_activate || '—') + ' / desativa ' + (item.rapid_trigger_deactivate || '—') + ' mm');
+        if (item.groups && item.groups.length > 1) bits.push('ajustes por grupos de teclas');
+        if (item.date) bits.push(item.date);
+        return bits.join(' · ');
+      }).join(' | ');
+      if (altText) secs.keyboard.appendChild(el('p', 'keyboard-note', 'Outros relatos: ' + altText));
+    }
+    body.appendChild(secs.keyboard);
   }
-  card.appendChild(tabs);
-  panels.forEach(pn => card.appendChild(pn));
-  select(0);
+  back.appendChild(body);
+  inner.appendChild(back);
 
-  // A foto é carregada da mesma fonte HLTV já utilizada pelo projeto.
-  fetchProData({ name: playerName, steamid: p.steamid }).then(data => {
-    if (!data || !data.photo || !photo.isConnected) return;
-    const img = new Image();
-    img.alt = 'Foto de ' + playerName;
-    img.referrerPolicy = 'no-referrer';
-    img.onload = () => { photo.innerHTML = ''; photo.appendChild(img); };
-    img.src = data.photo;
-  }).catch(() => {});
-  return card;
+  // O lado oculto não recebe foco nem aparece para leitores de tela
+  function setFlipped(v) {
+    flip.classList.toggle('flipped', v);
+    front.inert = v; back.inert = !v;
+    front.setAttribute('aria-hidden', String(v));
+    back.setAttribute('aria-hidden', String(!v));
+  }
+  setFlipped(false);
+  const open = (which, from) => () => {
+    Object.keys(secs).forEach(k => { secs[k].hidden = k !== which; });
+    setFlipped(true);
+    toFrontBtn.focus({ preventScroll: true });
+    toFrontBtn._from = from;
+  };
+  if (mouseAct) mouseAct.onclick = open('mouse', mouseAct);
+  if (videoAct) videoAct.onclick = open('video', videoAct);
+  if (keyboardAct) keyboardAct.onclick = open('keyboard', keyboardAct);
+  toFrontBtn.onclick = () => { setFlipped(false); if (toFrontBtn._from) toFrontBtn._from.focus({ preventScroll: true }); };
+  return flip;
 }
 
 async function showResults(data, o) {
@@ -2115,51 +1594,110 @@ async function fetchProData(p) {
   };
 }
 
-function renderSearchCard(p, cardNumber) {
-  const uid='search-'+(++cardSeq), nick=(p.name||'?').trim(), info=p.info||{};
-  const card=el('article','dex-player-card'), top=el('div','dex-card-top');
-  top.appendChild(el('span','dex-number','#'+String(cardNumber||1).padStart(3,'0')));
-  const fav=el('span','dex-fav','♥');fav.setAttribute('aria-label','Favorito');top.appendChild(fav);
-  const photo=el('div','dex-photo');photo.appendChild(el('span','dex-photo-fallback',nick.charAt(0).toUpperCase()));card.append(top,photo);
-  const identity=el('div','dex-identity');
-  identity.append(el('h3','dex-player-name',nick),el('p','dex-team',info.team||info.team_name||info.teamName||'Jogador profissional'));card.appendChild(identity);
-  const definitions=['Mira','Teclado','Viewmodel','Resolução'],tabs=el('div','dex-tabs');
-  tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Configurações de '+nick);
-  const panels=[],buttons=[];
-  definitions.forEach((label,i)=>{
-    const b=el('button','dex-tab',label);b.type='button';b.setAttribute('role','tab');
-    b.id='dex-tab-'+uid+'-'+i;b.setAttribute('aria-controls','dex-panel-'+uid+'-'+i);b.onclick=()=>select(i);
-    b.onkeydown=e=>{const next={ArrowRight:(i+1)%4,ArrowLeft:(i+3)%4,Home:0,End:3}[e.key];if(next===undefined)return;e.preventDefault();select(next);buttons[next].focus();};
-    tabs.appendChild(b);buttons.push(b);
-    const pn=el('section','dex-panel');pn.setAttribute('role','tabpanel');pn.id='dex-panel-'+uid+'-'+i;pn.setAttribute('aria-labelledby',b.id);panels.push(pn);
+function renderSearchCard(p) {
+  const card = el('article', 'pro');
+  const nick = (p.name || '?').trim();
+
+  // Cabeçalho: avatar, nome, links e aviso
+  const head = el('div', 'pro-head');
+  const top = el('div', 'pro-top');
+  const av = el('div', 'pro-av', nick.charAt(0) || '?');
+  top.appendChild(av);
+
+  const main = el('div', 'pro-main');
+  main.appendChild(el('h3', 'pro-name', nick));
+  if (p.custom) main.appendChild(el('span', 'pro-tag', 'Não listado'));
+
+  const links = el('div', 'pro-links');
+  main.appendChild(links);
+  top.appendChild(main);
+  head.appendChild(top);
+
+  const linkEls = proLinks(p).map(([label, href]) => {
+    const a = el('a', 'pro-btn ' + label.toLowerCase());
+    a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    a.append(icon('ext'), el('span', '', label));
+    links.appendChild(a);
+    return a;
   });
-  function select(index){buttons.forEach((b,i)=>{b.setAttribute('aria-selected',String(i===index));b.tabIndex=i===index?0:-1;panels[i].hidden=i!==index;});}
-  const miraPreview=el('div','dex-mira-preview');
-  miraPreview.setAttribute('aria-label','Prévia da mira');
-  const miraCode=el('pre','dex-code dex-mira-code','Carregando código da mira…');
-  const miraCopy=el('button','dex-copy','Copiar mira');miraCopy.type='button';miraCopy.disabled=true;
-  panels[0].append(miraPreview,miraCode,miraCopy);
-  const keyboard=info.keyboard&&info.keyboard.current;
-  if(keyboard&&(keyboard.actuation||keyboard.rapid_trigger||keyboard.rapid_trigger_disabled||(keyboard.groups&&keyboard.groups.length))){
-    const keyboardInfo={actuation:keyboard.actuation?keyboard.actuation+' mm':'',rapid_trigger:keyboard.rapid_trigger?keyboard.rapid_trigger+' mm':(keyboard.rapid_trigger_disabled?'Desativado':''),actuation_scope:keyboard.actuation_scope||'Não informado',rapid_trigger_scope:keyboard.rapid_trigger_scope||'Não informado',rapid_trigger_activate:keyboard.rapid_trigger_activate?keyboard.rapid_trigger_activate+' mm':'',rapid_trigger_deactivate:keyboard.rapid_trigger_deactivate?keyboard.rapid_trigger_deactivate+' mm':''};
-    panels[1].appendChild(statTiles(keyboardInfo,KEYBOARD_FIELDS,'compact'));
-    const note=[keyboard.status||'Relato da comunidade',keyboard.author?'por '+keyboard.author:'',keyboard.date||''].filter(Boolean).join(' · ');
-    if(note)panels[1].appendChild(el('p','dex-note',note));
-    if(Array.isArray(keyboard.groups)&&keyboard.groups.length>1){const details=el('details','dex-details');details.appendChild(el('summary','','Ver ajustes por grupo de teclas'));const list=el('ul');keyboard.groups.forEach(group=>{const parts=[];if(group.actuation)parts.push('AP '+group.actuation+' mm');if(group.rapid_trigger)parts.push('RT '+group.rapid_trigger+' mm');else if(group.rapid_trigger_disabled)parts.push('RT desativado');list.appendChild(el('li','',(group.label||'Grupo')+': '+parts.join(' · ')));});details.appendChild(list);panels[1].appendChild(details);}
-  }else panels[1].appendChild(el('p','dex-empty','Configurações de teclado ainda não disponíveis.'));
-  const viewmodel=info.viewmodel_cmd||info.viewmodel||'';
-  if(typeof viewmodel==='string'&&viewmodel.trim()){panels[2].appendChild(el('pre','dex-code',viewmodel));const copy=el('button','dex-copy','Copiar viewmodel');copy.type='button';copy.onclick=()=>copyValue(viewmodel,copy);panels[2].appendChild(copy);}
-  else panels[2].appendChild(el('p','dex-empty','Viewmodel não disponível para este jogador.'));
-  const resolution=el('div','dex-summary');
-  const resolutionRow=el('div','dex-summary-row');resolutionRow.append(el('span','dex-summary-label','Resolução'),el('strong','dex-summary-value',info.resolution||'—'));resolution.appendChild(resolutionRow);
-  panels[3].appendChild(resolution);
-  card.appendChild(tabs);panels.forEach(pn=>card.appendChild(pn));select(0);
-  fetchProData(p).then(data=>{
-    if(!data||!card.isConnected)return;
-    if(data.photo){const img=new Image();img.alt='Foto de '+nick;img.referrerPolicy='no-referrer';img.onload=()=>{photo.innerHTML='';photo.appendChild(img);};img.src=data.photo;}
-    if(data.xh&&data.xh.code){miraCode.textContent=data.xh.code;miraCopy.disabled=false;miraCopy.onclick=()=>copyValue(data.xh.code,miraCopy);}
-    else miraCode.textContent='Mira não disponível para este jogador.';
-  }).catch(()=>{miraCode.textContent='Mira não disponível para este jogador.';});
+
+  if (p.steamid) {
+    const cfg = el('a', 'pro-btn cfg');
+    cfg.href = CFG_URL(p.steamid); cfg.target = '_blank'; cfg.rel = 'noopener noreferrer';
+    cfg.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
+    cfg.setAttribute('aria-label', 'Baixar CFG de ' + nick + ' do CyberShoke');
+    cfg.appendChild(el('span', '', 'CFG CyberShoke'));
+    links.appendChild(cfg);
+  }
+
+  const note = el('div', 'pro-note');
+  note.setAttribute('role', 'note');
+  const noteTxt = el('p');
+  const bold = t => { const b = document.createElement('b'); b.textContent = t; return b; };
+  noteTxt.append('Baixe a demo utilizando ', bold('FACEIT'), ' ou ', bold('HLTV'), ' para obter mira e viewmodel mais recente');
+  note.append(icon('info'), noteTxt);
+  head.appendChild(note);
+  card.appendChild(head);
+
+  // Mouse e vídeo: cartões lado a lado
+  const grid = el('div', 'pro-grid');
+  if (p.info) {
+    const box = el('section', 'pro-card');
+    box.appendChild(sectionTitle('mouse', 'Mouse'));
+    box.appendChild(statTiles(p.info, MOUSE_FIELDS));
+    grid.appendChild(box);
+  }
+  if (p.info && p.info.resolution) {
+    const vbox = el('section', 'pro-card');
+    vbox.appendChild(sectionTitle('monitor', 'Vídeo'));
+    vbox.appendChild(statTiles(p.info, VIDEO_FIELDS));
+    grid.appendChild(vbox);
+  }
+  if (grid.children.length) card.appendChild(grid);
+
+  fetchProData(p).then(d => {
+    if (!d || !card.isConnected) return;
+    if (d.faceit) { linkEls[0].href = d.faceit.url; linkEls[0].title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
+    if (d.hltv) linkEls[1].href = d.hltv.url;
+    if (d.xh && d.xh.code) {
+      const xhd = decodeCrosshair(d.xh.code);
+      if (xhd) {
+        const box = el('section', 'pro-card pro-xh');
+        box.appendChild(sectionTitle('aim', 'Mira'));
+        const row = el('div', 'xh-row');
+        const prev = el('div', 'xh-prev checker');
+        const cv = document.createElement('canvas');
+        cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
+        paintCrosshair(cv, xhd, 140);
+        prev.appendChild(cv);
+        const body = el('div', 'xh-body');
+        body.appendChild(el('pre', 'xh-code', d.xh.code));
+        const chips = el('div', 'xh-chips');
+        if (d.xh.changed) {
+          const when = new Date(d.xh.changed + 'T12:00:00').toLocaleDateString('pt-BR');
+          const dt = el('span', 'xh-chip tonal', 'Mira trocada em ' + when);
+          dt.title = 'Data em que este site viu o código da mira mudar.';
+          chips.appendChild(dt);
+        }
+        if (chips.children.length) body.appendChild(chips);
+        const cb = el('button', 'btn btn-filled', 'Copiar mira');
+        cb.type = 'button'; cb.dataset.label = 'Copiar mira';
+        cb.onclick = () => copyValue(d.xh.code, cb);
+        body.appendChild(cb);
+        row.append(prev, body);
+        box.appendChild(row);
+        head.after(box);
+      }
+    }
+    if (d.photo) {
+      // foto da HLTV no lugar da inicial; se nao carregar, a inicial continua
+      const img = new Image();
+      img.alt = 'Foto de ' + nick;
+      img.referrerPolicy = 'no-referrer';
+      img.onload = () => { av.textContent = ''; av.classList.add('has-photo'); av.appendChild(img); };
+      img.src = d.photo;
+    }
+  });
   return card;
 }
 
@@ -2187,52 +1725,6 @@ function clearSearch() {
 }
 searchClear.onclick = clearSearch;
 proSearch.addEventListener('input', () => { searchClear.hidden = !proSearch.value; });
-
-const headerSearch = document.getElementById('headerSearch');
-if (headerSearch) headerSearch.onclick = () => {
-  location.hash = '#/buscar';
-  setTimeout(() => proSearch && proSearch.focus(), 80);
-};
-const featuredNames = [
-  {name:'donk',team:'Team Spirit',tone:'blue'},
-  {name:'s1mple',team:'NAVI',tone:'gold'},
-  {name:'ZywOo',team:'Vitality',tone:'blue'},
-  {name:'NiKo',team:'G2',tone:'rose'},
-  {name:'m0NESY',team:'G2',tone:'rose'}
-];
-const featuredList = document.getElementById('featuredList');
-const featuredDetail = document.getElementById('featuredDetail');
-let featuredSelected = 0;
-async function selectFeatured(index) {
-  featuredSelected = index;
-  const item = featuredNames[index];
-  await Promise.all([proSettingsReady, csLinksReady]);
-  const found = buildIndex().find(x => normName(x.name) === normName(item.name));
-  const player = found || {key:normName(item.name),name:item.name,info:{team:item.team},steamid:null,custom:true};
-  player.info = Object.assign({}, player.info || {}, {team:(player.info && (player.info.team || player.info.team_name || player.info.teamName)) || item.team});
-  featuredDetail.innerHTML = '';
-  featuredDetail.appendChild(renderSearchCard(player));
-  [...featuredList.children].forEach((node,i)=>node.classList.toggle('selected',i===index));
-}
-function renderFeatured() {
-  if (!featuredList) return;
-  featuredList.innerHTML = '';
-  featuredNames.forEach((item,i) => {
-    const found = buildIndex().find(x => normName(x.name) === normName(item.name));
-    const player = found || {key:normName(item.name),name:item.name,info:{},steamid:null,custom:true};
-    player.info = Object.assign({},player.info||{},{team:(player.info&&(player.info.team||player.info.team_name||player.info.teamName))||item.team});
-    const card = renderSearchCard(player, i+1);
-    card.classList.add('featured-profile-card');
-    card.setAttribute('aria-label','Configurações de '+item.name);
-    featuredList.appendChild(card);
-  });
-  if (featuredDetail) featuredDetail.hidden = true;
-}
-const featuredAll = document.getElementById('featuredAll');
-if (featuredAll) featuredAll.onclick = () => { location.hash='#/buscar'; setTimeout(()=>proSearch&&proSearch.focus(),80); };
-const bannerPlayers = document.getElementById('bannerPlayers');
-if (bannerPlayers) bannerPlayers.onclick = () => { location.hash='#/buscar'; setTimeout(()=>proSearch&&proSearch.focus(),80); };
-renderFeatured();
 
 function choosePlayer(p) {
   proSearch.value = p.name;
