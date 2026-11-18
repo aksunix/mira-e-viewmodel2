@@ -679,7 +679,7 @@
   .pd-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
   .pd-rows { display: flex; flex-direction: column; gap: 5px; margin: 0; }
   .pd-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 14px; border-radius: 12px; background: var(--md-surface-container-high); font-size: 15px; }
-  .pd-row dt { font-weight: 500; } .pd-row dd { margin: 0; font-weight: 800; }
+  .pd-row dt { font-weight: 500; } .pd-row dd { margin: 0; font-weight: 800; text-align: right; }
   .pd-boxes { display: flex; flex-direction: column; gap: 10px; }
   .pd-box { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 2.5px solid var(--sd-border); border-radius: 14px; background: var(--md-surface-container-low); }
   .pd-box h4 { margin: 0; font-size: 15px; font-weight: 800; }
@@ -1607,6 +1607,14 @@ function renderSearchCard(p) {
   row('DPI', info.dpi);
   row('Hz', info.hz);
   row('Zoom', info.zoom_sensitivity);
+  // Teclado: actuation point e rapid trigger (relato mais atual)
+  const kb = info.keyboard && info.keyboard.current;
+  if (kb) {
+    const sc = (type) => { const s = keyboardScope(kb, type); return s.keys.length ? s.keys.join('') : s.label === 'Escopo não informado' ? '' : s.label.toLowerCase(); };
+    const fmt = (v, type) => v + ' mm' + (sc(type) ? ' · ' + sc(type) : '');
+    row('Actuation', kb.actuation && fmt(kb.actuation, 'actuation'));
+    row('Rapid Trigger', kb.rapid_trigger_disabled ? 'Desativado' : kb.rapid_trigger && fmt(kb.rapid_trigger, 'rapid_trigger'));
+  }
   if (rows.children.length) card.appendChild(rows);
   else card.appendChild(el('p', 'pd-sub', 'Ainda não há configurações de mouse e vídeo coletadas para este jogador.'));
 
