@@ -263,6 +263,7 @@
   "https://prosettings.net/players/blowz/": "2026-11-17",
   "https://prosettings.net/players/bluepho3nix/": "2026-11-17",
   "https://prosettings.net/players/blytz/": "2026-11-17",
+  "https://prosettings.net/players/bnc/": "2026-11-18",
   "https://prosettings.net/players/bnox/": "2026-11-17",
   "https://prosettings.net/players/bntet/": "2026-11-17",
   "https://prosettings.net/players/boaster/": "2026-11-17",
@@ -2232,6 +2233,7 @@
   "https://prosettings.net/players/tudson/": "2026-11-17",
   "https://prosettings.net/players/tuli/": "2026-11-17",
   "https://prosettings.net/players/tura/": "2026-11-17",
+  "https://prosettings.net/players/turkish/": "2026-11-18",
   "https://prosettings.net/players/turko/": "2026-11-17",
   "https://prosettings.net/players/tutsz/": "2026-11-17",
   "https://prosettings.net/players/tuurtle/": "2026-11-17",
@@ -2744,6 +2746,7 @@
   "https://prosettings.net/players/blowz/": "6",
   "https://prosettings.net/players/bluepho3nix/": "6",
   "https://prosettings.net/players/blytz/": "6",
+  "https://prosettings.net/players/bnc/": "6",
   "https://prosettings.net/players/bnox/": "6",
   "https://prosettings.net/players/bntet/": "6",
   "https://prosettings.net/players/boaster/": "6",
@@ -4713,6 +4716,7 @@
   "https://prosettings.net/players/tudson/": "6",
   "https://prosettings.net/players/tuli/": "6",
   "https://prosettings.net/players/tura/": "6",
+  "https://prosettings.net/players/turkish/": "6",
   "https://prosettings.net/players/turko/": "6",
   "https://prosettings.net/players/tutsz/": "6",
   "https://prosettings.net/players/tuurtle/": "6",
@@ -7262,6 +7266,16 @@
    "resolution": "1280x960",
    "sensitivity": "0.9",
    "url": "https://prosettings.net/players/blytz/",
+   "zoom_sensitivity": "1"
+  },
+  "bnc": {
+   "dpi": "800",
+   "edpi": "800",
+   "hz": "4000",
+   "name": "bnc",
+   "resolution": "1280x960",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/bnc/",
    "zoom_sensitivity": "1"
   },
   "bnox": {
@@ -28153,6 +28167,10 @@
   }
  },
  "pending": {
+  "https://prosettings.net/players/bnc/": {
+   "name": "bnc",
+   "steam": "https://steamcommunity.com/id/Boneco_/"
+  },
   "https://prosettings.net/players/cairne/": {
    "name": "cairne",
    "steam": "https://steamcommunity.com/id/ihsum/"
@@ -42407,6 +42425,7 @@
   "https://prosettings.net/players/blowz/": "2026-11-17",
   "https://prosettings.net/players/bluepho3nix/": "2026-11-17",
   "https://prosettings.net/players/blytz/": "2026-11-17",
+  "https://prosettings.net/players/bnc/": "2026-11-18",
   "https://prosettings.net/players/bnox/": "2026-11-17",
   "https://prosettings.net/players/bntet/": "2026-11-17",
   "https://prosettings.net/players/boaster/": "2026-11-17",
@@ -44376,7 +44395,7 @@
   "https://prosettings.net/players/tudson/": "2026-11-17",
   "https://prosettings.net/players/tuli/": "2026-11-17",
   "https://prosettings.net/players/tura/": "2026-11-17",
-  "https://prosettings.net/players/turkish/": "2026-10-17",
+  "https://prosettings.net/players/turkish/": "2026-11-18",
   "https://prosettings.net/players/turko/": "2026-11-17",
   "https://prosettings.net/players/tutsz/": "2026-11-17",
   "https://prosettings.net/players/tuurtle/": "2026-11-17",
@@ -44889,6 +44908,7 @@
   "https://prosettings.net/players/blowz/": "2026-11-17",
   "https://prosettings.net/players/bluepho3nix/": "2026-11-17",
   "https://prosettings.net/players/blytz/": "2026-11-17",
+  "https://prosettings.net/players/bnc/": "2026-11-18",
   "https://prosettings.net/players/bnox/": "2026-11-17",
   "https://prosettings.net/players/bntet/": "2026-11-17",
   "https://prosettings.net/players/boaster/": "2026-11-17",
@@ -46858,7 +46878,7 @@
   "https://prosettings.net/players/tudson/": "2026-11-17",
   "https://prosettings.net/players/tuli/": "2026-11-17",
   "https://prosettings.net/players/tura/": "2026-11-17",
-  "https://prosettings.net/players/turkish/": "2026-10-17",
+  "https://prosettings.net/players/turkish/": "2026-11-18",
   "https://prosettings.net/players/turko/": "2026-11-17",
   "https://prosettings.net/players/tutsz/": "2026-11-17",
   "https://prosettings.net/players/tuurtle/": "2026-11-17",
