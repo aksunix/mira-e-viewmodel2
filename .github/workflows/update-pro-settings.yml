@@ -40,6 +40,10 @@ jobs:
           case "$MAX_PAGES" in ''|*[!0-9]*) echo "Valor invalido para max: $MAX_PAGES"; exit 1;; esac
           python scripts/build_pro_settings.py --out data/pro-settings.json --max "$MAX_PAGES"
 
+      - name: Coletar Top 20 e times do ProSettings
+        continue-on-error: true
+        run: python scripts/build_pro_meta.py --out data/pro-meta.json
+
       - name: Coletar FACEIT/HLTV pelo CyberShoke
         continue-on-error: true
         run: python scripts/build_cybershoke_links.py --out data/cybershoke-links.json
@@ -54,7 +58,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pro-settings.json data/cybershoke-links.json data/cybershoke-extra.txt
+          git add data/pro-meta.json data/pro-settings.json data/cybershoke-links.json data/cybershoke-extra.txt
           if git diff --cached --quiet; then echo "Sem mudancas"; exit 0; fi
           git commit -m "Atualiza dados do ProSettings"
           pushed=0

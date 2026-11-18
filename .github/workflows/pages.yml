@@ -47,6 +47,10 @@ jobs:
         run: |
           if [ -f data/cybershoke-links.json ]; then cp data/cybershoke-links.json docs/cybershoke-links.json; else echo '{"links":{}}' > docs/cybershoke-links.json; fi
 
+      - name: Incluir Top 20 e times
+        run: |
+          if [ -f data/pro-meta.json ]; then cp data/pro-meta.json docs/pro-meta.json; else echo '{"top":[],"players":[]}' > docs/pro-meta.json; fi
+
       - name: Incluir miras dos profissionais
         run: |
           if [ -f data/crosshairs.json ]; then cp data/crosshairs.json docs/crosshairs.json; else echo '{"players":{}}' > docs/crosshairs.json; fi

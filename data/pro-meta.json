@@ -1,0 +1,242 @@
+{
+ "updated": "2026-11-18",
+ "top": [
+  {
+   "nick": "TenZ",
+   "slug": "tenz"
+  },
+  {
+   "nick": "donk",
+   "slug": "donk"
+  },
+  {
+   "nick": "s1mple",
+   "slug": "s1mple"
+  },
+  {
+   "nick": "m0NESY",
+   "slug": "m0nesy"
+  },
+  {
+   "nick": "NiKo",
+   "slug": "niko"
+  },
+  {
+   "nick": "ZywOo",
+   "slug": "zywoo"
+  },
+  {
+   "nick": "XANTARES",
+   "slug": "xantares"
+  },
+  {
+   "nick": "ropz",
+   "slug": "ropz"
+  },
+  {
+   "nick": "b1t",
+   "slug": "b1t"
+  },
+  {
+   "nick": "Twistzz",
+   "slug": "twistzz"
+  },
+  {
+   "nick": "jL",
+   "slug": "jl"
+  },
+  {
+   "nick": "kennyS",
+   "slug": "kennys"
+  },
+  {
+   "nick": "w0nderful",
+   "slug": "w0nderful"
+  },
+  {
+   "nick": "ScreaM",
+   "slug": "scream"
+  },
+  {
+   "nick": "Frozen",
+   "slug": "frozen"
+  },
+  {
+   "nick": "electronic",
+   "slug": "electronic"
+  },
+  {
+   "nick": "device",
+   "slug": "dev1ce"
+  },
+  {
+   "nick": "rain",
+   "slug": "rain"
+  },
+  {
+   "nick": "sh1ro",
+   "slug": "sh1ro"
+  },
+  {
+   "nick": "broky",
+   "slug": "broky"
+  }
+ ],
+ "players": [
+  {
+   "nick": "TenZ",
+   "slug": "tenz",
+   "team": "T1"
+  },
+  {
+   "nick": "donk",
+   "slug": "donk",
+   "team": "Team Spirit"
+  },
+  {
+   "nick": "s1mple",
+   "slug": "s1mple",
+   "team": "BC.Game"
+  },
+  {
+   "nick": "m0NESY",
+   "slug": "m0nesy",
+   "team": "Falcons Esports"
+  },
+  {
+   "nick": "NiKo",
+   "slug": "niko",
+   "team": "Falcons Esports"
+  },
+  {
+   "nick": "ZywOo",
+   "slug": "zywoo",
+   "team": "Team Vitality"
+  },
+  {
+   "nick": "XANTARES",
+   "slug": "xantares",
+   "team": "Aurora"
+  },
+  {
+   "nick": "ropz",
+   "slug": "ropz",
+   "team": "Team Vitality"
+  },
+  {
+   "nick": "b1t",
+   "slug": "b1t",
+   "team": "Natus Vincere"
+  },
+  {
+   "nick": "Twistzz",
+   "slug": "twistzz",
+   "team": "FaZe Clan"
+  },
+  {
+   "nick": "jL",
+   "slug": "jl",
+   "team": "Team Vitality"
+  },
+  {
+   "nick": "w0nderful",
+   "slug": "w0nderful",
+   "team": "Natus Vincere"
+  },
+  {
+   "nick": "ScreaM",
+   "slug": "scream",
+   "team": "Clutchain"
+  },
+  {
+   "nick": "Frozen",
+   "slug": "frozen",
+   "team": "FaZe Clan"
+  },
+  {
+   "nick": "electronic",
+   "slug": "electronic",
+   "team": "BC.Game"
+  },
+  {
+   "nick": "device",
+   "slug": "dev1ce",
+   "team": "100 Thieves"
+  },
+  {
+   "nick": "rain",
+   "slug": "rain",
+   "team": "100 Thieves"
+  },
+  {
+   "nick": "sh1ro",
+   "slug": "sh1ro",
+   "team": "Team Spirit"
+  },
+  {
+   "nick": "broky",
+   "slug": "broky",
+   "team": "FaZe Clan"
+  },
+  {
+   "nick": "EliGE",
+   "slug": "elige",
+   "team": "Team Liquid"
+  },
+  {
+   "nick": "FalleN",
+   "slug": "fallen",
+   "team": "FURIA"
+  },
+  {
+   "nick": "karrigan",
+   "slug": "karrigan",
+   "team": "Falcons Esports"
+  },
+  {
+   "nick": "YEKINDAR",
+   "slug": "yekindar",
+   "team": "FURIA"
+  },
+  {
+   "nick": "Jame",
+   "slug": "jame",
+   "team": "PARIVISION"
+  },
+  {
+   "nick": "magixx",
+   "slug": "magixx",
+   "team": "Team Spirit"
+  },
+  {
+   "nick": "iM",
+   "slug": "im",
+   "team": "Natus Vincere"
+  },
+  {
+   "nick": "Ax1Le",
+   "slug": "ax1le",
+   "team": "1WIN"
+  },
+  {
+   "nick": "zont1x",
+   "slug": "zont1x",
+   "team": "Team Spirit"
+  },
+  {
+   "nick": "deko",
+   "slug": "deko",
+   "team": "WW"
+  },
+  {
+   "nick": "KSCERATO",
+   "slug": "kscerato",
+   "team": "FURIA"
+  },
+  {
+   "nick": "woxic",
+   "slug": "woxic",
+   "team": "Aurora"
+  }
+ ]
+}

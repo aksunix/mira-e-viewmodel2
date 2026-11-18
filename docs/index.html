@@ -683,7 +683,7 @@
   .pd-boxes { display: flex; flex-direction: column; gap: 10px; }
   .pd-box { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 2.5px solid var(--sd-border); border-radius: 14px; background: var(--md-surface-container-low); }
   .pd-box h4 { margin: 0; font-size: 15px; font-weight: 800; }
-  .pd-box .xh-prev { width: 100%; align-self: stretch; display: grid; place-items: center; height: 110px; border-radius: 10px; }
+  .pd-box .xh-prev { width: 100%; align-self: stretch; display: grid; place-items: center; height: 150px; border-radius: 10px; }
   .pd-box .xh-code { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
   .pd-actions { display: flex; flex-direction: column; gap: 10px; }
   .pd-actions .btn { width: 100%; justify-content: center; text-decoration: none; display: inline-flex; align-items: center; }
@@ -842,6 +842,7 @@
       </div>
       <div class="dex-head">
         <h2><svg class="i" data-i="aim" aria-hidden="true"></svg><span id="dexCount">Carregando jogadores…</span></h2>
+        <label class="dex-sort" id="dexTeamWrap" hidden><span class="sr">Time</span><select id="dexTeam"></select></label>
         <label class="dex-sort"><span class="sr">Ordenar por</span><select id="dexSort"><option value="full">Mais completos</option><option value="az">A–Z</option></select></label>
       </div>
       <div class="dex-grid" id="dexGrid"></div>
@@ -1162,7 +1163,7 @@ function rgba(c, mult) {
   return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + ((c[3] / 255) * (mult || 1)).toFixed(3) + ')';
 }
 
-function paintCrosshair(canvas, xh, size) {
+function paintCrosshair(canvas, xh, size, zoom) {
   const dpr = window.devicePixelRatio || 1;
   canvas.width = size * dpr;
   canvas.height = size * dpr;
@@ -1171,7 +1172,7 @@ function paintCrosshair(canvas, xh, size) {
   ctx.clearRect(0, 0, size, size);
   const sh = crosshairShapes(xh);
   // Pequeno zoom para deixar a mira mais visível no card.
-  const k = 1.2;
+  const k = zoom || 1.2;
   ctx.translate(size / 2, size / 2);
   ctx.scale(k, k);
   const fill = rgba(xh.color), line = rgba(xh.outlineColor);
@@ -1586,6 +1587,7 @@ function renderSearchCard(p) {
   const name = el('h3', 'pd-name', nick);
   card.append(banner, name);
   if (p.custom) card.appendChild(el('p', 'pd-sub', 'Não listado'));
+  else if (metaOf(p).team) card.appendChild(el('p', 'pd-sub', metaOf(p).team));
 
   // Links
   const links = el('div', 'pd-links');
@@ -1623,12 +1625,6 @@ function renderSearchCard(p) {
   const actions = el('div', 'pd-actions');
   card.appendChild(actions);
 
-  const cmds = [];
-  if (info.sensitivity) cmds.push('sensitivity ' + info.sensitivity);
-  const allBtn = el('button', 'btn btn-filled', 'Copiar tudo para o console');
-  allBtn.type = 'button'; allBtn.dataset.label = 'Copiar tudo para o console'; allBtn.hidden = true;
-  allBtn.onclick = () => copyValue(cmds.join('; '), allBtn);
-  actions.appendChild(allBtn);
   if (p.steamid) {
     const cfg = el('a', 'btn btn-outline', 'Abrir CFG no CyberShoke');
     cfg.href = CFG_URL(p.steamid); cfg.target = '_blank'; cfg.rel = 'noopener noreferrer';
@@ -1648,7 +1644,7 @@ function renderSearchCard(p) {
         const prev = el('div', 'xh-prev checker');
         const cv = document.createElement('canvas');
         cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
-        paintCrosshair(cv, xhd, 140);
+        paintCrosshair(cv, xhd, 150, 4);
         prev.appendChild(cv);
         box.append(prev, el('pre', 'xh-code', d.xh.code));
         const cb = el('button', 'btn btn-outline', 'Copiar');
@@ -1660,10 +1656,8 @@ function renderSearchCard(p) {
           box.appendChild(el('span', 'pd-sub', 'Mira trocada em ' + when));
         }
         mira.appendChild(box);
-        cmds.unshift('apply_crosshair_code ' + d.xh.code);
       }
     }
-    allBtn.hidden = !cmds.length;
     if (d.photo) {
       // foto da HLTV no lugar da inicial; se nao carregar, a inicial continua
       const img = new Image();
@@ -1673,7 +1667,6 @@ function renderSearchCard(p) {
       img.src = d.photo;
     }
   });
-  allBtn.hidden = !cmds.length;
   return card;
 }
 
@@ -1866,7 +1859,7 @@ const dexGrid = document.getElementById('dexGrid'), dexPages = document.getEleme
 const dexSort = document.getElementById('dexSort'), dexChips = document.getElementById('dexChips');
 const detail = document.getElementById('searchResult'), favGrid = document.getElementById('favGrid');
 const DEX_PER = 12;
-const dex = { q: '', filter: 'all', sort: 'full', page: 1, list: [], sel: null, ready: false };
+const dex = { team: '', q: '', filter: 'all', sort: 'full', page: 1, list: [], sel: null, ready: false };
 
 function favKeys() { return LS.get('favorites', []); }
 function isFav(k) { return favKeys().includes(k); }
@@ -1905,8 +1898,27 @@ function dexScore(p) {
   }
   return p._s;
 }
+// Top 20 e times (coletados do ProSettings por scripts/build_pro_meta.py)
+let proMeta = { top: [], players: [] };
+const proMetaReady = fetch('pro-meta.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(j => { if (j) proMeta = j; }).catch(() => {});
+let metaMaps = null;
+function metaOf(p) {
+  if (!metaMaps) {
+    metaMaps = { team: new Map(), top: new Map() };
+    (proMeta.players || []).forEach(e => { if (e.team) { metaMaps.team.set('s:' + e.slug, e.team); metaMaps.team.set('n:' + normName(e.nick), e.team); } });
+    (proMeta.top || []).forEach((e, i) => { metaMaps.top.set('s:' + e.slug, i + 1); metaMaps.top.set('n:' + normName(e.nick), i + 1); });
+  }
+  if (p._m === undefined) {
+    const m = /\/players\/([^/#?]+)/.exec((p.info && p.info.url) || ''), slug = m ? m[1].toLowerCase() : '';
+    const pick = mp => (slug && mp.get('s:' + slug)) || mp.get('n:' + p.key) || null;
+    p._m = { team: pick(metaMaps.team), top: pick(metaMaps.top) };
+  }
+  return p._m;
+}
 function dexPass(p) {
-  return dex.filter === 'mira' ? !!findCrosshair(p) : dex.filter === 'teclado' ? !!kbCurrent(p) : true;
+  if (dex.filter === 'top') return !!metaOf(p).top;
+  if (dex.filter === 'times') return dex.team ? metaOf(p).team === dex.team : !!metaOf(p).team;
+  return true;
 }
 
 function dexAvatar(p) {
@@ -1928,7 +1940,8 @@ function dexCard(p, rank, onOpen) {
   const top = el('div', 'dcard-top');
   top.append(el('span', 'dcard-num', '#' + String(rank).padStart(3, '0')), starBtn(p));
   const ed = p.info && parseFloat(p.info.edpi);
-  const sub = ed ? 'eDPI ' + Math.round(ed) + (p.info.resolution ? ' · ' + p.info.resolution : '') : (p.info && p.info.resolution) || 'Ver perfil';
+  const team = metaOf(p).team;
+  const sub = team ? team + (ed ? ' · eDPI ' + Math.round(ed) : '') : ed ? 'eDPI ' + Math.round(ed) + (p.info.resolution ? ' · ' + p.info.resolution : '') : (p.info && p.info.resolution) || 'Ver perfil';
   const open = el('button', 'dcard-open'); open.type = 'button';
   open.append(dexAvatar(p), el('span', 'dcard-name', p.name), el('span', 'dcard-sub', sub));
   open.onclick = onOpen;
@@ -1978,13 +1991,15 @@ function dexRender() {
   const list = buildIndex().filter(p => (!q || p.key.includes(q)) && dexPass(p));
   list.sort((a, b) => {
     if (q) { const d = (b.key.startsWith(q) ? 1 : 0) - (a.key.startsWith(q) ? 1 : 0); if (d) return d; }
+    if (dex.filter === 'top') return metaOf(a).top - metaOf(b).top;
+    if (dex.filter === 'times' && !dex.team) { const d = metaOf(a).team.localeCompare(metaOf(b).team); if (d) return d; }
     if (dex.sort === 'full') { const d = dexScore(b) - dexScore(a); if (d) return d; }
     return a.name.localeCompare(b.name);
   });
   dex.list = list;
   const np = Math.max(1, Math.ceil(list.length / DEX_PER));
   dex.page = Math.min(dex.page, np);
-  dexCount.textContent = 'Jogadores encontrados (' + list.length.toLocaleString('pt-BR') + ')';
+  dexCount.textContent = (dex.filter === 'top' ? 'Top 20 (' : 'Jogadores encontrados (') + list.length.toLocaleString('pt-BR') + ')';
   dexGrid.innerHTML = '';
   const start = (dex.page - 1) * DEX_PER;
   list.slice(start, start + DEX_PER).forEach((p, i) => dexGrid.appendChild(dexCard(p, start + i + 1, () => dexSelect(p, true))));
@@ -2014,22 +2029,32 @@ function demoTab(t) {
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-dtab],[data-tab]'); if (b) demoTab(b.dataset.dtab || b.dataset.tab); });
 
-const DEX_CHIPS = [['all', 'Todos'], ['mira', 'Com mira'], ['teclado', 'Com teclado']];
+const DEX_CHIPS = [['all', 'Todos'], ['top', 'Top 20'], ['times', 'Times']];
 function paintChips() {
   dexChips.innerHTML = '';
   DEX_CHIPS.forEach(([k, label]) => {
     const b = el('button', 'chip', label); b.type = 'button';
     b.setAttribute('aria-pressed', String(dex.filter === k));
-    b.onclick = () => { dex.filter = k; dex.page = 1; paintChips(); dexRender(); };
+    b.onclick = () => { dex.filter = k; dex.page = 1; paintChips(); paintTeams(); dexRender(); };
     dexChips.appendChild(b);
   });
+}
+function paintTeams() {
+  const wrap = document.getElementById('dexTeamWrap'), sel = document.getElementById('dexTeam');
+  wrap.hidden = dex.filter !== 'times';
+  if (wrap.hidden || sel.options.length) return;
+  const counts = {};
+  (proMeta.players || []).forEach(e => { if (e.team) counts[e.team] = (counts[e.team] || 0) + 1; });
+  sel.appendChild(new Option('Todos os times', ''));
+  Object.keys(counts).sort((a, b) => a.localeCompare(b)).forEach(tm => sel.appendChild(new Option(tm + ' (' + counts[tm] + ')', tm)));
+  sel.onchange = () => { dex.team = sel.value; dex.page = 1; dexRender(); };
 }
 paintChips();
 dexSearch.addEventListener('input', () => { dex.q = dexSearch.value; dex.page = 1; dexClear.hidden = !dexSearch.value; dexRender(); });
 dexSearch.addEventListener('keydown', e => { if (e.key === 'Escape' && dexSearch.value) dexClear.click(); });
 dexClear.onclick = () => { dexSearch.value = ''; dex.q = ''; dex.page = 1; dexClear.hidden = true; dexRender(); dexSearch.focus(); };
 dexSort.onchange = () => { dex.sort = dexSort.value; dex.page = 1; dexRender(); };
-Promise.all([proSettingsReady, csLinksReady, xhReady]).then(() => { dex.ready = true; dexRender(); paintFav(); });
+Promise.all([proSettingsReady, csLinksReady, xhReady, proMetaReady]).then(() => { dex.ready = true; dexRender(); paintFav(); });
 
 route();
 startWorker();
