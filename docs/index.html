@@ -667,6 +667,26 @@
   .how { margin-top: 20px; }
   .how > summary { cursor: pointer; padding: 14px 18px; border: 2.5px solid var(--sd-border); border-radius: 16px; background: var(--md-surface-container-low); font-weight: 800; box-shadow: 0 3px 0 var(--sd-border); }
   .how[open] > summary { margin-bottom: 16px; }
+  /* Painel de detalhe do jogador */
+  .pd { display: flex; flex-direction: column; gap: 12px; }
+  .pd-banner { position: relative; display: grid; place-items: center; height: 170px; border: 2.5px solid var(--sd-border); border-radius: 16px; background: #BFE3F2; overflow: hidden; }
+  .pd-av { display: grid; place-items: center; width: 140px; height: 140px; margin-top: 30px; border-radius: 50%; background: #F25C54; color: #FBF3E4; font-size: 80px; font-weight: 800; text-shadow: 3px 3px 0 #1B1B1B; text-transform: uppercase; overflow: hidden; align-self: end; }
+  .pd-av.has-photo { border-radius: 0; width: 100%; height: 100%; margin: 0; background: none; }
+  .pd-av img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .pd-photo-tag { position: absolute; left: 8px; top: 8px; padding: 1px 10px; border: 2px solid var(--sd-border); border-radius: 999px; background: #fff; color: #1B1B1B; font-size: 11px; font-weight: 800; }
+  .pd-name { margin: 0; text-align: center; font-size: 30px; line-height: 36px; font-weight: 800; overflow-wrap: anywhere; }
+  .pd-sub { margin: 0; text-align: center; font-size: 13px; line-height: 18px; color: var(--md-on-surface-variant); }
+  .pd-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .pd-rows { display: flex; flex-direction: column; gap: 5px; margin: 0; }
+  .pd-row { display: flex; justify-content: space-between; gap: 12px; padding: 6px 14px; border-radius: 12px; background: var(--md-surface-container-high); font-size: 15px; }
+  .pd-row dt { font-weight: 500; } .pd-row dd { margin: 0; font-weight: 800; }
+  .pd-boxes { display: flex; flex-direction: column; gap: 10px; }
+  .pd-box { display: flex; flex-direction: column; gap: 8px; padding: 12px; border: 2.5px solid var(--sd-border); border-radius: 14px; background: var(--md-surface-container-low); }
+  .pd-box h4 { margin: 0; font-size: 15px; font-weight: 800; }
+  .pd-box .xh-prev { width: 100%; align-self: stretch; display: grid; place-items: center; height: 110px; border-radius: 10px; }
+  .pd-box .xh-code { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .pd-actions { display: flex; flex-direction: column; gap: 10px; }
+  .pd-actions .btn { width: 100%; justify-content: center; text-decoration: none; display: inline-flex; align-items: center; }
   @media (max-width: 600px) { .dex-head { flex-wrap: wrap; } .dex-head h2 { font-size: 19px; } .dex-chips .chip { height: 42px; padding: 0 14px; } .dex-detail { padding: 10px; } }
   @media (max-width: 1300px) {
     .dex { flex-direction: column; }
@@ -1555,24 +1575,20 @@ async function fetchProData(p) {
 }
 
 function renderSearchCard(p) {
-  const card = el('article', 'pro');
-  const nick = (p.name || '?').trim();
+  const card = el('article', 'pd');
+  const nick = (p.name || '?').trim(), info = p.info || {};
 
-  // Cabeçalho: avatar, nome, links e aviso
-  const head = el('div', 'pro-head');
-  const top = el('div', 'pro-top');
-  const av = el('div', 'pro-av', nick.charAt(0) || '?');
-  top.appendChild(av);
+  // Banner: foto da HLTV (ou inicial) sobre fundo azul claro
+  const banner = el('div', 'pd-banner');
+  const av = el('div', 'pd-av', nick.charAt(0) || '?');
+  const tag = el('span', 'pd-photo-tag', 'foto do perfil HLTV'); tag.hidden = true;
+  banner.append(av, tag);
+  const name = el('h3', 'pd-name', nick);
+  card.append(banner, name);
+  if (p.custom) card.appendChild(el('p', 'pd-sub', 'Não listado'));
 
-  const main = el('div', 'pro-main');
-  main.appendChild(el('h3', 'pro-name', nick));
-  if (p.custom) main.appendChild(el('span', 'pro-tag', 'Não listado'));
-
-  const links = el('div', 'pro-links');
-  main.appendChild(links);
-  top.appendChild(main);
-  head.appendChild(top);
-
+  // Links
+  const links = el('div', 'pd-links');
   const linkEls = proLinks(p).map(([label, href]) => {
     const a = el('a', 'pro-btn ' + label.toLowerCase());
     a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
@@ -1580,40 +1596,37 @@ function renderSearchCard(p) {
     links.appendChild(a);
     return a;
   });
+  card.appendChild(links);
 
+  // Linhas de informação (só o que existe para o jogador)
+  const rows = el('dl', 'pd-rows');
+  const row = (k, v) => { if (v) { const r = el('div', 'pd-row'); r.append(el('dt', '', k), el('dd', '', String(v))); rows.appendChild(r); } };
+  row('Resolução', info.resolution);
+  row('eDPI', info.edpi && Math.round(parseFloat(info.edpi)));
+  row('Sensibilidade', info.sensitivity);
+  row('DPI', info.dpi);
+  row('Hz', info.hz);
+  row('Zoom', info.zoom_sensitivity);
+  if (rows.children.length) card.appendChild(rows);
+  else card.appendChild(el('p', 'pd-sub', 'Ainda não há configurações de mouse e vídeo coletadas para este jogador.'));
+
+  const mira = el('div', 'pd-boxes');
+  card.appendChild(mira);
+  const actions = el('div', 'pd-actions');
+  card.appendChild(actions);
+
+  const cmds = [];
+  if (info.sensitivity) cmds.push('sensitivity ' + info.sensitivity);
+  const allBtn = el('button', 'btn btn-filled', 'Copiar tudo para o console');
+  allBtn.type = 'button'; allBtn.dataset.label = 'Copiar tudo para o console'; allBtn.hidden = true;
+  allBtn.onclick = () => copyValue(cmds.join('; '), allBtn);
+  actions.appendChild(allBtn);
   if (p.steamid) {
-    const cfg = el('a', 'pro-btn cfg');
+    const cfg = el('a', 'btn btn-outline', 'Abrir CFG no CyberShoke');
     cfg.href = CFG_URL(p.steamid); cfg.target = '_blank'; cfg.rel = 'noopener noreferrer';
     cfg.title = 'Abre a CFG deste jogador no CyberShoke (envia o SteamID para o CyberShoke)';
-    cfg.setAttribute('aria-label', 'Baixar CFG de ' + nick + ' do CyberShoke');
-    cfg.appendChild(el('span', '', 'CFG CyberShoke'));
-    links.appendChild(cfg);
+    actions.appendChild(cfg);
   }
-
-  const note = el('div', 'pro-note');
-  note.setAttribute('role', 'note');
-  const noteTxt = el('p');
-  const bold = t => { const b = document.createElement('b'); b.textContent = t; return b; };
-  noteTxt.append('Baixe a demo utilizando ', bold('FACEIT'), ' ou ', bold('HLTV'), ' para obter mira e viewmodel mais recente');
-  note.append(icon('info'), noteTxt);
-  head.appendChild(note);
-  card.appendChild(head);
-
-  // Mouse e vídeo: cartões lado a lado
-  const grid = el('div', 'pro-grid');
-  if (p.info) {
-    const box = el('section', 'pro-card');
-    box.appendChild(sectionTitle('mouse', 'Mouse'));
-    box.appendChild(statTiles(p.info, MOUSE_FIELDS));
-    grid.appendChild(box);
-  }
-  if (p.info && p.info.resolution) {
-    const vbox = el('section', 'pro-card');
-    vbox.appendChild(sectionTitle('monitor', 'Vídeo'));
-    vbox.appendChild(statTiles(p.info, VIDEO_FIELDS));
-    grid.appendChild(vbox);
-  }
-  if (grid.children.length) card.appendChild(grid);
 
   fetchProData(p).then(d => {
     if (!d || !card.isConnected) return;
@@ -1622,42 +1635,37 @@ function renderSearchCard(p) {
     if (d.xh && d.xh.code) {
       const xhd = decodeCrosshair(d.xh.code);
       if (xhd) {
-        const box = el('section', 'pro-card pro-xh');
-        box.appendChild(sectionTitle('aim', 'Mira'));
-        const row = el('div', 'xh-row');
+        const box = el('section', 'pd-box');
+        box.appendChild(el('h4', '', 'Mira'));
         const prev = el('div', 'xh-prev checker');
         const cv = document.createElement('canvas');
         cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
         paintCrosshair(cv, xhd, 140);
         prev.appendChild(cv);
-        const body = el('div', 'xh-body');
-        body.appendChild(el('pre', 'xh-code', d.xh.code));
-        const chips = el('div', 'xh-chips');
+        box.append(prev, el('pre', 'xh-code', d.xh.code));
+        const cb = el('button', 'btn btn-outline', 'Copiar');
+        cb.type = 'button'; cb.dataset.label = 'Copiar';
+        cb.onclick = () => copyValue(d.xh.code, cb);
+        box.appendChild(cb);
         if (d.xh.changed) {
           const when = new Date(d.xh.changed + 'T12:00:00').toLocaleDateString('pt-BR');
-          const dt = el('span', 'xh-chip tonal', 'Mira trocada em ' + when);
-          dt.title = 'Data em que este site viu o código da mira mudar.';
-          chips.appendChild(dt);
+          box.appendChild(el('span', 'pd-sub', 'Mira trocada em ' + when));
         }
-        if (chips.children.length) body.appendChild(chips);
-        const cb = el('button', 'btn btn-filled', 'Copiar mira');
-        cb.type = 'button'; cb.dataset.label = 'Copiar mira';
-        cb.onclick = () => copyValue(d.xh.code, cb);
-        body.appendChild(cb);
-        row.append(prev, body);
-        box.appendChild(row);
-        head.after(box);
+        mira.appendChild(box);
+        cmds.unshift('apply_crosshair_code ' + d.xh.code);
       }
     }
+    allBtn.hidden = !cmds.length;
     if (d.photo) {
       // foto da HLTV no lugar da inicial; se nao carregar, a inicial continua
       const img = new Image();
       img.alt = 'Foto de ' + nick;
       img.referrerPolicy = 'no-referrer';
-      img.onload = () => { av.textContent = ''; av.classList.add('has-photo'); av.appendChild(img); };
+      img.onload = () => { av.textContent = ''; av.classList.add('has-photo'); av.appendChild(img); tag.hidden = false; };
       img.src = d.photo;
     }
   });
+  allBtn.hidden = !cmds.length;
   return card;
 }
 
