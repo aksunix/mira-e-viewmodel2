@@ -1100,7 +1100,7 @@ function dexCard(p, rank, onOpen) {
   top.append(el('span', 'dcard-num', '#' + String(rank).padStart(3, '0')), starBtn(p));
   const ed = p.info && parseFloat(p.info.edpi);
   const team = metaOf(p).team;
-  const sub = team ? team + (ed ? ' · eDPI ' + Math.round(ed) : '') : ed ? 'eDPI ' + Math.round(ed) + (p.info.resolution ? ' · ' + p.info.resolution : '') : (p.info && p.info.resolution) || 'Ver perfil';
+  const sub = team || (p.info && p.info.resolution) || 'Ver perfil';
   const open = el('button', 'dcard-open'); open.type = 'button';
   open.append(dexAvatar(p), el('span', 'dcard-name', p.name), el('span', 'dcard-sub', sub));
   open.onclick = onOpen;

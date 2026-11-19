@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#F25C54">
-<meta name="description" content="SetupDex: mira, viewmodel, mouse e teclado dos jogadores de CS2. Leia demos no navegador e pesquise setups de profissionais.">
-<title>SetupDex – Mira, viewmodel e setups de CS2</title>
+<meta name="description" content="CS2 Pokédex: mira, viewmodel, mouse e teclado dos jogadores de CS2. Leia demos no navegador e pesquise setups de profissionais.">
+<title>CS2 Pokédex – Mira, viewmodel e setups de CS2</title>
 <script>try{var t=localStorage.getItem("cs2x:theme")||"light";document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="light"}</script>
 <link rel="stylesheet" href="fonts/fonts.css">
-<link rel="stylesheet" href="style.css?v=20261119-2">
+<link rel="stylesheet" href="style.css?v=20261119-5">
 <link rel="preload" href="cybershoke-links.json" as="fetch" crossorigin>
 <link rel="preload" href="crosshairs.json" as="fetch" crossorigin>
 <link rel="preload" href="pro-meta.json" as="fetch" crossorigin>
@@ -19,29 +19,45 @@
 
 <header class="appbar">
   <button type="button" class="icon-btn menu" id="menuBtn" aria-label="Abrir ou fechar o menu" aria-expanded="true" aria-controls="side"><svg class="i" data-i="menu"></svg></button>
-  <a class="brand" href="#/inicio" aria-label="SetupDex – ir para o início">
+  <a class="brand" href="#/inicio" aria-label="CS2 Pokédex – ir para o início">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 3A8.994 8.994 0 0013 3.06V1h-2v2.06A8.994 8.994 0 003.06 11H1v2h2.06A8.994 8.994 0 0011 20.94V23h2v-2.06A8.994 8.994 0 0020.94 13H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
-    <span><b>Setup<em>Dex</em></b><small>Mira, viewmodel e setups de CS2</small></span>
+    <span><b>CS2 <em>Pokédex</em></b><small>Mira, viewmodel e setups de CS2</small></span>
   </a>
   <div class="spacer"></div>
-  <div class="theme" role="group" aria-label="Tema">
-    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Tema claro"><svg class="i" data-i="sun"></svg></button>
-    <button type="button" class="icon-btn" data-theme-set="dark" aria-label="Tema escuro"><svg class="i" data-i="moon"></svg></button>
-  </div>
 </header>
 
 <div class="shell">
 <div class="scrim" id="scrim"></div>
 <nav class="side" id="side" aria-label="Principal">
-  <a href="#/inicio" data-page="inicio"><svg class="i" data-i="home"></svg>SetupDex</a>
-  <a href="#/demo" data-page="demo"><svg class="i" data-i="aim"></svg>Analisar Demo</a>
-  <div class="side-promo">
-    <div class="sp-ball" aria-hidden="true"></div>
-    <p>Descubra a mira, o mouse e o teclado dos melhores jogadores de CS2.</p>
+  <div class="side-brand">
+    <svg class="sb-aim" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="17"/><path d="M32 3v14M32 47v14M3 32h14M47 32h14"/><circle cx="32" cy="32" r="3.5" fill="currentColor"/></svg>
+    <svg class="sb-spark-y" viewBox="0 0 40 40" aria-hidden="true"><path fill="#FFE14D" stroke="#1B1B1B" stroke-width="3" stroke-linejoin="round" d="M20 2c1.5 9 8.5 16 18 18-9.5 2-16.5 9-18 18C18.5 29 11.5 22 2 20 11.5 18 18.5 11 20 2z"/></svg>
+    <svg class="sb-spark-g" viewBox="0 0 40 40" aria-hidden="true"><path fill="currentColor" d="M20 2c1.5 9 8.5 16 18 18-9.5 2-16.5 9-18 18C18.5 29 11.5 22 2 20 11.5 18 18.5 11 20 2z"/></svg>
+    <div class="sb-logo" role="img" aria-label="CS2 Pokédex"><b>CS2</b><i>Pokédex</i></div>
+    <div class="sb-tag">Explore • Analise • Compartilhe</div>
+  </div>
+  <a href="#/inicio" data-page="inicio"><svg class="i" data-i="aim"></svg>Pokédex<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+  <a href="#/demo" data-page="demo"><svg class="i" data-i="search"></svg>Analisar Demo</a>
+  <div class="theme side-theme" role="group" aria-label="Tema">
+    <button type="button" class="icon-btn" data-theme-set="light" aria-label="Tema claro"><svg class="i" data-i="sun"></svg></button>
+    <button type="button" class="icon-btn" data-theme-set="dark" aria-label="Tema escuro"><svg class="i" data-i="moon"></svg></button>
   </div>
   <p class="upd">Atualizado em <span id="upd"></span></p>
 </nav>
 
+<div class="col">
+  <div class="dex-bar" data-view="inicio">
+    <div class="search">
+      <div class="search-field">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="dexSearch" placeholder="Buscar jogador..." autocomplete="off" spellcheck="false" aria-label="Buscar jogador">
+        <button type="button" class="icon-btn" id="dexClear" aria-label="Limpar busca" hidden><svg class="i" data-i="close"></svg></button>
+      </div>
+    </div>
+    <div class="dex-chips" id="dexChips" role="group" aria-label="Filtros"></div>
+  </div>
+<div class="dex">
+  <div class="dex-main">
 <main id="main" tabindex="-1">
 <section data-view="demo" hidden>
 <div class="dtabs" role="tablist"><button type="button" class="on" data-dtab="demo">Demo</button><button type="button" data-dtab="fav">Favoritos</button><button type="button" data-dtab="hist">Histórico</button></div>
@@ -148,19 +164,7 @@
 </section>
 
 <section data-view="inicio">
-    <div class="dex-bar">
-      <div class="search">
-        <div class="search-field">
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-          <input type="text" id="dexSearch" placeholder="Buscar jogador..." autocomplete="off" spellcheck="false" aria-label="Buscar jogador">
-          <button type="button" class="icon-btn" id="dexClear" aria-label="Limpar busca" hidden><svg class="i" data-i="close"></svg></button>
-        </div>
-      </div>
-      <div class="dex-chips" id="dexChips" role="group" aria-label="Filtros"></div>
-    </div>
-  <div class="dex">
-    <div class="dex-main">
-      <div class="dex-head">
+    <div class="dex-head">
         <h2><svg class="i" data-i="aim" aria-hidden="true"></svg><span id="dexCount" aria-live="polite">Carregando jogadores…</span></h2>
         <label class="dex-sort" id="dexTeamWrap" hidden><span class="sr">Time</span><select id="dexTeam"></select></label>
         <label class="dex-sort"><span class="sr">Ordenar por</span><select id="dexSort"><option value="full">Mais completos</option><option value="az">A–Z</option></select></label>
@@ -173,12 +177,13 @@
 </section>
 </main>
 </div>
+</div>
 
 <div class="snackbar" id="snackbar" role="status" aria-live="polite"></div>
 
 
 <script src="crosshair.js?v=20261117-video1"></script>
 <script>window.SD_BUILD_DATE = '__BUILD_DATE__';</script>
-<script src="app.js?v=20261119-4"></script>
+<script src="app.js?v=20261119-5"></script>
 </body>
 </html>
