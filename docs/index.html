@@ -1649,7 +1649,7 @@ function renderSearchCard(p) {
         cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
         paintCrosshair(cv, xhd, 150, 4);
         prev.appendChild(cv);
-        box.append(prev, el('pre', 'xh-code', d.xh.code));
+        box.append(prev);
         const cb = el('button', 'btn btn-outline', 'Copiar');
         cb.type = 'button'; cb.dataset.label = 'Copiar';
         cb.onclick = () => copyValue(d.xh.code, cb);
