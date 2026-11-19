@@ -964,13 +964,6 @@ function renderKeyboardProfile(p) {
     card.appendChild(details);
   }
 
-  const foot = el('div', 'keyboard-foot');
-  const statusText = current.status || (current.confidence === 'admin' ? 'Atualização confirmada pelo ProSettings' : current.confidence === 'clip' ? 'Clipe compartilhado; não verificado' : 'Relato da comunidade');
-  foot.appendChild(el('span', 'keyboard-status' + (current.confidence === 'admin' ? '' : ' community'), statusText));
-  const byline = [current.author ? 'Comentário de ' + current.author : '', current.date || ''].filter(Boolean).join(' · ');
-  if (byline) foot.appendChild(el('p', 'keyboard-note', byline));
-  foot.appendChild(el('p', 'keyboard-note', 'Os marcadores são ilustrativos; os valores e o escopo são os dados informados no comentário.'));
-  card.appendChild(foot);
 
   if (keyboard.alternatives && keyboard.alternatives.length) {
     const details = el('details', 'keyboard-history');
