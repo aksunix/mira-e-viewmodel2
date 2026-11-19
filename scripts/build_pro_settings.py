@@ -23,6 +23,33 @@ def norm(name):
     return re.sub(r"\s+", "", name).lower()
 
 
+def url_slug(url):
+    m = re.search(r"/players/([^/#?]+)", url or "")
+    return m.group(1).lower() if m else ""
+
+
+def name_key(names, name, url):
+    """Chave de data["names"] para o jogador. Normalmente e o nick normalizado, mas dois jogadores
+    podem ter o mesmo nick (ex.: NiKo e niko-danish). Quem tem o slug igual ao nick fica com a chave
+    do nick; o outro vai para a chave do proprio slug e ganha um sufixo no nome exibido."""
+    k, slug = norm(name), url_slug(url)
+    cur = names.get(k)
+    if not cur or cur.get("url") == url:
+        if slug and slug != k and not cur and slug.startswith(k + "-"):
+            pass  # primeiro a chegar, mas nao e o dono "natural" do nick: segue para o slug abaixo
+        else:
+            return k, name
+    if slug == k and cur:
+        # o dono natural chegou depois: realoca o antigo para a chave do slug dele
+        old_slug = url_slug(cur.get("url"))
+        if old_slug and old_slug != k:
+            names[old_slug] = {**cur, "name": f"{cur.get('name', name)} ({old_slug[len(k):].strip('-') or old_slug})"}
+        names.pop(k, None)
+        return k, name
+    suffix = slug[len(k):].strip("-") if slug.startswith(k) else slug
+    return slug or k, f"{name} ({suffix})" if suffix else name
+
+
 class Blocked(Exception):
     pass
 
@@ -568,11 +595,14 @@ def main():
                 if url in prio_todo:
                     print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)} video={sorted(video)}")
                 if name:
-                    old_entry = data["names"].get(norm(name), {})
+                    nkey, name = name_key(data["names"], name, url)
+                    old_entry = data["names"].get(nkey, {})
+                    if old_entry.get("url") != url:  # nunca mistura dados de outra pagina (jogadores com o mesmo nick)
+                        old_entry = {}
                     entry = {**old_entry, "name": name, "url": url, **mouse, **video}
                     if keyboard:
                         entry["keyboard"] = keyboard
-                    data["names"][norm(name)] = entry
+                    data["names"][nkey] = entry
                     sid = None
                     if steam and steam_ok:
                         try:
@@ -584,7 +614,7 @@ def main():
                         old_player = data["players"].get(sid, {})
                         data["players"][sid] = {**old_player, **entry}
                     elif steam and name:
-                        data["pending"][url] = {"steam": steam, "name": norm(name)}
+                        data["pending"][url] = {"steam": steam, "name": nkey}
                 if not (mouse or video or keyboard) and no_mouse_logged < 5:
                     no_mouse_logged += 1
                     heads = [h.get_text(" ", strip=True) for h in BeautifulSoup(html, "html.parser").find_all(re.compile(r"^h[1-6]$"))][:15]
