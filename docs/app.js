@@ -713,30 +713,32 @@ async function fetchProData(p) {
   };
 }
 
-function renderSearchCard(p) {
+function renderSearchCard(p, rank) {
   const card = el('article', 'pd');
   const nick = (p.name || '?').trim(), info = p.info || {};
 
-  // Banner: foto da HLTV (ou inicial) sobre fundo azul claro
-  const banner = el('div', 'pd-banner');
+  // Capa coral com o número do jogador e a foto (ou inicial) redonda saindo da faixa
+  const cover = el('div', 'pd-cover');
+  const num = el('span', 'pd-num', rank ? '#' + String(rank).padStart(3, '0') : '');
+  const starWrap = el('span', 'pd-star'); starWrap.appendChild(starBtn(p));
+  cover.append(starWrap, num);
   const av = el('div', 'pd-av', nick.charAt(0) || '?');
-  const tag = el('span', 'pd-photo-tag', 'foto do perfil HLTV'); tag.hidden = true;
-  banner.append(av, tag);
+  const tag = el('p', 'pd-credit', 'Foto: HLTV'); tag.hidden = true;
   const name = el('h3', 'pd-name', nick);
-  card.append(banner, name);
+  card.append(cover, av, name);
   if (p.custom) card.appendChild(el('p', 'pd-sub', 'Não listado'));
   else if (metaOf(p).team) card.appendChild(el('p', 'pd-sub', metaOf(p).team));
 
   // Links
   const links = el('div', 'pd-links');
-  const linkEls = proLinks(p).map(([label, href]) => {
+  const linkEls = proLinks(p).slice().reverse().map(([label, href]) => {
     const a = el('a', 'pro-btn ' + label.toLowerCase());
     a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
-    a.append(icon('ext'), el('span', '', label));
+    a.append(el('span', '', label));
     links.appendChild(a);
     return a;
   });
-  card.appendChild(links);
+  card.append(links, tag);
 
   // Linhas de informação (só o que existe para o jogador)
   const rows = el('dl', 'pd-rows');
@@ -1116,9 +1118,7 @@ function dexSelect(p, byUser) {
   dexGrid.querySelectorAll('.dcard').forEach(c => c.classList.toggle('sel', c.dataset.key === p.key));
   detail.innerHTML = '';
   const rank = dex.list.findIndex(x => x.key === p.key) + 1;
-  const top = el('div', 'dex-detail-top');
-  top.append(el('span', 'dex-detail-num', rank ? '#' + String(rank).padStart(3, '0') : 'Perfil'), starBtn(p));
-  detail.append(top, renderSearchCard(p));
+  detail.append(renderSearchCard(p, rank));
   if (kbCurrent(p)) detail.appendChild(renderKeyboardProfile(p));
   detail.scrollTop = 0;
   if (byUser && matchMedia('(max-width: 1300px)').matches) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });

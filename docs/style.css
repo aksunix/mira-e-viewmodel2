@@ -665,12 +665,17 @@
   .how[open] > summary { margin-bottom: 16px; }
   /* Painel de detalhe do jogador */
   .pd { display: flex; flex-direction: column; gap: 12px; }
-  .pd-banner { position: relative; display: grid; place-items: center; height: 170px; border: 2.5px solid var(--sd-border); border-radius: 16px; background: #BFE3F2; overflow: hidden; }
-  .pd-av { display: grid; place-items: center; width: 140px; height: 140px; margin-top: 30px; border-radius: 50%; background: #F25C54; color: #FBF3E4; font-size: 80px; font-weight: 800; text-shadow: 3px 3px 0 #1B1B1B; text-transform: uppercase; overflow: hidden; align-self: end; }
-  /* Com foto: continua o círculo vermelho do banner (140px, cortado embaixo), com a foto recortada redonda dentro dele. */
-  .pd-av.has-photo { border: 6px solid #F25C54; background: #F25C54; }
+  /* Capa coral: o número fica na faixa e a foto redonda sai dela */
+  .pd-cover { position: relative; height: 104px; margin: -14px -14px 0; border-radius: 21px 21px 0 0; border-bottom: 3px solid var(--sd-border); background: #F25C54 radial-gradient(rgba(27,27,27,.22) 2px, transparent 2.4px) 0 0 / 12px 12px; }
+  .pd-num { position: absolute; right: 14px; top: 10px; font: 400 40px/1 "Titan One", "Inter", sans-serif; color: #FFE14D; -webkit-text-stroke: 5px #1B1B1B; paint-order: stroke fill; text-shadow: 3px 4px 0 #1B1B1B; }
+  .pd-star { position: absolute; left: 12px; top: 12px; }
+  .pd-star .star { width: 40px; height: 40px; border: 2.5px solid #1B1B1B; background: #FBF3E4; color: #1B1B1B; box-shadow: 0 3px 0 #1B1B1B; }
+  .pd-star .star:hover { background: #fff; }
+  .pd-star .star[aria-pressed="true"] { color: #E6A100; }
+  .pd-av { position: relative; z-index: 1; display: grid; place-items: center; width: 132px; height: 132px; margin: -62px auto 0; border: 4px solid #1B1B1B; border-radius: 50%; background: #D9F23A; color: #1B1B1B; box-shadow: 0 4px 0 #1B1B1B; font-size: 64px; font-weight: 800; text-transform: uppercase; overflow: hidden; }
+  .pd-av.has-photo { background: #3d4c55; }
   .pd-av img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; border-radius: 50%; }
-  .pd-photo-tag { position: absolute; left: 8px; top: 8px; padding: 1px 10px; border: 2px solid var(--sd-border); border-radius: 999px; background: #fff; color: #1B1B1B; font-size: 11px; font-weight: 800; }
+  .pd-credit { margin: 0; text-align: center; font-size: 11px; font-weight: 600; color: var(--md-on-surface-variant); }
   .pd-name { margin: 0; text-align: center; font-size: 30px; line-height: 36px; font-weight: 800; overflow-wrap: anywhere; }
   .pd-sub { margin: 0; text-align: center; font-size: 13px; line-height: 18px; color: var(--md-on-surface-variant); }
   .pd-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
@@ -751,3 +756,13 @@
     .dex-bar .search { flex-basis: 100%; max-width: none; }
     .dex-chips .chip { height: 42px; padding: 0 16px; font-size: 14px; }
   }
+
+  /* FACEIT / HLTV: dois botões iguais lado a lado, nas cores dos sites */
+  .pd-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pd-links .pro-btn { height: 44px; padding: 0 10px; border: 2.5px solid var(--sd-border); border-radius: 14px; font-size: 14px; font-weight: 800; letter-spacing: .2px; box-shadow: 0 3px 0 var(--sd-border); transition: transform .1s, box-shadow .1s; }
+  .pd-links .pro-btn:hover { filter: none; transform: translateY(-1px); box-shadow: 0 4px 0 var(--sd-border); }
+  .pd-links .pro-btn.faceit { background: #FF5500; color: #fff; }
+  .pd-links .pro-btn.hltv { background: #2B6EA4; color: #fff; }
+  .dex-detail { --pad: 14px; }
+  .pd-cover { margin: calc(var(--pad) * -1) calc(var(--pad) * -1) 0; }
+  @media (max-width: 600px) { .dex-detail { --pad: 10px; } }
