@@ -342,14 +342,21 @@ const MOUSE_FIELDS = [
   ['hz', 'Hz'],
 ];
 
-const VIDEO_FIELDS = [['resolution', 'Resolução'], ['screenHeight', 'cl_crosshair_screen_height']];
+const VIDEO_FIELDS = [['resolution', 'Resolução']];
 const DEMO_RESOLUTIONS = {
+  600: '800x600',
   720: '1280x720',
   768: '1024x768',
+  800: '1280x800',
+  864: '1152x864',
   900: '1600x900',
   960: '1280x960',
   1024: '1280x1024',
+  1050: '1680x1050',
   1080: '1920x1080',
+  1200: '1600x1200',
+  1440: '2560x1440',
+  2160: '3840x2160',
 };
 
 const PRO_LABELS = { zoom_sensitivity: 'Zoom' };
@@ -402,12 +409,10 @@ function renderPlayer(p) {
   const keyboard = proInfo.keyboard || null;
   const keyboardCurrent = keyboard && keyboard.current;
   const hasKeyboard = !!(keyboardCurrent && (keyboardCurrent.actuation || keyboardCurrent.rapid_trigger || keyboardCurrent.rapid_trigger_disabled || (keyboardCurrent.groups && keyboardCurrent.groups.length)));
+  // A resolução vem do cl_crosshair_screen_height (não é exibido): 960 -> 1280x960, 1080 -> 1920x1080...
   const videoInfo = screenHeight !== null
-    ? { resolution: DEMO_RESOLUTIONS[screenHeight] || 'Não mapeada', screenHeight: screenHeight + ' px' }
-    : (mouse && mouse.resolution ? { resolution: mouse.resolution, screenHeight: '' } : null);
-  const videoNote = screenHeight !== null
-    ? 'Estimativa pela altura de referência da mira. Isso não confirma a resolução ativa do jogador.'
-    : 'Resolução obtida do perfil do jogador; não foi identificada na demo.';
+    ? { resolution: DEMO_RESOLUTIONS[screenHeight] || (mouse && mouse.resolution) || (screenHeight + 'p') }
+    : (mouse && mouse.resolution ? { resolution: mouse.resolution } : null);
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
   const hasVideo = !!videoInfo;
   const hasCfg = !!p.steamid;
@@ -518,8 +523,7 @@ function renderPlayer(p) {
     secs.video = el('section', 'back-sec');
     secs.video.append(
       sectionTitle('monitor', 'Vídeo'),
-      statTiles(videoInfo, VIDEO_FIELDS, 'compact'),
-      el('p', 'video-note', videoNote)
+      statTiles(videoInfo, VIDEO_FIELDS, 'compact')
     );
     body.appendChild(secs.video);
   }
@@ -535,11 +539,6 @@ function renderPlayer(p) {
       rapid_trigger_deactivate: current.rapid_trigger_deactivate ? current.rapid_trigger_deactivate + ' mm' : ''
     };
     secs.keyboard.append(sectionTitle('keyboard', 'Teclado'), statTiles(keyboardInfo, KEYBOARD_FIELDS, 'compact'));
-    const noteParts = [current.status || 'Relato da comunidade'];
-    if (current.author) noteParts.push('por ' + current.author);
-    if (current.date) noteParts.push(current.date);
-    if (current.support_count > 1) noteParts.push(current.support_count + ' relatos semelhantes');
-    secs.keyboard.appendChild(el('p', 'keyboard-note', noteParts.join(' · ')));
     if (Array.isArray(current.groups) && current.groups.length > 1) {
       const groupText = current.groups.map(group => {
         const parts = [];
