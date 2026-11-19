@@ -617,11 +617,14 @@
   /* SetupDex: catálogo de jogadores, painel de detalhe e abas da demo */
   .dex { display: flex; gap: 20px; align-items: flex-start; }
   .dex-main { flex: 1; min-width: 0; }
-  .dex-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 18px; }
-  .dex-bar .search { flex: 1 1 260px; max-width: none; margin: 0; }
-  .dex-bar .search-field { height: 56px; }
-  .dex-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-  .dex-chips .chip { height: 46px; padding: 0 18px; border-radius: 999px; font-size: 15px; font-weight: 700; box-shadow: 0 3px 0 var(--sd-border); }
+  .dex-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .dex-bar .search { flex: 0 1 300px; min-width: 200px; max-width: none; margin: 0; }
+  [data-view="inicio"] .dex-bar .search { margin: 0; }
+  .dex-bar .search-field, [data-view="inicio"] .dex-bar .search-field { height: 44px; padding: 0 8px 0 14px; border-radius: 22px; gap: 10px; border-width: 2.5px; box-shadow: 0 3px 0 var(--sd-border); }
+  .dex-bar .search-field svg { width: 20px; height: 20px; }
+  .dex-bar .search-field input, [data-view="inicio"] .dex-bar .search-field input { font: 500 15px "Inter", system-ui, sans-serif; }
+  .dex-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .dex-chips .chip { height: 38px; padding: 0 14px; border-radius: 999px; font-size: 14px; font-weight: 700; box-shadow: 0 3px 0 var(--sd-border); }
   .dex-chips .chip[aria-pressed="true"] { background: var(--sd-lime); color: #1B1B1B; }
   .dex-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
   .dex-head h2 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 22px; line-height: 28px; font-weight: 800; }
@@ -651,7 +654,9 @@
   .dex-pages button:disabled { opacity: .4; cursor: default; }
   .dex-pages .gap { align-self: center; font-weight: 800; }
   .dex-empty { margin: 0; padding: 28px 20px; text-align: center; color: var(--md-on-surface-variant); border: 2.5px dashed var(--sd-border); border-radius: 20px; }
-  .dex-detail { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 12px; width: 400px; flex: none; max-height: calc(100vh - 32px); overflow-y: auto; padding: 14px; border: 3px solid var(--sd-border); border-radius: 24px; background: var(--md-surface-container); box-shadow: 0 4px 0 var(--sd-border); }
+  .dex-detail { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 12px; width: 400px; flex: none; max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow-y: auto; overscroll-behavior: contain; padding: 14px; border: 3px solid var(--sd-border); border-radius: 24px; background: var(--md-surface-container); box-shadow: 0 4px 0 var(--sd-border); }
+  /* Filhos nunca encolhem: sem isso o flex espreme blocos com overflow:hidden (teclado) e o fim do painel não rola. */
+  .dex-detail > * { flex-shrink: 0; }
   .dex-detail-top { display: flex; align-items: center; justify-content: space-between; padding-left: 4px; }
   .dex-detail-num { font-size: 24px; font-weight: 800; }
   .dex-detail .pro { gap: 12px; }
@@ -671,8 +676,9 @@
   .pd { display: flex; flex-direction: column; gap: 12px; }
   .pd-banner { position: relative; display: grid; place-items: center; height: 170px; border: 2.5px solid var(--sd-border); border-radius: 16px; background: #BFE3F2; overflow: hidden; }
   .pd-av { display: grid; place-items: center; width: 140px; height: 140px; margin-top: 30px; border-radius: 50%; background: #F25C54; color: #FBF3E4; font-size: 80px; font-weight: 800; text-shadow: 3px 3px 0 #1B1B1B; text-transform: uppercase; overflow: hidden; align-self: end; }
-  .pd-av.has-photo { border-radius: 0; width: 100%; height: 100%; margin: 0; background: none; }
-  .pd-av img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  /* Com foto: continua o círculo vermelho do banner (140px, cortado embaixo), com a foto recortada redonda dentro dele. */
+  .pd-av.has-photo { border: 6px solid #F25C54; background: #F25C54; }
+  .pd-av img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; border-radius: 50%; }
   .pd-photo-tag { position: absolute; left: 8px; top: 8px; padding: 1px 10px; border: 2px solid var(--sd-border); border-radius: 999px; background: #fff; color: #1B1B1B; font-size: 11px; font-weight: 800; }
   .pd-name { margin: 0; text-align: center; font-size: 30px; line-height: 36px; font-weight: 800; overflow-wrap: anywhere; }
   .pd-sub { margin: 0; text-align: center; font-size: 13px; line-height: 18px; color: var(--md-on-surface-variant); }
@@ -687,7 +693,7 @@
   .pd-box .xh-code { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
   .pd-actions { display: flex; flex-direction: column; gap: 10px; }
   .pd-actions .btn { width: 100%; justify-content: center; text-decoration: none; display: inline-flex; align-items: center; }
-  @media (max-width: 600px) { .dex-head { flex-wrap: wrap; } .dex-head h2 { font-size: 19px; } .dex-chips .chip { height: 42px; padding: 0 14px; } .dex-detail { padding: 10px; } }
+  @media (max-width: 600px) { .dex-head { flex-wrap: wrap; } .dex-head h2 { font-size: 19px; } .dex-bar .search { flex: 1 1 100%; } .dex-chips .chip { height: 36px; padding: 0 12px; font-size: 13px; } .dex-detail { padding: 10px; } }
   @media (max-width: 1300px) {
     .dex { flex-direction: column; }
     .dex-main { width: 100%; }
@@ -828,18 +834,18 @@
 </section>
 
 <section data-view="inicio">
+    <div class="dex-bar">
+      <div class="search">
+        <div class="search-field">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="dexSearch" placeholder="Buscar jogador..." autocomplete="off" spellcheck="false" aria-label="Buscar jogador">
+          <button type="button" class="icon-btn" id="dexClear" aria-label="Limpar busca" hidden><svg class="i" data-i="close"></svg></button>
+        </div>
+      </div>
+      <div class="dex-chips" id="dexChips" role="group" aria-label="Filtros"></div>
+    </div>
   <div class="dex">
     <div class="dex-main">
-      <div class="dex-bar">
-        <div class="search">
-          <div class="search-field">
-            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" id="dexSearch" placeholder="Buscar jogador..." autocomplete="off" spellcheck="false" aria-label="Buscar jogador">
-            <button type="button" class="icon-btn" id="dexClear" aria-label="Limpar busca" hidden><svg class="i" data-i="close"></svg></button>
-          </div>
-        </div>
-        <div class="dex-chips" id="dexChips" role="group" aria-label="Filtros"></div>
-      </div>
       <div class="dex-head">
         <h2><svg class="i" data-i="aim" aria-hidden="true"></svg><span id="dexCount">Carregando jogadores…</span></h2>
         <label class="dex-sort" id="dexTeamWrap" hidden><span class="sr">Time</span><select id="dexTeam"></select></label>
@@ -1646,7 +1652,7 @@ function renderSearchCard(p) {
         cv.setAttribute('role', 'img'); cv.setAttribute('aria-label', 'Prévia da mira de ' + nick);
         paintCrosshair(cv, xhd, 150, 4);
         prev.appendChild(cv);
-        box.append(prev, el('pre', 'xh-code', d.xh.code));
+        box.append(prev);
         const cb = el('button', 'btn btn-outline', 'Copiar');
         cb.type = 'button'; cb.dataset.label = 'Copiar';
         cb.onclick = () => copyValue(d.xh.code, cb);
