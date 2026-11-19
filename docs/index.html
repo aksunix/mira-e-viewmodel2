@@ -344,7 +344,7 @@
   .results-head p { margin: 0; color: var(--md-on-surface-variant); }
 
   /* Cards (Material 3): midia, titulo, texto de apoio e acoes */
-  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 16px; align-items: stretch; }
+  #cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 16px; align-items: start; }
   .card {
     container: card / inline-size;
     display: flex; flex-direction: column; overflow: hidden;
@@ -380,6 +380,9 @@
   .flip.flipped .flip-inner { transform: rotateY(180deg); }
   .face { grid-area: 1 / 1; -webkit-backface-visibility: hidden; backface-visibility: hidden; min-width: 0; }
   .face.back { transform: rotateY(180deg); }
+  /* O cartão tem a altura da face visível (sem vão vazio entre o botão Copiar e o rodapé) */
+  .flip-inner { align-items: start; }
+  .flip:not(.flipped) .face.back, .flip.flipped .face.front { max-height: 0; overflow: hidden; }
   .face .card-head { padding-right: 8px; }
   .face .card-title { flex: 1; }
   /* Botão de ícone tonal M3 (voltar, no verso) */
