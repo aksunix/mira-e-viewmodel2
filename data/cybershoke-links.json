@@ -1194,6 +1194,7 @@
   "letshe": "2026-11-13",
   "letw1k3": "2026-11-11",
   "levi": "2026-11-11",
+  "levi-brazilian": "2026-11-19",
   "levius": "2026-11-11",
   "levy": "2026-11-11",
   "lewis": "2026-11-11",
@@ -1235,7 +1236,9 @@
   "luckerrr": "2026-11-11",
   "lucks": "2026-11-11",
   "lucky": "2026-11-11",
+  "lucky-danish": "2026-11-19",
   "lugia": "2026-11-11",
+  "lugsen": "2026-11-19",
   "luke12": "2026-11-11",
   "luken": "2026-11-11",
   "lukxo": "2026-11-11",
@@ -1497,6 +1500,7 @@
   "nifty": "2026-11-11",
   "nightz": "2026-11-11",
   "niko": "2026-11-11",
+  "niko-danish": "2026-11-19",
   "nikodeon": "2026-11-11",
   "nikof": "2026-11-11",
   "nilo": "2026-11-11",
@@ -2417,6 +2421,7 @@
   "zemie": "2026-11-12",
   "zer0": "2026-11-12",
   "zero": "2026-11-12",
+  "zero-chinese": "2026-11-19",
   "zerona": "2026-11-12",
   "zerrofix": "2026-11-12",
   "zesbeew": "2026-11-12",
@@ -10239,6 +10244,15 @@
    },
    "name": "Levi"
   },
+  "levi-brazilian": {
+   "faceit": {
+    "elo": 3319,
+    "name": "levi-x-",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/levi-x-"
+   },
+   "name": "levi (brazilian)"
+  },
   "levy": {
    "faceit": {
     "elo": 1203,
@@ -10467,6 +10481,28 @@
     "url": "https://www.hltv.org/stats/players/13497/lucky"
    },
    "name": "Lucky"
+  },
+  "lucky-danish": {
+   "faceit": {
+    "elo": 3104,
+    "name": "Luckyv1-",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/Luckyv1-"
+   },
+   "hltv": {
+    "name": "lucky",
+    "url": "https://www.hltv.org/stats/players/13843/lucky"
+   },
+   "name": "Lucky (danish)"
+  },
+  "lugsen": {
+   "faceit": {
+    "elo": 3105,
+    "name": "lugseN",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/lugseN"
+   },
+   "name": "lugseN"
   },
   "luken": {
    "faceit": {
@@ -12339,6 +12375,19 @@
     "url": "https://www.hltv.org/stats/players/3741/niko"
    },
    "name": "NiKo"
+  },
+  "niko-danish": {
+   "faceit": {
+    "elo": 2979,
+    "name": "niko-",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/niko-"
+   },
+   "hltv": {
+    "name": "niko",
+    "url": "https://www.hltv.org/stats/players/10264/niko"
+   },
+   "name": "niko (danish)"
   },
   "nikodeon": {
    "faceit": {
@@ -18337,6 +18386,19 @@
     "url": "https://www.hltv.org/stats/players/24857/zero"
    },
    "name": "Zero"
+  },
+  "zero-chinese": {
+   "faceit": {
+    "elo": 2448,
+    "name": "Zero565656",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/Zero565656"
+   },
+   "hltv": {
+    "name": "zero",
+    "url": "https://www.hltv.org/stats/players/24857/zero"
+   },
+   "name": "Zero (chinese)"
   },
   "zerrofix": {
    "faceit": {
