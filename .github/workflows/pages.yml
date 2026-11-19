@@ -55,6 +55,18 @@ jobs:
         run: |
           if [ -f data/crosshairs.json ]; then cp data/crosshairs.json docs/crosshairs.json; else echo '{"players":{}}' > docs/crosshairs.json; fi
 
+      - name: Minificar JSON
+        run: |
+          python3 - <<'PY'
+          import json
+          for f in ("pro-settings", "cybershoke-links", "crosshairs", "pro-meta"):
+              p = f"docs/{f}.json"
+              with open(p, encoding="utf-8") as fh:
+                  j = json.load(fh)
+              with open(p, "w", encoding="utf-8") as fh:
+                  json.dump(j, fh, ensure_ascii=False, separators=(",", ":"))
+          PY
+
       - name: Gravar data da atualização
         run: sed -i "s#__BUILD_DATE__#$(TZ=America/Sao_Paulo date +%d/%m/%Y)#" docs/index.html
 

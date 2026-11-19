@@ -483,8 +483,29 @@ def parse_keyboard_comments(soup, profile_url):
         "scanned_at": dt.date.today().isoformat(),
     }
 
+VIEWMODEL_FIELDS = {"fov": "fov", "offset x": "offset_x", "offset y": "offset_y", "offset z": "offset_z", "bob": "bob"}
+
+
+def parse_viewmodel(soup):
+    """Le a secao "Viewmodel" do perfil (FOV, Offset X/Y/Z, Bob). Dict vazio se nao houver."""
+    out = {}
+    for h in soup.find_all(re.compile(r"^h[1-6]$")):
+        if h.get_text(" ", strip=True).lower() != "viewmodel":
+            continue
+        table = h.find_next("table")
+        if not table:
+            continue
+        for tr in table.find_all("tr"):
+            cells = [c.get_text(" ", strip=True) for c in tr.find_all(["th", "td"])]
+            if len(cells) >= 2 and cells[0].lower() in VIEWMODEL_FIELDS and cells[1]:
+                out[VIEWMODEL_FIELDS[cells[0].lower()]] = cells[1]
+        if "fov" in out:
+            break
+    return out if "fov" in out else {}
+
+
 def parse_player(html, profile_url=""):
-    """Devolve (nome, steam_link, mouse_dict, video_dict). Dicts vazios se nao houver a tabela."""
+    """Devolve (nome, steam_link, mouse_dict, video_dict, keyboard, viewmodel). Dicts vazios se nao houver a tabela."""
     soup = BeautifulSoup(html, "html.parser")
     h1 = soup.find("h1")
     name = h1.get_text(" ", strip=True) if h1 else ""
@@ -511,7 +532,8 @@ def parse_player(html, profile_url=""):
             video["resolution"] = cells[1]
             break
     keyboard = parse_keyboard_comments(soup, profile_url) if profile_url else None
-    return name, steam, mouse, video, keyboard
+    viewmodel = parse_viewmodel(soup)
+    return name, steam, mouse, video, keyboard, viewmodel
 
 
 def steam_id64(link, delay):
@@ -538,7 +560,7 @@ def main():
     ap.add_argument("--refresh-days", type=int, default=60)
     a = ap.parse_args()
 
-    data = {"players": {}, "names": {}, "seen": {}, "pending": {}, "video_done": {}, "keyboard_done": {}}
+    data = {"players": {}, "names": {}, "seen": {}, "pending": {}, "video_done": {}, "keyboard_done": {}, "viewmodel_done": {}}
     if os.path.exists(a.out):
         with open(a.out, encoding="utf-8") as f:
             data.update(json.load(f))
@@ -547,6 +569,8 @@ def main():
     def stale(url):
         d = data["seen"].get(url)
         if url not in data["video_done"] or url not in data.get("keyboard_done", {}):
+            return True
+        if url not in data.get("viewmodel_done", {}):
             return True
         # Reprocessa páginas lidas por versões antigas do parser de comentários.
         if data.get("keyboard_parser_version", {}).get(url) != KEYBOARD_PARSER_VERSION:
@@ -591,7 +615,7 @@ def main():
         for i, url in enumerate(todo, 1):
             try:
                 html = get(url, a.delay)
-                name, steam, mouse, video, keyboard = parse_player(html, url)
+                name, steam, mouse, video, keyboard, viewmodel = parse_player(html, url)
                 if url in prio_todo:
                     print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)} video={sorted(video)}")
                 if name:
@@ -602,6 +626,8 @@ def main():
                     entry = {**old_entry, "name": name, "url": url, **mouse, **video}
                     if keyboard:
                         entry["keyboard"] = keyboard
+                    if viewmodel:
+                        entry["viewmodel"] = viewmodel
                     data["names"][nkey] = entry
                     sid = None
                     if steam and steam_ok:
@@ -615,13 +641,14 @@ def main():
                         data["players"][sid] = {**old_player, **entry}
                     elif steam and name:
                         data["pending"][url] = {"steam": steam, "name": nkey}
-                if not (mouse or video or keyboard) and no_mouse_logged < 5:
+                if not (mouse or video or keyboard or viewmodel) and no_mouse_logged < 5:
                     no_mouse_logged += 1
                     heads = [h.get_text(" ", strip=True) for h in BeautifulSoup(html, "html.parser").find_all(re.compile(r"^h[1-6]$"))][:15]
                     print(f"sem tabela Mouse/Video/Teclado em {url}; titulos encontrados: {heads}")
                 data["seen"][url] = today.isoformat()
                 data["video_done"][url] = today.isoformat()
                 data.setdefault("keyboard_done", {})[url] = today.isoformat()
+                data.setdefault("viewmodel_done", {})[url] = today.isoformat()
                 data.setdefault("keyboard_parser_version", {})[url] = KEYBOARD_PARSER_VERSION
             except requests.RequestException as e:
                 print("erro (pulando):", url, e)
