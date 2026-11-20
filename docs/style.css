@@ -766,3 +766,6 @@
   .dex-detail { --pad: 14px; }
   .pd-cover { margin: calc(var(--pad) * -1) calc(var(--pad) * -1) 0; }
   @media (max-width: 600px) { .dex-detail { --pad: 10px; } }
+
+  .pd-close { position: absolute; left: 60px; top: 12px; display: grid; place-items: center; width: 40px; height: 40px; border: 2.5px solid #1B1B1B; border-radius: 50%; background: #FBF3E4; color: #1B1B1B; font: 800 16px/1 "Inter", system-ui, sans-serif; box-shadow: 0 3px 0 #1B1B1B; cursor: pointer; }
+  .pd-close:hover { background: #fff; }
