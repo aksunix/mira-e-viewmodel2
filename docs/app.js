@@ -1020,7 +1020,7 @@ const dexGrid = document.getElementById('dexGrid'), dexPages = document.getEleme
 const dexSort = document.getElementById('dexSort'), dexChips = document.getElementById('dexChips');
 const detail = document.getElementById('searchResult'), favGrid = document.getElementById('favGrid');
 const DEX_PER = 12;
-const dex = { team: '', q: '', filter: 'all', sort: 'full', page: 1, list: [], sel: null, ready: false };
+const dex = { team: '', q: '', filter: 'all', sort: 'full', page: 1, list: [], sel: null, none: true, ready: false };
 
 function favKeys() { return LS.get('favorites', []); }
 function isFav(k) { return favKeys().includes(k); }
@@ -1183,10 +1183,9 @@ function dexRender() {
     dexGrid.appendChild(el('p', 'dex-empty', dex.filter === 'fav' && !dex.q ? 'Nenhum favorito ainda. Toque na estrela de um jogador para guardá-lo aqui.' : 'Nenhum jogador encontrado. Confira a grafia do nick.'));
     detail.replaceChildren(el('p', 'dex-empty', 'Selecione um jogador para ver mira, mouse e teclado.'));
   } else if (dex.sel && !list.some(x => x.key === dex.sel.key)) {
-    dex.sel = null; dex.none = false;
-    dexSelect(list[0], false);
-  } else if (!dex.sel && !dex.none) {
-    dexSelect(list[0], false);
+    dexDeselect();
+  } else if (!dex.sel) {
+    detail.replaceChildren(el('p', 'dex-empty', 'Selecione um jogador para ver mira, mouse e teclado.'));
   }
 }
 
