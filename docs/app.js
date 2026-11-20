@@ -1080,8 +1080,8 @@ function metaOf(p) {
 // Top 20 do HLTV (ranking oficial de 2025, o mais recente publicado; o de 2026 sai em dezembro)
 const HLTV_TOP20 = ['ZywOo', 'donk', 'ropz', 'm0NESY', 'sh1ro', 'molodoy', 'flameZ', 'frozen', 'KSCERATO', 'Spinx', 'Twistzz', 'mezii', 'Senzu', 'XANTARES', 'YEKINDAR', 'xertioN', 'torzsi', 'NiKo', 'iM', 'b1t'];
 const hltvRank = new Map(HLTV_TOP20.map((n, i) => [normName(n), i + 1]));
-// Número do card: no Top 20 é o lugar do jogador no ranking da HLTV; nos outros filtros é a posição na lista
-function dexNum(p, pos) { return dex.filter === 'top' ? (hltvRank.get(p.key) || pos) : pos; }
+// Número do card = lugar do jogador no ranking da HLTV (0 = fora do Top 20, sem número)
+function dexNum(p) { return hltvRank.get(p.key) || 0; }
 function dexPass(p) {
   if (dex.filter === 'top') return hltvRank.has(p.key);
   if (dex.filter === 'fav') return isFav(p.key);
@@ -1106,7 +1106,7 @@ function dexCard(p, rank, onOpen) {
   const card = el('article', 'dcard' + (dex.sel && dex.sel.key === p.key ? ' sel' : ''));
   card.dataset.key = p.key;
   const top = el('div', 'dcard-top');
-  top.append(el('span', 'dcard-num', '#' + String(rank).padStart(3, '0')), starBtn(p));
+  top.append(el('span', 'dcard-num', rank ? '#' + String(rank).padStart(3, '0') : ''), starBtn(p));
   const ed = p.info && parseFloat(p.info.edpi);
   const team = metaOf(p).team;
   const sub = team || (p.info && p.info.resolution) || 'Ver perfil';
@@ -1132,7 +1132,7 @@ function dexSelect(p, byUser) {
   dex.sel = p; dex.none = false;
   dexGrid.querySelectorAll('.dcard').forEach(c => c.classList.toggle('sel', c.dataset.key === p.key));
   detail.innerHTML = '';
-  const rank = dexNum(p, dex.list.findIndex(x => x.key === p.key) + 1);
+  const rank = dexNum(p);
   detail.append(renderSearchCard(p, rank));
   if (kbCurrent(p)) detail.appendChild(renderKeyboardProfile(p));
   detail.scrollTop = 0;
@@ -1143,7 +1143,7 @@ function dexSelect(p, byUser) {
 function dexMore() {
   const have = dexGrid.querySelectorAll('.dcard').length;
   const end = Math.min(dex.list.length, have + DEX_PER);
-  for (let i = have; i < end; i++) { const p = dex.list[i]; dexGrid.appendChild(dexCard(p, dexNum(p, i + 1), () => dexPick(p))); }
+  for (let i = have; i < end; i++) { const p = dex.list[i]; dexGrid.appendChild(dexCard(p, dexNum(p), () => dexPick(p))); }
   dex.shown = end;
   dexPaintEnd();
 }
@@ -1165,7 +1165,7 @@ function dexRender() {
   const list = buildIndex().filter(p => (!q || p.key.includes(q)) && dexPass(p));
   list.sort((a, b) => {
     if (q) { const d = (b.key.startsWith(q) ? 1 : 0) - (a.key.startsWith(q) ? 1 : 0); if (d) return d; }
-    if (dex.filter === 'top') return hltvRank.get(a.key) - hltvRank.get(b.key);
+    if (dex.filter === 'top' || dex.sort === 'full') { const d = (hltvRank.get(a.key) || 1e9) - (hltvRank.get(b.key) || 1e9); if (d) return d; }
     if (dex.filter === 'times' && !dex.team) { const d = metaOf(a).team.localeCompare(metaOf(b).team); if (d) return d; }
     if (dex.sort === 'full') { const d = dexScore(b) - dexScore(a); if (d) return d; }
     return a.name.localeCompare(b.name);
@@ -1180,7 +1180,7 @@ function dexRender() {
   if (reset && window.scrollY > 0) window.scrollTo({ top: 0 });
   dex.page = 0; dex.shown = 0;
   const first = Math.min(list.length, keep);
-  list.slice(0, first).forEach((p, i) => dexGrid.appendChild(dexCard(p, dexNum(p, i + 1), () => dexPick(p))));
+  list.slice(0, first).forEach((p, i) => dexGrid.appendChild(dexCard(p, dexNum(p), () => dexPick(p))));
   dex.shown = first;
   dexPaintEnd();
   if (!list.length) {
@@ -1200,7 +1200,7 @@ function paintFav() {
   favGrid.innerHTML = '';
   const idx = buildIndex(), l = favKeys().map(k => idx.find(p => p.key === k)).filter(Boolean);
   if (!l.length) { favGrid.appendChild(el('p', 'dex-empty', 'Nenhum favorito ainda. Toque na estrela de um jogador no SetupDex para guardá-lo aqui.')); return; }
-  l.forEach((p, i) => favGrid.appendChild(dexCard(p, i + 1, () => { location.hash = '#/inicio'; dexSelect(p, true); })));
+  l.forEach((p, i) => favGrid.appendChild(dexCard(p, dexNum(p), () => { location.hash = '#/inicio'; dexSelect(p, true); })));
 }
 function demoTab(t) {
   document.querySelectorAll('[data-dtab]').forEach(b => b.classList.toggle('on', b.dataset.dtab === t));

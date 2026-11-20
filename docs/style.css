@@ -769,3 +769,12 @@
 
   .pd-close { position: absolute; left: 60px; top: 12px; display: grid; place-items: center; width: 40px; height: 40px; border: 2.5px solid #1B1B1B; border-radius: 50%; background: #FBF3E4; color: #1B1B1B; font: 800 16px/1 "Inter", system-ui, sans-serif; box-shadow: 0 3px 0 #1B1B1B; cursor: pointer; }
   .pd-close:hover { background: #fff; }
+
+  /* Barra de rolagem: fina, coral, com contorno (Chrome/Edge/Safari); Firefox usa cor + largura fina */
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #F25C54; border: 2.5px solid var(--sd-border); border-radius: 999px; min-height: 40px; min-width: 40px; }
+  ::-webkit-scrollbar-thumb:hover { background: #FF7770; }
+  ::-webkit-scrollbar-button { display: none; }
+  ::-webkit-scrollbar-corner { background: transparent; }
+  @supports not selector(::-webkit-scrollbar) { * { scrollbar-width: thin; scrollbar-color: #F25C54 transparent; } }
