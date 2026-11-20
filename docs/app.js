@@ -883,8 +883,7 @@ function appendKeyboardSetting(grid, label, value, type, setting) {
       : [activate ? 'Ativação: ' + activate + ' mm' : '', deactivate ? 'Desativação: ' + deactivate + ' mm' : ''].filter(Boolean).join(' · ');
     info.appendChild(el('p', 'keyboard-note', detail));
   }
-  const scopeChip = el('span', 'keyboard-scope-chip', scope.label);
-  info.appendChild(scopeChip);
+  if (scope.label !== 'Escopo não informado') info.appendChild(el('span', 'keyboard-scope-chip', scope.label));
   if (scope.keys.length) {
     const keys = el('div', 'keyboard-keys');
     scope.keys.forEach(k => keys.appendChild(el('span', 'keyboard-key', k)));
@@ -985,8 +984,9 @@ function renderKeyboardProfile(p) {
       const actScope = keyboardScope(alt, 'actuation');
       const rtScope = keyboardScope(alt, 'rapid_trigger');
       const scopeText = [];
-      if (alt.actuation) scopeText.push('Actuation: ' + (actScope.keys.length ? actScope.keys.join(' ') : actScope.label));
-      if (alt.rapid_trigger || alt.rapid_trigger_disabled) scopeText.push('RT: ' + (rtScope.keys.length ? rtScope.keys.join(' ') : rtScope.label));
+      const scopeBit = (name, sc) => { const t = sc.keys.length ? sc.keys.join(' ') : (sc.label === 'Escopo não informado' ? '' : sc.label); return t ? name + ': ' + t : name; };
+      if (alt.actuation) scopeText.push(scopeBit('Actuation', actScope));
+      if (alt.rapid_trigger || alt.rapid_trigger_disabled) scopeText.push(scopeBit('RT', rtScope));
       li.append(el('b', '', bits.join(' · ')), document.createTextNode(' — ' + scopeText.join(' · ') + (alt.date ? ' · ' + alt.date : '')));
       if (alt.source_url) {
         const altUrl = safeUrl(alt.source_url, 'prosettings.net');
