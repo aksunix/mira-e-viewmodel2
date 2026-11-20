@@ -725,7 +725,7 @@ function renderSearchCard(p, rank) {
   closeBtn.onclick = () => dexDeselect();
   cover.append(starWrap, closeBtn, num);
   const av = el('div', 'pd-av', nick.charAt(0) || '?');
-  const tag = el('p', 'pd-credit', 'Foto: HLTV'); tag.hidden = true;
+  const tag = el('p', 'pd-credit'); tag.hidden = true; // sem texto de crédito
   const name = el('h3', 'pd-name', nick);
   card.append(cover, av, name);
   if (p.custom) card.appendChild(el('p', 'pd-sub', 'Não listado'));
@@ -740,7 +740,7 @@ function renderSearchCard(p, rank) {
     links.appendChild(a);
     return a;
   });
-  card.append(links, tag);
+  card.appendChild(links);
 
   // Linhas de informação (só o que existe para o jogador)
   const rows = el('dl', 'pd-rows');
