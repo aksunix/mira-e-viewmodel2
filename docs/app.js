@@ -802,8 +802,9 @@ function renderSearchCard(p, rank) {
 
   fetchProData(p).then(d => {
     if (!d || !card.isConnected) return;
-    if (d.faceit) { linkEls[0].href = d.faceit.url; linkEls[0].title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
-    if (d.hltv) linkEls[1].href = d.hltv.url;
+    const fEl = linkEls.find(a => a.classList.contains('faceit')), hEl = linkEls.find(a => a.classList.contains('hltv'));
+    if (d.faceit) { fEl.href = d.faceit.url; fEl.title = [d.faceit.level ? 'nível ' + d.faceit.level : '', d.faceit.elo ? d.faceit.elo + ' elo' : ''].filter(Boolean).join(' · '); }
+    if (d.hltv) hEl.href = d.hltv.url;
     if (d.xh && d.xh.code) {
       const xhd = decodeCrosshair(d.xh.code);
       if (xhd) {
