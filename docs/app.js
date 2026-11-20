@@ -1077,8 +1077,13 @@ function metaOf(p) {
   }
   return p._m;
 }
+// Top 20 do HLTV (ranking oficial de 2025, o mais recente publicado; o de 2026 sai em dezembro)
+const HLTV_TOP20 = ['ZywOo', 'donk', 'ropz', 'm0NESY', 'sh1ro', 'molodoy', 'flameZ', 'frozen', 'KSCERATO', 'Spinx', 'Twistzz', 'mezii', 'Senzu', 'XANTARES', 'YEKINDAR', 'xertioN', 'torzsi', 'NiKo', 'iM', 'b1t'];
+const hltvRank = new Map(HLTV_TOP20.map((n, i) => [normName(n), i + 1]));
+// Número do card: no Top 20 é o lugar do jogador no ranking da HLTV; nos outros filtros é a posição na lista
+function dexNum(p, pos) { return dex.filter === 'top' ? (hltvRank.get(p.key) || pos) : pos; }
 function dexPass(p) {
-  if (dex.filter === 'pro') return !!(metaOf(p).top || metaOf(p).team);
+  if (dex.filter === 'top') return hltvRank.has(p.key);
   if (dex.filter === 'fav') return isFav(p.key);
   if (dex.filter === 'times') return dex.team ? metaOf(p).team === dex.team : !!metaOf(p).team;
   return true;
@@ -1127,7 +1132,7 @@ function dexSelect(p, byUser) {
   dex.sel = p; dex.none = false;
   dexGrid.querySelectorAll('.dcard').forEach(c => c.classList.toggle('sel', c.dataset.key === p.key));
   detail.innerHTML = '';
-  const rank = dex.list.findIndex(x => x.key === p.key) + 1;
+  const rank = dexNum(p, dex.list.findIndex(x => x.key === p.key) + 1);
   detail.append(renderSearchCard(p, rank));
   if (kbCurrent(p)) detail.appendChild(renderKeyboardProfile(p));
   detail.scrollTop = 0;
@@ -1138,7 +1143,7 @@ function dexSelect(p, byUser) {
 function dexMore() {
   const have = dexGrid.querySelectorAll('.dcard').length;
   const end = Math.min(dex.list.length, have + DEX_PER);
-  for (let i = have; i < end; i++) { const p = dex.list[i]; dexGrid.appendChild(dexCard(p, i + 1, () => dexPick(p))); }
+  for (let i = have; i < end; i++) { const p = dex.list[i]; dexGrid.appendChild(dexCard(p, dexNum(p, i + 1), () => dexPick(p))); }
   dex.shown = end;
   dexPaintEnd();
 }
@@ -1160,13 +1165,13 @@ function dexRender() {
   const list = buildIndex().filter(p => (!q || p.key.includes(q)) && dexPass(p));
   list.sort((a, b) => {
     if (q) { const d = (b.key.startsWith(q) ? 1 : 0) - (a.key.startsWith(q) ? 1 : 0); if (d) return d; }
-    if (dex.filter === 'pro') { const ta = metaOf(a).top || 1e9, tb = metaOf(b).top || 1e9; if (ta !== tb) return ta - tb; }
+    if (dex.filter === 'top') return hltvRank.get(a.key) - hltvRank.get(b.key);
     if (dex.filter === 'times' && !dex.team) { const d = metaOf(a).team.localeCompare(metaOf(b).team); if (d) return d; }
     if (dex.sort === 'full') { const d = dexScore(b) - dexScore(a); if (d) return d; }
     return a.name.localeCompare(b.name);
   });
   dex.list = list;
-  const countLabel = { pro: 'Pro Players (', fav: 'Favoritos (', times: 'Times (' }[dex.filter] || 'Jogadores encontrados (';
+  const countLabel = { top: 'Top 20 HLTV (', fav: 'Favoritos (', times: 'Times (' }[dex.filter] || 'Jogadores encontrados (';
   dexCount.textContent = countLabel + list.length.toLocaleString('pt-BR') + ')';
   dexGrid.innerHTML = '';
   // dex.page === 1 => lista nova (busca/filtro/ordem mudou): volta ao primeiro lote; senão mantém o que já foi carregado
@@ -1175,7 +1180,7 @@ function dexRender() {
   if (reset && window.scrollY > 0) window.scrollTo({ top: 0 });
   dex.page = 0; dex.shown = 0;
   const first = Math.min(list.length, keep);
-  list.slice(0, first).forEach((p, i) => dexGrid.appendChild(dexCard(p, i + 1, () => dexPick(p))));
+  list.slice(0, first).forEach((p, i) => dexGrid.appendChild(dexCard(p, dexNum(p, i + 1), () => dexPick(p))));
   dex.shown = first;
   dexPaintEnd();
   if (!list.length) {
@@ -1205,7 +1210,7 @@ function demoTab(t) {
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-dtab],[data-tab]'); if (b) demoTab(b.dataset.dtab || b.dataset.tab); });
 
-const DEX_CHIPS = [['all', 'Todos'], ['pro', 'Pro Players'], ['times', 'Times'], ['fav', 'Favoritos']];
+const DEX_CHIPS = [['all', 'Todos'], ['top', 'Top 20'], ['times', 'Times'], ['fav', 'Favoritos']];
 function paintChips() {
   dexChips.innerHTML = '';
   DEX_CHIPS.forEach(([k, label]) => {
