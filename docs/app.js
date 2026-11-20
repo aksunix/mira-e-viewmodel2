@@ -1124,25 +1124,25 @@ function dexSelect(p, byUser) {
   if (byUser && matchMedia('(max-width: 1300px)').matches) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function dexPaintPages(np) {
-  dexPages.innerHTML = '';
-  if (np <= 1) return;
-  const mk = (label, n, o) => {
-    const b = el('button', '', label); b.type = 'button';
-    if (o.cur) b.setAttribute('aria-current', 'page');
-    b.setAttribute('aria-label', o.aria);
-    b.disabled = !!o.off;
-    b.onclick = () => { dex.page = n; dexRender(); dexGrid.scrollIntoView({ block: 'start' }); };
-    dexPages.appendChild(b);
-  };
-  mk('‹', dex.page - 1, { aria: 'Página anterior', off: dex.page === 1 });
-  const nums = Array.from(new Set([1, np, dex.page - 1, dex.page, dex.page + 1])).filter(n => n >= 1 && n <= np).sort((a, b) => a - b);
-  nums.forEach((n, i) => {
-    if (i && n - nums[i - 1] > 1) dexPages.appendChild(el('span', 'gap', '…'));
-    mk(String(n), n, { cur: n === dex.page, aria: 'Página ' + n });
-  });
-  mk('›', dex.page + 1, { aria: 'Próxima página', off: dex.page === np });
+// Rolagem infinita: o fim da lista (dexPages) é observado e, ao chegar perto, entram mais DEX_PER cards.
+function dexMore() {
+  const have = dexGrid.querySelectorAll('.dcard').length;
+  const end = Math.min(dex.list.length, have + DEX_PER);
+  for (let i = have; i < end; i++) { const p = dex.list[i]; dexGrid.appendChild(dexCard(p, i + 1, () => dexSelect(p, true))); }
+  dex.shown = end;
+  dexPaintEnd();
 }
+function dexPaintEnd() {
+  dexPages.innerHTML = '';
+  const left = dex.list.length - dex.shown;
+  if (left <= 0) { if (dex.list.length > DEX_PER) dexPages.appendChild(el('span', 'gap', 'Fim da lista')); return; }
+  if (dexIO) { dexPages.appendChild(el('span', 'gap', 'Carregando mais…')); dexIO.unobserve(dexPages); dexIO.observe(dexPages); return; }
+  const b = el('button', '', 'Mostrar mais (' + left.toLocaleString('pt-BR') + ')'); b.type = 'button'; b.onclick = dexMore;
+  dexPages.appendChild(b);
+}
+const dexIO = 'IntersectionObserver' in window
+  ? new IntersectionObserver(es => { if (es.some(e => e.isIntersecting) && dex.ready && dex.shown < dex.list.length) dexMore(); }, { rootMargin: '700px 0px' })
+  : null;
 
 function dexRender() {
   if (!dex.ready) return;
@@ -1156,14 +1156,18 @@ function dexRender() {
     return a.name.localeCompare(b.name);
   });
   dex.list = list;
-  const np = Math.max(1, Math.ceil(list.length / DEX_PER));
-  dex.page = Math.min(dex.page, np);
   const countLabel = { pro: 'Pro Players (', fav: 'Favoritos (', times: 'Times (' }[dex.filter] || 'Jogadores encontrados (';
   dexCount.textContent = countLabel + list.length.toLocaleString('pt-BR') + ')';
   dexGrid.innerHTML = '';
-  const start = (dex.page - 1) * DEX_PER;
-  list.slice(start, start + DEX_PER).forEach((p, i) => dexGrid.appendChild(dexCard(p, start + i + 1, () => dexSelect(p, true))));
-  dexPaintPages(np);
+  // dex.page === 1 => lista nova (busca/filtro/ordem mudou): volta ao primeiro lote; senão mantém o que já foi carregado
+  const reset = dex.page === 1;
+  const keep = reset ? DEX_PER : Math.max(dex.shown || 0, DEX_PER);
+  if (reset && window.scrollY > 0) window.scrollTo({ top: 0 });
+  dex.page = 0; dex.shown = 0;
+  const first = Math.min(list.length, keep);
+  list.slice(0, first).forEach((p, i) => dexGrid.appendChild(dexCard(p, i + 1, () => dexSelect(p, true))));
+  dex.shown = first;
+  dexPaintEnd();
   if (!list.length) {
     dex.sel = null;
     dexGrid.appendChild(el('p', 'dex-empty', dex.filter === 'fav' && !dex.q ? 'Nenhum favorito ainda. Toque na estrela de um jogador para guardá-lo aqui.' : 'Nenhum jogador encontrado. Confira a grafia do nick.'));
