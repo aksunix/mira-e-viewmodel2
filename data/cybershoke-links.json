@@ -964,6 +964,7 @@
   "jee": "2026-11-11",
   "jeemzz": "2026-11-11",
   "jelly": "2026-11-11",
+  "jelo": "2026-11-22",
   "jelty": "2026-11-11",
   "jemi": "2026-11-11",
   "jemkin": "2026-11-11",
@@ -8651,6 +8652,15 @@
     "url": "https://www.faceit.com/ru/players/polverone"
    },
    "name": "jelly"
+  },
+  "jelo": {
+   "faceit": {
+    "elo": 749,
+    "name": "jelolul",
+    "skill_level": 2,
+    "url": "https://www.faceit.com/ru/players/jelolul"
+   },
+   "name": "Jelo"
   },
   "jemi": {
    "faceit": {

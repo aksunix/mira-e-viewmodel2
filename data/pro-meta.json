@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "top": [
   {
    "nick": "TenZ",
@@ -1257,11 +1257,6 @@
    "nick": "oSee",
    "slug": "osee",
    "team": "NRG"
-  },
-  {
-   "nick": "ultimate",
-   "slug": "ultimate",
-   "team": "Betclic Apogee"
   },
   {
    "nick": "Jamppi",
@@ -3987,6 +3982,11 @@
    "nick": "lugseN",
    "slug": "lugsen",
    "team": "PCIFIC Esports"
+  },
+  {
+   "nick": "Jelo",
+   "slug": "jelo",
+   "team": "Prestige"
   }
  ]
 }

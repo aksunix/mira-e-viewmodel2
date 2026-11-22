@@ -961,6 +961,7 @@
   "https://prosettings.net/players/jee/": "2026-11-20",
   "https://prosettings.net/players/jeemzz/": "2026-11-20",
   "https://prosettings.net/players/jelly/": "2026-11-20",
+  "https://prosettings.net/players/jelo/": "2026-11-22",
   "https://prosettings.net/players/jelty/": "2026-11-20",
   "https://prosettings.net/players/jemi/": "2026-11-20",
   "https://prosettings.net/players/jemkin/": "2026-11-20",
@@ -3445,6 +3446,7 @@
   "https://prosettings.net/players/jee/": "6",
   "https://prosettings.net/players/jeemzz/": "6",
   "https://prosettings.net/players/jelly/": "6",
+  "https://prosettings.net/players/jelo/": "6",
   "https://prosettings.net/players/jelty/": "6",
   "https://prosettings.net/players/jemi/": "6",
   "https://prosettings.net/players/jemkin/": "6",
@@ -16624,6 +16626,22 @@
    "resolution": "1920x1080",
    "sensitivity": "0.2",
    "url": "https://prosettings.net/players/jelly/"
+  },
+  "jelo": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "2000",
+   "name": "Jelo",
+   "resolution": "1280x960",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/jelo/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
+   "zoom_sensitivity": "0.75"
   },
   "jelty": {
    "dpi": "800",
@@ -36686,6 +36704,10 @@
    "name": "jeemzz",
    "steam": "https://steamcommunity.com/profiles/76561198286126286"
   },
+  "https://prosettings.net/players/jelo/": {
+   "name": "jelo",
+   "steam": "https://steamcommunity.com/id/jelohi/"
+  },
   "https://prosettings.net/players/jemi/": {
    "name": "jemi",
    "steam": "https://steamcommunity.com/id/hombre69/"
@@ -51593,6 +51615,7 @@
   "https://prosettings.net/players/jee/": "2026-11-20",
   "https://prosettings.net/players/jeemzz/": "2026-11-20",
   "https://prosettings.net/players/jelly/": "2026-11-20",
+  "https://prosettings.net/players/jelo/": "2026-11-22",
   "https://prosettings.net/players/jelty/": "2026-11-20",
   "https://prosettings.net/players/jemi/": "2026-11-20",
   "https://prosettings.net/players/jemkin/": "2026-11-20",
@@ -54077,6 +54100,7 @@
   "https://prosettings.net/players/jee/": "2026-11-20",
   "https://prosettings.net/players/jeemzz/": "2026-11-20",
   "https://prosettings.net/players/jelly/": "2026-11-20",
+  "https://prosettings.net/players/jelo/": "2026-11-22",
   "https://prosettings.net/players/jelty/": "2026-11-20",
   "https://prosettings.net/players/jemi/": "2026-11-20",
   "https://prosettings.net/players/jemkin/": "2026-11-20",
@@ -56561,6 +56585,7 @@
   "https://prosettings.net/players/jee/": "2026-11-20",
   "https://prosettings.net/players/jeemzz/": "2026-11-20",
   "https://prosettings.net/players/jelly/": "2026-11-20",
+  "https://prosettings.net/players/jelo/": "2026-11-22",
   "https://prosettings.net/players/jelty/": "2026-11-20",
   "https://prosettings.net/players/jemi/": "2026-11-20",
   "https://prosettings.net/players/jemkin/": "2026-11-20",
