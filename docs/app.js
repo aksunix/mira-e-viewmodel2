@@ -1107,7 +1107,9 @@ function dexCard(p, rank, onOpen) {
   const card = el('article', 'dcard' + (dex.sel && dex.sel.key === p.key ? ' sel' : ''));
   card.dataset.key = p.key;
   const top = el('div', 'dcard-top');
-  top.append(el('span', 'dcard-num', rank ? '#' + String(rank).padStart(3, '0') : ''), starBtn(p));
+  const podium = rank >= 1 && rank <= 3;
+  if (podium) card.classList.add('podium', 'p' + rank);
+  top.append(podium ? el('span', 'dcard-num medal m' + rank, rank + 'º') : el('span', 'dcard-num', rank ? '#' + String(rank).padStart(3, '0') : ''), starBtn(p));
   const ed = p.info && parseFloat(p.info.edpi);
   const team = metaOf(p).team;
   const sub = team || (p.info && p.info.resolution) || 'Ver perfil';
@@ -1121,12 +1123,21 @@ function dexCard(p, rank, onOpen) {
   return card;
 }
 
+function dexEmptyPanel() {
+  const w = el('div', 'dex-hello');
+  const ic = el('div', 'dh-ic'); ic.innerHTML = '<svg viewBox="0 0 64 64" width="34" height="34" fill="none" stroke="#1B1B1B" stroke-width="5" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="17"/><path d="M32 3v14M32 47v14M3 32h14M47 32h14"/><circle cx="32" cy="32" r="3.5" fill="#1B1B1B"/></svg>';
+  const tips = el('div', 'dh-tips');
+  ['Copie a mira com um clique', 'Veja mouse, vídeo e teclado', 'Marque a estrela para favoritar'].forEach((t, i) => { const s = el('span'); s.append(el('b', '', String(i + 1)), document.createTextNode(t)); tips.appendChild(s); });
+  w.append(ic, el('h3', '', 'Escolha um jogador'), el('p', '', 'Clique em um card para ver o setup completo.'), tips);
+  return w;
+}
+
 // Clicar de novo no card selecionado (ou no X do painel) tira a seleção
 function dexPick(p) { if (dex.sel && dex.sel.key === p.key) dexDeselect(); else dexSelect(p, true); }
 function dexDeselect() {
   dex.sel = null; dex.none = true;
   dexGrid.querySelectorAll('.dcard.sel').forEach(c => c.classList.remove('sel'));
-  detail.replaceChildren(el('p', 'dex-empty', 'Selecione um jogador para ver mira, mouse e teclado.'));
+  detail.replaceChildren(dexEmptyPanel());
 }
 
 function dexSelect(p, byUser) {
@@ -1187,11 +1198,11 @@ function dexRender() {
   if (!list.length) {
     dex.sel = null;
     dexGrid.appendChild(el('p', 'dex-empty', dex.filter === 'fav' && !dex.q ? 'Nenhum favorito ainda. Toque na estrela de um jogador para guardá-lo aqui.' : 'Nenhum jogador encontrado. Confira a grafia do nick.'));
-    detail.replaceChildren(el('p', 'dex-empty', 'Selecione um jogador para ver mira, mouse e teclado.'));
+    detail.replaceChildren(dexEmptyPanel());
   } else if (dex.sel && !list.some(x => x.key === dex.sel.key)) {
     dexDeselect();
   } else if (!dex.sel) {
-    detail.replaceChildren(el('p', 'dex-empty', 'Selecione um jogador para ver mira, mouse e teclado.'));
+    detail.replaceChildren(dexEmptyPanel());
   }
 }
 

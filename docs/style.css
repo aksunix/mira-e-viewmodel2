@@ -778,3 +778,33 @@
   ::-webkit-scrollbar-button { display: none; }
   ::-webkit-scrollbar-corner { background: transparent; }
   @supports not selector(::-webkit-scrollbar) { * { scrollbar-width: thin; scrollbar-color: #F25C54 transparent; } }
+
+  /* Pódio do Top 20: medalha no número e anel colorido na foto */
+  .dcard-num.medal { display: inline-grid; place-items: center; min-width: 38px; height: 28px; padding: 0 9px; border: 2.5px solid #1B1B1B; border-radius: 999px; color: #1B1B1B; font: 400 16px/1 "Titan One", "Inter", sans-serif; box-shadow: 0 2px 0 #1B1B1B; }
+  .dcard-num.m1 { background: #FFC93C; } .dcard-num.m2 { background: #D5DBE0; } .dcard-num.m3 { background: #E6934F; }
+  .dcard.p1 { background-image: linear-gradient(#FFF6D6, transparent 55%); }
+  .dcard.p1 .dcard-av { box-shadow: 0 0 0 4px #FFC93C; } .dcard.p2 .dcard-av { box-shadow: 0 0 0 4px #D5DBE0; } .dcard.p3 .dcard-av { box-shadow: 0 0 0 4px #E6934F; }
+  .dcard-av img { object-position: center 12%; }
+
+  /* Painel vazio com convite e dicas */
+  .dex-hello { padding: 18px 16px; text-align: center; }
+  .dh-ic { display: grid; place-items: center; width: 64px; height: 64px; margin: 0 auto 10px; border: 3px solid var(--sd-border); border-radius: 50%; background: var(--sd-lime); box-shadow: 0 3px 0 var(--sd-border); color: #1B1B1B; }
+  .dex-hello h3 { margin: 0 0 4px; font-size: 18px; font-weight: 800; }
+  .dex-hello p { margin: 0 0 12px; color: var(--md-on-surface-variant); }
+  .dh-tips { display: grid; gap: 6px; text-align: left; }
+  .dh-tips span { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 12px; background: color-mix(in srgb, var(--sd-border) 9%, transparent); font-size: 13px; font-weight: 600; }
+  .dh-tips b { display: grid; place-items: center; width: 22px; height: 22px; flex: none; border: 2px solid var(--sd-border); border-radius: 50%; background: var(--sd-lime); color: #1B1B1B; font-size: 11px; }
+
+  /* Celular: filtros em uma fileira que rola e 2 cards por linha */
+  @media (max-width: 600px) {
+    .dex-chips { flex-wrap: nowrap; overflow-x: auto; margin: 0 -2px; padding: 0 2px 6px; scrollbar-width: none; flex: 1 1 100%; }
+    .dex-chips::-webkit-scrollbar { display: none; }
+    .dex-chips .chip { flex: none; white-space: nowrap; }
+    .dex-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .dcard { padding: 8px 8px 10px; border-radius: 16px; box-shadow: 0 3px 0 var(--sd-border); gap: 4px; }
+    .dcard-av { width: 64px; height: 64px; font-size: 28px; }
+    .dcard-name { font-size: 15px; line-height: 20px; }
+    .dcard-sub { font-size: 11.5px; line-height: 16px; }
+    .dcard-num { font-size: 12.5px; }
+    .dcard-tags .dtag { font-size: 10px; padding: 1px 7px; }
+  }
