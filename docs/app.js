@@ -1020,6 +1020,8 @@ const dexSearch = document.getElementById('dexSearch'), dexClear = document.getE
 const dexGrid = document.getElementById('dexGrid'), dexPages = document.getElementById('dexPages'), dexCount = document.getElementById('dexCount');
 const dexSort = document.getElementById('dexSort'), dexChips = document.getElementById('dexChips');
 const detail = document.getElementById('searchResult'), favGrid = document.getElementById('favGrid');
+// A faixa coral que fica ao lado da barra de rolagem acompanha a rolagem do painel (ver --st no CSS)
+detail.addEventListener('scroll', () => detail.style.setProperty('--st', detail.scrollTop + 'px'), { passive: true });
 const DEX_PER = 12;
 const dex = { team: '', q: '', filter: 'all', sort: 'full', page: 1, list: [], sel: null, none: true, ready: false };
 
@@ -1142,6 +1144,7 @@ function dexDeselect() {
 
 function dexSelect(p, byUser) {
   dex.sel = p; dex.none = false;
+  detail.style.setProperty('--st', '0px');
   dexGrid.querySelectorAll('.dcard').forEach(c => c.classList.toggle('sel', c.dataset.key === p.key));
   detail.innerHTML = '';
   const rank = dexNum(p);
