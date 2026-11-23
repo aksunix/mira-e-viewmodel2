@@ -103,6 +103,7 @@
   "https://prosettings.net/players/anamo/": "2026-11-20",
   "https://prosettings.net/players/anarkez/": "2026-11-20",
   "https://prosettings.net/players/anas/": "2026-11-20",
+  "https://prosettings.net/players/anber/": "2026-11-23",
   "https://prosettings.net/players/andil/": "2026-11-20",
   "https://prosettings.net/players/andilex/": "2026-11-20",
   "https://prosettings.net/players/andr1x/": "2026-11-20",
@@ -303,6 +304,7 @@
   "https://prosettings.net/players/bryce/": "2026-11-20",
   "https://prosettings.net/players/brzer/": "2026-11-20",
   "https://prosettings.net/players/bsd/": "2026-11-20",
+  "https://prosettings.net/players/bsover/": "2026-11-23",
   "https://prosettings.net/players/bstrdd/": "2026-11-20",
   "https://prosettings.net/players/bubble/": "2026-11-20",
   "https://prosettings.net/players/bubzkji/": "2026-11-20",
@@ -1064,6 +1066,7 @@
   "https://prosettings.net/players/kaze/": "2026-11-20",
   "https://prosettings.net/players/kbr/": "2026-11-20",
   "https://prosettings.net/players/kchorro/": "2026-11-20",
+  "https://prosettings.net/players/keen/": "2026-11-23",
   "https://prosettings.net/players/kei/": "2026-11-20",
   "https://prosettings.net/players/keiko/": "2026-11-20",
   "https://prosettings.net/players/keis/": "2026-11-20",
@@ -2150,6 +2153,7 @@
   "https://prosettings.net/players/tapewaare/": "2026-11-20",
   "https://prosettings.net/players/tara/": "2026-11-20",
   "https://prosettings.net/players/tarik/": "2026-11-20",
+  "https://prosettings.net/players/tarkky/": "2026-11-23",
   "https://prosettings.net/players/taskmast33r/": "2026-11-20",
   "https://prosettings.net/players/tastyy/": "2026-11-20",
   "https://prosettings.net/players/tatazin/": "2026-11-20",
@@ -2588,6 +2592,7 @@
   "https://prosettings.net/players/anamo/": "6",
   "https://prosettings.net/players/anarkez/": "6",
   "https://prosettings.net/players/anas/": "6",
+  "https://prosettings.net/players/anber/": "6",
   "https://prosettings.net/players/andil/": "6",
   "https://prosettings.net/players/andilex/": "6",
   "https://prosettings.net/players/andr1x/": "6",
@@ -2788,6 +2793,7 @@
   "https://prosettings.net/players/bryce/": "6",
   "https://prosettings.net/players/brzer/": "6",
   "https://prosettings.net/players/bsd/": "6",
+  "https://prosettings.net/players/bsover/": "6",
   "https://prosettings.net/players/bstrdd/": "6",
   "https://prosettings.net/players/bubble/": "6",
   "https://prosettings.net/players/bubzkji/": "6",
@@ -3549,6 +3555,7 @@
   "https://prosettings.net/players/kaze/": "6",
   "https://prosettings.net/players/kbr/": "6",
   "https://prosettings.net/players/kchorro/": "6",
+  "https://prosettings.net/players/keen/": "6",
   "https://prosettings.net/players/kei/": "6",
   "https://prosettings.net/players/keiko/": "6",
   "https://prosettings.net/players/keis/": "6",
@@ -4635,6 +4642,7 @@
   "https://prosettings.net/players/tapewaare/": "6",
   "https://prosettings.net/players/tara/": "6",
   "https://prosettings.net/players/tarik/": "6",
+  "https://prosettings.net/players/tarkky/": "6",
   "https://prosettings.net/players/taskmast33r/": "6",
   "https://prosettings.net/players/tastyy/": "6",
   "https://prosettings.net/players/tatazin/": "6",
@@ -6175,6 +6183,22 @@
    "name": "Anas",
    "resolution": "1920x1080",
    "url": "https://prosettings.net/players/anas/"
+  },
+  "anber": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "2000",
+   "name": "anber",
+   "resolution": "1280x960",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/anber/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "2.5",
+    "offset_y": "-2",
+    "offset_z": "-2"
+   },
+   "zoom_sensitivity": "1"
   },
   "andil": {
    "dpi": "800",
@@ -8543,6 +8567,16 @@
     "offset_y": "0",
     "offset_z": "-1.5"
    },
+   "zoom_sensitivity": "1"
+  },
+  "bsover": {
+   "dpi": "400",
+   "edpi": "1200",
+   "hz": "1000",
+   "name": "bsover",
+   "resolution": "1024x768",
+   "sensitivity": "3",
+   "url": "https://prosettings.net/players/bsover/",
    "zoom_sensitivity": "1"
   },
   "bstrdd": {
@@ -17823,6 +17857,22 @@
    "name": "Kchorro",
    "resolution": "1920x1080",
    "url": "https://prosettings.net/players/kchorro/"
+  },
+  "keen": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "keen",
+   "resolution": "1280x960",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/keen/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
+   "zoom_sensitivity": "1"
   },
   "kei": {
    "dpi": "400",
@@ -31608,6 +31658,22 @@
     "offset_z": "-1.5"
    }
   },
+  "tarkky": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Tarkky",
+   "resolution": "1440x1080",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/tarkky/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
+   "zoom_sensitivity": "0.91"
+  },
   "taskmast33r": {
    "dpi": "800",
    "edpi": "1120.00",
@@ -35564,606 +35630,6 @@
   }
  },
  "pending": {
-  "https://prosettings.net/players/cadian/": {
-   "name": "cadian",
-   "steam": "https://steamcommunity.com/id/cadiaNuz"
-  },
-  "https://prosettings.net/players/cairne/": {
-   "name": "cairne",
-   "steam": "https://steamcommunity.com/id/ihsum/"
-  },
-  "https://prosettings.net/players/cajunb/": {
-   "name": "cajunb",
-   "steam": "https://steamcommunity.com/profiles/76561197978328043"
-  },
-  "https://prosettings.net/players/calyx/": {
-   "name": "calyx",
-   "steam": "https://steamcommunity.com/profiles/76561198052546265"
-  },
-  "https://prosettings.net/players/captainmo/": {
-   "name": "captainmo",
-   "steam": "https://steamcommunity.com/id/ufolk/"
-  },
-  "https://prosettings.net/players/casey/": {
-   "name": "casey",
-   "steam": "https://steamcommunity.com/id/caseyocsgo/"
-  },
-  "https://prosettings.net/players/cej0t/": {
-   "name": "cej0t",
-   "steam": "https://steamcommunity.com/id/cej0t/"
-  },
-  "https://prosettings.net/players/cerolzin/": {
-   "name": "cerolzin",
-   "steam": "https://steamcommunity.com/id/cerolnamao"
-  },
-  "https://prosettings.net/players/cerq/": {
-   "name": "cerq",
-   "steam": "https://steamcommunity.com/id/c3r99/"
-  },
-  "https://prosettings.net/players/chanky/": {
-   "name": "chanky",
-   "steam": "https://www.steamcommunity.com/id/chankyftw/"
-  },
-  "https://prosettings.net/players/chawzyyy/": {
-   "name": "chawzyyy",
-   "steam": "https://steamcommunity.com/id/chawzyyy/"
-  },
-  "https://prosettings.net/players/chay/": {
-   "name": "chay",
-   "steam": "https://steamcommunity.com/id/chayJESUS/"
-  },
-  "https://prosettings.net/players/chelo/": {
-   "name": "chelo",
-   "steam": "https://steamcommunity.com/profiles/76561198067763828"
-  },
-  "https://prosettings.net/players/cher1on/": {
-   "name": "cher1on",
-   "steam": "https://steamcommunity.com/id/Cher1on/"
-  },
-  "https://prosettings.net/players/childking/": {
-   "name": "childking",
-   "steam": "https://steamcommunity.com/profiles/76561198352656104"
-  },
-  "https://prosettings.net/players/choiv7/": {
-   "name": "choiv7",
-   "steam": "https://steamcommunity.com/id/choiv/"
-  },
-  "https://prosettings.net/players/chopper/": {
-   "name": "chopper",
-   "steam": "https://steamcommunity.com/profiles/76561198045898864"
-  },
-  "https://prosettings.net/players/chr1zn/": {
-   "name": "chr1zn",
-   "steam": "https://steamcommunity.com/profiles/76561198292598811"
-  },
-  "https://prosettings.net/players/chrisj/": {
-   "name": "chrisj",
-   "steam": "https://steamcommunity.com/id/chrisJcs/"
-  },
-  "https://prosettings.net/players/chudy/": {
-   "name": "chudy",
-   "steam": "https://steamcommunity.com/profiles/76561198388875820/"
-  },
-  "https://prosettings.net/players/cj/": {
-   "name": "cjdak1ng",
-   "steam": "https://steamcommunity.com/profiles/76561198000828093"
-  },
-  "https://prosettings.net/players/cjoffo/": {
-   "name": "cjoffo",
-   "steam": "https://steamcommunity.com/id/cjoffo/"
-  },
-  "https://prosettings.net/players/ckzao/": {
-   "name": "ckzao",
-   "steam": "https://steamcommunity.com/id/ckzao77/"
-  },
-  "https://prosettings.net/players/clax/": {
-   "name": "clax",
-   "steam": "https://steamcommunity.com/profiles/76561198129084615"
-  },
-  "https://prosettings.net/players/clockzi/": {
-   "name": "clockzi",
-   "steam": "https://steamcommunity.com/id/clockzi/"
-  },
-  "https://prosettings.net/players/cmtry/": {
-   "name": "cmtry",
-   "steam": "https://steamcommunity.com/id/wtdsfse35532/"
-  },
-  "https://prosettings.net/players/cobra/": {
-   "name": "cobra",
-   "steam": "https://steamcommunity.com/id/cobrazeracs/"
-  },
-  "https://prosettings.net/players/cojomo/": {
-   "name": "cojomo",
-   "steam": "https://steamcommunity.com/id/cojomocs/"
-  },
-  "https://prosettings.net/players/coldzera/": {
-   "name": "coldzera",
-   "steam": "https://steamcommunity.com/profiles/76561198039986599"
-  },
-  "https://prosettings.net/players/conaxy/": {
-   "name": "conaxy",
-   "steam": "https://steamcommunity.com/id/conaxy"
-  },
-  "https://prosettings.net/players/controlez/": {
-   "name": "controlez",
-   "steam": "https://steamcommunity.com/id/In2uperible/"
-  },
-  "https://prosettings.net/players/cool4st/": {
-   "name": "cool4st",
-   "steam": "https://steamcommunity.com/id/cool4stiwnl/"
-  },
-  "https://prosettings.net/players/cooper/": {
-   "name": "cooper",
-   "steam": "https://steamcommunity.com/id/CoooperTV/"
-  },
-  "https://prosettings.net/players/cptkurtka023/": {
-   "name": "cptkurtka023",
-   "steam": "https://steamcommunity.com/id/cptkurtka023/"
-  },
-  "https://prosettings.net/players/crazyface/": {
-   "name": "crazyface",
-   "steam": "https://steamcommunity.com/id/crazyfaceTV"
-  },
-  "https://prosettings.net/players/cromen/": {
-   "name": "cromen",
-   "steam": "https://steamcommunity.com/profiles/76561197981663417"
-  },
-  "https://prosettings.net/players/cruc1al/": {
-   "name": "cruc1al",
-   "steam": "https://steamcommunity.com/profiles/76561198119098292"
-  },
-  "https://prosettings.net/players/crush/": {
-   "name": "crush",
-   "steam": "https://steamcommunity.com/id/crushyyy/"
-  },
-  "https://prosettings.net/players/cryptic/": {
-   "name": "cryptic",
-   "steam": "https://steamcommunity.com/id/Cryptic-/"
-  },
-  "https://prosettings.net/players/curry/": {
-   "name": "curry",
-   "steam": "https://steamcommunity.com/id/godcurry/"
-  },
-  "https://prosettings.net/players/cutler/": {
-   "name": "cutler",
-   "steam": "https://steamcommunity.com/id/reltuC/"
-  },
-  "https://prosettings.net/players/cutzmeretz/": {
-   "name": "cutzmeretz",
-   "steam": "https://steamcommunity.com/id/CutzMeretz/"
-  },
-  "https://prosettings.net/players/cxzi/": {
-   "name": "cxzi",
-   "steam": "https://steamcommunity.com/id/Cxzi/"
-  },
-  "https://prosettings.net/players/cypher/": {
-   "name": "cypher",
-   "steam": "https://steamcommunity.com/id/CYPHERidek/"
-  },
-  "https://prosettings.net/players/d0cc/": {
-   "name": "d0cc",
-   "steam": "https://steamcommunity.com/id/OfficialD0cC/"
-  },
-  "https://prosettings.net/players/d1ledez/": {
-   "name": "d1ledez",
-   "steam": "https://steamcommunity.com/id/LedezFaceit/"
-  },
-  "https://prosettings.net/players/d3ffo/": {
-   "name": "d3ffo",
-   "steam": "https://steamcommunity.com/id/deffoo/"
-  },
-  "https://prosettings.net/players/d4rty/": {
-   "name": "d4rty",
-   "steam": "https://steamcommunity.com/id/d4rtycs/"
-  },
-  "https://prosettings.net/players/daffu/": {
-   "name": "daffu",
-   "steam": "https://steamcommunity.com/profiles/76561198030911129"
-  },
-  "https://prosettings.net/players/dani/": {
-   "name": "dani",
-   "steam": "https://steamcommunity.com/id/danielinha/"
-  },
-  "https://prosettings.net/players/danistzz/": {
-   "name": "danistzz",
-   "steam": "https://steamcommunity.com/id/scalevillain1"
-  },
-  "https://prosettings.net/players/dank1ng/": {
-   "name": "dank1ng",
-   "steam": "https://steamcommunity.com/profiles/76561198151914303"
-  },
-  "https://prosettings.net/players/danoco/": {
-   "name": "danoco",
-   "steam": "https://steamcommunity.com/id/danoc0/"
-  },
-  "https://prosettings.net/players/daps/": {
-   "name": "daps",
-   "steam": "https://steamcommunity.com/id/daps/"
-  },
-  "https://prosettings.net/players/darchevile/": {
-   "name": "darchevile",
-   "steam": "https://steamcommunity.com/id/darchevile/"
-  },
-  "https://prosettings.net/players/dare/": {
-   "name": "dare",
-   "steam": "https://steamcommunity.com/id/333DARE/"
-  },
-  "https://prosettings.net/players/dav1d/": {
-   "name": "dav1deus",
-   "steam": "https://steamcommunity.com/profiles/76561198120491311"
-  },
-  "https://prosettings.net/players/dav1g/": {
-   "name": "dav1g",
-   "steam": "https://steamcommunity.com/id/dav1gcs/"
-  },
-  "https://prosettings.net/players/davcost/": {
-   "name": "davcost",
-   "steam": "https://steamcommunity.com/id/1231234326890/"
-  },
-  "https://prosettings.net/players/dd/": {
-   "name": "dd",
-   "steam": "https://steamcommunity.com/profiles/76561198130248345"
-  },
-  "https://prosettings.net/players/dea/": {
-   "name": "dea",
-   "steam": "https://steamcommunity.com/profiles/76561198839597990"
-  },
-  "https://prosettings.net/players/deathzz/": {
-   "name": "deathzz",
-   "steam": "https://steamcommunity.com/id/deathzzaky/"
-  },
-  "https://prosettings.net/players/decenty/": {
-   "name": "decenty",
-   "steam": "https://steamcommunity.com/id/decentycs/"
-  },
-  "https://prosettings.net/players/deco/": {
-   "name": "deco",
-   "steam": "https://steamcommunity.com/id/v9jse/"
-  },
-  "https://prosettings.net/players/deemo/": {
-   "name": "deemo",
-   "steam": "https://steamcommunity.com/id/deemocs/"
-  },
-  "https://prosettings.net/players/degster/": {
-   "name": "degster",
-   "steam": "https://steamcommunity.com/profiles/76561198799340122"
-  },
-  "https://prosettings.net/players/deko/": {
-   "name": "deko",
-   "steam": "https://steamcommunity.com/profiles/76561198287546191"
-  },
-  "https://prosettings.net/players/delle/": {
-   "name": "delle",
-   "steam": "https://steamcommunity.com/id/dellexd"
-  },
-  "https://prosettings.net/players/dem0n/": {
-   "name": "dem0n",
-   "steam": "https://steamcommunity.com/id/dem0nnnnnnnn/"
-  },
-  "https://prosettings.net/players/dementor/": {
-   "name": "dementor",
-   "steam": "https://steamcommunity.com/id/DementorTANK/"
-  },
-  "https://prosettings.net/players/demqq/": {
-   "name": "demqq",
-   "steam": "https://steamcommunity.com/id/Universestudent/"
-  },
-  "https://prosettings.net/players/denis/": {
-   "name": "denis",
-   "steam": "https://steamcommunity.com/id/denis-/"
-  },
-  "https://prosettings.net/players/dennis/": {
-   "name": "dennis",
-   "steam": "https://steamcommunity.com/profiles/76561198068342553"
-  },
-  "https://prosettings.net/players/dennyslaw/": {
-   "name": "dennyslaw",
-   "steam": "https://steamcommunity.com/profiles/76561198260959350"
-  },
-  "https://prosettings.net/players/dephh/": {
-   "name": "dephh",
-   "steam": "https://steamcommunity.com/id/dephh/"
-  },
-  "https://prosettings.net/players/depreshn/": {
-   "name": "depreshn",
-   "steam": "https://steamcommunity.com/id/depreshnzy/"
-  },
-  "https://prosettings.net/players/desh/": {
-   "name": "desh",
-   "steam": "https://www.steamcommunity.com/profiles/76561198950367286/"
-  },
-  "https://prosettings.net/players/destiny/": {
-   "name": "destiny",
-   "steam": "https://steamcommunity.com/profiles/76561198049794434"
-  },
-  "https://prosettings.net/players/detr0ittj/": {
-   "name": "detr0ittj",
-   "steam": "https://steamcommunity.com/id/detr0ittj/"
-  },
-  "https://prosettings.net/players/dev1ce/": {
-   "name": "device",
-   "steam": "https://steamcommunity.com/id/devvek1ng/"
-  },
-  "https://prosettings.net/players/devil/": {
-   "name": "devil",
-   "steam": "https://steamcommunity.com/profiles/76561198004504351"
-  },
-  "https://prosettings.net/players/devils274/": {
-   "name": "devils274",
-   "steam": "https://steamcommunity.com/id/devils274/"
-  },
-  "https://prosettings.net/players/devoduvek/": {
-   "name": "devoduvek",
-   "steam": "https://steamcommunity.com/profiles/76561198076930721"
-  },
-  "https://prosettings.net/players/dex/": {
-   "name": "dex",
-   "steam": "https://steamcommunity.com/id/headshooter999/"
-  },
-  "https://prosettings.net/players/dexter/": {
-   "name": "dexter",
-   "steam": "https://steamcommunity.com/id/dexterAUS/"
-  },
-  "https://prosettings.net/players/dgl/": {
-   "name": "dgl",
-   "steam": "https://steamcommunity.com/profiles/76561198238366860"
-  },
-  "https://prosettings.net/players/dgt/": {
-   "name": "dgt",
-   "steam": "https://steamcommunity.com/profiles/76561198216891576"
-  },
-  "https://prosettings.net/players/dimaoneshot/": {
-   "name": "dimaoneshot",
-   "steam": "https://steamcommunity.com/id/dumah4uk/"
-  },
-  "https://prosettings.net/players/dimasick/": {
-   "name": "dimasick",
-   "steam": "https://steamcommunity.com/id/dimasickCSGO/"
-  },
-  "https://prosettings.net/players/dimke/": {
-   "name": "dimke",
-   "steam": "https://steamcommunity.com/profiles/76561197999712198"
-  },
-  "https://prosettings.net/players/discostar/": {
-   "name": "discostar",
-   "steam": "https://steamcommunity.com/id/discoStarCS"
-  },
-  "https://prosettings.net/players/divine/": {
-   "name": "divine",
-   "steam": "https://steamcommunity.com/id/divine_fps/"
-  },
-  "https://prosettings.net/players/djoko/": {
-   "name": "djoko",
-   "steam": "https://steamcommunity.com/profiles/76561198047876970"
-  },
-  "https://prosettings.net/players/dobu/": {
-   "name": "dobu",
-   "steam": "https://steamcommunity.com/id/dobuiwnl/"
-  },
-  "https://prosettings.net/players/doc/": {
-   "name": "doc",
-   "steam": "https://steamcommunity.com/id/docfps/"
-  },
-  "https://prosettings.net/players/donk/": {
-   "name": "donk",
-   "steam": "https://steamcommunity.com/id/donkgojo/"
-  },
-  "https://prosettings.net/players/dosia/": {
-   "name": "dosia",
-   "steam": "https://steamcommunity.com/id/ADosia/"
-  },
-  "https://prosettings.net/players/doto/": {
-   "name": "doto",
-   "steam": "https://steamcommunity.com/id/dotolol/"
-  },
-  "https://prosettings.net/players/dr3nquu/": {
-   "name": "dr3nquu",
-   "steam": "https://steamcommunity.com/profiles/76561199107744807/"
-  },
-  "https://prosettings.net/players/dragon/": {
-   "name": "dragon",
-   "steam": "https://steamcommunity.com/id/officialdragon/"
-  },
-  "https://prosettings.net/players/draken/": {
-   "name": "draken",
-   "steam": "https://steamcommunity.com/profiles/76561198119388735"
-  },
-  "https://prosettings.net/players/dream3r/": {
-   "name": "dream3r",
-   "steam": "https://steamcommunity.com/profiles/76561198155055663"
-  },
-  "https://prosettings.net/players/drop-canadian/": {
-   "name": "drop-canadian",
-   "steam": "https://steamcommunity.com/id/droptrickzz/"
-  },
-  "https://prosettings.net/players/drop/": {
-   "name": "drop",
-   "steam": "https://steamcommunity.com/id/andredrop/"
-  },
-  "https://prosettings.net/players/duckmanz/": {
-   "name": "duckmanz",
-   "steam": "https://steamcommunity.com/id/Duckmanz1/"
-  },
-  "https://prosettings.net/players/dumau/": {
-   "name": "dumau",
-   "steam": "https://steamcommunity.com/id/dumaucs/"
-  },
-  "https://prosettings.net/players/dupreeh/": {
-   "name": "dupreeh",
-   "steam": "https://steamcommunity.com/profiles/76561198004854956"
-  },
-  "https://prosettings.net/players/dycha/": {
-   "name": "dycha",
-   "steam": "https://steamcommunity.com/profiles/76561198041416993"
-  },
-  "https://prosettings.net/players/dytor/": {
-   "name": "dytor",
-   "steam": "https://steamcommunity.com/profiles/76561198201554338"
-  },
-  "https://prosettings.net/players/dziugss/": {
-   "name": "dziugss",
-   "steam": "https://steamcommunity.com/id/dziugss/"
-  },
-  "https://prosettings.net/players/easy/": {
-   "name": "easy",
-   "steam": "https://steamcommunity.com/id/easygojo/"
-  },
-  "https://prosettings.net/players/ed1m/": {
-   "name": "ed1m",
-   "steam": "https://steamcommunity.com/id/Ed1m/"
-  },
-  "https://prosettings.net/players/edv/": {
-   "name": "edv",
-   "steam": "https://steamcommunity.com/id/edvtheone/"
-  },
-  "https://prosettings.net/players/edward/": {
-   "name": "edward",
-   "steam": "https://steamcommunity.com/id/IoannSukhariev/"
-  },
-  "https://prosettings.net/players/effys/": {
-   "name": "effys",
-   "steam": "https://steamcommunity.com/id/effysgo/"
-  },
-  "https://prosettings.net/players/efire/": {
-   "name": "efire",
-   "steam": "https://steamcommunity.com/profiles/76561199247418620"
-  },
-  "https://prosettings.net/players/el1an/": {
-   "name": "el1an",
-   "steam": "https://steamcommunity.com/id/El1an/"
-  },
-  "https://prosettings.net/players/electronic/": {
-   "name": "electronic",
-   "steam": "https://steamcommunity.com/id/electronic333/"
-  },
-  "https://prosettings.net/players/elige/": {
-   "name": "elige",
-   "steam": "https://steamcommunity.com/id/officialelige/"
-  },
-  "https://prosettings.net/players/emi/": {
-   "name": "emi",
-   "steam": "https://steamcommunity.com/id/d0mE/"
-  },
-  "https://prosettings.net/players/emiliaqaq/": {
-   "name": "emiliaqaq",
-   "steam": "https://steamcommunity.com/profiles/76561198816731401"
-  },
-  "https://prosettings.net/players/emstar/": {
-   "name": "emstar",
-   "steam": "https://steamcommunity.com/id/emst4r/"
-  },
-  "https://prosettings.net/players/enzo-polish/": {
-   "name": "enzo-polish",
-   "steam": "https://steamcommunity.com/profiles/76561198031539050"
-  },
-  "https://prosettings.net/players/eraa/": {
-   "name": "eraa",
-   "steam": "https://steamcommunity.com/id/eraaxd/"
-  },
-  "https://prosettings.net/players/erkast/": {
-   "name": "erkast",
-   "steam": "https://steamcommunity.com/id/erk4st/"
-  },
-  "https://prosettings.net/players/ersin/": {
-   "name": "ersin",
-   "steam": "https://steamcommunity.com/id/-ERSIN/"
-  },
-  "https://prosettings.net/players/es3tag/": {
-   "name": "es3tag",
-   "steam": "https://steamcommunity.com/profiles/76561197962125374"
-  },
-  "https://prosettings.net/players/espiranto/": {
-   "name": "espiranto",
-   "steam": "https://steamcommunity.com/id/EspiranTo/"
-  },
-  "https://prosettings.net/players/ethan/": {
-   "name": "ethan",
-   "steam": "https://steamcommunity.com/id/nrgethan/"
-  },
-  "https://prosettings.net/players/ewjerkz/": {
-   "name": "ewjerkz",
-   "steam": "https://steamcommunity.com/id/ewjerkz/"
-  },
-  "https://prosettings.net/players/ex1st/": {
-   "name": "ex1st",
-   "steam": "https://steamcommunity.com/id/vitmati/"
-  },
-  "https://prosettings.net/players/ex3rcice/": {
-   "name": "ex3rcice",
-   "steam": "https://steamcommunity.com/id/Ex3rcice/"
-  },
-  "https://prosettings.net/players/exit/": {
-   "name": "exit",
-   "steam": "https://steamcommunity.com/profiles/76561198010496342"
-  },
-  "https://prosettings.net/players/expro/": {
-   "name": "expro",
-   "steam": "https://steamcommunity.com/id/expxzxyh/"
-  },
-  "https://prosettings.net/players/extinct/": {
-   "name": "extinct",
-   "steam": "https://steamcommunity.com/id/Extinct---/"
-  },
-  "https://prosettings.net/players/f0rest/": {
-   "name": "f0rest",
-   "steam": "https://steamcommunity.com/profiles/76561197960359452"
-  },
-  "https://prosettings.net/players/f0rsaken/": {
-   "name": "f0rsaken",
-   "steam": "https://steamcommunity.com/id/swtzky/"
-  },
-  "https://prosettings.net/players/f1ku/": {
-   "name": "f1ku",
-   "steam": "https://steamcommunity.com/id/f1ku/"
-  },
-  "https://prosettings.net/players/f4stzin/": {
-   "name": "f4stzin",
-   "steam": "https://steamcommunity.com/id/fst799/"
-  },
-  "https://prosettings.net/players/facecrack/": {
-   "name": "facecrack",
-   "steam": "https://steamcommunity.com/id/facecrack/"
-  },
-  "https://prosettings.net/players/fakerealityy/": {
-   "name": "fakerealityy",
-   "steam": "https://www.steamcommunity.com/id/fakerealityy/"
-  },
-  "https://prosettings.net/players/fallen/": {
-   "name": "fallen",
-   "steam": "https://steamcommunity.com/id/fallencs/"
-  },
-  "https://prosettings.net/players/fame/": {
-   "name": "fame",
-   "steam": "https://steamcommunity.com/id/fame_cs/"
-  },
-  "https://prosettings.net/players/fander/": {
-   "name": "fander",
-   "steam": "https://steamcommunity.com/id/fandercs/"
-  },
-  "https://prosettings.net/players/fang/": {
-   "name": "fang",
-   "steam": "https://steamcommunity.com/id/FaNgJC/"
-  },
-  "https://prosettings.net/players/farlig/": {
-   "name": "farlig",
-   "steam": "https://steamcommunity.com/id/velkommentil/"
-  },
-  "https://prosettings.net/players/fashr/": {
-   "name": "fashr",
-   "steam": "https://steamcommunity.com/id/FashR/"
-  },
-  "https://prosettings.net/players/faven/": {
-   "name": "faven",
-   "steam": "https://steamcommunity.com/profiles/76561198118196092"
-  },
-  "https://prosettings.net/players/fazery/": {
-   "name": "fazery",
-   "steam": "https://steamcommunity.com/id/FAZERY1221/"
-  },
-  "https://prosettings.net/players/fear/": {
-   "name": "fear",
-   "steam": "https://steamcommunity.com/id/2012201624"
-  },
   "https://prosettings.net/players/fejtz/": {
    "name": "fejtz",
    "steam": "https://steamcommunity.com/id/691337691337691337/"
@@ -39427,6 +38893,13 @@
    "resolution": "1920x1080",
    "sensitivity": "3.50",
    "url": "https://prosettings.net/players/f0rest/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "1.7",
+    "offset_y": "2",
+    "offset_z": "-1.7"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197960429732": {
@@ -39466,7 +38939,7 @@
      "author": "victor9",
      "confidence": "clip",
      "date": "1 year ago",
-     "date_iso": "2025-11-17",
+     "date_iso": "2025-11-20",
      "evidence_url": "https://www.youtube.com/watch?v=gBM0bvojDsM",
      "evidence_urls": [
       "https://www.youtube.com/watch?v=gBM0bvojDsM",
@@ -39489,12 +38962,19 @@
      "status": "Clipe compartilhado na discussão; conteúdo ainda não verificado",
      "support_count": 1
     },
-    "scanned_at": "2026-11-17"
+    "scanned_at": "2026-11-20"
    },
    "name": "FalleN",
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/fallen/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561197960710573": {
@@ -39524,7 +39004,13 @@
    "name": "Cutler",
    "resolution": "1920x1080",
    "sensitivity": "0.3",
-   "url": "https://prosettings.net/players/cutler/"
+   "url": "https://prosettings.net/players/cutler/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   }
   },
   "76561197960968055": {
    "dpi": "1600",
@@ -39552,7 +39038,13 @@
    "name": "dimasick",
    "resolution": "1280x960",
    "sensitivity": "0.75",
-   "url": "https://prosettings.net/players/dimasick/"
+   "url": "https://prosettings.net/players/dimasick/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   }
   },
   "76561197961124456": {
    "dpi": "400",
@@ -39646,6 +39138,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/es3tag/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561197962148507": {
@@ -39733,6 +39232,13 @@
    "resolution": "1440x1080",
    "sensitivity": "1.00",
    "url": "https://prosettings.net/players/fashr/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "1",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197963631220": {
@@ -39788,6 +39294,12 @@
    "resolution": "1440x1080",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/ed1m/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561197964604204": {
@@ -39982,6 +39494,12 @@
    "resolution": "Unknown",
    "sensitivity": "0.69",
    "url": "https://prosettings.net/players/delle/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "2.5",
+    "offset_y": "-2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "0.651951"
   },
   "76561197972985852": {
@@ -40174,6 +39692,13 @@
    "resolution": "1280x800",
    "sensitivity": "2.20",
    "url": "https://prosettings.net/players/cajunb/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197978481975": {
@@ -40270,6 +39795,12 @@
    "resolution": "1152x864",
    "sensitivity": "1.70",
    "url": "https://prosettings.net/players/daps/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197980244859": {
@@ -40290,6 +39821,12 @@
    "resolution": "1600x1024",
    "sensitivity": "1.10",
    "url": "https://prosettings.net/players/davcost/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "1.5",
+    "offset_y": "1.5",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197980944787": {
@@ -40330,6 +39867,13 @@
    "resolution": "1024x768",
    "sensitivity": "0.85",
    "url": "https://prosettings.net/players/cromen/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "65",
+    "offset_x": "2",
+    "offset_y": "-2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "0.87"
   },
   "76561197982036918": {
@@ -40370,6 +39914,13 @@
    "resolution": "1152x864",
    "sensitivity": "1.90",
    "url": "https://prosettings.net/players/edward/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "65",
+    "offset_x": "2",
+    "offset_y": "1.5",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197983772557": {
@@ -40516,6 +40067,13 @@
    "resolution": "Unknown",
    "sensitivity": "2.00",
    "url": "https://prosettings.net/players/dephh/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197987713664": {
@@ -40526,6 +40084,13 @@
    "resolution": "1280x960",
    "sensitivity": "0.95",
    "url": "https://prosettings.net/players/dev1ce/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197988539104": {
@@ -40536,6 +40101,13 @@
    "resolution": "1280x1024",
    "sensitivity": "1.19",
    "url": "https://prosettings.net/players/chrisj/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197988609490": {
@@ -40713,6 +40285,13 @@
    "resolution": "1920x1080",
    "sensitivity": "1.60",
    "url": "https://prosettings.net/players/denis/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "0.70"
   },
   "76561197991593267": {
@@ -40812,6 +40391,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.05",
    "url": "https://prosettings.net/players/danoco/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.20"
   },
   "76561197995102212": {
@@ -40931,6 +40517,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.57",
    "url": "https://prosettings.net/players/crush/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197997351207": {
@@ -41067,6 +40659,13 @@
    "resolution": "1366x768",
    "sensitivity": "0.72",
    "url": "https://prosettings.net/players/doto/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561197999712198": {
@@ -41077,6 +40676,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.8",
    "url": "https://prosettings.net/players/dimke/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.2"
   },
   "76561197999855911": {
@@ -41320,6 +40925,13 @@
    "resolution": "1152x864",
    "sensitivity": "1.77",
    "url": "https://prosettings.net/players/emi/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "0.94"
   },
   "76561198003756239": {
@@ -41340,6 +40952,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/cadian/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198004504351": {
@@ -41350,6 +40969,12 @@
    "resolution": "1024x768",
    "sensitivity": "0.67",
    "url": "https://prosettings.net/players/devil/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198004854956": {
@@ -41360,6 +40985,13 @@
    "resolution": "1280x800",
    "sensitivity": "1.77",
    "url": "https://prosettings.net/players/dupreeh/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198004871434": {
@@ -41577,6 +41209,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/exit/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "0.85"
   },
   "76561198010511021": {
@@ -41783,6 +41421,22 @@
    "resolution": "1728x1080",
    "url": "https://prosettings.net/players/fexx/"
   },
+  "76561198014912532": {
+   "dpi": "800",
+   "edpi": "880.00",
+   "hz": "1000",
+   "name": "keen",
+   "resolution": "1280x960",
+   "sensitivity": "1.1",
+   "url": "https://prosettings.net/players/keen/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
+   "zoom_sensitivity": "1"
+  },
   "76561198015308884": {
    "dpi": "400",
    "edpi": "700.00",
@@ -41866,6 +41520,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/ckzao/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198017015164": {
@@ -41969,6 +41629,13 @@
    "resolution": "1440x1080",
    "sensitivity": "2.25",
    "url": "https://prosettings.net/players/deathzz/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.10"
   },
   "76561198018557005": {
@@ -42104,6 +41771,13 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/farlig/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198024347602": {
@@ -42244,6 +41918,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/ersin/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198028292758": {
@@ -42307,6 +41987,12 @@
    "resolution": "1680x1050",
    "sensitivity": "0.4425",
    "url": "https://prosettings.net/players/cryptic/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198030528189": {
@@ -42340,13 +42026,20 @@
    "zoom_sensitivity": "Unknown"
   },
   "76561198031539050": {
-   "dpi": "1600",
-   "edpi": "208.00",
+   "dpi": "400",
+   "edpi": "688",
    "hz": "1000",
-   "name": "Enzo",
-   "resolution": "1440x1080",
-   "sensitivity": "0.13",
-   "url": "https://prosettings.net/players/enzo/",
+   "name": "Enzo (polish)",
+   "resolution": "1280x960",
+   "sensitivity": "1.72",
+   "url": "https://prosettings.net/players/enzo-polish/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198031554200": {
@@ -42584,6 +42277,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.10",
    "url": "https://prosettings.net/players/coldzera/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198040194649": {
@@ -42614,6 +42314,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/dycha/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "-2",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198041683378": {
@@ -42706,6 +42413,13 @@
    "resolution": "1280x1024",
    "sensitivity": "2.2",
    "url": "https://prosettings.net/players/electronic/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.05"
   },
   "76561198044048033": {
@@ -42840,6 +42554,13 @@
    "resolution": "1920x1080",
    "sensitivity": "0.7",
    "url": "https://prosettings.net/players/chopper/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198046268744": {
@@ -42915,6 +42636,13 @@
    "resolution": "1280x1024",
    "sensitivity": "1.00",
    "url": "https://prosettings.net/players/djoko/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "0.70"
   },
   "76561198048266764": {
@@ -42961,6 +42689,12 @@
    "resolution": "1440x1080",
    "sensitivity": "2.00",
    "url": "https://prosettings.net/players/destiny/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198050250233": {
@@ -43067,6 +42801,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/calyx/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198052570371": {
@@ -43388,6 +43129,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.65",
    "url": "https://prosettings.net/players/dexter/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "6"
   },
   "76561198062114681": {
@@ -43537,6 +43284,13 @@
    "resolution": "1680x1050",
    "sensitivity": "0.59",
    "url": "https://prosettings.net/players/elige/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "1",
+    "offset_y": "2",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "0.8"
   },
   "76561198067348168": {
@@ -43593,6 +43347,13 @@
    "resolution": "1280x960",
    "sensitivity": "4",
    "url": "https://prosettings.net/players/chelo/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198067937899": {
@@ -43623,6 +43384,13 @@
    "resolution": "1024x768",
    "sensitivity": "2.00",
    "url": "https://prosettings.net/players/dennis/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "65",
+    "offset_x": "2",
+    "offset_y": "1.5",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "0.80"
   },
   "76561198068422762": {
@@ -43660,6 +43428,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.6",
    "url": "https://prosettings.net/players/captainmo/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "0.90"
   },
   "76561198069557840": {
@@ -43896,6 +43670,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.725",
    "url": "https://prosettings.net/players/facecrack/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198076204322": {
@@ -43962,6 +43742,12 @@
    "resolution": "1280x800",
    "sensitivity": "1.6",
    "url": "https://prosettings.net/players/devoduvek/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198077245619": {
@@ -44039,6 +43825,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/fame/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198080449500": {
@@ -44049,6 +43842,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.475",
    "url": "https://prosettings.net/players/cej0t/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198080703143": {
@@ -44248,6 +44047,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.2",
    "url": "https://prosettings.net/players/erkast/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198091819631": {
@@ -44258,6 +44064,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.75",
    "url": "https://prosettings.net/players/ex1st/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "-2",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198091947107": {
@@ -44338,6 +44150,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/doc/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198095922337": {
@@ -44367,6 +44186,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/extinct/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198098071693": {
@@ -44494,6 +44319,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/dementor/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "1",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198104626893": {
@@ -44514,6 +44345,13 @@
    "resolution": "1920x1080",
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/dosia/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198107142008": {
@@ -44699,6 +44537,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.10",
    "url": "https://prosettings.net/players/faven/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "-2",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198118218033": {
@@ -44728,6 +44573,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.50",
    "url": "https://prosettings.net/players/cruc1al/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198119388735": {
@@ -44738,6 +44590,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.95",
    "url": "https://prosettings.net/players/draken/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198119513781": {
@@ -44768,6 +44627,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/dragon/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198120491311": {
@@ -44778,6 +44643,13 @@
    "resolution": "1280x960",
    "sensitivity": "3.06",
    "url": "https://prosettings.net/players/dav1d/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198120557348": {
@@ -44968,6 +44840,12 @@
    "resolution": "1920x1080",
    "sensitivity": "2.20",
    "url": "https://prosettings.net/players/clax/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198129443530": {
@@ -44977,7 +44855,14 @@
    "name": "Ethan",
    "resolution": "1440x1080",
    "sensitivity": "0.58",
-   "url": "https://prosettings.net/players/ethan/"
+   "url": "https://prosettings.net/players/ethan/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   }
   },
   "76561198129799489": {
    "dpi": "800",
@@ -45040,6 +44925,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.71",
    "url": "https://prosettings.net/players/dd/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198130444302": {
@@ -45104,6 +44995,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/fear/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198132414056": {
@@ -45194,6 +45091,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/cptkurtka023/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198137694535": {
@@ -45499,6 +45402,12 @@
    "resolution": "1920x1080",
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/discostar/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198146838248": {
@@ -45591,6 +45500,12 @@
    "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/dank1ng/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198152320416": {
@@ -45727,6 +45642,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.2",
    "url": "https://prosettings.net/players/cerq/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "0.8"
   },
   "76561198156362373": {
@@ -45900,6 +45822,12 @@
    "resolution": "1920x1080",
    "sensitivity": "0.8",
    "url": "https://prosettings.net/players/d4rty/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198163780030": {
@@ -45960,6 +45888,13 @@
    "resolution": "1920x1080",
    "sensitivity": "0.68",
    "url": "https://prosettings.net/players/chawzyyy/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "0",
+    "offset_y": "1",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "0.64"
   },
   "76561198166952201": {
@@ -45999,6 +45934,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.00",
    "url": "https://prosettings.net/players/ex3rcice/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198168401372": {
@@ -46115,6 +46057,12 @@
    "resolution": "1024x768",
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/cxzi/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198172837021": {
@@ -46135,6 +46083,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.97",
    "url": "https://prosettings.net/players/chanky/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "1.6",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198173201923": {
@@ -46255,6 +46209,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/cerolzin/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198178737429": {
@@ -46616,6 +46576,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/cojomo/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198200482343": {
@@ -46661,6 +46627,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.45",
    "url": "https://prosettings.net/players/dytor/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198201620490": {
@@ -46740,6 +46712,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.79",
    "url": "https://prosettings.net/players/danistzz/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.23"
   },
   "76561198207109432": {
@@ -46760,6 +46738,12 @@
    "resolution": "1024x768",
    "sensitivity": "2.4",
    "url": "https://prosettings.net/players/choiv7/",
+   "viewmodel": {
+    "fov": "65",
+    "offset_x": "-0.5",
+    "offset_y": "1",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198208074320": {
@@ -46807,6 +46791,13 @@
    "resolution": "1440x1080",
    "sensitivity": "0.45",
    "url": "https://prosettings.net/players/el1an/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198210934463": {
@@ -46893,6 +46884,13 @@
    "resolution": "1280x800",
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/dgt/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198218265253": {
@@ -46950,6 +46948,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/fander/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198222442504": {
@@ -47024,6 +47029,12 @@
    "resolution": "1024x768",
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/dgl/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198238642986": {
@@ -47053,16 +47064,28 @@
    "resolution": "1280x960",
    "sensitivity": "0.64",
    "url": "https://prosettings.net/players/detr0ittj/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198242772376": {
-   "dpi": "1000",
+   "dpi": "400",
    "edpi": "1300",
    "hz": "2000",
    "name": "Cher1on",
    "resolution": "1280x960",
-   "sensitivity": "1.3",
+   "sensitivity": "3.25",
    "url": "https://prosettings.net/players/cher1on/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198242885242": {
@@ -47176,6 +47199,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/chay/",
+   "viewmodel": {
+    "fov": "65",
+    "offset_x": "2",
+    "offset_y": "1.5",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198251984554": {
@@ -47186,6 +47215,13 @@
    "resolution": "1024x768",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/cypher/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "60",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.2"
   },
   "76561198252434500": {
@@ -47196,6 +47232,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.7",
    "url": "https://prosettings.net/players/f1ku/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198252742076": {
@@ -47391,6 +47434,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.65",
    "url": "https://prosettings.net/players/ewjerkz/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198262777749": {
@@ -47494,6 +47544,12 @@
    "resolution": "1920x1080",
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/deco/",
+   "viewmodel": {
+    "fov": "65",
+    "offset_x": "2",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198272723319": {
@@ -47504,6 +47560,13 @@
    "resolution": "1280x1024",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/fang/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198273670913": {
@@ -47613,6 +47676,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/d0cc/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198281933631": {
@@ -47633,6 +47703,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.52",
    "url": "https://prosettings.net/players/cjoffo/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1.5"
   },
   "76561198283989223": {
@@ -47668,6 +47744,22 @@
    "resolution": "1728x1080",
    "url": "https://prosettings.net/players/jeemzz/"
   },
+  "76561198286405075": {
+   "dpi": "400",
+   "edpi": "800.00",
+   "hz": "1000",
+   "name": "Tarkky",
+   "resolution": "1440x1080",
+   "sensitivity": "2",
+   "url": "https://prosettings.net/players/tarkky/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
+   "zoom_sensitivity": "0.91"
+  },
   "76561198287546191": {
    "dpi": "800",
    "edpi": "984",
@@ -47676,6 +47768,13 @@
    "resolution": "1280x960",
    "sensitivity": "1.23",
    "url": "https://prosettings.net/players/deko/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.13"
   },
   "76561198287616424": {
@@ -47712,6 +47811,13 @@
    "resolution": "1920x1080",
    "sensitivity": "0.41",
    "url": "https://prosettings.net/players/chr1zn/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.1"
   },
   "76561198293974689": {
@@ -47829,6 +47935,12 @@
    "resolution": "1280x960",
    "sensitivity": "1",
    "url": "https://prosettings.net/players/decenty/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198307459336": {
@@ -47968,6 +48080,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/divine/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.1"
   },
   "76561198317627284": {
@@ -48038,6 +48156,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.3",
    "url": "https://prosettings.net/players/depreshn/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0.35",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198330729329": {
@@ -48230,6 +48354,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.88",
    "url": "https://prosettings.net/players/childking/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "1",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198352930772": {
@@ -48352,6 +48482,12 @@
    "resolution": "1024x768",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/controlez/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "1",
+    "offset_y": "2",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198362632938": {
@@ -48492,6 +48628,13 @@
    "resolution": "1152x864",
    "sensitivity": "1.8",
    "url": "https://prosettings.net/players/eraa/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "1",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198377335846": {
@@ -48556,7 +48699,7 @@
       "actuation_scope": "Todas as teclas",
       "author": "tador1437",
       "confidence": "community",
-      "date": "19 days ago",
+      "date": "22 days ago",
       "date_iso": "2026-10-29",
       "evidence_url": "",
       "evidence_urls": [],
@@ -48583,7 +48726,7 @@
       "actuation_scope": "Não informado",
       "author": "schematic",
       "confidence": "community",
-      "date": "15 days ago",
+      "date": "18 days ago",
       "date_iso": "2026-11-02",
       "evidence_url": "",
       "evidence_urls": [],
@@ -48610,7 +48753,7 @@
       "actuation_scope": "Não informado",
       "author": "Нуртилек",
       "confidence": "community",
-      "date": "20 days ago",
+      "date": "23 days ago",
       "date_iso": "2026-10-28",
       "evidence_url": "",
       "evidence_urls": [],
@@ -48631,12 +48774,13 @@
      "actuation": "0.7",
      "actuation_keys": [],
      "actuation_scope": "Não informado",
-     "author": "timla",
+     "author": "nef1_1",
      "confidence": "clip",
-     "date": "18 days ago",
-     "date_iso": "2026-10-30",
-     "evidence_url": "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d",
+     "date": "17 hours ago",
+     "date_iso": "2026-11-20",
+     "evidence_url": "https://twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d",
      "evidence_urls": [
+      "https://twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d",
       "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d"
      ],
      "rapid_trigger": "0.4",
@@ -48645,18 +48789,25 @@
      "rapid_trigger_disabled": false,
      "rapid_trigger_keys": [],
      "rapid_trigger_scope": "Não informado",
-     "raw_text": "https://www.twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d donk has 0.7actuation and 0.4 rt",
+     "raw_text": "new wooting settings: act 0.7 rt 0.4 source: https://twitch.tv/fjaakyou/clip/ObeseInventivePepperoniCmonBruh-ZI91yY93RZE0D2-Y?range=7d",
      "score": 9,
-     "source_url": "https://prosettings.net/players/donk/#comment-358649",
+     "source_url": "https://prosettings.net/players/donk/#comment-359627",
      "status": "Clipe compartilhado na discussão; conteúdo ainda não verificado",
-     "support_count": 3
+     "support_count": 4
     },
-    "scanned_at": "2026-11-17"
+    "scanned_at": "2026-11-20"
    },
    "name": "donk",
    "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/donk/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198387556863": {
@@ -48674,6 +48825,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.3",
    "url": "https://prosettings.net/players/drop/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198388875820": {
@@ -48684,6 +48842,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.9",
    "url": "https://prosettings.net/players/chudy/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198395407235": {
@@ -48751,6 +48915,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.94",
    "url": "https://prosettings.net/players/dani/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198402229798": {
@@ -48780,6 +48950,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/emstar/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198408199043": {
@@ -48853,6 +49029,13 @@
    "resolution": "1920x1080",
    "sensitivity": "1.8",
    "url": "https://prosettings.net/players/dav1g/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198417348677": {
@@ -48921,6 +49104,22 @@
    },
    "zoom_sensitivity": "Unknown"
   },
+  "76561198431418464": {
+   "dpi": "800",
+   "edpi": "800.00",
+   "hz": "2000",
+   "name": "anber",
+   "resolution": "1280x960",
+   "sensitivity": "1",
+   "url": "https://prosettings.net/players/anber/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "2.5",
+    "offset_y": "-2",
+    "offset_z": "-2"
+   },
+   "zoom_sensitivity": "1"
+  },
   "76561198436609466": {
    "dpi": "800",
    "edpi": "1040",
@@ -48929,6 +49128,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.3",
    "url": "https://prosettings.net/players/f4stzin/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198440742326": {
@@ -49049,6 +49254,13 @@
    "resolution": "1280x960",
    "sensitivity": "2.75",
    "url": "https://prosettings.net/players/degster/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561198800253526": {
@@ -49191,6 +49403,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.8",
    "url": "https://prosettings.net/players/emiliaqaq/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198823425843": {
@@ -49287,6 +49505,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.7",
    "url": "https://prosettings.net/players/dea/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198842458256": {
@@ -49313,6 +49537,12 @@
    "resolution": "1280x1024",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/cool4st/",
+   "viewmodel": {
+    "fov": "65",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198843320440": {
@@ -49464,6 +49694,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.09",
    "url": "https://prosettings.net/players/edv/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198871858821": {
@@ -49519,7 +49755,7 @@
      "author": "nef1_1",
      "confidence": "community",
      "date": "2 months ago",
-     "date_iso": "2026-09-18",
+     "date_iso": "2026-09-21",
      "evidence_url": "",
      "evidence_urls": [],
      "rapid_trigger": "0.25",
@@ -49534,12 +49770,18 @@
      "status": "Relato da comunidade, sem prova anexada",
      "support_count": 1
     },
-    "scanned_at": "2026-11-17"
+    "scanned_at": "2026-11-20"
    },
    "name": "dem0n",
    "resolution": "1280x960",
    "sensitivity": "0.75",
    "url": "https://prosettings.net/players/dem0n/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "2",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198876350998": {
@@ -49580,6 +49822,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.42",
    "url": "https://prosettings.net/players/cairne/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198889240025": {
@@ -49640,6 +49888,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/desh/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561198951467648": {
@@ -49790,13 +50044,19 @@
   },
   "76561198987550079": {
    "dpi": "400",
-   "edpi": "920.00",
-   "hz": "2000",
-   "name": "drop",
+   "edpi": "568.00",
+   "hz": "1000",
+   "name": "Drop (canadian)",
    "resolution": "1280x960",
-   "sensitivity": "2.3",
-   "url": "https://prosettings.net/players/drop/",
-   "zoom_sensitivity": "1.00"
+   "sensitivity": "1.42",
+   "url": "https://prosettings.net/players/drop-canadian/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
+   "zoom_sensitivity": "1"
   },
   "76561198995880877": {
    "dpi": "800",
@@ -50058,6 +50318,12 @@
    "resolution": "1280x1024",
    "sensitivity": "2.15",
    "url": "https://prosettings.net/players/devils274/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199055818824": {
@@ -50068,6 +50334,16 @@
    "resolution": "1680x1050",
    "sensitivity": "2.5",
    "url": "https://prosettings.net/players/miksozzz/",
+   "zoom_sensitivity": "1"
+  },
+  "76561199056648975": {
+   "dpi": "400",
+   "edpi": "1200",
+   "hz": "1000",
+   "name": "bsover",
+   "resolution": "1024x768",
+   "sensitivity": "3",
+   "url": "https://prosettings.net/players/bsover/",
    "zoom_sensitivity": "1"
   },
   "76561199058267210": {
@@ -50160,6 +50436,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.5",
    "url": "https://prosettings.net/players/dziugss/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199102431599": {
@@ -50190,6 +50472,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.25",
    "url": "https://prosettings.net/players/dr3nquu/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "1",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199112319728": {
@@ -50326,6 +50614,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.1",
    "url": "https://prosettings.net/players/fakerealityy/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "-1",
+    "offset_z": "-2"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199163957904": {
@@ -50336,6 +50630,12 @@
    "resolution": "1440x1080",
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/deemo/",
+   "viewmodel": {
+    "fov": "60",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1"
+   },
    "zoom_sensitivity": "1.1"
   },
   "76561199167176654": {
@@ -50356,6 +50656,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.8",
    "url": "https://prosettings.net/players/fazery/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199185448422": {
@@ -50402,6 +50708,12 @@
    "resolution": "1280x960",
    "sensitivity": "0.9",
    "url": "https://prosettings.net/players/dex/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199235646150": {
@@ -50422,6 +50734,12 @@
    "resolution": "1280x960",
    "sensitivity": "2",
    "url": "https://prosettings.net/players/cutzmeretz/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "1",
+    "offset_y": "1",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.2"
   },
   "76561199247418620": {
@@ -50432,6 +50750,12 @@
    "resolution": "Unknown",
    "sensitivity": "Unknown",
    "url": "https://prosettings.net/players/efire/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "Unknown"
   },
   "76561199276547472": {
@@ -50451,6 +50775,12 @@
    "resolution": "1152x864",
    "sensitivity": "0.9",
    "url": "https://prosettings.net/players/cmtry/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199359257120": {
@@ -50471,6 +50801,12 @@
    "resolution": "1280x960",
    "sensitivity": "1.4",
    "url": "https://prosettings.net/players/cobra/",
+   "viewmodel": {
+    "fov": "68",
+    "offset_x": "2",
+    "offset_y": "2",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1"
   },
   "76561199439779019": {
@@ -50607,7 +50943,7 @@
      "author": "rodrigojacomo",
      "confidence": "clip",
      "date": "1 year ago",
-     "date_iso": "2025-11-17",
+     "date_iso": "2025-11-20",
      "evidence_url": "https://www.twitch.tv/dumau/clip/BashfulGlutenFreeSaladWutFace-NV1ZPJcCBgEdaIyx",
      "evidence_urls": [
       "https://www.twitch.tv/dumau/clip/BashfulGlutenFreeSaladWutFace-NV1ZPJcCBgEdaIyx"
@@ -50624,12 +50960,19 @@
      "status": "Clipe compartilhado na discussão; conteúdo ainda não verificado",
      "support_count": 1
     },
-    "scanned_at": "2026-11-17"
+    "scanned_at": "2026-11-20"
    },
    "name": "dumau",
    "resolution": "1280x960",
    "sensitivity": "1.99",
    "url": "https://prosettings.net/players/dumau/",
+   "viewmodel": {
+    "bob": "False",
+    "fov": "68",
+    "offset_x": "2.5",
+    "offset_y": "0",
+    "offset_z": "-1.5"
+   },
    "zoom_sensitivity": "1.00"
   },
   "76561199789317942": {
@@ -50757,6 +51100,7 @@
   "https://prosettings.net/players/anamo/": "2026-11-20",
   "https://prosettings.net/players/anarkez/": "2026-11-20",
   "https://prosettings.net/players/anas/": "2026-11-20",
+  "https://prosettings.net/players/anber/": "2026-11-23",
   "https://prosettings.net/players/andil/": "2026-11-20",
   "https://prosettings.net/players/andilex/": "2026-11-20",
   "https://prosettings.net/players/andr1x/": "2026-11-20",
@@ -50957,6 +51301,7 @@
   "https://prosettings.net/players/bryce/": "2026-11-20",
   "https://prosettings.net/players/brzer/": "2026-11-20",
   "https://prosettings.net/players/bsd/": "2026-11-20",
+  "https://prosettings.net/players/bsover/": "2026-11-23",
   "https://prosettings.net/players/bstrdd/": "2026-11-20",
   "https://prosettings.net/players/bubble/": "2026-11-20",
   "https://prosettings.net/players/bubzkji/": "2026-11-20",
@@ -51718,6 +52063,7 @@
   "https://prosettings.net/players/kaze/": "2026-11-20",
   "https://prosettings.net/players/kbr/": "2026-11-20",
   "https://prosettings.net/players/kchorro/": "2026-11-20",
+  "https://prosettings.net/players/keen/": "2026-11-23",
   "https://prosettings.net/players/kei/": "2026-11-20",
   "https://prosettings.net/players/keiko/": "2026-11-20",
   "https://prosettings.net/players/keis/": "2026-11-20",
@@ -52804,6 +53150,7 @@
   "https://prosettings.net/players/tapewaare/": "2026-11-20",
   "https://prosettings.net/players/tara/": "2026-11-20",
   "https://prosettings.net/players/tarik/": "2026-11-20",
+  "https://prosettings.net/players/tarkky/": "2026-11-23",
   "https://prosettings.net/players/taskmast33r/": "2026-11-20",
   "https://prosettings.net/players/tastyy/": "2026-11-20",
   "https://prosettings.net/players/tatazin/": "2026-11-20",
@@ -53242,6 +53589,7 @@
   "https://prosettings.net/players/anamo/": "2026-11-20",
   "https://prosettings.net/players/anarkez/": "2026-11-20",
   "https://prosettings.net/players/anas/": "2026-11-20",
+  "https://prosettings.net/players/anber/": "2026-11-23",
   "https://prosettings.net/players/andil/": "2026-11-20",
   "https://prosettings.net/players/andilex/": "2026-11-20",
   "https://prosettings.net/players/andr1x/": "2026-11-20",
@@ -53442,6 +53790,7 @@
   "https://prosettings.net/players/bryce/": "2026-11-20",
   "https://prosettings.net/players/brzer/": "2026-11-20",
   "https://prosettings.net/players/bsd/": "2026-11-20",
+  "https://prosettings.net/players/bsover/": "2026-11-23",
   "https://prosettings.net/players/bstrdd/": "2026-11-20",
   "https://prosettings.net/players/bubble/": "2026-11-20",
   "https://prosettings.net/players/bubzkji/": "2026-11-20",
@@ -54203,6 +54552,7 @@
   "https://prosettings.net/players/kaze/": "2026-11-20",
   "https://prosettings.net/players/kbr/": "2026-11-20",
   "https://prosettings.net/players/kchorro/": "2026-11-20",
+  "https://prosettings.net/players/keen/": "2026-11-23",
   "https://prosettings.net/players/kei/": "2026-11-20",
   "https://prosettings.net/players/keiko/": "2026-11-20",
   "https://prosettings.net/players/keis/": "2026-11-20",
@@ -55289,6 +55639,7 @@
   "https://prosettings.net/players/tapewaare/": "2026-11-20",
   "https://prosettings.net/players/tara/": "2026-11-20",
   "https://prosettings.net/players/tarik/": "2026-11-20",
+  "https://prosettings.net/players/tarkky/": "2026-11-23",
   "https://prosettings.net/players/taskmast33r/": "2026-11-20",
   "https://prosettings.net/players/tastyy/": "2026-11-20",
   "https://prosettings.net/players/tatazin/": "2026-11-20",
@@ -55727,6 +56078,7 @@
   "https://prosettings.net/players/anamo/": "2026-11-20",
   "https://prosettings.net/players/anarkez/": "2026-11-20",
   "https://prosettings.net/players/anas/": "2026-11-20",
+  "https://prosettings.net/players/anber/": "2026-11-23",
   "https://prosettings.net/players/andil/": "2026-11-20",
   "https://prosettings.net/players/andilex/": "2026-11-20",
   "https://prosettings.net/players/andr1x/": "2026-11-20",
@@ -55927,6 +56279,7 @@
   "https://prosettings.net/players/bryce/": "2026-11-20",
   "https://prosettings.net/players/brzer/": "2026-11-20",
   "https://prosettings.net/players/bsd/": "2026-11-20",
+  "https://prosettings.net/players/bsover/": "2026-11-23",
   "https://prosettings.net/players/bstrdd/": "2026-11-20",
   "https://prosettings.net/players/bubble/": "2026-11-20",
   "https://prosettings.net/players/bubzkji/": "2026-11-20",
@@ -56688,6 +57041,7 @@
   "https://prosettings.net/players/kaze/": "2026-11-20",
   "https://prosettings.net/players/kbr/": "2026-11-20",
   "https://prosettings.net/players/kchorro/": "2026-11-20",
+  "https://prosettings.net/players/keen/": "2026-11-23",
   "https://prosettings.net/players/kei/": "2026-11-20",
   "https://prosettings.net/players/keiko/": "2026-11-20",
   "https://prosettings.net/players/keis/": "2026-11-20",
@@ -57774,6 +58128,7 @@
   "https://prosettings.net/players/tapewaare/": "2026-11-20",
   "https://prosettings.net/players/tara/": "2026-11-20",
   "https://prosettings.net/players/tarik/": "2026-11-20",
+  "https://prosettings.net/players/tarkky/": "2026-11-23",
   "https://prosettings.net/players/taskmast33r/": "2026-11-20",
   "https://prosettings.net/players/tastyy/": "2026-11-20",
   "https://prosettings.net/players/tatazin/": "2026-11-20",

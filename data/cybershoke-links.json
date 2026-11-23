@@ -104,6 +104,7 @@
   "anamo": "2026-11-11",
   "anarkez": "2026-11-11",
   "anas": "2026-11-11",
+  "anber": "2026-11-23",
   "andil": "2026-11-11",
   "andilex": "2026-11-11",
   "andr1x": "2026-11-11",
@@ -302,6 +303,7 @@
   "bryce": "2026-11-11",
   "brzer": "2026-11-11",
   "bsd": "2026-11-11",
+  "bsover": "2026-11-23",
   "bstrdd": "2026-11-11",
   "bubble": "2026-11-11",
   "bubzkji": "2026-11-11",
@@ -1067,6 +1069,7 @@
   "kaze-3": "2026-11-20",
   "kbr": "2026-11-11",
   "kchorro": "2026-11-11",
+  "keen": "2026-11-23",
   "kei": "2026-11-11",
   "keiko": "2026-11-11",
   "keis": "2026-11-11",
@@ -2151,6 +2154,7 @@
   "tapewaare": "2026-11-12",
   "tarathiel": "2026-11-12",
   "tarik": "2026-11-12",
+  "tarkky": "2026-11-23",
   "taskmast33r": "2026-11-12",
   "tastyy": "2026-11-12",
   "tatazin": "2026-11-12",
@@ -3094,6 +3098,15 @@
     "url": "https://www.hltv.org/stats/players/11815/anarkez"
    },
    "name": "anarkez"
+  },
+  "anber": {
+   "faceit": {
+    "elo": 881,
+    "name": "affffffee",
+    "skill_level": 3,
+    "url": "https://www.faceit.com/ru/players/affffffee"
+   },
+   "name": "anber"
   },
   "andr1x": {
    "faceit": {
@@ -4366,6 +4379,15 @@
     "url": "https://www.faceit.com/ru/players/bsd"
    },
    "name": "bsd"
+  },
+  "bsover": {
+   "faceit": {
+    "elo": 3389,
+    "name": "bsover88",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/bsover88"
+   },
+   "name": "bsover"
   },
   "bubble": {
    "faceit": {
@@ -9292,6 +9314,19 @@
     "url": "https://www.hltv.org/stats/players/8950/kaze"
    },
    "name": "Kaze"
+  },
+  "keen": {
+   "faceit": {
+    "elo": 3525,
+    "name": "keen-x",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/keen-x"
+   },
+   "hltv": {
+    "name": "keen",
+    "url": "https://www.hltv.org/stats/players/14990/keen"
+   },
+   "name": "keen"
   },
   "kei": {
    "faceit": {
@@ -16679,6 +16714,15 @@
     "url": "https://www.hltv.org/stats/players/8523/tarik"
    },
    "name": "tarik"
+  },
+  "tarkky": {
+   "faceit": {
+    "elo": 3460,
+    "name": "Tarkky-",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/Tarkky-"
+   },
+   "name": "Tarkky"
   },
   "taskmast33r": {
    "faceit": {
