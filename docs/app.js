@@ -101,7 +101,7 @@ addEventListener('hashchange', route);
 function setUpload(show) { document.getElementById('intro').hidden = !show; }
 
 const bd = window.SD_BUILD_DATE || '';
-document.getElementById('upd').textContent = /^\d/.test(bd) ? bd : new Date(document.lastModified).toLocaleDateString('pt-BR');
+const updEl = document.getElementById('upd'); if (updEl) updEl.textContent = /^\d/.test(bd) ? bd : new Date(document.lastModified).toLocaleDateString('pt-BR');
 
 // Histórico (salvo só neste navegador)
 function histAdd(name, players) {
