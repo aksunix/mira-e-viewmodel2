@@ -808,3 +808,8 @@
     .dcard-num { font-size: 12.5px; }
     .dcard-tags .dtag { font-size: 10px; padding: 1px 7px; }
   }
+
+  /* Painel do jogador: a barra de rolagem começa abaixo da capa e não invade o canto arredondado */
+  .dex-detail::-webkit-scrollbar-track { margin: 112px 0 22px; }
+  .pd-cover { border-top-right-radius: 0; } /* a faixa termina reta ao lado da barra de rolagem */
+  @supports not selector(::-webkit-scrollbar) { .dex-detail { scrollbar-color: #F25C54 transparent; } }
