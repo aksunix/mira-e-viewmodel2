@@ -11,7 +11,7 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE = "https://prosettings.net"
-KEYBOARD_PARSER_VERSION = "6"
+KEYBOARD_PARSER_VERSION = "7"
 UA = "cs2-demo-analyzer-prosettings-sync/1.0 (projeto pessoal; 1 req a cada poucos segundos)"
 FIELDS = {"sensitivity": "sensitivity", "dpi": "dpi", "edpi": "edpi",
           "zoom sensitivity": "zoom_sensitivity", "hz": "hz"}
@@ -77,6 +77,54 @@ def player_urls(delay):
                 urls.append(u.rstrip("/") + "/")
     return sorted(set(urls))
 
+
+
+def _post_id(html):
+    for pat in (r"rel=[\"']shortlink[\"'][^>]*href=[\"'][^\"']*[?&]p=(\d+)",
+                r"wp-json/wp/v2/[a-z_-]+/(\d+)",
+                r"\bpostid-(\d+)\b", r"\bpage-id-(\d+)\b",
+                r"[\"']post_id[\"']\s*[:=]\s*[\"']?(\d+)"):
+        m = re.search(pat, html, re.I)
+        if m:
+            return m.group(1)
+    return ""
+
+
+def fetch_rest_comments(html, delay, max_pages=8):
+    """Busca TODOS os comentarios pela API publica do WordPress (o HTML so traz os primeiros;
+    o resto vem por "Load More Comments"). Devolve HTML sintetico com <li id="comment-N">."""
+    pid = _post_id(html)
+    if not pid:
+        return ""
+    out = []
+    for page in range(1, max_pages + 1):
+        try:
+            time.sleep(delay)
+            r = S.get(f"{BASE}/wp-json/wp/v2/comments", params={
+                "post": pid, "per_page": 100, "page": page, "orderby": "date", "order": "asc"}, timeout=30)
+        except requests.RequestException:
+            break
+        if r.status_code in (403, 429):
+            raise Blocked(f"{r.status_code} na API de comentarios")
+        if r.status_code != 200:
+            break
+        try:
+            items = r.json()
+        except ValueError:
+            break
+        if not isinstance(items, list) or not items:
+            break
+        for c in items:
+            body = (c.get("content") or {}).get("rendered", "")
+            who = re.sub(r"[<>\"]", "", str(c.get("author_name") or "Usuário"))
+            out.append(
+                f'<li class="comment" id="comment-{c.get("id")}" data-parent="{c.get("parent") or 0}">'
+                f'<span class="comment-author"><b class="fn">{who}</b></span>'
+                f'<time datetime="{c.get("date_gmt") or c.get("date") or ""}Z">{(c.get("date") or "")[:10]}</time>'
+                f'<div class="comment-content">{body}</div></li>')
+        if len(items) < 100:
+            break
+    return "".join(out)
 
 
 def _comment_date(node):
@@ -188,12 +236,12 @@ def _setting_scope(text, setting):
 
 def _keyboard_values_basic(text):
     actuation = _setting_number(text, [
-        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(?:actuation(?:\s+point)?|action\s+point|act|ap)(?:\s*(?:[:=\-~]|is|at|to|of|set\s+to|set\s+at|around|about)\s*|\s+)(\d+(?:[.,]\d+)?)",
         r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
         r"\b(\d+(?:[.,]\d+)?)\s*(?:actuation(?:\s+point)?|action\s+point|act)\b",
     ])
     rapid = _setting_number(text, [
-        r"\b(?:rapid(?:\s*trigger)?|rt)\s*[:=]?\s*(\d+(?:[.,]\d+)?)",
+        r"\b(?:rapid(?:\s*trigger)?|rt)(?:\s*(?:[:=\-~]|is|at|to|of|set\s+to|set\s+at|around|about)\s*|\s+)(\d+(?:[.,]\d+)?)",
         r"\b(\d+(?:[.,]\d+)?)\s*mm?\s*(?:rapid(?:\s*trigger)?|rt)\b",
         r"\b(\d+(?:[.,]\d+)?)\s*(?:rapid(?:\s*trigger)?|rt)\b",
     ])
@@ -504,7 +552,7 @@ def parse_viewmodel(soup):
     return out if "fov" in out else {}
 
 
-def parse_player(html, profile_url=""):
+def parse_player(html, profile_url="", extra_comments_html=""):
     """Devolve (nome, steam_link, mouse_dict, video_dict, keyboard, viewmodel). Dicts vazios se nao houver a tabela."""
     soup = BeautifulSoup(html, "html.parser")
     h1 = soup.find("h1")
@@ -531,6 +579,14 @@ def parse_player(html, profile_url=""):
         if len(cells) >= 2 and cells[0].lower() == "resolution" and cells[1]:
             video["resolution"] = cells[1]
             break
+    if profile_url and extra_comments_html:
+        have = {str(n.get("id")) for n in soup.select('[id^="comment-"]')}
+        extra = BeautifulSoup(extra_comments_html, "html.parser")
+        holder = soup.new_tag("ol")
+        for li in extra.find_all("li", recursive=False):
+            if li.get("id") not in have:
+                holder.append(li)
+        (soup.body or soup).append(holder)
     keyboard = parse_keyboard_comments(soup, profile_url) if profile_url else None
     viewmodel = parse_viewmodel(soup)
     return name, steam, mouse, video, keyboard, viewmodel
@@ -615,7 +671,14 @@ def main():
         for i, url in enumerate(todo, 1):
             try:
                 html = get(url, a.delay)
-                name, steam, mouse, video, keyboard, viewmodel = parse_player(html, url)
+                extra = ""
+                try:
+                    extra = fetch_rest_comments(html, a.delay)
+                except Blocked:
+                    raise
+                except Exception as e:
+                    print("aviso: comentarios extras indisponiveis:", url, e)
+                name, steam, mouse, video, keyboard, viewmodel = parse_player(html, url, extra)
                 if url in prio_todo:
                     print(f"[prioridade] {url} nome={name!r} steam={'sim' if steam else 'nao'} campos={sorted(mouse)} video={sorted(video)}")
                 if name:
