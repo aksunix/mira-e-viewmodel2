@@ -752,6 +752,7 @@
   "furiousss": "2026-11-11",
   "furlan": "2026-11-11",
   "fury": "2026-11-11",
+  "fury5k": "2026-11-24",
   "fuzzface": "2026-11-11",
   "fyrr": "2026-11-11",
   "ga1de": "2026-11-11",
@@ -2193,6 +2194,7 @@
   "thwifo": "2026-11-12",
   "tiezzi": "2026-11-12",
   "tiger": "2026-11-12",
+  "tikuak": "2026-11-24",
   "tilt": "2026-11-16",
   "timhehe": "2026-11-12",
   "timo": "2026-11-12",
@@ -7269,6 +7271,15 @@
     "url": "https://www.faceit.com/ru/players/fastFury"
    },
    "name": "Fury"
+  },
+  "fury5k": {
+   "faceit": {
+    "elo": 3153,
+    "name": "-fury5k-",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/-fury5k-"
+   },
+   "name": "fury5k"
   },
   "ga1de": {
    "faceit": {
@@ -16937,6 +16948,19 @@
     "url": "https://www.faceit.com/ru/players/T-iger"
    },
    "name": "TiGeR"
+  },
+  "tikuak": {
+   "faceit": {
+    "elo": 3501,
+    "name": "chuyrademq",
+    "skill_level": 10,
+    "url": "https://www.faceit.com/ru/players/chuyrademq"
+   },
+   "hltv": {
+    "name": "tikuak",
+    "url": "https://www.hltv.org/stats/players/25510/tikuak"
+   },
+   "name": "tikuak"
   },
   "tilt": {
    "faceit": {

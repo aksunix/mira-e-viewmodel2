@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22",
+ "updated": "2026-11-24",
  "top": [
   {
    "nick": "TenZ",
@@ -187,6 +187,11 @@
    "nick": "FalleN",
    "slug": "fallen",
    "team": "FURIA"
+  },
+  {
+   "nick": "yay",
+   "slug": "yay",
+   "team": "Masterclass"
   },
   {
    "nick": "karrigan",
@@ -651,7 +656,7 @@
   {
    "nick": "ztr",
    "slug": "ztr",
-   "team": "Fokus Clan"
+   "team": "GamerLegion"
   },
   {
    "nick": "Pimp",
@@ -899,11 +904,6 @@
    "team": "9INE"
   },
   {
-   "nick": "Efire",
-   "slug": "efire",
-   "team": "Chinggis Warriors"
-  },
-  {
    "nick": "mASKED",
    "slug": "masked",
    "team": "Eternal Fire"
@@ -911,7 +911,7 @@
   {
    "nick": "ariucle",
    "slug": "ariucle",
-   "team": "Chinggis Warriors"
+   "team": "5star eSports"
   },
   {
    "nick": "mizu",
@@ -1629,6 +1629,11 @@
    "team": "Natus Vincere"
   },
   {
+   "nick": "Subroza",
+   "slug": "subroza",
+   "team": "Masterclass"
+  },
+  {
    "nick": "Zellsis",
    "slug": "zellsis",
    "team": "Cloud9"
@@ -1641,7 +1646,7 @@
   {
    "nick": "s0m",
    "slug": "s0m",
-   "team": "NRG"
+   "team": "Masterclass"
   },
   {
    "nick": "tiziaN",
@@ -1904,11 +1909,6 @@
    "team": "FUT Esports"
   },
   {
-   "nick": "friberg",
-   "slug": "friberg",
-   "team": "Johnny Speeds"
-  },
-  {
    "nick": "n0rb3r7",
    "slug": "n0rb3r7",
    "team": "HOTU"
@@ -1986,7 +1986,7 @@
   {
    "nick": "sk0R",
    "slug": "sk0r",
-   "team": "The Huns Esports"
+   "team": "Chinggis Warriors"
   },
   {
    "nick": "arT",
@@ -2049,9 +2049,19 @@
    "team": "Fluxo"
   },
   {
+   "nick": "hampus",
+   "slug": "hampus",
+   "team": "Johnny Speeds"
+  },
+  {
    "nick": "Plopski",
    "slug": "plopski",
    "team": "Metizport"
+  },
+  {
+   "nick": "Xeppaa",
+   "slug": "xeppaa",
+   "team": "Team Envy"
   },
   {
    "nick": "Ed1m",
@@ -2687,11 +2697,6 @@
    "nick": "SHiNE",
    "slug": "shine",
    "team": "G2 Ares"
-  },
-  {
-   "nick": "Sapec",
-   "slug": "sapec",
-   "team": "Johnny Speeds"
   },
   {
    "nick": "n1Xen",
@@ -3386,7 +3391,7 @@
   {
    "nick": "cxzi",
    "slug": "cxzi",
-   "team": "Marsborne"
+   "team": "Wildcard Gaming"
   },
   {
    "nick": "nicx",
@@ -3987,6 +3992,31 @@
    "nick": "Jelo",
    "slug": "jelo",
    "team": "Prestige"
+  },
+  {
+   "nick": "Tarkky",
+   "slug": "tarkky",
+   "team": "Leo Team"
+  },
+  {
+   "nick": "keen",
+   "slug": "keen",
+   "team": "PURE"
+  },
+  {
+   "nick": "bsover",
+   "slug": "bsover",
+   "team": "Johnny Speeds"
+  },
+  {
+   "nick": "tikuak",
+   "slug": "tikuak",
+   "team": "Chinggis Warriors"
+  },
+  {
+   "nick": "fury5k",
+   "slug": "fury5k",
+   "team": "Chinggis Warriors"
   }
  ]
 }
