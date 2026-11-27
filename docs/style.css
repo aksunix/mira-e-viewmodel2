@@ -815,3 +815,4 @@
   @supports not selector(::-webkit-scrollbar) { .dex-detail { scrollbar-color: #F25C54 transparent; } }
   /* A faixa coral continua por cima da barra de rolagem, até a borda arredondada do painel */
   .dex-detail:has(.pd-cover) { background-image: linear-gradient(var(--md-surface-container), var(--md-surface-container)), linear-gradient(#1B1B1B, #1B1B1B), linear-gradient(#F25C54, #F25C54); background-repeat: no-repeat; background-attachment: local, scroll, scroll; background-position: 0 0, 0 calc(101px - var(--st, 0px)), 0 calc(0px - var(--st, 0px)); background-size: 100% 100%, 100% 3px, 100% 104px; }
+.pro-tiles dt span { overflow-wrap: anywhere; }

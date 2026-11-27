@@ -342,7 +342,7 @@ const MOUSE_FIELDS = [
   ['hz', 'Hz'],
 ];
 
-const VIDEO_FIELDS = [['resolution', 'Resolução']];
+const VIDEO_FIELDS = [['resolution', 'Resolução'], ['screen_height', 'cl_crosshair_screen_height']];
 const DEMO_RESOLUTIONS = {
   600: '800x600',
   720: '1280x720',
@@ -411,7 +411,7 @@ function renderPlayer(p) {
   const hasKeyboard = !!(keyboardCurrent && (keyboardCurrent.actuation || keyboardCurrent.rapid_trigger || keyboardCurrent.rapid_trigger_disabled || (keyboardCurrent.groups && keyboardCurrent.groups.length)));
   // A resolução vem do cl_crosshair_screen_height (não é exibido): 960 -> 1280x960, 1080 -> 1920x1080...
   const videoInfo = screenHeight !== null
-    ? { resolution: DEMO_RESOLUTIONS[screenHeight] || (mouse && mouse.resolution) || (screenHeight + 'p') }
+    ? { resolution: DEMO_RESOLUTIONS[screenHeight] || (mouse && mouse.resolution) || (screenHeight + 'p'), screen_height: String(screenHeight) }
     : (mouse && mouse.resolution ? { resolution: mouse.resolution } : null);
   const hasMouse = !!(mouse && MOUSE_FIELDS.some(([k]) => mouse[k]));
   const hasVideo = !!videoInfo;
